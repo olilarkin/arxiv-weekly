@@ -1,5 +1,5 @@
 export default function CategoryFilter({ categories, active, onChange }) {
-  const all = [{ id: 'all', label: 'すべて', color: '#64748b', papers: [] }, ...categories]
+  const all = [{ id: 'all', label: 'All', color: '#64748b', papers: [] }, ...categories]
   return (
     <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap' }}>
       {all.map(cat => (

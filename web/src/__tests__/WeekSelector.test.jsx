@@ -43,10 +43,10 @@ describe('WeekSelector', () => {
     expect(onFromChange).toHaveBeenCalledWith('2026-0109')
   })
 
-  it('renders 全期間 option in from-date select', () => {
+  it('renders "All time" option in from-date select', () => {
     render(
       <WeekSelector weeks={WEEKS} toDate="2026-0426" fromDate={null} onToChange={() => {}} onFromChange={() => {}} />
     )
-    expect(screen.getByText('全期間')).toBeInTheDocument()
+    expect(screen.getByText('All time')).toBeInTheDocument()
   })
 })

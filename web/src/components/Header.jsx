@@ -8,15 +8,15 @@ export default function Header({ total, loading }) {
       <div style={{ fontFamily: "'Space Mono',monospace", fontWeight: 700,
         color: '#f1f5f9', letterSpacing: -0.5, lineHeight: 1.4,
         fontSize: 'clamp(15px,4vw,21px)' }}>
-        音響AI週報
+        Audio AI Weekly
         <span style={{ fontSize: 'clamp(10px,2.5vw,12px)', color: '#475569',
           fontWeight: 400, marginLeft: 10 }}>
-          音の基盤モデル・音源分離・異音検知
+          Audio Foundation Models · Source Separation · Anomalous Sound Detection
         </span>
       </div>
       {!loading && total > 0 && (
         <div style={{ fontSize: 10, color: '#475569', marginTop: 4 }}>
-          {total} 論文 表示中
+          Showing {total} papers
         </div>
       )}
     </div>

@@ -3,13 +3,13 @@ import { stripPrefix, readUrlState, buildUrlSearch } from '../utils.js'
 
 describe('stripPrefix', () => {
   it('removes circled number prefix ①', () => {
-    expect(stripPrefix('① どんなもの？')).toBe('どんなもの？')
+    expect(stripPrefix('① What is it?')).toBe('What is it?')
   })
   it('removes circled number ⑨', () => {
-    expect(stripPrefix('⑨ テキスト')).toBe('テキスト')
+    expect(stripPrefix('⑨ text')).toBe('text')
   })
   it('leaves plain text unchanged', () => {
-    expect(stripPrefix('プレーンテキスト')).toBe('プレーンテキスト')
+    expect(stripPrefix('plain text')).toBe('plain text')
   })
   it('returns empty string for empty input', () => {
     expect(stripPrefix('')).toBe('')
@@ -19,7 +19,7 @@ describe('stripPrefix', () => {
     expect(stripPrefix(undefined)).toBe('')
   })
   it('removes prefix with trailing space', () => {
-    expect(stripPrefix('② テキスト')).toBe('テキスト')
+    expect(stripPrefix('② text')).toBe('text')
   })
 })
 

@@ -1,15 +1,15 @@
 # ============================================================
-# システム設定ファイル
+# System settings.
 # ============================================================
 
-# arXiv 取得設定
+# arXiv fetch settings
 arxiv:
-  lookback_days: 7          # 取得対象期間（日数）
-  max_papers: 50            # フィルタ後の最大取得件数
-  request_interval: 1.0     # API リクエスト間隔（秒）
+  lookback_days: 7          # How many days of recent papers to consider.
+  max_papers: 50            # Maximum number of papers kept after filtering.
+  request_interval: 1.0     # Delay between API requests, in seconds.
   user_agent: "arxiv-weekly-report/1.0 (github.com/kasahart/arxiv-weekly)"
 
-# GitHub Models 設定
+# GitHub Models settings
 github_models:
   endpoint: "https://models.inference.ai.azure.com"
   model: "gpt-4o"
@@ -18,9 +18,9 @@ github_models:
   batch_max_tokens: 6000
   min_request_interval: 60.0
   retry_max: 3
-  retry_interval: 5.0       # リトライ間隔（秒）
+  retry_interval: 5.0       # Retry interval, in seconds.
 
-# データ出力設定
+# Data output paths
 data:
   weekly_dir: "data/weekly"
   index_file: "data/index.json"

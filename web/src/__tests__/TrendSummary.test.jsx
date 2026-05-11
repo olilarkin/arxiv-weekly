@@ -4,17 +4,21 @@ import TrendSummary from '../components/TrendSummary'
 
 describe('TrendSummary', () => {
   it('renders all trend lines', () => {
-    const trend = ['音響基盤モデルの研究が進んだ', '音源分離の精度が向上した', '異音検知が注目を集めた']
+    const trend = [
+      'Audio foundation model research advanced.',
+      'Source separation accuracy improved.',
+      'Anomalous sound detection drew attention.',
+    ]
     render(<TrendSummary trend={trend} />)
-    expect(screen.getByText(/音響基盤モデルの研究が進んだ/)).toBeInTheDocument()
-    expect(screen.getByText(/音源分離の精度が向上した/)).toBeInTheDocument()
-    expect(screen.getByText(/異音検知が注目を集めた/)).toBeInTheDocument()
+    expect(screen.getByText(/Audio foundation model research advanced/)).toBeInTheDocument()
+    expect(screen.getByText(/Source separation accuracy improved/)).toBeInTheDocument()
+    expect(screen.getByText(/Anomalous sound detection drew attention/)).toBeInTheDocument()
   })
 
   it('strips circled number prefixes from trend lines', () => {
-    const trend = ['① 音響基盤モデルの研究', '② 音源分離の進展']
+    const trend = ['① Audio foundation models', '② Source separation']
     render(<TrendSummary trend={trend} />)
-    expect(screen.getByText(/音響基盤モデルの研究/)).toBeInTheDocument()
+    expect(screen.getByText(/Audio foundation models/)).toBeInTheDocument()
     expect(screen.queryByText(/①/)).not.toBeInTheDocument()
   })
 
@@ -33,6 +37,6 @@ describe('TrendSummary', () => {
 
   it('renders section header', () => {
     render(<TrendSummary trend={[]} />)
-    expect(screen.getByText(/今週の技術トレンド/)).toBeInTheDocument()
+    expect(screen.getByText(/This week's technical trends/)).toBeInTheDocument()
   })
 })

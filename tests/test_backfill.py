@@ -38,12 +38,12 @@ class TestFridaysBetween:
             assert diff == 7
 
     def test_to_date_before_first_friday_returns_empty(self):
-        # from=Jan 3 (Sat), to=Jan 7 (Wed) → no Friday in range
+        # from=Jan 3 (Sat), to=Jan 7 (Wed) -> no Friday in range
         result = fridays_between(dt(2026, 1, 3), dt(2026, 1, 7))
         assert result == []
 
     def test_from_equals_to_friday(self):
-        # from=to=Friday → [that Friday]
+        # from=to=Friday -> [that Friday]
         result = fridays_between(dt(2026, 1, 2), dt(2026, 1, 2))
         assert len(result) == 1
         assert result[0] == dt(2026, 1, 2)

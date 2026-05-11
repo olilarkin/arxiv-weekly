@@ -96,7 +96,7 @@ export default function App() {
                                  showFavoritesOnly: initial.showFavoritesOnly })
   const [showScrollTop, setShowScrollTop] = useState(false)
 
-  // URL に pushState するラッパー
+  // Wrapper that pushes the filter state into the URL.
   const pushFilter = useCallback((patch) => {
     const next = { ...filterRef.current, ...patch }
     filterRef.current = next
@@ -135,7 +135,7 @@ export default function App() {
     })
   }, [pushFilter])
 
-  // popstate (ブラウザ戻る/進む)
+  // popstate (browser back/forward).
   useEffect(() => {
     const onPop = () => {
       const s = readUrlState()
@@ -151,14 +151,14 @@ export default function App() {
     return () => window.removeEventListener('popstate', onPop)
   }, [])
 
-  // スクロールトップボタン
+  // Scroll-to-top button.
   useEffect(() => {
     const onScroll = () => setShowScrollTop(window.scrollY > 400)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // お気に入り / 既読トグル
+  // Favorite / read toggles.
   const toggleFavorite = useCallback((id) => {
     setFavorites(prev => {
       const next = new Set(prev)
@@ -177,7 +177,7 @@ export default function App() {
     })
   }, [])
 
-  // index.json を取得
+  // Fetch index.json.
   useEffect(() => {
     fetch(`${DATA_BASE}/index.json`)
       .then(r => r.json())
@@ -194,7 +194,7 @@ export default function App() {
       .catch(() => setLoading(false))
   }, [])
 
-  // toDate 変更時: リセット & 最初の週を読み込み
+  // When toDate changes, reset state and load the first week.
   useEffect(() => {
     if (!toDate || !index) return
     const weeks = index.weeks
@@ -218,7 +218,7 @@ export default function App() {
     }).catch(() => setLoading(false))
   }, [toDate, index])
 
-  // 次の週を読み込む（無限スクロール）
+  // Load the next week (infinite scroll).
   const loadNextWeek = useCallback(() => {
     if (!index || loadingMore || !hasMore) return
     const weeks = index.weeks
@@ -250,7 +250,7 @@ export default function App() {
     return () => observer.disconnect()
   }, [loadNextWeek])
 
-  // カテゴリ一覧（index.json 定義 + ロード済み週の論文数）
+  // Category list (definitions from index.json + paper counts from loaded weeks).
   const paperCountById = Object.fromEntries(
     loadedWeeks.flatMap(w => w.categories).reduce((map, c) => {
       map.set(c.id, (map.get(c.id) ?? 0) + c.papers.length)
@@ -321,15 +321,15 @@ export default function App() {
             className="search-input"
             value={search}
             onChange={e => setSearch(e.target.value)}
-            placeholder="キーワード検索..."
+            placeholder="Search..."
           />
           <button className={`ctrlBtn${sortByCitations ? ' active' : ''}`}
             onClick={() => setSortByCitations(s => !s)}>
-            {sortByCitations ? '引用数順' : '日付順'}
+            {sortByCitations ? 'By citations' : 'By date'}
           </button>
           <button className={`ctrlBtn${showFavoritesOnly ? ' active' : ''}`}
             onClick={() => setShowFavoritesOnly(s => !s)}>
-            {showFavoritesOnly ? '★ お気に入り' : '☆ お気に入り'}
+            {showFavoritesOnly ? '★ Favorites' : '☆ Favorites'}
           </button>
         </div>
         <div className="toolbar-row">
@@ -354,7 +354,7 @@ export default function App() {
                 if (showFavoritesOnly && !favorites.has(id)) return false
                 if (search) {
                   const q = search.toLowerCase()
-                  return `${p.title} ${p.titleJa ?? ''} ${p.what ?? ''}`.toLowerCase().includes(q)
+                  return `${p.title} ${p.what ?? ''}`.toLowerCase().includes(q)
                 }
                 return true
               }),
@@ -427,7 +427,7 @@ export default function App() {
         )}
         <div style={{ marginTop: 22, fontSize: 11, color: '#1e293b', letterSpacing: 1,
           borderTop: '1px solid #1e293b', paddingTop: 14 }}>
-          音響AI週報 - arXiv cs.SD / eess.AS - POWERED BY GitHub Models (GPT-4o) - 毎週金曜更新
+          Audio AI Weekly - arXiv cs.SD / eess.AS - POWERED BY GitHub Models (GPT-4o) - updated every Friday
         </div>
       </div>
 
@@ -439,7 +439,7 @@ export default function App() {
             color: '#38bdf8', fontSize: 18, cursor: 'pointer',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             boxShadow: '0 4px 12px rgba(0,0,0,0.4)' }}
-          title="トップへ戻る">▴</button>
+          title="Back to top">▴</button>
       )}
     </div>
   )

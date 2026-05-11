@@ -1,17 +1,17 @@
 # ============================================================
-# arXiv 論文フィルタリング設定
-# キーワードの追加・削除はこのファイルのみ編集してください
+# arXiv paper filtering configuration.
+# Edit this file alone to add or remove keywords.
 # ============================================================
 
-# 対象 arXiv カテゴリ
+# Target arXiv categories
 categories:
   - cs.SD
   - eess.AS
 
-# フィルタリングキーワード（OR 条件）
-# タイトル・アブストラクトのいずれかに含まれる論文を対象とする
+# Filter keywords (OR semantics).
+# Papers whose title or abstract contains any keyword are included.
 include:
-  # 音の基盤モデル
+  # Audio foundation models
   - audio foundation model
   - audio language model
   - audio large language model
@@ -20,7 +20,7 @@ include:
   - audio pre-training
   - audio self-supervised
   - universal audio
-  # 音源分離
+  # Source separation
   - source separation
   - music separation
   - speech separation
@@ -28,7 +28,7 @@ include:
   - speaker separation
   - vocal separation
   - music demixing
-  # 異音検知
+  # Anomalous sound detection
   - anomalous sound detection
   - anomaly sound detection
   - anomaly detection
@@ -37,15 +37,15 @@ include:
   - unsupervised anomaly
   - sound event detection
 
-# 除外キーワード（include にマッチしても除外する）
+# Exclude keywords (papers matching these are dropped even if include matches).
 exclude:
   - survey only
   - retracted
 
-# UI 表示用カテゴリ定義
+# UI category definitions
 ui_categories:
   - id: foundation
-    label: 音の基盤モデル
+    label: Audio Foundation Models
     color: "#38bdf8"
     keywords:
       - audio foundation model
@@ -58,7 +58,7 @@ ui_categories:
       - universal audio
 
   - id: separation
-    label: 音源分離
+    label: Source Separation
     color: "#4ade80"
     keywords:
       - source separation
@@ -70,7 +70,7 @@ ui_categories:
       - music demixing
 
   - id: anomaly
-    label: 異音検知
+    label: Anomalous Sound Detection
     color: "#fb923c"
     keywords:
       - anomalous sound detection

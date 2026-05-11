@@ -1,17 +1,19 @@
 name: Weekly arXiv Update
 
+# Scheduled trigger is disabled during the English rework.
+# Re-enable by uncommenting the schedule block below.
 on:
-  schedule:
-    # 毎週金曜日 12:00 UTC = 21:00 JST
-    - cron: '0 12 * * 5'
+  # schedule:
+  #   # Every Friday at 12:00 UTC
+  #   - cron: '0 12 * * 5'
   workflow_dispatch:
     inputs:
       dry_run:
-        description: 'Dry run（取得のみ、コミットなし）'
+        description: 'Dry run (fetch only, no commit)'
         required: false
         default: 'false'
       target_date:
-        description: '基準日 YYYY-MM-DD（省略時は今日）過去週のデータ生成に使用'
+        description: 'Base date YYYY-MM-DD (defaults to today). Used to generate data for past weeks.'
         required: false
         default: ''
 
@@ -20,7 +22,7 @@ permissions:
   models: read
 
 jobs:
-  # ─── Step 1: arXiv 論文取得 ───────────────────────────────────────────────
+  # ─── Step 1: Fetch papers from arXiv ──────────────────────────────────────
   fetch:
     runs-on: ubuntu-latest
     outputs:
@@ -46,7 +48,7 @@ jobs:
           python scripts/fetch_papers.py $DATE_ARG
           COUNT=$(python -c "import json; print(len(json.load(open('data/raw_papers.json'))))")
           echo "paper_count=$COUNT" >> $GITHUB_OUTPUT
-          echo "✅ Fetched $COUNT papers"
+          echo "Fetched $COUNT papers"
 
       - name: Upload raw papers
         uses: actions/upload-artifact@v4
@@ -55,7 +57,7 @@ jobs:
           path: data/raw_papers.json
           retention-days: 1
 
-  # ─── Step 2: GPT-4o による解析 ───────────────────────────────────────────
+  # ─── Step 2: Analyze with GPT-4o ──────────────────────────────────────────
   analyze:
     needs: fetch
     runs-on: ubuntu-latest
@@ -89,7 +91,7 @@ jobs:
           path: data/analyzed_papers.json
           retention-days: 1
 
-  # ─── Step 3: データ生成 ───────────────────────────────────────────────────
+  # ─── Step 3: Build data ───────────────────────────────────────────────────
   build:
     needs: analyze
     runs-on: ubuntu-latest
@@ -127,7 +129,7 @@ jobs:
           path: data/
           retention-days: 1
 
-  # ─── Step 4: フロントエンドビルド・GitHub Pages デプロイ ─────────────────
+  # ─── Step 4: Build frontend and deploy to GitHub Pages ────────────────────
   deploy:
     needs: build
     if: github.event.inputs.dry_run != 'true'
@@ -155,19 +157,19 @@ jobs:
         run: |
           git fetch origin gh-pages
           mkdir -p web/public/data/weekly
-          # 既存の weekly JSON をコピー
+          # Copy existing weekly JSON files
           for f in $(git ls-tree -r --name-only origin/gh-pages 2>/dev/null | grep '^data/weekly/.*\.json$'); do
             git show origin/gh-pages:$f > web/public/$f 2>/dev/null || true
           done
-          # 既存の index.json を保存
+          # Save existing index.json
           git show origin/gh-pages:data/index.json > /tmp/existing_index.json 2>/dev/null \
             || echo '{"weeks":[],"generated_at":""}' > /tmp/existing_index.json
 
       - name: Merge data and copy to web/public
         run: |
-          # 新しい weekly JSON を上書きコピー
+          # Overwrite weekly JSONs with newly built ones
           find data/weekly -name '*.json' -exec cp {} web/public/data/weekly/ \;
-          # index.json をマージ（既存 + 新規）
+          # Merge index.json (existing + new)
           python3 - << 'EOF'
           import json
           existing = json.load(open('/tmp/existing_index.json'))

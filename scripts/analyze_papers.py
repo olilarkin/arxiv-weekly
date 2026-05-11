@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 analyze_papers.py
-GitHub Models (Claude) を使って各論文を 6 観点で日本語解析する
+Analyze each paper from six angles using GitHub Models (GPT-4o).
 """
 
 import json
@@ -18,61 +18,50 @@ ROOT = Path(__file__).parent.parent
 SETTINGS = yaml.safe_load((ROOT / "config/settings.yaml").read_text())
 KEYWORDS = yaml.safe_load((ROOT / "config/keywords.yaml").read_text())
 
-SYSTEM_PROMPT = """あなたは音声・音響 AI 分野の論文アナリストです。
-与えられた論文情報（タイトル・アブストラクト）を分析し、必ず以下の JSON 形式のみで回答してください。
-前置きや説明文、コードブロック記号（```json など）は一切含めないでください。
+SYSTEM_PROMPT = """You are a research analyst for the audio and acoustics AI field.
+Analyze the given paper (title and abstract) and reply ONLY with JSON in the
+exact schema below. Do not include any preamble, explanation, or code-fence
+markers (such as ```json).
 
-## 用語の厳密な使い分け（翻訳時に必ず遵守）
+## Terminology guidance
 
-### 「音」と「音声」の区別
-- Speech = 「音声」: 人間の発話・話し声を指す場合にのみ使用
-- Sound / Acoustic = 「音 / 音響」: 物理現象としての音、楽器音・環境音を含む広義の音
-- Audio = 「オーディオ / 音響信号」: 電気信号・データとしての音。「音声」と訳すと Speech と混同するため「オーディオ信号」または「音響信号」とする
-- Voice = 「声」: 生体としての声、歌唱などの文脈で使用
+Distinguish these terms carefully:
+- Speech: human spoken language.
+- Sound / Acoustic: physical sound in general, including instruments and environmental sound.
+- Audio: sound as an electrical signal or data.
+- Voice: biological voice, including singing.
 
-### よくある誤訳と正解
-- Audio Source Separation → ×「音声分離」 ○「音源分離」（楽器音やノイズを含む場合は必ず「音源」）
-- Audio Signal Processing → ×「音声信号処理」 ○「音響信号処理 / オーディオ信号処理」
-- Acoustic Event → ×「音声イベント」 ○「音響イベント / 音イベント」
+Use precise English terminology in all fields, e.g.:
+- "audio source separation" (not "speech separation") when instruments or noise are involved.
+- "acoustic event detection" (not "speech event detection").
+- "speech enhancement", "voice activity detection", "sound localization", etc.
 
-### 主要用語対応表
-| 英語 | 日本語 | 備考 |
-|------|--------|------|
-| Speech Enhancement | 音声強調 | 話し声をクリアにする技術 |
-| Acoustic Gain | 音響利得 | 「音声利得」とは言わない |
-| Voice Activity Detection | 音声区間検出 | 人間が喋っている区間 |
-| Sound Localization | 音源定位 | 「音声定位」ではない |
-| Environmental Sound | 環境音 | 「環境音声」とは言わない |
-| Audio Foundation Model | 音響基盤モデル | Speech に限定されない場合 |
-
-文脈上、特に指定がない限り "Sound" や "Audio" は「音源」または「音響」と訳し、"Speech" のみが登場する文脈でのみ「音声」を使用してください。
+## Output schema
 
 {
-  "titleJa": "論文タイトルの日本語訳（自然な日本語で）",
-  "org": "著者の主要所属機関（大学名・企業名を簡潔に、例: MIT / Google）",
-  "task": "タスク分類（例: TTS / ASR / 音源分離 / 異音検知 / 音楽生成 / 話者認識 / など、1〜2語）",
-  "proposedMethod": "提案手法の固有名詞・略称（例: SALMONN、AudioSep。ない場合は null）",
-  "datasets": ["使用したデータセット名1", "使用したデータセット名2"],
-  "what": "どんなもの？（1〜2文で研究の全体像）",
-  "novel": "先行研究と比べてすごい点（1〜2文で新規性・貢献）",
-  "method": "技術・手法のキモ（1〜2文でアーキテクチャや学習の核心）",
-  "validation": "有効性の検証（データセット・指標・比較実験を1〜2文で）",
-  "discussion": "議論・限界（残課題・制約を1〜2文で）",
-  "abstractJa": "アブストラクト全文の自然な日本語訳",
+  "org": "Primary author affiliation (short, e.g. MIT / Google)",
+  "task": "Task category (e.g. TTS / ASR / Source Separation / Anomalous Sound Detection / Music Generation), 1-3 words",
+  "proposedMethod": "Name or acronym of the proposed method (e.g. SALMONN, AudioSep). Use null if none.",
+  "datasets": ["Dataset name 1", "Dataset name 2"],
+  "what": "What it is (1-2 sentences summarizing the paper)",
+  "novel": "What is novel compared to prior work (1-2 sentences)",
+  "method": "Core technical idea / architecture / training trick (1-2 sentences)",
+  "validation": "How it is validated: datasets, metrics, comparisons (1-2 sentences)",
+  "discussion": "Discussion and limitations: open issues, constraints (1-2 sentences)",
   "nextReads": [
-    {"label": "関連論文名 (年)", "id": "arXiv ID（例: 2310.13289）または null"}
+    {"label": "Related paper title (year)", "id": "arXiv ID (e.g. 2310.13289) or null"}
   ]
 }
 
-nextReads は 3〜4 件。arXiv ID が不明な場合は null としてください。
-datasets は論文中で使用・評価に用いたデータセットを列挙してください（最大5件）。
-すべての説明は日本語で記述してください。"""
+nextReads should contain 3-4 entries. Use null for the arXiv ID when unknown.
+datasets should list up to 5 datasets used for training or evaluation.
+All values must be in English."""
 
 
 def get_client() -> OpenAI:
     token = os.environ.get("GITHUB_TOKEN")
     if not token:
-        raise EnvironmentError("GITHUB_TOKEN が設定されていません")
+        raise EnvironmentError("GITHUB_TOKEN is not set")
     cfg = SETTINGS["github_models"]
     return OpenAI(base_url=cfg["endpoint"], api_key=token)
 
@@ -96,59 +85,54 @@ def build_batch_prompt(papers: list[dict]) -> str:
     for paper in papers:
         paper_blocks.append(
             f"""ID: {paper["id"]}
-タイトル: {paper["title"]}
-著者: {", ".join(paper.get("authors", [])[:3])}
-カテゴリ: {", ".join(paper.get("categories", []))}
-投稿日: {paper.get("date", "")}
+Title: {paper["title"]}
+Authors: {", ".join(paper.get("authors", [])[:3])}
+Categories: {", ".join(paper.get("categories", []))}
+Date: {paper.get("date", "")}
 
-アブストラクト:
+Abstract:
 {paper["abstract"]}"""
         )
 
     joined = "\n\n---\n\n".join(paper_blocks)
-    return f"""以下の複数論文を分析してください。
-各論文の ID ごとに結果を返し、必ず JSON オブジェクトのみで回答してください。
-キーは論文 ID、値は次の形式です。
+    return f"""Analyze the papers below. Return ONE JSON object whose keys are
+the paper IDs and whose values follow this schema:
 
 {{
   "<paper_id>": {{
-    "titleJa": "論文タイトルの日本語訳（自然な日本語で）",
-    "org": "著者の主要所属機関（大学名・企業名を簡潔に、例: MIT / Google）",
-    "task": "タスク分類（例: TTS / ASR / 音源分離 / 異音検知 / 音楽生成 など、1〜2語）",
-    "proposedMethod": "提案手法の固有名詞・略称（ない場合は null）",
-    "datasets": ["使用データセット名1", "使用データセット名2"],
-    "what": "どんなもの？（1〜2文で研究の全体像）",
-    "novel": "先行研究と比べてすごい点（1〜2文で新規性・貢献）",
-    "method": "技術・手法のキモ（1〜2文でアーキテクチャや学習の核心）",
-    "validation": "有効性の検証（データセット・指標・比較実験を1〜2文で）",
-    "discussion": "議論・限界（残課題・制約を1〜2文で）",
-    "abstractJa": "アブストラクト全文の自然な日本語訳",
+    "org": "Primary author affiliation (short, e.g. MIT / Google)",
+    "task": "Task category (e.g. TTS / ASR / Source Separation / Anomalous Sound Detection), 1-3 words",
+    "proposedMethod": "Name or acronym of the proposed method (null if none)",
+    "datasets": ["Dataset name 1", "Dataset name 2"],
+    "what": "What it is (1-2 sentences)",
+    "novel": "Novelty vs prior work (1-2 sentences)",
+    "method": "Core technical idea (1-2 sentences)",
+    "validation": "Datasets / metrics / comparisons (1-2 sentences)",
+    "discussion": "Discussion and limitations (1-2 sentences)",
     "nextReads": [
-      {{"label": "関連論文名 (年)", "id": "arXiv ID または null"}}
+      {{"label": "Related paper title (year)", "id": "arXiv ID or null"}}
     ]
   }}
 }}
 
-nextReads は各論文 3〜4 件、arXiv ID が不明な場合は null としてください。
-datasets は使用・評価データセットを最大5件列挙してください。
-すべての説明は日本語で記述してください。
+Provide 3-4 nextReads entries per paper; use null for unknown arXiv IDs.
+List up to 5 datasets used for training or evaluation.
+All values must be in English.
 
 {joined}"""
 
 
 def fallback_result(paper: dict) -> dict:
     return {
-        "titleJa": paper["title"],
         "org": paper.get("org", ""),
         "task": None,
         "proposedMethod": None,
         "datasets": [],
-        "what": "解析に失敗しました。",
+        "what": "Analysis failed.",
         "novel": "",
         "method": "",
         "validation": "",
         "discussion": "",
-        "abstractJa": "",
         "nextReads": [],
     }
 
@@ -221,11 +205,11 @@ def main():
     raw_path = ROOT / "data" / "raw_papers.json"
     if not raw_path.exists():
         raise FileNotFoundError(
-            f"{raw_path} が見つかりません。fetch_papers.py を先に実行してください。"
+            f"{raw_path} not found. Run fetch_papers.py first."
         )
 
     papers = json.loads(raw_path.read_text())
-    print(f"[analyze] {len(papers)} 件の論文を解析します ...")
+    print(f"[analyze] Analyzing {len(papers)} papers ...")
 
     client = get_client()
     cfg = SETTINGS["github_models"]
@@ -247,7 +231,6 @@ def main():
                     "id": paper["id"],
                     "date": paper["date"],
                     "title": paper["title"],
-                    "titleJa": result.get("titleJa", paper["title"]),
                     "authors": paper.get("authors", []),
                     "org": result.get("org") or paper.get("org", ""),
                     "abstract": paper.get("abstract", ""),
@@ -264,7 +247,6 @@ def main():
                     "method": result.get("method", ""),
                     "validation": result.get("validation", ""),
                     "discussion": result.get("discussion", ""),
-                    "abstractJa": result.get("abstractJa", ""),
                     "nextReads": build_next_reads(result.get("nextReads", [])),
                 }
             )
