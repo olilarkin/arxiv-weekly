@@ -1,51 +1,53 @@
-# 音声研究週報 自動更新システム
+# Audio AI Weekly — Automatic Updater
 
-arXiv cs.SD / eess.AS カテゴリから毎週金曜日に論文を自動収集・解析し、GitHub Pages で公開するシステムです。
+A weekly pipeline that pulls papers from arXiv (`cs.SD` / `eess.AS`) every Friday,
+analyzes them with GitHub Models (GPT-4o), and publishes the results to GitHub
+Pages.
 
-## 対象分野
-- 音の基盤モデル（Audio Foundation Model）
-- 音源分離（Source Separation）
-- 異音検知（Anomalous Sound Detection）
+## Topics covered
+- Audio foundation models
+- Source separation
+- Anomalous sound detection
 
-## セットアップ
+## Setup
 
-### 1. リポジトリの設定
+### 1. Repository configuration
 ```bash
-# GitHub Pages を有効化
-# Settings → Pages → Source: Deploy from a branch → gh-pages
+# Enable GitHub Pages:
+# Settings -> Pages -> Source: Deploy from a branch -> gh-pages
 ```
 
-### 2. DevContainer で開発環境を起動
-VS Code でリポジトリを開き「Reopen in Container」を選択
+### 2. Launch the development environment in DevContainer
+Open the repository in VS Code and choose "Reopen in Container".
 
-### 3. 動作確認
+### 3. Smoke-test the pipeline
 ```bash
-python scripts/test_connection.py        # GitHub Models 疎通確認
-python scripts/fetch_papers.py --dry-run # arXiv 取得テスト
+python scripts/test_connection.py        # Check GitHub Models connectivity.
+python scripts/fetch_papers.py --dry-run # Test arXiv fetching.
 ```
 
-### 4. 手動実行
-GitHub Actions タブ → Weekly arXiv Update → Run workflow
+### 4. Run manually
+GitHub Actions tab -> Weekly arXiv Update -> Run workflow.
 
-## キーワードの追加・削除
-`config/keywords.yaml` の `include` リストを編集するだけで OK。コードの変更は不要です。
+## Adding or removing keywords
+Edit the `include` list in `config/keywords.yaml`. No code changes required.
 
-## ファイル構成
+## Project layout
 ```
-.devcontainer/     # DevContainer 設定
-.github/workflows/ # GitHub Actions ワークフロー
+.devcontainer/     # DevContainer config
+.github/workflows/ # GitHub Actions workflows
 config/
-  keywords.yaml    # フィルタリングキーワード（編集可）
-  settings.yaml    # システム設定
+  keywords.yaml    # Filter keywords (editable)
+  settings.yaml    # System settings
 data/
-  index.json       # 全週インデックス
-  latest.json      # 最新週データ
-  weekly/          # 週次 JSON（YYYY-MMDD.json）
+  index.json       # Index of all weeks
+  latest.json      # Latest week data
+  weekly/          # Weekly JSON files (YYYY-MMDD.json)
 scripts/
-  fetch_papers.py  # arXiv 取得
-  analyze_papers.py# GitHub Models 解析
-  build_data.py    # データ生成・インデックス更新
-  test_connection.py # 疎通確認
-web/               # React フロントエンド
+  fetch_papers.py    # Fetch from arXiv
+  analyze_papers.py  # Analyze via GitHub Models
+  build_data.py      # Build data and update index
+  test_connection.py # Connectivity smoke test
+web/                 # React frontend
 requirements.txt
 ```

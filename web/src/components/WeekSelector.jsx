@@ -8,26 +8,26 @@ export default function WeekSelector({ weeks, toDate, fromDate, onToChange, onFr
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap', width: '100%' }}>
       <span style={{ fontSize: 12, color: '#475569', letterSpacing: 1, whiteSpace: 'nowrap' }}>
-        期間:
+        Range:
       </span>
       <select
         value={fromDate ?? ''}
         onChange={e => onFromChange(e.target.value || null)}
         style={selectStyle}
       >
-        <option value="">全期間</option>
+        <option value="">All time</option>
         {[...weeks].reverse().filter(w => !toDate || w.date <= toDate).map(w => (
           <option key={w.date} value={w.date}>{w.date}</option>
         ))}
       </select>
-      <span style={{ fontSize: 12, color: '#334155' }}>〜</span>
+      <span style={{ fontSize: 12, color: '#334155' }}>–</span>
       <select
         value={toDate ?? ''}
         onChange={e => onToChange(e.target.value)}
         style={selectStyle}
       >
         {weeks.filter(w => !fromDate || w.date >= fromDate).map(w => (
-          <option key={w.date} value={w.date}>{w.date}（{w.count}件）</option>
+          <option key={w.date} value={w.date}>{w.date} ({w.count})</option>
         ))}
       </select>
     </div>

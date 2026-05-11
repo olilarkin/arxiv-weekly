@@ -1,176 +1,195 @@
-# 音声研究週報 自動更新システム
-## 要件定義書 ／ アーキテクチャ設計書
+# Audio AI Weekly — Automated Update System
+## Requirements and Architecture Design
 
-**バージョン:** v1.3　　**作成日:** 2026年4月25日　　**作成:** Claude Sonnet 4.6
+**Version:** v1.3 — **Date:** 2026-04-25 — **Author:** Claude Sonnet 4.6
 
 ---
 
-### 改訂履歴
+### Revision history
 
-| 版 | 日付 | 変更内容 |
+| Version | Date | Changes |
 |---|---|---|
-| 1.0 | 2026-04-25 | 初版作成 |
-| 1.1 | 2026-04-25 | 4項目の要件変更を反映（キーワード管理・50件・GitHub Models・過去データ保持） |
-| 1.2 | 2026-04-25 | 開発環境（DevContainer）節を追加 |
-| 1.3 | 2026-04-25 | JSON ファイル命名規則を YYYY-MMDD 形式に変更 |
+| 1.0 | 2026-04-25 | Initial draft |
+| 1.1 | 2026-04-25 | Reflected four requirement changes (keyword management, 50-paper cap, GitHub Models, historical data retention) |
+| 1.2 | 2026-04-25 | Added the development environment (DevContainer) section |
+| 1.3 | 2026-04-25 | Switched the JSON filename convention to `YYYY-MMDD` |
 
-> ★ = 変更箇所
-
----
-
-## 1. プロジェクト概要
-
-本ドキュメントは、音声・音響分野（arXiv cs.SD / eess.AS カテゴリ）の最新論文を毎週自動収集・解析し、GitHub Pages 上で公開する Web システムの要件定義およびアーキテクチャ設計をまとめたものです。
-
-### 1.1 背景と目的
-
-- arXiv cs.SD・eess.AS には週 100 件超の論文が投稿されており、手動での全量確認は困難
-- 音の基盤モデル・音源分離・異音検知の 3 分野に特化した週次サマリーを自動生成・公開する
-- GitHub Models から提供される Claude を用いて日本語要約（6 観点）を生成する
-- 過去の週次データをすべて保持し、UI 上で任意の週を参照できるようにする
-
-### 1.2 システム名称
-
-ArXiv 音声研究週報 自動更新システム（Sound Research Weekly Report System）
-
-### 1.3 対象ユーザー
-
-- 音声・音響 AI 研究者・エンジニア
-- 音の基盤モデル / 音源分離 / 異音検知に関心を持つ実務者
+> ★ marks changes from earlier versions.
 
 ---
 
-## 2. 要件定義
+## 1. Project overview
 
-### 2.1 機能要件
+This document captures the requirements and architectural design for a web
+system that weekly fetches, analyzes, and publishes the latest papers in the
+audio and acoustics domain (arXiv `cs.SD` / `eess.AS`) on GitHub Pages.
 
-#### 2.1.1 論文収集
+### 1.1 Background and goals
 
-- arXiv API（export.arxiv.org）から cs.SD・eess.AS カテゴリの直近 7 日分の新着論文を取得する
-- ★ 対象キーワードは `config/keywords.yaml` で管理し、追加・削除をコード修正なしに行えるようにする
-- ★ フィルタ後の取得件数上限は **50 件**とする（設定ファイルで変更可能）
-- 重複論文（クロスリスト）は arXiv ID をキーとして除外する
-- キーワードは OR 条件で適用し、タイトルまたはアブストラクトに含まれる論文を対象とする
+- Over 100 papers per week are posted to arXiv `cs.SD` / `eess.AS`; manual
+  triage is infeasible.
+- This system produces a weekly summary focused on three areas: audio
+  foundation models, source separation, and anomalous sound detection.
+- It uses the Claude/GPT-4o models exposed by GitHub Models to generate
+  six-angle structured summaries.
+- All historical weekly data is retained and browsable from the UI.
 
-#### 2.1.2 論文解析・要約
+### 1.2 System name
 
-- ★ GitHub Models から提供される Claude（`github-models` エンドポイント）を使用し、`GITHUB_TOKEN` で認証する
-- 各論文のアブストラクトを以下の 6 観点で日本語構造化要約する
-  - ① どんなもの？
-  - ② 先行研究と比べてすごい点
-  - ③ 技術・手法のキモ
-  - ④ 有効性の検証方法
-  - ⑤ 議論・限界
-  - ⑥ 次に読むべき論文（arXiv ハイパーリンク付き）
-- 今週の技術トレンドを 3 行で要約する
+ArXiv Audio AI Weekly — Automated Update System.
 
-> **変更（v1.1）:** `Anthropic Claude API + ANTHROPIC_API_KEY` から `GitHub Models + GITHUB_TOKEN` に変更。外部シークレット不要になりセットアップが簡素化される。
+### 1.3 Target users
 
-#### 2.1.3 データ永続化
-
-- ★ 解析結果の JSON ファイルは上書きせず、週ごとに新規ファイルとして保存する（`data/weekly/YYYY-MMDD.json`）
-- ★ 全週分のインデックスファイル（`data/index.json`）を自動生成・更新し、週一覧を管理する
-- `data/latest.json` は最新週ファイルへのポインタとして機能する（ファイル実体はコピー）
-- Git リポジトリに週次ファイルを蓄積することで、データは半永久的に保持される
-
-> **変更（v1.1）:** `latest.json` 上書きから「週次ファイル新規作成 + インデックス管理」に変更。過去データがすべて保持される。
-
-#### 2.1.4 Web ページ生成・公開
-
-- React + Vite でビルドした静的 HTML を GitHub Pages で公開する
-- UI は現行の Artifact デザイン（ダークテーマ、アコーディオン表示）を踏襲する
-- ★ 週セレクター（ドロップダウン）を追加し、過去の任意の週のデータを UI 上で参照できるようにする
-- 初期表示は最新週のデータを表示する
-
-#### 2.1.5 自動スケジューリング
-
-- GitHub Actions により **毎週金曜日 21:00 JST（12:00 UTC）** に自動実行する
-- 手動トリガー（`workflow_dispatch`）にも対応する
-- 実行ログを GitHub Actions の Artifacts として 30 日間保持する
+- Researchers and engineers in audio / acoustics AI.
+- Practitioners interested in audio foundation models, source separation, or
+  anomalous sound detection.
 
 ---
 
-### 2.2 非機能要件
+## 2. Requirements
 
-| 項目 | 要件 | 備考 |
+### 2.1 Functional requirements
+
+#### 2.1.1 Paper collection
+
+- Fetch new submissions from the last 7 days for `cs.SD` and `eess.AS`
+  categories via the arXiv API (export.arxiv.org).
+- ★ The keyword list is managed in `config/keywords.yaml`. Adding or removing
+  keywords requires no code changes.
+- ★ The maximum number of papers kept after filtering is **50** (configurable).
+- Cross-listed duplicates are deduplicated by arXiv ID.
+- Keywords are applied with OR semantics over title and abstract.
+
+#### 2.1.2 Paper analysis and summarization
+
+- ★ Uses GitHub Models (endpoint `models.inference.ai.azure.com`),
+  authenticated with `GITHUB_TOKEN`.
+- Each abstract is analyzed and structured into six angles in English:
+  - ① What it is
+  - ② Novelty vs prior work
+  - ③ Core method
+  - ④ Validation
+  - ⑤ Discussion and limits
+  - ⑥ Recommended reads (with arXiv links)
+- A three-line weekly technical trend summary is also generated.
+
+> **Change (v1.1):** Migrated from `Anthropic Claude API + ANTHROPIC_API_KEY`
+> to `GitHub Models + GITHUB_TOKEN`. No external secrets are required.
+
+#### 2.1.3 Data persistence
+
+- ★ Analysis results are never overwritten; one file is written per week
+  (`data/weekly/YYYY-MMDD.json`).
+- ★ A `data/index.json` is automatically generated and updated to track all
+  weeks.
+- `data/latest.json` serves as a pointer to the most recent week (a file copy).
+- Weekly files accumulate in Git and are retained indefinitely.
+
+> **Change (v1.1):** Switched from overwriting `latest.json` to writing new
+> weekly files plus an index, so historical data is preserved.
+
+#### 2.1.4 Web page generation and publishing
+
+- A static site built with React + Vite is published on GitHub Pages.
+- The UI follows the existing Artifact design (dark theme, accordion cards).
+- ★ A week selector lets users browse any past week.
+- The latest week is shown by default.
+
+#### 2.1.5 Scheduling
+
+- A GitHub Actions cron triggers the pipeline **every Friday at 12:00 UTC
+  (21:00 JST)**.
+- A `workflow_dispatch` manual trigger is also supported.
+- Run logs are retained as GitHub Actions Artifacts for 30 days.
+
+---
+
+### 2.2 Non-functional requirements
+
+| Item | Requirement | Notes |
 |---|---|---|
-| 可用性 | GitHub Pages の SLA に準拠（月次 99.9% 以上） | |
-| 実行時間 | GitHub Actions ジョブは 30 分以内に完了すること | 50 件 × 解析時間を考慮 |
-| コスト | ★ GitHub Models 利用のため API 費用は原則無料 | GitHub Pro / Team プランの制限内 |
-| セキュリティ | ★ `GITHUB_TOKEN` のみ使用。外部 API キー不要 | Actions の自動発行トークンで完結 |
-| 保守性 | スクリプト・設定ファイルはすべて Git 管理下に置く | |
-| 拡張性 | ★ キーワードを設定ファイルで追加・削除可能 | コード修正不要 |
-| データ保持 | ★ 過去の週次 JSON を削除・上書きせず永続保持する | Git 履歴でも復元可能 |
+| Availability | Subject to GitHub Pages SLA (≥99.9% monthly) | |
+| Runtime | Each GitHub Actions job completes within 30 minutes | Accounts for analyzing 50 papers |
+| Cost | ★ Free in practice via GitHub Models | Stays within GitHub Pro / Team plan limits |
+| Security | ★ Uses only `GITHUB_TOKEN`; no external keys | Token is issued automatically by Actions |
+| Maintainability | All scripts and configs are version controlled | |
+| Extensibility | ★ Keywords can be added/removed via config | No code changes needed |
+| Retention | ★ Weekly JSONs are never deleted or overwritten | Recoverable from Git history |
 
-### 2.3 制約事項
+### 2.3 Constraints
 
-- arXiv API の利用規約に準拠し、過度なリクエストを行わない（最大 3 req/sec）
-- GitHub Models の利用規約・レート制限に準拠する
-- GitHub Actions の無料枠（月 2,000 分）内で運用する（週次実行で消費は月約 120〜180 分）
-- 論文の図・全文の無断転載は行わず、アブストラクトのみを使用する
-- 週次 JSON ファイルの蓄積によりリポジトリサイズが増加するため、1 ファイルあたり 500KB 以内を目安とする
+- Respect arXiv's terms of use; do not exceed 3 req/sec.
+- Respect GitHub Models' rate limits and terms.
+- Run within the GitHub Actions free tier (2,000 minutes/month). Weekly
+  execution typically consumes ~120-180 minutes/month.
+- Do not reproduce figures or full text from papers; only abstracts are used.
+- Keep each weekly JSON file under ~500 KB to limit repository growth.
 
 ---
 
-## 3. アーキテクチャ設計
+## 3. Architecture
 
-### 3.1 システム全体構成
+### 3.1 System overview
 
-本システムは「データ収集・解析パイプライン」と「静的 Web フロントエンド」の 2 層で構成され、GitHub エコシステムで完結します。
+The system has two layers — a data collection/analysis pipeline and a static
+web frontend — and stays within the GitHub ecosystem.
 
-> 外部依存は arXiv API と GitHub Models の 2 つのみ。GitHub Models は `GITHUB_TOKEN` で認証されるため、外部シークレット管理が不要です。
+> External dependencies are limited to the arXiv API and GitHub Models. Since
+> GitHub Models authenticates with `GITHUB_TOKEN`, no external secret
+> management is needed.
 
-| レイヤー | コンポーネント | 技術スタック |
+| Layer | Component | Stack |
 |---|---|---|
-| スケジューラ | 週次自動実行 | GitHub Actions (cron) |
-| データ収集 | arXiv API クライアント | Python 3.11 + requests |
-| AI 解析 | ★ GitHub Models クライアント | ★ OpenAI SDK（GitHub Models エンドポイント） |
-| データ永続化 | ★ 週次 JSON の Git コミット | ★ `data/weekly/YYYY-MMDD.json`（上書きなし） |
-| インデックス管理 | ★ 全週インデックス自動更新 | ★ `data/index.json` |
-| フロントエンド | 静的 React アプリ | React 18 + Vite |
-| ホスティング | 静的サイト配信 | GitHub Pages |
+| Scheduler | Weekly cron | GitHub Actions (cron) |
+| Data collection | arXiv API client | Python 3.11 + requests |
+| AI analysis | ★ GitHub Models client | ★ OpenAI SDK (pointed at GitHub Models) |
+| Persistence | ★ Weekly JSONs committed to Git | ★ `data/weekly/YYYY-MMDD.json` (immutable) |
+| Index management | ★ Automated all-week index | ★ `data/index.json` |
+| Frontend | Static React app | React 18 + Vite |
+| Hosting | Static site | GitHub Pages |
 
 ---
 
-### 3.2 GitHub Models 連携詳細
+### 3.2 GitHub Models integration
 
-| 項目 | 値 |
+| Item | Value |
 |---|---|
-| エンドポイント | `https://models.inference.ai.azure.com` |
-| 認証 | `Authorization: Bearer $GITHUB_TOKEN` |
-| 使用モデル | `claude-3-7-sonnet`（settings.yaml で変更可能） |
-| SDK | `openai` Python パッケージ（base_url を GitHub Models に向ける） |
-| レート制限 | GitHub Pro: 50 req/day, 10 req/min |
-| コスト | GitHub Pro / Team / Enterprise に含まれる |
+| Endpoint | `https://models.inference.ai.azure.com` |
+| Auth | `Authorization: Bearer $GITHUB_TOKEN` |
+| Model | `gpt-4o` (configurable in `settings.yaml`) |
+| SDK | `openai` Python package with `base_url` pointed at GitHub Models |
+| Rate limits | GitHub Pro: 50 req/day, 10 req/min |
+| Cost | Included with GitHub Pro / Team / Enterprise |
 
-> `GITHUB_TOKEN` は GitHub Actions が自動発行するため、リポジトリ管理者が Secrets に登録する必要はありません。
+> `GITHUB_TOKEN` is automatically issued by GitHub Actions; admins do not need
+> to add it to repository Secrets.
 
 ---
 
-### 3.3 リポジトリ構成
+### 3.3 Repository layout
 
 ```
 arxiv-weekly/
 ├── .devcontainer/
-│   └── devcontainer.json       # Python 3.11 ベース image + features + 初回セットアップ
+│   └── devcontainer.json       # Python 3.11 base image + features + first-time setup
 ├── .github/
 │   └── workflows/
-│       └── update.yml          # GitHub Actions ワークフロー
+│       └── update.yml          # GitHub Actions workflow
 ├── config/
-│   ├── keywords.yaml           # ★ フィルタキーワード（追加・削除はここだけ）
-│   └── settings.yaml           # max_papers=50 等のシステム設定
+│   ├── keywords.yaml           # ★ Filter keywords (edit here only)
+│   └── settings.yaml           # System settings (max_papers=50, etc.)
 ├── data/
-│   ├── index.json              # ★ 全週インデックス
-│   ├── latest.json             # 最新週データのコピー
+│   ├── index.json              # ★ All-week index
+│   ├── latest.json             # Copy of the most recent week
 │   └── weekly/
-│       └── YYYY-MMDD.json      # ★ 週次論文データ（不変・上書きなし）
+│       └── YYYY-MMDD.json      # ★ Weekly paper data (immutable)
 ├── scripts/
-│   ├── fetch_papers.py         # arXiv 取得・フィルタ・カテゴリ分類
-│   ├── analyze_papers.py       # GitHub Models で 6 観点解析
-│   ├── build_data.py           # 週次 JSON 生成・インデックス更新
-│   └── test_connection.py      # GitHub Models 疎通確認
+│   ├── fetch_papers.py         # Fetch / filter / categorize from arXiv
+│   ├── analyze_papers.py       # Six-angle analysis via GitHub Models
+│   ├── build_data.py           # Build weekly JSON / update index
+│   └── test_connection.py      # GitHub Models connectivity check
 ├── web/
-│   ├── public/data/            # ビルド時にコピーされるデータ
+│   ├── public/data/            # Data copied at build time
 │   ├── src/
 │   │   ├── App.jsx
 │   │   └── components/
@@ -188,99 +207,104 @@ arxiv-weekly/
 
 ---
 
-### 3.4 設定ファイル仕様
+### 3.4 Config file specification
 
 #### 3.4.1 config/keywords.yaml
 
-| フィールド | 型 | 説明 |
+| Field | Type | Description |
 |---|---|---|
-| `include` | `string[]` | フィルタリングキーワード（OR 条件）。タイトル・アブストに対してマッチ |
-| `exclude` | `string[]` | 除外キーワード（任意）|
-| `categories` | `string[]` | 対象 arXiv カテゴリ（例: cs.SD, eess.AS） |
-| `ui_categories` | `object[]` | UI 表示用カテゴリ定義（id / label / color / keywords） |
+| `include` | `string[]` | Filter keywords (OR semantics). Matched against title and abstract. |
+| `exclude` | `string[]` | Optional exclusion keywords. |
+| `categories` | `string[]` | Target arXiv categories (e.g. cs.SD, eess.AS). |
+| `ui_categories` | `object[]` | UI category definitions (id / label / color / keywords). |
 
-> 例）「異常音検知」の研究が増えた場合は `include` に `'anomalous sound'` を追記するだけでフィルタに反映される。
+> Example: to track anomalous sound detection, simply add `'anomalous sound'`
+> to `include`.
 
 #### 3.4.2 config/settings.yaml
 
-| フィールド | 型 | デフォルト | 説明 |
+| Field | Type | Default | Description |
 |---|---|---|---|
-| `max_papers` | int | `50` | ★ フィルタ後の最大取得件数 |
-| `lookback_days` | int | `7` | 取得対象期間（日数） |
-| `model` | string | `claude-3-7-sonnet` | ★ GitHub Models で使用するモデル名 |
-| `retry_max` | int | `3` | API エラー時の最大リトライ回数 |
-| `request_interval` | float | `1.0` | arXiv API リクエスト間隔（秒） |
+| `max_papers` | int | `50` | ★ Maximum papers after filtering |
+| `lookback_days` | int | `7` | Number of days of recent papers to consider |
+| `model` | string | `gpt-4o` | ★ GitHub Models model name |
+| `retry_max` | int | `3` | Maximum retries on API errors |
+| `request_interval` | float | `1.0` | Delay between arXiv API requests (seconds) |
 
 ---
 
-### 3.5 データフロー
+### 3.5 Data flow
 
-#### Step 1 — 論文収集（fetch_papers.py）
+#### Step 1 — Fetch papers (`fetch_papers.py`)
 
-1. arXiv API に GET リクエスト（クエリ：`cat:cs.SD OR cat:eess.AS`、直近 7 日）
-2. Atom XML を解析し、タイトル・ID・投稿日・著者・アブストラクトを抽出
-3. `config/keywords.yaml` の include キーワードで OR フィルタリングを適用
-4. ★ フィルタ後 50 件を上限として `data/raw_papers.json` に保存
+1. GET the arXiv API with the query `cat:cs.SD OR cat:eess.AS` for the past 7
+   days.
+2. Parse the Atom XML and extract title, ID, date, authors, and abstract.
+3. Apply OR-filter using the include keywords from `config/keywords.yaml`.
+4. ★ Cap the result at 50 papers and save to `data/raw_papers.json`.
 
-#### Step 2 — AI 解析（analyze_papers.py）
+#### Step 2 — AI analysis (`analyze_papers.py`)
 
-1. ★ GitHub Models エンドポイントに openai SDK 経由でリクエスト。`GITHUB_TOKEN` で認証
-2. `raw_papers.json` を読み込み、各論文アブストラクトを 6 観点の JSON で返すよう指示
-3. レスポンスをパースし `analyzed_papers.json` に追記
-4. API エラー時はリトライ（最大 3 回、指数バックオフ）
+1. ★ Send requests to GitHub Models via the OpenAI SDK, authenticated with
+   `GITHUB_TOKEN`.
+2. Read `raw_papers.json` and ask the model to return a six-angle JSON for each
+   abstract.
+3. Parse responses and write `analyzed_papers.json`.
+4. Retry on API errors (up to 3 attempts, exponential backoff).
 
-#### Step 3 — データ生成・コミット（build_data.py）
+#### Step 3 — Build data and commit (`build_data.py`)
 
-1. ★ 実行日付（`YYYY-MMDD`）をファイル名として `data/weekly/YYYY-MMDD.json` に**新規保存**
-2. ★ 既存ファイルが存在する場合はスキップ（同一日の重複実行を防止）
-3. ★ `data/index.json` を更新：日付・ファイルパス・論文数・実行日時を追記
-4. `data/latest.json` に最新週のデータをコピー
-5. 変更ファイルをまとめて git commit & push
+1. ★ Write a new file at `data/weekly/YYYY-MMDD.json` using the run date.
+2. ★ Skip if the file already exists (idempotency for same-day reruns).
+3. ★ Update `data/index.json` with date, file path, paper count, and timestamp.
+4. Copy the latest week to `data/latest.json`.
+5. Commit and push all changes.
 
-#### Step 4 — フロントエンドビルド・デプロイ
+#### Step 4 — Build frontend and deploy
 
-1. `web/` ディレクトリで `npm ci && npm run build`
-2. ★ フロントエンドは起動時に `data/index.json` を取得して週一覧を構築
-3. ★ デフォルトは最新週（`data/latest.json`）を表示。週セレクターで任意の週に切り替え可能
-4. `web/dist/` を GitHub Pages（gh-pages ブランチ）にデプロイ
+1. Run `npm ci && npm run build` in `web/`.
+2. ★ The frontend fetches `data/index.json` at startup to build the week list.
+3. ★ The latest week (`data/latest.json`) is shown by default; the week
+   selector switches to any other week.
+4. Deploy `web/dist/` to GitHub Pages (`gh-pages` branch).
 
 ---
 
-### 3.6 GitHub Actions ワークフロー
+### 3.6 GitHub Actions workflow
 
-| ジョブ名 | 内容 | 使用トークン | 依存 |
+| Job | Description | Token | Depends on |
 |---|---|---|---|
-| `fetch` | arXiv API から論文取得 | 不要 | なし |
-| `analyze` | ★ GitHub Models で 6 観点解析 | ★ `GITHUB_TOKEN` | fetch |
-| `build` | ★ 週次 JSON 生成・インデックス更新・push | `GITHUB_TOKEN` | analyze |
-| `deploy` | Vite ビルド → GitHub Pages | `GITHUB_TOKEN` | build |
+| `fetch` | Fetch papers from arXiv | None | — |
+| `analyze` | ★ Six-angle analysis via GitHub Models | ★ `GITHUB_TOKEN` | fetch |
+| `build` | ★ Build weekly JSON / update index / push | `GITHUB_TOKEN` | analyze |
+| `deploy` | Vite build → GitHub Pages | `GITHUB_TOKEN` | build |
 
-> ワークフローに `permissions: contents: write` を付与することで push 操作が可能になります。
+> Granting `permissions: contents: write` to the workflow enables pushing.
 
 ---
 
-### 3.7 フロントエンド設計
+### 3.7 Frontend design
 
-#### 3.7.1 コンポーネント構成
+#### 3.7.1 Components
 
-| コンポーネント | 役割 |
+| Component | Role |
 |---|---|
-| `App.jsx` | データ取得・週セレクター・カテゴリフィルター状態管理 |
-| `Header.jsx` | タイトル・日付・論文数 |
-| `WeekSelector.jsx` | ★ 週一覧ドロップダウン。`index.json` から週リストを生成 |
-| `CategoryFilter.jsx` | カテゴリタブ（すべて / 音の基盤モデル / 音源分離 / 異音検知） |
-| `PaperCard.jsx` | 論文カード。ヘッダークリックで 6 観点を一括展開 |
-| `TrendSummary.jsx` | 今週のトレンド 3 行 |
+| `App.jsx` | Data fetching; week selector and filter state |
+| `Header.jsx` | Title, date, paper count |
+| `WeekSelector.jsx` | ★ Week dropdown built from `index.json` |
+| `CategoryFilter.jsx` | Category tabs (All / Foundation Models / Source Separation / Anomalous Sound Detection) |
+| `PaperCard.jsx` | Paper card. Clicking the header expands the six-angle view. |
+| `TrendSummary.jsx` | Three-line weekly trend summary |
 
-#### 3.7.2 データ取得フロー
+#### 3.7.2 Data flow
 
-1. 起動時：`data/index.json` を fetch → 週リストを WeekSelector に渡す
-2. 初期表示：`data/latest.json` を fetch → 最新週のデータを表示
-3. ★ 週切替時：`data/weekly/YYYY-MMDD.json` を fetch → 選択週のデータを表示
+1. On startup, fetch `data/index.json` and pass the week list to `WeekSelector`.
+2. Initial render: fetch `data/latest.json` and render the latest week.
+3. ★ On week change: fetch `data/weekly/YYYY-MMDD.json` and render that week.
 
 ---
 
-### 3.8 データスキーマ
+### 3.8 Data schemas
 
 #### data/index.json
 
@@ -308,14 +332,13 @@ arxiv-weekly/
   "categories": [
     {
       "id": "foundation",
-      "label": "音の基盤モデル",
+      "label": "Audio Foundation Models",
       "color": "#38bdf8",
       "papers": [
         {
           "id": "2604.10905",
           "date": "Apr 15",
           "title": "...",
-          "titleJa": "...",
           "org": "NVIDIA / UMD",
           "url": "https://arxiv.org/abs/2604.10905",
           "what": "...",
@@ -331,130 +354,130 @@ arxiv-weekly/
     }
   ],
   "trend": [
-    "① 音の基盤モデルは...",
-    "② 音源分離は...",
-    "③ 異音検知は..."
+    "Audio foundation models advanced ...",
+    "Source separation accuracy improved ...",
+    "Anomalous sound detection ..."
   ]
 }
 ```
 
 ---
 
-### 3.9 セキュリティ設計
+### 3.9 Security
 
-| 対象 | 対策 |
+| Surface | Mitigation |
 |---|---|
-| ★ GitHub Models 認証 | ★ `GITHUB_TOKEN`（Actions 自動発行）を使用。外部 API キー不要 |
-| GitHub Token 権限 | `contents: write` のみ付与。最小権限の原則を遵守 |
-| arXiv API | 認証不要。User-Agent ヘッダーを付与してリクエスト元を明示 |
-| フロントエンド | 静的サイトのため API エンドポイントは存在しない。React のデフォルトエスケープで XSS 対策 |
-| 週次 JSON の改ざん | Git コミット履歴で変更を追跡可能。意図しない上書きはスキップ処理で防止 |
+| ★ GitHub Models auth | ★ Uses `GITHUB_TOKEN` (auto-issued by Actions); no external keys |
+| GitHub token scope | Grant only `contents: write` (principle of least privilege) |
+| arXiv API | No auth required; sets a descriptive User-Agent |
+| Frontend | Static site, no API endpoints; React's default escaping mitigates XSS |
+| Weekly-JSON tampering | Git history tracks every change; same-day reruns are skipped |
 
 ---
 
-## 4. 開発環境（DevContainer）
+## 4. Development environment (DevContainer)
 
-### 4.1 DevContainer が解決する課題
+### 4.1 Problems the DevContainer solves
 
-| 課題 | DevContainer による解決 |
+| Problem | Solution |
 |---|---|
-| Python・Node.js のバージョン差異 | コンテナ内で固定バージョンを使用。ホストの環境に依存しない |
-| arXiv / GitHub Models への疎通確認 | コンテナからそのまま Python スクリプトを実行できる |
-| GitHub Actions との環境差異 | CI と同じ Ubuntu ベースイメージを使用 |
-| 依存パッケージの競合 | venv をコンテナ内に閉じ込め、グローバル汚染を防ぐ |
-| 新メンバーのセットアップ時間 | 「Reopen in Container」するだけで完了 |
+| Python / Node version drift | Pinned versions inside the container; host independent |
+| Connectivity to arXiv / GitHub Models | Run scripts directly from the container |
+| Diverging local vs CI envs | Same Ubuntu base image as CI |
+| Dependency conflicts | A venv lives inside the container; no global pollution |
+| Onboarding time for new contributors | "Reopen in Container" and you're done |
 
-### 4.2 コンテナ環境仕様
+### 4.2 Container spec
 
-| 項目 | 仕様 |
+| Item | Spec |
 |---|---|
-| ベースイメージ | `mcr.microsoft.com/devcontainers/python:3.11-bullseye` |
-| Python | 3.11（コンテナ固定） |
-| Node.js | 20.x LTS（nvm 経由） |
-| GitHub CLI | インストール済み（GitHub Models テスト用） |
+| Base image | `mcr.microsoft.com/devcontainers/python:3.11-bullseye` |
+| Python | 3.11 (pinned in container) |
+| Node.js | 20.x LTS (via nvm) |
+| GitHub CLI | Pre-installed (for testing GitHub Models) |
 
-### 4.3 VS Code 拡張機能（自動インストール）
+### 4.3 VS Code extensions (auto-installed)
 
-| 拡張機能 | 用途 |
+| Extension | Purpose |
 |---|---|
-| `ms-python.python` | Python 補完・デバッグ |
-| `charliermarsh.ruff` | Python フォーマッタ |
-| `esbenp.prettier-vscode` | TypeScript / JSX フォーマット |
-| `GitHub.copilot` | AI コード補完 |
-| `GitHub.vscode-github-actions` | workflow.yml の構文チェック |
-| `redhat.vscode-yaml` | config/*.yaml の編集支援 |
+| `ms-python.python` | Python completion / debugging |
+| `charliermarsh.ruff` | Python linter / formatter |
+| `esbenp.prettier-vscode` | TypeScript / JSX formatting |
+| `GitHub.copilot` | AI code completion |
+| `GitHub.vscode-github-actions` | workflow.yml syntax check |
+| `redhat.vscode-yaml` | `config/*.yaml` editing |
 
-### 4.4 開発環境チェックリスト
+### 4.4 Environment checklist
 
 ```bash
 python --version                              # Python 3.11.x
 node --version                                # v20.x.x
 gh auth status                                # Logged in to github.com
-python scripts/test_connection.py             # GitHub Models 疎通確認
-python scripts/fetch_papers.py --dry-run      # arXiv 取得テスト
+python scripts/test_connection.py             # GitHub Models connectivity
+python scripts/fetch_papers.py --dry-run      # arXiv fetch test
 cd web && npm run dev                         # http://localhost:5173
 ```
 
 ---
 
-## 5. 開発ロードマップ
+## 5. Development roadmap
 
-| フェーズ | 作業内容 | 期間目安 |
+| Phase | Work | Estimate |
 |---|---|---|
-| Phase 1 | ★ リポジトリ作成・DevContainer 構築・GitHub Pages 疎通確認 | 1 日 |
-| Phase 2 | arXiv 取得スクリプト実装・keywords.yaml 設計・単体テスト | 0.5 日 |
-| Phase 3 | GitHub Models 解析スクリプト実装・プロンプト調整（50 件対応） | 1 日 |
-| Phase 4 | 週次 JSON 生成・index.json 管理スクリプト実装 | 0.5 日 |
-| Phase 5 | GitHub Actions ワークフロー実装・E2E テスト | 1 日 |
-| Phase 6 | React フロントエンド実装（週セレクター UI 追加） | 1 日 |
-| Phase 7 | 全体結合テスト・初回本番実行確認 | 0.5 日 |
+| Phase 1 | ★ Create repo, set up DevContainer, verify GitHub Pages | 1 day |
+| Phase 2 | Implement arXiv fetcher, design `keywords.yaml`, unit tests | 0.5 day |
+| Phase 3 | Implement GitHub Models analyzer and tune prompts (50-paper batch) | 1 day |
+| Phase 4 | Implement weekly JSON / `index.json` builder | 0.5 day |
+| Phase 5 | Implement GitHub Actions workflow and run E2E test | 1 day |
+| Phase 6 | Build React frontend (add week selector UI) | 1 day |
+| Phase 7 | Integration test and first production run | 0.5 day |
 
 ---
 
-## 6. 技術スタック一覧
+## 6. Tech stack
 
-| カテゴリ | ライブラリ／サービス | バージョン | 用途 |
+| Category | Library / Service | Version | Purpose |
 |---|---|---|---|
-| 言語 | Python | 3.11 | バックエンドスクリプト全般 |
-| 言語 | TypeScript / React | 18.x | フロントエンド |
-| ★ AI | ★ GitHub Models (Claude) | — | ★ 論文解析・要約（GITHUB_TOKEN 認証） |
-| ★ AI SDK | ★ openai（Python） | latest | ★ GitHub Models への接続 |
-| ビルド | Vite | 5.x | React アプリビルド |
-| CI/CD | GitHub Actions | — | 自動実行・デプロイ |
-| ホスティング | GitHub Pages | — | 静的サイト配信 |
-| ★ 開発環境 | ★ Dev Containers | — | 統一開発環境 |
-| ★ 開発環境 | ★ GitHub Codespaces | — | ブラウザベースの開発環境 |
+| Language | Python | 3.11 | All backend scripts |
+| Language | TypeScript / React | 18.x | Frontend |
+| ★ AI | ★ GitHub Models (GPT-4o) | — | ★ Paper analysis (auth via `GITHUB_TOKEN`) |
+| ★ AI SDK | ★ openai (Python) | latest | ★ Client for GitHub Models |
+| Build | Vite | 5.x | React app build |
+| CI/CD | GitHub Actions | — | Scheduling and deploy |
+| Hosting | GitHub Pages | — | Static hosting |
+| ★ Dev env | ★ Dev Containers | — | Unified development env |
+| ★ Dev env | ★ GitHub Codespaces | — | Browser-based development |
 
 ---
 
-## 7. リスクと対策
+## 7. Risks and mitigations
 
-| リスク | 影響 | 対策 |
+| Risk | Impact | Mitigation |
 |---|---|---|
-| arXiv API の仕様変更 | 中 | 公式ドキュメントを定期確認。OAI-PMH をフォールバックとして実装 |
-| ★ GitHub Models のレート制限 | 中 | ★ 1 論文ごとに sleep を挿入。50 件を上限として制限内に収める |
-| ★ GitHub Models の提供モデル変更 | 中 | ★ モデル名を settings.yaml で管理し、変更時はファイル編集のみで対応 |
-| リポジトリサイズの増大 | 低 | 週次 JSON を 500KB 以内に抑える |
-| 同一日の重複実行 | 低 | 既存ファイルが存在する場合はスキップ処理で防止 |
-| GitHub Actions 無料枠超過 | 低 | 月 2,000 分の枠内で運用（週次で月約 120〜180 分） |
+| arXiv API spec change | Medium | Track official docs; OAI-PMH as fallback |
+| ★ GitHub Models rate limit | Medium | ★ Sleep between calls; cap at 50 papers |
+| ★ Model availability change | Medium | ★ Model name is in `settings.yaml`; easy swap |
+| Repository size growth | Low | Keep each weekly JSON under 500 KB |
+| Same-day rerun | Low | Skip when file already exists |
+| GitHub Actions quota | Low | Operate within 2,000 min/month (~120-180/month usage) |
 
 ---
 
-## 8. 用語集
+## 8. Glossary
 
-| 用語 | 説明 |
+| Term | Description |
 |---|---|
-| arXiv | オープンアクセスプレプリントサーバー（Cornell University 運営） |
-| cs.SD | arXiv の Sound カテゴリ |
-| eess.AS | arXiv の Audio and Speech Processing カテゴリ |
-| GitHub Models | GitHub が提供する AI モデル推論サービス。`GITHUB_TOKEN` で利用可能 |
-| `GITHUB_TOKEN` | GitHub Actions が自動発行するリポジトリスコープのアクセストークン |
-| `YYYY-MMDD` | 本システムのファイル命名規則（例：`2026-0425` = 2026年4月25日） |
-| GitHub Actions | GitHub が提供する CI/CD プラットフォーム |
-| GitHub Pages | GitHub が提供する静的サイトホスティングサービス |
-| `workflow_dispatch` | GitHub Actions の手動トリガー機能 |
-| Vite | 高速な JavaScript ビルドツール |
+| arXiv | Open-access preprint server operated by Cornell University |
+| cs.SD | arXiv's Sound category |
+| eess.AS | arXiv's Audio and Speech Processing category |
+| GitHub Models | GitHub's AI model inference service, usable with `GITHUB_TOKEN` |
+| `GITHUB_TOKEN` | Auto-issued repository-scoped access token in GitHub Actions |
+| `YYYY-MMDD` | Filename convention used by this project (e.g. `2026-0425` = 2026-04-25) |
+| GitHub Actions | GitHub's CI/CD platform |
+| GitHub Pages | GitHub's static site hosting service |
+| `workflow_dispatch` | GitHub Actions manual trigger |
+| Vite | Fast JavaScript build tool |
 
 ---
 
-*以上（v1.3）*
+*End (v1.3)*

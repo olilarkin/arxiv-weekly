@@ -93,7 +93,7 @@ class TestIsWithinWindow:
         assert is_within_window("2026-04-27T00:00:00Z", 7, self.REF) is False
 
     def test_invalid_iso_returns_true(self):
-        # パース失敗時は含める
+        # Include papers if the date fails to parse.
         assert is_within_window("not-a-date", 7, self.REF) is True
 
 
@@ -104,7 +104,7 @@ import xml.etree.ElementTree as ET
 NS = {"atom": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
 
 def make_entry(authors: list[tuple[str, str]]) -> ET.Element:
-    """(name, affiliation) のリストからAtom entryを生成"""
+    """Build an Atom entry from a list of (name, affiliation) tuples."""
     entry = ET.Element("{http://www.w3.org/2005/Atom}entry")
     for name, affil in authors:
         author = ET.SubElement(entry, "{http://www.w3.org/2005/Atom}author")

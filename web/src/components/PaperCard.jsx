@@ -2,12 +2,12 @@ import { useState } from 'react'
 import { stripPrefix } from '../utils.js'
 
 const SECTIONS = [
-  { key: 'what',       icon: '1.', label: 'どんなもの？',        color: '#cbd5e1' },
-  { key: 'novel',      icon: '2.', label: '先行研究より優れた点', color: '#38bdf8' },
-  { key: 'method',     icon: '3.', label: '技術・手法のキモ',     color: '#a78bfa' },
-  { key: 'validation', icon: '4.', label: '有効性の検証',         color: '#4ade80' },
-  { key: 'discussion', icon: '5.', label: '議論・限界',           color: '#fb923c' },
-  { key: 'nextReads',  icon: '6.', label: '次に読むべき論文',     color: '#f472b6' },
+  { key: 'what',       icon: '1.', label: 'What it is',           color: '#cbd5e1' },
+  { key: 'novel',      icon: '2.', label: 'Novelty vs prior work', color: '#38bdf8' },
+  { key: 'method',     icon: '3.', label: 'Core method',           color: '#a78bfa' },
+  { key: 'validation', icon: '4.', label: 'Validation',            color: '#4ade80' },
+  { key: 'discussion', icon: '5.', label: 'Discussion & limits',   color: '#fb923c' },
+  { key: 'nextReads',  icon: '6.', label: 'Recommended reads',     color: '#f472b6' },
 ]
 
 
@@ -25,7 +25,7 @@ function Badge({ href, onClick, color, bg, children }) {
 export default function PaperCard({ paper, cat, animDelay = 0, citationCount, githubUrl, isFavorite, onToggleFavorite, isRead, onToggleRead }) {
   const [expanded, setExpanded] = useState(false)
 
-  // フロントエンドで取得した githubUrl を優先、なければ JSON の githubRepo
+  // Prefer the runtime githubUrl, fall back to githubRepo from the JSON.
   const codeUrl = githubUrl || paper.githubRepo
   const demoUrl = paper.projectPage
 
@@ -43,7 +43,7 @@ export default function PaperCard({ paper, cat, animDelay = 0, citationCount, gi
       <div onClick={() => setExpanded(e => !e)}
         style={{ padding: 'clamp(10px,3vw,13px) clamp(10px,3vw,16px) 11px', cursor: 'pointer', userSelect: 'none' }}>
 
-        {/* --- バッジ行 --- */}
+        {/* --- Badge row --- */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 7, flexWrap: 'wrap' }}>
           <span style={{ fontSize: 13, padding: '2px 10px', background: cat.color,
             color: '#080c14', fontWeight: 700, letterSpacing: 1, borderRadius: 2, flexShrink: 0 }}>
@@ -76,14 +76,14 @@ export default function PaperCard({ paper, cat, animDelay = 0, citationCount, gi
               style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0,
                 fontSize: 13, lineHeight: 1, color: isRead ? '#4ade80' : '#334155',
                 transition: 'color 0.15s', fontFamily: 'inherit' }}
-              title={isRead ? '未読に戻す' : '既読にする'}
-            >{isRead ? '既読' : '未読'}</button>
+              title={isRead ? 'Mark as unread' : 'Mark as read'}
+            >{isRead ? 'read' : 'unread'}</button>
             <button
               onClick={e => { e.stopPropagation(); onToggleFavorite?.() }}
               style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0,
                 fontSize: 16, lineHeight: 1, color: isFavorite ? '#f59e0b' : '#334155',
                 transition: 'color 0.15s' }}
-              title={isFavorite ? 'お気に入り解除' : 'お気に入りに追加'}
+              title={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
             >{isFavorite ? '★' : '☆'}</button>
             <a href={paper.url} target="_blank" rel="noreferrer"
               onClick={e => e.stopPropagation()}
@@ -94,10 +94,9 @@ export default function PaperCard({ paper, cat, animDelay = 0, citationCount, gi
           </div>
         </div>
 
-        {/* --- タイトル・著者行 --- */}
+        {/* --- Title / authors row --- */}
         <div style={{ fontSize: 12, color: '#64748b', marginBottom: 4 }}>{paper.org}</div>
         <div style={{ fontSize: 'clamp(13px,3.5vw,15px)', color: '#e2e8f0', lineHeight: 1.6, fontWeight: 500 }}>{paper.title}</div>
-        <div style={{ fontSize: 'clamp(12px,3vw,14px)', color: '#94a3b8', lineHeight: 1.6, marginTop: 3 }}>{paper.titleJa}</div>
         {paper.authors?.length > 0 && (
           <div style={{ fontSize: 11, color: '#475569', lineHeight: 1.6, marginTop: 4 }}>
             {paper.authors.join(', ')}
@@ -114,7 +113,7 @@ export default function PaperCard({ paper, cat, animDelay = 0, citationCount, gi
       {expanded && (
         <div style={{ borderTop: `1px solid ${cat.color}18`, animation: 'fd 0.2s ease both' }}>
 
-          {/* datasets / arXivカテゴリ */}
+          {/* datasets / arXiv categories */}
           {(paper.datasets?.length > 0 || paper.categories?.length > 0) && (
             <div style={{ padding: '10px 18px', borderBottom: `1px solid ${cat.color}10`,
               display: 'flex', gap: 6, flexWrap: 'wrap', alignItems: 'center' }}>
@@ -157,15 +156,15 @@ export default function PaperCard({ paper, cat, animDelay = 0, citationCount, gi
             </div>
           ))}
 
-          {/* アブストラクト（日本語のみ） */}
-          {paper.abstractJa && (
+          {/* Abstract */}
+          {paper.abstract && (
             <div style={{ borderTop: `1px solid ${cat.color}10`, padding: '11px 18px' }}>
               <div style={{ fontSize: 11, color: '#475569', fontWeight: 600, letterSpacing: 1.5, marginBottom: 6 }}>
                 Abstract
               </div>
               <div style={{ fontSize: 13, color: '#94a3b8', lineHeight: 1.9,
                 paddingLeft: 8, borderLeft: '2px solid #38bdf840' }}>
-                {paper.abstractJa}
+                {paper.abstract}
               </div>
             </div>
           )}

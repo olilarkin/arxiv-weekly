@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 fetch_papers.py
-arXiv API から対象カテゴリの論文を取得し、キーワードでフィルタリングする
+Fetch papers from the arXiv API for the configured categories and filter them
+by keyword.
 """
 import argparse
 import json
@@ -89,7 +90,7 @@ def parse_atom(xml_bytes: bytes) -> list[dict]:
 
 
 def extract_orgs(entry) -> str:
-    """著者のアフィリエーション情報から主要機関を抽出（簡易版）"""
+    """Extract the primary affiliation from an arXiv author entry (best-effort)."""
     affiliations = [
         a.findtext("arxiv:affiliation", "", NS)
         for a in entry.findall("atom:author", NS)
@@ -97,7 +98,7 @@ def extract_orgs(entry) -> str:
     affiliations = [a for a in affiliations if a]
     if affiliations:
         return affiliations[0][:60]
-    # アフィリエーション情報がない場合は著者名から省略表記
+    # Fall back to author names when no affiliation is provided.
     authors = [a.findtext("atom:name", "", NS) for a in entry.findall("atom:author", NS)]
     if len(authors) == 1:
         return authors[0]
@@ -113,7 +114,7 @@ def is_within_window(published_iso: str, lookback_days: int, ref_date: datetime)
         cutoff = ref_date - timedelta(days=lookback_days)
         return cutoff <= pub_dt <= ref_date
     except Exception:
-        return True  # パース失敗時は含める
+        return True  # Include the paper if the date fails to parse.
 
 
 def keyword_match(paper: dict, include: list[str], exclude: list[str]) -> bool:
@@ -167,7 +168,7 @@ def main(dry_run: bool = False, date_str: str | None = None):
             seen_ids.add(p["id"])
 
             if not is_within_window(p["published_iso"], lookback_days, ref_date):
-                # ref_date より新しい論文はスキップ、古い論文は打ち切り
+                # Skip papers newer than ref_date; stop iterating once we go past the window.
                 try:
                     pub_dt = datetime.fromisoformat(p["published_iso"].replace("Z", "+00:00"))
                     if pub_dt < ref_date - timedelta(days=lookback_days):
@@ -202,7 +203,7 @@ def main(dry_run: bool = False, date_str: str | None = None):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dry-run", action="store_true", help="取得件数のみ表示してファイル出力しない")
-    parser.add_argument("--date", type=str, default=None, help="基準日 YYYY-MM-DD（省略時は今日）")
+    parser.add_argument("--dry-run", action="store_true", help="Show how many papers were fetched without writing the output file")
+    parser.add_argument("--date", type=str, default=None, help="Base date YYYY-MM-DD (defaults to today)")
     args = parser.parse_args()
     main(dry_run=args.dry_run, date_str=args.date)

@@ -1,221 +1,224 @@
-# GitHub Copilot への引き継ぎ書
-## 音声研究週報 自動更新システム
+# Handover to GitHub Copilot
+## Audio AI Weekly — Automated Update System
 
-**作成日:** 2026年4月25日　　**引き継ぎ元:** Claude Sonnet 4.6　　**引き継ぎ先:** GitHub Copilot
+**Date:** 2026-04-25 — **From:** Claude Sonnet 4.6 — **To:** GitHub Copilot
 
 ---
 
-| ✅ 完了済み | ☐ 残タスク |
+| ✅ Done | ☐ Remaining |
 |---|---|
-| 設計・実装・コミット | GitHub 設定・テスト・デバッグ |
+| Design, implementation, commits | GitHub setup, testing, debugging |
 
 ---
 
-## 1. プロジェクト概要
+## 1. Project overview
 
-| 項目 | 内容 |
+| Item | Description |
 |---|---|
-| プロジェクト名 | 音声研究週報 自動更新システム |
-| 対象分野 | 音の基盤モデル・音源分離・異音検知 |
-| 更新頻度 | 毎週金曜日 21:00 JST（GitHub Actions cron） |
-| AI 解析エンジン | GitHub Models（Claude）／ `GITHUB_TOKEN` 認証 |
-| フロントエンド | React 18 + Vite → GitHub Pages で配信 |
-| データ管理 | 週次 JSON（`YYYY-MMDD.json`）＋ `index.json` で全週保持 |
-| 設計書 | 要件定義書 v1.3（`system_design.md`） |
+| Project | Audio AI Weekly — Automated Update System |
+| Scope | Audio foundation models, source separation, anomalous sound detection |
+| Cadence | Every Friday at 12:00 UTC (GitHub Actions cron) |
+| AI engine | GitHub Models (GPT-4o) / `GITHUB_TOKEN` auth |
+| Frontend | React 18 + Vite served on GitHub Pages |
+| Data model | Weekly JSON (`YYYY-MMDD.json`) + `index.json` retaining every week |
+| Design doc | Requirements v1.3 (`system_design.md`) |
 
 ---
 
-## 2. Claude が完了した作業
+## 2. Work completed
 
-> リポジトリへのコミットまで完了しています。
+> Everything below has been committed to the repository.
 
-### 2.1 ドキュメント
-- ✅ 要件定義書 v1.3（設計変更 4 件 ＋ DevContainer 章を含む）
-- ✅ アーキテクチャ設計書（システム構成・データフロー・スキーマ定義）
-- ✅ `README.md`（セットアップ手順・コマンド一覧）
+### 2.1 Documentation
+- ✅ Requirements doc v1.3 (4 spec changes + DevContainer section)
+- ✅ Architecture doc (system overview, data flow, schemas)
+- ✅ `README.md` (setup steps, command reference)
 
-### 2.2 設定ファイル
-- ✅ `config/keywords.yaml` — フィルタリングキーワード（22 件、追加・削除可能）
-- ✅ `config/settings.yaml` — `max_papers=50`、GitHub Models エンドポイント等
+### 2.2 Configuration
+- ✅ `config/keywords.yaml` — filter keywords (22 entries, freely editable)
+- ✅ `config/settings.yaml` — `max_papers=50`, GitHub Models endpoint, etc.
 
-### 2.3 バックエンドスクリプト（Python 3.11）
-- ✅ `scripts/fetch_papers.py` — arXiv API 取得・キーワードフィルタ・カテゴリ分類
-- ✅ `scripts/analyze_papers.py` — GitHub Models (Claude) で 6 観点日本語解析
-- ✅ `scripts/build_data.py` — 週次 JSON 生成・`index.json` 更新・`latest.json` 更新
-- ✅ `scripts/test_connection.py` — GitHub Models 疎通確認ツール
+### 2.3 Backend scripts (Python 3.11)
+- ✅ `scripts/fetch_papers.py` — arXiv fetch, keyword filter, category assignment
+- ✅ `scripts/analyze_papers.py` — six-angle English analysis via GitHub Models
+- ✅ `scripts/build_data.py` — weekly JSON build, `index.json` and `latest.json` update
+- ✅ `scripts/test_connection.py` — GitHub Models connectivity check
 - ✅ `requirements.txt` — `openai`, `pyyaml`
 
 ### 2.4 CI/CD
-- ✅ `.github/workflows/update.yml` — 4 ジョブ（fetch → analyze → build → deploy）
+- ✅ `.github/workflows/update.yml` — four-job pipeline (fetch → analyze → build → deploy)
 
-### 2.5 フロントエンド（React 18 + Vite）
-- ✅ `web/src/App.jsx` — データ取得・週セレクター・カテゴリフィルター状態管理
+### 2.5 Frontend (React 18 + Vite)
+- ✅ `web/src/App.jsx` — data fetching, week selector, category filter
 - ✅ `web/src/components/Header.jsx`
-- ✅ `web/src/components/WeekSelector.jsx` — `index.json` から週一覧を生成
+- ✅ `web/src/components/WeekSelector.jsx` — builds week list from `index.json`
 - ✅ `web/src/components/CategoryFilter.jsx`
-- ✅ `web/src/components/PaperCard.jsx` — ヘッダークリックで 6 観点を一括展開
+- ✅ `web/src/components/PaperCard.jsx` — header click expands the six-angle view
 - ✅ `web/src/components/TrendSummary.jsx`
-- ✅ `web/index.html`・`vite.config.js`・`package.json`
+- ✅ `web/index.html` / `vite.config.js` / `package.json`
 
 ### 2.6 DevContainer
 - ✅ `.devcontainer/devcontainer.json`
-- ✅ `devcontainer features` で Node 20・GitHub CLI・common-utils を導入
-- ✅ `devcontainer.json` に venv・npm・gh auth 状態確認を集約
+- ✅ Adds Node 20, GitHub CLI, common-utils via devcontainer features
+- ✅ `devcontainer.json` runs venv / npm install / `gh auth status` on create
 
 ---
 
-## 3. GitHub Copilot への残タスク
+## 3. Remaining tasks for GitHub Copilot
 
-### 3.1 GitHub リポジトリ設定【最優先】
+### 3.1 GitHub repo configuration [highest priority]
 
-**☐ GitHub Pages を有効化する**
+**☐ Enable GitHub Pages**
 ```
-Settings → Pages → Source: Deploy from branch
-→ Branch: gh-pages / (root) → Save
-```
-
-**☐ Actions の書き込み権限を確認する**
-```
-Settings → Actions → General
-→ Workflow permissions → Read and write permissions → Save
+Settings -> Pages -> Source: Deploy from branch
+-> Branch: gh-pages / (root) -> Save
 ```
 
-> `GITHUB_TOKEN` は Actions が自動発行するため、Secrets への手動登録は**不要**です。
+**☐ Confirm Actions has write permissions**
+```
+Settings -> Actions -> General
+-> Workflow permissions -> Read and write permissions -> Save
+```
+
+> `GITHUB_TOKEN` is auto-issued by Actions, so it does NOT need to be added
+> to Secrets manually.
 
 ---
 
-### 3.2 初回動作確認
+### 3.2 First-run smoke tests
 
-**☐ DevContainer を起動し疎通確認スクリプトを実行する**
+**☐ Open the DevContainer and run the connectivity check**
 ```bash
 python scripts/test_connection.py
 ```
 
-**☐ arXiv 取得のドライランを実行する**
+**☐ Dry-run the arXiv fetcher**
 ```bash
 python scripts/fetch_papers.py --dry-run
 ```
 
-**☐ Actions タブから手動実行（workflow_dispatch）し、全ジョブが green になることを確認**
+**☐ Trigger the workflow manually and verify every job goes green**
 ```
-Actions → Weekly arXiv Update → Run workflow → Run workflow
+Actions -> Weekly arXiv Update -> Run workflow -> Run workflow
 ```
 
-**☐ GitHub Pages の URL でフロントエンドが表示されることを確認する**
+**☐ Verify the GitHub Pages URL renders the frontend**
 ```
 https://YOUR_ORG.github.io/arxiv-weekly/
 ```
 
 ---
 
-### 3.3 デバッグ観点
+### 3.3 Debugging cheatsheet
 
-| 症状 | 原因 | 対処 |
+| Symptom | Likely cause | Fix |
 |---|---|---|
-| analyze ジョブが失敗 | GitHub Models のレート制限 | `settings.yaml` の `retry_interval` を増やす（例: `10.0`） |
-| deploy ジョブが失敗 | GitHub Pages が未有効 | 3.1 の Pages 設定を実施する |
-| フロントに論文が表示されない | `data/` が `web/public/data/` にコピーされていない | `update.yml` の「Copy data to web/public」ステップを確認 |
-| カテゴリ分類が「その他」になる | `keywords.yaml` のキーワードが論文に一致しない | `include` キーワードを追加・調整する |
-| 週次 JSON がスキップされる | 同一日付のファイルが既に存在する | 正常動作。再実行する場合は `data/weekly/YYYY-MMDD.json` を削除してから実行 |
-| GitHub Models の認証エラー | `GITHUB_TOKEN` の権限不足 | `permissions: contents: write` が `update.yml` に設定されているか確認 |
+| `analyze` job fails | GitHub Models rate limit | Increase `retry_interval` in `settings.yaml` (e.g. `10.0`) |
+| `deploy` job fails | GitHub Pages not enabled | Complete step 3.1 |
+| No papers shown in UI | `data/` not copied to `web/public/data/` | Check the "Copy data to web/public" step in `update.yml` |
+| Papers classified as "Other" | Keywords don't match | Add/adjust `include` keywords in `keywords.yaml` |
+| Weekly JSON skipped | File for that date already exists | Expected; delete `data/weekly/YYYY-MMDD.json` to rerun |
+| GitHub Models auth error | `GITHUB_TOKEN` lacks permission | Ensure `permissions: contents: write` in `update.yml` |
 
 ---
 
-### 3.4 今後の拡張候補
+### 3.4 Future enhancements
 
-- ☐ 論文の被引用数・GitHub スター数の表示（Semantic Scholar API 連携）
-- ☐ Slack / LINE への週次通知（GitHub Actions から webhook）
-- ☐ キーワードヒット数の可視化（週次トレンドグラフ）
-- ☐ 論文 PDF サマリーの追加（arXiv HTML 版からの本文取得）
+- ☐ Show citation counts and GitHub stars (Semantic Scholar API)
+- ☐ Weekly notifications to Slack / etc. via webhook
+- ☐ Visualize keyword-hit trends (charts)
+- ☐ Add PDF summaries (fetch from arXiv HTML)
 
 ---
 
-## 4. ファイル構成と状態
+## 4. File status
 
-| パス | 説明 | 状態 |
+| Path | Description | Status |
 |---|---|---|
-| `.devcontainer/devcontainer.json` | Python 3.11 image + features + 初回セットアップ | ✅ 実装済 |
-| `.github/workflows/update.yml` | 4 ジョブの自動実行ワークフロー | ✅ 実装済 |
-| `config/keywords.yaml` | フィルタキーワード（追加・削除はここだけ） | ✅ 実装済 |
-| `config/settings.yaml` | `max_papers=50` 等のシステム設定 | ✅ 実装済 |
-| `data/index.json` | 全週インデックス（初期は空） | ✅ 実装済 |
-| `data/latest.json` | 最新週データ（初期はプレースホルダー） | ✅ 実装済 |
-| `data/weekly/YYYY-MMDD.json` | 週次論文データ | ☐ Actions 実行後に自動生成 |
-| `scripts/fetch_papers.py` | arXiv 取得・フィルタ・カテゴリ分類 | ✅ 実装済 |
-| `scripts/analyze_papers.py` | GitHub Models で 6 観点解析 | ✅ 実装済 |
-| `scripts/build_data.py` | 週次 JSON 生成・index 更新 | ✅ 実装済 |
-| `scripts/test_connection.py` | GitHub Models 疎通確認 | ✅ 実装済 |
-| `requirements.txt` | `openai`, `pyyaml` | ✅ 実装済 |
-| `web/src/App.jsx` | メインコンポーネント・状態管理 | ✅ 実装済 |
-| `web/src/components/PaperCard.jsx` | 論文カード（6 観点アコーディオン） | ✅ 実装済 |
-| `web/src/components/WeekSelector.jsx` | 週セレクタードロップダウン | ✅ 実装済 |
-| `web/package.json` / `vite.config.js` | Vite ビルド設定 | ✅ 実装済 |
-| `README.md` | セットアップ・操作手順 | ✅ 実装済 |
+| `.devcontainer/devcontainer.json` | Python 3.11 image + features + first-time setup | ✅ Implemented |
+| `.github/workflows/update.yml` | Four-job auto-update workflow | ✅ Implemented |
+| `config/keywords.yaml` | Filter keywords (edit here only) | ✅ Implemented |
+| `config/settings.yaml` | `max_papers=50` etc. | ✅ Implemented |
+| `data/index.json` | All-week index (empty initially) | ✅ Implemented |
+| `data/latest.json` | Latest-week data (placeholder initially) | ✅ Implemented |
+| `data/weekly/YYYY-MMDD.json` | Weekly paper data | ☐ Generated by Actions |
+| `scripts/fetch_papers.py` | arXiv fetch / filter / categorize | ✅ Implemented |
+| `scripts/analyze_papers.py` | Six-angle analysis via GitHub Models | ✅ Implemented |
+| `scripts/build_data.py` | Weekly JSON + index build | ✅ Implemented |
+| `scripts/test_connection.py` | GitHub Models connectivity check | ✅ Implemented |
+| `requirements.txt` | `openai`, `pyyaml` | ✅ Implemented |
+| `web/src/App.jsx` | Main component / state management | ✅ Implemented |
+| `web/src/components/PaperCard.jsx` | Six-angle accordion card | ✅ Implemented |
+| `web/src/components/WeekSelector.jsx` | Week dropdown | ✅ Implemented |
+| `web/package.json` / `vite.config.js` | Vite build config | ✅ Implemented |
+| `README.md` | Setup and usage | ✅ Implemented |
 
 ---
 
-## 5. データフローの概要
+## 5. Data flow summary
 
 ```
-毎週金曜 21:00 JST
+Every Friday 12:00 UTC
         │
         ▼
 ┌─────────────┐
 │    fetch    │  fetch_papers.py
-│  arXiv API  │  → data/raw_papers.json
+│  arXiv API  │  -> data/raw_papers.json
 └──────┬──────┘
        │
        ▼
 ┌─────────────┐
 │   analyze   │  analyze_papers.py
-│ GitHub      │  GITHUB_TOKEN で認証
-│ Models      │  → data/analyzed_papers.json
+│ GitHub      │  auth via GITHUB_TOKEN
+│ Models      │  -> data/analyzed_papers.json
 └──────┬──────┘
        │
        ▼
 ┌─────────────┐
 │    build    │  build_data.py
-│ 週次 JSON   │  → data/weekly/YYYY-MMDD.json
-│ index 更新  │  → data/index.json
-│ latest 更新 │  → data/latest.json
+│ weekly JSON │  -> data/weekly/YYYY-MMDD.json
+│ update idx  │  -> data/index.json
+│ update last │  -> data/latest.json
 │ git push    │
 └──────┬──────┘
        │
        ▼
 ┌─────────────┐
 │   deploy    │  vite build
-│ GitHub Pages│  → gh-pages ブランチ
+│ GitHub Pages│  -> gh-pages branch
 └─────────────┘
 ```
 
-> ⚠️ **レート制限に注意：** GitHub Models Pro プランは 50 req/day。テスト時は `settings.yaml` の `max_papers` を `3〜5` に下げてください。
+> ⚠️ **Mind the rate limit:** GitHub Models Pro is 50 req/day. For testing,
+> lower `max_papers` in `settings.yaml` to 3-5.
 
 ---
 
-## 6. キーワード管理（よく使う操作）
+## 6. Keyword management (common operations)
 
-### 新しいキーワードの追加
+### Add a new keyword
 
-`config/keywords.yaml` の `include` リストに追記するだけ。コードの変更は不要。
+Just append to the `include` list in `config/keywords.yaml`. No code change.
 
 ```yaml
 include:
-  - audio foundation model   # 既存
-  - audio codec              # ← 追加するだけ
+  - audio foundation model   # existing
+  - audio codec              # <- just add
 ```
 
-### UI カテゴリへの反映
+### Map keywords to an existing UI category
 
-既存カテゴリに割り当てる場合は `ui_categories` の該当カテゴリの `keywords` にも追記。
+Also add the keyword to the relevant entry's `keywords` under `ui_categories`.
 
-### 新カテゴリの追加
+### Add a new UI category
 
-`ui_categories` に新エントリを追加。フロントエンドの `CategoryFilter` は categories データを動的に生成するため、コード変更は不要。
+Add a new entry to `ui_categories`. The frontend `CategoryFilter` builds the
+tab list dynamically, so no code change is needed.
 
 ```yaml
 ui_categories:
   - id: new_category
-    label: 新カテゴリ名
+    label: New Category Name
     color: "#e879f9"
     keywords:
       - new keyword 1
@@ -224,36 +227,36 @@ ui_categories:
 
 ---
 
-## 7. 参考資料
+## 7. References
 
-| 資料 | URL / 場所 |
+| Resource | URL / Location |
 |---|---|
-| 要件定義書・設計書 | `system_design.md`（同梱） |
-| arXiv API ドキュメント | https://arxiv.org/help/api/user-manual |
-| GitHub Models ドキュメント | https://docs.github.com/en/github-models |
-| GitHub Pages ドキュメント | https://docs.github.com/en/pages |
-| Vite ドキュメント | https://vitejs.dev/ |
+| Requirements / Design | `system_design.md` (in this folder) |
+| arXiv API docs | https://arxiv.org/help/api/user-manual |
+| GitHub Models docs | https://docs.github.com/en/github-models |
+| GitHub Pages docs | https://docs.github.com/en/pages |
+| Vite docs | https://vitejs.dev/ |
 | openai Python SDK | https://github.com/openai/openai-python |
 
 ---
 
-## 8. 引き継ぎチェックリスト
+## 8. Handover checklist
 
-GitHub Copilot での作業開始前に以下を順番に確認してください。
+Run through these in order before continuing.
 
-| # | 確認項目 | 担当 | 状態 |
+| # | Item | Owner | Status |
 |---|---|---|---|
-| 1 | リポジトリへのコミットが完了していること | 完了済み | ✅ |
-| 2 | GitHub Pages が有効化されていること | Copilot | ☐ |
-| 3 | Actions の `Read and write permissions` が設定されていること | Copilot | ☐ |
-| 4 | DevContainer が起動できること | Copilot | ☐ |
-| 5 | `test_connection.py` が成功すること | Copilot | ☐ |
-| 6 | 手動 `workflow_dispatch` が全ジョブ green になること | Copilot | ☐ |
-| 7 | GitHub Pages URL でフロントが表示されること | Copilot | ☐ |
-| 8 | 初回の週次 JSON が `data/weekly/` に生成されること | Copilot | ☐ |
-| 9 | フロントで論文データが正しく表示されること | Copilot | ☐ |
-| 10 | 翌週金曜日の自動実行が成功すること | Copilot | ☐ |
+| 1 | Commits pushed to the repository | Done | ✅ |
+| 2 | GitHub Pages is enabled | Copilot | ☐ |
+| 3 | Actions has `Read and write permissions` | Copilot | ☐ |
+| 4 | DevContainer starts successfully | Copilot | ☐ |
+| 5 | `test_connection.py` succeeds | Copilot | ☐ |
+| 6 | Manual `workflow_dispatch` is fully green | Copilot | ☐ |
+| 7 | Frontend renders at the Pages URL | Copilot | ☐ |
+| 8 | First weekly JSON appears under `data/weekly/` | Copilot | ☐ |
+| 9 | Frontend renders the paper data correctly | Copilot | ☐ |
+| 10 | The next Friday's scheduled run succeeds | Copilot | ☐ |
 
 ---
 
-*引き継ぎ書 以上*
+*End of handover.*

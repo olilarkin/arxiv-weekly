@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 enrich_data.py
-既存の週次 JSON に不足フィールドをすべて追加する
+Backfill any missing fields in existing weekly JSON files.
 """
 import json
 import os
@@ -19,7 +19,7 @@ SETTINGS = yaml.safe_load((ROOT / "config/settings.yaml").read_text())
 
 NS = {"atom": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
 
-AI_FIELDS = ("abstractJa", "task", "proposedMethod", "datasets")
+AI_FIELDS = ("task", "proposedMethod", "datasets")
 
 
 def fetch_arxiv_meta(arxiv_id: str) -> dict:
@@ -73,19 +73,18 @@ def fetch_citation_count(arxiv_id: str) -> int | None:
 
 BATCH_SIZE = 5
 
-BATCH_PROMPT_TMPL = """以下の複数論文を分析し、必ず JSON オブジェクトのみで回答してください。コードブロック不要。
-キーは論文 ID、値は次の形式です。
+BATCH_PROMPT_TMPL = """Analyze the papers below and reply ONLY with a JSON object. No code-fence markers.
+Keys must be the paper IDs and values must follow this schema:
 
 {{
   "<paper_id>": {{
-    "abstractJa": "アブストラクト全文の自然な日本語訳",
-    "task": "タスク分類（例: TTS / ASR / 音源分離 / 異音検知 / 音楽生成 など、1〜2語）",
-    "proposedMethod": "提案手法の固有名詞・略称（ない場合は null）",
-    "datasets": ["使用データセット名1", "使用データセット名2"]
+    "task": "Task category (e.g. TTS / ASR / Source Separation / Anomalous Sound Detection), 1-3 words",
+    "proposedMethod": "Name or acronym of the proposed method (null if none)",
+    "datasets": ["Dataset name 1", "Dataset name 2"]
   }}
 }}
 
-datasets は最大5件。すべて日本語で記述してください。
+List up to 5 datasets. All values must be in English.
 
 {papers}
 """
@@ -94,7 +93,7 @@ datasets は最大5件。すべて日本語で記述してください。
 def build_batch_prompt(papers: list[dict]) -> str:
     blocks = []
     for p in papers:
-        blocks.append(f"ID: {p['id'].split('v')[0]}\nタイトル: {p['title']}\nアブストラクト: {p.get('abstract', '')}")
+        blocks.append(f"ID: {p['id'].split('v')[0]}\nTitle: {p['title']}\nAbstract: {p.get('abstract', '')}")
     return BATCH_PROMPT_TMPL.format(papers="\n\n---\n\n".join(blocks))
 
 
@@ -102,14 +101,14 @@ def fetch_ai_fields_batch(client: OpenAI, papers: list[dict]) -> dict[str, dict]
     cfg = SETTINGS["github_models"]
     prompt = build_batch_prompt(papers)
     paper_ids = [p["id"].split("v")[0] for p in papers]
-    fallback = {pid: {"abstractJa": "", "task": None, "proposedMethod": None, "datasets": []} for pid in paper_ids}
+    fallback = {pid: {"task": None, "proposedMethod": None, "datasets": []} for pid in paper_ids}
 
     for attempt in range(cfg["retry_max"]):
         try:
             resp = client.chat.completions.create(
                 model=cfg["model"],
                 messages=[
-                    {"role": "system", "content": "JSONのみで返答してください。"},
+                    {"role": "system", "content": "Reply with JSON only."},
                     {"role": "user", "content": prompt},
                 ],
                 max_tokens=800 * len(papers),
@@ -135,7 +134,7 @@ def enrich_file(path: Path, ai_client: OpenAI | None, ai_results: dict) -> bool:
             arxiv_id = paper["id"].split("v")[0]
             paper_changed = False
 
-            # arXiv メタデータ
+            # arXiv metadata
             if "abstract" not in paper or "categories" not in paper:
                 meta = fetch_arxiv_meta(arxiv_id)
                 for k, v in meta.items():
@@ -144,7 +143,7 @@ def enrich_file(path: Path, ai_client: OpenAI | None, ai_results: dict) -> bool:
                         paper_changed = True
                 time.sleep(0.5)
 
-            # HuggingFace メタデータ
+            # Hugging Face metadata
             if "upvotes" not in paper or "projectPage" not in paper:
                 meta = fetch_hf_meta(arxiv_id)
                 for k, v in meta.items():
@@ -153,13 +152,13 @@ def enrich_file(path: Path, ai_client: OpenAI | None, ai_results: dict) -> bool:
                         paper_changed = True
                 time.sleep(0.3)
 
-            # 被引用数
+            # Citation count
             if "citationCount" not in paper:
                 paper["citationCount"] = fetch_citation_count(arxiv_id)
                 paper_changed = True
                 time.sleep(0.3)
 
-            # AI フィールド（バッチ処理済みの結果を適用）
+            # AI-generated fields (apply batched results).
             if arxiv_id in ai_results:
                 result = ai_results[arxiv_id]
                 for k, v in result.items():
@@ -182,18 +181,18 @@ def enrich_file(path: Path, ai_client: OpenAI | None, ai_results: dict) -> bool:
 
 def main():
     weekly_files = sorted(WEEKLY_DIR.glob("*.json"))
-    print(f"[enrich] {len(weekly_files)} 週次ファイルを処理します")
+    print(f"[enrich] Processing {len(weekly_files)} weekly files")
 
     token = os.environ.get("GITHUB_TOKEN")
     ai_client = None
     if token:
         cfg = SETTINGS["github_models"]
         ai_client = OpenAI(base_url=cfg["endpoint"], api_key=token)
-        print("[enrich] GPT-4o によるAIフィールド補完を有効化（バッチ処理）")
+        print("[enrich] AI field backfill via GPT-4o enabled (batched)")
     else:
-        print("[enrich] GITHUB_TOKEN 未設定: AIフィールドをスキップ")
+        print("[enrich] GITHUB_TOKEN is not set; skipping AI fields")
 
-    # 全週次ファイルから AI フィールドが不足している論文を収集
+    # Collect papers that are missing AI fields across all weekly files.
     ai_results: dict[str, dict] = {}
     if ai_client:
         papers_needing_ai = []
@@ -204,9 +203,9 @@ def main():
                     if any(f not in paper for f in AI_FIELDS) and paper.get("abstract"):
                         papers_needing_ai.append(paper)
 
-        print(f"[enrich] AI補完が必要な論文: {len(papers_needing_ai)} 件")
+        print(f"[enrich] Papers needing AI backfill: {len(papers_needing_ai)}")
 
-        # バッチ処理
+        # Batch processing
         for i in range(0, len(papers_needing_ai), BATCH_SIZE):
             batch = papers_needing_ai[i:i + BATCH_SIZE]
             ids = [p["id"].split("v")[0] for p in batch]
@@ -216,12 +215,12 @@ def main():
             if i + BATCH_SIZE < len(papers_needing_ai):
                 time.sleep(3.0)
 
-    # 各ファイルにメタデータを書き込み
+    # Write enriched metadata back into each file.
     for path in weekly_files:
         print(f"\n[enrich] --- {path.name} ---")
         enrich_file(path, ai_client, ai_results)
 
-    print("\n[enrich] 完了。")
+    print("\n[enrich] Done.")
 
 
 if __name__ == "__main__":
