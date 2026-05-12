@@ -36,6 +36,25 @@ include:
   - machine sound anomaly
   - unsupervised anomaly
   - sound event detection
+  # Music transcription / beat tracking
+  - automatic music transcription
+  - music transcription
+  - audio to midi
+  - audio-to-midi
+  - piano transcription
+  - drum transcription
+  - guitar transcription
+  - vocal transcription
+  - singing transcription
+  - multi-pitch estimation
+  - multipitch estimation
+  - beat tracking
+  - beat detection
+  - downbeat tracking
+  - tempo estimation
+  - onset detection
+  - chord recognition
+  - chord estimation
 
 # Exclude keywords (papers matching these are dropped even if include matches).
 exclude:
@@ -80,3 +99,26 @@ ui_categories:
       - machine sound anomaly
       - unsupervised anomaly
       - sound event detection
+
+  - id: transcription
+    label: Music Transcription & Beat Tracking
+    color: "#f472b6"
+    keywords:
+      - automatic music transcription
+      - music transcription
+      - audio to midi
+      - audio-to-midi
+      - piano transcription
+      - drum transcription
+      - guitar transcription
+      - vocal transcription
+      - singing transcription
+      - multi-pitch estimation
+      - multipitch estimation
+      - beat tracking
+      - beat detection
+      - downbeat tracking
+      - tempo estimation
+      - onset detection
+      - chord recognition
+      - chord estimation
