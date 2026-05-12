@@ -155,7 +155,8 @@ jobs:
 
       - name: Fetch existing weekly data from gh-pages
         run: |
-          git fetch origin gh-pages
+          # First deploy: gh-pages branch may not exist yet — tolerate that.
+          git fetch origin gh-pages 2>/dev/null || echo "[deploy] gh-pages branch not present yet — first deploy"
           mkdir -p web/public/data/weekly
           # Copy existing weekly JSON files
           for f in $(git ls-tree -r --name-only origin/gh-pages 2>/dev/null | grep '^data/weekly/.*\.json$'); do
