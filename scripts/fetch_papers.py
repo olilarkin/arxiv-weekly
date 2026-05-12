@@ -6,7 +6,9 @@ by keyword.
 """
 import argparse
 import json
+import random
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -31,6 +33,23 @@ def build_query() -> str:
     return f"({cat_query})"
 
 
+MAX_ATTEMPTS = 6
+
+
+def _parse_retry_after(value: str | None) -> float | None:
+    if not value:
+        return None
+    try:
+        return float(value)
+    except ValueError:
+        pass
+    try:
+        dt = datetime.strptime(value, "%a, %d %b %Y %H:%M:%S GMT").replace(tzinfo=timezone.utc)
+        return max(0.0, (dt - datetime.now(timezone.utc)).total_seconds())
+    except ValueError:
+        return None
+
+
 def fetch_arxiv(query: str, start: int, max_results: int) -> list[dict]:
     params = urllib.parse.urlencode({
         "search_query": query,
@@ -44,14 +63,28 @@ def fetch_arxiv(query: str, start: int, max_results: int) -> list[dict]:
         "User-Agent": SETTINGS["arxiv"]["user_agent"]
     })
     last_err: Exception | None = None
-    for attempt in range(4):
+    for attempt in range(MAX_ATTEMPTS):
         try:
             with urllib.request.urlopen(req, timeout=60) as resp:
                 return parse_atom(resp.read())
+        except urllib.error.HTTPError as e:
+            last_err = e
+            retry_after = _parse_retry_after(e.headers.get("Retry-After") if e.headers else None)
+            if e.code in (429, 503):
+                # Honour Retry-After if present, otherwise backoff aggressively.
+                wait = retry_after if retry_after is not None else min(300.0, 30.0 * (2 ** attempt))
+            elif 500 <= e.code < 600:
+                wait = min(60.0, 5.0 * (2 ** attempt))
+            else:
+                # 4xx (other than 429) is not transient — fail fast.
+                raise
+            wait += random.uniform(0, 2.0)
+            print(f"[fetch] arXiv HTTP {e.code} (attempt {attempt + 1}/{MAX_ATTEMPTS}); retrying in {wait:.1f}s")
+            time.sleep(wait)
         except (urllib.error.URLError, TimeoutError, ConnectionError, OSError) as e:
             last_err = e
-            wait = 2 ** attempt
-            print(f"[fetch] arXiv error (attempt {attempt + 1}/4): {e}; retrying in {wait}s")
+            wait = min(60.0, 5.0 * (2 ** attempt)) + random.uniform(0, 2.0)
+            print(f"[fetch] arXiv error (attempt {attempt + 1}/{MAX_ATTEMPTS}): {e}; retrying in {wait:.1f}s")
             time.sleep(wait)
     raise last_err  # type: ignore[misc]
 
