@@ -1,0 +1,313 @@
+{
+  "date": "2025-0307",
+  "generated_at": "2025-03-07T00:00:00+00:00",
+  "total": 5,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2503.04713v2",
+          "date": "Mar 06",
+          "title": "Scaling Rich Style-Prompted Text-to-Speech Datasets",
+          "authors": [
+            "Anuj Diwan",
+            "Zhisheng Zheng",
+            "David Harwath",
+            "Eunsol Choi"
+          ],
+          "org": "UT Austin",
+          "abstract": "We introduce Paralinguistic Speech Captions (ParaSpeechCaps), a large-scale dataset that annotates speech utterances with rich style captions. While rich abstract tags (e.g. guttural, nasal, pained) have been explored in small-scale human-annotated datasets, existing large-scale datasets only cover basic tags (e.g. low-pitched, slow, loud). We combine off-the-shelf text and speech embedders, classifiers and an audio language model to automatically scale rich tag annotations for the first time. ParaSpeechCaps covers a total of 59 style tags, including both speaker-level intrinsic tags and utterance-level situational tags. It consists of 342 hours of human-labelled data (PSC-Base) and 2427 hours of automatically annotated data (PSC-Scaled). We finetune Parler-TTS, an open-source style-prompted TTS model, on ParaSpeechCaps, and achieve improved style consistency (+7.9% Consistency MOS) and speech quality (+15.5% Naturalness MOS) over the best performing baseline that combines existing rich style tag datasets. We ablate several of our dataset design choices to lay the foundation for future work in this space. Our dataset, models and code are released at https://github.com/ajd12342/paraspeechcaps .",
+          "comment": "EMNLP 2025",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.AI",
+            "cs.CL",
+            "cs.LG",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2503.04713v2",
+          "category": "foundation",
+          "task": "TTS",
+          "proposedMethod": "ParaSpeechCaps",
+          "datasets": [
+            "ParaSpeechCaps (PSC-Base, PSC-Scaled)"
+          ],
+          "what": "This paper introduces ParaSpeechCaps, a large-scale dataset with rich style annotations for text-to-speech (TTS) systems, and demonstrates its utility in improving style-prompted TTS models.",
+          "novel": "It scales rich style tag annotations to a large dataset for the first time, covering 59 style tags, including speaker-level and utterance-level attributes.",
+          "method": "Combines off-the-shelf text and speech embedders, classifiers, and an audio language model to automatically generate style annotations, and finetunes Parler-TTS on the dataset.",
+          "validation": "Evaluated on style consistency and speech quality using MOS metrics, showing significant improvements over existing baselines.",
+          "discussion": "The reliance on automated annotation methods may introduce biases, and further exploration is needed to refine the quality of generated annotations.",
+          "nextReads": [
+            {
+              "label": "Style Tokens: Unsupervised Style Modeling, Control and Transfer in End-to-End Speech Synthesis (2018)",
+              "url": "https://arxiv.org/abs/arXiv:1803.09017"
+            },
+            {
+              "label": "FastSpeech 2: Fast and High-Quality End-to-End Text to Speech (2020)",
+              "url": "https://arxiv.org/abs/arXiv:2006.04558"
+            },
+            {
+              "label": "VALL-E: Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers (2023)",
+              "url": "https://arxiv.org/abs/arXiv:2301.02111"
+            },
+            {
+              "label": "Neural Speech Synthesis with Transformer Network (2020)",
+              "url": "https://arxiv.org/abs/arXiv:2008.04523"
+            }
+          ],
+          "citationCount": 20,
+          "githubRepo": "https://github.com/ajd12342/paraspeechcaps",
+          "upvotes": 1,
+          "projectPage": "https://paraspeechcaps.github.io/"
+        },
+        {
+          "id": "2503.02318v2",
+          "date": "Mar 04",
+          "title": "Audio-Reasoner: Improving Reasoning Capability in Large Audio Language Models",
+          "authors": [
+            "Zhifei Xie",
+            "Mingbao Lin",
+            "Zihang Liu",
+            "Pengcheng Wu",
+            "Shuicheng Yan"
+          ],
+          "org": "Tencent AI Lab",
+          "abstract": "Recent advancements in multimodal reasoning have largely overlooked the audio modality. We introduce Audio-Reasoner, a large-scale audio language model for deep reasoning in audio tasks. We meticulously curated a large-scale and diverse multi-task audio dataset with simple annotations. Then, we leverage closed-source models to conduct secondary labeling, QA generation, along with structured COT process. These datasets together form a high-quality reasoning dataset with 1.2 million reasoning-rich samples, which we name CoTA. Following inference scaling principles, we train Audio-Reasoner on CoTA, enabling it to achieve great logical capabilities in audio reasoning. Experiments show state-of-the-art performance across key benchmarks, including MMAU-mini (+25.42%), AIR-Bench chat/foundation(+14.57%/+10.13%), and MELD (+8.01%). Our findings stress the core of structured CoT training in advancing audio reasoning.",
+          "comment": "Technical report, in process",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.CL",
+            "cs.LG",
+            "cs.MM",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2503.02318v2",
+          "category": "foundation",
+          "task": "Audio Reasoning",
+          "proposedMethod": "Audio-Reasoner",
+          "datasets": [
+            "CoTA",
+            "MMAU-mini",
+            "AIR-Bench",
+            "MELD"
+          ],
+          "what": "This paper introduces Audio-Reasoner, a large-scale audio language model designed for deep reasoning in audio tasks, trained on the CoTA dataset with 1.2 million reasoning-rich samples.",
+          "novel": "It emphasizes the importance of structured chain-of-thought (CoT) training for improving logical reasoning in audio language models.",
+          "method": "Uses a diverse multi-task audio dataset with secondary labeling, QA generation, and structured CoT processes to train the Audio-Reasoner model on reasoning tasks.",
+          "validation": "Achieves state-of-the-art performance on benchmarks like MMAU-mini, AIR-Bench, and MELD, demonstrating significant improvements in reasoning capabilities.",
+          "discussion": "The reliance on closed-source models for secondary labeling may limit reproducibility; further exploration of open-source alternatives is needed.",
+          "nextReads": [
+            {
+              "label": "Language Models are Few-Shot Learners (2020)",
+              "url": "https://arxiv.org/abs/arXiv:2005.14165"
+            },
+            {
+              "label": "Chain of Thought Prompting Elicits Reasoning in Large Language Models (2022)",
+              "url": "https://arxiv.org/abs/arXiv:2201.11903"
+            },
+            {
+              "label": "Audio-Language Models for Robust Spoken Language Understanding (2022)",
+              "url": null
+            },
+            {
+              "label": "MMAU: A Benchmark for Multimodal Audio Understanding (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": "https://github.com/xzf-thu/audio-reasoner",
+          "upvotes": 2,
+          "projectPage": null
+        },
+        {
+          "id": "2503.01174v1",
+          "date": "Mar 03",
+          "title": "Talking Turns: Benchmarking Audio Foundation Models on Turn-Taking Dynamics",
+          "authors": [
+            "Siddhant Arora",
+            "Zhiyun Lu",
+            "Chung-Cheng Chiu",
+            "Ruoming Pang",
+            "Shinji Watanabe"
+          ],
+          "org": "Google",
+          "abstract": "The recent wave of audio foundation models (FMs) could provide new capabilities for conversational modeling. However, there have been limited efforts to evaluate these audio FMs comprehensively on their ability to have natural and interactive conversations. To engage in meaningful conversation with the end user, we would want the FMs to additionally perform a fluent succession of turns without too much overlapping speech or long stretches of silence. Inspired by this, we ask whether the recently proposed audio FMs can understand, predict, and perform turn-taking events? To answer this, we propose a novel evaluation protocol that can assess spoken dialog system's turn-taking capabilities using a supervised model as a judge that has been trained to predict turn-taking events in human-human conversations. Using this protocol, we present the first comprehensive user study that evaluates existing spoken dialogue systems on their ability to perform turn-taking events and reveal many interesting insights, such as they sometimes do not understand when to speak up, can interrupt too aggressively and rarely backchannel. We further evaluate multiple open-source and proprietary audio FMs accessible through APIs on carefully curated test benchmarks from Switchboard to measure their ability to understand and predict turn-taking events and identify significant room for improvement. We will open source our evaluation platform to promote the development of advanced conversational AI systems.",
+          "comment": "Accepted at ICLR 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.CL",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2503.01174v1",
+          "category": "foundation",
+          "task": "Conversational AI",
+          "proposedMethod": "null",
+          "datasets": [
+            "Switchboard"
+          ],
+          "what": "This paper introduces a novel evaluation protocol to benchmark audio foundation models on their ability to understand, predict, and perform turn-taking dynamics in conversations.",
+          "novel": "It provides the first comprehensive user study and evaluation protocol focused on turn-taking dynamics in spoken dialogue systems, revealing significant gaps in current models.",
+          "method": "Proposes a supervised model trained to predict turn-taking events in human-human conversations and evaluates multiple audio foundation models on curated benchmarks.",
+          "validation": "Benchmarked open-source and proprietary audio foundation models on turn-taking dynamics using curated datasets like Switchboard, revealing areas for improvement.",
+          "discussion": "The study identifies significant limitations in current audio foundation models' turn-taking capabilities, emphasizing the need for further research in conversational dynamics.",
+          "nextReads": [
+            {
+              "label": "Turn-Taking in Human-Computer Interaction (2020)",
+              "url": null
+            },
+            {
+              "label": "Conversational Agents: Dialogue Systems as Mediators (2019)",
+              "url": null
+            },
+            {
+              "label": "Speech Turn-Taking in Dialogue Systems (2021)",
+              "url": null
+            },
+            {
+              "label": "Audio Foundation Models for Conversational AI (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2503.04995v1",
+          "date": "Mar 06",
+          "title": "Musical Source Separation of Brazilian Percussion",
+          "authors": [
+            "Richa Namballa",
+            "Giovana Morais",
+            "Magdalena Fuentes"
+          ],
+          "org": "NYU",
+          "abstract": "Musical source separation (MSS) has recently seen a big breakthrough in separating instruments from a mixture in the context of Western music, but research on non-Western instruments is still limited due to a lack of data. In this demo, we use an existing dataset of Brazilian sama percussion to create artificial mixtures for training a U-Net model to separate the surdo drum, a traditional instrument in samba. Despite limited training data, the model effectively isolates the surdo, given the drum's repetitive patterns and its characteristic low-pitched timbre. These results suggest that MSS systems can be successfully harnessed to work in more culturally-inclusive scenarios without the need of collecting extensive amounts of data.",
+          "comment": "2 pages + references, 1 figure, 1 table, Extended Abstracts for the Late-Breaking Demo Session of the 25th International Society for Music Information Retrieval Conference",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD",
+            "eess.SP"
+          ],
+          "url": "https://arxiv.org/abs/2503.04995v1",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": "null",
+          "datasets": [
+            "Brazilian samba percussion dataset"
+          ],
+          "what": "This paper focuses on musical source separation for Brazilian samba percussion, specifically isolating the surdo drum using a U-Net model trained on artificial mixtures.",
+          "novel": "It addresses the lack of research on non-Western instruments in musical source separation by demonstrating effective separation with limited training data.",
+          "method": "A U-Net model is trained on artificial mixtures of Brazilian samba percussion, leveraging the surdo drum's repetitive patterns and low-pitched timbre for separation.",
+          "validation": "The method is validated on artificial mixtures of Brazilian samba percussion, showing effective isolation of the surdo drum despite limited training data.",
+          "discussion": "The study highlights the potential of MSS systems in culturally inclusive scenarios but notes the reliance on the unique characteristics of the surdo drum and limited dataset size.",
+          "nextReads": [
+            {
+              "label": "Singing Voice Separation with Deep U-Net Convolutional Networks (2017)",
+              "url": "https://arxiv.org/abs/arXiv:1706.06221"
+            },
+            {
+              "label": "Open-Unmix: A Reference Implementation for Music Source Separation (2019)",
+              "url": "https://arxiv.org/abs/arXiv:1905.03330"
+            },
+            {
+              "label": "MUSDB18: A Corpus for Music Separation (2018)",
+              "url": null
+            },
+            {
+              "label": "Deep Learning-Based Source Separation for Non-Western Music (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2503.01362v1",
+          "date": "Mar 03",
+          "title": "Streaming Piano Transcription Based on Consistent Onset and Offset Decoding with Sustain Pedal Detection",
+          "authors": [
+            "Weixing Wei",
+            "Jiahao Zhao",
+            "Yulun Wu",
+            "Kazuyoshi Yoshii"
+          ],
+          "org": "Tencent AI Lab",
+          "abstract": "This paper describes a streaming audio-to-MIDI piano transcription approach that aims to sequentially translate a music signal into a sequence of note onset and offset events. The sequence-to-sequence nature of this task may call for the computationally-intensive transformer model for better performance, which has recently been used for offline transcription benchmarks and could be extended for streaming transcription with causal attention mechanisms. We assume that the performance limitation of this naive approach lies in the decoder. Although time-frequency features useful for onset detection are considerably different from those for offset detection, the single decoder is trained to output a mixed sequence of onset and offset events without guarantee of the correspondence between the onset and offset events of the same note. To overcome this limitation, we propose a streaming encoder-decoder model that uses a convolutional encoder aggregating local acoustic features, followed by an autoregressive Transformer decoder detecting a variable number of onset events and another decoder detecting the offset events for the active pitches with validation of the sustain pedal at each time frame. Experiments using the MAESTRO dataset showed that the proposed streaming method performed comparably with or even better than the state-of-the-art offline methods while significantly reducing the computational cost.",
+          "comment": "Accepted to ISMIR 2024",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.IR",
+            "cs.MM",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2503.01362v1",
+          "category": "transcription",
+          "task": "Music Transcription",
+          "proposedMethod": "null",
+          "datasets": [
+            "MAESTRO"
+          ],
+          "what": "This paper presents a streaming audio-to-MIDI piano transcription approach that decodes consistent onset and offset events while detecting sustain pedal usage.",
+          "novel": "It introduces a dual-decoder architecture to separately handle onset and offset events, addressing limitations of single-decoder models in streaming transcription.",
+          "method": "Combines a convolutional encoder for local acoustic feature aggregation with an autoregressive Transformer decoder for onset and offset detection, incorporating sustain pedal validation.",
+          "validation": "Evaluated on the MAESTRO dataset, achieving comparable or better performance than state-of-the-art offline methods with reduced computational cost.",
+          "discussion": "The method shows promise for real-time applications but may require further optimization for broader generalization across diverse piano recordings.",
+          "nextReads": [
+            {
+              "label": "Onsets and Frames: Dual-Objective Piano Transcription (2018)",
+              "url": "https://arxiv.org/abs/arXiv:1710.11153"
+            },
+            {
+              "label": "MAESTRO: A Dataset for Modeling Musical Performance (2019)",
+              "url": "https://arxiv.org/abs/arXiv:1810.12247"
+            },
+            {
+              "label": "Streaming Models for Online Music Transcription (2021)",
+              "url": null
+            },
+            {
+              "label": "Self-Supervised Learning for Piano Transcription (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Musical source separation advances with a U-Net model isolating Brazilian samba percussion instruments, highlighting surdo drum separation (Musical Source Separation of Brazilian Percussion).",
+    "ParaSpeechCaps dataset enhances style-prompted TTS systems by scaling rich style annotations, improving expressiveness in text-to-speech synthesis (Scaling Rich Style-Prompted Text-to-Speech Datasets).",
+    "Audio-Reasoner and CoTA dataset push reasoning capabilities in audio language models, while new benchmarks evaluate turn-taking dynamics in conversational audio (Audio-Reasoner, Talking Turns)."
+  ]
+}

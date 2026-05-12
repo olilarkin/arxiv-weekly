@@ -1,0 +1,414 @@
+{
+  "date": "2025-0314",
+  "generated_at": "2025-03-14T00:00:00+00:00",
+  "total": 7,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2503.08540v1",
+          "date": "Mar 11",
+          "title": "Mellow: a small audio language model for reasoning",
+          "authors": [
+            "Soham Deshmukh",
+            "Satvik Dixit",
+            "Rita Singh",
+            "Bhiksha Raj"
+          ],
+          "org": "Carnegie Mellon University",
+          "abstract": "Multimodal Audio-Language Models (ALMs) can understand and reason over both audio and text. Typically, reasoning performance correlates with model size, with the best results achieved by models exceeding 8 billion parameters. However, no prior work has explored enabling small audio-language models to perform reasoning tasks, despite the potential applications for edge devices. To address this gap, we introduce Mellow, a small Audio-Language Model specifically designed for reasoning. Mellow achieves state-of-the-art performance among existing small audio-language models and surpasses several larger models in reasoning capabilities. For instance, Mellow scores 52.11 on MMAU, comparable to SoTA Qwen2 Audio (which scores 52.5) while using 50 times fewer parameters and being trained on 60 times less data (audio hrs). To train Mellow, we introduce ReasonAQA, a dataset designed to enhance audio-grounded reasoning in models. It consists of a mixture of existing datasets (30% of the data) and synthetically generated data (70%). The synthetic dataset is derived from audio captioning datasets, where Large Language Models (LLMs) generate detailed and multiple-choice questions focusing on audio events, objects, acoustic scenes, signal properties, semantics, and listener emotions. To evaluate Mellow's reasoning ability, we benchmark it on a diverse set of tasks, assessing on both in-distribution and out-of-distribution data, including audio understanding, deductive reasoning, and comparative reasoning. Finally, we conduct extensive ablation studies to explore the impact of projection layer choices, synthetic data generation methods, and language model pretraining on reasoning performance. Our training dataset, findings, and baseline pave the way for developing small ALMs capable of reasoning.",
+          "comment": "Checkpoint and dataset available at: https://github.com/soham97/mellow",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2503.08540v1",
+          "category": "foundation",
+          "task": "Audio-Language Modeling",
+          "proposedMethod": "Mellow",
+          "datasets": [
+            "ReasonAQA",
+            "MMAU"
+          ],
+          "what": "This paper introduces Mellow, a small audio-language model designed for reasoning tasks, achieving state-of-the-art performance among small ALMs.",
+          "novel": "Mellow demonstrates that small ALMs can achieve competitive reasoning performance with significantly fewer parameters and training data, aided by the novel ReasonAQA dataset.",
+          "method": "The model uses a combination of pretraining, synthetic data generation, and a lightweight architecture to enhance reasoning capabilities in audio-language tasks.",
+          "validation": "Performance was benchmarked on diverse reasoning tasks using in-distribution and out-of-distribution datasets, with extensive ablation studies on training techniques.",
+          "discussion": "While promising, the reliance on synthetic data may limit generalizability, and further exploration of real-world applications is needed.",
+          "nextReads": [
+            {
+              "label": "Audio-language models for reasoning (2022)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Multimodal reasoning with small models (2021)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Synthetic data for audio tasks (2020)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Audio captioning with LLMs (2022)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": "https://github.com/soham97/mellow",
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2503.08533v1",
+          "date": "Mar 11",
+          "title": "ESPnet-SDS: Unified Toolkit and Demo for Spoken Dialogue Systems",
+          "authors": [
+            "Siddhant Arora",
+            "Yifan Peng",
+            "Jiatong Shi",
+            "Jinchuan Tian",
+            "William Chen"
+          ],
+          "org": "Johns Hopkins University",
+          "abstract": "Advancements in audio foundation models (FMs) have fueled interest in end-to-end (E2E) spoken dialogue systems, but different web interfaces for each system makes it challenging to compare and contrast them effectively. Motivated by this, we introduce an open-source, user-friendly toolkit designed to build unified web interfaces for various cascaded and E2E spoken dialogue systems. Our demo further provides users with the option to get on-the-fly automated evaluation metrics such as (1) latency, (2) ability to understand user input, (3) coherence, diversity, and relevance of system response, and (4) intelligibility and audio quality of system output. Using the evaluation metrics, we compare various cascaded and E2E spoken dialogue systems with a human-human conversation dataset as a proxy. Our analysis demonstrates that the toolkit allows researchers to effortlessly compare and contrast different technologies, providing valuable insights such as current E2E systems having poorer audio quality and less diverse responses. An example demo produced using our toolkit is publicly available here: https://huggingface.co/spaces/Siddhant/Voice_Assistant_Demo.",
+          "comment": "Accepted at NAACL 2025 Demo Track",
+          "journalRef": null,
+          "categories": [
+            "cs.CL",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2503.08533v1",
+          "category": "foundation",
+          "task": "Spoken Dialogue Systems",
+          "proposedMethod": "ESPnet-SDS",
+          "datasets": [
+            "Custom human-human conversation dataset"
+          ],
+          "what": "This paper presents ESPnet-SDS, an open-source toolkit for building unified web interfaces and evaluating spoken dialogue systems.",
+          "novel": "The toolkit enables direct comparison of cascaded and end-to-end spoken dialogue systems using automated evaluation metrics, addressing the lack of standardization in the field.",
+          "method": "ESPnet-SDS provides a user-friendly interface and supports on-the-fly evaluation of metrics like latency, coherence, and audio quality for various dialogue systems.",
+          "validation": "The toolkit was validated by comparing different dialogue systems using a human-human conversation dataset as a benchmark.",
+          "discussion": "The toolkit is a valuable resource for researchers, but its reliance on specific datasets may limit its applicability to other domains or languages.",
+          "nextReads": [
+            {
+              "label": "End-to-end spoken dialogue systems (2020)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Evaluation metrics for dialogue systems (2019)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "ESPnet: End-to-end speech processing toolkit (2018)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Challenges in spoken dialogue systems (2021)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2503.07217v3",
+          "date": "Mar 10",
+          "title": "ReelWave: Multi-Agentic Movie Sound Generation through Multimodal LLM Conversation",
+          "authors": [
+            "Zixuan Wang",
+            "Chi-Keung Tang",
+            "Yu-Wing Tai"
+          ],
+          "org": "HKUST",
+          "abstract": "Current audio generation conditioned by text or video focuses on aligning audio with text/video modalities. Despite excellent alignment results, these multimodal frameworks still cannot be directly applied to compelling movie storytelling involving multiple scenes, where \"on-screen\" sounds require temporally-aligned audio generation, while \"off-screen\" sounds contribute to appropriate environment sounds accompanied by background music when applicable. Inspired by professional movie production, this paper proposes a multi-agentic framework for audio generation supervised by an autonomous Sound Director agent, engaging multi-turn conversations with other agents for on-screen and off-screen sound generation through multimodal LLM. To address on-screen sound generation, after detecting any talking humans in videos, we capture semantically and temporally synchronized sound by training a prediction model that forecasts interpretable, time-varying audio control signals: loudness, pitch, and timbre, which are used by a Foley Artist agent to condition a cross-attention module in the sound generation. The Foley Artist works cooperatively with the Composer and Voice Actor agents, and together they autonomously generate off-screen sound to complement the overall production. Each agent takes on specific roles similar to those of a movie production team. To temporally ground audio language models, in ReelWave, text/video conditions are decomposed into atomic, specific sound generation instructions synchronized with visuals when applicable. Consequently, our framework can generate rich and relevant audio content conditioned on video clips extracted from movies.",
+          "comment": "Project page: https://vincent2311.github.io/ReelWave_demo",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CV"
+          ],
+          "url": "https://arxiv.org/abs/2503.07217v3",
+          "category": "foundation",
+          "task": "Audio Generation",
+          "proposedMethod": "ReelWave",
+          "datasets": [
+            "Custom movie clips dataset"
+          ],
+          "what": "This paper introduces ReelWave, a multi-agentic framework for generating audio for movies, including on-screen and off-screen sounds, supervised by a Sound Director agent using multimodal LLM conversations.",
+          "novel": "The novelty lies in the multi-agentic approach inspired by professional movie production, where agents like Foley Artist, Composer, and Voice Actor collaborate to generate temporally and semantically synchronized audio.",
+          "method": "The framework uses a prediction model to forecast audio control signals (loudness, pitch, timbre) for on-screen sounds, and decomposes text/video conditions into specific sound generation instructions for off-screen sounds.",
+          "validation": "The method is validated using video clips extracted from movies, demonstrating its capability to generate rich and relevant audio content aligned with visual and textual inputs.",
+          "discussion": "The framework's reliance on multimodal LLMs and the need for high-quality training data may limit its scalability and generalization to diverse movie genres and styles.",
+          "nextReads": [
+            {
+              "label": "AudioLDM: Text-to-Audio Generation with Latent Diffusion Models (2023)",
+              "url": "https://arxiv.org/abs/2301.12503"
+            },
+            {
+              "label": "Make-An-Audio: Text-to-Audio Generation with Prompt-Enhanced Diffusion Models (2023)",
+              "url": "https://arxiv.org/abs/2306.07865"
+            },
+            {
+              "label": "Soundify: A Text-to-Audio Model with Latent Diffusion (2023)",
+              "url": "https://arxiv.org/abs/2305.09636"
+            },
+            {
+              "label": "AudioGen: Textually Guided Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/2209.15352"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2503.09412v1",
+          "date": "Mar 12",
+          "title": "Multiple Speaker Separation from Noisy Sources in Reverberant Rooms using Relative Transfer Matrix",
+          "authors": [
+            "Wageesha N. Manamperi",
+            "Thushara D. Abhayapala"
+          ],
+          "org": "Australian National University",
+          "abstract": "Separation of simultaneously active multiple speakers is a difficult task in environments with strong reverberation and many background noise sources. This paper uses the relative transfer matrix (ReTM), a generalization of the relative transfer function of a room, to propose a simple yet novel approach for separating concurrent speakers using noisy multichannel microphone recordings. The proposed method (i) allows multiple speech and background noise sources, (ii) includes reverberation, (iii) does not need the knowledge of the locations of speech and noise sources nor microphone locations and their relative geometry, and (iv) uses relatively small segment of recordings for training. We illustrate the speech source separation capability with improved intelligibility using a simulation study consisting of four speakers in the presence of three noise sources in a reverberant room. We also show the applicability of the method in a practical experiment in a real room.",
+          "comment": "5 pages, 4 figures, submitted to 33th European Signal Processing Conference (EUSIPCO) 2025",
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2503.09412v1",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": "Relative Transfer Matrix (ReTM)",
+          "datasets": [
+            "Simulated room recordings",
+            "Custom real-room dataset"
+          ],
+          "what": "This paper proposes a method for separating multiple speakers in noisy, reverberant environments using the Relative Transfer Matrix (ReTM).",
+          "novel": "The method generalizes the relative transfer function to handle multiple speech and noise sources without requiring prior knowledge of source or microphone locations.",
+          "method": "ReTM leverages multichannel microphone recordings and operates on relatively short audio segments, making it robust to reverberation and noise.",
+          "validation": "The approach was validated through simulations and real-room experiments, demonstrating improved speech intelligibility in challenging acoustic environments.",
+          "discussion": "While effective, the method's performance in highly dynamic or extreme noise conditions remains to be thoroughly tested.",
+          "nextReads": [
+            {
+              "label": "Deep clustering for speech separation (2016)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Multichannel source separation in reverberant environments (2018)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Relative transfer function-based separation (2020)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Speech separation with deep learning (2021)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2503.07352v2",
+          "date": "Mar 10",
+          "title": "Score-informed Music Source Separation: Improving Synthetic-to-real Generalization in Classical Music",
+          "authors": [
+            "Eetu Tunturi",
+            "David Diaz-Guerra",
+            "Archontis Politis",
+            "Tuomas Virtanen"
+          ],
+          "org": "Tampere University",
+          "abstract": "Music source separation is the task of separating a mixture of instruments into constituent tracks. Music source separation models are typically trained using only audio data, although additional information can be used to improve the model's separation capability. In this paper, we propose two ways of using musical scores to aid music source separation: a score-informed model where the score is concatenated with the magnitude spectrogram of the audio mixture as the input of the model, and a model where we use only the score to calculate the separation mask. We train our models on synthetic data in the SynthSOD dataset and evaluate our methods on the URMP and Aalto anechoic orchestra datasets, comprised of real recordings. The score-informed model improves separation results compared to a baseline approach, but struggles to generalize from synthetic to real data, whereas the score-only model shows a clear improvement in synthetic-to-real generalization.",
+          "comment": "5 pages, 2 figures, accepted to EUSIPCO 2025",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.LG",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2503.07352v2",
+          "category": "separation",
+          "task": "Music Source Separation",
+          "proposedMethod": "Score-informed model",
+          "datasets": [
+            "SynthSOD",
+            "URMP",
+            "Aalto anechoic orchestra"
+          ],
+          "what": "This paper explores the use of musical scores to improve music source separation, proposing both score-informed and score-only models.",
+          "novel": "The study demonstrates that incorporating musical scores can enhance separation performance and improve generalization from synthetic to real-world data.",
+          "method": "The score-informed model combines musical scores with audio spectrograms, while the score-only model uses scores to compute separation masks directly.",
+          "validation": "The models were trained on the SynthSOD dataset and evaluated on URMP and Aalto datasets, showing improved separation results and generalization capabilities.",
+          "discussion": "The score-informed model struggles with synthetic-to-real generalization, suggesting the need for more robust training strategies or additional real-world data.",
+          "nextReads": [
+            {
+              "label": "Score-informed source separation (2018)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Music source separation with deep learning (2020)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Generalization in music separation models (2021)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Synthetic datasets for music separation (2022)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2503.05110v1",
+          "date": "Mar 07",
+          "title": "UniArray: Unified Spectral-Spatial Modeling for Array-Geometry-Agnostic Speech Separation",
+          "authors": [
+            "Weiguang Chen",
+            "Junjie Zhang",
+            "Jielong Yang",
+            "Eng Siong Chng",
+            "Xionghu Zhong"
+          ],
+          "org": "Tencent AI Lab",
+          "abstract": "Array-geometry-agnostic speech separation (AGA-SS) aims to develop an effective separation method regardless of the microphone array geometry. Conventional methods rely on permutation-free operations, such as summation or attention mechanisms, to capture spatial information. However, these approaches often incur high computational costs or disrupt the effective use of spatial information during intra- and inter-channel interactions, leading to suboptimal performance. To address these issues, we propose UniArray, a novel approach that abandons the conventional interleaving manner. UniArray consists of three key components: a virtual microphone estimation (VME) module, a feature extraction and fusion module, and a hierarchical dual-path separator. The VME ensures robust performance across arrays with varying channel numbers. The feature extraction and fusion module leverages a spectral feature extraction module and a spatial dictionary learning (SDL) module to extract and fuse frequency-bin-level features, allowing the separator to focus on using the fused features. The hierarchical dual-path separator models feature dependencies along the time and frequency axes while maintaining computational efficiency. Experimental results show that UniArray outperforms state-of-the-art methods in SI-SDRi, WB-PESQ, NB-PESQ, and STOI across both seen and unseen array geometries.",
+          "comment": "5 pages, Prepirnt",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2503.05110v1",
+          "category": "separation",
+          "task": "Speech Separation",
+          "proposedMethod": "UniArray",
+          "datasets": [
+            "WSJ0-2mix",
+            "WSJ0-3mix",
+            "LibriMix"
+          ],
+          "what": "This paper proposes UniArray, a unified spectral-spatial modeling approach for array-geometry-agnostic speech separation, enabling effective separation across diverse microphone array geometries.",
+          "novel": "The novelty lies in the virtual microphone estimation (VME) module and the hierarchical dual-path separator, which ensure robust performance and computational efficiency across varying array geometries.",
+          "method": "UniArray uses a VME module for robust spatial modeling, a feature extraction and fusion module combining spectral and spatial features, and a hierarchical dual-path separator for efficient time-frequency dependency modeling.",
+          "validation": "The method is evaluated on SI-SDRi, WB-PESQ, NB-PESQ, and STOI metrics using datasets like WSJ0-2mix and LibriMix, outperforming state-of-the-art methods across seen and unseen array geometries.",
+          "discussion": "The approach may face challenges in adapting to highly dynamic environments or extreme microphone configurations, and its computational efficiency could be further optimized for real-time applications.",
+          "nextReads": [
+            {
+              "label": "Neural Spatial Filter: Target Speech Separation Assisted with Directional Information (2022)",
+              "url": "https://arxiv.org/abs/2203.17002"
+            },
+            {
+              "label": "SepFormer: Speech Separation with Transformer (2021)",
+              "url": "https://arxiv.org/abs/2010.13154"
+            },
+            {
+              "label": "Conv-TasNet: Surpassing Ideal Time-Frequency Magnitude Masking for Speech Separation (2019)",
+              "url": "https://arxiv.org/abs/1809.07454"
+            },
+            {
+              "label": "DPRNN: Dual-Path RNN for Single-Channel Speech Separation (2020)",
+              "url": "https://arxiv.org/abs/1910.06379"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2503.10086v1",
+          "date": "Mar 13",
+          "title": "Efficient Adapter Tuning for Joint Singing Voice Beat and Downbeat Tracking with Self-supervised Learning Features",
+          "authors": [
+            "Jiajun Deng",
+            "Yaolong Ju",
+            "Jing Yang",
+            "Simon Lui",
+            "Xunying Liu"
+          ],
+          "org": "Tencent AI Lab",
+          "abstract": "Singing voice beat tracking is a challenging task, due to the lack of musical accompaniment that often contains robust rhythmic and harmonic patterns, something most existing beat tracking systems utilize and can be essential for estimating beats. In this paper, a novel temporal convolutional network-based beat-tracking approach featuring self-supervised learning (SSL) representations and adapter tuning is proposed to track the beat and downbeat of singing voices jointly. The SSL DistilHuBERT representations are utilized to capture the semantic information of singing voices and are further fused with the generic spectral features to facilitate beat estimation. Sources of variabilities that are particularly prominent with the non-homogeneous singing voice data are reduced by the efficient adapter tuning. Extensive experiments show that feature fusion and adapter tuning improve the performance individually, and the combination of both leads to significantly better performances than the un-adapted baseline system, with up to 31.6% and 42.4% absolute F1-score improvements on beat and downbeat tracking, respectively.",
+          "comment": "Accepted by ISMIR2024",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.MM",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2503.10086v1",
+          "category": "transcription",
+          "task": "Beat Tracking",
+          "proposedMethod": "Adapter Tuning with SSL",
+          "datasets": [
+            "DistilHuBERT",
+            "Custom singing voice dataset"
+          ],
+          "what": "This paper introduces a temporal convolutional network-based approach for joint beat and downbeat tracking in singing voices, leveraging self-supervised learning (SSL) representations and adapter tuning.",
+          "novel": "The use of SSL representations like DistilHuBERT combined with adapter tuning for singing voice beat tracking is novel, addressing the challenges posed by the lack of rhythmic and harmonic patterns in unaccompanied singing.",
+          "method": "The method fuses SSL-based semantic features with spectral features and applies adapter tuning to reduce variability in non-homogeneous singing voice data.",
+          "validation": "Performance improvements were validated using F1-score metrics, showing up to 31.6% and 42.4% absolute improvements for beat and downbeat tracking, respectively.",
+          "discussion": "The method shows significant improvements but may require further testing on diverse datasets to ensure generalizability across different singing styles and languages.",
+          "nextReads": [
+            {
+              "label": "Beat tracking with deep neural networks (2019)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Self-supervised learning for music representation (2021)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Temporal convolutional networks for audio tasks (2020)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "DistilHuBERT: Lightweight SSL models (2022)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Self-supervised learning and adapter tuning are advancing beat and downbeat tracking in singing voices (Efficient Adapter Tuning) and enhancing music source separation using score-informed models (Score-informed Music Source Separation).",
+    "Innovations in speech separation include the Relative Transfer Matrix for noisy, reverberant environments (Multiple Speaker Separation) and UniArray for array-geometry-agnostic spectral-spatial modeling.",
+    "New tools like Mellow, a small audio-language model for reasoning, and ESPnet-SDS, a unified toolkit for spoken dialogue systems, are streamlining AI-driven audio applications."
+  ]
+}

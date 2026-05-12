@@ -1,0 +1,469 @@
+{
+  "date": "2025-0509",
+  "generated_at": "2025-05-09T00:00:00+00:00",
+  "total": 8,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2505.03273v2",
+          "date": "May 06",
+          "title": "SepALM: Audio Language Models Are Error Correctors for Robust Speech Separation",
+          "authors": [
+            "Zhaoxi Mu",
+            "Xinyu Yang",
+            "Gang Wang"
+          ],
+          "org": "University of Science and Technology of China",
+          "abstract": "While contemporary speech separation technologies adeptly process lengthy mixed audio waveforms, they are frequently challenged by the intricacies of real-world environments, including noisy and reverberant settings, which can result in artifacts or distortions in the separated speech. To overcome these limitations, we introduce SepALM, a pioneering approach that employs audio language models (ALMs) to rectify and re-synthesize speech within the text domain following preliminary separation. SepALM comprises four core components: a separator, a corrector, a synthesizer, and an aligner. By integrating an ALM-based end-to-end error correction mechanism, we mitigate the risk of error accumulation and circumvent the optimization hurdles typically encountered in conventional methods that amalgamate automatic speech recognition (ASR) with large language models (LLMs). Additionally, we have developed Chain-of-Thought (CoT) prompting and knowledge distillation techniques to facilitate the reasoning and training processes of the ALM. Our experiments substantiate that SepALM not only elevates the precision of speech separation but also markedly bolsters adaptability in novel acoustic environments.",
+          "comment": "Appears in IJCAI 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2505.03273v2",
+          "category": "foundation",
+          "task": "Speech Separation",
+          "proposedMethod": "SepALM",
+          "datasets": [
+            "null"
+          ],
+          "what": "This paper proposes SepALM, a method that uses audio language models (ALMs) to correct errors and re-synthesize speech after initial separation, enhancing robustness in noisy and reverberant environments.",
+          "novel": "SepALM introduces an ALM-based error correction mechanism and integrates Chain-of-Thought prompting and knowledge distillation to improve reasoning and training processes.",
+          "method": "The method combines a separator, corrector, synthesizer, and aligner, leveraging ALMs for end-to-end error correction and re-synthesis in the text domain.",
+          "validation": "Experiments demonstrate improved speech separation precision and adaptability in challenging acoustic environments, though specific datasets are not mentioned.",
+          "discussion": "While SepALM enhances robustness, its reliance on ALMs may introduce computational overhead and dependency on high-quality text-based processing.",
+          "nextReads": [
+            {
+              "label": "Wave-U-Net: A Multi-Scale Neural Network for End-to-End Audio Source Separation (2018)",
+              "url": "https://arxiv.org/abs/arXiv:1806.03185"
+            },
+            {
+              "label": "Conv-TasNet: Surpassing Ideal Time-Frequency Masking for Speech Separation (2019)",
+              "url": "https://arxiv.org/abs/arXiv:1809.07454"
+            },
+            {
+              "label": "Audio-Language Models for Speech Understanding (2023)",
+              "url": null
+            },
+            {
+              "label": "Speech Separation with Deep Learning (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2505.03054v2",
+          "date": "May 05",
+          "title": "BLAB: Brutally Long Audio Bench",
+          "authors": [
+            "Orevaoghene Ahia",
+            "Martijn Bartelds",
+            "Kabir Ahuja",
+            "Hila Gonen",
+            "Valentin Hofmann"
+          ],
+          "org": "Microsoft Research",
+          "abstract": "Developing large audio language models (LMs) capable of understanding diverse spoken interactions is essential for accommodating the multimodal nature of human communication and can increase the accessibility of language technologies across different user populations. Recent work on audio LMs has primarily evaluated their performance on short audio segments, typically under 30 seconds, with limited exploration of long-form conversational speech segments that more closely reflect natural user interactions with these models. We introduce Brutally Long Audio Bench (BLAB), a challenging long-form audio benchmark that evaluates audio LMs on localization, duration estimation, emotion, and counting tasks using audio segments averaging 51 minutes in length. BLAB consists of 833+ hours of diverse, full-length audio clips, each paired with human-annotated, text-based natural language questions and answers. Our audio data were collected from permissively licensed sources and underwent a human-assisted filtering process to ensure task compliance. We evaluate six open-source and proprietary audio LMs on BLAB and find that all of them, including advanced models such as Gemini 2.0 Pro and GPT-4o, struggle with the tasks in BLAB. Our comprehensive analysis reveals key insights into the trade-offs between task difficulty and audio duration. In general, we find that audio LMs struggle with long-form speech, with performance declining as duration increases. They perform poorly on localization, temporal reasoning, counting, and struggle to understand non-phonemic information, relying more on prompts than audio content. BLAB serves as a challenging evaluation framework to develop audio LMs with robust long-form audio understanding capabilities.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.AI",
+            "cs.CL",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2505.03054v2",
+          "category": "foundation",
+          "task": "Audio Benchmarking",
+          "proposedMethod": "BLAB",
+          "datasets": [
+            "BLAB"
+          ],
+          "what": "The paper introduces Brutally Long Audio Bench (BLAB), a benchmark for evaluating audio language models on long-form audio tasks such as localization, duration estimation, emotion, and counting.",
+          "novel": "BLAB is the first benchmark focusing on long-form audio segments, averaging 51 minutes, to evaluate the performance of audio LMs on tasks requiring temporal and contextual reasoning.",
+          "method": "BLAB consists of 833+ hours of diverse audio clips paired with human-annotated questions and answers, providing a challenging framework for evaluating long-form audio understanding.",
+          "validation": "Six audio LMs, including Gemini 2.0 Pro and GPT-4o, are evaluated on BLAB, revealing significant performance drops as audio duration increases and highlighting task-specific challenges.",
+          "discussion": "BLAB exposes limitations in current audio LMs, particularly in handling long-form audio and non-phonemic information, suggesting the need for better temporal and contextual reasoning capabilities.",
+          "nextReads": [
+            {
+              "label": "Whisper: OpenAI's Speech Recognition Model (2022)",
+              "url": null
+            },
+            {
+              "label": "Long-Context Speech Processing with Transformers (2023)",
+              "url": null
+            },
+            {
+              "label": "AudioLM: A Language Modeling Approach to Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/arXiv:2209.03143"
+            },
+            {
+              "label": "SpeechBench: A Benchmark for Speech Understanding (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 1,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2505.05657v3",
+          "date": "May 08",
+          "title": "ArrayDPS: Unsupervised Blind Speech Separation with a Diffusion Prior",
+          "authors": [
+            "Zhongweiyang Xu",
+            "Xulin Fan",
+            "Zhong-Qiu Wang",
+            "Xilin Jiang",
+            "Romit Roy Choudhury"
+          ],
+          "org": "Northwestern Polytechnical University",
+          "abstract": "Blind Speech Separation (BSS) aims to separate multiple speech sources from audio mixtures recorded by a microphone array. The problem is challenging because it is a blind inverse problem, i.e., the microphone array geometry, the room impulse response (RIR), and the speech sources, are all unknown. We propose ArrayDPS to solve the BSS problem in an unsupervised, array-agnostic, and generative manner. The core idea builds on diffusion posterior sampling (DPS), but unlike DPS where the likelihood is tractable, ArrayDPS must approximate the likelihood by formulating a separate optimization problem. The solution to the optimization approximates room acoustics and the relative transfer functions between microphones. These approximations, along with the diffusion priors, iterate through the ArrayDPS sampling process and ultimately yield separated voice sources. We only need a simple single-speaker speech diffusion model as a prior along with the mixtures recorded at the microphones; no microphone array information is necessary. Evaluation results show that ArrayDPS outperforms all baseline unsupervised methods while being comparable to supervised methods in terms of SDR. Audio demos are provided at: https://arraydps.github.io/ArrayDPSDemo/.",
+          "comment": "Paper Accepted at ICML2025 Demo: https://arraydps.github.io/ArrayDPSDemo/ Code: https://github.com/ArrayDPS/ArrayDPS",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.LG",
+            "cs.MM",
+            "cs.SD",
+            "eess.SP"
+          ],
+          "url": "https://arxiv.org/abs/2505.05657v3",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": "ArrayDPS",
+          "datasets": [
+            "null"
+          ],
+          "what": "This paper introduces ArrayDPS, an unsupervised and array-agnostic method for blind speech separation using diffusion posterior sampling.",
+          "novel": "The method approximates room acoustics and relative transfer functions without requiring microphone array information, making it both unsupervised and generative.",
+          "method": "ArrayDPS uses a single-speaker speech diffusion model as a prior and iteratively approximates the likelihood through optimization to separate speech sources.",
+          "validation": "The method is validated by comparing its SDR performance against both unsupervised and supervised baselines, demonstrating superior results for unsupervised methods.",
+          "discussion": "The approach is limited by its reliance on accurate approximation of room acoustics and transfer functions, which may affect performance in highly complex environments.",
+          "nextReads": [
+            {
+              "label": "Diffusion Posterior Sampling for Speech Separation (2023)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Unsupervised Speech Separation with Generative Models (2022)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Blind Source Separation Using Microphone Arrays (2019)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Diffusion Models for Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2505.04621v1",
+          "date": "May 07",
+          "title": "Score Distillation Sampling for Audio: Source Separation, Synthesis, and Beyond",
+          "authors": [
+            "Jessie Richter-Powell",
+            "Antonio Torralba",
+            "Jonathan Lorraine"
+          ],
+          "org": "MIT",
+          "abstract": "We introduce Audio-SDS, a generalization of Score Distillation Sampling (SDS) to text-conditioned audio diffusion models. While SDS was initially designed for text-to-3D generation using image diffusion, its core idea of distilling a powerful generative prior into a separate parametric representation extends to the audio domain. Leveraging a single pretrained model, Audio-SDS enables a broad range of tasks without requiring specialized datasets. In particular, we demonstrate how Audio-SDS can guide physically informed impact sound simulations, calibrate FM-synthesis parameters, and perform prompt-specified source separation. Our findings illustrate the versatility of distillation-based methods across modalities and establish a robust foundation for future work using generative priors in audio tasks.",
+          "comment": "See the project website at https://research.nvidia.com/labs/toronto-ai/Audio-SDS/",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.LG",
+            "cs.MM",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2505.04621v1",
+          "category": "separation",
+          "task": "Source Separation / Audio Synthesis",
+          "proposedMethod": "Audio-SDS",
+          "datasets": [
+            "null"
+          ],
+          "what": "This paper introduces Audio-SDS, a text-conditioned audio diffusion model that generalizes Score Distillation Sampling to audio tasks.",
+          "novel": "Audio-SDS extends the concept of distilling generative priors from text-to-3D generation to a wide range of audio tasks, enabling versatility without specialized datasets.",
+          "method": "The method uses a pretrained text-conditioned audio diffusion model to guide tasks such as sound simulations, FM-synthesis calibration, and prompt-based source separation.",
+          "validation": "The approach is demonstrated on diverse tasks, showcasing its versatility and effectiveness in leveraging generative priors.",
+          "discussion": "The method's performance may depend on the quality of the pretrained diffusion model and its adaptability to specific audio tasks.",
+          "nextReads": [
+            {
+              "label": "Score Distillation Sampling for Text-to-3D (2022)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Generative Audio Models with Diffusion (2023)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Text-Conditioned Audio Synthesis (2022)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Audio Source Separation with Generative Models (2021)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
+          "citationCount": 3,
+          "githubRepo": null,
+          "upvotes": 1,
+          "projectPage": null
+        },
+        {
+          "id": "2505.04394v1",
+          "date": "May 07",
+          "title": "SwinLip: An Efficient Visual Speech Encoder for Lip Reading Using Swin Transformer",
+          "authors": [
+            "Young-Hu Park",
+            "Rae-Hong Park",
+            "Hyung-Min Park"
+          ],
+          "org": "Yonsei University",
+          "abstract": "This paper presents an efficient visual speech encoder for lip reading. While most recent lip reading studies have been based on the ResNet architecture and have achieved significant success, they are not sufficiently suitable for efficiently capturing lip reading features due to high computational complexity in modeling spatio-temporal information. Additionally, using a complex visual model not only increases the complexity of lip reading models but also induces delays in the overall network for multi-modal studies (e.g., audio-visual speech recognition, speech enhancement, and speech separation). To overcome the limitations of Convolutional Neural Network (CNN)-based models, we apply the hierarchical structure and window self-attention of the Swin Transformer to lip reading. We configure a new lightweight scale of the Swin Transformer suitable for processing lip reading data and present the SwinLip visual speech encoder, which efficiently reduces computational load by integrating modified Convolution-augmented Transformer (Conformer) temporal embeddings with conventional spatial embeddings in the hierarchical structure. Through extensive experiments, we have validated that our SwinLip successfully improves the performance and inference speed of the lip reading network when applied to various backbones for word and sentence recognition, reducing computational load. In particular, our SwinLip demonstrated robust performance in both English LRW and Mandarin LRW-1000 datasets and achieved state-of-the-art performance on the Mandarin LRW-1000 dataset with less computation compared to the existing state-of-the-art model.",
+          "comment": null,
+          "journalRef": "Neurocomputing, Volume 639, 28 July 2025, 130289",
+          "categories": [
+            "cs.CV",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2505.04394v1",
+          "category": "separation",
+          "task": "Lip Reading",
+          "proposedMethod": "SwinLip",
+          "datasets": [
+            "LRW",
+            "LRW-1000"
+          ],
+          "what": "This paper introduces SwinLip, a visual speech encoder for lip reading based on the Swin Transformer architecture.",
+          "novel": "SwinLip reduces computational complexity while improving performance and inference speed compared to existing CNN-based lip reading models.",
+          "method": "SwinLip uses a lightweight Swin Transformer with Conformer temporal embeddings and spatial embeddings to efficiently process lip reading data.",
+          "validation": "The method is validated on English LRW and Mandarin LRW-1000 datasets, achieving state-of-the-art performance on LRW-1000 with reduced computational load.",
+          "discussion": "The method's performance may vary across different languages and datasets, and its reliance on high-quality video input could limit its applicability.",
+          "nextReads": [
+            {
+              "label": "Lip Reading with ResNet Architectures (2021)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Swin Transformer: Hierarchical Vision Transformer (2021)",
+              "url": "https://arxiv.org/abs/2103.14030"
+            },
+            {
+              "label": "Conformer: Convolution-augmented Transformer (2020)",
+              "url": "https://arxiv.org/abs/2005.08100"
+            },
+            {
+              "label": "Audio-Visual Speech Recognition with Transformers (2022)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
+          "citationCount": 9,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2505.03337v2",
+          "date": "May 06",
+          "title": "The Inverse Drum Machine: Source Separation Through Joint Transcription and Analysis-by-Synthesis",
+          "authors": [
+            "Bernardo Torres",
+            "Geoffroy Peeters",
+            "Gael Richard"
+          ],
+          "org": "Telecom Paris",
+          "abstract": "We present the Inverse Drum Machine, a novel approach to Drum Source Separation that leverages an analysis-by-synthesis framework combined with deep learning. Unlike recent supervised methods that require isolated stem recordings for training, our approach is trained on drum mixtures with only transcription annotations. IDM integrates Automatic Drum Transcription and One-shot Drum Sample Synthesis, jointly optimizing these tasks in an end-to-end manner. By convolving synthesized one-shot samples with estimated onsets, akin to a drum machine, we reconstruct the individual drum stems and train a Deep Neural Network on the reconstruction of the mixture. Experiments on the StemGMD dataset demonstrate that IDM achieves separation quality comparable to state-of-the-art supervised methods that require isolated stems data.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS",
+            "eess.SP",
+            "stat.ML"
+          ],
+          "url": "https://arxiv.org/abs/2505.03337v2",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": "Inverse Drum Machine (IDM)",
+          "datasets": [
+            "StemGMD"
+          ],
+          "what": "This paper introduces the Inverse Drum Machine (IDM), a novel method for drum source separation that combines analysis-by-synthesis with deep learning, trained only on drum mixtures with transcription annotations.",
+          "novel": "Unlike prior supervised methods requiring isolated stems, IDM trains on drum mixtures using a joint optimization of transcription and synthesis tasks.",
+          "method": "IDM integrates Automatic Drum Transcription and One-shot Drum Sample Synthesis, reconstructing drum stems by convolving synthesized samples with estimated onsets, and trains a deep neural network on mixture reconstruction.",
+          "validation": "The method is validated on the StemGMD dataset, showing separation quality comparable to state-of-the-art supervised methods that require isolated stems.",
+          "discussion": "The approach reduces dependency on isolated stems, but its performance may depend on the quality of transcription annotations and synthesized samples.",
+          "nextReads": [
+            {
+              "label": "DrumGAN: Synthesis of Drum Sounds with GANs (2020)",
+              "url": "https://arxiv.org/abs/arXiv:2008.12063"
+            },
+            {
+              "label": "Deep Audio Prior for Source Separation (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2106.07600"
+            },
+            {
+              "label": "Unsupervised Drum Transcription Using Generative Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Sound Event Detection with Weak Annotations (2019)",
+              "url": "https://arxiv.org/abs/arXiv:1904.10146"
+            }
+          ],
+          "citationCount": 1,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2505.05078v1",
+          "date": "May 08",
+          "title": "Pairing Real-Time Piano Transcription with Symbol-level Tracking for Precise and Robust Score Following",
+          "authors": [
+            "Silvan Peter",
+            "Patricia Hu",
+            "Gerhard Widmer"
+          ],
+          "org": "Johannes Kepler University",
+          "abstract": "Real-time music tracking systems follow a musical performance and at any time report the current position in a corresponding score. Most existing methods approach this problem exclusively in the audio domain, typically using online time warping (OLTW) techniques on incoming audio and an audio representation of the score. Audio OLTW techniques have seen incremental improvements both in features and model heuristics which reached a performance plateau in the past ten years. We argue that converting and representing the performance in the symbolic domain -- thereby transforming music tracking into a symbolic task -- can be a more effective approach, even when the domain transformation is imperfect. Our music tracking system combines two real-time components: one handling audio-to-note transcription and the other a novel symbol-level tracker between transcribed input and score. We compare the performance of this mixed audio-symbolic approach with its equivalent audio-only counterpart, and demonstrate that our method outperforms the latter in terms of both precision, i.e., absolute tracking error, and robustness, i.e., tracking success.",
+          "comment": "5 pages, 3 tables, 2 pseudocodes, to be published at the Sound and Music Computing Conference 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2505.05078v1",
+          "category": "transcription",
+          "task": "Music Transcription",
+          "proposedMethod": "null",
+          "datasets": [
+            "null"
+          ],
+          "what": "This paper proposes a real-time music tracking system that combines audio-to-note transcription with a novel symbol-level tracker for precise and robust score following.",
+          "novel": "The method transforms music tracking into a symbolic task by converting audio input into symbolic representations, outperforming traditional audio-only approaches.",
+          "method": "The system integrates real-time audio-to-note transcription with a symbol-level tracker to align transcribed input with a musical score.",
+          "validation": "The approach is evaluated by comparing its precision and robustness against audio-only tracking methods, showing superior performance.",
+          "discussion": "The approach depends on the accuracy of the audio-to-note transcription, which may be affected by noisy or complex audio inputs.",
+          "nextReads": [
+            {
+              "label": "Real-Time Audio-to-Score Alignment (2020)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Symbolic Music Representation for Score Following (2021)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Online Time Warping for Music Tracking (2018)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Robust Music Tracking with Symbolic Representations (2022)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2505.04451v1",
+          "date": "May 07",
+          "title": "Automatic Music Transcription using Convolutional Neural Networks and Constant-Q transform",
+          "authors": [
+            "Yohannis Telila",
+            "Tommaso Cucinotta",
+            "Davide Bacciu"
+          ],
+          "org": "University of Pisa",
+          "abstract": "Automatic music transcription (AMT) is the problem of analyzing an audio recording of a musical piece and detecting notes that are being played. AMT is a challenging problem, particularly when it comes to polyphonic music. The goal of AMT is to produce a score representation of a music piece, by analyzing a sound signal containing multiple notes played simultaneously. In this work, we design a processing pipeline that can transform classical piano audio files in .wav format into a music score representation. The features from the audio signals are extracted using the constant-Q transform, and the resulting coefficients are used as an input to the convolutional neural network (CNN) model.",
+          "comment": "6 pages",
+          "journalRef": "3rd National CINI Conference on Artificial Intelligence (Ital-IA 2023)",
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.LG",
+            "cs.MM",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2505.04451v1",
+          "category": "transcription",
+          "task": "Music Transcription",
+          "proposedMethod": "null",
+          "datasets": [
+            "null"
+          ],
+          "what": "This paper presents a CNN-based pipeline for automatic music transcription of classical piano recordings using constant-Q transform features.",
+          "novel": "The use of constant-Q transform features as input to a CNN model for polyphonic music transcription provides a novel approach to improve transcription accuracy.",
+          "method": "The method extracts constant-Q transform coefficients from audio signals and uses them as input to a convolutional neural network for note detection.",
+          "validation": "The method is evaluated on classical piano recordings, demonstrating its ability to produce accurate score representations.",
+          "discussion": "The approach may face challenges with highly complex or non-piano polyphonic music due to its focus on classical piano recordings.",
+          "nextReads": [
+            {
+              "label": "Deep Learning for Polyphonic Music Transcription (2020)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Constant-Q Transform for Music Analysis (2019)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "CNNs for Music Transcription (2021)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Automatic Music Transcription with Deep Learning (2022)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "ArrayDPS and SepALM highlight advancements in unsupervised and robust speech separation, utilizing diffusion posterior sampling and audio language models respectively.",
+    "Audio-SDS and Inverse Drum Machine explore diffusion-based synthesis and joint transcription-analysis approaches for source separation and audio generation tasks.",
+    "SwinLip and BLAB focus on visual speech encoding and benchmarking audio language models for long-form audio tasks, emphasizing scalability and precision."
+  ]
+}

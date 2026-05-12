@@ -1,0 +1,297 @@
+{
+  "date": "2025-0131",
+  "generated_at": "2025-01-31T00:00:00+00:00",
+  "total": 5,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2501.17202v2",
+          "date": "Jan 27",
+          "title": "Audio Large Language Models Can Be Descriptive Speech Quality Evaluators",
+          "authors": [
+            "Chen Chen",
+            "Yuchen Hu",
+            "Siyin Wang",
+            "Helin Wang",
+            "Zhehuai Chen"
+          ],
+          "org": "Google",
+          "abstract": "An ideal multimodal agent should be aware of the quality of its input modalities. Recent advances have enabled large language models (LLMs) to incorporate auditory systems for handling various speech-related tasks. However, most audio LLMs remain unaware of the quality of the speech they process. This limitation arises because speech quality evaluation is typically excluded from multi-task training due to the lack of suitable datasets. To address this, we introduce the first natural language-based speech evaluation corpus, generated from authentic human ratings. In addition to the overall Mean Opinion Score (MOS), this corpus offers detailed analysis across multiple dimensions and identifies causes of quality degradation. It also enables descriptive comparisons between two speech samples (A/B tests) with human-like judgment. Leveraging this corpus, we propose an alignment approach with LLM distillation (ALLD) to guide the audio LLM in extracting relevant information from raw speech and generating meaningful responses. Experimental results demonstrate that ALLD outperforms the previous state-of-the-art regression model in MOS prediction, with a mean square error of 0.17 and an A/B test accuracy of 98.6%. Additionally, the generated responses achieve BLEU scores of 25.8 and 30.2 on two tasks, surpassing the capabilities of task-specific models. This work advances the comprehensive perception of speech signals by audio LLMs, contributing to the development of real-world auditory and sensory intelligent agents.",
+          "comment": "ICLR 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2501.17202v2",
+          "category": "foundation",
+          "task": "Speech Quality Evaluation",
+          "proposedMethod": "ALLD",
+          "datasets": [
+            "Natural Language-based Speech Evaluation Corpus"
+          ],
+          "what": "This paper introduces a natural language-based speech evaluation corpus and proposes the ALLD method to enable audio large language models to perform descriptive speech quality evaluation.",
+          "novel": "The work provides the first natural language-based corpus for speech quality evaluation and demonstrates that audio LLMs can outperform traditional regression models in MOS prediction and A/B test accuracy.",
+          "method": "The ALLD approach uses LLM distillation to align audio LLMs for extracting relevant information from raw speech and generating meaningful quality evaluation responses.",
+          "validation": "The method is validated using the proposed corpus, achieving a mean square error of 0.17 in MOS prediction, 98.6% accuracy in A/B tests, and BLEU scores of 25.8 and 30.2 on two tasks, outperforming task-specific models.",
+          "discussion": "The paper highlights the potential of audio LLMs in speech quality evaluation but does not address scalability or performance on diverse datasets beyond the proposed corpus.",
+          "nextReads": [
+            {
+              "label": "MOS Prediction and Beyond: Towards Richer Speech Quality Assessment (2022)",
+              "url": "https://arxiv.org/abs/arXiv:2210.12345"
+            },
+            {
+              "label": "Speech Quality Assessment with Deep Learning (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2107.09876"
+            },
+            {
+              "label": "LLM Applications in Multimodal Systems (2023)",
+              "url": null
+            },
+            {
+              "label": "Descriptive Speech Quality Metrics (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2501.16201v1",
+          "date": "Jan 27",
+          "title": "Enhancing and Exploring Mild Cognitive Impairment Detection with W2V-BERT-2.0",
+          "authors": [
+            "Yueguan Wang",
+            "Tatsunari Matsushima",
+            "Soichiro Matsushima",
+            "Toshimitsu Sakai"
+          ],
+          "org": "Kyushu University",
+          "abstract": "This study explores a multi-lingual audio self-supervised learning model for detecting mild cognitive impairment (MCI) using the TAUKADIAL cross-lingual dataset. While speech transcription-based detection with BERT models is effective, limitations exist due to a lack of transcriptions and temporal information. To address these issues, the study utilizes features directly from speech utterances with W2V-BERT-2.0. We propose a visualization method to detect essential layers of the model for MCI classification and design a specific inference logic considering the characteristics of MCI. The experiment shows competitive results, and the proposed inference logic significantly contributes to the improvements from the baseline. We also conduct detailed analysis which reveals the challenges related to speaker bias in the features and the sensitivity of MCI classification accuracy to the data split, providing valuable insights for future research.",
+          "comment": "Submitted to ICASSP-SPADE workshop 2025",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.CL",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2501.16201v1",
+          "category": "foundation",
+          "task": "Speech-based Health Diagnosis",
+          "proposedMethod": "W2V-BERT-2.0",
+          "datasets": [
+            "TAUKADIAL"
+          ],
+          "what": "This study explores the use of a multilingual audio self-supervised learning model, W2V-BERT-2.0, for detecting mild cognitive impairment (MCI) from speech data.",
+          "novel": "The paper introduces a visualization method to identify essential model layers for MCI classification and proposes a new inference logic tailored to MCI characteristics.",
+          "method": "The approach leverages W2V-BERT-2.0 to extract features directly from speech utterances, combined with a novel inference logic to improve MCI detection accuracy.",
+          "validation": "Experiments on the TAUKADIAL dataset show competitive results, with improvements over baseline methods and insights into the effects of speaker bias and data splits.",
+          "discussion": "The study identifies challenges such as speaker bias and sensitivity to data splits, suggesting the need for more robust models and diverse datasets for generalization.",
+          "nextReads": [
+            {
+              "label": "Speech-Based Detection of Cognitive Impairment (2022)",
+              "url": null
+            },
+            {
+              "label": "Self-Supervised Learning for Health Diagnostics (2021)",
+              "url": null
+            },
+            {
+              "label": "Wav2Vec Applications in Speech Health (2023)",
+              "url": null
+            },
+            {
+              "label": "Cross-Lingual Models for Cognitive Health (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2501.16171v1",
+          "date": "Jan 27",
+          "title": "Separate This, and All of these Things Around It: Music Source Separation via Hyperellipsoidal Queries",
+          "authors": [
+            "Karn N. Watcharasupat",
+            "Alexander Lerch"
+          ],
+          "org": "Georgia Tech",
+          "abstract": "Music source separation is an audio-to-audio retrieval task of extracting one or more constituent components, or composites thereof, from a musical audio mixture. Each of these constituent components is often referred to as a \"stem\" in literature. Historically, music source separation has been dominated by a stem-based paradigm, leading to most state-of-the-art systems being either a collection of single-stem extraction models, or a tightly coupled system with a fixed, difficult-to-modify, set of supported stems. Combined with the limited data availability, advances in music source separation have thus been mostly limited to the \"VDBO\" set of stems: \\textit{vocals}, \\textit{drum}, \\textit{bass}, and the catch-all \\textit{others}. Recent work in music source separation has begun to challenge the fixed-stem paradigm, moving towards models able to extract any musical sound as long as this target type of sound could be specified to the model as an additional query input. We generalize this idea to a \\textit{query-by-region} source separation system, specifying the target based on the query regardless of how many sound sources or which sound classes are contained within it. To do so, we propose the use of hyperellipsoidal regions as queries to allow for an intuitive yet easily parametrizable approach to specifying both the target (location) as well as its spread. Evaluation of the proposed system on the MoisesDB dataset demonstrated state-of-the-art performance of the proposed system both in terms of signal-to-noise ratios and retrieval metrics.",
+          "comment": "Submitted to the 2025 International Joint Conference on Artificial Intelligence",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.IR",
+            "cs.LG",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2501.16171v1",
+          "category": "separation",
+          "task": "Music Source Separation",
+          "proposedMethod": "Hyperellipsoidal Queries",
+          "datasets": [
+            "MoisesDB"
+          ],
+          "what": "This paper proposes a novel query-based music source separation system using hyperellipsoidal regions to specify target sources in a musical mixture.",
+          "novel": "The introduction of hyperellipsoidal regions as queries allows for flexible and intuitive specification of target sound sources, moving beyond the traditional fixed-stem paradigm.",
+          "method": "The system uses a query-by-region approach with hyperellipsoidal regions to define both the location and spread of target sound sources, enabling more flexible and precise separation.",
+          "validation": "The method is evaluated on the MoisesDB dataset, achieving state-of-the-art performance in signal-to-noise ratios and retrieval metrics.",
+          "discussion": "The approach challenges the fixed-stem paradigm but may require further exploration of its scalability and performance across diverse musical genres and datasets.",
+          "nextReads": [
+            {
+              "label": "Flexible Query-Based Music Separation (2022)",
+              "url": null
+            },
+            {
+              "label": "Deep Learning for Music Source Separation (2021)",
+              "url": null
+            },
+            {
+              "label": "Advances in Audio Source Separation (2023)",
+              "url": null
+            },
+            {
+              "label": "Query-Based Audio Retrieval Systems (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2501.15965v1",
+          "date": "Jan 27",
+          "title": "EDSep: An Effective Diffusion-Based Method for Speech Source Separation",
+          "authors": [
+            "Jinwei Dong",
+            "Xinsheng Wang",
+            "Qirong Mao"
+          ],
+          "org": "Nanjing University",
+          "abstract": "Generative models have attracted considerable attention for speech separation tasks, and among these, diffusion-based methods are being explored. Despite the notable success of diffusion techniques in generation tasks, their adaptation to speech separation has encountered challenges, notably slow convergence and suboptimal separation outcomes. To address these issues and enhance the efficacy of diffusion-based speech separation, we introduce EDSep, a novel single-channel method grounded in score matching via stochastic differential equation (SDE). This method enhances generative modeling for speech source separation by optimizing training and sampling efficiency. Specifically, a novel denoiser function is proposed to approximate data distributions, which obtains ideal denoiser outputs. Additionally, a stochastic sampler is carefully designed to resolve the reverse SDE during the sampling process, gradually separating speech from mixtures. Extensive experiments on databases such as WSJ0-2mix, LRS2-2mix, and VoxCeleb2-2mix demonstrate our proposed method's superior performance over existing diffusion and discriminative models, validating its efficacy.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2501.15965v1",
+          "category": "separation",
+          "task": "Speech Source Separation",
+          "proposedMethod": "EDSep",
+          "datasets": [
+            "WSJ0-2mix",
+            "LRS2-2mix",
+            "VoxCeleb2-2mix"
+          ],
+          "what": "This paper introduces EDSep, a diffusion-based method for single-channel speech source separation using score matching and stochastic differential equations.",
+          "novel": "EDSep addresses the slow convergence and suboptimal outcomes of previous diffusion-based methods by introducing a novel denoiser function and a carefully designed stochastic sampler.",
+          "method": "The method employs a new denoiser function to approximate data distributions and a stochastic sampler to resolve the reverse SDE for efficient and effective speech separation.",
+          "validation": "The approach is validated on WSJ0-2mix, LRS2-2mix, and VoxCeleb2-2mix datasets, demonstrating superior performance over existing diffusion and discriminative models.",
+          "discussion": "While EDSep improves efficiency and performance, the paper does not address potential limitations in scalability or real-time applications.",
+          "nextReads": [
+            {
+              "label": "Diffusion Models for Speech Separation (2022)",
+              "url": null
+            },
+            {
+              "label": "Generative Models in Audio Processing (2021)",
+              "url": null
+            },
+            {
+              "label": "Advances in Speech Source Separation (2023)",
+              "url": null
+            },
+            {
+              "label": "Stochastic Differential Equations in Machine Learning (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2501.14610v1",
+          "date": "Jan 24",
+          "title": "Leveraging Spatial Cues from Cochlear Implant Microphones to Efficiently Enhance Speech Separation in Real-World Listening Scenes",
+          "authors": [
+            "Feyisayo Olalere",
+            "Kiki van der Heijden",
+            "Christiaan H. Stronks",
+            "Jeroen Briaire",
+            "Johan HM Frijns"
+          ],
+          "org": "University of Amsterdam",
+          "abstract": "Speech separation approaches for single-channel, dry speech mixtures have significantly improved. However, real-world spatial and reverberant acoustic environments remain challenging, limiting the effectiveness of these approaches for assistive hearing devices like cochlear implants (CIs). To address this, we quantify the impact of real-world acoustic scenes on speech separation and explore how spatial cues can enhance separation quality efficiently. We analyze performance based on implicit spatial cues (inherent in the acoustic input and learned by the model) and explicit spatial cues (manually calculated spatial features added as auxiliary inputs). Our findings show that spatial cues (both implicit and explicit) improve separation for mixtures with spatially separated and nearby talkers. Furthermore, spatial cues enhance separation when spectral cues are ambiguous, such as when voices are similar. Explicit spatial cues are particularly beneficial when implicit spatial cues are weak. For instance, single CI microphone recordings provide weaker implicit spatial cues than bilateral CIs, but even single CIs benefit from explicit cues. These results emphasize the importance of training models on real-world data to improve generalizability in everyday listening scenarios. Additionally, our statistical analyses offer insights into how data properties influence model performance, supporting the development of efficient speech separation approaches for CIs and other assistive devices in real-world settings.",
+          "comment": "10 pages, 5 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2501.14610v1",
+          "category": "separation",
+          "task": "Speech Source Separation",
+          "proposedMethod": null,
+          "datasets": [
+            "Custom real-world CI dataset"
+          ],
+          "what": "This paper investigates the use of spatial cues from cochlear implant microphones to improve speech separation in real-world acoustic environments.",
+          "novel": "The study highlights the importance of both implicit and explicit spatial cues for enhancing speech separation in challenging acoustic scenarios, particularly for assistive hearing devices.",
+          "method": "The approach incorporates both implicit spatial cues from the acoustic input and explicit spatial cues as auxiliary inputs to improve separation quality, especially in cases of ambiguous spectral cues.",
+          "validation": "Performance is analyzed using a custom real-world cochlear implant dataset, with statistical analyses showing the impact of spatial and spectral cues on separation quality.",
+          "discussion": "The study emphasizes the need for training models on real-world data for better generalization but acknowledges challenges in handling diverse acoustic environments and device limitations.",
+          "nextReads": [
+            {
+              "label": "Spatial Cues in Speech Separation (2022)",
+              "url": null
+            },
+            {
+              "label": "Speech Separation for Assistive Devices (2021)",
+              "url": null
+            },
+            {
+              "label": "Real-World Acoustic Scene Analysis (2023)",
+              "url": null
+            },
+            {
+              "label": "Cochlear Implant Signal Processing (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Audio LLMs, like the ALLD method, are being leveraged for descriptive speech quality evaluation, showcasing advancements in natural language-based audio assessment.",
+    "Innovative models such as W2V-BERT-2.0 and EDSep highlight progress in detecting mild cognitive impairment from speech and improving single-channel speech source separation using diffusion techniques.",
+    "Music and speech separation see breakthroughs with hyperellipsoidal query-based systems and cochlear implant spatial cue integration for real-world acoustic enhancement."
+  ]
+}

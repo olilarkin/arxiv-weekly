@@ -1,0 +1,204 @@
+{
+  "date": "2025-0613",
+  "generated_at": "2025-06-13T00:00:00+00:00",
+  "total": 5,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2506.08967v2",
+          "date": "Jun 10",
+          "title": "Step-Audio-AQAA: a Fully End-to-End Expressive Large Audio Language Model",
+          "authors": [
+            "Ailin Huang",
+            "Bingxin Li",
+            "Bruce Wang",
+            "Boyong Wu",
+            "Chao Yan"
+          ],
+          "org": "Ailin Huang et al.",
+          "abstract": "Large Audio-Language Models (LALMs) have significantly advanced intelligent human-computer interaction, yet their reliance on text-based outputs limits their ability to generate natural speech responses directly, hindering seamless audio interactions. To address this, we introduce Step-Audio-AQAA, a fully end-to-end LALM designed for Audio Query-Audio Answer (AQAA) tasks. The model integrates a dual-codebook audio tokenizer for linguistic and semantic feature extraction, a 130-billion-parameter backbone LLM and a neural vocoder for high-fidelity speech synthesis. Our post-training approach employs interleaved token-output of text and audio to enhance semantic coherence and combines Direct Preference Optimization (DPO) with model merge to improve performance. Evaluations on the StepEval-Audio-360 benchmark demonstrate that Step-Audio-AQAA excels especially in speech control, outperforming the state-of-art LALMs in key areas. This work contributes a promising solution for end-to-end LALMs and highlights the critical role of token-based vocoder in enhancing overall performance for AQAA tasks.",
+          "comment": "12 pages, 3 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2506.08967v2",
+          "category": "foundation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 2,
+          "projectPage": null
+        },
+        {
+          "id": "2506.07520v3",
+          "date": "Jun 09",
+          "title": "LeVo: High-Quality Song Generation with Multi-Preference Alignment",
+          "authors": [
+            "Shun Lei",
+            "Yaoxun Xu",
+            "Zhiwei Lin",
+            "Huaicheng Zhang",
+            "Wei Tan"
+          ],
+          "org": "Shun Lei et al.",
+          "abstract": "Recent advances in large language models (LLMs) and audio language models have significantly improved music generation, particularly in lyrics-to-song generation. However, existing approaches still struggle with the complex composition of songs and the scarcity of high-quality data, leading to limitations in audio quality, musicality, instruction following, and vocal-instrument harmony. To address these challenges, we introduce LeVo, a language model based framework consisting of LeLM and Music Codec. LeLM is capable of parallel modeling of two types of tokens: mixed tokens, which represent the combined audio of vocals and accompaniment to achieve better vocal-instrument harmony, and dual-track tokens, which separately encode vocals and accompaniment for high-quality song generation. It employs two decoder-only transformers and a modular extension training strategy to prevent interference between different token types. To further enhance musicality and instruction following ability, we introduce a multi-preference alignment method based on Direct Preference Optimization (DPO). This method handles diverse human preferences through a semi-automatic data construction process and post-training. Experimental results demonstrate that LeVo significantly outperforms existing open-source methods in both objective and subjective metrics, while performing competitively with industry systems. Ablation studies further justify the effectiveness of our designs. Audio examples and source code are available at https://levo-demo.github.io and https://github.com/tencent-ailab/songgeneration.",
+          "comment": "Accepted by NeurIPS 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2506.07520v3",
+          "category": "foundation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": "https://github.com/tencent-ailab/songgeneration",
+          "upvotes": 8,
+          "projectPage": "https://levo-demo.github.io/"
+        },
+        {
+          "id": "2506.06820v2",
+          "date": "Jun 07",
+          "title": "Beyond Classification: Towards Speech Emotion Reasoning with Multitask AudioLLMs",
+          "authors": [
+            "Wenyu Zhang",
+            "Yingxu He",
+            "Geyu Lin",
+            "Zhuohan Liu",
+            "Shuo Sun"
+          ],
+          "org": "Wenyu Zhang et al.",
+          "abstract": "Audio Large Language Models (AudioLLMs) have achieved strong results in semantic tasks like speech recognition and translation, but remain limited in modeling paralinguistic cues such as emotion. Existing approaches often treat emotion understanding as a classification problem, offering little insight into the underlying rationale behind predictions. In this work, we explore emotion reasoning, a strategy that leverages the generative capabilities of AudioLLMs to enhance emotion recognition by producing semantically aligned, evidence-grounded explanations. To support this in multitask AudioLLMs, we introduce a unified framework combining reasoning-augmented data supervision, dual-encoder architecture, and task-alternating training. This approach enables AudioLLMs to effectively learn different tasks while incorporating emotional reasoning. Experiments on IEMOCAP and MELD show that our approach not only improves emotion prediction accuracy but also enhances the coherence and evidential grounding of the generated responses. Experiments on two out-of-domain datasets demonstrate the generalization capabilities of the resulting model.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.CL",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2506.06820v2",
+          "category": "foundation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2506.06756v1",
+          "date": "Jun 07",
+          "title": "Can Quantized Audio Language Models Perform Zero-Shot Spoofing Detection?",
+          "authors": [
+            "Bikash Dutta",
+            "Rishabh Ranjan",
+            "Shyam Sathvik",
+            "Mayank Vatsa",
+            "Richa Singh"
+          ],
+          "org": "Bikash Dutta et al.",
+          "abstract": "Quantization is essential for deploying large audio language models (LALMs) efficiently in resource-constrained environments. However, its impact on complex tasks, such as zero-shot audio spoofing detection, remains underexplored. This study evaluates the zero-shot capabilities of five LALMs, GAMA, LTU-AS, MERaLiON, Qwen-Audio, and SALMONN, across three distinct datasets: ASVspoof2019, In-the-Wild, and WaveFake, and investigates their robustness to quantization (FP32, FP16, INT8). Despite high initial spoof detection accuracy, our analysis demonstrates severe predictive biases toward spoof classification across all models, rendering their practical performance equivalent to random classification. Interestingly, quantization to FP16 precision resulted in negligible performance degradation compared to FP32, effectively halving memory and computational requirements without materially impacting accuracy. However, INT8 quantization intensified model biases, significantly degrading balanced accuracy. These findings highlight critical architectural limitations and emphasize FP16 quantization as an optimal trade-off, providing guidelines for practical deployment and future model refinement.",
+          "comment": "Accepted in Interspeech 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2506.06756v1",
+          "category": "foundation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2506.06689v2",
+          "date": "Jun 07",
+          "title": "A Fast and Lightweight Model for Causal Audio-Visual Speech Separation",
+          "authors": [
+            "Wendi Sang",
+            "Kai Li",
+            "Runxuan Yang",
+            "Jianqiang Huang",
+            "Xiaolin Hu"
+          ],
+          "org": "Wendi Sang et al.",
+          "abstract": "Audio-visual speech separation (AVSS) aims to extract a target speech signal from a mixed signal by leveraging both auditory and visual (lip movement) cues. However, most existing AVSS methods exhibit complex architectures and rely on future context, operating offline, which renders them unsuitable for real-time applications. Inspired by the pipeline of RTFSNet, we propose a novel streaming AVSS model, named Swift-Net, which enhances the causal processing capabilities required for real-time applications. Swift-Net adopts a lightweight visual feature extraction module and an efficient fusion module for audio-visual integration. Additionally, Swift-Net employs Grouped SRUs to integrate historical information across different feature spaces, thereby improving the utilization efficiency of historical information. We further propose a causal transformation template to facilitate the conversion of non-causal AVSS models into causal counterparts. Experiments on three standard benchmark datasets (LRS2, LRS3, and VoxCeleb2) demonstrated that under causal conditions, our proposed Swift-Net exhibited outstanding performance, highlighting the potential of this method for processing speech in complex environments.",
+          "comment": "Accepted by ECAI 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2506.06689v2",
+          "category": "separation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Analyzing this week's audio foundation model research trends.",
+    "Many new approaches for source separation and music transcription were submitted.",
+    "See the individual papers for details."
+  ]
+}

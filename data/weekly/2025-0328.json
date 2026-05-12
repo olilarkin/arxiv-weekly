@@ -1,0 +1,298 @@
+{
+  "date": "2025-0328",
+  "generated_at": "2025-03-28T00:00:00+00:00",
+  "total": 5,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2503.17646v1",
+          "date": "Mar 22",
+          "title": "Leveraging Audio Representations for Vibration-Based Crowd Monitoring in Stadiums",
+          "authors": [
+            "Yen Cheng Chang",
+            "Jesse Codling",
+            "Yiwen Dong",
+            "Jiale Zhang",
+            "Jiasi Chen"
+          ],
+          "org": "University of Michigan",
+          "abstract": "Crowd monitoring in sports stadiums is important to enhance public safety and improve the audience experience. Existing approaches mainly rely on cameras and microphones, which can cause significant disturbances and often raise privacy concerns. In this paper, we sense floor vibration, which provides a less disruptive and more non-intrusive way of crowd sensing, to predict crowd behavior. However, since the vibration-based crowd monitoring approach is newly developed, one main challenge is the lack of training data due to sports stadiums being large public spaces with complex physical activities.   In this paper, we present ViLA (Vibration Leverage Audio), a vibration-based method that reduces the dependency on labeled data by pre-training with unlabeled cross-modality data. ViLA is first pre-trained on audio data in an unsupervised manner and then fine-tuned with a minimal amount of in-domain vibration data. By leveraging publicly available audio datasets, ViLA learns the wave behaviors from audio and then adapts the representation to vibration, reducing the reliance on domain-specific vibration data. Our real-world experiments demonstrate that pre-training the vibration model using publicly available audio data (YouTube8M) achieved up to a 5.8x error reduction compared to the model without audio pre-training.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CV"
+          ],
+          "url": "https://arxiv.org/abs/2503.17646v1",
+          "category": "foundation",
+          "task": "Crowd Monitoring",
+          "proposedMethod": "ViLA",
+          "datasets": [
+            "YouTube8M"
+          ],
+          "what": "This paper introduces ViLA, a vibration-based crowd monitoring method that leverages audio pre-training to reduce dependency on labeled vibration data.",
+          "novel": "The novelty lies in using cross-modal pre-training on audio data to adapt representations for vibration-based crowd monitoring, addressing the challenge of limited labeled vibration data.",
+          "method": "ViLA is pre-trained on publicly available audio datasets in an unsupervised manner and fine-tuned with minimal in-domain vibration data for crowd behavior prediction.",
+          "validation": "Real-world experiments demonstrate that ViLA achieves up to a 5.8x error reduction compared to models without audio pre-training.",
+          "discussion": "The approach's reliance on the similarity between audio and vibration signals may limit its applicability to certain environments and crowd behaviors.",
+          "nextReads": [
+            {
+              "label": "Cross-Modal Learning with Audio and Vibration Data (2021)",
+              "url": null
+            },
+            {
+              "label": "Unsupervised Pretraining for Audio Classification (2020)",
+              "url": "https://arxiv.org/abs/2006.00719"
+            },
+            {
+              "label": "Crowd Monitoring Using Vibration Sensors (2019)",
+              "url": null
+            },
+            {
+              "label": "YouTube-8M: A Large-Scale Video Classification Benchmark (2016)",
+              "url": "https://arxiv.org/abs/1609.08675"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2503.16833v2",
+          "date": "Mar 21",
+          "title": "The Model Hears You: Audio Language Model Deployments Should Consider the Principle of Least Privilege",
+          "authors": [
+            "Luxi He",
+            "Xiangyu Qi",
+            "Michel Liao",
+            "Inyoung Cheong",
+            "Prateek Mittal"
+          ],
+          "org": "Stanford University",
+          "abstract": "The latest Audio Language Models (Audio LMs) process speech directly instead of relying on a separate transcription step. This shift preserves detailed information, such as intonation or the presence of multiple speakers, that would otherwise be lost in transcription. However, it also introduces new safety risks, including the potential misuse of speaker identity cues and other sensitive vocal attributes, which could have legal implications. In this paper, we urge a closer examination of how these models are built and deployed. Our experiments show that end-to-end modeling, compared with cascaded pipelines, creates socio-technical safety risks such as identity inference, biased decision-making, and emotion detection. This raises concerns about whether Audio LMs store voiceprints and function in ways that create uncertainty under existing legal regimes. We then argue that the Principle of Least Privilege should be considered to guide the development and deployment of these models. Specifically, evaluations should assess (1) the privacy and safety risks associated with end-to-end modeling; and (2) the appropriate scope of information access. Finally, we highlight related gaps in current audio LM benchmarks and identify key open research questions, both technical and policy-related, that must be addressed to enable the responsible deployment of end-to-end Audio LMs.",
+          "comment": "Published at AIES 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.CL",
+            "cs.CY",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2503.16833v2",
+          "category": "foundation",
+          "task": "Audio Language Models",
+          "proposedMethod": null,
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "This paper examines the socio-technical safety risks of end-to-end Audio Language Models (Audio LMs) and proposes the Principle of Least Privilege for their development and deployment.",
+          "novel": "The paper highlights the risks of end-to-end Audio LMs, such as identity inference and emotion detection, and advocates for a new principle to guide their responsible deployment.",
+          "method": "The authors analyze the privacy and safety risks of end-to-end modeling and propose evaluations that assess the appropriate scope of information access.",
+          "validation": "The study includes experiments to demonstrate the socio-technical risks of end-to-end Audio LMs, such as biased decision-making and potential misuse of sensitive vocal attributes.",
+          "discussion": "The paper identifies gaps in current benchmarks and emphasizes the need for both technical and policy-related research to address privacy and safety concerns in Audio LMs.",
+          "nextReads": [
+            {
+              "label": "Wav2Vec 2.0: A Framework for Self-Supervised Learning of Speech Representations (2020)",
+              "url": "https://arxiv.org/abs/2006.11477"
+            },
+            {
+              "label": "Speech Privacy in the Era of Deep Learning (2021)",
+              "url": null
+            },
+            {
+              "label": "Ethical Challenges in AI for Speech Technologies (2020)",
+              "url": null
+            },
+            {
+              "label": "Audio Transformers: A Survey (2022)",
+              "url": "https://arxiv.org/abs/2205.09729"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2503.18600v1",
+          "date": "Mar 24",
+          "title": "Joint Spectrogram Separation and TDOA Estimation using Optimal Transport",
+          "authors": [
+            "Linda Fabiani",
+            "Sebastian J. Schlecht",
+            "Isabel Haasler",
+            "Filip Elvander"
+          ],
+          "org": "Aalto University",
+          "abstract": "Separating sources is a common challenge in applications such as speech enhancement and telecommunications, where distinguishing between overlapping sounds helps reduce interference and improve signal quality. Additionally, in multichannel systems, correct calibration and synchronization are essential to separate and locate source signals accurately. This work introduces a method for blind source separation and estimation of the Time Difference of Arrival (TDOA) of signals in the time-frequency domain. Our proposed method effectively separates signal mixtures into their original source spectrograms while simultaneously estimating the relative delays between receivers, using Optimal Transport (OT) theory. By exploiting the structure of the OT problem, we combine the separation and delay estimation processes into a unified framework, optimizing the system through a block coordinate descent algorithm. We analyze the performance of the OT-based estimator under various noise conditions and compare it with conventional TDOA and source separation methods. Numerical simulation results demonstrate that our proposed approach can achieve a significant level of accuracy across diverse noise scenarios for physical speech signals in both TDOA and source separation tasks.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "eess.SP"
+          ],
+          "url": "https://arxiv.org/abs/2503.18600v1",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": null,
+          "datasets": [
+            "Simulated datasets with physical speech signals"
+          ],
+          "what": "This paper introduces a method for blind source separation and Time Difference of Arrival (TDOA) estimation in the time-frequency domain using Optimal Transport (OT) theory.",
+          "novel": "The novelty lies in combining source separation and TDOA estimation into a unified framework using Optimal Transport, optimized via a block coordinate descent algorithm.",
+          "method": "The method exploits the structure of the Optimal Transport problem to simultaneously separate signal mixtures into their source spectrograms and estimate relative delays between receivers.",
+          "validation": "The approach is validated through numerical simulations under various noise conditions, comparing its performance in TDOA and source separation tasks with conventional methods.",
+          "discussion": "The method's performance in real-world scenarios and scalability to larger datasets or more complex environments remains to be explored.",
+          "nextReads": [
+            {
+              "label": "Deep Clustering and Conventional Networks for Music Source Separation (2017)",
+              "url": "https://arxiv.org/abs/1706.09588"
+            },
+            {
+              "label": "Learning to Separate Sounds by Spatial and Spectral Cues (2021)",
+              "url": "https://arxiv.org/abs/2106.07889"
+            },
+            {
+              "label": "Unsupervised Learning of Efficient Spectrotemporal Representations from Audio (2020)",
+              "url": "https://arxiv.org/abs/2006.00719"
+            },
+            {
+              "label": "Optimal Transport for Structured Data with Application on Graphs (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2503.18486v1",
+          "date": "Mar 24",
+          "title": "Music Similarity Representation Learning Focusing on Individual Instruments with Source Separation and Human Preference",
+          "authors": [
+            "Takehiro Imamura",
+            "Yuka Hashizume",
+            "Wen-Chin Huang",
+            "Tomoki Toda"
+          ],
+          "org": "LINE Corporation",
+          "abstract": "This paper proposes music similarity representation learning (MSRL) based on individual instrument sounds (InMSRL) utilizing music source separation (MSS) and human preference without requiring clean instrument sounds during inference. We propose three methods that effectively improve performance. First, we introduce end-to-end fine-tuning (E2E-FT) for the Cascade approach that sequentially performs MSS and music similarity feature extraction. E2E-FT allows the model to minimize the adverse effects of a separation error on the feature extraction. Second, we propose multi-task learning for the Direct approach that directly extracts disentangled music similarity features using a single music similarity feature extractor. Multi-task learning, which is based on the disentangled music similarity feature extraction and MSS based on reconstruction with disentangled music similarity features, further enhances instrument feature disentanglement. Third, we employ perception-aware fine-tuning (PAFT). PAFT utilizes human preference, allowing the model to perform InMSRL aligned with human perceptual similarity. We conduct experimental evaluations and demonstrate that 1) E2E-FT for Cascade significantly improves InMSRL performance, 2) the multi-task learning for Direct is also helpful to improve disentanglement performance in the feature extraction, 3) PAFT significantly enhances the perceptual InMSRL performance, and 4) Cascade with E2E-FT and PAFT outperforms Direct with the multi-task learning and PAFT.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2503.18486v1",
+          "category": "separation",
+          "task": "Music Similarity Learning",
+          "proposedMethod": "InMSRL",
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "This paper proposes a music similarity representation learning method (InMSRL) that focuses on individual instrument sounds using music source separation and human preference.",
+          "novel": "The novelty lies in introducing end-to-end fine-tuning, multi-task learning, and perception-aware fine-tuning to improve instrument feature disentanglement and align with human perceptual similarity.",
+          "method": "The approach combines end-to-end fine-tuning for sequential source separation and feature extraction, multi-task learning for disentangled feature extraction, and perception-aware fine-tuning using human preference data.",
+          "validation": "The methods are evaluated through experimental comparisons, demonstrating improvements in instrument feature disentanglement and perceptual music similarity representation learning.",
+          "discussion": "The reliance on human preference data for fine-tuning may limit scalability, and the generalization to diverse music genres and instruments needs further exploration.",
+          "nextReads": [
+            {
+              "label": "Learning Audio Representations via Phase Prediction (2021)",
+              "url": "https://arxiv.org/abs/2106.01351"
+            },
+            {
+              "label": "Music Source Separation in the Waveform Domain (2020)",
+              "url": "https://arxiv.org/abs/2006.07091"
+            },
+            {
+              "label": "Unsupervised Learning of Music Representations (2020)",
+              "url": "https://arxiv.org/abs/2006.05417"
+            },
+            {
+              "label": "Music Embedding Learning with User Feedback (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2503.17886v1",
+          "date": "Mar 23",
+          "title": "Elevating Robust Multi-Talker ASR by Decoupling Speaker Separation and Speech Recognition",
+          "authors": [
+            "Yufeng Yang",
+            "Hassan Taherian",
+            "Vahid Ahmadi Kalkhorani",
+            "DeLiang Wang"
+          ],
+          "org": "Meta",
+          "abstract": "Despite the tremendous success of automatic speech recognition (ASR) with the introduction of deep learning, its performance is still unsatisfactory in many real-world multi-talker scenarios. Speaker separation excels in separating individual talkers but, as a frontend, it introduces processing artifacts that degrade the ASR backend trained on clean speech. As a result, mainstream robust ASR systems train the backend on noisy speech to avoid processing artifacts. In this work, we propose to decouple the training of the speaker separation frontend and the ASR backend, with the latter trained on clean speech only. Our decoupled system achieves 5.1% word error rates (WER) on the Libri2Mix dev/test sets, significantly outperforming other multi-talker ASR baselines. Its effectiveness is also demonstrated with the state-of-the-art 7.60%/5.74% WERs on 1-ch and 6-ch SMS-WSJ. Furthermore, on recorded LibriCSS, we achieve the speaker-attributed WER of 2.92%. These state-of-the-art results suggest that decoupling speaker separation and recognition is an effective approach to elevate robust multi-talker ASR.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2503.17886v1",
+          "category": "separation",
+          "task": "ASR",
+          "proposedMethod": "Decoupled ASR",
+          "datasets": [
+            "Libri2Mix",
+            "SMS-WSJ",
+            "LibriCSS"
+          ],
+          "what": "This paper proposes a decoupled approach to robust multi-talker ASR, separating the training of the speaker separation frontend and the ASR backend.",
+          "novel": "The novelty lies in training the ASR backend on clean speech only, avoiding the processing artifacts introduced by the speaker separation frontend.",
+          "method": "The system decouples speaker separation and ASR, allowing the backend to focus on clean speech while leveraging the frontend for separation.",
+          "validation": "The method achieves state-of-the-art word error rates on Libri2Mix, SMS-WSJ, and LibriCSS datasets, significantly outperforming multi-talker ASR baselines.",
+          "discussion": "The approach assumes the availability of high-quality clean speech data for training, which may not always be feasible in real-world applications.",
+          "nextReads": [
+            {
+              "label": "Speech Separation and Recognition with a Shared Encoder (2020)",
+              "url": "https://arxiv.org/abs/2005.07272"
+            },
+            {
+              "label": "Multi-Speaker ASR with Permutation Invariant Training (2018)",
+              "url": "https://arxiv.org/abs/1804.10042"
+            },
+            {
+              "label": "Deep Clustering for Monaural Speech Separation (2016)",
+              "url": "https://arxiv.org/abs/1609.07432"
+            },
+            {
+              "label": "End-to-End Multi-Speaker Speech Recognition with Transformer (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Optimal Transport theory is leveraged for joint spectrogram-based source separation and TDOA estimation, as shown in the first paper.",
+    "InMSRL focuses on individual instrument sounds for music similarity learning, combining source separation and human preferences.",
+    "Decoupled multi-talker ASR and ViLA's vibration-based crowd monitoring highlight advancements in robust speech recognition and audio-driven applications."
+  ]
+}

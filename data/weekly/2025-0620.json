@@ -1,0 +1,278 @@
+{
+  "date": "2025-0620",
+  "generated_at": "2025-06-20T00:00:00+00:00",
+  "total": 7,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2506.12627v1",
+          "date": "Jun 14",
+          "title": "Towards Neural Audio Codec Source Parsing",
+          "authors": [
+            "Orchid Chetia Phukan",
+            " Girish",
+            "Mohd Mujtaba Akhtar",
+            "Arun Balaji Buduru",
+            "Rajesh Sharma"
+          ],
+          "org": "Orchid Chetia Phukan et al.",
+          "abstract": "A new class of audio deepfakes-codecfakes (CFs)-has recently caught attention, synthesized by Audio Language Models that leverage neural audio codecs (NACs) in the backend. In response, the community has introduced dedicated benchmarks and tailored detection strategies. As the field advances, efforts have moved beyond binary detection toward source attribution, including open-set attribution, which aims to identify the NAC responsible for generation and flag novel, unseen ones during inference. This shift toward source attribution improves forensic interpretability and accountability. However, open-set attribution remains fundamentally limited: while it can detect that a NAC is unfamiliar, it cannot characterize or identify individual unseen codecs. It treats such inputs as generic ``unknowns'', lacking insight into their internal configuration. This leads to major shortcomings: limited generalization to new NACs and inability to resolve fine-grained variations within NAC families. To address these gaps, we propose Neural Audio Codec Source Parsing (NACSP) - a paradigm shift that reframes source attribution for CFs as structured regression over generative NAC parameters such as quantizers, bandwidth, and sampling rate. We formulate NACSP as a multi-task regression task for predicting these NAC parameters and establish the first comprehensive benchmark using various state-of-the-art speech pre-trained models (PTMs). To this end, we propose HYDRA, a novel framework that leverages hyperbolic geometry to disentangle complex latent properties from PTM representations. By employing task-specific attention over multiple curvature-aware hyperbolic subspaces, HYDRA enables superior multi-task generalization. Our extensive experiments show HYDRA achieves top results on benchmark CFs datasets compared to baselines operating in Euclidean space.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2506.12627v1",
+          "category": "foundation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2506.15514v1",
+          "date": "Jun 18",
+          "title": "Exploiting Music Source Separation for Automatic Lyrics Transcription with Whisper",
+          "authors": [
+            "Jaza Syed",
+            "Ivan Meresman Higgs",
+            "Ondřej Cífka",
+            "Mark Sandler"
+          ],
+          "org": "Jaza Syed et al.",
+          "abstract": "Automatic lyrics transcription (ALT) remains a challenging task in the field of music information retrieval, despite great advances in automatic speech recognition (ASR) brought about by transformer-based architectures in recent years. One of the major challenges in ALT is the high amplitude of interfering audio signals relative to conventional ASR due to musical accompaniment. Recent advances in music source separation have enabled automatic extraction of high-quality separated vocals, which could potentially improve ALT performance. However, the effect of source separation has not been systematically investigated in order to establish best practices for its use. This work examines the impact of source separation on ALT using Whisper, a state-of-the-art open source ASR model. We evaluate Whisper's performance on original audio, separated vocals, and vocal stems across short-form and long-form transcription tasks. For short-form, we suggest a concatenation method that results in a consistent reduction in Word Error Rate (WER). For long-form, we propose an algorithm using source separation as a vocal activity detector to derive segment boundaries, which results in a consistent reduction in WER relative to Whisper's native long-form algorithm. Our approach achieves state-of-the-art results for an open source system on the Jam-ALT long-form ALT benchmark, without any training or fine-tuning. We also publish MUSDB-ALT, the first dataset of long-form lyric transcripts following the Jam-ALT guidelines for which vocal stems are publicly available.",
+          "comment": "Accepted at 2025 ICME Workshop AI for Music",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2506.15514v1",
+          "category": "separation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": "https://github.com/jaza-syed/mss-alt",
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2506.14204v1",
+          "date": "Jun 17",
+          "title": "Improving Practical Aspects of End-to-End Multi-Talker Speech Recognition for Online and Offline Scenarios",
+          "authors": [
+            "Aswin Shanmugam Subramanian",
+            "Amit Das",
+            "Naoyuki Kanda",
+            "Jinyu Li",
+            "Xiaofei Wang"
+          ],
+          "org": "Aswin Shanmugam Subramanian et al.",
+          "abstract": "We extend the frameworks of Serialized Output Training (SOT) to address practical needs of both streaming and offline automatic speech recognition (ASR) applications. Our approach focuses on balancing latency and accuracy, catering to real-time captioning and summarization requirements. We propose several key improvements: (1) Leveraging Continuous Speech Separation (CSS) single-channel front-end with end-to-end (E2E) systems for highly overlapping scenarios, challenging the conventional wisdom of E2E versus cascaded setups. The CSS framework improves the accuracy of the ASR system by separating overlapped speech from multiple speakers. (2) Implementing dual models -- Conformer Transducer for streaming and Sequence-to-Sequence for offline -- or alternatively, a two-pass model based on cascaded encoders. (3) Exploring segment-based SOT (segSOT) which is better suited for offline scenarios while also enhancing readability of multi-talker transcriptions.",
+          "comment": "Accepted to Interspeech 2025",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.CL",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2506.14204v1",
+          "category": "separation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2506.12672v1",
+          "date": "Jun 15",
+          "title": "SC-SOT: Conditioning the Decoder on Diarized Speaker Information for End-to-End Overlapped Speech Recognition",
+          "authors": [
+            "Yuta Hirano",
+            "Sakriani Sakti"
+          ],
+          "org": "Yuta Hirano / Sakriani Sakti",
+          "abstract": "We propose Speaker-Conditioned Serialized Output Training (SC-SOT), an enhanced SOT-based training for E2E multi-talker ASR. We first probe how SOT handles overlapped speech, and we found the decoder performs implicit speaker separation. We hypothesize this implicit separation is often insufficient due to ambiguous acoustic cues in overlapping regions. To address this, SC-SOT explicitly conditions the decoder on speaker information, providing detailed information about \"who spoke when\". Specifically, we enhance the decoder by incorporating: (1) speaker embeddings, which allow the model to focus on the acoustic characteristics of the target speaker, and (2) speaker activity information, which guides the model to suppress non-target speakers. The speaker embeddings are derived from a jointly trained E2E speaker diarization model, mitigating the need for speaker enrollment. Experimental results demonstrate the effectiveness of our conditioning approach on overlapped speech.",
+          "comment": "Accepted by Interspeech 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2506.12672v1",
+          "category": "separation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2506.15548v2",
+          "date": "Jun 18",
+          "title": "Versatile Symbolic Music-for-Music Modeling via Function Alignment",
+          "authors": [
+            "Junyan Jiang",
+            "Daniel Chin",
+            "Liwei Lin",
+            "Xuanjie Liu",
+            "Gus Xia"
+          ],
+          "org": "Junyan Jiang et al.",
+          "abstract": "Many music AI models learn a map between music content and human-defined labels. However, many annotations, such as chords, can be naturally expressed within the music modality itself, e.g., as sequences of symbolic notes. This observation enables both understanding tasks (e.g., chord recognition) and conditional generation tasks (e.g., chord-conditioned melody generation) to be unified under a music-for-music sequence modeling paradigm. In this work, we propose parameter-efficient solutions for a variety of symbolic music-for-music tasks. The high-level idea is that (1) we utilize a pretrained Language Model (LM) for both the reference and the target sequence and (2) we link these two LMs via a lightweight adapter. Experiments show that our method achieves superior performance among different tasks such as chord recognition, melody generation, and drum track generation. All demos, code and model weights are publicly available.",
+          "comment": null,
+          "journalRef": "The 26th conference of the International Society for Music Information Retrieval (ISMIR 2025)",
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2506.15548v2",
+          "category": "transcription",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": 1,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2506.14223v1",
+          "date": "Jun 17",
+          "title": "Fretting-Transformer: Encoder-Decoder Model for MIDI to Tablature Transcription",
+          "authors": [
+            "Anna Hamberger",
+            "Sebastian Murgul",
+            "Jochen Schmidt",
+            "Michael Heizmann"
+          ],
+          "org": "Anna Hamberger et al.",
+          "abstract": "Music transcription plays a pivotal role in Music Information Retrieval (MIR), particularly for stringed instruments like the guitar, where symbolic music notations such as MIDI lack crucial playability information. This contribution introduces the Fretting-Transformer, an encoderdecoder model that utilizes a T5 transformer architecture to automate the transcription of MIDI sequences into guitar tablature. By framing the task as a symbolic translation problem, the model addresses key challenges, including string-fret ambiguity and physical playability. The proposed system leverages diverse datasets, including DadaGP, GuitarToday, and Leduc, with novel data pre-processing and tokenization strategies. We have developed metrics for tablature accuracy and playability to quantitatively evaluate the performance. The experimental results demonstrate that the Fretting-Transformer surpasses baseline methods like A* and commercial applications like Guitar Pro. The integration of context-sensitive processing and tuning/capo conditioning further enhances the model's performance, laying a robust foundation for future developments in automated guitar transcription.",
+          "comment": "Accepted to the 50th International Computer Music Conference (ICMC), 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL",
+            "cs.MM",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2506.14223v1",
+          "category": "transcription",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 2,
+          "projectPage": null
+        },
+        {
+          "id": "2506.12285v2",
+          "date": "Jun 14",
+          "title": "CMI-Bench: A Comprehensive Benchmark for Evaluating Music Instruction Following",
+          "authors": [
+            "Yinghao Ma",
+            "Siyou Li",
+            "Juntao Yu",
+            "Emmanouil Benetos",
+            "Akira Maezawa"
+          ],
+          "org": "Yinghao Ma et al.",
+          "abstract": "Recent advances in audio-text large language models (LLMs) have opened new possibilities for music understanding and generation. However, existing benchmarks are limited in scope, often relying on simplified tasks or multi-choice evaluations that fail to reflect the complexity of real-world music analysis. We reinterpret a broad range of traditional MIR annotations as instruction-following formats and introduce CMI-Bench, a comprehensive music instruction following benchmark designed to evaluate audio-text LLMs on a diverse set of music information retrieval (MIR) tasks. These include genre classification, emotion regression, emotion tagging, instrument classification, pitch estimation, key detection, lyrics transcription, melody extraction, vocal technique recognition, instrument performance technique detection, music tagging, music captioning, and (down)beat tracking: reflecting core challenges in MIR research. Unlike previous benchmarks, CMI-Bench adopts standardized evaluation metrics consistent with previous state-of-the-art MIR models, ensuring direct comparability with supervised approaches. We provide an evaluation toolkit supporting all open-source audio-textual LLMs, including LTU, Qwen-audio, SALMONN, MusiLingo, etc. Experiment results reveal significant performance gaps between LLMs and supervised models, along with their culture, chronological and gender bias, highlighting the potential and limitations of current models in addressing MIR tasks. CMI-Bench establishes a unified foundation for evaluating music instruction following, driving progress in music-aware LLMs.",
+          "comment": "Accepted by ISMIR 2025",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.AI",
+            "cs.LG",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2506.12285v2",
+          "category": "transcription",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": "https://github.com/nicolaus625/CMI-bench",
+          "upvotes": 53,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Analyzing this week's audio foundation model research trends.",
+    "Many new approaches for source separation and music transcription were submitted.",
+    "See the individual papers for details."
+  ]
+}

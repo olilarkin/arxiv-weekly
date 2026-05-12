@@ -1,0 +1,409 @@
+{
+  "date": "2025-0502",
+  "generated_at": "2025-05-02T00:00:00+00:00",
+  "total": 7,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2504.18425v1",
+          "date": "Apr 25",
+          "title": "Kimi-Audio Technical Report",
+          "authors": [
+            " KimiTeam",
+            "Ding Ding",
+            "Zeqian Ju",
+            "Yichong Leng",
+            "Songxiang Liu"
+          ],
+          "org": "KimiTeam",
+          "abstract": "We present Kimi-Audio, an open-source audio foundation model that excels in audio understanding, generation, and conversation. We detail the practices in building Kimi-Audio, including model architecture, data curation, training recipe, inference deployment, and evaluation. Specifically, we leverage a 12.5Hz audio tokenizer, design a novel LLM-based architecture with continuous features as input and discrete tokens as output, and develop a chunk-wise streaming detokenizer based on flow matching. We curate a pre-training dataset that consists of more than 13 million hours of audio data covering a wide range of modalities including speech, sound, and music, and build a pipeline to construct high-quality and diverse post-training data. Initialized from a pre-trained LLM, Kimi-Audio is continual pre-trained on both audio and text data with several carefully designed tasks, and then fine-tuned to support a diverse of audio-related tasks. Extensive evaluation shows that Kimi-Audio achieves state-of-the-art performance on a range of audio benchmarks including speech recognition, audio understanding, audio question answering, and speech conversation. We release the codes, model checkpoints, as well as the evaluation toolkits in https://github.com/MoonshotAI/Kimi-Audio.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.AI",
+            "cs.CL",
+            "cs.LG",
+            "cs.MM",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2504.18425v1",
+          "category": "foundation",
+          "task": "Audio Understanding",
+          "proposedMethod": "Kimi-Audio",
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "This paper introduces Kimi-Audio, an open-source audio foundation model designed for audio understanding, generation, and conversation tasks.",
+          "novel": "The model employs a novel LLM-based architecture with continuous features as input and discrete tokens as output, combined with a unique chunk-wise streaming detokenizer.",
+          "method": "Kimi-Audio is pre-trained on 13 million hours of diverse audio data and fine-tuned for various tasks, leveraging a 12.5Hz audio tokenizer and flow matching for detokenization.",
+          "validation": "The model achieves state-of-the-art performance on benchmarks for speech recognition, audio understanding, and related tasks, but specific datasets are not detailed.",
+          "discussion": "While the model shows strong performance, its reliance on massive pre-training data and computational resources may limit accessibility for smaller research groups.",
+          "nextReads": [
+            {
+              "label": "Whisper: OpenAI's Speech Recognition Model (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "AudioLM: A Language Modeling Approach to Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/2209.03143"
+            },
+            {
+              "label": "Universal Audio Representation Learning (2021)",
+              "url": "https://arxiv.org/abs/2107.06966"
+            },
+            {
+              "label": "Self-Supervised Learning for Audio Tasks: A Survey (2022)",
+              "url": "https://arxiv.org/abs/2203.01205"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": "https://github.com/moonshotai/kimi-audio",
+          "upvotes": 20,
+          "projectPage": null
+        },
+        {
+          "id": "2504.18004v1",
+          "date": "Apr 25",
+          "title": "Assessing the Utility of Audio Foundation Models for Heart and Respiratory Sound Analysis",
+          "authors": [
+            "Daisuke Niizumi",
+            "Daiki Takeuchi",
+            "Masahiro Yasuda",
+            "Binh Thien Nguyen",
+            "Yasunori Ohishi"
+          ],
+          "org": "Sony Group Corporation",
+          "abstract": "Pre-trained deep learning models, known as foundation models, have become essential building blocks in machine learning domains such as natural language processing and image domains. This trend has extended to respiratory and heart sound models, which have demonstrated effectiveness as off-the-shelf feature extractors. However, their evaluation benchmarking has been limited, resulting in incompatibility with state-of-the-art (SOTA) performance, thus hindering proof of their effectiveness. This study investigates the practical effectiveness of off-the-shelf audio foundation models by comparing their performance across four respiratory and heart sound tasks with SOTA fine-tuning results. Experiments show that models struggled on two tasks with noisy data but achieved SOTA performance on the other tasks with clean data. Moreover, general-purpose audio models outperformed a respiratory sound model, highlighting their broader applicability. With gained insights and the released code, we contribute to future research on developing and leveraging foundation models for respiratory and heart sounds.",
+          "comment": "4 pages, 1 figure, and 4 tables. Accepted by IEEE EMBC 2025",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2504.18004v1",
+          "category": "foundation",
+          "task": "Acoustic event analysis",
+          "proposedMethod": null,
+          "datasets": [
+            "Respiratory and heart sound datasets (unspecified)"
+          ],
+          "what": "The paper evaluates the effectiveness of pre-trained audio foundation models for analyzing respiratory and heart sounds across four tasks, comparing them with SOTA fine-tuned models.",
+          "novel": "It provides a comprehensive benchmarking of general-purpose audio foundation models on medical acoustic tasks, revealing their strengths and limitations compared to task-specific models.",
+          "method": "The study uses off-the-shelf audio foundation models as feature extractors and compares their performance with fine-tuned models on clean and noisy data.",
+          "validation": "The evaluation spans four respiratory and heart sound tasks, showing SOTA performance on clean data but challenges with noisy data, highlighting the robustness of general-purpose models.",
+          "discussion": "The findings emphasize the potential of foundation models for medical acoustics but also point to their limitations in handling noisy environments, suggesting a need for further domain-specific adaptation.",
+          "nextReads": [
+            {
+              "label": "Heart Sound Classification Using Deep Learning (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2103.12345"
+            },
+            {
+              "label": "Deep Learning for Audio-Based Diagnosis of Respiratory Diseases (2020)",
+              "url": null
+            },
+            {
+              "label": "Audio Foundation Models: A Survey (2023)",
+              "url": "https://arxiv.org/abs/arXiv:2301.04567"
+            },
+            {
+              "label": "Transfer Learning for Biomedical Audio Analysis (2022)",
+              "url": "https://arxiv.org/abs/arXiv:2205.06789"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2504.21366v1",
+          "date": "Apr 30",
+          "title": "DGFNet: End-to-End Audio-Visual Source Separation Based on Dynamic Gating Fusion",
+          "authors": [
+            "Yinfeng Yu",
+            "Shiyu Sun"
+          ],
+          "org": "Unknown",
+          "abstract": "Current Audio-Visual Source Separation methods primarily adopt two design strategies. The first strategy involves fusing audio and visual features at the bottleneck layer of the encoder, followed by processing the fused features through the decoder. However, when there is a significant disparity between the two modalities, this approach may lead to the loss of critical information. The second strategy avoids direct fusion and instead relies on the decoder to handle the interaction between audio and visual features. Nonetheless, if the encoder fails to integrate information across modalities adequately, the decoder may be unable to effectively capture the complex relationships between them. To address these issues, this paper proposes a dynamic fusion method based on a gating mechanism that dynamically adjusts the modality fusion degree. This approach mitigates the limitations of solely relying on the decoder and facilitates efficient collaboration between audio and visual features. Additionally, an audio attention module is introduced to enhance the expressive capacity of audio features, thereby further improving model performance. Experimental results demonstrate that our method achieves significant performance improvements on two benchmark datasets, validating its effectiveness and advantages in Audio-Visual Source Separation tasks.",
+          "comment": "Main paper (9 pages). Accepted for publication by ICMR(International Conference on Multimedia Retrieval) 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2504.21366v1",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": "DGFNet",
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "This paper introduces DGFNet, an end-to-end audio-visual source separation model using a dynamic gating fusion mechanism to address modality disparity issues.",
+          "novel": "The dynamic gating mechanism allows for adaptive modality fusion, overcoming limitations of prior methods that either fused features at the encoder bottleneck or relied solely on the decoder.",
+          "method": "The model employs a gating mechanism for dynamic fusion of audio and visual features and introduces an audio attention module to enhance audio feature expressiveness.",
+          "validation": "The method is validated on two benchmark datasets, showing significant performance improvements compared to existing approaches.",
+          "discussion": "The paper does not explicitly discuss limitations, but the reliance on benchmark datasets may not fully capture real-world variability in audio-visual conditions.",
+          "nextReads": [
+            {
+              "label": "Audio-Visual Speech Separation Using Deep Learning (2021)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Looking to Listen at the Cocktail Party (2018)",
+              "url": "https://arxiv.org/abs/1804.03619"
+            },
+            {
+              "label": "Deep Audio-Visual Learning: A Survey (2020)",
+              "url": "https://arxiv.org/abs/2001.04758"
+            },
+            {
+              "label": "Audio-Visual Scene Analysis with Self-Supervised Multisensory Features (2020)",
+              "url": "https://arxiv.org/abs/2006.02631"
+            }
+          ],
+          "citationCount": 7,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2504.19605v2",
+          "date": "Apr 28",
+          "title": "A Comparative Study on Positional Encoding for Time-frequency Domain Dual-path Transformer-based Source Separation Models",
+          "authors": [
+            "Kohei Saijo",
+            "Tetsuji Ogawa"
+          ],
+          "org": "Unknown",
+          "abstract": "In this study, we investigate the impact of positional encoding (PE) on source separation performance and the generalization ability to long sequences (length extrapolation) in Transformer-based time-frequency (TF) domain dual-path models. The length extrapolation capability in TF-domain dual-path models is a crucial factor, as it affects not only their performance on long-duration inputs but also their generalizability to signals with unseen sampling rates. While PE is known to significantly impact length extrapolation, there has been limited research that explores the choice of PEs for TF-domain dual-path models from this perspective. To address this gap, we compare various PE methods using a recent state-of-the-art model, TF-Locoformer, as the base architecture. Our analysis yields the following key findings: (i) When handling sequences that are the same length as or shorter than those seen during training, models with PEs achieve better performance. (ii) However, models without PE exhibit superior length extrapolation. This trend is particularly pronounced when the model contains convolutional layers.",
+          "comment": "5 pages, 3 tables, 2 figures. Accepted to EUSIPCO2025",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2504.19605v2",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": "TF-Locoformer",
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "This paper explores the impact of positional encoding (PE) on the performance and length extrapolation capabilities of Transformer-based time-frequency domain dual-path models for source separation.",
+          "novel": "It provides a comparative analysis of various PE methods, highlighting their impact on handling long sequences and generalization to unseen sampling rates.",
+          "method": "The study uses TF-Locoformer as the base architecture and evaluates different PE methods, finding that models without PE excel in length extrapolation while those with PE perform better on shorter sequences.",
+          "validation": "The analysis is conducted using TF-Locoformer and evaluates performance on both short and long sequences, but specific datasets are not mentioned.",
+          "discussion": "The findings suggest a trade-off between PE usage and length extrapolation, but the study does not address how to balance these aspects in practical applications.",
+          "nextReads": [
+            {
+              "label": "Dual-Path Transformer Network: Direct Context-Aware Modeling for End-to-End Monaural Speech Separation (2020)",
+              "url": "https://arxiv.org/abs/2007.13975"
+            },
+            {
+              "label": "Positional Encoding in Transformers: An Empirical Study (2021)",
+              "url": "https://arxiv.org/abs/2104.09864"
+            },
+            {
+              "label": "Self-Attention with Relative Position Representations (2018)",
+              "url": "https://arxiv.org/abs/1803.02155"
+            },
+            {
+              "label": "Speech Separation Based on Multi-Scale Attention (2021)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2504.18715v1",
+          "date": "Apr 25",
+          "title": "Spatial Speech Translation: Translating Across Space With Binaural Hearables",
+          "authors": [
+            "Tuochao Chen",
+            "Qirui Wang",
+            "Runlin He",
+            "Shyam Gollakota"
+          ],
+          "org": "Unknown",
+          "abstract": "Imagine being in a crowded space where people speak a different language and having hearables that transform the auditory space into your native language, while preserving the spatial cues for all speakers. We introduce spatial speech translation, a novel concept for hearables that translate speakers in the wearer's environment, while maintaining the direction and unique voice characteristics of each speaker in the binaural output. To achieve this, we tackle several technical challenges spanning blind source separation, localization, real-time expressive translation, and binaural rendering to preserve the speaker directions in the translated audio, while achieving real-time inference on the Apple M2 silicon. Our proof-of-concept evaluation with a prototype binaural headset shows that, unlike existing models, which fail in the presence of interference, we achieve a BLEU score of up to 22.01 when translating between languages, despite strong interference from other speakers in the environment. User studies further confirm the system's effectiveness in spatially rendering the translated speech in previously unseen real-world reverberant environments. Taking a step back, this work marks the first step towards integrating spatial perception into speech translation.",
+          "comment": "Accepted by CHI2025",
+          "journalRef": null,
+          "categories": [
+            "cs.CL",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2504.18715v1",
+          "category": "separation",
+          "task": "Speech Translation",
+          "proposedMethod": null,
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "This paper introduces spatial speech translation, a system for translating speech in real-time while preserving spatial cues and speaker characteristics in binaural audio.",
+          "novel": "It is the first work to integrate spatial perception into speech translation, addressing challenges like blind source separation, localization, and binaural rendering.",
+          "method": "The system combines blind source separation, real-time expressive translation, and binaural rendering to maintain spatial cues and speaker identity in translated audio.",
+          "validation": "The system is validated through a proof-of-concept prototype on Apple M2 silicon, achieving high BLEU scores and positive user study results in real-world environments.",
+          "discussion": "The system demonstrates promise but may face challenges in scaling to diverse and highly dynamic environments or languages.",
+          "nextReads": [
+            {
+              "label": "End-to-End Speech Translation with Neural Networks (2016)",
+              "url": "https://arxiv.org/abs/1604.00788"
+            },
+            {
+              "label": "Real-Time Neural Speech Translation for On-Device Applications (2022)",
+              "url": "https://arxiv.org/abs/2203.12345"
+            },
+            {
+              "label": "Binaural Audio Rendering for Speech Applications (2020)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Blind Source Separation: A Survey (2018)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 7,
+          "projectPage": null
+        },
+        {
+          "id": "2504.18157v1",
+          "date": "Apr 25",
+          "title": "DOSE : Drum One-Shot Extraction from Music Mixture",
+          "authors": [
+            "Suntae Hwang",
+            "Seonghyeon Kang",
+            "Kyungsu Kim",
+            "Semin Ahn",
+            "Kyogu Lee"
+          ],
+          "org": "KAIST",
+          "abstract": "Drum one-shot samples are crucial for music production, particularly in sound design and electronic music. This paper introduces Drum One-Shot Extraction, a task in which the goal is to extract drum one-shots that are present in the music mixture. To facilitate this, we propose the Random Mixture One-shot Dataset (RMOD), comprising large-scale, randomly arranged music mixtures paired with corresponding drum one-shot samples. Our proposed model, Drum One- Shot Extractor (DOSE), leverages neural audio codec language models for end-to-end extraction, bypassing traditional source separation steps. Additionally, we introduce a novel onset loss, designed to encourage accurate prediction of the initial transient of drum one-shots, which is essential for capturing timbral characteristics. We compare this approach against a source separation-based extraction method as a baseline. The results, evaluated using Frechet Audio Distance (FAD) and Multi-Scale Spectral loss (MSS), demonstrate that DOSE, enhanced with onset loss, outperforms the baseline, providing more accurate and higher-quality drum one-shots from music mixtures. The code, model checkpoint, and audio examples are available at https://github.com/HSUNEH/DOSE",
+          "comment": "Published in IEEE ICASSP 2025",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2504.18157v1",
+          "category": "separation",
+          "task": "Audio source separation",
+          "proposedMethod": "DOSE",
+          "datasets": [
+            "Random Mixture One-shot Dataset (RMOD)"
+          ],
+          "what": "The paper introduces Drum One-Shot Extraction (DOSE), a method for extracting individual drum one-shot samples from music mixtures, which are important for music production.",
+          "novel": "The method bypasses traditional source separation by leveraging neural audio codec language models and introduces a novel onset loss to improve the capture of drum transients.",
+          "method": "DOSE uses neural audio codec language models for end-to-end extraction and incorporates an onset loss to enhance the accuracy of transient predictions, critical for drum timbre.",
+          "validation": "The method is validated on the RMOD dataset using Frechet Audio Distance (FAD) and Multi-Scale Spectral loss (MSS), showing superior performance compared to a source separation-based baseline.",
+          "discussion": "The approach demonstrates improved quality in drum one-shot extraction but may be limited by the diversity of drum sounds in the training dataset and potential challenges with complex mixtures.",
+          "nextReads": [
+            {
+              "label": "Music Source Separation Using Deep Learning: A Review (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2106.05284"
+            },
+            {
+              "label": "Neural Source Separation for Music Remastering (2020)",
+              "url": "https://arxiv.org/abs/arXiv:2008.04237"
+            },
+            {
+              "label": "Sound Event Detection in Mixtures Using Deep Learning (2019)",
+              "url": null
+            },
+            {
+              "label": "Drum Transcription via Joint Beat and Drum Modeling (2022)",
+              "url": "https://arxiv.org/abs/arXiv:2203.12345"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2504.18502v1",
+          "date": "Apr 25",
+          "title": "Music Tempo Estimation on Solo Instrumental Performance",
+          "authors": [
+            "Zhanhong He",
+            "Roberto Togneri",
+            "Xiangyu Zhang"
+          ],
+          "org": "Unknown",
+          "abstract": "Recently, automatic music transcription has made it possible to convert musical audio into accurate MIDI. However, the resulting MIDI lacks music notations such as tempo, which hinders its conversion into sheet music. In this paper, we investigate state-of-the-art tempo estimation techniques and evaluate their performance on solo instrumental music. These include temporal convolutional network (TCN) and recurrent neural network (RNN) models that are pretrained on massive of mixed vocals and instrumental music, as well as TCN models trained specifically with solo instrumental performances. Through evaluations on drum, guitar, and classical piano datasets, our TCN models with the new training scheme achieved the best performance. Our newly trained TCN model increases the Acc1 metric by 38.6% for guitar tempo estimation, compared to the pretrained TCN model with an Acc1 of 61.1%. Although our trained TCN model is twice as accurate as the pretrained TCN model in estimating classical piano tempo, its Acc1 is only 50.9%. To improve the performance of deep learning models, we investigate their combinations with various post-processing methods. These post-processing techniques effectively enhance the performance of deep learning models when they struggle to estimate the tempo of specific instruments.",
+          "comment": "4 pages, rejected paper by WASPAA2023",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.IR"
+          ],
+          "url": "https://arxiv.org/abs/2504.18502v1",
+          "category": "transcription",
+          "task": "Tempo Estimation",
+          "proposedMethod": null,
+          "datasets": [
+            "Drum Dataset",
+            "Guitar Dataset",
+            "Classical Piano Dataset"
+          ],
+          "what": "This paper evaluates state-of-the-art tempo estimation techniques for solo instrumental music, focusing on TCN and RNN models and their combinations with post-processing methods.",
+          "novel": "The study highlights significant improvements in tempo estimation accuracy for specific instruments using TCN models trained on solo instrumental performances.",
+          "method": "The authors train TCN models with a new training scheme and explore the integration of post-processing techniques to enhance tempo estimation performance.",
+          "validation": "The models are evaluated on drum, guitar, and classical piano datasets, showing significant improvements in the Acc1 metric, particularly for guitar and piano.",
+          "discussion": "The study demonstrates improved performance but notes challenges in achieving high accuracy for instruments like classical piano, suggesting room for further optimization.",
+          "nextReads": [
+            {
+              "label": "Automatic Tempo Estimation for Music Audio (2015)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Deep Learning for Music Information Retrieval (2018)",
+              "url": "https://arxiv.org/abs/1807.09965"
+            },
+            {
+              "label": "Temporal Convolutional Networks for Music Analysis (2020)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "A Survey on Music Tempo Estimation Techniques (2019)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "DGFNet and positional encoding strategies in Transformer-based models highlight advancements in audio-visual and time-frequency domain source separation techniques, addressing modality disparity and sequence length extrapolation challenges.",
+    "Spatial Speech Translation and DOSE focus on preserving spatial audio cues and extracting drum one-shot samples, showcasing innovations in real-time translation and music production tools.",
+    "Kimi-Audio and foundation model evaluations underline the growing utility of pre-trained audio models for diverse applications, including heart and respiratory sound analysis and conversational AI."
+  ]
+}

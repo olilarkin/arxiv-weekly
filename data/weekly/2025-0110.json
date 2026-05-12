@@ -1,0 +1,349 @@
+{
+  "date": "2025-0110",
+  "generated_at": "2025-01-10T00:00:00+00:00",
+  "total": 6,
+  "categories": [
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2501.03689v1",
+          "date": "Jan 07",
+          "title": "MAJL: A Model-Agnostic Joint Learning Framework for Music Source Separation and Pitch Estimation",
+          "authors": [
+            "Haojie Wei",
+            "Jun Yuan",
+            "Rui Zhang",
+            "Quanyu Dai",
+            "Yueguo Chen"
+          ],
+          "org": "Zhejiang University",
+          "abstract": "Music source separation and pitch estimation are two vital tasks in music information retrieval. Typically, the input of pitch estimation is obtained from the output of music source separation. Therefore, existing methods have tried to perform these two tasks simultaneously, so as to leverage the mutually beneficial relationship between both tasks. However, these methods still face two critical challenges that limit the improvement of both tasks: the lack of labeled data and joint learning optimization. To address these challenges, we propose a Model-Agnostic Joint Learning (MAJL) framework for both tasks. MAJL is a generic framework and can use variant models for each task. It includes a two-stage training method and a dynamic weighting method named Dynamic Weights on Hard Samples (DWHS), which addresses the lack of labeled data and joint learning optimization, respectively. Experimental results on public music datasets show that MAJL outperforms state-of-the-art methods on both tasks, with significant improvements of 0.92 in Signal-to-Distortion Ratio (SDR) for music source separation and 2.71% in Raw Pitch Accuracy (RPA) for pitch estimation. Furthermore, comprehensive studies not only validate the effectiveness of each component of MAJL, but also indicate the great generality of MAJL in adapting to different model architectures.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2501.03689v1",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": "MAJL",
+          "datasets": [
+            "MUSDB18",
+            "MIR-1K"
+          ],
+          "what": "This paper proposes MAJL, a model-agnostic joint learning framework for music source separation and pitch estimation.",
+          "novel": "The novelty lies in addressing the lack of labeled data and joint learning optimization through a two-stage training method and a dynamic weighting method called DWHS.",
+          "method": "MAJL is a generic framework that uses dynamic weighting on hard samples and a two-stage training process to improve both source separation and pitch estimation.",
+          "validation": "The framework is evaluated on public music datasets like MUSDB18 and MIR-1K, achieving significant improvements in SDR for source separation and RPA for pitch estimation.",
+          "discussion": "The framework's performance depends on the availability of diverse datasets and may require further testing on more complex musical scenarios.",
+          "nextReads": [
+            {
+              "label": "Joint Source Separation and Pitch Estimation of Polyphonic Music Using Multi-Task Learning (2020)",
+              "url": "https://arxiv.org/abs/2007.01287"
+            },
+            {
+              "label": "Music Source Separation in the Waveform Domain (2019)",
+              "url": "https://arxiv.org/abs/1905.03330"
+            },
+            {
+              "label": "On Joint Modeling of Music Source Separation and Automatic Music Transcription (2021)",
+              "url": "https://arxiv.org/abs/2110.05049"
+            },
+            {
+              "label": "End-to-end Neural Network for Polyphonic Music Transcription (2018)",
+              "url": "https://arxiv.org/abs/1710.10468"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2501.03045v1",
+          "date": "Jan 06",
+          "title": "Single-Channel Distance-Based Source Separation for Mobile GPU in Outdoor and Indoor Environments",
+          "authors": [
+            "Hanbin Bae",
+            "Byungjun Kang",
+            "Jiwon Kim",
+            "Jaeyong Hwang",
+            "Hosang Sung"
+          ],
+          "org": "KAIST",
+          "abstract": "This study emphasizes the significance of exploring distance-based source separation (DSS) in outdoor environments. Unlike existing studies that primarily focus on indoor settings, the proposed model is designed to capture the unique characteristics of outdoor audio sources. It incorporates advanced techniques, including a two-stage conformer block, a linear relation-aware self-attention (RSA), and a TensorFlow Lite GPU delegate. While the linear RSA may not capture physical cues as explicitly as the quadratic RSA, the linear RSA enhances the model's context awareness, leading to improved performance on the DSS that requires an understanding of physical cues in outdoor and indoor environments. The experimental results demonstrated that the proposed model overcomes the limitations of existing approaches and considerably enhances energy efficiency and real-time inference speed on mobile devices.",
+          "comment": "Accepted by ICASSP2025. \\c{opyright} 2025 IEEE. Personal use of this material is permitted. Permission from IEEE must be obtained for all other uses, in any current or future media, including reprinting/republishing this material for advertising or promotional purposes, creating new collective works, for resale or redistribution to servers or lists, or reuse of any copyrighted component",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2501.03045v1",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": "null",
+          "datasets": [
+            "Custom outdoor dataset",
+            "Custom indoor dataset"
+          ],
+          "what": "This paper explores distance-based source separation (DSS) for outdoor and indoor environments, optimized for mobile GPUs.",
+          "novel": "The study introduces a linear relation-aware self-attention (RSA) mechanism and a two-stage conformer block to enhance DSS performance in outdoor environments.",
+          "method": "The model uses a two-stage conformer block and linear RSA to improve context awareness and incorporates a TensorFlow Lite GPU delegate for real-time mobile processing.",
+          "validation": "The approach is validated on custom outdoor and indoor datasets, demonstrating improved energy efficiency and real-time inference speed on mobile devices.",
+          "discussion": "The method's reliance on custom datasets may limit generalizability, and further evaluation on standard benchmarks is needed to assess broader applicability.",
+          "nextReads": [
+            {
+              "label": "Deep Clustering and Conventional Networks for Music Separation: Strong Together (2017)",
+              "url": "https://arxiv.org/abs/1706.06321"
+            },
+            {
+              "label": "Wave-U-Net: A Multi-Scale Neural Network for End-to-End Audio Source Separation (2018)",
+              "url": "https://arxiv.org/abs/1806.03185"
+            },
+            {
+              "label": "Deep Attractor Network for Single-Microphone Speaker Separation (2017)",
+              "url": "https://arxiv.org/abs/1707.01161"
+            },
+            {
+              "label": "Conv-TasNet: Surpassing Ideal Time-Frequency Magnitude Masking for Speech Separation (2018)",
+              "url": "https://arxiv.org/abs/1809.07454"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2501.01757v2",
+          "date": "Jan 03",
+          "title": "MusicGen-Stem: Multi-stem music generation and edition through autoregressive modeling",
+          "authors": [
+            "Simon Rouard",
+            "Robin San Roman",
+            "Yossi Adi",
+            "Axel Roebel"
+          ],
+          "org": "Meta",
+          "abstract": "While most music generation models generate a mixture of stems (in mono or stereo), we propose to train a multi-stem generative model with 3 stems (bass, drums and other) that learn the musical dependencies between them. To do so, we train one specialized compression algorithm per stem to tokenize the music into parallel streams of tokens. Then, we leverage recent improvements in the task of music source separation to train a multi-stream text-to-music language model on a large dataset. Finally, thanks to a particular conditioning method, our model is able to edit bass, drums or other stems on existing or generated songs as well as doing iterative composition (e.g. generating bass on top of existing drums). This gives more flexibility in music generation algorithms and it is to the best of our knowledge the first open-source multi-stem autoregressive music generation model that can perform good quality generation and coherent source editing. Code and model weights will be released and samples are available on https://simonrouard.github.io/musicgenstem/.",
+          "comment": "5 pages, 3 figures, accepted to ICASSP 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2501.01757v2",
+          "category": "separation",
+          "task": "Music Generation",
+          "proposedMethod": "MusicGen-Stem",
+          "datasets": [
+            "Unknown large dataset"
+          ],
+          "what": "This paper introduces MusicGen-Stem, an open-source multi-stem autoregressive music generation model capable of generating and editing music with three distinct stems: bass, drums, and other.",
+          "novel": "The model is the first open-source multi-stem music generation system that can generate high-quality music and perform coherent source editing.",
+          "method": "The approach involves training a specialized compression algorithm for each stem to tokenize music into parallel token streams, followed by training a multi-stream text-to-music language model using recent advancements in music source separation.",
+          "validation": "The model's performance is demonstrated through qualitative examples of music generation and editing, with samples available online for evaluation.",
+          "discussion": "The paper highlights the flexibility of the model in generating and editing music stems but does not provide quantitative evaluation or comparisons with other models, which could be a limitation.",
+          "nextReads": [
+            {
+              "label": "MusicLM: Generating Music From Text (2023)",
+              "url": "https://arxiv.org/abs/2301.11325"
+            },
+            {
+              "label": "Riffusion: Text-to-Music Generation with Stable Diffusion (2022)",
+              "url": "https://arxiv.org/abs/2211.13737"
+            },
+            {
+              "label": "Jukebox: A Generative Model for Music (2020)",
+              "url": "https://arxiv.org/abs/2005.00341"
+            },
+            {
+              "label": "MuseNet: Generating Music with Long-Term Structure (2019)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2501.05068v2",
+          "date": "Jan 09",
+          "title": "D3RM: A Discrete Denoising Diffusion Refinement Model for Piano Transcription",
+          "authors": [
+            "Hounsu Kim",
+            "Taegyun Kwon",
+            "Juhan Nam"
+          ],
+          "org": "KAIST",
+          "abstract": "Diffusion models have been widely used in the generative domain due to their convincing performance in modeling complex data distributions. Moreover, they have shown competitive results on discriminative tasks, such as image segmentation. While diffusion models have also been explored for automatic music transcription, their performance has yet to reach a competitive level. In this paper, we focus on discrete diffusion model's refinement capabilities and present a novel architecture for piano transcription. Our model utilizes Neighborhood Attention layers as the denoising module, gradually predicting the target high-resolution piano roll, conditioned on the finetuned features of a pretrained acoustic model. To further enhance refinement, we devise a novel strategy which applies distinct transition states during training and inference stage of discrete diffusion models. Experiments on the MAESTRO dataset show that our approach outperforms previous diffusion-based piano transcription models and the baseline model in terms of F1 score. Our code is available in https://github.com/hanshounsu/d3rm.",
+          "comment": "Accepted to ICASSP 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.LG",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2501.05068v2",
+          "category": "transcription",
+          "task": "Music Transcription",
+          "proposedMethod": "D3RM",
+          "datasets": [
+            "MAESTRO"
+          ],
+          "what": "This paper introduces D3RM, a discrete denoising diffusion refinement model for piano transcription, leveraging Neighborhood Attention layers and a pretrained acoustic model.",
+          "novel": "The novelty lies in the use of discrete diffusion models with distinct transition states for training and inference, enhancing refinement capabilities for piano transcription.",
+          "method": "The method employs Neighborhood Attention layers as the denoising module and a novel strategy for discrete diffusion model transitions to predict high-resolution piano rolls.",
+          "validation": "The model is validated on the MAESTRO dataset, showing improved F1 scores compared to previous diffusion-based and baseline piano transcription models.",
+          "discussion": "The approach is limited to piano transcription and may require adaptation for other instruments or music styles. Further exploration of generalization is needed.",
+          "nextReads": [
+            {
+              "label": "DiffWave: A Versatile Diffusion Model for Audio Synthesis (2021)",
+              "url": "https://arxiv.org/abs/2009.09761"
+            },
+            {
+              "label": "Piano transcription with convolutional sequence-to-sequence models (2018)",
+              "url": "https://arxiv.org/abs/1804.09189"
+            },
+            {
+              "label": "On the Effectiveness of Speech Self-Supervised Learning for Automatic Music Transcription (2022)",
+              "url": "https://arxiv.org/abs/2203.17053"
+            },
+            {
+              "label": "Symbolic Music Generation with Diffusion Models (2022)",
+              "url": "https://arxiv.org/abs/2202.01369"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2501.04742v3",
+          "date": "Jan 08",
+          "title": "Meta-learning-based percussion transcription and $t\\bar{a}la$ identification from low-resource audio",
+          "authors": [
+            "Rahul Bapusaheb Kodag",
+            "Vipul Arora"
+          ],
+          "org": "IIT Kanpur",
+          "abstract": "This study introduces a meta-learning-based approach for low-resource Tabla Stroke Transcription (TST) and $t\\bar{a}la$ identification in Hindustani classical music. Using Model-Agnostic Meta-Learning (MAML), we address the challenges of limited annotated datasets and label heterogeneity, enabling rapid adaptation to new tasks with minimal data.   The method is validated across various datasets, including tabla solo and concert recordings, demonstrating robustness in polyphonic audio scenarios. We propose two novel $t\\bar{a}la$ identification techniques based on stroke sequences and rhythmic patterns. Additionally, the approach proves effective for Automatic Drum Transcription (ADT), showcasing its flexibility for Indian and Western percussion music. Experimental results show that the proposed method outperforms existing techniques in low-resource settings, significantly contributing to music transcription and studying musical traditions through computational tools.",
+          "comment": "Accepted at IEEE Transactions on Audio, Speech and Language Processing. - Added baseline experiments and Results. Modified block diagram",
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2501.04742v3",
+          "category": "transcription",
+          "task": "Music Transcription",
+          "proposedMethod": "null",
+          "datasets": [
+            "Tabla solo recordings",
+            "Concert recordings"
+          ],
+          "what": "This paper presents a meta-learning-based approach for low-resource Tabla Stroke Transcription (TST) and tāla identification in Hindustani classical music.",
+          "novel": "The study introduces meta-learning, specifically MAML, to address challenges of limited annotated datasets and label heterogeneity in low-resource music transcription tasks.",
+          "method": "The method uses MAML for rapid adaptation to new tasks with minimal data and proposes novel tāla identification techniques based on stroke sequences and rhythmic patterns.",
+          "validation": "The approach is validated on various datasets, including tabla solo and concert recordings, demonstrating robustness in polyphonic audio scenarios and outperforming existing techniques.",
+          "discussion": "The method's reliance on meta-learning may require further exploration for scalability and generalization to other musical traditions and instruments.",
+          "nextReads": [
+            {
+              "label": "Meta-Learning for Low-Resource Automatic Speech Recognition (2020)",
+              "url": "https://arxiv.org/abs/2008.04261"
+            },
+            {
+              "label": "Automatic transcription of tabla music (2014)",
+              "url": null
+            },
+            {
+              "label": "Automatic drum transcription for polyphonic recordings using soft attention mechanisms (2020)",
+              "url": "https://arxiv.org/abs/2007.15474"
+            },
+            {
+              "label": "A Survey of Automatic Drum Transcription (2021)",
+              "url": "https://arxiv.org/abs/2107.05852"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2501.03038v2",
+          "date": "Jan 06",
+          "title": "Piano Transcription by Hierarchical Language Modeling with Pretrained Roll-based Encoders",
+          "authors": [
+            "Dichucheng Li",
+            "Yongyi Zang",
+            "Qiuqiang Kong"
+          ],
+          "org": "ByteDance",
+          "abstract": "Automatic Music Transcription (AMT), aiming to get musical notes from raw audio, typically uses frame-level systems with piano-roll outputs or language model (LM)-based systems with note-level predictions. However, frame-level systems require manual thresholding, while the LM-based systems struggle with long sequences. In this paper, we propose a hybrid method combining pre-trained roll-based encoders with an LM decoder to leverage the strengths of both methods. Besides, our approach employs a hierarchical prediction strategy, first predicting onset and pitch, then velocity, and finally offset. The hierarchical prediction strategy reduces computational costs by breaking down long sequences into different hierarchies. Evaluated on two benchmark roll-based encoders, our method outperforms traditional piano-roll outputs 0.01 and 0.022 in onset-offset-velocity F1 score, demonstrating its potential as a performance-enhancing plug-in for arbitrary roll-based music transcription encoder.",
+          "comment": "Accepted by ICASSP 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.LG",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2501.03038v2",
+          "category": "transcription",
+          "task": "Music Transcription",
+          "proposedMethod": "null",
+          "datasets": [
+            "MAESTRO"
+          ],
+          "what": "This paper proposes a hybrid method for piano transcription, combining pre-trained roll-based encoders with a language model decoder and a hierarchical prediction strategy.",
+          "novel": "The novelty lies in the hierarchical prediction strategy, which reduces computational costs by breaking down long sequences into different hierarchies.",
+          "method": "The method combines pre-trained roll-based encoders with an LM decoder and predicts onset, pitch, velocity, and offset hierarchically to enhance transcription performance.",
+          "validation": "The approach is evaluated on benchmark roll-based encoders using the MAESTRO dataset, achieving improvements in onset-offset-velocity F1 scores.",
+          "discussion": "The method's reliance on pre-trained encoders may limit its adaptability to other transcription tasks, and further testing on diverse datasets is needed.",
+          "nextReads": [
+            {
+              "label": "Onsets and Frames: Dual-Objective Piano Transcription (2018)",
+              "url": "https://arxiv.org/abs/1710.11153"
+            },
+            {
+              "label": "Piano transcription with convolutional sequence-to-sequence models (2018)",
+              "url": "https://arxiv.org/abs/1804.09189"
+            },
+            {
+              "label": "Symbolic Music Generation with Diffusion Models (2022)",
+              "url": "https://arxiv.org/abs/2202.01369"
+            },
+            {
+              "label": "Music Transformer: Generating Music with Long-Term Structure (2019)",
+              "url": "https://arxiv.org/abs/1909.08402"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "D3RM and hierarchical roll-based encoders highlight advancements in piano transcription, emphasizing diffusion models and language modeling for improved accuracy.",
+    "Meta-learning and MAJL frameworks address low-resource percussion transcription, tāla identification, and joint music source separation with pitch estimation.",
+    "Distance-based source separation optimized for mobile GPUs and MusicGen-Stem's multi-stem music generation reflect a focus on practical and creative AI applications in diverse environments."
+  ]
+}

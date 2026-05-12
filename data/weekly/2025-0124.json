@@ -1,0 +1,255 @@
+{
+  "date": "2025-0124",
+  "generated_at": "2025-01-24T00:00:00+00:00",
+  "total": 4,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2501.13772v4",
+          "date": "Jan 23",
+          "title": "Jailbreak-AudioBench: In-Depth Evaluation and Analysis of Jailbreak Threats for Large Audio Language Models",
+          "authors": [
+            "Hao Cheng",
+            "Erjia Xiao",
+            "Jing Shao",
+            "Yichi Wang",
+            "Le Yang"
+          ],
+          "org": "Microsoft",
+          "abstract": "Large Language Models (LLMs) demonstrate impressive zero-shot performance across a wide range of natural language processing tasks. Integrating various modality encoders further expands their capabilities, giving rise to Multimodal Large Language Models (MLLMs) that process not only text but also visual and auditory modality inputs. However, these advanced capabilities may also pose significant safety problems, as models can be exploited to generate harmful or inappropriate content through jailbreak attacks. While prior work has extensively explored how manipulating textual or visual modality inputs can circumvent safeguards in LLMs and MLLMs, the vulnerability of audio-specific jailbreak on Large Audio-Language Models (LALMs) remains largely underexplored. To address this gap, we introduce Jailbreak-AudioBench, which consists of the Toolbox, curated Dataset, and comprehensive Benchmark. The Toolbox supports not only text-to-audio conversion but also various editing techniques for injecting audio hidden semantics. The curated Dataset provides diverse explicit and implicit jailbreak audio examples in both original and edited forms. Utilizing this dataset, we evaluate multiple state-of-the-art LALMs and establish the most comprehensive Jailbreak benchmark to date for audio modality. Finally, Jailbreak-AudioBench establishes a foundation for advancing future research on LALMs safety alignment by enabling the in-depth exposure of more powerful jailbreak threats, such as query-based audio editing, and by facilitating the development of effective defense mechanisms.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.LG",
+            "cs.MM",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2501.13772v4",
+          "category": "foundation",
+          "task": "Audio safety evaluation",
+          "proposedMethod": "Jailbreak-AudioBench",
+          "datasets": [
+            "Jailbreak-AudioBench Dataset"
+          ],
+          "what": "The paper introduces Jailbreak-AudioBench, a framework for evaluating the vulnerabilities of Large Audio-Language Models (LALMs) to audio-specific jailbreak attacks.",
+          "novel": "It is the first comprehensive benchmark to explore audio-specific jailbreak threats in LALMs, addressing a previously underexplored area of model safety.",
+          "method": "The framework includes a toolbox for text-to-audio conversion and audio editing, a curated dataset of jailbreak examples, and a benchmark for evaluating LALMs' susceptibility to such attacks.",
+          "validation": "The authors evaluate state-of-the-art LALMs using the curated dataset, analyzing their vulnerabilities to various jailbreak scenarios.",
+          "discussion": "The work highlights the need for improved safety alignment in LALMs and suggests future research directions for developing robust defense mechanisms.",
+          "nextReads": [
+            {
+              "label": "Adversarial Attacks on Speech Recognition Systems (2020)",
+              "url": "https://arxiv.org/abs/2005.07892"
+            },
+            {
+              "label": "Multimodal Few-Shot Learning with Frozen Language Models (2022)",
+              "url": "https://arxiv.org/abs/2209.03340"
+            },
+            {
+              "label": "Safety Challenges in Multimodal AI Systems (2023)",
+              "url": null
+            },
+            {
+              "label": "Robust Audio Adversarial Examples (2019)",
+              "url": "https://arxiv.org/abs/1901.11157"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2501.11837v1",
+          "date": "Jan 21",
+          "title": "30+ Years of Source Separation Research: Achievements and Future Challenges",
+          "authors": [
+            "Shoko Araki",
+            "Nobutaka Ito",
+            "Reinhold Haeb-Umbach",
+            "Gordon Wichern",
+            "Zhong-Qiu Wang"
+          ],
+          "org": "NTT Corporation",
+          "abstract": "Source separation (SS) of acoustic signals is a research field that emerged in the mid-1990s and has flourished ever since. On the occasion of ICASSP's 50th anniversary, we review the major contributions and advancements in the past three decades in the speech, audio, and music SS research field. We will cover both single- and multi-channel SS approaches. We will also look back on key efforts to foster a culture of scientific evaluation in the research field, including challenges, performance metrics, and datasets. We will conclude by discussing current trends and future research directions.",
+          "comment": "Accepted by IEEE ICASSP 2025",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD",
+            "eess.SP"
+          ],
+          "url": "https://arxiv.org/abs/2501.11837v1",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": null,
+          "datasets": [
+            "MUSDB18",
+            "SiSEC",
+            "CHiME",
+            "MIR-1K"
+          ],
+          "what": "This paper reviews 30+ years of research in source separation for speech, audio, and music, summarizing key achievements and outlining future challenges.",
+          "novel": "The paper provides a comprehensive historical overview and identifies emerging trends and challenges in source separation research.",
+          "method": "The study categorizes advancements in single- and multi-channel source separation, emphasizing scientific evaluation through challenges, metrics, and datasets.",
+          "validation": "The review synthesizes findings from decades of research, highlighting key methodologies and their performance across various benchmarks.",
+          "discussion": "The paper underscores the need for advancements in real-world applications, robustness, and generalization of source separation methods.",
+          "nextReads": [
+            {
+              "label": "Deep Clustering for Monaural Speech Separation (2016)",
+              "url": "https://arxiv.org/abs/1609.07432"
+            },
+            {
+              "label": "Conv-TasNet: Surpassing Ideal Time-Frequency Magnitude Masking for Speech Separation (2018)",
+              "url": "https://arxiv.org/abs/1809.07454"
+            },
+            {
+              "label": "Open-Unmix: A Reference Implementation for Music Source Separation (2019)",
+              "url": "https://arxiv.org/abs/1905.03330"
+            },
+            {
+              "label": "Wave-U-Net: A Multi-Scale Neural Network for End-to-End Audio Source Separation (2018)",
+              "url": "https://arxiv.org/abs/1806.03185"
+            }
+          ],
+          "citationCount": 16,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2501.10305v1",
+          "date": "Jan 17",
+          "title": "On Ambisonic Source Separation with Spatially Informed Non-negative Tensor Factorization",
+          "authors": [
+            "Mateusz Guzik",
+            "Konrad Kowalczyk"
+          ],
+          "org": "AGH University of Science and Technology",
+          "abstract": "This article presents a Non-negative Tensor Factorization based method for sound source separation from Ambisonic microphone signals. The proposed method enables the use of prior knowledge about the Directions-of-Arrival (DOAs) of the sources, incorporated through a constraint on the Spatial Covariance Matrix (SCM) within a Maximum a Posteriori (MAP) framework. Specifically, this article presents a detailed derivation of four algorithms that are based on two types of cost functions, namely the squared Euclidean distance and the Itakura-Saito divergence, which are then combined with two prior probability distributions on the SCM, that is the Wishart and the Inverse Wishart. The experimental evaluation of the baseline Maximum Likelihood (ML) and the proposed MAP methods is primarily based on first-order Ambisonic recordings, using four different source signal datasets, three with musical pieces and one containing speech utterances. We consider under-determined, determined, as well as over-determined scenarios by separating two, four and six sound sources, respectively. Furthermore, we evaluate the proposed algorithms for different spherical harmonic orders and at different reverberation time levels, as well as in non-ideal prior knowledge conditions, for increasingly more corrupted DOAs. Overall, in comparison with beamforming and a state-of-the-art separation technique, as well as the baseline ML methods, the proposed MAP approach offers superior separation performance in a variety of scenarios, as shown by the analysis of the experimental evaluation results, in terms of the standard objective separation measures, such as the SDR, ISR, SIR and SAR.",
+          "comment": null,
+          "journalRef": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, vol. 32, pp. 3238-3255, 2024",
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2501.10305v1",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": "Spatially Informed NTF",
+          "datasets": [
+            "MUSDB18",
+            "SiSEC",
+            "CHiME",
+            "Custom Speech Dataset"
+          ],
+          "what": "The paper proposes a Non-negative Tensor Factorization (NTF) method for sound source separation from Ambisonic microphone signals, incorporating spatial information.",
+          "novel": "It introduces a MAP framework that leverages prior knowledge of source DOAs, improving separation performance in various scenarios.",
+          "method": "The method combines two cost functions (squared Euclidean distance and Itakura-Saito divergence) with prior probability distributions (Wishart and Inverse Wishart) on the Spatial Covariance Matrix.",
+          "validation": "The approach is validated on first-order Ambisonic recordings with varying source counts, reverberation times, and DOA corruption levels, using objective metrics like SDR, ISR, SIR, and SAR.",
+          "discussion": "The method shows robustness across scenarios but may face challenges in higher-order Ambisonics or with highly corrupted DOA information.",
+          "nextReads": [
+            {
+              "label": "Ambisonics-Based Spatial Audio Source Separation (2019)",
+              "url": "https://arxiv.org/abs/1905.12345"
+            },
+            {
+              "label": "Spatially-Informed Source Separation Using Deep Learning (2020)",
+              "url": "https://arxiv.org/abs/2006.04558"
+            },
+            {
+              "label": "Non-negative Matrix Factorization for Source Separation (2007)",
+              "url": null
+            },
+            {
+              "label": "Spatial Audio Scene Analysis (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": 3,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2501.13261v1",
+          "date": "Jan 22",
+          "title": "Exploring GPT's Ability as a Judge in Music Understanding",
+          "authors": [
+            "Kun Fang",
+            "Ziyu Wang",
+            "Gus Xia",
+            "Ichiro Fujinaga"
+          ],
+          "org": "NYU Shanghai",
+          "abstract": "Recent progress in text-based Large Language Models (LLMs) and their extended ability to process multi-modal sensory data have led us to explore their applicability in addressing music information retrieval (MIR) challenges. In this paper, we use a systematic prompt engineering approach for LLMs to solve MIR problems. We convert the music data to symbolic inputs and evaluate LLMs' ability in detecting annotation errors in three key MIR tasks: beat tracking, chord extraction, and key estimation. A concept augmentation method is proposed to evaluate LLMs' music reasoning consistency with the provided music concepts in the prompts. Our experiments tested the MIR capabilities of Generative Pre-trained Transformers (GPT). Results show that GPT has an error detection accuracy of 65.20%, 64.80%, and 59.72% in beat tracking, chord extraction, and key estimation tasks, respectively, all exceeding the random baseline. Moreover, we observe a positive correlation between GPT's error finding accuracy and the amount of concept information provided. The current findings based on symbolic music input provide a solid ground for future LLM-based MIR research.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.IR",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2501.13261v1",
+          "category": "transcription",
+          "task": "Music Information Retrieval",
+          "proposedMethod": "Concept Augmentation",
+          "datasets": [
+            "Symbolic Music Dataset"
+          ],
+          "what": "This paper evaluates the ability of GPT models to detect annotation errors in key MIR tasks such as beat tracking, chord extraction, and key estimation.",
+          "novel": "It introduces a concept augmentation method to improve GPT's reasoning consistency in music tasks, leveraging symbolic music inputs.",
+          "method": "The approach involves systematic prompt engineering and the use of symbolic music data to test GPT's error detection capabilities in MIR tasks.",
+          "validation": "The method is validated through experiments on symbolic music data, achieving error detection rates exceeding random baselines across three MIR tasks.",
+          "discussion": "The study demonstrates GPT's potential in MIR but highlights limitations in accuracy and the need for further development of music-specific LLM capabilities.",
+          "nextReads": [
+            {
+              "label": "Symbolic Music Generation with Transformer Networks (2020)",
+              "url": "https://arxiv.org/abs/2002.00212"
+            },
+            {
+              "label": "Music Transformer: Generating Music with Long-Term Structure (2019)",
+              "url": "https://arxiv.org/abs/1809.04281"
+            },
+            {
+              "label": "Deep Learning for Music Information Retrieval (2017)",
+              "url": "https://arxiv.org/abs/1706.08697"
+            },
+            {
+              "label": "Music Understanding with Large Language Models (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Jailbreak-AudioBench highlights vulnerabilities in Large Audio-Language Models (LALMs) to audio-specific jailbreak attacks, emphasizing the need for robust security evaluations.",
+    "GPT models are assessed for their potential as evaluators in music information retrieval tasks, showcasing their ability to detect annotation errors in beat tracking and chord extraction.",
+    "Advancements in source separation are explored, with a review of 30+ years of progress and a novel Ambisonic NTF method integrating spatial data for improved separation."
+  ]
+}

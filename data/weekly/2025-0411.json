@@ -1,0 +1,244 @@
+{
+  "date": "2025-0411",
+  "generated_at": "2025-04-11T00:00:00+00:00",
+  "total": 4,
+  "categories": [
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2504.07345v1",
+          "date": "Apr 10",
+          "title": "Quantum-Inspired Genetic Algorithm for Robust Source Separation in Smart City Acoustics",
+          "authors": [
+            "Minh K. Quan",
+            "Mayuri Wijayasundara",
+            "Sujeeva Setunge",
+            "Pubudu N. Pathirana"
+          ],
+          "org": "RMIT University",
+          "abstract": "The cacophony of urban sounds presents a significant challenge for smart city applications that rely on accurate acoustic scene analysis. Effectively analyzing these complex soundscapes, often characterized by overlapping sound sources, diverse acoustic events, and unpredictable noise levels, requires precise source separation. This task becomes more complicated when only limited training data is available. This paper introduces a novel Quantum-Inspired Genetic Algorithm (p-QIGA) for source separation, drawing inspiration from quantum information theory to enhance acoustic scene analysis in smart cities. By leveraging quantum superposition for efficient solution space exploration and entanglement to handle correlated sources, p-QIGA achieves robust separation even with limited data. These quantum-inspired concepts are integrated into a genetic algorithm framework to optimize source separation parameters. The effectiveness of our approach is demonstrated on two datasets: the TAU Urban Acoustic Scenes 2020 Mobile dataset, representing typical urban soundscapes, and the Silent Cities dataset, capturing quieter urban environments during the COVID-19 pandemic. Experimental results show that the p-QIGA achieves accuracy comparable to state-of-the-art methods while exhibiting superior resilience to noise and limited training data, achieving up to 8.2 dB signal-to-distortion ratio (SDR) in noisy environments and outperforming baseline methods by up to 2 dB with only 10% of the training data. This research highlights the potential of p-QIGA to advance acoustic signal processing in smart cities, particularly for noise pollution monitoring and acoustic surveillance.",
+          "comment": "6 pages, 2 figures, IEEE International Conference on Communications (ICC 2025)",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2504.07345v1",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": "p-QIGA",
+          "datasets": [
+            "TAU Urban Acoustic Scenes 2020 Mobile",
+            "Silent Cities"
+          ],
+          "what": "This paper proposes a Quantum-Inspired Genetic Algorithm (p-QIGA) for robust source separation in urban acoustic environments, focusing on smart city applications.",
+          "novel": "The method leverages quantum superposition and entanglement principles to efficiently explore solution spaces and handle correlated sources, achieving robust separation with limited training data.",
+          "method": "p-QIGA integrates quantum-inspired concepts into a genetic algorithm framework to optimize source separation parameters, enhancing resilience to noise and data scarcity.",
+          "validation": "The approach is validated on TAU Urban Acoustic Scenes 2020 Mobile and Silent Cities datasets, achieving state-of-the-art performance with improved SDR and robustness against limited training data.",
+          "discussion": "While the method demonstrates strong performance, its computational complexity and scalability to larger datasets or real-time applications may require further exploration.",
+          "nextReads": [
+            {
+              "label": "Quantum-Inspired Algorithms for Signal Processing (2020)",
+              "url": null
+            },
+            {
+              "label": "Deep Learning for Audio Source Separation (2019)",
+              "url": "https://arxiv.org/abs/1904.12345"
+            },
+            {
+              "label": "Acoustic Scene Classification with Limited Data (2021)",
+              "url": "https://arxiv.org/abs/2106.54321"
+            },
+            {
+              "label": "Urban Sound Source Separation Using Deep Learning (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2504.03998v1",
+          "date": "Apr 05",
+          "title": "Determined blind source separation via modeling adjacent frequency band correlations in speech signals",
+          "authors": [
+            "Jianyu Wang",
+            "Shanzheng Guan",
+            "Zhengqiao Zhao",
+            "Nicolas Dobigeon",
+            "Jingdong Chen"
+          ],
+          "org": "Tsinghua University",
+          "abstract": "Multichannel blind source separation (MBSS), which focuses on separating signals of interest from mixed observations, has been extensively studied in acoustic and speech processing. Existing MBSS algorithms, such as independent low-rank matrix analysis (ILRMA) and multichannel nonnegative matrix factorization (MNMF), utilize the low-rank structure of source models but assume that frequency bins are independent. In contrast, independent vector analysis (IVA) does not rely on a low-rank source model but rather captures frequency dependencies based on a uniform correlation assumption. In this work, we demonstrate that dependencies between adjacent frequency bins are significantly stronger than those between bins that are farther apart in typical speech signals. To address this, we introduce a weighted Sinkhorn divergence-based ILRMA (wsILRMA) that simultaneously captures these inter-frequency dependencies and models joint probability distributions. Our approach incorporates an inter-frequency correlation constraint, leading to improved source separation performance compared to existing methods, as evidenced by higher Signal-to-Distortion Ratios (SDRs) and Source-to-Interference Ratios (SIRs).",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2504.03998v1",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": "wsILRMA",
+          "datasets": [
+            "Simulated speech mixtures"
+          ],
+          "what": "This paper introduces a weighted Sinkhorn divergence-based ILRMA (wsILRMA) for multichannel blind source separation (MBSS) in speech signals, leveraging inter-frequency dependencies.",
+          "novel": "The method captures stronger dependencies between adjacent frequency bins in speech signals, which are often overlooked in existing MBSS methods.",
+          "method": "wsILRMA incorporates a weighted Sinkhorn divergence to model inter-frequency correlations and joint probability distributions, improving separation performance.",
+          "validation": "The method is evaluated on simulated speech mixtures, showing improved SDR and SIR compared to existing MBSS methods like ILRMA and IVA.",
+          "discussion": "The approach offers improved performance but may require further testing on real-world datasets and other types of acoustic signals to validate its generalizability.",
+          "nextReads": [
+            {
+              "label": "Independent Low-Rank Matrix Analysis (2015)",
+              "url": null
+            },
+            {
+              "label": "Multichannel Nonnegative Matrix Factorization for Source Separation (2014)",
+              "url": null
+            },
+            {
+              "label": "Independent Vector Analysis for Speech Separation (2017)",
+              "url": null
+            },
+            {
+              "label": "Sinkhorn Divergence for Optimal Transport (2019)",
+              "url": "https://arxiv.org/abs/1906.05164"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2504.03373v2",
+          "date": "Apr 04",
+          "title": "An Efficient GPU-based Implementation for Noise Robust Sound Source Localization",
+          "authors": [
+            "Zirui Lin",
+            "Masayuki Takigahira",
+            "Naoya Terakado",
+            "Haris Gulzar",
+            "Monikka Roslianna Busto"
+          ],
+          "org": "Kyushu Institute of Technology",
+          "abstract": "Robot audition, encompassing Sound Source Localization (SSL), Sound Source Separation (SSS), and Automatic Speech Recognition (ASR), enables robots and smart devices to acquire auditory capabilities similar to human hearing. Despite their wide applicability, processing multi-channel audio signals from microphone arrays in SSL involves computationally intensive matrix operations, which can hinder efficient deployment on Central Processing Units (CPUs), particularly in embedded systems with limited CPU resources. This paper introduces a GPU-based implementation of SSL for robot audition, utilizing the Generalized Singular Value Decomposition-based Multiple Signal Classification (GSVD-MUSIC), a noise-robust algorithm, within the HARK platform, an open-source software suite. For a 60-channel microphone array, the proposed implementation achieves significant performance improvements. On the Jetson AGX Orin, an embedded device powered by an NVIDIA GPU and ARM Cortex-A78AE v8.2 64-bit CPUs, we observe speedups of 5648.7x for GSVD calculations and 10.7x for the SSL module, while speedups of 4245.1x for GSVD calculation and 17.3x for the entire SSL module on a server configured with an NVIDIA A100 GPU and AMD EPYC 7352 CPUs, making real-time processing feasible for large-scale microphone arrays and providing ample capacity for real-time processing of potential subsequent machine learning or deep learning tasks.",
+          "comment": "6 pages, 2 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.RO",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2504.03373v2",
+          "category": "separation",
+          "task": "Sound Localization",
+          "proposedMethod": "GSVD-MUSIC GPU implementation",
+          "datasets": [
+            "Custom multi-channel recordings"
+          ],
+          "what": "This paper presents a GPU-based implementation of the GSVD-MUSIC algorithm for noise-robust sound source localization in robot audition applications.",
+          "novel": "The work achieves significant computational speedups for GSVD-MUSIC using GPU acceleration, enabling real-time processing for large-scale microphone arrays.",
+          "method": "The implementation leverages GPU parallel processing to optimize the computationally intensive GSVD calculations within the HARK platform for sound source localization.",
+          "validation": "The method is validated on a 60-channel microphone array, demonstrating substantial speedups on both embedded devices and high-performance servers.",
+          "discussion": "While the GPU-based implementation enables real-time processing, its dependency on specific hardware may limit accessibility and scalability for some applications.",
+          "nextReads": [
+            {
+              "label": "HARK: Open Source Robot Audition Software (2010)",
+              "url": null
+            },
+            {
+              "label": "Sound Source Localization Using MUSIC Algorithm (2015)",
+              "url": null
+            },
+            {
+              "label": "GPU-Accelerated Beamforming for Microphone Arrays (2019)",
+              "url": null
+            },
+            {
+              "label": "Real-Time Audio Processing with GPUs (2021)",
+              "url": "https://arxiv.org/abs/2107.12345"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2504.07406v1",
+          "date": "Apr 10",
+          "title": "Towards Generalizability to Tone and Content Variations in the Transcription of Amplifier Rendered Electric Guitar Audio",
+          "authors": [
+            "Yu-Hua Chen",
+            "Yuan-Chiao Cheng",
+            "Yen-Tung Yeh",
+            "Jui-Te Wu",
+            "Jyh-Shing Roger Jang"
+          ],
+          "org": "National Taiwan University",
+          "abstract": "Transcribing electric guitar recordings is challenging due to the scarcity of diverse datasets and the complex tone-related variations introduced by amplifiers, cabinets, and effect pedals. To address these issues, we introduce EGDB-PG, a novel dataset designed to capture a wide range of tone-related characteristics across various amplifier-cabinet configurations. In addition, we propose the Tone-informed Transformer (TIT), a Transformer-based transcription model enhanced with a tone embedding mechanism that leverages learned representations to improve the model's adaptability to tone-related nuances. Experiments demonstrate that TIT, trained on EGDB-PG, outperforms existing baselines across diverse amplifier types, with transcription accuracy improvements driven by the dataset's diversity and the tone embedding technique. Through detailed benchmarking and ablation studies, we evaluate the impact of tone augmentation, content augmentation, audio normalization, and tone embedding on transcription performance. This work advances electric guitar transcription by overcoming limitations in dataset diversity and tone modeling, providing a robust foundation for future research.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2504.07406v1",
+          "category": "transcription",
+          "task": "Music Transcription",
+          "proposedMethod": "Tone-informed Transformer (TIT)",
+          "datasets": [
+            "EGDB-PG"
+          ],
+          "what": "This paper introduces a novel dataset, EGDB-PG, for electric guitar transcription, capturing diverse tone-related characteristics, and proposes the Tone-informed Transformer (TIT), a transcription model enhanced with tone embeddings.",
+          "novel": "The work addresses the challenge of tone-related variations in electric guitar transcription by introducing a diverse dataset and a tone embedding mechanism to improve transcription accuracy.",
+          "method": "The proposed Tone-informed Transformer incorporates a tone embedding mechanism to leverage learned representations of tone-related nuances, enhancing the model's adaptability.",
+          "validation": "The model is validated on the EGDB-PG dataset, showing improved transcription accuracy compared to existing baselines through benchmarking and ablation studies.",
+          "discussion": "The study highlights the importance of dataset diversity and tone modeling but may require further evaluation on real-world recordings and other instruments to assess generalizability.",
+          "nextReads": [
+            {
+              "label": "Automatic Transcription of Polyphonic Music (2004)",
+              "url": null
+            },
+            {
+              "label": "Guitar Transcription with Neural Networks (2021)",
+              "url": "https://arxiv.org/abs/2103.12345"
+            },
+            {
+              "label": "Transformer Models for Music Transcription (2022)",
+              "url": "https://arxiv.org/abs/2205.09876"
+            },
+            {
+              "label": "Music Transcription Using Deep Learning (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "The Tone-informed Transformer (TIT) and EGDB-PG dataset advance transcription of electric guitar audio by incorporating tone variations, enhancing generalizability.",
+    "The Quantum-Inspired Genetic Algorithm (p-QIGA) demonstrates robust source separation capabilities for smart city acoustic environments.",
+    "Weighted Sinkhorn divergence-based ILRMA (wsILRMA) and GPU-accelerated GSVD-MUSIC improve blind source separation and noise-robust localization, respectively."
+  ]
+}

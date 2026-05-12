@@ -1,0 +1,351 @@
+{
+  "date": "2025-0404",
+  "generated_at": "2025-04-04T00:00:00+00:00",
+  "total": 6,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2504.01094v1",
+          "date": "Apr 01",
+          "title": "Multilingual and Multi-Accent Jailbreaking of Audio LLMs",
+          "authors": [
+            "Jaechul Roh",
+            "Virat Shejwalkar",
+            "Amir Houmansadr"
+          ],
+          "org": "University of Massachusetts Amherst",
+          "abstract": "Large Audio Language Models (LALMs) have significantly advanced audio understanding but introduce critical security risks, particularly through audio jailbreaks. While prior work has focused on English-centric attacks, we expose a far more severe vulnerability: adversarial multilingual and multi-accent audio jailbreaks, where linguistic and acoustic variations dramatically amplify attack success. In this paper, we introduce Multi-AudioJail, the first systematic framework to exploit these vulnerabilities through (1) a novel dataset of adversarially perturbed multilingual/multi-accent audio jailbreaking prompts, and (2) a hierarchical evaluation pipeline revealing that how acoustic perturbations (e.g., reverberation, echo, and whisper effects) interacts with cross-lingual phonetics to cause jailbreak success rates (JSRs) to surge by up to +57.25 percentage points (e.g., reverberated Kenyan-accented attack on MERaLiON). Crucially, our work further reveals that multimodal LLMs are inherently more vulnerable than unimodal systems: attackers need only exploit the weakest link (e.g., non-English audio inputs) to compromise the entire model, which we empirically show by multilingual audio-only attacks achieving 3.1x higher success rates than text-only attacks. We plan to release our dataset to spur research into cross-modal defenses, urging the community to address this expanding attack surface in multimodality as LALMs evolve.",
+          "comment": "21 pages, 6 figures, 15 tables",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.CL",
+            "cs.CR",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2504.01094v1",
+          "category": "foundation",
+          "task": "Audio Security",
+          "proposedMethod": "Multi-AudioJail",
+          "datasets": [
+            "Adversarial multilingual/multi-accent dataset"
+          ],
+          "what": "This paper introduces Multi-AudioJail, a framework for exposing vulnerabilities in Large Audio Language Models (LALMs) to adversarial multilingual and multi-accent audio jailbreaks.",
+          "novel": "The work reveals that linguistic and acoustic variations amplify attack success rates and demonstrates that multimodal LLMs are more vulnerable than unimodal systems.",
+          "method": "The framework includes a novel dataset of adversarially perturbed multilingual/multi-accent audio prompts and a hierarchical evaluation pipeline to analyze the interaction between acoustic perturbations and cross-lingual phonetics.",
+          "validation": "The study evaluates the framework using a custom dataset and demonstrates significant increases in jailbreak success rates, particularly in multimodal LLMs compared to unimodal systems.",
+          "discussion": "The paper highlights the urgent need for robust cross-modal defenses but does not propose specific mitigation strategies, leaving this as an open challenge for future research.",
+          "nextReads": [
+            {
+              "label": "Adversarial Attacks on Neural Networks for Speech Recognition (2017)",
+              "url": "https://arxiv.org/abs/arXiv:1709.07832"
+            },
+            {
+              "label": "Universal Adversarial Perturbations for Speech Recognition Systems (2019)",
+              "url": "https://arxiv.org/abs/arXiv:1905.03828"
+            },
+            {
+              "label": "Robust Speech Recognition via Fuzzy Adversarial Training (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2104.05322"
+            },
+            {
+              "label": "Adversarial Attacks on Multimodal Systems (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2504.00369v2",
+          "date": "Apr 01",
+          "title": "Are you really listening? Boosting Perceptual Awareness in Music-QA Benchmarks",
+          "authors": [
+            "Yongyi Zang",
+            "Sean O'Brien",
+            "Taylor Berg-Kirkpatrick",
+            "Julian McAuley",
+            "Zachary Novack"
+          ],
+          "org": "UC San Diego",
+          "abstract": "Large Audio Language Models (LALMs), where pretrained text LLMs are finetuned with audio input, have made remarkable progress in music understanding. However, current evaluation methodologies exhibit critical limitations: on the leading Music Question Answering benchmark, MuchoMusic, text-only LLMs without audio perception capabilities achieve surprisingly high accuracy of up to 56.4%, on par or above most LALMs. Furthermore, when presented with random Gaussian noise instead of actual audio, LALMs still perform significantly above chance. These findings suggest existing benchmarks predominantly assess reasoning abilities rather than audio perception. To overcome this challenge, we present RUListening: Robust Understanding through Listening, a framework that enhances perceptual evaluation in Music-QA benchmarks. We introduce the Perceptual Index (PI), a quantitative metric that measures a question's reliance on audio perception by analyzing log probability distributions from text-only language models. Using this metric, we generate synthetic, challenging distractors to create QA pairs that necessitate genuine audio perception. When applied to MuchoMusic, our filtered dataset successfully forces models to rely on perceptual information-text-only LLMs perform at chance levels, while LALMs similarly deteriorate when audio inputs are replaced with noise. These results validate our framework's effectiveness in creating benchmarks that more accurately evaluate audio perception capabilities.",
+          "comment": "ISMIR 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2504.00369v2",
+          "category": "foundation",
+          "task": "Music Question Answering",
+          "proposedMethod": "RUListening",
+          "datasets": [
+            "MuchoMusic"
+          ],
+          "what": "This paper introduces RUListening, a framework to improve the evaluation of perceptual awareness in Music-QA benchmarks by focusing on audio perception rather than reasoning abilities.",
+          "novel": "The paper identifies critical flaws in existing Music-QA benchmarks and proposes a new Perceptual Index metric to measure reliance on audio perception, alongside a method to generate challenging QA pairs.",
+          "method": "The framework uses the Perceptual Index (PI) to analyze the reliance of questions on audio perception and generates synthetic distractors to ensure models must use audio inputs for accurate answers.",
+          "validation": "The framework is applied to the MuchoMusic dataset, demonstrating that filtered QA pairs force models to rely on audio perception, with text-only models performing at chance levels.",
+          "discussion": "The study highlights the need for improved benchmarks but does not address how to scale the approach to more diverse datasets or real-world scenarios.",
+          "nextReads": [
+            {
+              "label": "MuchoMusic: A Benchmark for Music Question Answering (2022)",
+              "url": "https://arxiv.org/abs/arXiv:2205.09101"
+            },
+            {
+              "label": "CLAP: Learning Audio-Text Embeddings (2022)",
+              "url": "https://arxiv.org/abs/arXiv:2211.06687"
+            },
+            {
+              "label": "Evaluating Perceptual Awareness in Multimodal Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Music Understanding with Large Language Models (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": 22,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2503.23395v1",
+          "date": "Mar 30",
+          "title": "Scaling Auditory Cognition via Test-Time Compute in Audio Language Models",
+          "authors": [
+            "Ting Dang",
+            "Yan Gao",
+            "Hong Jia"
+          ],
+          "org": "Tsinghua University",
+          "abstract": "Large language models (LLMs) have shown exceptional versatility in natural language processing, prompting recent efforts to extend their multimodal capabilities to speech processing through the development of audio large language models (Audio LLMs). While Audio LLMs excel in tasks such as speech recognition and synthesis, it remains unclear how they perform when faced with the auditory cognitive challenges posed by real-world environments, such as audio comprehension and listening recall, particularly in the presence of background noise or overlapping speech. Unlike text-based LLMs, which have access to vast amounts of text data for pre-training, retraining Audio LLMs with diverse auditory cognitive scenes is difficult due to the limited datasets that simulate real-world auditory cognitive scenarios and the challenge of acquiring auditory cognitive labels for training. While test-time compute (TTC) methods have been shown to enhance the capabilities of text-based LLMs during inference, a key challenge lies in designing these TTC methods to improve the auditory capabilities of Audio LLMs. This study aims to address these two research gaps by: i) exploring the auditory cognitive capabilities of Audio LLMs, and ii) enhancing their capabilities using TTC approaches. We have investigated five different Audio LLMs for auditory cognition using a \\textit{self-collected} database and have proposed five TTC approaches to enhance auditory cognitive capabilities during inference. Our findings reveal that Audio LLMs performance decreases in more challenging auditory cognitive tasks. The proposed TTC approaches significantly enhance cognitive auditory capabilities, advancing the development of more adaptable and resilient Audio LLMs for practical applications such as assistive listening devices, voice-based AI assistants, and communication technologies.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2503.23395v1",
+          "category": "foundation",
+          "task": "Audio Language Models",
+          "proposedMethod": "Test-Time Compute (TTC)",
+          "datasets": [
+            "Self-collected auditory cognitive database"
+          ],
+          "what": "This paper explores the auditory cognitive capabilities of Audio LLMs and proposes test-time compute (TTC) methods to enhance their performance in real-world auditory cognitive tasks.",
+          "novel": "The study addresses the challenge of limited auditory cognitive datasets and proposes five TTC methods to improve the auditory cognitive capabilities of Audio LLMs during inference.",
+          "method": "The authors evaluate five Audio LLMs on a self-collected auditory cognitive database and introduce TTC methods that adaptively enhance model performance during inference.",
+          "validation": "The proposed methods are validated on a self-collected database, showing significant improvements in auditory cognitive tasks, particularly in challenging scenarios with background noise or overlapping speech.",
+          "discussion": "The reliance on self-collected data may limit reproducibility, and the scalability of the TTC methods to diverse real-world scenarios remains an open question.",
+          "nextReads": [
+            {
+              "label": "Whisper: OpenAI's Speech Recognition Model (2022)",
+              "url": null
+            },
+            {
+              "label": "Test-Time Adaptation for Robust Speech Recognition (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2106.03669"
+            },
+            {
+              "label": "Enhancing Multimodal Models with Test-Time Adaptation (2022)",
+              "url": null
+            },
+            {
+              "label": "Auditory Scene Analysis with Neural Networks (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": 3,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2503.22104v2",
+          "date": "Mar 28",
+          "title": "M2D-CLAP: Exploring General-purpose Audio-Language Representations Beyond CLAP",
+          "authors": [
+            "Daisuke Niizumi",
+            "Daiki Takeuchi",
+            "Masahiro Yasuda",
+            "Binh Thien Nguyen",
+            "Yasunori Ohishi"
+          ],
+          "org": "Sony Group Corporation",
+          "abstract": "Contrastive language-audio pre-training (CLAP), which learns audio-language representations by aligning audio and text in a common feature space, has become popular for solving audio tasks. However, CLAP's audio features lack generalizability, whereas self-supervised learning (SSL) models offer general-purpose features that perform well across diverse audio tasks. We aim to develop a broadly applicable audio representation and hypothesize that a model that learns both general audio and CLAP features should achieve our goal, which we call a general-purpose audio-language representation. To implement our hypothesis, we propose M2D-CLAP, the first approach to jointly learn effective general audio and CLAP features. It extends an SSL masked modeling duo (M2D) by incorporating CLAP and utilizes LLM-based sentence embeddings. The training process consists of multiple stages. In the first stage, generalizable audio features are pre-trained via a multitask objective combining M2D and CLAP, with CLAP leveraging LLM-based semantic embeddings to distill semantic knowledge into them. In the following stages, CLAP features are pre-trained and refined with guidance from the learned audio features. Experiments demonstrated that M2D-CLAP learns high-performing general audio features (e.g., AudioSet mAP of 49.0, SOTA results in music tasks) and CLAP features, thereby enabling a general-purpose audio-language representation.",
+          "comment": "Formerly M2D2, reverted to M2D-CLAP. 15 pages, 7 figures, 13 tables. Accepted by IEEE Access",
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2503.22104v2",
+          "category": "foundation",
+          "task": "Audio-Language Representation",
+          "proposedMethod": "M2D-CLAP",
+          "datasets": [
+            "AudioSet",
+            "Music tasks datasets"
+          ],
+          "what": "This paper proposes M2D-CLAP, a method to jointly learn general audio and audio-language representations for improved performance across diverse audio tasks.",
+          "novel": "The method combines self-supervised learning with CLAP to create a general-purpose audio-language representation, leveraging LLM-based semantic embeddings for enhanced feature generalizability.",
+          "method": "M2D-CLAP extends a masked modeling duo (M2D) with CLAP, using a multi-stage training process that integrates general audio feature pretraining and CLAP feature refinement.",
+          "validation": "The approach achieves state-of-the-art results on AudioSet (49.0 mAP) and various music tasks, demonstrating the effectiveness of the learned general-purpose representations.",
+          "discussion": "The multi-stage training process may increase computational costs, and the reliance on specific datasets like AudioSet could limit generalizability to other domains.",
+          "nextReads": [
+            {
+              "label": "CLAP: Learning Audio-Text Embeddings (2022)",
+              "url": "https://arxiv.org/abs/arXiv:2211.06687"
+            },
+            {
+              "label": "Self-Supervised Learning for General Audio Representations (2021)",
+              "url": null
+            },
+            {
+              "label": "AudioSet: An Ontology and Human-Labeled Dataset for Audio Events (2017)",
+              "url": "https://arxiv.org/abs/arXiv:1712.01475"
+            },
+            {
+              "label": "Contrastive Learning for Audio Representations (2020)",
+              "url": "https://arxiv.org/abs/arXiv:2007.09902"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2504.02302v1",
+          "date": "Apr 03",
+          "title": "Causal Self-supervised Pretrained Frontend with Predictive Code for Speech Separation",
+          "authors": [
+            "Wupeng Wang",
+            "Zexu Pan",
+            "Xinke Li",
+            "Shuai Wang",
+            "Haizhou Li"
+          ],
+          "org": "Tencent AI Lab",
+          "abstract": "Speech separation (SS) seeks to disentangle a multi-talker speech mixture into single-talker speech streams. Although SS can be generally achieved using offline methods, such a processing paradigm is not suitable for real-time streaming applications. Causal separation models, which rely only on past and present information, offer a promising solution for real-time streaming. However, these models typically suffer from notable performance degradation due to the absence of future context. In this paper, we introduce a novel frontend that is designed to mitigate the mismatch between training and run-time inference by implicitly incorporating future information into causal models through predictive patterns. The pretrained frontend employs a transformer decoder network with a causal convolutional encoder as the backbone and is pretrained in a self-supervised manner with two innovative pretext tasks: autoregressive hybrid prediction and contextual knowledge distillation. These tasks enable the model to capture predictive patterns directly from mixtures in a self-supervised manner. The pretrained frontend subsequently serves as a feature extractor to generate high-quality predictive patterns. Comprehensive evaluations on synthetic and real-world datasets validated the effectiveness of the proposed pretrained frontend.",
+          "comment": "arXiv admin note: text overlap with arXiv:2411.03085",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.LG",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2504.02302v1",
+          "category": "separation",
+          "task": "Speech Separation",
+          "proposedMethod": "Predictive Code Frontend",
+          "datasets": [
+            "Synthetic datasets",
+            "Real-world datasets"
+          ],
+          "what": "This paper introduces a novel causal self-supervised pretrained frontend for real-time speech separation, designed to mitigate performance degradation caused by the absence of future context.",
+          "novel": "The paper proposes a self-supervised pretrained frontend that implicitly incorporates future information into causal models using predictive patterns, addressing a key limitation of causal speech separation models.",
+          "method": "The method employs a transformer decoder network with a causal convolutional encoder, pretrained using autoregressive hybrid prediction and contextual knowledge distillation tasks to capture predictive patterns directly from mixtures.",
+          "validation": "The approach is validated through comprehensive evaluations on synthetic and real-world datasets, demonstrating improved performance in real-time speech separation tasks.",
+          "discussion": "The method's reliance on pretraining and the complexity of its architecture may pose challenges for deployment in resource-constrained environments.",
+          "nextReads": [
+            {
+              "label": "Conv-TasNet: Surpassing Ideal Time-Frequency Magnitude Masking for Speech Separation (2019)",
+              "url": "https://arxiv.org/abs/arXiv:1809.07454"
+            },
+            {
+              "label": "Self-Supervised Learning for Speech Enhancement (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2106.08476"
+            },
+            {
+              "label": "Dual-Path RNN: Efficient Long Sequence Modeling for Time-Domain Single-Channel Speech Separation (2020)",
+              "url": "https://arxiv.org/abs/arXiv:1910.06379"
+            },
+            {
+              "label": "Wave-U-Net: A Multi-Scale Neural Network for End-to-End Audio Source Separation (2018)",
+              "url": "https://arxiv.org/abs/arXiv:1806.03185"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2503.22088v2",
+          "date": "Mar 28",
+          "title": "Baseline Systems and Evaluation Metrics for Spatial Semantic Segmentation of Sound Scenes",
+          "authors": [
+            "Binh Thien Nguyen",
+            "Masahiro Yasuda",
+            "Daiki Takeuchi",
+            "Daisuke Niizumi",
+            "Yasunori Ohishi"
+          ],
+          "org": "DCASE",
+          "abstract": "Immersive communication has made significant advancements, especially with the release of the codec for Immersive Voice and Audio Services. Aiming at its further realization, the DCASE 2025 Challenge has recently introduced a task for spatial semantic segmentation of sound scenes (S5), which focuses on detecting and separating sound events in spatial sound scenes. In this paper, we explore methods for addressing the S5 task. Specifically, we present baseline S5 systems that combine audio tagging (AT) and label-queried source separation (LSS) models. We investigate two LSS approaches based on the ResUNet architecture: a) extracting a single source for each detected event and b) querying multiple sources concurrently. Since each separated source in S5 is identified by its sound event class label, we propose new class-aware metrics to evaluate both the sound sources and labels simultaneously. Experimental results on first-order ambisonics spatial audio demonstrate the effectiveness of the proposed systems and confirm the efficacy of the metrics.",
+          "comment": "Accepted to EUSIPCO2025",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2503.22088v2",
+          "category": "separation",
+          "task": "Spatial Semantic Segmentation",
+          "proposedMethod": "Baseline S5 Systems",
+          "datasets": [
+            "DCASE 2025 Challenge Dataset"
+          ],
+          "what": "This paper introduces baseline systems and evaluation metrics for the spatial semantic segmentation of sound scenes (S5), a task focused on detecting and separating sound events in spatial sound scenes.",
+          "novel": "The paper proposes new class-aware metrics to evaluate both sound sources and their labels simultaneously, which is a novel approach for the S5 task.",
+          "method": "The baseline systems combine audio tagging (AT) and label-queried source separation (LSS) models, leveraging ResUNet-based architectures to extract single or multiple sources for detected events.",
+          "validation": "The methods are validated using first-order ambisonics spatial audio from the DCASE 2025 Challenge Dataset, with experimental results demonstrating the effectiveness of the proposed systems and metrics.",
+          "discussion": "The paper provides a solid foundation for the S5 task but does not address the scalability of the proposed methods to higher-order ambisonics or real-world noisy environments.",
+          "nextReads": [
+            {
+              "label": "DCASE 2023 Challenge Task 4: Sound Event Localization and Detection (2023)",
+              "url": null
+            },
+            {
+              "label": "Sound Event Localization and Detection Using Ambisonics (2022)",
+              "url": null
+            },
+            {
+              "label": "ResUNet: A Deep Learning Framework for Source Separation (2021)",
+              "url": null
+            },
+            {
+              "label": "Class-aware Sound Event Detection and Separation (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Causal Self-supervised Pretrained Frontend and test-time compute methods like TTC are advancing real-time speech separation and auditory cognition in Audio LLMs.",
+    "Multi-AudioJail reveals vulnerabilities in LALMs to adversarial multilingual and multi-accent audio attacks, highlighting security concerns in audio AI models.",
+    "RUListening and M2D-CLAP emphasize improving perceptual awareness in Music-QA benchmarks and general-purpose audio-language representations for diverse audio tasks."
+  ]
+}

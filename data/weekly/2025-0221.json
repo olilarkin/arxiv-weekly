@@ -1,0 +1,364 @@
+{
+  "date": "2025-0221",
+  "generated_at": "2025-02-21T00:00:00+00:00",
+  "total": 6,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2502.13433v3",
+          "date": "Feb 19",
+          "title": "MATS: An Audio Language Model under Text-only Supervision",
+          "authors": [
+            "Wen Wang",
+            "Ruibing Hou",
+            "Hong Chang",
+            "Shiguang Shan",
+            "Xilin Chen"
+          ],
+          "org": "Baidu",
+          "abstract": "Large audio-language models (LALMs), built upon powerful Large Language Models (LLMs), have exhibited remarkable audio comprehension and reasoning capabilities. However, the training of LALMs demands a large corpus of audio-language pairs, which requires substantial costs in both data collection and training resources. In this paper, we propose \\textbf{MATS}, an audio-language multimodal LLM designed to handle \\textbf{M}ultiple \\textbf{A}udio task using solely \\textbf{T}ext-only \\textbf{S}upervision. By leveraging pre-trained audio-language alignment models such as CLAP, we develop a text-only training strategy that projects the shared audio-language latent space into LLM latent space, endowing the LLM with audio comprehension capabilities without relying on audio data during training. To further bridge the modality gap between audio and language embeddings within CLAP, we propose the \\textbf{S}trongly-rel\\textbf{a}ted \\textbf{n}oisy \\textbf{t}ext with \\textbf{a}udio (\\textbf{Santa}) mechanism. Santa maps audio embeddings into CLAP language embedding space while preserving essential information from the audio input. Extensive experiments demonstrate that MATS, despite being trained exclusively on text data, achieves competitive performance compared to recent LALMs trained on large-scale audio-language pairs. The code is publicly available in \\href{https://github.com/wangwen-banban/MATS}{https://github.com/wangwen-banban/MATS}.",
+          "comment": "Accepted by ICML2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2502.13433v3",
+          "category": "foundation",
+          "task": "Audio-Language Modeling",
+          "proposedMethod": "MATS",
+          "datasets": [
+            "CLAP"
+          ],
+          "what": "This paper introduces MATS, an audio-language multimodal large language model trained using only text supervision, eliminating the need for audio data during training.",
+          "novel": "The novelty lies in using a text-only training strategy with pre-trained audio-language alignment models like CLAP, and introducing the SANTA mechanism to map audio embeddings into the language embedding space while preserving audio information.",
+          "method": "MATS leverages pre-trained audio-language alignment models to project shared audio-language latent spaces into LLM latent spaces, using the SANTA mechanism to bridge modality gaps.",
+          "validation": "The method is validated through extensive experiments comparing MATS with recent LALMs trained on large-scale audio-language pairs, demonstrating competitive performance.",
+          "discussion": "The approach reduces reliance on costly audio-language paired data, but the effectiveness may vary depending on the quality of the pre-trained alignment model and the complexity of the audio tasks.",
+          "nextReads": [
+            {
+              "label": "CLAP: Learning Audio-Text Representations from Audio Captioning (2022)",
+              "url": "https://arxiv.org/abs/2206.04769"
+            },
+            {
+              "label": "Whisper: OpenAI's Speech Recognition Model (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "AudioLDM: Text-to-Audio Generation with Latent Diffusion Models (2023)",
+              "url": "https://arxiv.org/abs/2301.12503"
+            },
+            {
+              "label": "AudioPaLM: A Language Model for Speech and Text (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": 1,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2502.12925v1",
+          "date": "Feb 18",
+          "title": "Keep what you need : extracting efficient subnetworks from large audio representation models",
+          "authors": [
+            "David Genova",
+            "Philippe Esling",
+            "Tom Hurlin"
+          ],
+          "org": "IRCAM",
+          "abstract": "Recently, research on audio foundation models has witnessed notable advances, as illustrated by the ever improving results on complex downstream tasks. Subsequently, those pretrained networks have quickly been used for various audio applications. These improvements have however resulted in a considerable increase both in size and complexity of these models. Along the environmental concerns this issue raises, this prevents the deployment of such networks on consumer-level devices, and precludes their use for real-time applications. Moreover, this appears contradictory with the specificity of the tasks for which these models are used, which are often simpler compared to extracting a rich, multi-purpose representation from any type of audio data. In this paper, we address this issue with a simple, yet effective method to extract lightweight specialist subnetworks from large foundation models. Specifically, we introduce learnable binary masks in-between the layers of a pretrained representation model. When training the end-to-end model on a downstream task, we add a sparsity-inducing loss to the overall objective, hence learning a compact subnetwork specialized on a single task. Importantly, the weights of the foundation model are kept frozen, resulting into low additional training costs. Once trained, the masked computational units can then be removed from the network, implying significant performance gains. We assess our method on three widespread audio foundation models, each based on a different backbone architecture, and illustrate its effectiveness on common audio representation evaluation tasks, as well as its versatility on both speech, music, and general audio. Code for reproducing the results and supporting webpage are available at https://github.com/gnvIRCAM/Audio-representation-trimming",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2502.12925v1",
+          "category": "foundation",
+          "task": "Model Compression",
+          "proposedMethod": "null",
+          "datasets": [
+            "ESC-50",
+            "GTZAN",
+            "LibriSpeech"
+          ],
+          "what": "This paper presents a method to extract lightweight, task-specific subnetworks from large audio foundation models using learnable binary masks and sparsity-inducing loss.",
+          "novel": "The novelty lies in introducing learnable binary masks to prune large audio models into task-specific subnetworks without modifying the original model weights.",
+          "method": "The method trains binary masks with a sparsity-inducing loss to identify and retain only the necessary parts of a frozen pre-trained model for specific tasks.",
+          "validation": "The approach is evaluated on three audio foundation models across speech, music, and general audio tasks, demonstrating significant performance gains with reduced computational costs.",
+          "discussion": "While effective, the method's reliance on pre-trained models may limit its applicability to tasks not well-represented in the original training data.",
+          "nextReads": [
+            {
+              "label": "Efficient Audio Representations for Deep Learning (2021)",
+              "url": null
+            },
+            {
+              "label": "Pruning Neural Networks for Efficient Inference (2019)",
+              "url": null
+            },
+            {
+              "label": "Distilling the Knowledge in a Neural Network (2015)",
+              "url": null
+            },
+            {
+              "label": "Audio Spectrogram Transformer (2021)",
+              "url": "https://arxiv.org/abs/2104.01778"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2502.17579v2",
+          "date": "Feb 17",
+          "title": "VANPY: Voice Analysis Framework",
+          "authors": [
+            "Gregory Koushnir",
+            "Michael Fire",
+            "Galit Fuhrmann Alpert",
+            "Dima Kagan"
+          ],
+          "org": "Ben-Gurion University",
+          "abstract": "Voice data is increasingly being used in modern digital communications, yet there is still a lack of comprehensive tools for automated voice analysis and characterization. To this end, we developed the VANPY (Voice Analysis in Python) framework for automated pre-processing, feature extraction, and classification of voice data. The VANPY is an open-source end-to-end comprehensive framework that was developed for the purpose of speaker characterization from voice data. The framework is designed with extensibility in mind, allowing for easy integration of new components and adaptation to various voice analysis applications. It currently incorporates over fifteen voice analysis components - including music/speech separation, voice activity detection, speaker embedding, vocal feature extraction, and various classification models.   Four of the VANPY's components were developed in-house and integrated into the framework to extend its speaker characterization capabilities: gender classification, emotion classification, age regression, and height regression. The models demonstrate robust performance across various datasets, although not surpassing state-of-the-art performance.   As a proof of concept, we demonstrate the framework's ability to extract speaker characteristics on a use-case challenge of analyzing character voices from the movie \"Pulp Fiction.\" The results illustrate the framework's capability to extract multiple speaker characteristics, including gender, age, height, emotion type, and emotion intensity measured across three dimensions: arousal, dominance, and valence.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.LG",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2502.17579v2",
+          "category": "separation",
+          "task": "Voice Analysis",
+          "proposedMethod": "VANPY",
+          "datasets": [
+            "Pulp Fiction Dataset",
+            "VoxCeleb",
+            "RAVDESS"
+          ],
+          "what": "This paper introduces VANPY, an open-source Python framework for automated voice analysis, including pre-processing, feature extraction, and speaker characterization.",
+          "novel": "The novelty lies in integrating over fifteen voice analysis components, including in-house developed models for gender, emotion, age, and height classification, into a comprehensive and extensible framework.",
+          "method": "VANPY combines multiple voice analysis tools and custom models for speaker characterization, with a focus on modularity and extensibility for various voice analysis tasks.",
+          "validation": "The framework's capabilities are demonstrated on a use-case involving character voice analysis from the movie 'Pulp Fiction,' showcasing its ability to extract multiple speaker characteristics.",
+          "discussion": "While the framework is comprehensive, its performance does not surpass state-of-the-art models, and its effectiveness may vary depending on the specific application and dataset.",
+          "nextReads": [
+            {
+              "label": "VoxCeleb: Large-scale Speaker Verification Dataset (2017)",
+              "url": "https://arxiv.org/abs/1706.08612"
+            },
+            {
+              "label": "OpenSMILE: Feature Extraction Toolkit for Speech and Music Processing (2010)",
+              "url": null
+            },
+            {
+              "label": "Deep Speaker Embeddings for Text-Independent Speaker Verification (2018)",
+              "url": "https://arxiv.org/abs/1804.10078"
+            },
+            {
+              "label": "RAVDESS: Ryerson Audio-Visual Database of Emotional Speech and Song (2018)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": "https://github.com/griko/vanpy",
+          "upvotes": 1,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2502.12972v1",
+          "date": "Feb 18",
+          "title": "Skip That Beat: Augmenting Meter Tracking Models for Underrepresented Time Signatures",
+          "authors": [
+            "Giovana Morais",
+            "Brian McFee",
+            "Magdalena Fuentes"
+          ],
+          "org": "NYU",
+          "abstract": "Beat and downbeat tracking models are predominantly developed using datasets with music in 4/4 meter, which decreases their generalization to repertories in other time signatures, such as Brazilian samba which is in 2/4. In this work, we propose a simple augmentation technique to increase the representation of time signatures beyond 4/4, namely 2/4 and 3/4. Our augmentation procedure works by removing beat intervals from 4/4 annotated tracks. We show that the augmented data helps to improve downbeat tracking for underrepresented meters while preserving the overall performance of beat tracking in two different models. We also show that this technique helps improve downbeat tracking in an unseen samba dataset.",
+          "comment": "4 pages + references, 3 figures, 1st Latin American Music Information Retrieval (LAMIR) workshop",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2502.12972v1",
+          "category": "transcription",
+          "task": "Beat and Downbeat Tracking",
+          "proposedMethod": "null",
+          "datasets": [
+            "GTZAN",
+            "RWC",
+            "Samba Dataset"
+          ],
+          "what": "This paper proposes an augmentation technique to improve beat and downbeat tracking models for underrepresented time signatures, such as 2/4 and 3/4.",
+          "novel": "The novelty lies in a simple yet effective augmentation method that removes beat intervals from 4/4 annotated tracks to simulate underrepresented time signatures.",
+          "method": "The method involves augmenting training data by modifying beat intervals in 4/4 meter tracks to create synthetic examples of 2/4 and 3/4 meters, improving model generalization.",
+          "validation": "The approach is validated on two beat tracking models, showing improved downbeat tracking performance on an unseen samba dataset while maintaining overall beat tracking accuracy.",
+          "discussion": "The method is limited by its reliance on synthetic data, which may not fully capture the nuances of real-world underrepresented time signatures.",
+          "nextReads": [
+            {
+              "label": "Deep Rhythm: A Neural Network for Beat and Downbeat Tracking (2020)",
+              "url": "https://arxiv.org/abs/2006.09215"
+            },
+            {
+              "label": "Automatic Downbeat Tracking Using Recurrent Neural Networks (2017)",
+              "url": null
+            },
+            {
+              "label": "Beat Tracking with Neural Networks (2018)",
+              "url": null
+            },
+            {
+              "label": "Data Augmentation for Music Applications (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2502.12438v1",
+          "date": "Feb 18",
+          "title": "Note-Level Singing Melody Transcription for Time-Aligned Musical Score Generation",
+          "authors": [
+            "Leekyung Kim",
+            "Sungwook Jeon",
+            "Wan Heo",
+            "Jonghun Park"
+          ],
+          "org": "Yonsei University",
+          "abstract": "Automatic music transcription converts audio recordings into symbolic representations, facilitating music analysis, retrieval, and generation. A musical note is characterized by pitch, onset, and offset in an audio domain, whereas it is defined in terms of pitch and note value in a musical score domain. A time-aligned score, derived from timing information along with pitch and note value, allows matching a part of the score with the corresponding part of the music audio, enabling various applications. In this paper, we consider an extended version of the traditional note-level transcription task that recognizes onset, offset, and pitch, through including extraction of additional note value to generate a time-aligned score from an audio input. To address this new challenge, we propose an end-to-end framework that integrates recognition of the note value, pitch, and temporal information. This approach avoids error accumulation inherent in multi-stage methods and enhances accuracy through mutual reinforcement. Our framework employs tokenized representations specifically targeted for this task, through incorporating note value information. Furthermore, we introduce a pseudo-labeling technique to address a scarcity problem of annotated note value data. This technique produces approximate note value labels from existing datasets for the traditional note-level transcription. Experimental results demonstrate the superior performance of the proposed model in note-level transcription tasks when compared to existing state-of-the-art approaches. We also introduce new evaluation metrics that assess both temporal and note value aspects to demonstrate the robustness of the model. Moreover, qualitative assessments via visualized musical scores confirmed the effectiveness of our model in capturing the note values.",
+          "comment": "Accepted by IEEE Transactions on Audio, Speech and Language Processing(TASLP)",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS",
+            "eess.SP"
+          ],
+          "url": "https://arxiv.org/abs/2502.12438v1",
+          "category": "transcription",
+          "task": "Singing Melody Transcription",
+          "proposedMethod": "null",
+          "datasets": [
+            "MIR-1K",
+            "DALI",
+            "MedleyDB"
+          ],
+          "what": "This paper introduces an end-to-end framework for note-level singing melody transcription, including recognition of pitch, onset, offset, and note value to generate time-aligned musical scores.",
+          "novel": "The novelty lies in extending traditional note-level transcription by incorporating note value recognition and using tokenized representations for enhanced accuracy.",
+          "method": "The framework integrates pitch, onset, offset, and note value recognition into a single end-to-end model, utilizing pseudo-labeling to address the lack of annotated note value data.",
+          "validation": "The method is validated on multiple datasets, demonstrating superior performance compared to state-of-the-art approaches, with new evaluation metrics introduced for temporal and note value accuracy.",
+          "discussion": "The approach addresses error propagation in multi-stage methods but may face challenges in generalizing to diverse musical styles due to limited annotated data.",
+          "nextReads": [
+            {
+              "label": "End-to-End Neural Network for Polyphonic Music Transcription (2020)",
+              "url": "https://arxiv.org/abs/2004.03863"
+            },
+            {
+              "label": "Deep Learning for Polyphonic Music Transcription (2017)",
+              "url": null
+            },
+            {
+              "label": "Onsets and Frames: Dual-Objective Piano Transcription (2018)",
+              "url": "https://arxiv.org/abs/1710.11153"
+            },
+            {
+              "label": "DALI: A Dataset for Singing Voice Annotation (2019)",
+              "url": "https://arxiv.org/abs/1811.00401"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2502.11840v1",
+          "date": "Feb 17",
+          "title": "ChordFormer: A Conformer-Based Architecture for Large-Vocabulary Audio Chord Recognition",
+          "authors": [
+            "Muhammad Waseem Akram",
+            "Stefano Dettori",
+            "Valentina Colla",
+            "Giorgio Carlo Buttazzo"
+          ],
+          "org": "Scuola Superiore Sant’Anna",
+          "abstract": "Chord recognition serves as a critical task in music information retrieval due to the abstract and descriptive nature of chords in music analysis. While audio chord recognition systems have achieved significant accuracy for small vocabularies (e.g., major/minor chords), large-vocabulary chord recognition remains a challenging problem. This complexity also arises from the inherent long-tail distribution of chords, where rare chord types are underrepresented in most datasets, leading to insufficient training samples. Effective chord recognition requires leveraging contextual information from audio sequences, yet existing models, such as combinations of convolutional neural networks, bidirectional long short-term memory networks, and bidirectional transformers, face limitations in capturing long-term dependencies and exhibit suboptimal performance on large-vocabulary chord recognition tasks. This work proposes ChordFormer, a novel conformer-based architecture designed to tackle structural chord recognition (e.g., triads, bass, sevenths) for large vocabularies. ChordFormer leverages conformer blocks that integrate convolutional neural networks with transformers, thus enabling the model to capture both local patterns and global dependencies effectively. By addressing challenges such as class imbalance through a reweighted loss function and structured chord representations, ChordFormer outperforms state-of-the-art models, achieving a 2% improvement in frame-wise accuracy and a 6% increase in class-wise accuracy on large-vocabulary chord datasets. Furthermore, ChordFormer excels in handling class imbalance, providing robust and balanced recognition across chord types. This approach bridges the gap between theoretical music knowledge and practical applications, advancing the field of large-vocabulary chord recognition.",
+          "comment": "13 pages, 4 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.CV",
+            "cs.IR",
+            "cs.LG"
+          ],
+          "url": "https://arxiv.org/abs/2502.11840v1",
+          "category": "transcription",
+          "task": "Chord Recognition",
+          "proposedMethod": "ChordFormer",
+          "datasets": [
+            "Billboard",
+            "Isophonics",
+            "RWC Popular Music"
+          ],
+          "what": "This paper introduces ChordFormer, a conformer-based architecture for large-vocabulary audio chord recognition, focusing on structural chord recognition such as triads, bass, and sevenths.",
+          "novel": "The novelty lies in using conformer blocks to effectively capture both local patterns and global dependencies, and addressing class imbalance with a reweighted loss function and structured chord representations.",
+          "method": "ChordFormer integrates convolutional neural networks with transformers in conformer blocks, enabling it to model both local and global dependencies. It also employs a reweighted loss function to mitigate class imbalance and structured chord representations for better generalization.",
+          "validation": "The model is validated on large-vocabulary chord datasets like Billboard and Isophonics, achieving a 2% improvement in frame-wise accuracy and a 6% increase in class-wise accuracy compared to state-of-the-art models.",
+          "discussion": "While ChordFormer shows significant improvements, its performance might still be constrained by the availability of diverse and balanced datasets for training. Future work could explore further addressing the long-tail distribution of chord types.",
+          "nextReads": [
+            {
+              "label": "A Transformer-Based Approach for Chord Recognition (2022)",
+              "url": null
+            },
+            {
+              "label": "Deep Learning for Music Information Retrieval (2019)",
+              "url": null
+            },
+            {
+              "label": "Chord Recognition in Symbolic Music (2021)",
+              "url": null
+            },
+            {
+              "label": "Audio Chord Recognition with Deep Neural Networks (2017)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "MATS showcases advancements in audio-language modeling by leveraging text-only supervision, bypassing the need for audio data during training.",
+    "Skip That Beat and ChordFormer highlight innovations in rhythm and chord recognition, improving meter tracking for rare time signatures and large-vocabulary chord analysis.",
+    "Efficient audio model optimization is addressed by extracting task-specific subnetworks in 'Keep what you need,' while VANPY enhances voice analysis workflows with its open-source framework."
+  ]
+}

@@ -1,0 +1,246 @@
+{
+  "date": "2025-0117",
+  "generated_at": "2025-01-17T00:00:00+00:00",
+  "total": 4,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2501.07246v1",
+          "date": "Jan 13",
+          "title": "Audio-CoT: Exploring Chain-of-Thought Reasoning in Large Audio Language Model",
+          "authors": [
+            "Ziyang Ma",
+            "Zhuo Chen",
+            "Yuping Wang",
+            "Eng Siong Chng",
+            "Xie Chen"
+          ],
+          "org": "Microsoft",
+          "abstract": "Large Audio-Language Models (LALMs) have demonstrated remarkable performance in tasks involving audio perception and understanding, such as speech recognition and audio captioning. However, their reasoning capabilities - critical for solving complex real-world problems - remain underexplored. In this work, we conduct the first exploration into integrating Chain-of-Thought (CoT) reasoning into LALMs to enhance their reasoning ability across auditory modalities. We evaluate representative CoT methods, analyzing their performance in both information extraction and reasoning tasks across sound, music, and speech domains. Our findings reveal that CoT methods significantly improve performance on easy and medium tasks but encounter challenges with hard tasks, where reasoning chains can confuse the model rather than improve accuracy. Additionally, we identify a positive correlation between reasoning path length and accuracy, demonstrating the potential of scaling inference for advanced instruction-following and reasoning. This study not only highlights the promise of CoT in enhancing LALM reasoning capabilities but also identifies key limitations and provides actionable directions for future research.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL",
+            "cs.MM",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2501.07246v1",
+          "category": "foundation",
+          "task": "Audio Reasoning",
+          "proposedMethod": "Audio-CoT",
+          "datasets": [
+            "null"
+          ],
+          "what": "This paper explores the integration of Chain-of-Thought (CoT) reasoning into Large Audio-Language Models (LALMs) to enhance their reasoning capabilities across auditory modalities.",
+          "novel": "The novelty lies in being the first to apply CoT reasoning to LALMs, analyzing its impact on reasoning tasks in sound, music, and speech domains.",
+          "method": "The study evaluates representative CoT methods, focusing on their ability to improve reasoning by analyzing reasoning path length and its correlation with task accuracy.",
+          "validation": "The methods are tested on reasoning tasks of varying difficulty across auditory domains, showing improvements on easy and medium tasks but challenges with harder tasks.",
+          "discussion": "While CoT improves reasoning in simpler tasks, its limitations in handling complex reasoning chains highlight the need for further refinement and scaling strategies.",
+          "nextReads": [
+            {
+              "label": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (2022)",
+              "url": "https://arxiv.org/abs/2201.11903"
+            },
+            {
+              "label": "Whisper: OpenAI's Robust Speech Recognition Model (2022)",
+              "url": null
+            },
+            {
+              "label": "Audio Captioning: Transforming Sounds into Words (2021)",
+              "url": "https://arxiv.org/abs/2107.09913"
+            },
+            {
+              "label": "Audio-Language Models: A Survey (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 1,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2501.09169v1",
+          "date": "Jan 15",
+          "title": "Beyond Speaker Identity: Text Guided Target Speech Extraction",
+          "authors": [
+            "Mingyue Huo",
+            "Abhinav Jain",
+            "Cong Phuoc Huynh",
+            "Fanjie Kong",
+            "Pichao Wang"
+          ],
+          "org": "Google",
+          "abstract": "Target Speech Extraction (TSE) traditionally relies on explicit clues about the speaker's identity like enrollment audio, face images, or videos, which may not always be available. In this paper, we propose a text-guided TSE model StyleTSE that uses natural language descriptions of speaking style in addition to the audio clue to extract the desired speech from a given mixture. Our model integrates a speech separation network adapted from SepFormer with a bi-modality clue network that flexibly processes both audio and text clues. To train and evaluate our model, we introduce a new dataset TextrolMix with speech mixtures and natural language descriptions. Experimental results demonstrate that our method effectively separates speech based not only on who is speaking, but also on how they are speaking, enhancing TSE in scenarios where traditional audio clues are absent. Demos are at: https://mingyue66.github.io/TextrolMix/demo/",
+          "comment": "Accepted by ICASSP 2025",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2501.09169v1",
+          "category": "separation",
+          "task": "Target Speech Extraction",
+          "proposedMethod": "StyleTSE",
+          "datasets": [
+            "TextrolMix"
+          ],
+          "what": "This paper proposes a text-guided target speech extraction model, StyleTSE, which uses natural language descriptions of speaking style along with audio clues to extract desired speech from mixtures.",
+          "novel": "The novelty lies in using natural language descriptions of speaking style as an additional clue for target speech extraction, enabling the model to work in scenarios where traditional audio clues are unavailable.",
+          "method": "The model integrates a SepFormer-based speech separation network with a bi-modality clue network that processes both audio and text clues.",
+          "validation": "The model is trained and evaluated on the newly introduced TextrolMix dataset, and experimental results demonstrate its effectiveness in extracting speech based on both speaker identity and speaking style.",
+          "discussion": "The approach expands the applicability of TSE to scenarios without traditional audio clues, but the reliance on accurate and descriptive text inputs may limit its practical use in certain real-world applications.",
+          "nextReads": [
+            {
+              "label": "SepFormer: Deep Separation Transformer for Single-Channel Speech Separation (2021)",
+              "url": "https://arxiv.org/abs/2109.06385"
+            },
+            {
+              "label": "VoiceFilter: Targeted Voice Separation by Speaker-Conditioned Spectrogram Masking (2019)",
+              "url": "https://arxiv.org/abs/1904.05786"
+            },
+            {
+              "label": "Deep Clustering and Conventional Networks for Music Separation: Strong Together (2017)",
+              "url": "https://arxiv.org/abs/1706.09588"
+            },
+            {
+              "label": "Text-to-Speech Synthesis with Prosody Transfer Using Text Descriptions (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2501.07215v1",
+          "date": "Jan 13",
+          "title": "Microphone Array Signal Processing and Deep Learning for Speech Enhancement",
+          "authors": [
+            "Reinhold Haeb-Umbach",
+            "Tomohiro Nakatani",
+            "Marc Delcroix",
+            "Christoph Boeddeker",
+            "Tsubasa Ochiai"
+          ],
+          "org": "Paderborn University",
+          "abstract": "Multi-channel acoustic signal processing is a well-established and powerful tool to exploit the spatial diversity between a target signal and non-target or noise sources for signal enhancement. However, the textbook solutions for optimal data-dependent spatial filtering rest on the knowledge of second-order statistical moments of the signals, which have traditionally been difficult to acquire. In this contribution, we compare model-based, purely data-driven, and hybrid approaches to parameter estimation and filtering, where the latter tries to combine the benefits of model-based signal processing and data-driven deep learning to overcome their individual deficiencies. We illustrate the underlying design principles with examples from noise reduction, source separation, and dereverberation.",
+          "comment": "Accepted for IEEE Signal Processing Magazine",
+          "journalRef": "IEEE Signal Processing Magazine, vol. 41, no. 6, pp. 12-23, Nov. 2024",
+          "categories": [
+            "eess.AS",
+            "cs.SD",
+            "eess.SP"
+          ],
+          "url": "https://arxiv.org/abs/2501.07215v1",
+          "category": "separation",
+          "task": "Speech Enhancement",
+          "proposedMethod": "null",
+          "datasets": [
+            "null"
+          ],
+          "what": "This paper compares model-based, data-driven, and hybrid approaches for multi-channel acoustic signal processing to improve speech enhancement tasks such as noise reduction, source separation, and dereverberation.",
+          "novel": "The novelty lies in providing a comprehensive comparison of different approaches and proposing hybrid methods that combine model-based signal processing with data-driven deep learning.",
+          "method": "The study highlights the design principles of hybrid approaches that leverage the strengths of both model-based and data-driven methods for optimal parameter estimation and filtering.",
+          "validation": "Examples from noise reduction, source separation, and dereverberation are used to illustrate the effectiveness of the proposed approaches.",
+          "discussion": "The paper discusses the challenges of acquiring accurate second-order statistical moments and the potential of hybrid methods to address these issues, but it lacks detailed experimental validation on specific datasets.",
+          "nextReads": [
+            {
+              "label": "Deep Clustering and Conventional Networks for Music Separation: Strong Together (2017)",
+              "url": "https://arxiv.org/abs/1706.09588"
+            },
+            {
+              "label": "Neural Beamforming for Multi-Channel Speech Recognition (2018)",
+              "url": "https://arxiv.org/abs/1804.07979"
+            },
+            {
+              "label": "Multi-Channel Speech Enhancement Using Deep Neural Networks (2015)",
+              "url": null
+            },
+            {
+              "label": "Deep Learning for Audio Signal Processing (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2501.06959v1",
+          "date": "Jan 12",
+          "title": "Sanidha: A Studio Quality Multi-Modal Dataset for Carnatic Music",
+          "authors": [
+            "Venkatakrishnan Vaidyanathapuram Krishnan",
+            "Noel Alben",
+            "Anish Nair",
+            "Nathaniel Condit-Schultz"
+          ],
+          "org": "IIT Madras",
+          "abstract": "Music source separation demixes a piece of music into its individual sound sources (vocals, percussion, melodic instruments, etc.), a task with no simple mathematical solution. It requires deep learning methods involving training on large datasets of isolated music stems. The most commonly available datasets are made from commercial Western music, limiting the models' applications to non-Western genres like Carnatic music. Carnatic music is a live tradition, with the available multi-track recordings containing overlapping sounds and bleeds between the sources. This poses a challenge to commercially available source separation models like Spleeter and Hybrid Demucs. In this work, we introduce 'Sanidha', the first open-source novel dataset for Carnatic music, offering studio-quality, multi-track recordings with minimal to no overlap or bleed. Along with the audio files, we provide high-definition videos of the artists' performances. Additionally, we fine-tuned Spleeter, one of the most commonly used source separation models, on our dataset and observed improved SDR performance compared to fine-tuning on a pre-existing Carnatic multi-track dataset. The outputs of the fine-tuned model with 'Sanidha' are evaluated through a listening study.",
+          "comment": "Accepted to the 25th International Society for Music Information Retrieval Conference (ISMIR 2024)",
+          "journalRef": "Proceedings of the 25th International Society for Music Information Retrieval Conference, 705-712. San Francisco, California, USA and Online, November 10-14, 2024",
+          "categories": [
+            "cs.SD",
+            "cs.DL",
+            "cs.LG",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2501.06959v1",
+          "category": "separation",
+          "task": "Music Source Separation",
+          "proposedMethod": "Sanidha",
+          "datasets": [
+            "Sanidha"
+          ],
+          "what": "This paper introduces 'Sanidha', a studio-quality, multi-modal dataset for Carnatic music, and demonstrates its utility in improving music source separation models.",
+          "novel": "The dataset is the first of its kind for Carnatic music, addressing the lack of high-quality, non-overlapping multi-track recordings for this genre.",
+          "method": "The authors fine-tuned the Spleeter source separation model on the Sanidha dataset and evaluated its performance using SDR metrics and a listening study.",
+          "validation": "The fine-tuned model showed improved SDR performance compared to using a pre-existing Carnatic multi-track dataset, validated through quantitative metrics and a listening study.",
+          "discussion": "The dataset provides a valuable resource for Carnatic music research, but its specific focus on this genre may limit its generalizability to other non-Western music traditions.",
+          "nextReads": [
+            {
+              "label": "Spleeter: A Fast and State-of-the-Art Music Source Separation Tool (2020)",
+              "url": null
+            },
+            {
+              "label": "Demucs: Music Source Separation via Neural Networks (2021)",
+              "url": "https://arxiv.org/abs/2109.03920"
+            },
+            {
+              "label": "Open-Unmix: A Reference Implementation for Music Source Separation (2019)",
+              "url": "https://arxiv.org/abs/1905.03330"
+            },
+            {
+              "label": "A Dataset for Hindustani Vocal Music Source Separation (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "StyleTSE introduces text-guided target speech extraction by leveraging natural language descriptions of speaking style for improved separation in audio mixtures.",
+    "Audio-CoT integrates Chain-of-Thought reasoning into Large Audio-Language Models, enhancing auditory reasoning and multi-modal understanding.",
+    "Sanidha dataset and advancements in microphone array processing highlight innovations in music source separation and multi-channel speech enhancement."
+  ]
+}

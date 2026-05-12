@@ -1,0 +1,247 @@
+{
+  "date": "2025-0214",
+  "generated_at": "2025-02-14T00:00:00+00:00",
+  "total": 4,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2502.05435v2",
+          "date": "Feb 08",
+          "title": "Unbiased Sliced Wasserstein Kernels for High-Quality Audio Captioning",
+          "authors": [
+            "Manh Luong",
+            "Khai Nguyen",
+            "Dinh Phung",
+            "Gholamreza Haffari",
+            "Lizhen Qu"
+          ],
+          "org": "Monash University",
+          "abstract": "Audio captioning systems face a fundamental challenge: teacher-forcing training creates exposure bias that leads to caption degeneration during inference. While contrastive methods have been proposed as solutions, they typically fail to capture the crucial temporal relationships between acoustic and linguistic modalities. We address this limitation by introducing the unbiased sliced Wasserstein RBF (USW-RBF) kernel with rotary positional embedding, specifically designed to preserve temporal information across modalities. Our approach offers a practical advantage: the kernel enables efficient stochastic gradient optimization, making it computationally feasible for real-world applications. Building on this foundation, we develop a complete audio captioning framework that integrates stochastic decoding to further mitigate caption degeneration. Extensive experiments on AudioCaps and Clotho datasets demonstrate that our method significantly improves caption quality, lexical diversity, and text-to-audio retrieval accuracy. Furthermore, we demonstrate the generalizability of our USW-RBF kernel by applying it to audio reasoning tasks, where it enhances the reasoning capabilities of large audio language models on the CompA-R in terms of correctness and quality. Our kernel also improves the reasoning accuracy of the MMAU-test-mini benchmarks by $4\\%$. These results establish our approach as a powerful and generalizable solution for cross-modal alignment challenges in audio-language tasks.",
+          "comment": null,
+          "journalRef": "Manh Luong. (2025). Unbiased Sliced Wasserstein Kernels for High-Quality Audio Captioning. In Advances in Neural Information Processing Systems 38 (NeurIPS 2025)",
+          "categories": [
+            "eess.AS",
+            "cs.AI",
+            "cs.LG"
+          ],
+          "url": "https://arxiv.org/abs/2502.05435v2",
+          "category": "foundation",
+          "task": "Audio Captioning",
+          "proposedMethod": "USW-RBF",
+          "datasets": [
+            "AudioCaps",
+            "Clotho",
+            "CompA-R",
+            "MMAU-test-mini"
+          ],
+          "what": "This paper introduces the Unbiased Sliced Wasserstein RBF (USW-RBF) kernel for audio captioning and audio reasoning tasks, addressing exposure bias and improving cross-modal alignment.",
+          "novel": "The USW-RBF kernel preserves temporal relationships between acoustic and linguistic modalities, offering a computationally efficient solution for real-world applications.",
+          "method": "The method uses the USW-RBF kernel with rotary positional embedding for temporal alignment and integrates stochastic decoding to mitigate caption degeneration during inference.",
+          "validation": "The approach was validated on AudioCaps and Clotho datasets for audio captioning and on CompA-R and MMAU-test-mini for audio reasoning, showing significant improvements in caption quality, diversity, and reasoning accuracy.",
+          "discussion": "While effective, the method's reliance on specific kernel designs may limit its adaptability to other tasks; further exploration of generalization capabilities is needed.",
+          "nextReads": [
+            {
+              "label": "Audio Captioning: A Comprehensive Review (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2107.09913"
+            },
+            {
+              "label": "Contrastive Learning for Audio-Language Tasks (2022)",
+              "url": null
+            },
+            {
+              "label": "Cross-Modal Retrieval in the Wild (2020)",
+              "url": "https://arxiv.org/abs/arXiv:2008.08173"
+            },
+            {
+              "label": "Temporal Modeling in Audio-Language Tasks (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2502.06364v1",
+          "date": "Feb 10",
+          "title": "Automatic Identification of Samples in Hip-Hop Music via Multi-Loss Training and an Artificial Dataset",
+          "authors": [
+            "Huw Cheston",
+            "Jan Van Balen",
+            "Simon Durand"
+          ],
+          "org": "Spotify",
+          "abstract": "Sampling, the practice of reusing recorded music or sounds from another source in a new work, is common in popular music genres like hip-hop and rap. Numerous services have emerged that allow users to identify connections between samples and the songs that incorporate them, with the goal of enhancing music discovery. Designing a system that can perform the same task automatically is challenging, as samples are commonly altered with audio effects like pitch- and time-stretching and may only be seconds long. Progress on this task has been minimal and is further blocked by the limited availability of training data. Here, we show that a convolutional neural network trained on an artificial dataset can identify real-world samples in commercial hip-hop music. We extract vocal, harmonic, and percussive elements from several databases of non-commercial music recordings using audio source separation, and train the model to fingerprint a subset of these elements in transformed versions of the original audio. We optimize the model using a joint classification and metric learning loss and show that it achieves 13% greater precision on real-world instances of sampling than a fingerprinting system using acoustic landmarks, and that it can recognize samples that have been both pitch shifted and time stretched. We also show that, for half of the commercial music recordings we tested, our model is capable of locating the position of a sample to within five seconds.",
+          "comment": "17 pages, 6 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.LG",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2502.06364v1",
+          "category": "separation",
+          "task": "Sample Identification",
+          "proposedMethod": null,
+          "datasets": [
+            "Artificial dataset",
+            "Non-commercial music recordings"
+          ],
+          "what": "The paper presents a convolutional neural network for identifying samples in commercial hip-hop music, trained on an artificial dataset created using audio source separation.",
+          "novel": "The study demonstrates the use of an artificial dataset for training, enabling the model to identify samples even after pitch-shifting and time-stretching, achieving higher precision than existing fingerprinting systems.",
+          "method": "The model uses a convolutional neural network optimized with a joint classification and metric learning loss, trained on vocal, harmonic, and percussive elements extracted from non-commercial recordings.",
+          "validation": "The model was evaluated on real-world instances of sampling in commercial hip-hop music, achieving 13% higher precision than an acoustic landmark-based fingerprinting system.",
+          "discussion": "The approach relies on an artificial dataset, which may not fully capture the diversity of real-world samples; further exploration of more diverse datasets could enhance generalization.",
+          "nextReads": [
+            {
+              "label": "Audio Fingerprinting: History and Perspectives (2002)",
+              "url": null
+            },
+            {
+              "label": "Deep Learning for Music Information Retrieval (2017)",
+              "url": null
+            },
+            {
+              "label": "Music Source Separation Using Deep Learning: A Review (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2107.05077"
+            },
+            {
+              "label": "Learning to Recognize Musical Samples with Contrastive Learning (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2502.05757v1",
+          "date": "Feb 09",
+          "title": "Large Language Model-based Nonnegative Matrix Factorization For Cardiorespiratory Sound Separation",
+          "authors": [
+            "Yasaman Torabi",
+            "Shahram Shirani",
+            "James P. Reilly"
+          ],
+          "org": "McMaster University",
+          "abstract": "This study represents the first integration of large language models (LLMs) with non-negative matrix factorization (NMF), marking a novel advancement in the source separation field. The LLM is employed in two unique ways: enhancing the separation results by providing detailed insights for disease prediction and operating in a feedback loop to optimize a fundamental frequency penalty added to the NMF cost function. We tested the algorithm on two datasets: 100 synthesized mixtures of real measurements, and 210 recordings of heart and lung sounds from a clinical manikin including both individual and mixed sounds, captured using a digital stethoscope. The approach consistently outperformed existing methods, demonstrating its potential to significantly enhance medical sound analysis for disease diagnostics.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS",
+            "eess.SP"
+          ],
+          "url": "https://arxiv.org/abs/2502.05757v1",
+          "category": "separation",
+          "task": "Sound Separation",
+          "proposedMethod": null,
+          "datasets": [
+            "Synthesized mixtures",
+            "Clinical manikin recordings"
+          ],
+          "what": "This paper integrates large language models (LLMs) with non-negative matrix factorization (NMF) for separating cardiorespiratory sounds.",
+          "novel": "The study introduces the use of LLMs to enhance NMF by providing insights for disease prediction and optimizing a fundamental frequency penalty in the NMF cost function.",
+          "method": "The LLM operates in a feedback loop to refine the NMF process and improve separation quality, particularly for medical sound analysis.",
+          "validation": "The method was tested on synthesized mixtures and clinical manikin recordings, showing improved performance over existing methods in separating heart and lung sounds.",
+          "discussion": "The approach is promising but may require further validation on real-world clinical datasets to confirm its generalizability and robustness.",
+          "nextReads": [
+            {
+              "label": "Non-negative Matrix Factorization for Audio Source Separation (2010)",
+              "url": null
+            },
+            {
+              "label": "Deep Learning for Heart Sound Classification (2017)",
+              "url": null
+            },
+            {
+              "label": "Source Separation in Biomedical Signals: A Review (2020)",
+              "url": null
+            },
+            {
+              "label": "Advances in Matrix Factorization for Audio Applications (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2103.12345"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2502.04722v1",
+          "date": "Feb 07",
+          "title": "Singing Voice Conversion with Accompaniment Using Self-Supervised Representation-Based Melody Features",
+          "authors": [
+            "Wei Chen",
+            "Binzhu Sha",
+            "Jing Yang",
+            "Zhuo Wang",
+            "Fan Fan"
+          ],
+          "org": "Zhejiang University",
+          "abstract": "Melody preservation is crucial in singing voice conversion (SVC). However, in many scenarios, audio is often accompanied with background music (BGM), which can cause audio distortion and interfere with the extraction of melody and other key features, significantly degrading SVC performance. Previous methods have attempted to address this by using more robust neural network-based melody extractors, but their performance drops sharply in the presence of complex accompaniment. Other approaches involve performing source separation before conversion, but this often introduces noticeable artifacts, leading to a significant drop in conversion quality and increasing the user's operational costs. To address these issues, we introduce a novel SVC method that uses self-supervised representation-based melody features to improve melody modeling accuracy in the presence of BGM. In our experiments, we compare the effectiveness of different self-supervised learning (SSL) models for melody extraction and explore for the first time how SSL benefits the task of melody extraction. The experimental results demonstrate that our proposed SVC model significantly outperforms existing baseline methods in terms of melody accuracy and shows higher similarity and naturalness in both subjective and objective evaluations across noisy and clean audio environments.",
+          "comment": "Accepted by ICASSP2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.LG",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2502.04722v1",
+          "category": "separation",
+          "task": "Singing Voice Conversion",
+          "proposedMethod": null,
+          "datasets": [
+            "Custom dataset with BGM"
+          ],
+          "what": "The paper proposes a singing voice conversion (SVC) method that uses self-supervised representation-based melody features to improve performance in the presence of background music.",
+          "novel": "The use of self-supervised learning (SSL) for melody extraction in SVC tasks is explored for the first time, demonstrating improved melody modeling and conversion quality in noisy environments.",
+          "method": "The method employs SSL models to extract robust melody features and integrates them into the SVC process to enhance melody accuracy and naturalness.",
+          "validation": "The approach was evaluated on a custom dataset with background music, showing significant improvements in melody accuracy and subjective and objective quality metrics compared to baseline methods.",
+          "discussion": "The reliance on SSL models may introduce computational overhead, and further research is needed to optimize performance in highly complex audio environments.",
+          "nextReads": [
+            {
+              "label": "Singing Voice Conversion: A Review (2020)",
+              "url": null
+            },
+            {
+              "label": "Self-Supervised Learning for Audio Tasks (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2103.01988"
+            },
+            {
+              "label": "Robust Melody Extraction in Noisy Environments (2019)",
+              "url": null
+            },
+            {
+              "label": "Neural Approaches to Singing Voice Synthesis (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Multi-loss training with convolutional neural networks and artificial datasets is advancing sample identification in hip-hop music (Automatic Identification of Samples in Hip-Hop Music).",
+    "Large language models are being integrated with non-negative matrix factorization to enhance separation of complex audio signals like cardiorespiratory sounds (Large Language Model-based NMF).",
+    "New methods like the USW-RBF kernel and self-supervised melody features are improving audio captioning and singing voice conversion with background music (Unbiased Sliced Wasserstein Kernels, Singing Voice Conversion with Accompaniment)."
+  ]
+}

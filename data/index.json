@@ -5,7 +5,157 @@
       "file": "weekly/2026-0508.json",
       "count": 7,
       "generated_at": "2026-05-08T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0627",
+      "file": "weekly/2025-0627.json",
+      "count": 5,
+      "generated_at": "2025-06-27T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0620",
+      "file": "weekly/2025-0620.json",
+      "count": 7,
+      "generated_at": "2025-06-20T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0613",
+      "file": "weekly/2025-0613.json",
+      "count": 5,
+      "generated_at": "2025-06-13T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0606",
+      "file": "weekly/2025-0606.json",
+      "count": 9,
+      "generated_at": "2025-06-06T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0530",
+      "file": "weekly/2025-0530.json",
+      "count": 13,
+      "generated_at": "2025-05-30T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0523",
+      "file": "weekly/2025-0523.json",
+      "count": 16,
+      "generated_at": "2025-05-23T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0516",
+      "file": "weekly/2025-0516.json",
+      "count": 4,
+      "generated_at": "2025-05-16T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0509",
+      "file": "weekly/2025-0509.json",
+      "count": 8,
+      "generated_at": "2025-05-09T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0502",
+      "file": "weekly/2025-0502.json",
+      "count": 7,
+      "generated_at": "2025-05-02T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0425",
+      "file": "weekly/2025-0425.json",
+      "count": 2,
+      "generated_at": "2025-04-25T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0418",
+      "file": "weekly/2025-0418.json",
+      "count": 2,
+      "generated_at": "2025-04-18T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0411",
+      "file": "weekly/2025-0411.json",
+      "count": 4,
+      "generated_at": "2025-04-11T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0404",
+      "file": "weekly/2025-0404.json",
+      "count": 6,
+      "generated_at": "2025-04-04T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0328",
+      "file": "weekly/2025-0328.json",
+      "count": 5,
+      "generated_at": "2025-03-28T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0321",
+      "file": "weekly/2025-0321.json",
+      "count": 2,
+      "generated_at": "2025-03-21T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0314",
+      "file": "weekly/2025-0314.json",
+      "count": 7,
+      "generated_at": "2025-03-14T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0307",
+      "file": "weekly/2025-0307.json",
+      "count": 5,
+      "generated_at": "2025-03-07T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0228",
+      "file": "weekly/2025-0228.json",
+      "count": 7,
+      "generated_at": "2025-02-28T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0221",
+      "file": "weekly/2025-0221.json",
+      "count": 6,
+      "generated_at": "2025-02-21T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0214",
+      "file": "weekly/2025-0214.json",
+      "count": 4,
+      "generated_at": "2025-02-14T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0131",
+      "file": "weekly/2025-0131.json",
+      "count": 5,
+      "generated_at": "2025-01-31T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0124",
+      "file": "weekly/2025-0124.json",
+      "count": 4,
+      "generated_at": "2025-01-24T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0117",
+      "file": "weekly/2025-0117.json",
+      "count": 4,
+      "generated_at": "2025-01-17T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0110",
+      "file": "weekly/2025-0110.json",
+      "count": 6,
+      "generated_at": "2025-01-10T00:00:00+00:00"
+    },
+    {
+      "date": "2025-0103",
+      "file": "weekly/2025-0103.json",
+      "count": 3,
+      "generated_at": "2025-01-03T00:00:00+00:00"
     }
   ],
-  "generated_at": "2026-05-12T10:28:51.153796+00:00"
+  "generated_at": "2026-05-12T14:09:52.849319+00:00"
 }

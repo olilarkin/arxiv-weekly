@@ -1,0 +1,134 @@
+{
+  "date": "2025-0425",
+  "generated_at": "2025-04-25T00:00:00+00:00",
+  "total": 2,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2504.15575v1",
+          "date": "Apr 22",
+          "title": "Exploring the User Experience of AI-Assisted Sound Searching Systems for Creative Workflows",
+          "authors": [
+            "Haohe Liu",
+            "Thomas Deacon",
+            "Wenwu Wang",
+            "Matt Paradis",
+            "Mark D. Plumbley"
+          ],
+          "org": "Unknown",
+          "abstract": "Locating the right sound effect efficiently is an important yet challenging topic for audio production. Most current sound-searching systems rely on pre-annotated audio labels created by humans, which can be time-consuming to produce and prone to inaccuracies, limiting the efficiency of audio production. Following the recent advancement of contrastive language-audio pre-training (CLAP) models, we explore an alternative CLAP-based sound-searching system (CLAP-UI) that does not rely on human annotations. To evaluate the effectiveness of CLAP-UI, we conducted comparative experiments with a widely used sound effect searching platform, the BBC Sound Effect Library. Our study evaluates user performance, cognitive load, and satisfaction through ecologically valid tasks based on professional sound-searching workflows. Our result shows that CLAP-UI demonstrated significantly enhanced productivity and reduced frustration while maintaining comparable cognitive demands. We also qualitatively analyzed the participants' feedback, which offered valuable perspectives on the design of future AI-assisted sound search systems.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2504.15575v1",
+          "category": "foundation",
+          "task": "Sound Search",
+          "proposedMethod": "CLAP-UI",
+          "datasets": [
+            "BBC Sound Effect Library"
+          ],
+          "what": "This paper explores CLAP-UI, a CLAP-based sound-searching system designed to improve the efficiency of locating sound effects without relying on human annotations.",
+          "novel": "The system leverages contrastive language-audio pre-training (CLAP) to bypass the need for manual annotations, addressing limitations of traditional sound-searching systems.",
+          "method": "CLAP-UI integrates a CLAP model to enable natural language-based sound searching and evaluates its performance through ecologically valid tasks in professional workflows.",
+          "validation": "The system is compared with the BBC Sound Effect Library, measuring user performance, cognitive load, and satisfaction, showing improved productivity and reduced frustration.",
+          "discussion": "While promising, the system's reliance on CLAP models may limit its applicability in domains with less robust language-audio correlations or specialized sound datasets.",
+          "nextReads": [
+            {
+              "label": "CLAP: Contrastive Language-Audio Pretraining (2023)",
+              "url": "https://arxiv.org/abs/arXiv:2302.03915"
+            },
+            {
+              "label": "Sound Search by Natural Language Queries (2022)",
+              "url": null
+            },
+            {
+              "label": "Audio Retrieval with Natural Language Queries (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2106.07889"
+            },
+            {
+              "label": "Exploring Multimodal Learning for Audio Retrieval (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2504.17782v1",
+          "date": "Apr 24",
+          "title": "Unleashing the Power of Natural Audio Featuring Multiple Sound Sources",
+          "authors": [
+            "Xize Cheng",
+            "Slytherin Wang",
+            "Zehan Wang",
+            "Rongjie Huang",
+            "Tao Jin"
+          ],
+          "org": "Unknown",
+          "abstract": "Universal sound separation aims to extract clean audio tracks corresponding to distinct events from mixed audio, which is critical for artificial auditory perception. However, current methods heavily rely on artificially mixed audio for training, which limits their ability to generalize to naturally mixed audio collected in real-world environments. To overcome this limitation, we propose ClearSep, an innovative framework that employs a data engine to decompose complex naturally mixed audio into multiple independent tracks, thereby allowing effective sound separation in real-world scenarios. We introduce two remix-based evaluation metrics to quantitatively assess separation quality and use these metrics as thresholds to iteratively apply the data engine alongside model training, progressively optimizing separation performance. In addition, we propose a series of training strategies tailored to these separated independent tracks to make the best use of them. Extensive experiments demonstrate that ClearSep achieves state-of-the-art performance across multiple sound separation tasks, highlighting its potential for advancing sound separation in natural audio scenarios. For more examples and detailed results, please visit our demo page at https://clearsep.github.io.",
+          "comment": "Work in Progress",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.LG"
+          ],
+          "url": "https://arxiv.org/abs/2504.17782v1",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": "ClearSep",
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "This paper introduces ClearSep, a framework for universal sound separation that extracts clean audio tracks from naturally mixed audio in real-world environments.",
+          "novel": "The novelty lies in its ability to handle naturally mixed audio instead of relying on artificially mixed datasets, along with the introduction of remix-based evaluation metrics.",
+          "method": "ClearSep uses a data engine to iteratively decompose complex natural audio into independent tracks and employs tailored training strategies to optimize separation performance.",
+          "validation": "The method is validated through extensive experiments demonstrating state-of-the-art performance across multiple sound separation tasks, using newly proposed evaluation metrics.",
+          "discussion": "The approach addresses generalization to real-world audio but may require further exploration of edge cases and scalability to diverse environments.",
+          "nextReads": [
+            {
+              "label": "Universal Sound Separation (2019)",
+              "url": "https://arxiv.org/abs/arXiv:1905.03330"
+            },
+            {
+              "label": "Sound Event Detection and Separation: A Benchmark (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2110.00544"
+            },
+            {
+              "label": "Learning to Separate Sounds by Watching Videos (2018)",
+              "url": "https://arxiv.org/abs/arXiv:1804.01665"
+            },
+            {
+              "label": "Wave-U-Net for Speech Separation (2018)",
+              "url": "https://arxiv.org/abs/arXiv:1806.03185"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": "https://clearsep.github.io/"
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "ClearSep demonstrates advancements in universal sound separation, enabling clean extraction of audio tracks from complex real-world mixtures.",
+    "CLAP-UI leverages the CLAP model to streamline sound effect searches, enhancing creative workflows without human annotations.",
+    "Trends highlight a focus on improving audio separation and user-centric sound retrieval systems in real-world and creative contexts."
+  ]
+}

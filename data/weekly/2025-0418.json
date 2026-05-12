@@ -1,0 +1,132 @@
+{
+  "date": "2025-0418",
+  "generated_at": "2025-04-18T00:00:00+00:00",
+  "total": 2,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2504.10344v1",
+          "date": "Apr 14",
+          "title": "ALMTokenizer: A Low-bitrate and Semantic-rich Audio Codec Tokenizer for Audio Language Modeling",
+          "authors": [
+            "Dongchao Yang",
+            "Songxiang Liu",
+            "Haohan Guo",
+            "Jiankun Zhao",
+            "Yuanyuan Wang"
+          ],
+          "org": "Tencent AI Lab",
+          "abstract": "Recent advancements in audio language models have underscored the pivotal role of audio tokenization, which converts audio signals into discrete tokens, thereby facilitating the application of language model architectures to the audio domain. In this study, we introduce ALMTokenizer, a novel low-bitrate and semantically rich audio codec tokenizer for audio language models. Prior methods, such as Encodec, typically encode individual audio frames into discrete tokens without considering the use of context information across frames. Unlike these methods, we introduce a novel query-based compression strategy to capture holistic information with a set of learnable query tokens by explicitly modeling the context information across frames. This design not only enables the codec model to capture more semantic information but also encodes the audio signal with fewer token sequences. Additionally, to enhance the semantic information in audio codec models, we introduce the following: (1) A masked autoencoder (MAE) loss, (2) Vector quantization based on semantic priors, and (3) An autoregressive (AR) prediction loss. As a result, ALMTokenizer achieves competitive reconstruction performance relative to state-of-the-art approaches while operating at a lower bitrate. Within the same audio language model framework, ALMTokenizer outperforms previous tokenizers in audio understanding and generation tasks.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2504.10344v1",
+          "category": "foundation",
+          "task": "Audio Tokenization",
+          "proposedMethod": "ALMTokenizer",
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "This paper introduces ALMTokenizer, a low-bitrate and semantically rich audio codec tokenizer designed for audio language models. It aims to improve audio tokenization by capturing holistic context information across frames and enhancing semantic representation.",
+          "novel": "The paper proposes a query-based compression strategy to explicitly model context across frames, which is not considered in prior methods like Encodec. It also integrates a masked autoencoder loss, semantic-prior-based vector quantization, and autoregressive prediction loss to enhance semantic information.",
+          "method": "The method uses learnable query tokens to compress audio signals while modeling context across frames. It incorporates a masked autoencoder loss, semantic-prior-based vector quantization, and an autoregressive prediction loss to improve semantic richness and reduce bitrate.",
+          "validation": "The method is validated by comparing reconstruction performance and audio understanding/generation tasks within the same audio language model framework, showing competitive results at lower bitrates compared to state-of-the-art approaches.",
+          "discussion": "The paper does not extensively discuss potential limitations, but the reliance on specific loss functions and the lack of detailed dataset information may limit generalizability. Further exploration of diverse datasets could strengthen the findings.",
+          "nextReads": [
+            {
+              "label": "Encodec: High Fidelity Neural Audio Compression (2022)",
+              "url": "https://arxiv.org/abs/2210.13438"
+            },
+            {
+              "label": "AudioLM: a Language Modeling Approach to Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/2209.03143"
+            },
+            {
+              "label": "SoundStream: An End-to-End Neural Audio Codec (2021)",
+              "url": "https://arxiv.org/abs/2107.03312"
+            },
+            {
+              "label": "Improving Vector-Quantized Neural Networks with Masked Autoencoders (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2504.08371v1",
+          "date": "Apr 11",
+          "title": "Passive Underwater Acoustic Signal Separation based on Feature Decoupling Dual-path Network",
+          "authors": [
+            "Yucheng Liu",
+            "Longyu Jiang"
+          ],
+          "org": "Harbin Engineering University",
+          "abstract": "Signal separation in the passive underwater acoustic domain has heavily relied on deep learning techniques to isolate ship radiated noise. However, the separation networks commonly used in this domain stem from speech separation applications and may not fully consider the unique aspects of underwater acoustics beforehand, such as the influence of different propagation media, signal frequencies and modulation characteristics. This oversight highlights the need for tailored approaches that account for the specific characteristics of underwater sound propagation. This study introduces a novel temporal network designed to separate ship radiated noise by employing a dual-path model and a feature decoupling approach. The mixed signals' features are transformed into a space where they exhibit greater independence, with each dimension's significance decoupled. Subsequently, a fusion of local and global attention mechanisms is employed in the separation layer. Extensive comparisons showcase the effectiveness of this method when compared to other prevalent network models, as evidenced by its performance in the ShipsEar and DeepShip datasets.",
+          "comment": "10pages,4 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2504.08371v1",
+          "category": "separation",
+          "task": "Audio Source Separation",
+          "proposedMethod": "Feature Decoupling Dual-path Network",
+          "datasets": [
+            "ShipsEar",
+            "DeepShip"
+          ],
+          "what": "This paper presents a novel temporal network for passive underwater acoustic signal separation, focusing on ship radiated noise. It introduces a dual-path model with feature decoupling and attention mechanisms tailored to underwater acoustics.",
+          "novel": "The novelty lies in the feature decoupling approach, which transforms mixed signal features into a more independent space, and the integration of local and global attention mechanisms in the separation layer, specifically addressing the unique characteristics of underwater sound propagation.",
+          "method": "The method employs a dual-path network that decouples feature dimensions for greater independence and uses a combination of local and global attention mechanisms to enhance signal separation in underwater acoustic environments.",
+          "validation": "The approach is validated on the ShipsEar and DeepShip datasets, showing superior performance compared to other prevalent network models through extensive comparisons.",
+          "discussion": "The method is tailored to underwater acoustics, which may limit its applicability to other domains. Further exploration of diverse underwater datasets and real-world conditions could enhance robustness.",
+          "nextReads": [
+            {
+              "label": "Dual-Path RNN: Efficient Long Sequence Modeling for Time-Domain Single-Channel Speech Separation (2020)",
+              "url": "https://arxiv.org/abs/1910.06379"
+            },
+            {
+              "label": "Deep learning for passive acoustic detection of marine mammals (2018)",
+              "url": null
+            },
+            {
+              "label": "A Deep Learning Approach for Underwater Acoustic Signal Classification (2021)",
+              "url": null
+            },
+            {
+              "label": "ShipsEar: An underwater vessel noise database (2013)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "ALMTokenizer advances audio language modeling by introducing a low-bitrate tokenizer that enhances semantic representation and captures holistic context across audio frames.",
+    "A dual-path network with feature decoupling and attention mechanisms is proposed for separating passive underwater acoustic signals, improving ship noise analysis.",
+    "Research emphasizes semantic-rich tokenization and specialized signal separation techniques, showcasing domain-specific advancements in audio AI."
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "date": "2025-0321",
+  "generated_at": "2025-03-21T00:00:00+00:00",
+  "total": 2,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2503.11197v4",
+          "date": "Mar 14",
+          "title": "Reinforcement Learning Outperforms Supervised Fine-Tuning: A Case Study on Audio Question Answering",
+          "authors": [
+            "Gang Li",
+            "Jizhong Liu",
+            "Heinrich Dinkel",
+            "Yadong Niu",
+            "Junbo Zhang"
+          ],
+          "org": "Xiaomi AI Lab",
+          "abstract": "Recently, reinforcement learning (RL) has been shown to greatly enhance the reasoning capabilities of large language models (LLMs), and RL-based approaches have been progressively applied to visual multimodal tasks. However, the audio modality has largely been overlooked in these developments. Thus, we conduct a series of RL explorations in audio understanding and reasoning, specifically focusing on the audio question answering (AQA) task. We leverage the group relative policy optimization (GRPO) algorithm to Qwen2-Audio-7B-Instruct, and our experiments demonstrated state-of-the-art performance on the MMAU Test-mini benchmark, achieving an accuracy rate of 64.5%. The main findings in this technical report are as follows: 1) The GRPO algorithm can be effectively applied to large audio language models (LALMs), even when the model has only 8.2B parameters; 2) With only 38k post-training samples, RL significantly outperforms supervised fine-tuning (SFT), indicating that RL-based approaches can be effective without large datasets; 3) The explicit reasoning process has not shown significant benefits for AQA tasks, and how to efficiently utilize deep thinking remains an open question for further research; 4) LALMs still lag far behind humans auditory-language reasoning, suggesting that the RL-based approaches warrant further exploration. Our project is available at https://github.com/xiaomi-research/r1-aqa and https://huggingface.co/mispeech/r1-aqa.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.CL",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2503.11197v4",
+          "category": "foundation",
+          "task": "Audio Question Answering",
+          "proposedMethod": "GRPO with Qwen2-Audio-7B-Instruct",
+          "datasets": [
+            "MMAU Test-mini"
+          ],
+          "what": "This paper explores reinforcement learning (RL) for audio understanding and reasoning, focusing on the audio question answering (AQA) task, and achieves state-of-the-art performance.",
+          "novel": "The study demonstrates that RL-based approaches, specifically the GRPO algorithm, can outperform supervised fine-tuning (SFT) with a small dataset and highlights the gap between large audio language models (LALMs) and human auditory-language reasoning.",
+          "method": "The GRPO algorithm is applied to Qwen2-Audio-7B-Instruct, a large audio language model, using only 38k post-training samples, demonstrating the efficiency of RL in enhancing reasoning capabilities.",
+          "validation": "Performance is evaluated on the MMAU Test-mini benchmark, achieving a state-of-the-art accuracy of 64.5%, and compared against supervised fine-tuning approaches.",
+          "discussion": "The study reveals that explicit reasoning processes have limited benefits for AQA tasks, and further research is needed to improve deep reasoning and close the gap between LALMs and human reasoning.",
+          "nextReads": [
+            {
+              "label": "Audio Question Answering with Dynamic Memory Networks (2019)",
+              "url": "https://arxiv.org/abs/arXiv:1904.03460"
+            },
+            {
+              "label": "Learning to Listen, Read, and Follow: Score Following as a Reinforcement Learning Game (2022)",
+              "url": "https://arxiv.org/abs/arXiv:2203.17011"
+            },
+            {
+              "label": "Speech and Language Processing for Audio-Visual Question Answering (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2106.13588"
+            },
+            {
+              "label": "Reinforcement Learning with Human Feedback (2022)",
+              "url": "https://arxiv.org/abs/arXiv:2204.05862"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": "https://github.com/xiaomi-research/r1-aqa",
+          "upvotes": 0,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2503.12589v1",
+          "date": "Mar 16",
+          "title": "Context-Aware Two-Step Training Scheme for Domain Invariant Speech Separation",
+          "authors": [
+            "Wupeng Wang",
+            "Zexu Pan",
+            "Jingru Lin",
+            "Shuai Wang",
+            "Haizhou Li"
+          ],
+          "org": "Tencent AI Lab",
+          "abstract": "Speech separation seeks to isolate individual speech signals from a multi-talk speech mixture. Despite much progress, a system well-trained on synthetic data often experiences performance degradation on out-of-domain data, such as real-world speech mixtures. To address this, we introduce a novel context-aware, two-stage training scheme for speech separation models. In this training scheme, the conventional end-to-end architecture is replaced with a framework that contains a context extractor and a segregator. The two modules are trained step by step to simulate the speech separation process of an auditory system. We evaluate the proposed training scheme through cross-domain experiments on both synthetic and real-world speech mixtures, and demonstrate that our new scheme effectively boosts separation quality across different domains without adaptation, as measured by signal quality metrics and word error rate (WER). Additionally, an ablation study on the real test set highlights that the context information, including phoneme and word representations from pretrained SSL models, serves as effective domain invariant training targets for separation models.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2503.12589v1",
+          "category": "separation",
+          "task": "Speech Separation",
+          "proposedMethod": "Context-Aware Two-Step Training Scheme",
+          "datasets": [
+            "Synthetic speech mixtures",
+            "Real-world speech mixtures"
+          ],
+          "what": "This paper introduces a novel context-aware, two-stage training scheme for speech separation models to improve performance on out-of-domain data.",
+          "novel": "The proposed method replaces the conventional end-to-end architecture with a context extractor and segregator, trained step by step to simulate the auditory system's separation process.",
+          "method": "The framework incorporates context information, such as phoneme and word representations from pretrained self-supervised learning (SSL) models, as domain-invariant training targets for the separation models.",
+          "validation": "The method is validated through cross-domain experiments on synthetic and real-world speech mixtures, using signal quality metrics and word error rate (WER). An ablation study highlights the importance of context information.",
+          "discussion": "The study demonstrates improved domain robustness but does not address computational efficiency or real-time applicability, which could be explored in future work.",
+          "nextReads": [
+            {
+              "label": "Wave-U-Net: A Multi-Scale Neural Network for End-to-End Audio Source Separation (2018)",
+              "url": "https://arxiv.org/abs/arXiv:1806.03185"
+            },
+            {
+              "label": "Conv-TasNet: Surpassing Ideal Time-Frequency Magnitude Masking for Speech Separation (2018)",
+              "url": "https://arxiv.org/abs/arXiv:1809.07454"
+            },
+            {
+              "label": "Dual-Path RNN: Efficient Long Sequence Modeling for Time-Domain Single-Channel Speech Separation (2020)",
+              "url": "https://arxiv.org/abs/arXiv:2007.14897"
+            },
+            {
+              "label": "Self-Supervised Learning for Speech and Audio Processing (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2103.01988"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "A context-aware two-step training scheme enhances domain invariance in speech separation, addressing out-of-domain challenges effectively.",
+    "Reinforcement learning surpasses supervised fine-tuning in audio question answering, setting new state-of-the-art benchmarks.",
+    "Focus on domain adaptability and RL-driven reasoning highlights advancements in robust and intelligent audio AI systems."
+  ]
+}

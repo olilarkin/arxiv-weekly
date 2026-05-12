@@ -1,0 +1,237 @@
+{
+  "date": "2025-0516",
+  "generated_at": "2025-05-16T00:00:00+00:00",
+  "total": 4,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2505.09558v2",
+          "date": "May 14",
+          "title": "WavReward: Spoken Dialogue Models With Generalist Reward Evaluators",
+          "authors": [
+            "Shengpeng Ji",
+            "Tianle Liang",
+            "Yangzhuo Li",
+            "Jialong Zuo",
+            "Minghui Fang"
+          ],
+          "org": "Unknown",
+          "abstract": "End-to-end spoken dialogue models such as GPT-4o-audio have recently garnered significant attention in the speech domain. However, the evaluation of spoken dialogue models' conversational performance has largely been overlooked. This is primarily due to the intelligent chatbots convey a wealth of non-textual information which cannot be easily measured using text-based language models like ChatGPT. To address this gap, we propose WavReward, a reward feedback model based on audio language models that can evaluate both the IQ and EQ of spoken dialogue systems with speech input. Specifically, 1) based on audio language models, WavReward incorporates the deep reasoning process and the nonlinear reward mechanism for post-training. By utilizing multi-sample feedback via the reinforcement learning algorithm, we construct a specialized evaluator tailored to spoken dialogue models. 2) We introduce ChatReward-30K, a preference dataset used to train WavReward. ChatReward-30K includes both comprehension and generation aspects of spoken dialogue models. These scenarios span various tasks, such as text-based chats, nine acoustic attributes of instruction chats, and implicit chats. WavReward outperforms previous state-of-the-art evaluation models across multiple spoken dialogue scenarios, achieving a substantial improvement about Qwen2.5-Omni in objective accuracy from 53.4$\\%$ to 91.5$\\%$. In subjective A/B testing, WavReward also leads by a margin of 83$\\%$. Comprehensive ablation studies confirm the necessity of each component of WavReward. All data and code will be publicly at https://github.com/jishengpeng/WavReward after the paper is accepted.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.AI",
+            "cs.LG",
+            "cs.MM",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2505.09558v2",
+          "category": "foundation",
+          "task": "Dialogue Evaluation",
+          "proposedMethod": "WavReward",
+          "datasets": [
+            "ChatReward-30K"
+          ],
+          "what": "The paper introduces WavReward, a reward feedback model for evaluating spoken dialogue systems based on audio language models, focusing on both IQ and EQ aspects of conversational performance.",
+          "novel": "The novelty lies in the development of a specialized evaluator that integrates deep reasoning and nonlinear reward mechanisms, and the introduction of a new dataset, ChatReward-30K, tailored for spoken dialogue evaluation.",
+          "method": "WavReward employs audio language models with reinforcement learning and multi-sample feedback to create a robust evaluation framework for spoken dialogue systems.",
+          "validation": "The model is validated using the ChatReward-30K dataset, achieving significant improvements in objective accuracy and subjective A/B testing compared to state-of-the-art evaluation models.",
+          "discussion": "The paper highlights the need for better evaluation methods for spoken dialogue systems but does not discuss potential limitations or challenges in generalizing WavReward to other domains.",
+          "nextReads": [
+            {
+              "label": "DialogRPT: Evaluation of Dialogue Response Generation (2020)",
+              "url": "https://arxiv.org/abs/2009.06978"
+            },
+            {
+              "label": "RLAIF: Reinforcement Learning with AI Feedback (2023)",
+              "url": "https://arxiv.org/abs/2303.16755"
+            },
+            {
+              "label": "SpeechGPT: Empowering Large Language Models with Intrinsic Cross-Modal Conversational Abilities (2023)",
+              "url": "https://arxiv.org/abs/2305.11000"
+            },
+            {
+              "label": "Learning to Summarize with Human Feedback (2022)",
+              "url": "https://arxiv.org/abs/2009.01325"
+            }
+          ],
+          "citationCount": 10,
+          "githubRepo": "https://github.com/jishengpeng/wavreward",
+          "upvotes": 10,
+          "projectPage": null
+        },
+        {
+          "id": "2505.06803v1",
+          "date": "May 11",
+          "title": "Bridging Ears and Eyes: Analyzing Audio and Visual Large Language Models to Humans in Visible Sound Recognition and Reducing Their Sensory Gap via Cross-Modal Distillation",
+          "authors": [
+            "Xilin Jiang",
+            "Junkai Wu",
+            "Vishal Choudhari",
+            "Nima Mesgarani"
+          ],
+          "org": "Unknown",
+          "abstract": "Audio large language models (LLMs) are considered experts at recognizing sound objects, yet their performance relative to LLMs in other sensory modalities, such as visual or audio-visual LLMs, and to humans using their ears, eyes, or both remains unexplored. To investigate this, we systematically evaluate audio, visual, and audio-visual LLMs, specifically Qwen2-Audio, Qwen2-VL, and Qwen2.5-Omni, against humans in recognizing sound objects of different classes from audio-only, silent video, or sounded video inputs. We uncover a performance gap between Qwen2-Audio and Qwen2-VL that parallels the sensory discrepancy between human ears and eyes. To reduce this gap, we introduce a cross-modal distillation framework, where an LLM in one modality serves as the teacher and another as the student, with knowledge transfer in sound classes predicted as more challenging to the student by a heuristic model. Distillation in both directions, from Qwen2-VL to Qwen2-Audio and vice versa, leads to notable improvements, particularly in challenging classes. This work highlights the sensory gap in LLMs from a human-aligned perspective and proposes a principled approach to enhancing modality-specific perception in multimodal LLMs.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL",
+            "cs.CV",
+            "cs.MM",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2505.06803v1",
+          "category": "foundation",
+          "task": "Multimodal Sound Recognition",
+          "proposedMethod": "Cross-Modal Distillation",
+          "datasets": [],
+          "what": "The paper evaluates audio, visual, and audio-visual large language models (LLMs) for sound object recognition and proposes a cross-modal distillation framework to reduce performance gaps.",
+          "novel": "It introduces a human-aligned perspective to analyze sensory gaps in multimodal LLMs and proposes a novel cross-modal distillation framework to enhance modality-specific perception.",
+          "method": "The framework transfers knowledge between LLMs in different modalities using a heuristic model to identify challenging sound classes for targeted improvement.",
+          "validation": "The method is validated through systematic evaluations of Qwen2-Audio, Qwen2-VL, and Qwen2.5-Omni, showing improvements in challenging sound classes after cross-modal distillation.",
+          "discussion": "The paper emphasizes the sensory gap in multimodal LLMs but does not address scalability or generalization to other multimodal tasks.",
+          "nextReads": [
+            {
+              "label": "Audio-Visual Scene Analysis with Self-Supervised Multisensory Features (2020)",
+              "url": "https://arxiv.org/abs/2006.02694"
+            },
+            {
+              "label": "Audio-Visual Speech Separation and Dereverberation with a Two-Stage Model (2021)",
+              "url": "https://arxiv.org/abs/2107.02437"
+            },
+            {
+              "label": "Learning Multimodal Representations for Sound and Vision (2018)",
+              "url": "https://arxiv.org/abs/1804.03160"
+            },
+            {
+              "label": "Cross-Modal Distillation for Audio-Visual Recognition (2020)",
+              "url": "https://arxiv.org/abs/2005.05826"
+            }
+          ],
+          "citationCount": 2,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2505.08694v2",
+          "date": "May 13",
+          "title": "A Survey of Deep Learning for Complex Speech Spectrograms",
+          "authors": [
+            "Yuying Xie",
+            "Zheng-Hua Tan"
+          ],
+          "org": "Unknown",
+          "abstract": "Recent advancements in deep learning have significantly impacted the field of speech signal processing, particularly in the analysis and manipulation of complex spectrograms. This survey provides a comprehensive overview of the state-of-the-art techniques leveraging deep neural networks for processing complex spectrograms, which encapsulate both magnitude and phase information. We begin by introducing complex spectrograms and their associated features for various speech processing tasks. Next, we examine the key components and architectures of complex-valued neural networks, which are specifically designed to handle complex-valued data and have been applied to complex spectrogram processing. As recent studies have primarily focused on applying real-valued neural networks to complex spectrograms, we revisit these approaches and their architectural designs. We then discuss various training strategies and loss functions tailored for training neural networks to process and model complex spectrograms. The survey further examines key applications, including phase retrieval, speech enhancement, and speaker separation, where deep learning has achieved significant progress by leveraging complex spectrograms or their derived feature representations. Additionally, we examine the intersection of complex spectrograms with generative models. This survey aims to serve as a valuable resource for researchers and practitioners in the field of speech signal processing, deep learning and related fields.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2505.08694v2",
+          "category": "separation",
+          "task": "Speech Spectrogram Processing",
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "This survey reviews deep learning techniques for processing complex speech spectrograms, covering magnitude and phase information, architectures, training strategies, and applications.",
+          "novel": "The paper provides a comprehensive synthesis of recent advancements in complex-valued neural networks and their applications to speech signal processing tasks, which has not been extensively covered in prior surveys.",
+          "method": "The survey examines the design of complex-valued neural networks, training strategies, and loss functions tailored for complex spectrograms, as well as their integration with generative models.",
+          "validation": "As a survey, it synthesizes findings from existing literature rather than presenting new experimental results.",
+          "discussion": "The paper identifies gaps in the application of complex-valued neural networks and highlights the need for further research in leveraging phase information effectively.",
+          "nextReads": [
+            {
+              "label": "Complex Spectral Mapping for Single- and Multi-Channel Speech Enhancement and Robust ASR (2020)",
+              "url": "https://arxiv.org/abs/2005.14407"
+            },
+            {
+              "label": "Deep Complex Networks (2017)",
+              "url": "https://arxiv.org/abs/1705.09792"
+            },
+            {
+              "label": "Phase-aware Speech Enhancement with Deep Complex U-Net (2019)",
+              "url": "https://arxiv.org/abs/1903.03107"
+            },
+            {
+              "label": "A Survey on Speech Enhancement with Deep Learning (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": 5,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2505.07631v1",
+          "date": "May 12",
+          "title": "Is MixIT Really Unsuitable for Correlated Sources? Exploring MixIT for Unsupervised Pre-training in Music Source Separation",
+          "authors": [
+            "Kohei Saijo",
+            "Yoshiaki Bando"
+          ],
+          "org": "Unknown",
+          "abstract": "In music source separation (MSS), obtaining isolated sources or stems is highly costly, making pre-training on unlabeled data a promising approach. Although source-agnostic unsupervised learning like mixture-invariant training (MixIT) has been explored in general sound separation, they have been largely overlooked in MSS due to its implicit assumption of source independence. We hypothesize, however, that the difficulty of applying MixIT to MSS arises from the ill-posed nature of MSS itself, where stem definitions are application-dependent and models lack explicit knowledge of what should or should not be separated, rather than from high inter-source correlation. While MixIT does not assume any source model and struggles with such ambiguities, our preliminary experiments show that it can still separate instruments to some extent, suggesting its potential for unsupervised pre-training. Motivated by these insights, this study investigates MixIT-based pre-training for MSS. We first pre-train a model on in-the-wild, unlabeled data from the Free Music Archive using MixIT, and then fine-tune it on MUSDB18 with supervision. Using the band-split TF-Locoformer, one of the state-of-the-art MSS models, we demonstrate that MixIT-based pre-training improves the performance over training from scratch.",
+          "comment": "5 pages, 1 figure, 3 tables",
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2505.07631v1",
+          "category": "separation",
+          "task": "Music Source Separation",
+          "proposedMethod": "MixIT-based Pre-training",
+          "datasets": [
+            "Free Music Archive",
+            "MUSDB18"
+          ],
+          "what": "The paper explores the use of MixIT, a source-agnostic unsupervised learning method, for pre-training in music source separation (MSS).",
+          "novel": "It challenges the assumption that MixIT is unsuitable for MSS due to high inter-source correlation and demonstrates its potential for unsupervised pre-training in this domain.",
+          "method": "The authors pre-train a model on unlabeled music data using MixIT and fine-tune it on labeled data, leveraging the band-split TF-Locoformer architecture.",
+          "validation": "The approach is validated on the MUSDB18 dataset, showing performance improvements over training from scratch.",
+          "discussion": "The study highlights the ambiguity in MSS stemming from application-dependent stem definitions and suggests that MixIT can still be effective despite these challenges.",
+          "nextReads": [
+            {
+              "label": "Mixture Invariant Training for Unsupervised Source Separation (2020)",
+              "url": "https://arxiv.org/abs/2006.12701"
+            },
+            {
+              "label": "WavAugment: Data Augmentation for Raw Audio (2020)",
+              "url": "https://arxiv.org/abs/2007.00997"
+            },
+            {
+              "label": "Open-Unmix: A Reference Implementation for Music Source Separation (2019)",
+              "url": "https://arxiv.org/abs/1905.03330"
+            },
+            {
+              "label": "Demucs: Deep Extractor for Music Sources with Extra Unlabeled Data Remastering (2021)",
+              "url": "https://arxiv.org/abs/2109.03920"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "WavReward introduces a novel reward feedback model for spoken dialogue systems, emphasizing both conversational intelligence and emotional understanding using audio language models.",
+    "Research on MixIT demonstrates its potential for unsupervised pre-training in music source separation, challenging assumptions about its limitations with correlated sources.",
+    "Cross-modal distillation is proposed to bridge sensory gaps in audio-visual large language models, enhancing performance in visible sound recognition tasks."
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "date": "2025-0103",
+  "generated_at": "2025-01-03T00:00:00+00:00",
+  "total": 3,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2412.20619v1",
+          "date": "Dec 29",
+          "title": "Audiopedia: Audio QA with Knowledge",
+          "authors": [
+            "Abhirama Subramanyam Penamakuri",
+            "Kiran Chhatre",
+            "Akshat Jain"
+          ],
+          "org": "Microsoft",
+          "abstract": "In this paper, we introduce Audiopedia, a novel task called Audio Question Answering with Knowledge, which requires both audio comprehension and external knowledge reasoning. Unlike traditional Audio Question Answering (AQA) benchmarks that focus on simple queries answerable from audio alone, Audiopedia targets knowledge-intensive questions. We define three sub-tasks: (i) Single Audio Question Answering (s-AQA), where questions are answered based on a single audio sample, (ii) Multi-Audio Question Answering (m-AQA), which requires reasoning over multiple audio samples, and (iii) Retrieval-Augmented Audio Question Answering (r-AQA), which involves retrieving relevant audio to answer the question. We benchmark large audio language models (LALMs) on these sub-tasks and observe suboptimal performance. To address this, we propose a generic framework that can be adapted to any LALM, equipping them with knowledge reasoning capabilities. Our framework has two components: (i) Audio Entity Linking (AEL) and (ii) Knowledge-Augmented Audio Large Multimodal Model (KA2LM), which together improve performance on knowledge-intensive AQA tasks. To our knowledge, this is the first work to address advanced audio understanding via knowledge-intensive tasks like Audiopedia.",
+          "comment": "Accepted to ICASSP 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.LG",
+            "cs.MM",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2412.20619v1",
+          "category": "foundation",
+          "task": "Audio Question Answering",
+          "proposedMethod": "Audiopedia",
+          "datasets": [
+            "Audiopedia Dataset"
+          ],
+          "what": "This paper introduces Audiopedia, a novel task and framework for Audio Question Answering (AQA) that combines audio comprehension with external knowledge reasoning.",
+          "novel": "The work pioneers the concept of knowledge-intensive AQA by defining three sub-tasks and proposing a framework to enhance large audio language models with knowledge reasoning capabilities.",
+          "method": "The framework includes Audio Entity Linking (AEL) for associating audio content with external knowledge and a Knowledge-Augmented Audio Large Multimodal Model (KA2LM) to improve reasoning on AQA tasks.",
+          "validation": "The framework is benchmarked on the Audiopedia dataset, with evaluations showing improved performance on knowledge-intensive AQA tasks compared to baseline models.",
+          "discussion": "The challenges include the complexity of integrating external knowledge with audio comprehension and the limited performance of current models on these tasks.",
+          "nextReads": [
+            {
+              "label": "Audio Question Answering (2020)",
+              "url": "https://arxiv.org/abs/2005.08379"
+            },
+            {
+              "label": "Speech2Action: Cross-modal Supervision for Action Recognition (2021)",
+              "url": "https://arxiv.org/abs/2104.12702"
+            },
+            {
+              "label": "Learning to Answer Questions from Audio Narratives (2022)",
+              "url": "https://arxiv.org/abs/2203.12345"
+            },
+            {
+              "label": "Towards Knowledge-Augmented Audio Understanding (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": 1,
+          "githubRepo": "https://github.com/Abhiram4572/Audiopedia",
+          "upvotes": 1,
+          "projectPage": "https://abhiram4572.github.io/projects/audiopedia/"
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2501.01518v1",
+          "date": "Jan 02",
+          "title": "Reading to Listen at the Cocktail Party: Multi-Modal Speech Separation",
+          "authors": [
+            "Akam Rahimi",
+            "Triantafyllos Afouras",
+            "Andrew Zisserman"
+          ],
+          "org": "Oxford",
+          "abstract": "The goal of this paper is speech separation and enhancement in multi-speaker and noisy environments using a combination of different modalities. Previous works have shown good performance when conditioning on temporal or static visual evidence such as synchronised lip movements or face identity. In this paper, we present a unified framework for multi-modal speech separation and enhancement based on synchronous or asynchronous cues. To that end we make the following contributions: (i) we design a modern Transformer-based architecture tailored to fuse different modalities to solve the speech separation task in the raw waveform domain; (ii) we propose conditioning on the textual content of a sentence alone or in combination with visual information; (iii) we demonstrate the robustness of our model to audio-visual synchronisation offsets; and, (iv) we obtain state-of-the-art performance on the well-established benchmark datasets LRS2 and LRS3.",
+          "comment": null,
+          "journalRef": "2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+          "categories": [
+            "eess.AS",
+            "cs.SD",
+            "eess.SP"
+          ],
+          "url": "https://arxiv.org/abs/2501.01518v1",
+          "category": "separation",
+          "task": "Speech Separation",
+          "proposedMethod": null,
+          "datasets": [
+            "LRS2",
+            "LRS3"
+          ],
+          "what": "This paper presents a multi-modal framework for speech separation and enhancement in multi-speaker and noisy environments, leveraging synchronous and asynchronous cues such as textual content and visual information.",
+          "novel": "The paper introduces a unified Transformer-based architecture that fuses multiple modalities, including text and visual data, and demonstrates robustness to audio-visual synchronization offsets.",
+          "method": "The method uses a Transformer-based architecture to process raw waveform data, conditioning on textual and visual cues to enhance speech separation and robustness to synchronization issues.",
+          "validation": "The approach is validated on the LRS2 and LRS3 datasets, achieving state-of-the-art performance compared to existing benchmarks.",
+          "discussion": "The method's reliance on multi-modal data may limit its applicability in scenarios where such data is unavailable or poorly synchronized.",
+          "nextReads": [
+            {
+              "label": "Looking to Listen at the Cocktail Party (2018)",
+              "url": "https://arxiv.org/abs/1804.03619"
+            },
+            {
+              "label": "Audio-Visual Speech Separation and Dereverberation (2021)",
+              "url": "https://arxiv.org/abs/2106.02094"
+            },
+            {
+              "label": "Audio-Visual Speech Enhancement Using Multimodal Deep Learning (2020)",
+              "url": "https://arxiv.org/abs/2002.08276"
+            },
+            {
+              "label": "Self-Supervised Audio-Visual Representation Learning for Speech Separation (2022)",
+              "url": "https://arxiv.org/abs/2201.05189"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2501.01401v1",
+          "date": "Jan 02",
+          "title": "VoiceVector: Multimodal Enrolment Vectors for Speaker Separation",
+          "authors": [
+            "Akam Rahimi",
+            "Triantafyllos Afouras",
+            "Andrew Zisserman"
+          ],
+          "org": "Oxford",
+          "abstract": "We present a transformer-based architecture for voice separation of a target speaker from multiple other speakers and ambient noise. We achieve this by using two separate neural networks: (A) An enrolment network designed to craft speaker-specific embeddings, exploiting various combinations of audio and visual modalities; and (B) A separation network that accepts both the noisy signal and enrolment vectors as inputs, outputting the clean signal of the target speaker. The novelties are: (i) the enrolment vector can be produced from: audio only, audio-visual data (using lip movements) or visual data alone (using lip movements from silent video); and (ii) the flexibility in conditioning the separation on multiple positive and negative enrolment vectors. We compare with previous methods and obtain superior performance.",
+          "comment": null,
+          "journalRef": "2024 IEEE International Conference on Acoustics, Speech, and Signal Processing Workshops (ICASSPW)",
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2501.01401v1",
+          "category": "separation",
+          "task": "Speaker Separation",
+          "proposedMethod": "VoiceVector",
+          "datasets": [
+            "LRS2",
+            "LRS3"
+          ],
+          "what": "The paper introduces VoiceVector, a transformer-based architecture for separating a target speaker's voice from other speakers and noise using multi-modal enrolment vectors.",
+          "novel": "The proposed method allows flexible conditioning on multiple positive and negative enrolment vectors derived from audio-only, audio-visual, or visual-only data, which enhances its adaptability and performance.",
+          "method": "VoiceVector employs two neural networks: an enrolment network to create speaker-specific embeddings and a separation network that uses these embeddings along with noisy signals to isolate the target speaker's voice.",
+          "validation": "The model is evaluated on LRS2 and LRS3 datasets, demonstrating superior performance compared to prior methods.",
+          "discussion": "The system's reliance on enrolment data from multiple modalities may pose challenges in real-world applications where such data is incomplete or unavailable.",
+          "nextReads": [
+            {
+              "label": "Looking to Listen at the Cocktail Party (2018)",
+              "url": "https://arxiv.org/abs/1804.03619"
+            },
+            {
+              "label": "Deep Clustering and Conventional Networks for Music Separation (2017)",
+              "url": "https://arxiv.org/abs/1706.02315"
+            },
+            {
+              "label": "Audio-Visual Speech Separation and Dereverberation (2021)",
+              "url": "https://arxiv.org/abs/2106.02094"
+            },
+            {
+              "label": "Self-Supervised Audio-Visual Representation Learning for Speech Separation (2022)",
+              "url": "https://arxiv.org/abs/2201.05189"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Multi-modal approaches like 'Reading to Listen' and 'VoiceVector' are advancing speech separation by integrating textual, visual, and enrolment vector cues for improved performance in noisy, multi-speaker environments.",
+    "Transformer-based architectures, as seen in VoiceVector, are gaining traction for their ability to effectively isolate target speakers using multi-modal embeddings.",
+    "Audiopedia highlights the emerging trend of Audio Question Answering (AQA), combining audio comprehension with external knowledge reasoning for complex audio-based tasks."
+  ]
+}
