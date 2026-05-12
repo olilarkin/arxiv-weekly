@@ -28,14 +28,6 @@ include:
   - speaker separation
   - vocal separation
   - music demixing
-  # Anomalous sound detection
-  - anomalous sound detection
-  - anomaly sound detection
-  - anomaly detection
-  - acoustic anomaly
-  - machine sound anomaly
-  - unsupervised anomaly
-  - sound event detection
   # Music transcription / beat tracking
   - automatic music transcription
   - music transcription
@@ -87,18 +79,6 @@ ui_categories:
       - speaker separation
       - vocal separation
       - music demixing
-
-  - id: anomaly
-    label: Anomalous Sound Detection
-    color: "#fb923c"
-    keywords:
-      - anomalous sound detection
-      - anomaly sound detection
-      - anomaly detection
-      - acoustic anomaly
-      - machine sound anomaly
-      - unsupervised anomaly
-      - sound event detection
 
   - id: transcription
     label: Music Transcription & Beat Tracking

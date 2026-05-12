@@ -7,7 +7,7 @@ Pages.
 ## Topics covered
 - Audio foundation models
 - Source separation
-- Anomalous sound detection
+- Music transcription & beat tracking
 
 ## Setup
 

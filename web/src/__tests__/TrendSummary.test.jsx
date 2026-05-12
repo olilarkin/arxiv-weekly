@@ -7,12 +7,12 @@ describe('TrendSummary', () => {
     const trend = [
       'Audio foundation model research advanced.',
       'Source separation accuracy improved.',
-      'Anomalous sound detection drew attention.',
+      'Music transcription and beat tracking saw new methods.',
     ]
     render(<TrendSummary trend={trend} />)
     expect(screen.getByText(/Audio foundation model research advanced/)).toBeInTheDocument()
     expect(screen.getByText(/Source separation accuracy improved/)).toBeInTheDocument()
-    expect(screen.getByText(/Anomalous sound detection drew attention/)).toBeInTheDocument()
+    expect(screen.getByText(/Music transcription and beat tracking saw new methods/)).toBeInTheDocument()
   })
 
   it('strips circled number prefixes from trend lines', () => {

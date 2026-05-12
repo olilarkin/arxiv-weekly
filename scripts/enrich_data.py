@@ -78,7 +78,7 @@ Keys must be the paper IDs and values must follow this schema:
 
 {{
   "<paper_id>": {{
-    "task": "Task category (e.g. TTS / ASR / Source Separation / Anomalous Sound Detection), 1-3 words",
+    "task": "Task category (e.g. TTS / ASR / Source Separation / Music Transcription / Beat Tracking), 1-3 words",
     "proposedMethod": "Name or acronym of the proposed method (null if none)",
     "datasets": ["Dataset name 1", "Dataset name 2"]
   }}

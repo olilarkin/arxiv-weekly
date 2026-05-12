@@ -40,7 +40,7 @@ Use precise English terminology in all fields, e.g.:
 
 {
   "org": "Primary author affiliation (short, e.g. MIT / Google)",
-  "task": "Task category (e.g. TTS / ASR / Source Separation / Anomalous Sound Detection / Music Generation), 1-3 words",
+  "task": "Task category (e.g. TTS / ASR / Source Separation / Music Transcription / Beat Tracking / Music Generation), 1-3 words",
   "proposedMethod": "Name or acronym of the proposed method (e.g. SALMONN, AudioSep). Use null if none.",
   "datasets": ["Dataset name 1", "Dataset name 2"],
   "what": "What it is (1-2 sentences summarizing the paper)",
@@ -101,7 +101,7 @@ the paper IDs and whose values follow this schema:
 {{
   "<paper_id>": {{
     "org": "Primary author affiliation (short, e.g. MIT / Google)",
-    "task": "Task category (e.g. TTS / ASR / Source Separation / Anomalous Sound Detection), 1-3 words",
+    "task": "Task category (e.g. TTS / ASR / Source Separation / Music Transcription / Beat Tracking), 1-3 words",
     "proposedMethod": "Name or acronym of the proposed method (null if none)",
     "datasets": ["Dataset name 1", "Dataset name 2"],
     "what": "What it is (1-2 sentences)",

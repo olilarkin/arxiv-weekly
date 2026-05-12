@@ -11,7 +11,7 @@ export default function Header({ total, loading }) {
         Audio AI Weekly
         <span style={{ fontSize: 'clamp(10px,2.5vw,12px)', color: '#475569',
           fontWeight: 400, marginLeft: 10 }}>
-          Audio Foundation Models · Source Separation · Anomalous Sound Detection
+          Audio Foundation Models · Source Separation · Music Transcription & Beat Tracking
         </span>
       </div>
       {!loading && total > 0 && (

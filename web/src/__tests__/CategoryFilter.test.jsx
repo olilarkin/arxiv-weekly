@@ -3,9 +3,9 @@ import { render, screen, fireEvent } from '@testing-library/react'
 import CategoryFilter from '../components/CategoryFilter'
 
 const CATS = [
-  { id: 'foundation', label: 'Audio Foundation Models',    color: '#38bdf8', papers: [] },
-  { id: 'separation', label: 'Source Separation',          color: '#4ade80', papers: [] },
-  { id: 'anomaly',    label: 'Anomalous Sound Detection',  color: '#fb923c', papers: [] },
+  { id: 'foundation',    label: 'Audio Foundation Models',              color: '#38bdf8', papers: [] },
+  { id: 'separation',    label: 'Source Separation',                    color: '#4ade80', papers: [] },
+  { id: 'transcription', label: 'Music Transcription & Beat Tracking',  color: '#f472b6', papers: [] },
 ]
 
 describe('CategoryFilter', () => {
@@ -18,7 +18,7 @@ describe('CategoryFilter', () => {
     render(<CategoryFilter categories={CATS} active="all" onChange={() => {}} />)
     expect(screen.getByText('Audio Foundation Models')).toBeInTheDocument()
     expect(screen.getByText('Source Separation')).toBeInTheDocument()
-    expect(screen.getByText('Anomalous Sound Detection')).toBeInTheDocument()
+    expect(screen.getByText('Music Transcription & Beat Tracking')).toBeInTheDocument()
   })
 
   it('calls onChange with correct id when clicked', () => {

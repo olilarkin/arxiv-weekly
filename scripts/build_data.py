@@ -50,7 +50,7 @@ def generate_trend(client: OpenAI, papers: list[dict]) -> list[str]:
         time.sleep(cfg["retry_interval"] * (2**attempt))
     return [
         "Analyzing this week's audio foundation model research trends.",
-        "Many new approaches for source separation and anomalous sound detection were submitted.",
+        "Many new approaches for source separation and music transcription were submitted.",
         "See the individual papers for details.",
     ]
 
