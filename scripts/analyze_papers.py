@@ -18,6 +18,19 @@ ROOT = Path(__file__).parent.parent
 SETTINGS = yaml.safe_load((ROOT / "config/settings.yaml").read_text())
 KEYWORDS = yaml.safe_load((ROOT / "config/keywords.yaml").read_text())
 
+class DailyQuotaExceededError(RuntimeError):
+    """Raised when GitHub Models reports a per-day quota hit.
+
+    Wait times are ~hours, so retrying inside the same job is pointless —
+    callers should stop work and let the next day's run pick up.
+    """
+
+
+def _is_daily_quota_error(err: APIError) -> bool:
+    msg = str(getattr(err, "message", "") or err)
+    return "UserByModelByDay" in msg or "per 86400s" in msg
+
+
 SYSTEM_PROMPT = """You are a research analyst for the audio and acoustics AI field.
 Analyze the given paper (title and abstract) and reply ONLY with JSON in the
 exact schema below. Do not include any preamble, explanation, or code-fence
@@ -177,6 +190,8 @@ def analyze_batch(
                 last_request_at = request_started_at
             print(f"  [warn] JSON parse error (attempt {attempt + 1}): {e}")
         except APIError as e:
+            if _is_daily_quota_error(e):
+                raise DailyQuotaExceededError(str(e)) from e
             if request_started_at is not None:
                 last_request_at = request_started_at
             print(f"  [warn] API error (attempt {attempt + 1}): {e}")
