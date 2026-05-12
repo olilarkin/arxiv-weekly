@@ -6,8 +6,8 @@
 arxiv:
   lookback_days: 7          # How many days of recent papers to consider.
   max_papers: 50            # Maximum number of papers kept after filtering.
-  request_interval: 1.0     # Delay between API requests, in seconds.
-  user_agent: "arxiv-weekly-report/1.0 (github.com/kasahart/arxiv-weekly)"
+  request_interval: 3.0     # Delay between API requests, in seconds (arXiv asks ≥3s).
+  user_agent: "arxiv-weekly/1.0 (+https://github.com/olilarkin/arxiv-weekly)"
 
 # GitHub Models settings
 github_models:
