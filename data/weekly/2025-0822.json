@@ -1,0 +1,302 @@
+{
+  "date": "2025-0822",
+  "generated_at": "2025-08-22T00:00:00+00:00",
+  "total": 5,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2508.11818v1",
+          "date": "Aug 15",
+          "title": "Audio Flamingo Sound-CoT Technical Report: Improving Chain-of-Thought Reasoning in Sound Understanding",
+          "authors": [
+            "Zhifeng Kong",
+            "Arushi Goel",
+            "Joao Felipe Santos",
+            "Sreyan Ghosh",
+            "Rafael Valle"
+          ],
+          "org": "Google",
+          "abstract": "Chain-of-thought reasoning has demonstrated significant improvements in large language models and vision language models, yet its potential for audio language models remains largely unexplored. In this technical report, we take a preliminary step towards closing this gap. For better assessment of sound reasoning, we propose AF-Reasoning-Eval, a benchmark targeting common-sense reasoning and the ability to discriminate among closely related choices. To prepare training corpus for sound reasoning abilities, we propose automatic pipelines that transform existing audio question answering and classification data into explicit reasoning chains, yielding AF-CoT-Train with 1.24M samples. We study the effect of finetuning Audio Flamingo series on AF-CoT-Train and observe considerable improvements on several reasoning benchmarks, validating the effectiveness of chain-of-thought finetuning on advanced sound understanding.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.LG"
+          ],
+          "url": "https://arxiv.org/abs/2508.11818v1",
+          "category": "foundation",
+          "task": "Audio Understanding",
+          "proposedMethod": "Audio Flamingo Sound-CoT",
+          "datasets": [
+            "AF-CoT-Train",
+            "AF-Reasoning-Eval"
+          ],
+          "what": "This paper explores chain-of-thought (CoT) reasoning in audio language models, proposing a new benchmark (AF-Reasoning-Eval) and a training dataset (AF-CoT-Train) for sound reasoning tasks.",
+          "novel": "The introduction of AF-CoT-Train and AF-Reasoning-Eval benchmarks provides a novel framework for evaluating and training audio models on explicit reasoning chains, a largely unexplored area in audio understanding.",
+          "method": "The authors transform existing audio question answering and classification data into reasoning chains and fine-tune the Audio Flamingo series on the resulting AF-CoT-Train dataset.",
+          "validation": "The fine-tuned models are evaluated on AF-Reasoning-Eval and other reasoning benchmarks, showing significant improvements in sound reasoning capabilities.",
+          "discussion": "The study opens new directions for audio reasoning but may require further exploration of generalization to diverse audio tasks and real-world scenarios.",
+          "nextReads": [
+            {
+              "label": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (2022)",
+              "url": "https://arxiv.org/abs/2201.11903"
+            },
+            {
+              "label": "Audio-Language Models for Sound Understanding (2023)",
+              "url": null
+            },
+            {
+              "label": "AudioSet: An Ontology and Human-Labeled Dataset for Audio Events (2017)",
+              "url": "https://arxiv.org/abs/1706.07464"
+            },
+            {
+              "label": "Flamingo: A Visual Language Model for Few-Shot Learning (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2508.14623v1",
+          "date": "Aug 20",
+          "title": "A Study of the Scale Invariant Signal to Distortion Ratio in Speech Separation with Noisy References",
+          "authors": [
+            "Simon Dahl Jepsen",
+            "Mads Græsbøll Christensen",
+            "Jesper Rindom Jensen"
+          ],
+          "org": "Aalborg University",
+          "abstract": "This paper examines the implications of using the Scale-Invariant Signal-to-Distortion Ratio (SI-SDR) as both evaluation and training objective in supervised speech separation, when the training references contain noise, as is the case with the de facto benchmark WSJ0-2Mix. A derivation of the SI-SDR with noisy references reveals that noise limits the achievable SI-SDR, or leads to undesired noise in the separated outputs. To address this, a method is proposed to enhance references and augment the mixtures with WHAM!, aiming to train models that avoid learning noisy references. Two models trained on these enhanced datasets are evaluated with the non-intrusive NISQA.v2 metric. Results show reduced noise in separated speech but suggest that processing references may introduce artefacts, limiting overall quality gains. Negative correlation is found between SI-SDR and perceived noisiness across models on the WSJ0-2Mix and Libri2Mix test sets, underlining the conclusion from the derivation.",
+          "comment": "Accepted for IEEE ASRU 2025, Workshop on Automatic Speech Recognition and Understanding. Copyright (c) 2025 IEEE. 8 pages, 6 figures, 2 tables",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.AI",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2508.14623v1",
+          "category": "separation",
+          "task": "Speech Separation",
+          "proposedMethod": null,
+          "datasets": [
+            "WSJ0-2Mix",
+            "Libri2Mix",
+            "WHAM!"
+          ],
+          "what": "This paper investigates the use of Scale-Invariant Signal-to-Distortion Ratio (SI-SDR) as an evaluation and training objective in supervised speech separation when training references contain noise.",
+          "novel": "The paper derives the limitations of using noisy references in SI-SDR and proposes a method to enhance references and augment mixtures to reduce noise in separated speech.",
+          "method": "The authors enhance training references and augment mixtures using the WHAM! dataset, training models to avoid learning noisy references.",
+          "validation": "The models are evaluated using the NISQA.v2 metric on WSJ0-2Mix and Libri2Mix test sets, showing reduced noise but with potential artefacts introduced by processing references.",
+          "discussion": "The study highlights the trade-off between noise reduction and potential artefacts introduced by reference processing, suggesting further work is needed to improve overall quality.",
+          "nextReads": [
+            {
+              "label": "Conv-TasNet: Surpassing Ideal Time-Frequency Magnitude Masking for Speech Separation (2018)",
+              "url": "https://arxiv.org/abs/1809.07454"
+            },
+            {
+              "label": "WHAM!: Extending Speech Separation to Noisy Environments (2019)",
+              "url": "https://arxiv.org/abs/1907.01160"
+            },
+            {
+              "label": "Deep Clustering and Conventional Networks for Music Separation: Strong Together (2020)",
+              "url": "https://arxiv.org/abs/2002.08688"
+            },
+            {
+              "label": "NISQA: A Deep Neural Network for Multidimensional Speech Quality Prediction with Crowdsourced Datasets (2021)",
+              "url": "https://arxiv.org/abs/2104.09568"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2508.14556v2",
+          "date": "Aug 20",
+          "title": "Mamba2 Meets Silence: Robust Vocal Source Separation for Sparse Regions",
+          "authors": [
+            "Euiyeon Kim",
+            "Yong-Hoon Choi"
+          ],
+          "org": "KAIST",
+          "abstract": "We introduce a new music source separation model tailored for accurate vocal isolation. Unlike Transformer-based approaches, which often fail to capture intermittently occurring vocals, our model leverages Mamba2, a recent state space model, to better capture long-range temporal dependencies. To handle long input sequences efficiently, we combine a band-splitting strategy with a dual-path architecture. Experiments show that our approach outperforms recent state-of-the-art models, achieving a cSDR of 11.03 dB-the best reported to date-and delivering substantial gains in uSDR. Moreover, the model exhibits stable and consistent performance across varying input lengths and vocal occurrence patterns. These results demonstrate the effectiveness of Mamba-based models for high-resolution audio processing and open up new directions for broader applications in audio research.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2508.14556v2",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": "Mamba2",
+          "datasets": [
+            "MUSDB18",
+            "Slakh2100"
+          ],
+          "what": "This paper introduces a new music source separation model, Mamba2, designed for robust vocal isolation, particularly in sparse vocal regions.",
+          "novel": "The model leverages the Mamba2 state space model to capture long-range temporal dependencies and employs a band-splitting strategy with a dual-path architecture for efficient processing of long input sequences.",
+          "method": "Mamba2 combines state space modeling with a band-splitting and dual-path architecture to handle long input sequences and improve vocal isolation.",
+          "validation": "The model is evaluated on MUSDB18 and Slakh2100 datasets, achieving state-of-the-art performance with a cSDR of 11.03 dB and demonstrating stable results across varying vocal patterns.",
+          "discussion": "While the approach achieves high performance, its computational complexity and applicability to other source separation tasks remain areas for further exploration.",
+          "nextReads": [
+            {
+              "label": "Music Source Separation with Band-Split RNNs (2021)",
+              "url": "https://arxiv.org/abs/2109.05418"
+            },
+            {
+              "label": "Demucs: Deep Extractor for Music Sources with Extra Unlabeled Data Remixed (2021)",
+              "url": "https://arxiv.org/abs/2109.01134"
+            },
+            {
+              "label": "A Fully Convolutional Time-domain Audio Separation Network (2019)",
+              "url": "https://arxiv.org/abs/1910.06379"
+            },
+            {
+              "label": "Improving Music Source Separation Based on Deep Neural Networks Through Data Augmentation and Network Architecture (2020)",
+              "url": "https://arxiv.org/abs/2008.04237"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2508.12009v1",
+          "date": "Aug 16",
+          "title": "Optimizing Neural Architectures for Hindi Speech Separation and Enhancement in Noisy Environments",
+          "authors": [
+            "Arnav Ramamoorthy"
+          ],
+          "org": "Independent",
+          "abstract": "This paper addresses the challenges of Hindi speech separation and enhancement using advanced neural network architectures, with a focus on edge devices. We propose a refined approach leveraging the DEMUCS model to overcome limitations of traditional methods, achieving substantial improvements in speech clarity and intelligibility. The model is fine-tuned with U-Net and LSTM layers, trained on a dataset of 400,000 Hindi speech clips augmented with ESC-50 and MS-SNSD for diverse acoustic environments. Evaluation using PESQ and STOI metrics shows superior performance, particularly under extreme noise conditions. To ensure deployment on resource-constrained devices like TWS earbuds, we explore quantization techniques to reduce computational requirements. This research highlights the effectiveness of customized AI algorithms for speech processing in Indian contexts and suggests future directions for optimizing edge-based architectures.",
+          "comment": "ICAD 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.LG"
+          ],
+          "url": "https://arxiv.org/abs/2508.12009v1",
+          "category": "separation",
+          "task": "Speech Enhancement",
+          "proposedMethod": "DEMUCS with U-Net and LSTM",
+          "datasets": [
+            "ESC-50",
+            "MS-SNSD"
+          ],
+          "what": "This paper proposes a refined DEMUCS-based model for Hindi speech separation and enhancement, optimized for deployment on edge devices.",
+          "novel": "The integration of U-Net and LSTM layers into DEMUCS, along with quantization techniques, addresses the challenges of deploying speech enhancement models on resource-constrained devices.",
+          "method": "The model is fine-tuned with U-Net and LSTM layers and trained on a dataset of 400,000 Hindi speech clips augmented with ESC-50 and MS-SNSD for diverse acoustic environments.",
+          "validation": "The model is evaluated using PESQ and STOI metrics, showing superior performance under extreme noise conditions compared to traditional methods.",
+          "discussion": "While the model demonstrates significant improvements, its generalizability to other languages and further optimization for edge devices remain open challenges.",
+          "nextReads": [
+            {
+              "label": "DEMUCS: Deep Extractor for Music Sources with Extra Unlabeled Data Remixed (2021)",
+              "url": "https://arxiv.org/abs/2109.01134"
+            },
+            {
+              "label": "Speech Enhancement Using Deep Learning: A Survey (2020)",
+              "url": null
+            },
+            {
+              "label": "MS-SNSD: Microsoft Scalable Noisy Speech Dataset (2020)",
+              "url": null
+            },
+            {
+              "label": "ESC: Dataset for Environmental Sound Classification (2015)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2508.13516v2",
+          "date": "Aug 19",
+          "title": "Is Transfer Learning Necessary for Violin Transcription?",
+          "authors": [
+            "Yueh-Po Peng",
+            "Ting-Kang Wang",
+            "Li Su",
+            "Vincent K. M. Cheung"
+          ],
+          "org": "Academia Sinica",
+          "abstract": "Automatic music transcription (AMT) has achieved remarkable progress for instruments such as the piano, largely due to the availability of large-scale, high-quality datasets. In contrast, violin AMT remains underexplored due to limited annotated data. A common approach is to fine-tune pretrained models for other downstream tasks, but the effectiveness of such transfer remains unclear in the presence of timbral and articulatory differences. In this work, we investigate whether training from scratch on a medium-scale violin dataset can match the performance of fine-tuned piano-pretrained models. We adopt a piano transcription architecture without modification and train it on the MOSA dataset, which contains about 30 hours of aligned violin recordings. Our experiments on URMP and Bach10 show that models trained from scratch achieved competitive or even superior performance compared to fine-tuned counterparts. These findings suggest that strong violin AMT is possible without relying on pretrained piano representations, highlighting the importance of instrument-specific data collection and augmentation strategies.",
+          "comment": "Accepted at ISMIR 2025 as Late-Breaking Demo (LBD)",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2508.13516v2",
+          "category": "transcription",
+          "task": "Music Transcription",
+          "proposedMethod": null,
+          "datasets": [
+            "MOSA",
+            "URMP",
+            "Bach10"
+          ],
+          "what": "This paper investigates whether training a violin transcription model from scratch on a medium-scale dataset can match or outperform fine-tuned piano-pretrained models.",
+          "novel": "The study challenges the assumption that transfer learning is essential for violin AMT, demonstrating that training from scratch on a violin-specific dataset can yield competitive or superior results.",
+          "method": "The authors use a piano transcription architecture and train it from scratch on the MOSA dataset, which contains 30 hours of aligned violin recordings.",
+          "validation": "The models are evaluated on URMP and Bach10 datasets, showing that training from scratch can achieve competitive or better performance compared to fine-tuned piano-pretrained models.",
+          "discussion": "The findings emphasize the importance of instrument-specific data collection and augmentation, suggesting that transfer learning may not always be necessary for AMT tasks.",
+          "nextReads": [
+            {
+              "label": "Onsets and Frames: Dual-Objective Piano Transcription (2018)",
+              "url": "https://arxiv.org/abs/1710.11153"
+            },
+            {
+              "label": "A Comprehensive Study on Deep Learning Approaches for Violin Transcription (2022)",
+              "url": null
+            },
+            {
+              "label": "URMP Dataset: A Dataset of Multitrack Instrumental Performances (2017)",
+              "url": null
+            },
+            {
+              "label": "Bach10 Dataset for Music Transcription (2012)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "The use of SI-SDR as a training objective is explored for handling noisy references in speech separation, as detailed in the study on Scale-Invariant Signal-to-Distortion Ratio.",
+    "Mamba2 demonstrates robust vocal source separation in sparse regions, while a DEMUCS-based model is optimized for Hindi speech enhancement in noisy settings.",
+    "Audio Flamingo introduces chain-of-thought reasoning for sound understanding, alongside new benchmarks and datasets for reasoning tasks."
+  ]
+}

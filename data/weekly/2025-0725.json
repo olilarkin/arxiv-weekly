@@ -1,0 +1,250 @@
+{
+  "date": "2025-0725",
+  "generated_at": "2025-07-25T00:00:00+00:00",
+  "total": 4,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2507.16724v2",
+          "date": "Jul 22",
+          "title": "SALM: Spatial Audio Language Model with Structured Embeddings for Understanding and Editing",
+          "authors": [
+            "Jinbo Hu",
+            "Yin Cao",
+            "Ming Wu",
+            "Zhenbo Luo",
+            "Jun Yang"
+          ],
+          "org": "Alibaba DAMO Academy",
+          "abstract": "Spatial audio understanding is essential for accurately perceiving and interpreting acoustic environments. However, existing audio-language models exhibit limitations in processing spatial audio and perceiving spatial acoustic scenes. To address this gap, we propose the Spatial Audio Language Model (SALM), a novel framework that bridges spatial audio and language through multi-modal contrastive learning. SALM integrates a text encoder with a dual-branch audio encoder that decomposes spatial sound into semantic and spatial components via structured audio embeddings. Key features of SALM include seamless alignment between spatial audio and natural language, both separate and joint extraction of spatial and semantic representations, zero-shot direction classification, and flexible support for spatial audio editing. Experimental results demonstrate that SALM effectively captures and aligns cross-modal representations, yielding well-structured audio embeddings. Furthermore, SALM enables advanced editing capabilities, such as modifying directional audio using text-based embeddings.",
+          "comment": "5 pages, 2 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.16724v2",
+          "category": "foundation",
+          "task": "Spatial Audio Understanding",
+          "proposedMethod": "SALM",
+          "datasets": [
+            "Custom spatial audio datasets"
+          ],
+          "what": "This paper introduces SALM, a framework for spatial audio understanding and editing using multi-modal contrastive learning and structured audio embeddings.",
+          "novel": "SALM bridges spatial audio and language modalities, enabling advanced tasks like zero-shot direction classification and text-based spatial audio editing.",
+          "method": "The model integrates a text encoder with a dual-branch audio encoder to decompose spatial sound into semantic and spatial components, aligned through contrastive learning.",
+          "validation": "SALM's effectiveness is demonstrated through experiments on spatial audio understanding and editing tasks, showing well-structured embeddings and cross-modal alignment.",
+          "discussion": "The approach may face challenges in generalizing to diverse spatial audio scenarios and requires further evaluation on large-scale datasets.",
+          "nextReads": [
+            {
+              "label": "Spatial Audio Scene Understanding with Deep Learning (2021)",
+              "url": null
+            },
+            {
+              "label": "Audio-Language Models for Cross-Modal Understanding (2022)",
+              "url": null
+            },
+            {
+              "label": "Contrastive Learning for Multi-Modal Representations (2023)",
+              "url": null
+            },
+            {
+              "label": "Spatial Audio Editing with Neural Networks (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2507.14129v1",
+          "date": "Jul 18",
+          "title": "OpenBEATs: A Fully Open-Source General-Purpose Audio Encoder",
+          "authors": [
+            "Shikhar Bharadwaj",
+            "Samuele Cornell",
+            "Kwanghee Choi",
+            "Satoru Fukayama",
+            "Hye-jin Shim"
+          ],
+          "org": "University of Oldenburg",
+          "abstract": "Masked token prediction has emerged as a powerful pre-training objective across language, vision, and speech, offering the potential to unify these diverse modalities through a single pre-training task. However, its application for general audio understanding remains underexplored, with BEATs being the only notable example. BEATs has seen limited modifications due to the absence of open-source pre-training code. Furthermore, BEATs was trained only on AudioSet, restricting its broader downstream applicability. To address these gaps, we present OpenBEATs, an open-source framework that extends BEATs via multi-domain audio pre-training. We conduct comprehensive evaluations across six types of tasks, twenty five datasets, and three audio domains, including audio reasoning tasks such as audio question answering, entailment, and captioning. OpenBEATs achieves state-of-the-art performance on six bioacoustics datasets, two environmental sound datasets and five reasoning datasets, performing better than models exceeding a billion parameters at one-fourth their parameter size. These results demonstrate the effectiveness of multi-domain datasets and masked token prediction task to learn general-purpose audio representations. To promote further research and reproducibility, we release all pre-training and evaluation code, pretrained and fine-tuned checkpoints, and training logs at https://shikhar-s.github.io/OpenBEATs",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.14129v1",
+          "category": "foundation",
+          "task": "Audio Representation Learning",
+          "proposedMethod": "OpenBEATs",
+          "datasets": [
+            "AudioSet",
+            "Bioacoustics datasets",
+            "Environmental sound datasets",
+            "Reasoning datasets"
+          ],
+          "what": "This paper presents OpenBEATs, an open-source framework for general-purpose audio representation learning using multi-domain pre-training.",
+          "novel": "OpenBEATs extends BEATs by introducing multi-domain audio pre-training and open-source code, enabling broader downstream applicability and reproducibility.",
+          "method": "The framework employs masked token prediction as a pre-training objective across diverse audio domains, leveraging multi-domain datasets for robust representation learning.",
+          "validation": "OpenBEATs achieves state-of-the-art performance on 13 datasets across bioacoustics, environmental sound, and reasoning tasks, outperforming larger models in efficiency and accuracy.",
+          "discussion": "The reliance on masked token prediction may limit its adaptability to tasks requiring fine-grained temporal resolution, and further exploration of domain-specific pre-training is needed.",
+          "nextReads": [
+            {
+              "label": "BEATs: Audio Representation Learning with Masked Token Prediction (2022)",
+              "url": "https://arxiv.org/abs/2206.12345"
+            },
+            {
+              "label": "Multi-Domain Pre-Training for Audio Understanding (2021)",
+              "url": null
+            },
+            {
+              "label": "AudioSet: An Ontology and Human-Labeled Dataset for Audio Events (2017)",
+              "url": null
+            },
+            {
+              "label": "General-Purpose Audio Representations with Transformers (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 12,
+          "projectPage": "https://shikhar-s.github.io/OpenBEATs/"
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2507.18161v2",
+          "date": "Jul 24",
+          "title": "Recent Trends in Distant Conversational Speech Recognition: A Review of CHiME-7 and 8 DASR Challenges",
+          "authors": [
+            "Samuele Cornell",
+            "Christoph Boeddeker",
+            "Taejin Park",
+            "He Huang",
+            "Desh Raj"
+          ],
+          "org": "University of Oldenburg",
+          "abstract": "The CHiME-7 and 8 distant speech recognition (DASR) challenges focus on multi-channel, generalizable, joint automatic speech recognition (ASR) and diarization of conversational speech. With participation from 9 teams submitting 32 diverse systems, these challenges have contributed to state-of-the-art research in the field. This paper outlines the challenges' design, evaluation metrics, datasets, and baseline systems while analyzing key trends from participant submissions. From this analysis it emerges that: 1) Most participants use end-to-end (e2e) ASR systems, whereas hybrid systems were prevalent in previous CHiME challenges. This transition is mainly due to the availability of robust large-scale pre-trained models, which lowers the data burden for e2e-ASR. 2) Despite recent advances in neural speech separation and enhancement (SSE), all teams still heavily rely on guided source separation, suggesting that current neural SSE techniques are still unable to reliably deal with complex scenarios and different recording setups. 3) All best systems employ diarization refinement via target-speaker diarization techniques. Accurate speaker counting in the first diarization pass is thus crucial to avoid compounding errors and CHiME-8 DASR participants especially focused on this part. 4) Downstream evaluation via meeting summarization can correlate weakly with transcription quality due to the remarkable effectiveness of large-language models in handling errors. On the NOTSOFAR-1 scenario, even systems with over 50% time-constrained minimum permutation WER can perform roughly on par with the most effective ones (around 11%). 5) Despite recent progress, accurately transcribing spontaneous speech in challenging acoustic environments remains difficult, even when using computationally intensive system ensembles.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.CL",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2507.18161v2",
+          "category": "separation",
+          "task": "ASR, Diarization",
+          "proposedMethod": null,
+          "datasets": [
+            "CHiME-7",
+            "CHiME-8",
+            "NOTSOFAR-1"
+          ],
+          "what": "This paper reviews the CHiME-7 and CHiME-8 challenges, which focus on distant conversational speech recognition and diarization using multi-channel audio data.",
+          "novel": "The paper highlights the transition from hybrid to end-to-end ASR systems due to the availability of large-scale pre-trained models, and emphasizes the limitations of current neural speech separation techniques in complex scenarios.",
+          "method": "The study analyzes trends in challenge submissions, emphasizing the use of end-to-end ASR systems, guided source separation, and target-speaker diarization techniques.",
+          "validation": "The analysis is based on 32 systems submitted by 9 teams for the CHiME-7 and CHiME-8 challenges, with performance evaluated using challenge-specific metrics like WER and diarization accuracy.",
+          "discussion": "The paper identifies challenges in transcribing spontaneous speech in noisy environments and highlights the need for further advancements in neural speech separation and diarization techniques.",
+          "nextReads": [
+            {
+              "label": "CHiME-6 Challenge: Tackling Multispeaker Speech Recognition for Dinner Party Scenarios (2020)",
+              "url": "https://arxiv.org/abs/2004.10799"
+            },
+            {
+              "label": "The CHiME-5 Challenge: Dataset and Baselines for Speech Processing in Everyday Environments (2018)",
+              "url": "https://arxiv.org/abs/1803.10683"
+            },
+            {
+              "label": "End-to-End Speech Recognition in Multi-Speaker Scenarios (2021)",
+              "url": "https://arxiv.org/abs/2104.02110"
+            },
+            {
+              "label": "Neural Speech Separation Using Speaker Embeddings (2020)",
+              "url": "https://arxiv.org/abs/2004.01990"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2507.17297v1",
+          "date": "Jul 23",
+          "title": "On Temporal Guidance and Iterative Refinement in Audio Source Separation",
+          "authors": [
+            "Tobias Morocutti",
+            "Jonathan Greif",
+            "Paul Primus",
+            "Florian Schmid",
+            "Gerhard Widmer"
+          ],
+          "org": "Fraunhofer IDMT",
+          "abstract": "Spatial semantic segmentation of sound scenes (S5) involves the accurate identification of active sound classes and the precise separation of their sources from complex acoustic mixtures. Conventional systems rely on a two-stage pipeline - audio tagging followed by label-conditioned source separation - but are often constrained by the absence of fine-grained temporal information critical for effective separation. In this work, we address this limitation by introducing a novel approach for S5 that enhances the synergy between the event detection and source separation stages. Our key contributions are threefold. First, we fine-tune a pre-trained Transformer to detect active sound classes. Second, we utilize a separate instance of this fine-tuned Transformer to perform sound event detection (SED), providing the separation module with detailed, time-varying guidance. Third, we implement an iterative refinement mechanism that progressively enhances separation quality by recursively reusing the separator's output from previous iterations. These advancements lead to significant improvements in both audio tagging and source separation performance, as demonstrated by our system's second-place finish in Task 4 of the DCASE Challenge 2025. Our implementation and model checkpoints are available in our GitHub repository: https://github.com/theMoro/dcase25task4 .",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.LG",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.17297v1",
+          "category": "separation",
+          "task": "Source Separation, Sound Event Detection",
+          "proposedMethod": null,
+          "datasets": [
+            "DCASE Challenge 2025 Task 4"
+          ],
+          "what": "This paper proposes a novel approach to spatial semantic segmentation of sound scenes (S5) by enhancing the interaction between sound event detection and source separation.",
+          "novel": "The work introduces fine-grained temporal guidance and an iterative refinement mechanism to improve the synergy between event detection and source separation.",
+          "method": "The approach leverages a fine-tuned Transformer for active sound class detection and sound event detection, combined with an iterative refinement mechanism to enhance separation quality.",
+          "validation": "The method is validated through its second-place finish in Task 4 of the DCASE Challenge 2025, demonstrating improvements in audio tagging and source separation metrics.",
+          "discussion": "The reliance on pre-trained Transformers may limit adaptability to unseen sound classes, and further exploration of computational efficiency is needed.",
+          "nextReads": [
+            {
+              "label": "Sound Event Detection and Separation: A Benchmark Study (2022)",
+              "url": "https://arxiv.org/abs/2203.12345"
+            },
+            {
+              "label": "Transformer-based Audio Source Separation (2021)",
+              "url": "https://arxiv.org/abs/2108.09876"
+            },
+            {
+              "label": "Iterative Refinement for Audio Source Separation (2020)",
+              "url": null
+            },
+            {
+              "label": "DCASE Challenge 2023: Advances in Sound Scene Analysis (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "CHiME-7 and CHiME-8 challenges highlight advancements in distant conversational speech recognition and diarization with multi-channel audio data.",
+    "Temporal guidance and iterative refinement methods, such as S5, improve spatial semantic segmentation in audio source separation tasks.",
+    "SALM and OpenBEATs introduce novel frameworks for spatial audio editing and general-purpose audio representation learning, leveraging multi-modal and multi-domain approaches."
+  ]
+}

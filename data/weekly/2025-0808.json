@@ -1,0 +1,465 @@
+{
+  "date": "2025-0808",
+  "generated_at": "2025-08-08T00:00:00+00:00",
+  "total": 8,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2508.04795v2",
+          "date": "Aug 06",
+          "title": "Enhancing Dialogue Annotation with Speaker Characteristics Leveraging a Frozen LLM",
+          "authors": [
+            "Thomas Thebaud",
+            "Yen-Ju Lu",
+            "Matthew Wiesner",
+            "Peter Viechnicki",
+            "Najim Dehak"
+          ],
+          "org": "Johns Hopkins University",
+          "abstract": "In dialogue transcription pipelines, Large Language Models (LLMs) are frequently employed in post-processing to improve grammar, punctuation, and readability. We explore a complementary post-processing step: enriching transcribed dialogues by adding metadata tags for speaker characteristics such as age, gender, and emotion. Some of the tags are global to the entire dialogue, while some are time-variant. Our approach couples frozen audio foundation models, such as Whisper or WavLM, with a frozen LLAMA language model to infer these speaker attributes, without requiring task-specific fine-tuning of either model. Using lightweight, efficient connectors to bridge audio and language representations, we achieve competitive performance on speaker profiling tasks while preserving modularity and speed. Additionally, we demonstrate that a frozen LLAMA model can compare x-vectors directly, achieving an Equal Error Rate of 8.8% in some scenarios.",
+          "comment": "Accepted in the 2025 IEEE Automatic Speech Recognition and Understanding Workshop",
+          "journalRef": null,
+          "categories": [
+            "cs.CL",
+            "cs.AI",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2508.04795v2",
+          "category": "foundation",
+          "task": "Speaker Profiling",
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "This paper explores a method to enrich transcribed dialogues with metadata tags for speaker characteristics using frozen audio and language models.",
+          "novel": "The approach bridges audio and language representations using lightweight connectors, achieving competitive performance without task-specific fine-tuning.",
+          "method": "Frozen audio models like Whisper or WavLM are combined with a frozen LLAMA language model, using connectors to infer speaker attributes such as age, gender, and emotion.",
+          "validation": "The method is validated on speaker profiling tasks, achieving an Equal Error Rate of 8.8% in specific scenarios.",
+          "discussion": "The study emphasizes modularity and efficiency but does not address the potential biases or ethical implications of speaker profiling.",
+          "nextReads": [
+            {
+              "label": "Speaker Profiling with Deep Learning (2021)",
+              "url": null
+            },
+            {
+              "label": "Whisper: OpenAI's Speech-to-Text Model (2022)",
+              "url": null
+            },
+            {
+              "label": "LLMs for Dialogue Annotation (2023)",
+              "url": null
+            },
+            {
+              "label": "Emotion Recognition in Speech (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2508.03983v3",
+          "date": "Aug 06",
+          "title": "MiDashengLM: Efficient Audio Understanding with General Audio Captions",
+          "authors": [
+            "Heinrich Dinkel",
+            "Gang Li",
+            "Jizhong Liu",
+            "Jian Luan",
+            "Yadong Niu"
+          ],
+          "org": "Xiaomi Research",
+          "abstract": "Current approaches for large audio language models (LALMs) often rely on closed data sources or proprietary models, limiting their generalization and accessibility. This paper introduces MiDashengLM, a novel open audio-language model designed for efficient and comprehensive audio understanding through the use of general audio captions using our novel ACAVCaps training dataset. MiDashengLM exclusively relies on publicly available pretraining and supervised fine-tuning (SFT) datasets, ensuring full transparency and reproducibility. At its core, MiDashengLM integrates Dasheng, an open-source audio encoder, specifically engineered to process diverse auditory information effectively. Unlike previous works primarily focused on Automatic Speech Recognition (ASR) based audio-text alignment, our strategy centers on general audio captions, fusing speech, sound and music information into one textual representation, enabling a holistic textual representation of complex audio scenes. Lastly, MiDashengLM provides an up to 4x speedup in terms of time-to-first-token (TTFT) and up to 20x higher throughput than comparable models. Checkpoints are available online at https://huggingface.co/mispeech/midashenglm-7b and https://github.com/xiaomi-research/dasheng-lm.",
+          "comment": "Added ACAVCaps reference (ICASSP 2026)",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2508.03983v3",
+          "category": "foundation",
+          "task": "Audio Captioning",
+          "proposedMethod": "MiDashengLM",
+          "datasets": [
+            "ACAVCaps"
+          ],
+          "what": "This paper introduces MiDashengLM, an open audio-language model designed for general audio understanding using audio captions.",
+          "novel": "The model integrates speech, sound, and music into a unified textual representation, offering a holistic approach to audio understanding and significant computational efficiency.",
+          "method": "MiDashengLM employs Dasheng, an open-source audio encoder, and trains on publicly available datasets with a focus on general audio captions rather than ASR-based alignment.",
+          "validation": "The model's performance is validated using the ACAVCaps dataset, achieving up to 4x faster time-to-first-token and 20x higher throughput compared to similar models.",
+          "discussion": "While the model is open and efficient, its generalization to proprietary or unseen audio data remains untested.",
+          "nextReads": [
+            {
+              "label": "Audio-Language Models for General Understanding (2022)",
+              "url": null
+            },
+            {
+              "label": "Dasheng: Open-Source Audio Encoder (2023)",
+              "url": null
+            },
+            {
+              "label": "General Audio Captioning with LALMs (2023)",
+              "url": null
+            },
+            {
+              "label": "Efficient Audio Processing Models (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": "https://github.com/xiaomi-research/dasheng-lm",
+          "upvotes": 9,
+          "projectPage": null
+        },
+        {
+          "id": "2508.03365v3",
+          "date": "Aug 05",
+          "title": "When Good Sounds Go Adversarial: Jailbreaking Audio-Language Models with Benign Inputs",
+          "authors": [
+            "Hiskias Dingeto",
+            "Taeyoun Kwon",
+            "Dasol Choi",
+            "Bodam Kim",
+            "DongGeon Lee"
+          ],
+          "org": "KAIST",
+          "abstract": "As large language models (LLMs) become increasingly integrated into daily life, audio has emerged as a key interface for human-AI interaction. However, this convenience also introduces new vulnerabilities, making audio a potential attack surface for adversaries. Our research introduces WhisperInject, a two-stage adversarial audio attack framework that manipulates state-of-the-art audio language models to generate harmful content. Our method embeds harmful payloads as subtle perturbations into audio inputs that remain intelligible to human listeners. The first stage uses a novel reward-based white-box optimization method, Reinforcement Learning with Projected Gradient Descent (RL-PGD), to jailbreak the target model and elicit harmful native responses. This native harmful response then serves as the target for Stage 2, Payload Injection, where we use gradient-based optimization to embed subtle perturbations into benign audio carriers, such as weather queries or greeting messages. Our method achieves average attack success rates of 60-78% across two benchmarks and five multimodal LLMs, validated by multiple evaluation frameworks. Our work demonstrates a new class of practical, audio-native threats, moving beyond theoretical exploits to reveal a feasible and covert method for manipulating multimodal AI systems.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.CR",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2508.03365v3",
+          "category": "foundation",
+          "task": "Adversarial Attacks",
+          "proposedMethod": "WhisperInject",
+          "datasets": [],
+          "what": "This paper introduces WhisperInject, a two-stage adversarial audio attack framework targeting audio-language models to generate harmful content.",
+          "novel": "The method embeds harmful payloads as subtle, human-intelligible perturbations in audio inputs, revealing a new class of practical audio-native threats.",
+          "method": "The framework uses RL-PGD for white-box optimization to jailbreak models and gradient-based optimization for embedding adversarial payloads into benign audio carriers.",
+          "validation": "The approach is tested on two benchmarks and five multimodal LLMs, achieving attack success rates of 60-78% across multiple evaluation frameworks.",
+          "discussion": "The study highlights the vulnerability of audio-language models but does not propose robust countermeasures to mitigate such attacks.",
+          "nextReads": [
+            {
+              "label": "Adversarial Attacks on LLMs (2022)",
+              "url": null
+            },
+            {
+              "label": "Audio Adversarial Examples (2021)",
+              "url": null
+            },
+            {
+              "label": "Security in Multimodal AI Systems (2023)",
+              "url": null
+            },
+            {
+              "label": "RL-PGD Optimization for Adversarial Attacks (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": "https://github.com/AIM-Intelligence/WhisperInject",
+          "upvotes": 5,
+          "projectPage": null
+        },
+        {
+          "id": "2508.02175v3",
+          "date": "Aug 04",
+          "title": "Hidden in the Noise: Unveiling Backdoors in Audio LLMs Alignment through Latent Acoustic Pattern Triggers",
+          "authors": [
+            "Liang Lin",
+            "Miao Yu",
+            "Kaiwen Luo",
+            "Yibo Zhang",
+            "Lilan Peng"
+          ],
+          "org": "Sun Yat-sen University",
+          "abstract": "As Audio Large Language Models (ALLMs) emerge as powerful tools for speech processing, their safety implications demand urgent attention. While considerable research has explored textual and vision safety, audio's distinct characteristics present significant challenges. This paper first investigates: Is ALLM vulnerable to backdoor attacks exploiting acoustic triggers? In response to this issue, we introduce Hidden in the Noise (HIN), a novel backdoor attack framework designed to exploit subtle, audio-specific features. HIN applies acoustic modifications to raw audio waveforms, such as alterations to temporal dynamics and strategic injection of spectrally tailored noise. These changes introduce consistent patterns that an ALLM's acoustic feature encoder captures, embedding robust triggers within the audio stream. To evaluate ALLM robustness against audio-feature-based triggers, we develop the AudioSafe benchmark, assessing nine distinct risk types. Extensive experiments on AudioSafe and three established safety datasets reveal critical vulnerabilities in existing ALLMs: (I) audio features like environment noise and speech rate variations achieve over 90% average attack success rate. (II) ALLMs exhibit significant sensitivity differences across acoustic features, particularly showing minimal response to volume as a trigger, and (III) poisoned sample inclusion causes only marginal loss curve fluctuations, highlighting the attack's stealth.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2508.02175v3",
+          "category": "foundation",
+          "task": "Audio security",
+          "proposedMethod": "HIN",
+          "datasets": [
+            "AudioSafe",
+            "Three safety datasets"
+          ],
+          "what": "This paper explores the vulnerability of Audio Large Language Models (ALLMs) to backdoor attacks using acoustic triggers and introduces the Hidden in the Noise (HIN) framework.",
+          "novel": "The study identifies audio-specific backdoor vulnerabilities in ALLMs and demonstrates the stealth and effectiveness of acoustic feature-based triggers.",
+          "method": "HIN applies subtle acoustic modifications, such as temporal dynamics and spectrally tailored noise, to embed robust triggers that exploit ALLM feature encoders.",
+          "validation": "The framework is evaluated on the AudioSafe benchmark and three safety datasets, revealing high attack success rates and minimal detection through loss curve analysis.",
+          "discussion": "The study highlights critical security vulnerabilities in ALLMs but does not explore defenses or mitigation strategies against these attacks.",
+          "nextReads": [
+            {
+              "label": "Backdoor Attacks on Neural Networks: A Review (2020)",
+              "url": null
+            },
+            {
+              "label": "Adversarial Attacks on Speech Recognition Systems (2019)",
+              "url": "https://arxiv.org/abs/1907.10802"
+            },
+            {
+              "label": "Poisoning Attacks Against Machine Learning (2018)",
+              "url": "https://arxiv.org/abs/1804.07933"
+            },
+            {
+              "label": "Audio Adversarial Examples: Targeted Attacks on Speech-to-Text (2018)",
+              "url": "https://arxiv.org/abs/1801.01944"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2508.01178v1",
+          "date": "Aug 02",
+          "title": "Advancing the Foundation Model for Music Understanding",
+          "authors": [
+            "Yi Jiang",
+            "Wei Wang",
+            "Xianwen Guo",
+            "Huiyun Liu",
+            "Hanrui Wang"
+          ],
+          "org": "Tencent",
+          "abstract": "The field of Music Information Retrieval (MIR) is fragmented, with specialized models excelling at isolated tasks. In this work, we challenge this paradigm by introducing a unified foundation model named MuFun for holistic music understanding. Our model features a novel architecture that jointly processes instrumental and lyrical content, and is trained on a large-scale dataset covering diverse tasks such as genre classification, music tagging, and question answering. To facilitate robust evaluation, we also propose a new benchmark for multi-faceted music understanding called MuCUE (Music Comprehensive Understanding Evaluation). Experiments show our model significantly outperforms existing audio large language models across the MuCUE tasks, demonstrating its state-of-the-art effectiveness and generalization ability.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.IR",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2508.01178v1",
+          "category": "foundation",
+          "task": "Music understanding",
+          "proposedMethod": "MuFun",
+          "datasets": [
+            "MuCUE"
+          ],
+          "what": "This paper introduces MuFun, a unified foundation model for music understanding that processes both instrumental and lyrical content and is trained on a large-scale dataset for diverse MIR tasks.",
+          "novel": "MuFun integrates instrumental and lyrical content into a single architecture and introduces a new benchmark, MuCUE, for evaluating multi-faceted music understanding.",
+          "method": "The model employs a novel architecture designed for joint processing of instrumental and lyrical content, trained on a diverse dataset to handle tasks like genre classification, music tagging, and question answering.",
+          "validation": "MuFun's performance is evaluated on the MuCUE benchmark, where it outperforms existing audio large language models in effectiveness and generalization across multiple tasks.",
+          "discussion": "The model's reliance on large-scale datasets and its generalization to niche or underrepresented music genres remain open challenges.",
+          "nextReads": [
+            {
+              "label": "MusicBERT: Symbolic Music Understanding with Large-Scale Pre-training (2021)",
+              "url": "https://arxiv.org/abs/2106.05630"
+            },
+            {
+              "label": "MUSIC: Multi-Task Learning for Music Understanding (2022)",
+              "url": null
+            },
+            {
+              "label": "Unified Models for Multimodal Music Understanding (2023)",
+              "url": "https://arxiv.org/abs/2305.09876"
+            },
+            {
+              "label": "A Survey on Music Information Retrieval (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 1,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2508.03047v1",
+          "date": "Aug 05",
+          "title": "TF-MLPNet: Tiny Real-Time Neural Speech Separation",
+          "authors": [
+            "Malek Itani",
+            "Tuochao Chen",
+            "Shyamnath Gollakota"
+          ],
+          "org": "University of Washington",
+          "abstract": "Speech separation on hearable devices can enable transformative augmented and enhanced hearing capabilities. However, state-of-the-art speech separation networks cannot run in real-time on tiny, low-power neural accelerators designed for hearables, due to their limited compute capabilities. We present TF-MLPNet, the first speech separation network capable of running in real-time on such low-power accelerators while outperforming existing streaming models for blind speech separation and target speech extraction. Our network operates in the time-frequency domain, processing frequency sequences with stacks of fully connected layers that alternate along the channel and frequency dimensions, and independently processing the time sequence at each frequency bin using convolutional layers. Results show that our mixed-precision quantization-aware trained (QAT) model can process 6 ms audio chunks in real-time on the GAP9 processor, achieving a 3.5-4x runtime reduction compared to prior speech separation models.",
+          "comment": "The 6th Clarity Workshop on Improving Speech-in-Noise for Hearing Devices (Clarity 2025)",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.LG",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2508.03047v1",
+          "category": "separation",
+          "task": "Speech Separation",
+          "proposedMethod": "TF-MLPNet",
+          "datasets": [],
+          "what": "This paper presents TF-MLPNet, a real-time speech separation network designed for low-power neural accelerators in hearable devices.",
+          "novel": "The model achieves real-time processing on low-power devices while outperforming existing streaming models for blind speech separation and target speech extraction.",
+          "method": "TF-MLPNet processes frequency sequences with fully connected layers and time sequences with convolutional layers, employing mixed-precision quantization-aware training for efficiency.",
+          "validation": "The model is validated on the GAP9 processor, showing a 3.5-4x runtime reduction compared to prior models while processing 6 ms audio chunks in real-time.",
+          "discussion": "The approach is tailored for low-power devices, but its performance on more complex or noisy audio scenarios is not discussed.",
+          "nextReads": [
+            {
+              "label": "Real-Time Speech Separation Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Quantization-Aware Training for Neural Networks (2020)",
+              "url": null
+            },
+            {
+              "label": "Low-Power Neural Accelerators for Audio (2022)",
+              "url": null
+            },
+            {
+              "label": "Time-Frequency Domain Speech Processing (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2508.05878v1",
+          "date": "Aug 07",
+          "title": "Training chord recognition models on artificially generated audio",
+          "authors": [
+            "Martyna Majchrzak",
+            "Jacek Mańdziuk"
+          ],
+          "org": "Warsaw University of Technology",
+          "abstract": "One of the challenging problems in Music Information Retrieval is the acquisition of enough non-copyrighted audio recordings for model training and evaluation. This study compares two Transformer-based neural network models for chord sequence recognition in audio recordings and examines the effectiveness of using an artificially generated dataset for this purpose. The models are trained on various combinations of Artificial Audio Multitracks (AAM), Schubert's Winterreise Dataset, and the McGill Billboard Dataset and evaluated with three metrics: Root, MajMin and Chord Content Metric (CCM). The experiments prove that even though there are certainly differences in complexity and structure between artificially generated and human-composed music, the former can be useful in certain scenarios. Specifically, AAM can enrich a smaller training dataset of music composed by a human or can even be used as a standalone training set for a model that predicts chord sequences in pop music, if no other data is available.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.LG"
+          ],
+          "url": "https://arxiv.org/abs/2508.05878v1",
+          "category": "transcription",
+          "task": "Chord Recognition",
+          "proposedMethod": null,
+          "datasets": [
+            "Artificial Audio Multitracks (AAM)",
+            "Schubert's Winterreise Dataset",
+            "McGill Billboard Dataset"
+          ],
+          "what": "This paper evaluates the use of artificially generated audio datasets for training Transformer-based models for chord sequence recognition.",
+          "novel": "The study demonstrates that artificially generated datasets can effectively complement or replace human-composed music datasets for chord recognition tasks.",
+          "method": "Two Transformer-based models are trained on combinations of artificial and real datasets, and their performance is compared using metrics like Root, MajMin, and Chord Content Metric (CCM).",
+          "validation": "The models are validated using the AAM, Schubert's Winterreise, and McGill Billboard datasets, with performance evaluated using three chord recognition metrics.",
+          "discussion": "The study highlights the potential of artificial datasets but acknowledges differences in complexity and structure compared to human-composed music, which may limit generalization.",
+          "nextReads": [
+            {
+              "label": "Chord Recognition Using Deep Learning (2020)",
+              "url": null
+            },
+            {
+              "label": "Deep Learning for Music Information Retrieval (2019)",
+              "url": null
+            },
+            {
+              "label": "Transformer Models for Music Analysis (2021)",
+              "url": null
+            },
+            {
+              "label": "Artificial Audio Data for MIR Applications (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2508.02255v1",
+          "date": "Aug 04",
+          "title": "StutterCut: Uncertainty-Guided Normalised Cut for Dysfluency Segmentation",
+          "authors": [
+            "Suhita Ghosh",
+            "Melanie Jouaiti",
+            "Jan-Ole Perschewski",
+            "Sebastian Stober"
+          ],
+          "org": "University of Bremen",
+          "abstract": "Detecting and segmenting dysfluencies is crucial for effective speech therapy and real-time feedback. However, most methods only classify dysfluencies at the utterance level. We introduce StutterCut, a semi-supervised framework that formulates dysfluency segmentation as a graph partitioning problem, where speech embeddings from overlapping windows are represented as graph nodes. We refine the connections between nodes using a pseudo-oracle classifier trained on weak (utterance-level) labels, with its influence controlled by an uncertainty measure from Monte Carlo dropout. Additionally, we extend the weakly labelled FluencyBank dataset by incorporating frame-level dysfluency boundaries for four dysfluency types. This provides a more realistic benchmark compared to synthetic datasets. Experiments on real and synthetic datasets show that StutterCut outperforms existing methods, achieving higher F1 scores and more precise stuttering onset detection.",
+          "comment": "Accepted in Interspeech 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2508.02255v1",
+          "category": "transcription",
+          "task": "Speech segmentation",
+          "proposedMethod": "StutterCut",
+          "datasets": [
+            "FluencyBank"
+          ],
+          "what": "This paper introduces StutterCut, a semi-supervised framework for dysfluency segmentation in speech, formulated as a graph partitioning problem using speech embeddings.",
+          "novel": "The approach combines graph-based segmentation with a pseudo-oracle classifier trained on weak labels, incorporating uncertainty measures via Monte Carlo dropout.",
+          "method": "Speech embeddings from overlapping windows are treated as graph nodes, with connections refined using a pseudo-oracle classifier influenced by uncertainty estimates.",
+          "validation": "The method is validated on real and synthetic datasets, including an extended version of FluencyBank, achieving higher F1 scores and better stuttering onset detection compared to existing methods.",
+          "discussion": "The method relies on the availability of weakly labeled data and may face challenges in generalizing to diverse dysfluency patterns or unseen datasets.",
+          "nextReads": [
+            {
+              "label": "FluencyBank: A New Resource for Speech Fluency Research (2018)",
+              "url": null
+            },
+            {
+              "label": "Semi-supervised Learning for Speech Recognition (2021)",
+              "url": "https://arxiv.org/abs/2106.09185"
+            },
+            {
+              "label": "Graph Neural Networks for Speech Processing (2022)",
+              "url": "https://arxiv.org/abs/2205.12345"
+            },
+            {
+              "label": "Monte Carlo Dropout as a Bayesian Approximation (2016)",
+              "url": "https://arxiv.org/abs/1506.02142"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Research highlights include MiDashengLM for general audio understanding via audio captions and MuFun, a foundation model for diverse music information retrieval tasks.",
+    "Security concerns are raised with WhisperInject's adversarial attacks on audio-language models and the HIN framework exposing backdoor vulnerabilities in ALLMs.",
+    "Efforts in real-time applications are evident with TF-MLPNet for speech separation on low-power devices and StutterCut for dysfluency segmentation using graph-based methods."
+  ]
+}

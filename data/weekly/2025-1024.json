@@ -1,0 +1,378 @@
+{
+  "date": "2025-1024",
+  "generated_at": "2025-10-24T00:00:00+00:00",
+  "total": 10,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2510.20850v1",
+          "date": "Oct 21",
+          "title": "Can large audio language models understand child stuttering speech? speech summarization, and source separation",
+          "authors": [
+            "Chibuzor Okocha",
+            "Maya Bakri",
+            "Christan Grant"
+          ],
+          "org": "Chibuzor Okocha / Maya Bakri / Christan Grant",
+          "abstract": "Child speech differs from adult speech in acoustics, prosody, and language development, and disfluencies (repetitions, prolongations, blocks) further challenge Automatic Speech Recognition (ASR) and downstream Natural Language Processing (NLP). Recent large audio-language models (LALMs) demonstrate strong cross-modal audio understanding; however, their behavior in disfluent child speech remains underexplored. We evaluate several state-of-the-art LALMs in two settings: an interview (mixed speakers) and a reading task (single child). The tasks are (i) single-channel source separation to isolate the child and (ii) child-only summarization that preserves clinically relevant disfluencies and avoids adult-speech leakage.   Evaluation combines Large Language Model (LLM) as a judge, human expert ratings, and BERTScore (F1), and we report agreement between models and between models and humans to assess reliability. Our findings delineate the conditions under which LALMs produce faithful child-only summaries from mixed audio and where they fail, offering practical guidance for clinical and educational deployments. We provide prompts and evaluation scripts to support replication.",
+          "comment": "7 pages, 1 Figure, 8 tables, Under review ICASSP 2026",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.CL",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2510.20850v1",
+          "category": "foundation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2510.18423v1",
+          "date": "Oct 21",
+          "title": "ProLAP: Probabilistic Language-Audio Pre-Training",
+          "authors": [
+            "Toranosuke Manabe",
+            "Yuchi Ishikawa",
+            "Hokuto Munakata",
+            "Tatsuya Komatsu"
+          ],
+          "org": "Toranosuke Manabe et al.",
+          "abstract": "Language-audio joint representation learning frameworks typically depend on deterministic embeddings, assuming a one-to-one correspondence between audio and text. In real-world settings, however, the language-audio relationship is inherently many-to-many: one audio segment can be described by multiple captions and vice versa. To address this, we propose Probabilistic Language-Audio Pre-training (ProLAP), which models multiplicity as the spread of probability distributions in a joint language-audio embedding space. To train the intra-modal hierarchical relationship effectively, we also introduce two objectives: (i) hierarchical inclusion loss to promote semantic hierarchical understanding of inputs and (ii) mask repulsive loss to improve the efficiency of learning when optimizing the hierarchical inclusion loss. With this training strategy, our model can learn the hierarchical structure inherent in the data even from small datasets, in contrast to prior probabilistic approaches that rely on large-scale datasets. In our experiments, ProLAP outperforms existing deterministic approaches on audio-text retrieval tasks. Moreover, through experiments on the audio traversal task introduced in this paper, we demonstrate that ProLAP captures the plausible semantic hierarchy.",
+          "comment": "Under review",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2510.18423v1",
+          "category": "foundation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2510.18169v1",
+          "date": "Oct 20",
+          "title": "Hearing Health in Home Healthcare: Leveraging LLMs for Illness Scoring and ALMs for Vocal Biomarker Extraction",
+          "authors": [
+            "Yu-Wen Chen",
+            "William Ho",
+            "Sasha M. Vergez",
+            "Grace Flaherty",
+            "Pallavi Gupta"
+          ],
+          "org": "Yu-Wen Chen et al.",
+          "abstract": "The growing demand for home healthcare calls for tools that can support care delivery. In this study, we explore automatic health assessment from voice using real-world home care visit data, leveraging the diverse patient information it contains. First, we utilize Large Language Models (LLMs) to integrate Subjective, Objective, Assessment, and Plan (SOAP) notes derived from unstructured audio transcripts and structured vital signs into a holistic illness score that reflects a patient's overall health. This compact representation facilitates cross-visit health status comparisons and downstream analysis. Next, we design a multi-stage preprocessing pipeline to extract short speech segments from target speakers in home care recordings for acoustic analysis. We then employ an Audio Language Model (ALM) to produce plain-language descriptions of vocal biomarkers and examine their association with individuals' health status. Our experimental results benchmark both commercial and open-source LLMs in estimating illness scores, demonstrating their alignment with actual clinical outcomes, and revealing that SOAP notes are substantially more informative than vital signs. Building on the illness scores, we provide the first evidence that ALMs can identify health-related acoustic patterns from home care recordings and present them in a human-readable form. Together, these findings highlight the potential of LLMs and ALMs to harness heterogeneous in-home visit data for better patient monitoring and care.",
+          "comment": "The Second Workshop on GenAI for Health at NeurIPS 2025",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2510.18169v1",
+          "category": "foundation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2510.21014v2",
+          "date": "Oct 23",
+          "title": "ReFESS-QI: Reference-Free Evaluation For Speech Separation With Joint Quality And Intelligibility Scoring",
+          "authors": [
+            "Ari Frummer",
+            "Helin Wang",
+            "Tianyu Cao",
+            "Adi Arbel",
+            "Yuval Sieradzki"
+          ],
+          "org": "Ari Frummer et al.",
+          "abstract": "Source separation is a crucial pre-processing step for various speech processing tasks, such as automatic speech recognition (ASR). Traditionally, the evaluation metrics for speech separation rely on the matched reference audios and corresponding transcriptions to assess audio quality and intelligibility. However, they cannot be used to evaluate real-world mixtures for which no reference exists. This paper introduces a text-free reference-free evaluation framework based on self-supervised learning (SSL) representations. The proposed framework utilize the mixture and separated tracks to predict jointly audio quality, through the Scale Invariant Signal to Noise Ratio (SI-SNR) metric, and speech intelligibility through the Word Error Rate (WER) metric. We conducted experiments on the WHAMR! dataset, which shows a WER estimation with a mean absolute error (MAE) of 17% and a Pearson correlation coefficient (PCC) of 0.77; and SI-SNR estimation with an MAE of 1.38 and PCC of 0.95. We further demonstrate the robustness of our estimator by using various SSL representations.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2510.21014v2",
+          "category": "separation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2510.20677v1",
+          "date": "Oct 23",
+          "title": "R2-SVC: Towards Real-World Robust and Expressive Zero-shot Singing Voice Conversion",
+          "authors": [
+            "Junjie Zheng",
+            "Gongyu Chen",
+            "Chaofan Ding",
+            "Zihao Chen"
+          ],
+          "org": "Junjie Zheng et al.",
+          "abstract": "In real-world singing voice conversion (SVC) applications, environmental noise and the demand for expressive output pose significant challenges. Conventional methods, however, are typically designed without accounting for real deployment scenarios, as both training and inference usually rely on clean data. This mismatch hinders practical use, given the inevitable presence of diverse noise sources and artifacts from music separation. To tackle these issues, we propose R2-SVC, a robust and expressive SVC framework. First, we introduce simulation-based robustness enhancement through random fundamental frequency ($F_0$) perturbations and music separation artifact simulations (e.g., reverberation, echo), substantially improving performance under noisy conditions. Second, we enrich speaker representation using domain-specific singing data: alongside clean vocals, we incorporate DNSMOS-filtered separated vocals and public singing corpora, enabling the model to preserve speaker timbre while capturing singing style nuances. Third, we integrate the Neural Source-Filter (NSF) model to explicitly represent harmonic and noise components, enhancing the naturalness and controllability of converted singing. R2-SVC achieves state-of-the-art results on multiple SVC benchmarks under both clean and noisy conditions.",
+          "comment": "5 pages, 2 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2510.20677v1",
+          "category": "separation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2510.20441v1",
+          "date": "Oct 23",
+          "title": "UniSE: A Unified Framework for Decoder-only Autoregressive LM-based Speech Enhancement",
+          "authors": [
+            "Haoyin Yan",
+            "Chengwei Liu",
+            "Shaofei Xue",
+            "Xiaotao Liang",
+            "Zheng Xue"
+          ],
+          "org": "Haoyin Yan et al.",
+          "abstract": "The development of neural audio codecs (NACs) has largely promoted applications of language models (LMs) to speech processing and understanding. However, there lacks the verification on the effectiveness of autoregressive (AR) LMbased models in unifying different sub-tasks of speech enhancement (SE). In this work, we propose UniSE, a unified decoder-only LM-based framework to handle different SE tasks including speech restoration, target speaker extraction and speech separation. It takes input speech features as conditions and generates discrete tokens of the target speech using AR modeling, which facilitates a compatibility between distinct learning patterns of multiple tasks. Experiments on several benchmarks indicate the proposed UniSE can achieve competitive performance compared to discriminative and generative baselines, showing the capacity of LMs in unifying SE tasks. The demo page is available here: https://github.com/hyyan2k/UniSE.",
+          "comment": "5 pages, submitted to ICASSP 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2510.20441v1",
+          "category": "separation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": "https://github.com/hyyan2k/UniSE"
+        },
+        {
+          "id": "2510.19439v1",
+          "date": "Oct 22",
+          "title": "Relative Transfer Matrix Estimator using Covariance Subtraction",
+          "authors": [
+            "Wageesha N. Manamperi",
+            "Thushara D. Abhayapala"
+          ],
+          "org": "Wageesha N. Manamperi / Thushara D. Abhayapala",
+          "abstract": "The Relative Transfer Matrix (ReTM), recently introduced as a generalization of the relative transfer function for multiple receivers and sources, shows promising performance when applied to speech enhancement and speaker separation in noisy environments. Blindly estimating the ReTM of sound sources by exploiting the covariance matrices of multichannel recordings is highly beneficial for practical applications. In this paper, we use covariance subtraction to present a flexible and practically viable method for estimating the ReTM for a select set of independent sound sources. To show the versatility of the method, we validated it through a speaker separation application under reverberant conditions. Separation performance is evaluated at low signal-to-noise ratio levels in comparison with existing ReTM-based and relative transfer function-based estimators, in both simulated and real-life environments.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2510.19439v1",
+          "category": "separation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2510.15409v1",
+          "date": "Oct 17",
+          "title": "Towards Blind Data Cleaning: A Case Study in Music Source Separation",
+          "authors": [
+            "Azalea Gui",
+            "Woosung Choi",
+            "Junghyun Koo",
+            "Kazuki Shimada",
+            "Takashi Shibuya"
+          ],
+          "org": "Azalea Gui et al.",
+          "abstract": "The performance of deep learning models for music source separation heavily depends on training data quality. However, datasets are often corrupted by difficult-to-detect artifacts such as audio bleeding and label noise. Since the type and extent of contamination are typically unknown, cleaning methods targeting specific corruptions are often impractical. This paper proposes and evaluates two distinct, noise-agnostic data cleaning methods to address this challenge. The first approach uses data attribution via unlearning to identify and filter out training samples that contribute the least to producing clean outputs. The second leverages the Fréchet Audio Distance to measure and remove samples that are perceptually dissimilar to a small and trusted clean reference set. On a dataset contaminated with a simulated distribution of real-world noise, our unlearning-based methods produced a cleaned dataset and a corresponding model that outperforms both the original contaminated data and the small clean reference set used for cleaning. This result closes approximately 66.7\\% of the performance gap between the contaminated baseline and a model trained on the same dataset without any contamination. Unlike methods tailored for specific artifacts, our noise-agnostic approaches offer a more generic and broadly applicable solution for curating high-quality training data.",
+          "comment": "Submitted to IEEE ICASSP 2026",
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2510.15409v1",
+          "category": "separation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2510.18190v2",
+          "date": "Oct 21",
+          "title": "Joint Estimation of Piano Dynamics and Metrical Structure with a Multi-task Multi-Scale Network",
+          "authors": [
+            "Zhanhong He",
+            "Hanyu Meng",
+            "David Huang",
+            "Roberto Togneri"
+          ],
+          "org": "Zhanhong He et al.",
+          "abstract": "Estimating piano dynamic from audio recordings is a fundamental challenge in computational music analysis. In this paper, we propose an efficient multi-task network that jointly predicts dynamic levels, change points, beats, and downbeats from a shared latent representation. These four targets form the metrical structure of dynamics in the music score. Inspired by recent vocal dynamic research, we use a multi-scale network as the backbone, which takes Bark-scale specific loudness as the input feature. Compared to log-Mel as input, this reduces model size from 14.7 M to 0.5 M, enabling long sequential input. We use a 60-second audio length in audio segmentation, which doubled the length of beat tracking commonly used. Evaluated on the public MazurkaBL dataset, our model achieves state-of-the-art results across all tasks. This work sets a new benchmark for piano dynamic estimation and delivers a powerful and compact tool, paving the way for large-scale, resource-efficient analysis of musical expression.",
+          "comment": "Accepted to ICASSP2026 conference",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.LG",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2510.18190v2",
+          "category": "transcription",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": 1,
+          "githubRepo": "https://github.com/zhanh-he/piano-dynamic-estimation",
+          "upvotes": 1,
+          "projectPage": null
+        },
+        {
+          "id": "2510.16273v1",
+          "date": "Oct 18",
+          "title": "MuseTok: Symbolic Music Tokenization for Generation and Semantic Understanding",
+          "authors": [
+            "Jingyue Huang",
+            "Zachary Novack",
+            "Phillip Long",
+            "Yupeng Hou",
+            "Ke Chen"
+          ],
+          "org": "Jingyue Huang et al.",
+          "abstract": "Discrete representation learning has shown promising results across various domains, including generation and understanding in image, speech and language. Inspired by these advances, we propose MuseTok, a tokenization method for symbolic music, and investigate its effectiveness in both music generation and understanding tasks. MuseTok employs the residual vector quantized-variational autoencoder (RQ-VAE) on bar-wise music segments within a Transformer-based encoder-decoder framework, producing music codes that achieve high-fidelity music reconstruction and accurate understanding of music theory. For comprehensive evaluation, we apply MuseTok to music generation and semantic understanding tasks, including melody extraction, chord recognition, and emotion recognition. Models incorporating MuseTok outperform previous representation learning baselines in semantic understanding while maintaining comparable performance in content generation. Furthermore, qualitative analyses on MuseTok codes, using ground-truth categories and synthetic datasets, reveal that MuseTok effectively captures underlying musical concepts from large music collections.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2510.16273v1",
+          "category": "transcription",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Analyzing this week's audio foundation model research trends.",
+    "Many new approaches for source separation and music transcription were submitted.",
+    "See the individual papers for details."
+  ]
+}

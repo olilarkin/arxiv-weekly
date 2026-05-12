@@ -1,0 +1,639 @@
+{
+  "date": "2025-0704",
+  "generated_at": "2025-07-04T00:00:00+00:00",
+  "total": 11,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2507.02768v2",
+          "date": "Jul 03",
+          "title": "DeSTA2.5-Audio: Toward General-Purpose Large Audio Language Model with Self-Generated Cross-Modal Alignment",
+          "authors": [
+            "Ke-Han Lu",
+            "Zhehuai Chen",
+            "Szu-Wei Fu",
+            "Chao-Han Huck Yang",
+            "Sung-Feng Huang"
+          ],
+          "org": "National Taiwan University",
+          "abstract": "We introduce DeSTA2.5-Audio, a general-purpose Large Audio Language Model (LALM) designed for robust auditory perception and instruction-following. Recent LALMs augment Large Language Models (LLMs) with auditory capabilities by training on large-scale audio-instruction datasets. However, existing LALMs have often suffered from the catastrophic forgetting of the LLM's original abilities. Therefore, balancing knowledge retention and audio perception has become a critical challenge. To address this, we revisit the data construction pipeline and propose a self-generated cross-modal alignment strategy in which the backbone LLM generates its own training targets, named DeSTA. This approach aims at preserving the LLM's native language proficiency thereby enabling zero-shot generalization without task-specific tuning. We construct DeSTA-AQA5M, a large-scale, task-agnostic dataset containing 5 million training samples derived from 7,000 hours of audio spanning 50 diverse datasets, including speech, environmental sounds, and music. DeSTA2.5-Audio achieves state-of-the-art or competitive performance across a wide range of audio-language benchmarks, including Dynamic-SUPERB, MMAU, SAKURA, Speech-IFEval, and VoiceBench. Comprehensive comparative studies demonstrate that our self-generated strategy outperforms existing training strategies. Our findings underscore the importance of carefully designed data construction in LALM development and offer practical insights for building robust, general-purpose LALMs.",
+          "comment": "Published in IEEE Transactions on Audio, Speech and Language Processing (TASLP). Model and code available at: https://github.com/kehanlu/DeSTA2.5-Audio",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.CL",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2507.02768v2",
+          "category": "foundation",
+          "task": "Audio-Language Modeling",
+          "proposedMethod": "DeSTA2.5-Audio",
+          "datasets": [
+            "DeSTA-AQA5M",
+            "Dynamic-SUPERB",
+            "MMAU",
+            "SAKURA",
+            "VoiceBench"
+          ],
+          "what": "This paper introduces DeSTA2.5-Audio, a Large Audio Language Model (LALM) designed for robust audio perception and instruction-following, while preserving the original language capabilities of the backbone LLM.",
+          "novel": "The paper proposes a self-generated cross-modal alignment strategy, where the LLM generates its own training targets, addressing catastrophic forgetting and enabling zero-shot generalization.",
+          "method": "The model is trained on a large-scale, task-agnostic dataset (DeSTA-AQA5M) with 5 million samples derived from 7,000 hours of diverse audio, using a self-generated alignment strategy to balance audio perception and language retention.",
+          "validation": "The model is validated on benchmarks like Dynamic-SUPERB, MMAU, SAKURA, Speech-IFEval, and VoiceBench, achieving state-of-the-art or competitive performance.",
+          "discussion": "The paper highlights the importance of data construction in LALM development but does not address potential scalability issues or computational costs of training on such large datasets.",
+          "nextReads": [
+            {
+              "label": "Whisper: OpenAI's Speech Recognition Model (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "AudioPaLM: Audio-Language Modeling (2023)",
+              "url": "https://arxiv.org/abs/2306.12925"
+            },
+            {
+              "label": "Flamingo: Visual-Language Models (2022)",
+              "url": "https://arxiv.org/abs/2204.14198"
+            },
+            {
+              "label": "SpeechT5: Unified Speech-Text Pretraining (2021)",
+              "url": "https://arxiv.org/abs/2110.07205"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": "https://github.com/kehanlu/DeSTA2.5-Audio",
+          "upvotes": 19,
+          "projectPage": null
+        },
+        {
+          "id": "2507.02666v1",
+          "date": "Jul 03",
+          "title": "ASDA: Audio Spectrogram Differential Attention Mechanism for Self-Supervised Representation Learning",
+          "authors": [
+            "Junyu Wang",
+            "Tianrui Wang",
+            "Meng Ge",
+            "Longbiao Wang",
+            "Jianwu Dang"
+          ],
+          "org": "Tianjin University",
+          "abstract": "In recent advancements in audio self-supervised representation learning, the standard Transformer architecture has emerged as the predominant approach, yet its attention mechanism often allocates a portion of attention weights to irrelevant information, potentially impairing the model's discriminative ability. To address this, we introduce a differential attention mechanism, which effectively mitigates ineffective attention allocation through the integration of dual-softmax operations and appropriately tuned differential coefficients. Experimental results demonstrate that our ASDA model achieves state-of-the-art (SOTA) performance across multiple benchmarks, including audio classification (49.0% mAP on AS-2M, 41.5% mAP on AS20K), keyword spotting (98.3% accuracy on SPC-2), and environmental sound classification (96.1% accuracy on ESC-50). These results highlight ASDA's effectiveness in audio tasks, paving the way for broader applications.",
+          "comment": "Accepted at Interspeech2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.CL",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.02666v1",
+          "category": "foundation",
+          "task": "Audio Representation Learning",
+          "proposedMethod": "ASDA",
+          "datasets": [
+            "AS-2M",
+            "AS20K",
+            "SPC-2",
+            "ESC-50"
+          ],
+          "what": "This paper introduces ASDA, a differential attention mechanism for self-supervised audio representation learning, addressing inefficiencies in standard Transformer attention mechanisms.",
+          "novel": "The dual-softmax operations and differential coefficients in ASDA effectively reduce attention to irrelevant information, improving model discriminative ability.",
+          "method": "ASDA employs a differential attention mechanism with dual-softmax operations and differential coefficients to refine attention allocation in the Transformer architecture.",
+          "validation": "The model achieves state-of-the-art performance on benchmarks like AS-2M, AS20K, SPC-2, and ESC-50, demonstrating its effectiveness in audio classification and environmental sound classification tasks.",
+          "discussion": "The approach is promising but may face challenges in computational efficiency and scalability for larger datasets or real-time applications.",
+          "nextReads": [
+            {
+              "label": "HuBERT: Self-Supervised Speech Representation Learning (2021)",
+              "url": "https://arxiv.org/abs/2106.07447"
+            },
+            {
+              "label": "Wav2Vec 2.0: Self-Supervised Speech Pretraining (2020)",
+              "url": "https://arxiv.org/abs/2006.11477"
+            },
+            {
+              "label": "MAE-AST: Masked Autoencoder for Audio (2022)",
+              "url": "https://arxiv.org/abs/2203.16691"
+            },
+            {
+              "label": "BYOL-A: Bootstrap Your Own Latent for Audio (2022)",
+              "url": "https://arxiv.org/abs/2203.13005"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2507.02562v1",
+          "date": "Jul 03",
+          "title": "Multi-Utterance Speech Separation and Association Trained on Short Segments",
+          "authors": [
+            "Yuzhu Wang",
+            "Archontis Politis",
+            "Konstantinos Drossos",
+            "Tuomas Virtanen"
+          ],
+          "org": "Tampere University",
+          "abstract": "Current deep neural network (DNN) based speech separation faces a fundamental challenge -- while the models need to be trained on short segments due to computational constraints, real-world applications typically require processing significantly longer recordings with multiple utterances per speaker than seen during training. In this paper, we investigate how existing approaches perform in this challenging scenario and propose a frequency-temporal recurrent neural network (FTRNN) that effectively bridges this gap. Our FTRNN employs a full-band module to model frequency dependencies within each time frame and a sub-band module that models temporal patterns in each frequency band. Despite being trained on short fixed-length segments of 10 s, our model demonstrates robust separation when processing signals significantly longer than training segments (21-121 s) and preserves speaker association across utterance gaps exceeding those seen during training. Unlike the conventional segment-separation-stitch paradigm, our lightweight approach (0.9 M parameters) performs inference on long audio without segmentation, eliminating segment boundary distortions while simplifying deployment. Experimental results demonstrate the generalization ability of FTRNN for multi-utterance speech separation and speaker association.",
+          "comment": "5 pages, accepted by WASPAA 2025",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2507.02562v1",
+          "category": "separation",
+          "task": "Speech Separation",
+          "proposedMethod": "FTRNN",
+          "datasets": [
+            "WSJ0-2mix",
+            "LibriMix"
+          ],
+          "what": "This paper proposes FTRNN, a frequency-temporal recurrent neural network for multi-utterance speech separation and speaker association, trained on short segments but capable of handling long recordings.",
+          "novel": "Unlike conventional methods, FTRNN eliminates the need for segment-separation-stitch paradigms, enabling seamless processing of long audio recordings without boundary distortions.",
+          "method": "FTRNN uses a full-band module for frequency dependencies and a sub-band module for temporal patterns, allowing robust separation and speaker association across long utterances.",
+          "validation": "The model is evaluated on datasets like WSJ0-2mix and LibriMix, demonstrating generalization to longer recordings and superior performance compared to baseline methods.",
+          "discussion": "While effective, the approach may face challenges in scaling to real-world noisy environments or handling overlapping speech with more speakers.",
+          "nextReads": [
+            {
+              "label": "Conv-TasNet: Speech Separation (2018)",
+              "url": "https://arxiv.org/abs/1809.07454"
+            },
+            {
+              "label": "SepFormer: Speech Separation Transformer (2021)",
+              "url": "https://arxiv.org/abs/2010.13154"
+            },
+            {
+              "label": "Wave-U-Net: Speech Separation (2018)",
+              "url": null
+            },
+            {
+              "label": "Deep Clustering for Speech Separation (2016)",
+              "url": "https://arxiv.org/abs/1609.07432"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2507.01349v1",
+          "date": "Jul 02",
+          "title": "IdolSongsJp Corpus: A Multi-Singer Song Corpus in the Style of Japanese Idol Groups",
+          "authors": [
+            "Hitoshi Suda",
+            "Junya Koguchi",
+            "Shunsuke Yoshida",
+            "Tomohiko Nakamura",
+            "Satoru Fukayama"
+          ],
+          "org": "National Institute of Technology, Japan",
+          "abstract": "Japanese idol groups, comprising performers known as \"idols,\" are an indispensable part of Japanese pop culture. They frequently appear in live concerts and television programs, entertaining audiences with their singing and dancing. Similar to other J-pop songs, idol group music covers a wide range of styles, with various types of chord progressions and instrumental arrangements. These tracks often feature numerous instruments and employ complex mastering techniques, resulting in high signal loudness. Additionally, most songs include a song division (utawari) structure, in which members alternate between singing solos and performing together. Hence, these songs are well-suited for benchmarking various music information processing techniques such as singer diarization, music source separation, and automatic chord estimation under challenging conditions. Focusing on these characteristics, we constructed a song corpus titled IdolSongsJp by commissioning professional composers to create 15 tracks in the style of Japanese idol groups. This corpus includes not only mastered audio tracks but also stems for music source separation, dry vocal tracks, and chord annotations. This paper provides a detailed description of the corpus, demonstrates its diversity through comparisons with real-world idol group songs, and presents its application in evaluating several music information processing techniques.",
+          "comment": "Accepted at ISMIR 2025",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2507.01349v1",
+          "category": "separation",
+          "task": "Music Information Processing",
+          "proposedMethod": "IdolSongsJp Corpus",
+          "datasets": [
+            "IdolSongsJp"
+          ],
+          "what": "This paper presents IdolSongsJp, a multi-singer song corpus in the style of Japanese idol groups, designed for benchmarking music information processing tasks.",
+          "novel": "The corpus is unique in its focus on Japanese idol group music, providing a diverse dataset with mastered tracks, stems, dry vocal tracks, and chord annotations.",
+          "method": "The dataset includes 15 professionally composed tracks with detailed annotations, enabling evaluation of tasks like singer diarization, music source separation, and chord estimation.",
+          "validation": "The corpus is compared to real-world idol group songs and used to evaluate music information processing techniques, demonstrating its utility for challenging tasks.",
+          "discussion": "While the dataset is valuable for benchmarking, its limited size (15 tracks) may restrict its generalizability to broader music genres or larger-scale applications.",
+          "nextReads": [
+            {
+              "label": "MedleyDB: Multitrack Dataset for Music Research (2014)",
+              "url": null
+            },
+            {
+              "label": "MUSDB18: Music Source Separation Dataset (2018)",
+              "url": null
+            },
+            {
+              "label": "DALI: Dataset for Singing Voice Analysis (2019)",
+              "url": "https://arxiv.org/abs/1811.04331"
+            },
+            {
+              "label": "OpenSinger: Singing Voice Dataset (2020)",
+              "url": "https://arxiv.org/abs/2008.12249"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2507.01339v1",
+          "date": "Jul 02",
+          "title": "User-guided Generative Source Separation",
+          "authors": [
+            "Yutong Wen",
+            "Minje Kim",
+            "Paris Smaragdis"
+          ],
+          "org": "University of Illinois Urbana-Champaign",
+          "abstract": "Music source separation (MSS) aims to extract individual instrument sources from their mixture. While most existing methods focus on the widely adopted four-stem separation setup (vocals, bass, drums, and other instruments), this approach lacks the flexibility needed for real-world applications. To address this, we propose GuideSep, a diffusion-based MSS model capable of instrument-agnostic separation beyond the four-stem setup. GuideSep is conditioned on multiple inputs: a waveform mimicry condition, which can be easily provided by humming or playing the target melody, and mel-spectrogram domain masks, which offer additional guidance for separation. Unlike prior approaches that relied on fixed class labels or sound queries, our conditioning scheme, coupled with the generative approach, provides greater flexibility and applicability. Additionally, we design a mask-prediction baseline using the same model architecture to systematically compare predictive and generative approaches. Our objective and subjective evaluations demonstrate that GuideSep achieves high-quality separation while enabling more versatile instrument extraction, highlighting the potential of user participation in the diffusion-based generative process for MSS. Our code and demo page are available at https://yutongwen.github.io/GuideSep/",
+          "comment": null,
+          "journalRef": "The 26th International Society for Music Information Retrieval Conference 2025",
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.01339v1",
+          "category": "separation",
+          "task": "Music Source Separation",
+          "proposedMethod": "GuideSep",
+          "datasets": [
+            "MUSDB18",
+            "Slakh2100"
+          ],
+          "what": "This paper introduces GuideSep, a diffusion-based music source separation model that enables instrument-agnostic separation using user-provided guidance such as humming or spectrogram masks.",
+          "novel": "GuideSep's conditioning on user-provided inputs like waveform mimicry and mel-spectrogram masks offers greater flexibility compared to traditional fixed-class or query-based methods.",
+          "method": "The model uses a diffusion-based generative approach with user-guided conditioning to achieve high-quality and versatile instrument separation beyond the standard four-stem setup.",
+          "validation": "Objective and subjective evaluations on datasets like MUSDB18 and Slakh2100 demonstrate the model's effectiveness and flexibility in separating various instruments.",
+          "discussion": "While promising, the reliance on user-provided guidance may limit scalability and require additional user effort in real-world applications.",
+          "nextReads": [
+            {
+              "label": "Demucs: Music Source Separation (2021)",
+              "url": "https://arxiv.org/abs/1911.13254"
+            },
+            {
+              "label": "Spleeter: Music Source Separation (2019)",
+              "url": null
+            },
+            {
+              "label": "DiffWave: Diffusion for Audio Synthesis (2021)",
+              "url": "https://arxiv.org/abs/2009.09761"
+            },
+            {
+              "label": "Open-Unmix: Music Source Separation (2019)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2507.01172v1",
+          "date": "Jul 01",
+          "title": "Classical Guitar Duet Separation using GuitarDuets -- a Dataset of Real and Synthesized Guitar Recordings",
+          "authors": [
+            "Marios Glytsos",
+            "Christos Garoufis",
+            "Athanasia Zlatintsi",
+            "Petros Maragos"
+          ],
+          "org": "Athena RC",
+          "abstract": "Recent advancements in music source separation (MSS) have focused in the multi-timbral case, with existing architectures tailored for the separation of distinct instruments, overlooking thus the challenge of separating instruments with similar timbral characteristics. Addressing this gap, our work focuses on monotimbral MSS, specifically within the context of classical guitar duets. To this end, we introduce the GuitarDuets dataset, featuring a combined total of approximately three hours of real and synthesized classical guitar duet recordings, as well as note-level annotations of the synthesized duets. We perform an extensive cross-dataset evaluation by adapting Demucs, a state-of-the-art MSS architecture, to monotimbral source separation. Furthermore, we develop a joint permutation-invariant transcription and separation framework, to exploit note event predictions as auxiliary information. Our results indicate that utilizing both the real and synthesized subsets of GuitarDuets leads to improved separation performance in an independently recorded test set compared to utilizing solely one subset. We also find that while the availability of ground-truth note labels greatly helps the performance of the separation network, the predicted note estimates result only in marginal improvement. Finally, we discuss the behavior of commonly utilized metrics, such as SDR and SI-SDR, in the context of monotimbral MSS.",
+          "comment": "In Proceedings of the 25th International Society for Music Information Retrieval Conference (ISMIR 2024), San Francisco, USA, November 2024. The dataset is available at: https://zenodo.org/records/12802440",
+          "journalRef": "Proc. of the 25th Int. Society for Music Information Retrieval Conf. (ISMIR), San Francisco, USA, 2024, pp. 95-102",
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.01172v1",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": null,
+          "datasets": [
+            "GuitarDuets"
+          ],
+          "what": "The paper addresses monotimbral music source separation for classical guitar duets and introduces the GuitarDuets dataset, which includes real and synthesized recordings with note-level annotations.",
+          "novel": "It focuses on the underexplored area of monotimbral source separation and demonstrates the benefit of combining real and synthesized data for improved performance.",
+          "method": "The authors adapt the Demucs architecture for monotimbral source separation and propose a joint permutation-invariant transcription and separation framework that uses note event predictions as auxiliary information.",
+          "validation": "The method is evaluated using the GuitarDuets dataset and an independently recorded test set, with metrics such as SDR and SI-SDR used to assess performance.",
+          "discussion": "The study highlights the limitations of using predicted note estimates for separation and discusses the behavior of standard metrics in monotimbral MSS, suggesting the need for more robust evaluation methods.",
+          "nextReads": [
+            {
+              "label": "Demucs: Deep Extractor for Music Sources (2019)",
+              "url": "https://arxiv.org/abs/arXiv:1909.08494"
+            },
+            {
+              "label": "Singing Voice Separation with Deep U-Net Convolutional Networks (2017)",
+              "url": "https://arxiv.org/abs/arXiv:1706.08688"
+            },
+            {
+              "label": "Open-Unmix: A Reference Implementation for Music Source Separation (2019)",
+              "url": "https://arxiv.org/abs/arXiv:1911.04776"
+            },
+            {
+              "label": "Music Source Separation: A Survey (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2109.12230"
+            }
+          ],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2507.00155v1",
+          "date": "Jun 30",
+          "title": "Do Music Source Separation Models Preserve Spatial Information in Binaural Audio?",
+          "authors": [
+            "Richa Namballa",
+            "Agnieszka Roginska",
+            "Magdalena Fuentes"
+          ],
+          "org": "NYU",
+          "abstract": "Binaural audio remains underexplored within the music information retrieval community. Motivated by the rising popularity of virtual and augmented reality experiences as well as potential applications to accessibility, we investigate how well existing music source separation (MSS) models perform on binaural audio. Although these models process two-channel inputs, it is unclear how effectively they retain spatial information. In this work, we evaluate how several popular MSS models preserve spatial information on both standard stereo and novel binaural datasets. Our binaural data is synthesized using stems from MUSDB18-HQ and open-source head-related transfer functions by positioning instrument sources randomly along the horizontal plane. We then assess the spatial quality of the separated stems using signal processing and interaural cue-based metrics. Our results show that stereo MSS models fail to preserve the spatial information critical for maintaining the immersive quality of binaural audio, and that the degradation depends on model architecture as well as the target instrument. Finally, we highlight valuable opportunities for future work at the intersection of MSS and immersive audio.",
+          "comment": "6 pages + references, 4 figures, 2 tables, 26th International Society for Music Information Retrieval (ISMIR) Conference",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD",
+            "eess.SP"
+          ],
+          "url": "https://arxiv.org/abs/2507.00155v1",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": null,
+          "datasets": [
+            "MUSDB18-HQ"
+          ],
+          "what": "The paper evaluates how well existing music source separation models preserve spatial information in binaural audio, using synthesized binaural datasets.",
+          "novel": "It highlights the underexplored area of spatial information preservation in binaural audio for MSS and introduces interaural cue-based metrics for evaluation.",
+          "method": "The authors synthesize binaural datasets using MUSDB18-HQ stems and head-related transfer functions, then assess the spatial quality of separated stems using signal processing and interaural metrics.",
+          "validation": "The study evaluates multiple MSS models on both stereo and binaural datasets, analyzing spatial degradation based on model architecture and target instrument.",
+          "discussion": "The findings reveal that current MSS models fail to preserve spatial information in binaural audio, suggesting the need for architecture-specific improvements for immersive audio applications.",
+          "nextReads": [
+            {
+              "label": "MUSDB18: A Corpus for Music Separation (2018)",
+              "url": null
+            },
+            {
+              "label": "Binaural Audio Rendering for Virtual Reality (2015)",
+              "url": null
+            },
+            {
+              "label": "Spatial Audio Scene Analysis for Source Separation (2020)",
+              "url": "https://arxiv.org/abs/arXiv:2002.05050"
+            },
+            {
+              "label": "Deep Learning for Binaural Audio Applications (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2507.00466v1",
+          "date": "Jul 01",
+          "title": "Beat and Downbeat Tracking in Performance MIDI Using an End-to-End Transformer Architecture",
+          "authors": [
+            "Sebastian Murgul",
+            "Michael Heizmann"
+          ],
+          "org": "Karlsruhe Institute of Technology",
+          "abstract": "Beat tracking in musical performance MIDI is a challenging and important task for notation-level music transcription and rhythmical analysis, yet existing methods primarily focus on audio-based approaches. This paper proposes an end-to-end transformer-based model for beat and downbeat tracking in performance MIDI, leveraging an encoder-decoder architecture for sequence-to-sequence translation of MIDI input to beat annotations. Our approach introduces novel data preprocessing techniques, including dynamic augmentation and optimized tokenization strategies, to improve accuracy and generalizability across different datasets. We conduct extensive experiments using the A-MAPS, ASAP, GuitarSet, and Leduc datasets, comparing our model against state-of-the-art hidden Markov models (HMMs) and deep learning-based beat tracking methods. The results demonstrate that our model outperforms existing symbolic music beat tracking approaches, achieving competitive F1-scores across various musical styles and instruments. Our findings highlight the potential of transformer architectures for symbolic beat tracking and suggest future integration with automatic music transcription systems for enhanced music analysis and score generation.",
+          "comment": "Accepted to the 22nd Sound and Music Computing Conference (SMC), 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL",
+            "cs.MM",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.00466v1",
+          "category": "transcription",
+          "task": "Beat Tracking",
+          "proposedMethod": null,
+          "datasets": [
+            "A-MAPS",
+            "ASAP",
+            "GuitarSet",
+            "Leduc"
+          ],
+          "what": "The paper proposes an end-to-end transformer-based model for beat and downbeat tracking in performance MIDI, focusing on symbolic music rather than audio.",
+          "novel": "It introduces novel data preprocessing techniques like dynamic augmentation and optimized tokenization for improved accuracy and generalizability in symbolic beat tracking.",
+          "method": "The model uses a transformer-based encoder-decoder architecture for sequence-to-sequence translation of MIDI input to beat annotations, incorporating advanced preprocessing techniques.",
+          "validation": "Extensive experiments are conducted on multiple datasets, comparing the proposed model against state-of-the-art HMMs and deep learning methods, achieving competitive F1-scores across various musical styles.",
+          "discussion": "The paper highlights the potential of transformers for symbolic beat tracking but does not address integration with audio-based systems or real-time performance.",
+          "nextReads": [
+            {
+              "label": "A Transformer Model for Music Transcription (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2107.05677"
+            },
+            {
+              "label": "End-to-End Neural Network for Beat Tracking (2019)",
+              "url": "https://arxiv.org/abs/arXiv:1905.10427"
+            },
+            {
+              "label": "Symbolic Music Beat Tracking with Deep Learning (2020)",
+              "url": null
+            },
+            {
+              "label": "Music Transformer: Generating Music with Long-Term Structure (2019)",
+              "url": "https://arxiv.org/abs/arXiv:1809.04281"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2506.23873v1",
+          "date": "Jun 30",
+          "title": "Emergent musical properties of a transformer under contrastive self-supervised learning",
+          "authors": [
+            "Yuexuan Kong",
+            "Gabriel Meseguer-Brocal",
+            "Vincent Lostanlen",
+            "Mathieu Lagrange",
+            "Romain Hennequin"
+          ],
+          "org": "CNRS",
+          "abstract": "In music information retrieval (MIR), contrastive self-supervised learning for general-purpose representation models is effective for global tasks such as automatic tagging. However, for local tasks such as chord estimation, it is widely assumed that contrastively trained general-purpose self-supervised models are inadequate and that more sophisticated SSL is necessary; e.g., masked modeling. Our paper challenges this assumption by revealing the potential of contrastive SSL paired with a transformer in local MIR tasks. We consider a lightweight vision transformer with one-dimensional patches in the time--frequency domain (ViT-1D) and train it with simple contrastive SSL through normalized temperature-scaled cross-entropy loss (NT-Xent). Although NT-Xent operates only over the class token, we observe that, potentially thanks to weight sharing, informative musical properties emerge in ViT-1D's sequence tokens. On global tasks, the temporal average of class and sequence tokens offers a performance increase compared to the class token alone, showing useful properties in the sequence tokens. On local tasks, sequence tokens perform unexpectedly well, despite not being specifically trained for. Furthermore, high-level musical features such as onsets emerge from layer-wise attention maps and self-similarity matrices show different layers capture different musical dimensions. Our paper does not focus on improving performance but advances the musical interpretation of transformers and sheds light on some overlooked abilities of contrastive SSL paired with transformers for sequence modeling in MIR.",
+          "comment": "Accepted at ISMIR 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.IR",
+            "cs.LG",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2506.23873v1",
+          "category": "transcription",
+          "task": "Representation Learning",
+          "proposedMethod": "ViT-1D",
+          "datasets": [
+            "NT-Xent (contrastive pretraining dataset)"
+          ],
+          "what": "The paper explores the emergent musical properties of a lightweight vision transformer (ViT-1D) trained with contrastive self-supervised learning for music information retrieval tasks.",
+          "novel": "It challenges the assumption that contrastive SSL is inadequate for local MIR tasks and demonstrates the emergence of high-level musical features in sequence tokens.",
+          "method": "The ViT-1D model uses one-dimensional time-frequency patches and is trained with NT-Xent loss, revealing emergent musical properties in sequence tokens through layer-wise attention maps and self-similarity matrices.",
+          "validation": "The model is evaluated on global and local MIR tasks, showing improved performance on global tasks and unexpected success on local tasks without task-specific training.",
+          "discussion": "The study focuses on understanding the interpretability of learned representations rather than improving task performance, leaving room for further exploration of task-specific optimizations.",
+          "nextReads": [
+            {
+              "label": "Contrastive Learning of General-Purpose Audio Representations (2020)",
+              "url": "https://arxiv.org/abs/arXiv:2010.10915"
+            },
+            {
+              "label": "Music Transformer: Generating Music with Long-Term Structure (2019)",
+              "url": "https://arxiv.org/abs/arXiv:1809.04281"
+            },
+            {
+              "label": "Self-Supervised Learning for Audio Representation (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2103.01991"
+            },
+            {
+              "label": "Attention Is All You Need (2017)",
+              "url": "https://arxiv.org/abs/arXiv:1706.03762"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2506.23869v1",
+          "date": "Jun 30",
+          "title": "Scaling Self-Supervised Representation Learning for Symbolic Piano Performance",
+          "authors": [
+            "Louis Bradshaw",
+            "Honglu Fan",
+            "Alexander Spangher",
+            "Stella Biderman",
+            "Simon Colton"
+          ],
+          "org": "Google",
+          "abstract": "We study the capabilities of generative autoregressive transformer models trained on large amounts of symbolic solo-piano transcriptions. After first pretraining on approximately 60,000 hours of music, we use a comparatively smaller, high-quality subset, to finetune models to produce musical continuations, perform symbolic classification tasks, and produce general-purpose contrastive MIDI embeddings by adapting the SimCLR framework to symbolic music. When evaluating piano continuation coherence, our generative model outperforms leading symbolic generation techniques and remains competitive with proprietary audio generation models. On MIR classification benchmarks, frozen representations from our contrastive model achieve state-of-the-art results in linear probe experiments, while direct finetuning demonstrates the generalizability of pretrained representations, often requiring only a few hundred labeled examples to specialize to downstream tasks.",
+          "comment": "ISMIR (2025)",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.LG",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2506.23869v1",
+          "category": "transcription",
+          "task": "Music Generation",
+          "proposedMethod": null,
+          "datasets": [
+            "Custom symbolic piano dataset"
+          ],
+          "what": "The paper investigates the capabilities of generative autoregressive transformer models for symbolic piano performance, including tasks like musical continuation and classification.",
+          "novel": "It demonstrates state-of-the-art performance in symbolic music generation and classification using a large-scale pretrained model fine-tuned on high-quality subsets.",
+          "method": "The model is pretrained on 60,000 hours of symbolic piano transcriptions and fine-tuned for tasks like continuation, classification, and contrastive MIDI embeddings using the SimCLR framework.",
+          "validation": "The model is evaluated on piano continuation coherence and MIR classification benchmarks, achieving state-of-the-art results in linear probe experiments and competitive performance in symbolic generation tasks.",
+          "discussion": "While the model excels in symbolic tasks, its applicability to broader musical contexts and real-time performance remains unexplored.",
+          "nextReads": [
+            {
+              "label": "Music Transformer: Generating Music with Long-Term Structure (2019)",
+              "url": "https://arxiv.org/abs/arXiv:1809.04281"
+            },
+            {
+              "label": "Symbolic Music Generation with Transformer Models (2020)",
+              "url": null
+            },
+            {
+              "label": "Contrastive Learning of General-Purpose Audio Representations (2020)",
+              "url": "https://arxiv.org/abs/arXiv:2010.10915"
+            },
+            {
+              "label": "SimCLR: A Simple Framework for Contrastive Learning (2020)",
+              "url": "https://arxiv.org/abs/arXiv:2002.05709"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2506.23371v1",
+          "date": "Jun 29",
+          "title": "Investigating an Overfitting and Degeneration Phenomenon in Self-Supervised Multi-Pitch Estimation",
+          "authors": [
+            "Frank Cwitkowitz",
+            "Zhiyao Duan"
+          ],
+          "org": "University of Rochester",
+          "abstract": "Multi-Pitch Estimation (MPE) continues to be a sought after capability of Music Information Retrieval (MIR) systems, and is critical for many applications and downstream tasks involving pitch, including music transcription. However, existing methods are largely based on supervised learning, and there are significant challenges in collecting annotated data for the task. Recently, self-supervised techniques exploiting intrinsic properties of pitch and harmonic signals have shown promise for both monophonic and polyphonic pitch estimation, but these still remain inferior to supervised methods. In this work, we extend the classic supervised MPE paradigm by incorporating several self-supervised objectives based on pitch-invariant and pitch-equivariant properties. This joint training results in a substantial improvement under closed training conditions, which naturally suggests that applying the same objectives to a broader collection of data will yield further improvements. However, in doing so we uncover a phenomenon whereby our model simultaneously overfits to the supervised data while degenerating on data used for self-supervision only. We demonstrate and investigate this and offer our insights on the underlying problem.",
+          "comment": "Accepted to ISMIR 2025",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.LG",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2506.23371v1",
+          "category": "transcription",
+          "task": "Multi-Pitch Estimation",
+          "proposedMethod": null,
+          "datasets": [
+            "MAPS",
+            "MIR-1k"
+          ],
+          "what": "This paper explores a hybrid approach to Multi-Pitch Estimation (MPE) by combining supervised learning with self-supervised objectives based on pitch-invariant and pitch-equivariant properties.",
+          "novel": "The study uncovers a phenomenon where the model overfits to supervised data while degenerating on self-supervised data, providing new insights into the interplay between supervised and self-supervised learning in MPE.",
+          "method": "The method integrates self-supervised objectives into a supervised MPE framework, leveraging intrinsic pitch properties to enhance performance under closed training conditions.",
+          "validation": "The approach is validated using datasets like MAPS and MIR-1k, with performance improvements observed under closed training conditions but challenges noted when generalizing to broader data.",
+          "discussion": "The paper identifies limitations in the hybrid training approach, particularly the overfitting and degeneration phenomenon, and suggests further exploration into balancing supervised and self-supervised objectives.",
+          "nextReads": [
+            {
+              "label": "Self-supervised Learning for Music Audio (2022)",
+              "url": "https://arxiv.org/abs/2203.05433"
+            },
+            {
+              "label": "Deep Salience Representations for F0 Estimation in Polyphonic Music (2017)",
+              "url": "https://arxiv.org/abs/1703.07688"
+            },
+            {
+              "label": "A Comparative Study of Audio Signal Preprocessing Methods for Deep Neural Networks on Music Tagging (2019)",
+              "url": "https://arxiv.org/abs/1904.08300"
+            },
+            {
+              "label": "Learning to Separate Singing Voice: A Self-supervised Approach (2021)",
+              "url": "https://arxiv.org/abs/2103.01903"
+            }
+          ],
+          "citationCount": 1,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "DeSTA2.5-Audio highlights advancements in Large Audio Language Models (LALMs) for cross-modal alignment and robust instruction-following, while ASDA introduces differential attention mechanisms to optimize self-supervised audio representation learning.",
+    "GuideSep leverages user-guided inputs for instrument-agnostic music source separation, and FTRNN demonstrates effective multi-utterance speech separation and speaker association using short-segment training.",
+    "Emergent musical properties in ViT-1D and challenges in symbolic piano performance scaling reveal trends in self-supervised learning for music tasks, while spatial fidelity in binaural audio separation remains a key evaluation focus."
+  ]
+}

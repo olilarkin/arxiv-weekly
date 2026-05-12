@@ -1,0 +1,254 @@
+{
+  "date": "2025-0801",
+  "generated_at": "2025-08-01T00:00:00+00:00",
+  "total": 4,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2507.23590v1",
+          "date": "Jul 31",
+          "title": "Identifying Hearing Difficulty Moments in Conversational Audio",
+          "authors": [
+            "Jack Collins",
+            "Adrian Buzea",
+            "Chris Collier",
+            "Alejandro Ballesta Rosen",
+            "Julian Maclaren"
+          ],
+          "org": "Microsoft",
+          "abstract": "Individuals regularly experience Hearing Difficulty Moments in everyday conversation. Identifying these moments of hearing difficulty has particular significance in the field of hearing assistive technology where timely interventions are key for realtime hearing assistance. In this paper, we propose and compare machine learning solutions for continuously detecting utterances that identify these specific moments in conversational audio. We show that audio language models, through their multimodal reasoning capabilities, excel at this task, significantly outperforming a simple ASR hotword heuristic and a more conventional fine-tuning approach with Wav2Vec, an audio-only input architecture that is state-of-the-art for automatic speech recognition (ASR).",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.23590v1",
+          "category": "foundation",
+          "task": "Speech enhancement",
+          "proposedMethod": null,
+          "datasets": [
+            "Wav2Vec"
+          ],
+          "what": "This paper addresses the detection of Hearing Difficulty Moments in conversational audio, which is critical for real-time hearing assistive technologies.",
+          "novel": "The study demonstrates that audio language models with multimodal reasoning outperform traditional ASR-based heuristics and fine-tuned Wav2Vec models for detecting hearing difficulty moments.",
+          "method": "The authors compare machine learning approaches, leveraging audio language models for their multimodal reasoning capabilities.",
+          "validation": "The methods are validated by comparing the performance of audio language models against an ASR hotword heuristic and a fine-tuned Wav2Vec model.",
+          "discussion": "The paper highlights the potential of audio language models but does not address the scalability or real-time performance constraints in practical applications.",
+          "nextReads": [
+            {
+              "label": "Wav2Vec 2.0: A Framework for Self-Supervised Learning of Speech Representations (2020)",
+              "url": "https://arxiv.org/abs/2006.11477"
+            },
+            {
+              "label": "Speech Enhancement Using Deep Learning: A Survey (2020)",
+              "url": "https://arxiv.org/abs/2005.11214"
+            },
+            {
+              "label": "Hearing Assistive Technology: Challenges and Opportunities (2021)",
+              "url": null
+            },
+            {
+              "label": "Multimodal Speech Recognition with Audio and Visual Features (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2507.20169v1",
+          "date": "Jul 27",
+          "title": "Self-Improvement for Audio Large Language Model using Unlabeled Speech",
+          "authors": [
+            "Shaowen Wang",
+            "Xinyuan Chen",
+            "Yao Xu"
+          ],
+          "org": "University of Illinois Urbana-Champaign",
+          "abstract": "Recent audio LLMs have emerged rapidly, demonstrating strong generalization across various speech tasks. However, given the inherent complexity of speech signals, these models inevitably suffer from performance degradation in specific target domains. To address this, we focus on enhancing audio LLMs in target domains without any labeled data. We propose a self-improvement method called SI-SDA, leveraging the information embedded in large-model decoding to evaluate the quality of generated pseudo labels and then perform domain adaptation based on reinforcement learning optimization. Experimental results show that our method consistently and significantly improves audio LLM performance, outperforming existing baselines in WER and BLEU across multiple public datasets of automatic speech recognition (ASR), spoken question-answering (SQA), and speech-to-text translation (S2TT). Furthermore, our approach exhibits high data efficiency, underscoring its potential for real-world deployment.",
+          "comment": "To appear in Interspeech 2025. 6 pages, 1 figure",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.20169v1",
+          "category": "foundation",
+          "task": "ASR domain adaptation",
+          "proposedMethod": "SI-SDA",
+          "datasets": [
+            "LibriSpeech",
+            "Common Voice",
+            "TED-LIUM",
+            "MuST-C"
+          ],
+          "what": "The paper proposes SI-SDA, a self-improvement method for audio large language models to enhance performance in target domains without labeled data.",
+          "novel": "The method leverages pseudo-labeling and reinforcement learning for domain adaptation, achieving significant improvements in WER and BLEU scores across multiple speech tasks.",
+          "method": "SI-SDA evaluates the quality of pseudo labels generated by large-model decoding and uses reinforcement learning to optimize domain adaptation.",
+          "validation": "The approach is validated on public datasets for ASR, spoken question-answering, and speech-to-text translation, showing consistent performance gains over existing baselines.",
+          "discussion": "While effective, the method's reliance on pseudo-label quality and reinforcement learning optimization may limit its applicability to domains with highly noisy or complex data.",
+          "nextReads": [
+            {
+              "label": "Unsupervised Domain Adaptation for Speech Recognition (2020)",
+              "url": "https://arxiv.org/abs/2006.07888"
+            },
+            {
+              "label": "Self-Supervised Learning for Speech Recognition: A Survey (2021)",
+              "url": "https://arxiv.org/abs/2109.09133"
+            },
+            {
+              "label": "Reinforcement Learning for Speech Processing (2022)",
+              "url": null
+            },
+            {
+              "label": "Improving ASR with Pseudo-Labeling (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": 12,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2508.06516v1",
+          "date": "Jul 30",
+          "title": "AutoMashup: Automatic Music Mashups Creation",
+          "authors": [
+            "Marine Delabaere",
+            "Léa Miqueu",
+            "Michael Moreno",
+            "Gautier Bigois",
+            "Hoang Duong"
+          ],
+          "org": "Université de Lorraine",
+          "abstract": "We introduce AutoMashup, a system for automatic mashup creation based on source separation, music analysis, and compatibility estimation. We propose using COCOLA to assess compatibility between separated stems and investigate whether general-purpose pretrained audio models (CLAP and MERT) can support zero-shot estimation of track pair compatibility. Our results show that mashup compatibility is asymmetric -- it depends on the role assigned to each track (vocals or accompaniment) -- and that current embeddings fail to reproduce the perceptual coherence measured by COCOLA. These findings underline the limitations of general-purpose audio representations for compatibility estimation in mashup creation.",
+          "comment": null,
+          "journalRef": "GRETSI'25 - XXXe Colloque Francophone de Traitement du Signal et des Images, Aug 2025, Strasbourg, France",
+          "categories": [
+            "cs.SD",
+            "eess.AS",
+            "eess.SP"
+          ],
+          "url": "https://arxiv.org/abs/2508.06516v1",
+          "category": "separation",
+          "task": "Music generation",
+          "proposedMethod": "AutoMashup",
+          "datasets": [
+            "COCOLA",
+            "CLAP",
+            "MERT"
+          ],
+          "what": "The paper introduces AutoMashup, a system for creating music mashups using source separation, music analysis, and compatibility estimation.",
+          "novel": "It explores the use of general-purpose pretrained audio models for zero-shot track compatibility estimation and highlights the asymmetry in mashup compatibility based on track roles.",
+          "method": "The system combines source-separated stems with compatibility estimation using COCOLA and evaluates the performance of pretrained audio models (CLAP and MERT) for this task.",
+          "validation": "The authors validate their approach using COCOLA to measure perceptual coherence and compare it against embeddings from general-purpose audio models.",
+          "discussion": "The study reveals limitations in current general-purpose audio representations for mashup compatibility, suggesting the need for task-specific embeddings.",
+          "nextReads": [
+            {
+              "label": "Music Source Separation: A Survey (2021)",
+              "url": "https://arxiv.org/abs/2006.07062"
+            },
+            {
+              "label": "CLAP: Learning Audio-Text Representations from Large-Scale Audio-Text Pairs (2023)",
+              "url": "https://arxiv.org/abs/2302.03917"
+            },
+            {
+              "label": "MERT: Multi-modal Embedding for Robust Track Analysis (2023)",
+              "url": null
+            },
+            {
+              "label": "Deep Learning for Music Generation: A Survey (2020)",
+              "url": "https://arxiv.org/abs/2002.00347"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2507.21202v1",
+          "date": "Jul 28",
+          "title": "Combolutional Neural Networks",
+          "authors": [
+            "Cameron Churchwell",
+            "Minje Kim",
+            "Paris Smaragdis"
+          ],
+          "org": "University of Illinois Urbana-Champaign",
+          "abstract": "Selecting appropriate inductive biases is an essential step in the design of machine learning models, especially when working with audio, where even short clips may contain millions of samples. To this end, we propose the combolutional layer: a learned-delay IIR comb filter and fused envelope detector, which extracts harmonic features in the time domain. We demonstrate the efficacy of the combolutional layer on three information retrieval tasks, evaluate its computational cost relative to other audio frontends, and provide efficient implementations for training. We find that the combolutional layer is an effective replacement for convolutional layers in audio tasks where precise harmonic analysis is important, e.g., piano transcription, speaker classification, and key detection. Additionally, the combolutional layer has several other key benefits over existing frontends, namely: low parameter count, efficient CPU inference, strictly real-valued computations, and improved interpretability.",
+          "comment": "4 pages, 3 figures, accepted to WASPAA 2025",
+          "journalRef": "IEEE Workshop on Applications of Signal Processing to Audio and Acoustics (WASPAA) 2025",
+          "categories": [
+            "cs.SD",
+            "cs.LG",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.21202v1",
+          "category": "transcription",
+          "task": "Audio feature extraction",
+          "proposedMethod": "Combolutional Neural Networks",
+          "datasets": [
+            "MAPS",
+            "VoxCeleb",
+            "GiantMIDI-Piano"
+          ],
+          "what": "This paper introduces the combolutional layer, a novel audio frontend for extracting harmonic features in the time domain.",
+          "novel": "The combolutional layer combines a learned-delay IIR comb filter with an envelope detector, offering advantages like low parameter count, efficient CPU inference, and improved interpretability.",
+          "method": "The combolutional layer replaces traditional convolutional layers, enabling precise harmonic analysis with reduced computational cost and strictly real-valued computations.",
+          "validation": "The method is evaluated on tasks like piano transcription, speaker classification, and key detection, with comparisons to other audio frontends in terms of accuracy and computational efficiency.",
+          "discussion": "While the combolutional layer shows promise for harmonic analysis tasks, its applicability to other audio tasks and scalability for large-scale datasets remain unexplored.",
+          "nextReads": [
+            {
+              "label": "Learning Filterbanks from Raw Speech for Phone Recognition (2014)",
+              "url": "https://arxiv.org/abs/1412.5567"
+            },
+            {
+              "label": "WaveNet: A Generative Model for Raw Audio (2016)",
+              "url": "https://arxiv.org/abs/1609.03499"
+            },
+            {
+              "label": "Deep Learning for Music Information Retrieval (2017)",
+              "url": "https://arxiv.org/abs/1706.08651"
+            },
+            {
+              "label": "Harmonic Analysis of Audio Signals Using Deep Learning (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Research on Hearing Difficulty Moments detection highlights advancements in real-time assistive audio technologies, as explored in the corresponding paper.",
+    "AutoMashup demonstrates progress in automated music mashup creation by combining source separation, music analysis, and compatibility estimation techniques.",
+    "The introduction of combolutional layers and SI-SDA showcases innovations in harmonic feature extraction and self-improvement for audio large language models, respectively."
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "date": "2025-1107",
+  "generated_at": "2025-11-07T00:00:00+00:00",
+  "total": 5,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2511.01261v1",
+          "date": "Nov 03",
+          "title": "Speech-DRAME: A Framework for Human-Aligned Benchmarks in Speech Role-Play",
+          "authors": [
+            "Jiatong Shi",
+            "Jionghao Han",
+            "Yichen Lu",
+            "Santiago Pascual",
+            "Pengfei Wu"
+          ],
+          "org": "Jiatong Shi et al.",
+          "abstract": "Role-play has become a key testbed for generative models, expanding from text-only dialogue to multimodal interaction. Extending role-play to speech captures prosody, emotion, and delivery, but also poses new evaluation challenges. Current pipelines often use audio large language models (ALLMs) as zero-shot judges, which miss paralinguistic cues, collapse multiple aspects into coarse scores, and rely on synthetic speech references that fail to reflect real-world roles. We present Speech-DRAME, a unified framework that contributes at three levels: (i) Speech-DRAME-EvalBench, an evaluation benchmark with bilingual human-annotated data and protocols for training and testing speech evaluation models (SEMs), (ii) DRAME-Eval, a fine-tuned evaluation model, which substantially outperforms zero-shot and few-shot ALLMs, and (iii) Speech-DRAME-RoleBench, a speech role-play benchmark that leverages DRAME-Eval as an automatic judge to compare speech foundation models (SFMs). Speech-DRAME distinguishes between two complementary evaluation strategies: Archetype Evaluation, a top-down approach measuring adherence to broad role archetypes, and Realism Evaluation, a bottom-up approach grounded in real human speech that emphasizes nuanced role quality. Compared to zero-shot ALLM judges, DRAME-Eval achieves stronger agreement with human ratings (Pearson correlation from 0.480 to 0.629 in archetypes, and 0.390 to 0.625 in realism). By integrating transparent benchmark resources, modeling approaches, and system-level evaluation, Speech-DRAME provides the first comprehensive, reproducible foundation for assessing spoken role-play.",
+          "comment": "67 pages",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2511.01261v1",
+          "category": "foundation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2511.01091v2",
+          "date": "Nov 02",
+          "title": "AudioRAG+: Feedback-driven Retrieval-augmented Audio Generation with Large Audio Language Models",
+          "authors": [
+            "Junqi Zhao",
+            "Chenxing Li",
+            "Jinzheng Zhao",
+            "Rilin Chen",
+            "Dong Yu"
+          ],
+          "org": "Junqi Zhao et al.",
+          "abstract": "We propose a general feedback-driven retrieval-augmented generation (RAG) approach that leverages Large Audio Language Models (LALMs) to address the missing or imperfect synthesis of specific sound events in text-to-audio (TTA) generation. Unlike previous RAG-based TTA methods that typically train specialized models from scratch, we utilize LALMs to analyze audio generation outputs, retrieve concepts that pre-trained models struggle to generate from an external database, and incorporate the retrieved information into the generation process. Experimental results show that our method not only enhances the ability of LALMs to identify missing sound events but also delivers improvements across different models, outperforming existing RAG-specialized approaches.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2511.01091v2",
+          "category": "foundation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2511.04623v1",
+          "date": "Nov 06",
+          "title": "PromptSep: Generative Audio Separation via Multimodal Prompting",
+          "authors": [
+            "Yutong Wen",
+            "Ke Chen",
+            "Prem Seetharaman",
+            "Oriol Nieto",
+            "Jiaqi Su"
+          ],
+          "org": "Yutong Wen et al.",
+          "abstract": "Recent breakthroughs in language-queried audio source separation (LASS) have shown that generative models can achieve higher separation audio quality than traditional masking-based approaches. However, two key limitations restrict their practical use: (1) users often require operations beyond separation, such as sound removal; and (2) relying solely on text prompts can be unintuitive for specifying sound sources. In this paper, we propose PromptSep to extend LASS into a broader framework for general-purpose sound separation. PromptSep leverages a conditional diffusion model enhanced with elaborated data simulation to enable both audio extraction and sound removal. To move beyond text-only queries, we incorporate vocal imitation as an additional and more intuitive conditioning modality for our model, by incorporating Sketch2Sound as a data augmentation strategy. Both objective and subjective evaluations on multiple benchmarks demonstrate that PromptSep achieves state-of-the-art performance in sound removal and vocal-imitation-guided source separation, while maintaining competitive results on language-queried source separation.",
+          "comment": "Submitted to ICASSP 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2511.04623v1",
+          "category": "separation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": 2,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2510.27198v1",
+          "date": "Oct 31",
+          "title": "Reference Microphone Selection for Guided Source Separation based on the Normalized L-p Norm",
+          "authors": [
+            "Anselm Lohmann",
+            "Tomohiro Nakatani",
+            "Rintaro Ikeshita",
+            "Marc Delcroix",
+            "Shoko Araki"
+          ],
+          "org": "Anselm Lohmann et al.",
+          "abstract": "Guided Source Separation (GSS) is a popular front-end for distant automatic speech recognition (ASR) systems using spatially distributed microphones. When considering spatially distributed microphones, the choice of reference microphone may have a large influence on the quality of the output signal and the downstream ASR performance. In GSS-based speech enhancement, reference microphone selection is typically performed using the signal-to-noise ratio (SNR), which is optimal for noise reduction but may neglect differences in early-to-late-reverberant ratio (ELR) across microphones. In this paper, we propose two reference microphone selection methods for GSS-based speech enhancement that are based on the normalized $\\ell_p$-norm, either using only the normalized $\\ell_p$-norm or combining the normalized $\\ell_p$-norm and the SNR to account for both differences in SNR and ELR across microphones. Experimental evaluation using a CHiME-8 distant ASR system shows that the proposed $\\ell_p$-norm-based methods outperform the baseline method, reducing the macro-average word error rate.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2510.27198v1",
+          "category": "separation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2511.09562v1",
+          "date": "Nov 01",
+          "title": "WaveRoll: JavaScript Library for Comparative MIDI Piano-Roll Visualization",
+          "authors": [
+            "Hannah Park",
+            "Dasaem Jeong"
+          ],
+          "org": "Hannah Park / Dasaem Jeong",
+          "abstract": "WaveRoll is an interactive JavaScript library that enables comparative visualization and synchronized playback of multiple MIDI piano rolls on a browser. It addresses a specific evaluation need in Automatic Music Transcription (AMT), contrasting multiple MIDI outputs produced from the same input. The library displays multiple MIDI tracks on a single, time-aligned grid with synchronized audio, allowing users to compare pitch and timing, identify missed or extra notes, and observe onset and offset differences, as well as section-level patterns. We expect that such comparisons would assist in model evaluation and error analysis, and help readers to understand the model behavior better. The open-source library is available at https://github.com/crescent-stdio/wave-roll",
+          "comment": "Late-breaking/demo (LBD) at ISMIR 2025. https://ismir2025program.ismir.net/lbd_459.html",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2511.09562v1",
+          "category": "transcription",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Analyzing this week's audio foundation model research trends.",
+    "Many new approaches for source separation and music transcription were submitted.",
+    "See the individual papers for details."
+  ]
+}

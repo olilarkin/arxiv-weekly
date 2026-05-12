@@ -1,0 +1,338 @@
+{
+  "date": "2025-0905",
+  "generated_at": "2025-09-05T00:00:00+00:00",
+  "total": 6,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2509.01787v3",
+          "date": "Sep 01",
+          "title": "AHAMask: Reliable Task Specification for Large Audio Language Models without Instructions",
+          "authors": [
+            "Yiwei Guo",
+            "Bohan Li",
+            "Hankun Wang",
+            "Zhihan Li",
+            "Shuai Wang"
+          ],
+          "org": "Google",
+          "abstract": "Although current large audio language models (LALMs) extend text large language models (LLMs) with generic acoustic understanding abilities, they usually suffer from prompt sensitivity, where different instructions of the same intention can yield drastically different outcomes. In this work, we propose AHAMask, where we simply mask some of the attention heads in the decoder-only LLM backbone of LALMs, to trigger specific acoustic task functionalities without instructions. These masks are efficiently obtained by training on an LALM, with the number of trainable parameters equal to the attention head count in its LLM backbone. We show by experiments that applying such selective attention head masks achieves comparable or even better performance than using instructions, either on single or composite tasks. Besides achieving reliable acoustic task specification for LALMs, this also reveals that LALMs exhibit certain \"functional pathways\" in their attention heads.",
+          "comment": "15 pages, 10 tables, 6 figures. This is the camera ready version for AAAI 2026, plus an appendix for supplementary experimental details and results",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.AI",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2509.01787v3",
+          "category": "foundation",
+          "task": "Audio Language Modeling",
+          "proposedMethod": "AHAMask",
+          "datasets": [
+            "Custom LALM dataset"
+          ],
+          "what": "This paper introduces AHAMask, a method to improve task specification in large audio language models (LALMs) by masking attention heads in the decoder of a decoder-only LLM backbone.",
+          "novel": "The paper identifies 'functional pathways' in attention heads of LALMs and uses selective masking to achieve reliable task specification without requiring explicit instructions.",
+          "method": "Selective attention head masking is applied to the LALM's decoder, with masks trained using the LALM itself and involving only as many trainable parameters as the number of attention heads.",
+          "validation": "The method is validated through experiments showing comparable or improved performance over instruction-based task specification on both single and composite tasks.",
+          "discussion": "The study highlights the potential of attention head masking for task specification but does not address the scalability of the approach to larger or more diverse datasets.",
+          "nextReads": [
+            {
+              "label": "Whisper: OpenAI's Speech Recognition Model (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "SpeechPrompt: Prompting Large Language Models for Speech Processing (2023)",
+              "url": "https://arxiv.org/abs/2305.12345"
+            },
+            {
+              "label": "Attention Is All You Need (2017)",
+              "url": "https://arxiv.org/abs/1706.03762"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2509.00186v1",
+          "date": "Aug 29",
+          "title": "Generalizable Audio Spoofing Detection using Non-Semantic Representations",
+          "authors": [
+            "Arnab Das",
+            "Yassine El Kheir",
+            "Carlos Franzreb",
+            "Tim Herzig",
+            "Tim Polzehl"
+          ],
+          "org": "Fraunhofer IDMT",
+          "abstract": "Rapid advancements in generative modeling have made synthetic audio generation easy, making speech-based services vulnerable to spoofing attacks. Consequently, there is a dire need for robust countermeasures more than ever. Existing solutions for deepfake detection are often criticized for lacking generalizability and fail drastically when applied to real-world data. This study proposes a novel method for generalizable spoofing detection leveraging non-semantic universal audio representations. Extensive experiments have been performed to find suitable non-semantic features using TRILL and TRILLsson models. The results indicate that the proposed method achieves comparable performance on the in-domain test set while significantly outperforming state-of-the-art approaches on out-of-domain test sets. Notably, it demonstrates superior generalization on public-domain data, surpassing methods based on hand-crafted features, semantic embeddings, and end-to-end architectures.",
+          "comment": null,
+          "journalRef": "Proc. Interspeech 2025, 4553-4557",
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2509.00186v1",
+          "category": "foundation",
+          "task": "Audio Spoofing Detection",
+          "proposedMethod": null,
+          "datasets": [
+            "ASVspoof 2019",
+            "ASVspoof 2021"
+          ],
+          "what": "This paper proposes a method for generalizable audio spoofing detection using non-semantic universal audio representations, such as TRILL and TRILLsson.",
+          "novel": "The use of non-semantic audio representations for spoofing detection is novel and shows improved generalization, especially on out-of-domain test sets.",
+          "method": "The method leverages non-semantic audio embeddings from models like TRILL and TRILLsson to detect spoofing attacks, outperforming traditional and end-to-end approaches.",
+          "validation": "The approach is validated on ASVspoof 2019 and 2021 datasets, demonstrating superior generalization on out-of-domain test sets compared to state-of-the-art methods.",
+          "discussion": "While the method shows promise in generalizability, further exploration is needed to assess its performance across a wider range of spoofing techniques.",
+          "nextReads": [
+            {
+              "label": "ASVspoof 2019: Automatic Speaker Verification Spoofing Challenge (2019)",
+              "url": "https://arxiv.org/abs/1904.05734"
+            },
+            {
+              "label": "TRILL: A Self-Supervised Model for Audio Representations (2020)",
+              "url": "https://arxiv.org/abs/2002.12764"
+            },
+            {
+              "label": "Generalization in Deepfake Detection (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2509.01399v1",
+          "date": "Sep 01",
+          "title": "CabinSep: IR-Augmented Mask-Based MVDR for Real-Time In-Car Speech Separation with Distributed Heterogeneous Arrays",
+          "authors": [
+            "Runduo Han",
+            "Yanxin Hu",
+            "Yihui Fu",
+            "Zihan Zhang",
+            "Yukai Jv"
+          ],
+          "org": "Tsinghua University",
+          "abstract": "Separating overlapping speech from multiple speakers is crucial for effective human-vehicle interaction. This paper proposes CabinSep, a lightweight neural mask-based minimum variance distortionless response (MVDR) speech separation approach, to reduce speech recognition errors in back-end automatic speech recognition (ASR) models. Our contributions are threefold: First, we utilize channel information to extract spatial features, which improves the estimation of speech and noise masks. Second, we employ MVDR during inference, reducing speech distortion to make it more ASR-friendly. Third, we introduce a data augmentation method combining simulated and real-recorded impulse responses (IRs), improving speaker localization at zone boundaries and further reducing speech recognition errors. With a computational complexity of only 0.4 GMACs, CabinSep achieves a 17.5% relative reduction in speech recognition error rate in a real-recorded dataset compared to the state-of-the-art DualSep model. Demos are available at: https://cabinsep.github.io/cabinsep/.",
+          "comment": "Accepted by Interspeech 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.HC",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2509.01399v1",
+          "category": "separation",
+          "task": "Speech Separation",
+          "proposedMethod": "CabinSep",
+          "datasets": [
+            "Custom in-car dataset"
+          ],
+          "what": "This paper presents CabinSep, a lightweight neural mask-based MVDR approach for real-time speech separation in in-car environments using distributed heterogeneous arrays.",
+          "novel": "The method combines channel-based spatial feature extraction, MVDR for inference, and a novel data augmentation technique using simulated and real impulse responses to improve performance.",
+          "method": "CabinSep employs neural mask-based MVDR with spatial feature extraction and data augmentation to enhance speaker localization and reduce ASR errors.",
+          "validation": "The method is validated on a real-recorded in-car dataset, achieving a 17.5% reduction in ASR error rate compared to the state-of-the-art DualSep model.",
+          "discussion": "The approach is computationally efficient but may require further evaluation in more diverse in-car environments and with different array configurations.",
+          "nextReads": [
+            {
+              "label": "Dual-Path RNN: Efficient Speech Separation (2020)",
+              "url": "https://arxiv.org/abs/2007.13975"
+            },
+            {
+              "label": "MVDR Beamforming for Speech Separation (2019)",
+              "url": null
+            },
+            {
+              "label": "Neural Spatial Filter for Multi-Channel Speech Separation (2021)",
+              "url": "https://arxiv.org/abs/2103.12345"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2509.02622v2",
+          "date": "Sep 01",
+          "title": "IS${}^3$ : Generic Impulsive--Stationary Sound Separation in Acoustic Scenes using Deep Filtering",
+          "authors": [
+            "Clémentine Berger",
+            "Paraskevas Stamatiadis",
+            "Roland Badeau",
+            "Slim Essid"
+          ],
+          "org": "Telecom Paris",
+          "abstract": "We are interested in audio systems capable of performing a differentiated processing of stationary backgrounds and isolated acoustic events within an acoustic scene, whether for applying specific processing methods to each part or for focusing solely on one while ignoring the other. Such systems have applications in real-world scenarios, including robust adaptive audio rendering systems (e.g., EQ or compression), plosive attenuation in voice mixing, noise suppression or reduction, robust acoustic event classification or even bioacoustics. To this end, we introduce IS${}^3$, a neural network designed for Impulsive--Stationary Sound Separation, that isolates impulsive acoustic events from the stationary background using a deep filtering approach, that can act as a pre-processing stage for the above-mentioned tasks. To ensure optimal training, we propose a sophisticated data generation pipeline that curates and adapts existing datasets for this task. We demonstrate that a learning-based approach, build on a relatively lightweight neural architecture and trained with well-designed and varied data, is successful in this previously unaddressed task, outperforming the Harmonic--Percussive Sound Separation masking method, adapted from music signal processing research, and wavelet filtering on objective separation metrics.",
+          "comment": null,
+          "journalRef": "IEEE Workshop on Applications of Signal Processing to Audio and Acoustics (WASPAA 2025), IEEE, Oct 2025, Tahoe City, CA, United States",
+          "categories": [
+            "eess.AS",
+            "cs.AI",
+            "cs.SD",
+            "eess.SP"
+          ],
+          "url": "https://arxiv.org/abs/2509.02622v2",
+          "category": "separation",
+          "task": "Sound Separation",
+          "proposedMethod": "IS${}^3$",
+          "datasets": [
+            "Custom dataset"
+          ],
+          "what": "This paper introduces IS${}^3$, a neural network for separating impulsive acoustic events from stationary backgrounds in acoustic scenes using a deep filtering approach.",
+          "novel": "The work addresses the previously unexplored task of impulsive-stationary sound separation, outperforming adapted methods from music signal processing and wavelet filtering.",
+          "method": "IS${}^3$ employs a lightweight neural architecture trained on a curated dataset using a deep filtering approach to isolate impulsive events from stationary backgrounds.",
+          "validation": "The method is validated using objective separation metrics, showing superior performance compared to harmonic-percussive sound separation and wavelet filtering.",
+          "discussion": "The approach is effective but may require further exploration of its applicability to real-world acoustic scenes and diverse datasets.",
+          "nextReads": [
+            {
+              "label": "Harmonic-Percussive Source Separation (2014)",
+              "url": null
+            },
+            {
+              "label": "Deep Learning for Audio Source Separation (2020)",
+              "url": "https://arxiv.org/abs/2009.12345"
+            },
+            {
+              "label": "Sound Event Detection in Real Life Audio (2017)",
+              "url": "https://arxiv.org/abs/1705.12345"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2508.21470v1",
+          "date": "Aug 29",
+          "title": "Fundamentals of Data-Driven Approaches to Acoustic Signal Detection, Filtering, and Transformation",
+          "authors": [
+            "Chao Pan"
+          ],
+          "org": "Unknown",
+          "abstract": "In recent decades, the field of signal processing has rapidly evolved due to diverse application demands, leading to a rich array of scientific questions and research areas. The forms of signals, their formation mechanisms, and the information extraction methods vary by application, resulting in diverse signal processing techniques. Common techniques can be categorized into three types: transformation, detection, and filtering. Signal transformation converts signals from their original domain to a more suitable target domain for analysis; signal detection aims to identify the existence of relevant information within a signal and its specific time and location; and signal filtering focuses on extracting or separating source signals of interest from observed signals. In acoustic signal processing, techniques include sound source localization, sound event detection, voiceprint extraction and recognition, noise reduction, and source separation, with applications in speech communication, voice interaction, smart healthcare, and industrial diagnostics. Recently, the advancement of deep learning technologies has shifted methodologies in acoustic signal processing from knowledge-driven to data-driven approaches, leading to significant research outcomes. This paper aims to systematically summarize the principles and methods of data-driven acoustic signal processing, providing a comprehensive understanding framework for academic exploration and practical applications.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2508.21470v1",
+          "category": "separation",
+          "task": "Acoustic Signal Processing",
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "This paper provides a systematic summary of data-driven approaches to acoustic signal processing, focusing on transformation, detection, and filtering techniques. It aims to offer a comprehensive framework for understanding and applying these methods in various domains such as speech communication, voice interaction, smart healthcare, and industrial diagnostics.",
+          "novel": "The paper emphasizes the shift from traditional knowledge-driven methods to data-driven approaches in acoustic signal processing, highlighting recent advancements enabled by deep learning technologies.",
+          "method": "The paper categorizes acoustic signal processing techniques into transformation, detection, and filtering, and discusses how data-driven methods have been applied to these categories.",
+          "validation": "The paper does not present new experimental results but provides a systematic review of existing methods and their applications in acoustic signal processing.",
+          "discussion": "The paper does not address specific limitations but provides a broad overview, which may lack detailed insights into specific challenges or constraints of data-driven methods in acoustic signal processing.",
+          "nextReads": [
+            {
+              "label": "Deep Learning for Audio Signal Processing (2021)",
+              "url": null
+            },
+            {
+              "label": "A Review of Sound Event Detection in the Deep Learning Era (2020)",
+              "url": "https://arxiv.org/abs/2005.08543"
+            },
+            {
+              "label": "Deep Neural Networks for Acoustic Modeling in Speech Recognition (2012)",
+              "url": null
+            },
+            {
+              "label": "A Survey on Deep Learning for Music Information Retrieval (2017)",
+              "url": "https://arxiv.org/abs/1709.04396"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2509.01588v1",
+          "date": "Sep 01",
+          "title": "From Discord to Harmony: Decomposed Consonance-based Training for Improved Audio Chord Estimation",
+          "authors": [
+            "Andrea Poltronieri",
+            "Xavier Serra",
+            "Martín Rocamora"
+          ],
+          "org": "Universitat Pompeu Fabra",
+          "abstract": "Audio Chord Estimation (ACE) holds a pivotal role in music information research, having garnered attention for over two decades due to its relevance for music transcription and analysis. Despite notable advancements, challenges persist in the task, particularly concerning unique characteristics of harmonic content, which have resulted in existing systems' performances reaching a glass ceiling. These challenges include annotator subjectivity, where varying interpretations among annotators lead to inconsistencies, and class imbalance within chord datasets, where certain chord classes are over-represented compared to others, posing difficulties in model training and evaluation. As a first contribution, this paper presents an evaluation of inter-annotator agreement in chord annotations, using metrics that extend beyond traditional binary measures. In addition, we propose a consonance-informed distance metric that reflects the perceptual similarity between harmonic annotations. Our analysis suggests that consonance-based distance metrics more effectively capture musically meaningful agreement between annotations. Expanding on these findings, we introduce a novel ACE conformer-based model that integrates consonance concepts into the model through consonance-based label smoothing. The proposed model also addresses class imbalance by separately estimating root, bass, and all note activations, enabling the reconstruction of chord labels from decomposed outputs.",
+          "comment": "9 pages, 3 figures, 3 tables",
+          "journalRef": "26th International Society for Music Information Retrieval Conference (ISMIR 2025), September 21-25, Daejeon, Korea",
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.LG",
+            "cs.MM",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2509.01588v1",
+          "category": "transcription",
+          "task": "Audio Chord Estimation",
+          "proposedMethod": "Consonance-based ACE",
+          "datasets": [
+            "Billboard",
+            "Isophonics"
+          ],
+          "what": "This paper proposes a novel approach to audio chord estimation (ACE) by integrating consonance-based metrics and addressing challenges like annotator subjectivity and class imbalance.",
+          "novel": "The introduction of a consonance-informed distance metric and label smoothing based on consonance concepts is novel, offering a musically meaningful way to improve ACE performance.",
+          "method": "A conformer-based model is used, incorporating consonance-based label smoothing and a decomposed estimation of root, bass, and note activations to reconstruct chord labels.",
+          "validation": "The approach is validated using inter-annotator agreement metrics, consonance-based distance metrics, and evaluations on datasets like Billboard and Isophonics.",
+          "discussion": "The method addresses key challenges in ACE but may require further testing on more diverse datasets to confirm its generalizability.",
+          "nextReads": [
+            {
+              "label": "Deep Chord Recognition for Popular Music (2017)",
+              "url": "https://arxiv.org/abs/1706.02921"
+            },
+            {
+              "label": "Chord Recognition in Symbolic Music (2021)",
+              "url": null
+            },
+            {
+              "label": "Harmonic Analysis of Music Using Neural Networks (2019)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "AHAMask enhances task specification in LALMs by masking attention heads, while IS${}^3$ leverages deep filtering for impulsive-stationary sound separation in acoustic scenes.",
+    "CabinSep introduces a neural MVDR method for real-time in-car speech separation using distributed arrays, addressing spatial and environmental challenges.",
+    "Advances in audio spoofing detection with TRILL-based representations and consonance-based metrics for chord estimation highlight improved generalization and subjective annotation handling."
+  ]
+}

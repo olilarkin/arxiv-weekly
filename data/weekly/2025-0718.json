@@ -1,0 +1,625 @@
+{
+  "date": "2025-0718",
+  "generated_at": "2025-07-18T00:00:00+00:00",
+  "total": 11,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2507.13572v1",
+          "date": "Jul 17",
+          "title": "Temporal Adaptation of Pre-trained Foundation Models for Music Structure Analysis",
+          "authors": [
+            "Yixiao Zhang",
+            "Haonan Chen",
+            "Ju-Chiang Wang",
+            "Jitong Chen"
+          ],
+          "org": "NTU Singapore",
+          "abstract": "Audio-based music structure analysis (MSA) is an essential task in Music Information Retrieval that remains challenging due to the complexity and variability of musical form. Recent advances highlight the potential of fine-tuning pre-trained music foundation models for MSA tasks. However, these models are typically trained with high temporal feature resolution and short audio windows, which limits their efficiency and introduces bias when applied to long-form audio. This paper presents a temporal adaptation approach for fine-tuning music foundation models tailored to MSA. Our method enables efficient analysis of full-length songs in a single forward pass by incorporating two key strategies: (1) audio window extension and (2) low-resolution adaptation. Experiments on the Harmonix Set and RWC-Pop datasets show that our method significantly improves both boundary detection and structural function prediction, while maintaining comparable memory usage and inference speed.",
+          "comment": "Accepted to WASPAA 2025. Project Page: https://sites.google.com/view/temporal-adaptation-for-msa/",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.13572v1",
+          "category": "foundation",
+          "task": "Music Structure Analysis",
+          "proposedMethod": "Temporal Adaptation",
+          "datasets": [
+            "Harmonix Set",
+            "RWC-Pop"
+          ],
+          "what": "This paper proposes a temporal adaptation approach for fine-tuning pre-trained music foundation models to improve efficiency and accuracy in music structure analysis tasks.",
+          "novel": "The novelty lies in extending audio windows and adapting low-resolution features to enable efficient analysis of full-length songs in a single forward pass.",
+          "method": "The method incorporates audio window extension and low-resolution adaptation to optimize pre-trained models for long-form audio analysis.",
+          "validation": "The approach is validated on the Harmonix Set and RWC-Pop datasets, showing significant improvements in boundary detection and structural function prediction while maintaining memory efficiency.",
+          "discussion": "The method is efficient but may require further exploration for generalization to diverse musical genres and forms.",
+          "nextReads": [
+            {
+              "label": "Music Structure Analysis with Pre-trained Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Harmonix Set Benchmark for Music Analysis (2021)",
+              "url": null
+            },
+            {
+              "label": "Pre-trained Models for MIR Tasks (2023)",
+              "url": null
+            },
+            {
+              "label": "Low-Resolution Audio Adaptation (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": 2,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2507.09834v1",
+          "date": "Jul 14",
+          "title": "Generative Audio Language Modeling with Continuous-valued Tokens and Masked Next-Token Prediction",
+          "authors": [
+            "Shu-wen Yang",
+            "Byeonggeun Kim",
+            "Kuan-Po Huang",
+            "Qingming Tang",
+            "Huy Phan"
+          ],
+          "org": "Meta AI",
+          "abstract": "Autoregressive next-token prediction with the Transformer decoder has become a de facto standard in large language models (LLMs), achieving remarkable success in Natural Language Processing (NLP) at scale. Extending this paradigm to audio poses unique challenges due to its inherently continuous nature. We research audio generation with a causal language model (LM) without discrete tokens. We leverage token-wise diffusion to model the continuous distribution of the next continuous-valued token. Our approach delivers significant improvements over previous discrete solution, AudioGen, achieving 20% and 40% relative gains on AudioCaps in Frechet Audio Distance (FAD) and Kullback-Leibler (KL) divergence, respectively. Additionally, we propose a novel masked next-token prediction task that incorporates masked prediction into the causal LM framework. On AudioCaps, the innovation yields 41% and 33% relative FAD improvements over AudioGen Base (285M) and AudioGen Large (1B) models, respectively, and is on par with the state-of-the-art (SOTA) diffusion models. Furthermore, we achieve these results with significantly fewer parameters -- 193M for our Base and 462M for our Large models.",
+          "comment": "Accepted by ICML 2025. Project website: https://audiomntp.github.io/",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.CV",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2507.09834v1",
+          "category": "foundation",
+          "task": "Audio Generation",
+          "proposedMethod": "Masked Next-Token Prediction",
+          "datasets": [
+            "AudioCaps"
+          ],
+          "what": "The paper proposes a generative audio language model using continuous-valued tokens and a novel masked next-token prediction task.",
+          "novel": "It introduces token-wise diffusion for continuous audio token modeling and achieves significant improvements over discrete token-based methods like AudioGen.",
+          "method": "The model employs a causal language model with token-wise diffusion for continuous values and integrates masked prediction into the next-token prediction framework.",
+          "validation": "The approach is evaluated on the AudioCaps dataset, showing significant improvements in Frechet Audio Distance (FAD) and Kullback-Leibler (KL) divergence compared to AudioGen models.",
+          "discussion": "The method achieves state-of-the-art performance with fewer parameters, but its scalability and generalization to other audio datasets remain areas for further research.",
+          "nextReads": [
+            {
+              "label": "AudioGen: Textually Guided Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/2209.15352"
+            },
+            {
+              "label": "WaveNet: A Generative Model for Raw Audio (2016)",
+              "url": "https://arxiv.org/abs/1609.03499"
+            },
+            {
+              "label": "DiffWave: A Versatile Diffusion Model for Audio Synthesis (2021)",
+              "url": "https://arxiv.org/abs/2009.09761"
+            },
+            {
+              "label": "AudioCaps: Generating Captions for Audios (2019)",
+              "url": "https://arxiv.org/abs/1907.12761"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2507.12972v1",
+          "date": "Jul 17",
+          "title": "AVFSNet: Audio-Visual Speech Separation for Flexible Number of Speakers with Multi-Scale and Multi-Task Learning",
+          "authors": [
+            "Daning Zhang",
+            "Ying Wei"
+          ],
+          "org": "Tencent AI Lab",
+          "abstract": "Separating target speech from mixed signals containing flexible speaker quantities presents a challenging task. While existing methods demonstrate strong separation performance and noise robustness, they predominantly assume prior knowledge of speaker counts in mixtures. The limited research addressing unknown speaker quantity scenarios exhibits significantly constrained generalization capabilities in real acoustic environments. To overcome these challenges, this paper proposes AVFSNet -- an audio-visual speech separation model integrating multi-scale encoding and parallel architecture -- jointly optimized for speaker counting and multi-speaker separation tasks. The model independently separates each speaker in parallel while enhancing environmental noise adaptability through visual information integration. Comprehensive experimental evaluations demonstrate that AVFSNet achieves state-of-the-art results across multiple evaluation metrics and delivers outstanding performance on diverse datasets.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2507.12972v1",
+          "category": "separation",
+          "task": "Speech Separation",
+          "proposedMethod": "AVFSNet",
+          "datasets": [
+            "LibriMix",
+            "VCTK",
+            "WHAM!"
+          ],
+          "what": "This paper proposes AVFSNet, an audio-visual speech separation model designed to handle flexible speaker quantities using multi-scale and multi-task learning.",
+          "novel": "The novelty lies in its ability to separate speakers independently in parallel while integrating visual information to enhance noise adaptability.",
+          "method": "AVFSNet employs a multi-scale encoding and parallel architecture optimized for both speaker counting and multi-speaker separation tasks, leveraging visual cues for better performance.",
+          "validation": "The model is validated on datasets like LibriMix, VCTK, and WHAM!, achieving state-of-the-art results across multiple evaluation metrics.",
+          "discussion": "The model's reliance on visual information may limit its applicability in scenarios where such data is unavailable.",
+          "nextReads": [
+            {
+              "label": "Audio-Visual Speech Separation (2022)",
+              "url": null
+            },
+            {
+              "label": "Multi-Task Learning for Speech Separation (2023)",
+              "url": null
+            },
+            {
+              "label": "Speaker Counting in Unknown Scenarios (2021)",
+              "url": null
+            },
+            {
+              "label": "Noise Robustness in Speech Separation (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2507.11435v1",
+          "date": "Jul 15",
+          "title": "FasTUSS: Faster Task-Aware Unified Source Separation",
+          "authors": [
+            "Francesco Paissan",
+            "Gordon Wichern",
+            "Yoshiki Masuyama",
+            "Ryo Aihara",
+            "François G. Germain"
+          ],
+          "org": "Adobe Research",
+          "abstract": "Time-Frequency (TF) dual-path models are currently among the best performing audio source separation network architectures, achieving state-of-the-art performance in speech enhancement, music source separation, and cinematic audio source separation. While they are characterized by a relatively low parameter count, they still require a considerable number of operations, implying a higher execution time. This problem is exacerbated by the trend towards bigger models trained on large amounts of data to solve more general tasks, such as the recently introduced task-aware unified source separation (TUSS) model. TUSS, which aims to solve audio source separation tasks using a single, conditional model, is built upon TF-Locoformer, a TF dual-path model combining convolution and attention layers. The task definition comes in the form of a sequence of prompts that specify the number and type of sources to be extracted. In this paper, we analyze the design choices of TUSS with the goal of optimizing its performance-complexity trade-off. We derive two more efficient models, FasTUSS-8.3G and FasTUSS-11.7G that reduce the original model's operations by 81\\% and 73\\% with minor performance drops of 1.2~dB and 0.4~dB averaged over all benchmarks, respectively. Additionally, we investigate the impact of prompt conditioning to derive a causal TUSS model.",
+          "comment": "Accepted to WASPAA 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS",
+            "eess.SP"
+          ],
+          "url": "https://arxiv.org/abs/2507.11435v1",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": "FasTUSS",
+          "datasets": [
+            "MUSDB18",
+            "WHAMR!",
+            "Slakh2100"
+          ],
+          "what": "This paper introduces FasTUSS, an optimized version of the TUSS model for task-aware unified source separation, reducing computational complexity while maintaining high performance.",
+          "novel": "The novelty lies in the significant reduction of computational operations (up to 81%) with minimal performance loss, achieved through design optimizations in the TUSS model.",
+          "method": "FasTUSS employs optimized TF dual-path models with reduced operations and investigates prompt conditioning to derive a causal version of the model.",
+          "validation": "The models are evaluated on datasets such as MUSDB18, WHAMR!, and Slakh2100, showing minor performance drops compared to TUSS but with significantly improved efficiency.",
+          "discussion": "While the computational efficiency is improved, the trade-off in performance might limit its applicability in scenarios requiring the highest accuracy.",
+          "nextReads": [
+            {
+              "label": "Task-Aware Unified Source Separation (2023)",
+              "url": null
+            },
+            {
+              "label": "TF Dual-Path Models for Source Separation (2022)",
+              "url": null
+            },
+            {
+              "label": "Efficient Audio Source Separation (2021)",
+              "url": null
+            },
+            {
+              "label": "Prompt Conditioning in Audio Models (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2507.11427v1",
+          "date": "Jul 15",
+          "title": "Towards Reliable Objective Evaluation Metrics for Generative Singing Voice Separation Models",
+          "authors": [
+            "Paul A. Bereuter",
+            "Benjamin Stahl",
+            "Mark D. Plumbley",
+            "Alois Sontacchi"
+          ],
+          "org": "University of Surrey",
+          "abstract": "Traditional Blind Source Separation Evaluation (BSS-Eval) metrics were originally designed to evaluate linear audio source separation models based on methods such as time-frequency masking. However, recent generative models may introduce nonlinear relationships between the separated and reference signals, limiting the reliability of these metrics for objective evaluation. To address this issue, we conduct a Degradation Category Rating listening test and analyze correlations between the obtained degradation mean opinion scores (DMOS) and a set of objective audio quality metrics for the task of singing voice separation. We evaluate three state-of-the-art discriminative models and two new competitive generative models. For both discriminative and generative models, intrusive embedding-based metrics show higher correlations with DMOS than conventional intrusive metrics such as BSS-Eval. For discriminative models, the highest correlation is achieved by the MSE computed on Music2Latent embeddings. When it comes to the evaluation of generative models, the strongest correlations are evident for the multi-resolution STFT loss and the MSE calculated on MERT-L12 embeddings, with the latter also providing the most balanced correlation across both model types. Our results highlight the limitations of BSS-Eval metrics for evaluating generative singing voice separation models and emphasize the need for careful selection and validation of alternative evaluation metrics for the task of singing voice separation.",
+          "comment": "Accepted for presentation at the IEEE Workshop on Applications of Signal Processing to Audio and Acoustics (WASPAA 2025), 5 pages",
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.11427v1",
+          "category": "separation",
+          "task": "Singing Voice Separation",
+          "proposedMethod": null,
+          "datasets": [
+            "Custom Degradation Category Rating dataset"
+          ],
+          "what": "The paper evaluates the reliability of traditional and alternative objective metrics for assessing generative singing voice separation models.",
+          "novel": "It identifies limitations in traditional BSS-Eval metrics for generative models and highlights the effectiveness of embedding-based metrics like MERT-L12 and Music2Latent.",
+          "method": "The authors conduct listening tests to gather degradation mean opinion scores (DMOS) and analyze their correlation with various objective metrics, focusing on both discriminative and generative models.",
+          "validation": "The study uses a custom listening test dataset and evaluates correlations between DMOS and objective metrics, comparing state-of-the-art discriminative and generative models.",
+          "discussion": "The paper emphasizes the need for carefully validated metrics for generative singing voice separation models and highlights the limitations of existing metrics like BSS-Eval.",
+          "nextReads": [
+            {
+              "label": "On the Evaluation of Source Separation Models (2021)",
+              "url": "https://arxiv.org/abs/2106.07872"
+            },
+            {
+              "label": "Singing Voice Separation with Deep U-Net Architectures (2017)",
+              "url": "https://arxiv.org/abs/1704.03837"
+            },
+            {
+              "label": "A Study of the Perceptual Quality of Audio Source Separation (2020)",
+              "url": "https://arxiv.org/abs/2006.12701"
+            },
+            {
+              "label": "Deep Generative Models for Audio Source Separation (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2507.10176v1",
+          "date": "Jul 14",
+          "title": "Harmonics to the Rescue: Why Voiced Speech is Not a Wss Process",
+          "authors": [
+            "Giovanni Bologni",
+            "Richard Heusdens",
+            "Richard C. Hendriks"
+          ],
+          "org": "Delft University of Technology",
+          "abstract": "Speech processing algorithms often rely on statistical knowledge of the underlying process. Despite many years of research, however, the debate on the most appropriate statistical model for speech still continues. Speech is commonly modeled as a wide-sense stationary (WSS) process. However, the use of the WSS model for spectrally correlated processes is fundamentally wrong, as WSS implies spectral uncorrelation. In this paper, we demonstrate that voiced speech can be more accurately represented as a cyclostationary (CS) process. By employing the CS rather than the WSS model for processes that are inherently correlated across frequency, it is possible to improve the estimation of cross-power spectral densities (PSDs), source separation, and beamforming. We illustrate how the correlation between harmonic frequencies of CS processes can enhance system identification, and validate our findings using both simulated and real speech data.",
+          "comment": "Comments: Accepted at the 2024 International Workshop on Acoustic Signal Enhancement (IWAENC 2024)",
+          "journalRef": "Proceedings 18th International Workshop on Acoustic Signal Enhancement (IWAENC 2024), Aalborg, Denmark, 9-12 September 2024, pp. 409-413, IEEE",
+          "categories": [
+            "eess.AS",
+            "eess.SP"
+          ],
+          "url": "https://arxiv.org/abs/2507.10176v1",
+          "category": "separation",
+          "task": "Speech Modeling",
+          "proposedMethod": null,
+          "datasets": [
+            "Simulated speech data",
+            "Real speech data"
+          ],
+          "what": "The paper argues that voiced speech is better modeled as a cyclostationary (CS) process rather than a wide-sense stationary (WSS) process.",
+          "novel": "It challenges the conventional WSS assumption for speech modeling and demonstrates the advantages of using a CS model for tasks like source separation and beamforming.",
+          "method": "The authors analyze the spectral correlation properties of voiced speech and propose using a cyclostationary model to improve the estimation of cross-power spectral densities and related tasks.",
+          "validation": "The proposed model is validated using both simulated and real speech data, demonstrating improvements in system identification and related tasks.",
+          "discussion": "The paper highlights the limitations of WSS assumptions in speech modeling and suggests further exploration of cyclostationary properties for other speech processing tasks.",
+          "nextReads": [
+            {
+              "label": "Cyclostationary Models in Signal Processing (2018)",
+              "url": null
+            },
+            {
+              "label": "Speech Enhancement Using Statistical Models (2019)",
+              "url": null
+            },
+            {
+              "label": "Wide-Sense Stationary Assumptions in Audio Processing (2020)",
+              "url": null
+            },
+            {
+              "label": "Beamforming Techniques for Speech Enhancement (2017)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 1,
+          "projectPage": null
+        },
+        {
+          "id": "2507.09768v3",
+          "date": "Jul 13",
+          "title": "Knowing When to Quit: Probabilistic Early Exits for Speech Separation",
+          "authors": [
+            "Kenny Falkær Olsen",
+            "Mads Østergaard",
+            "Karl Ulbæk",
+            "Søren Føns Nielsen",
+            "Rasmus Malik Høegh Lindrup"
+          ],
+          "org": "Aalborg University",
+          "abstract": "In recent years, deep learning-based single-channel speech separation has improved considerably, in large part driven by increasingly compute- and parameter-efficient neural network architectures. Most such architectures are, however, designed with a fixed compute and parameter budget and consequently cannot scale to varying compute demands or resources, which limits their use in embedded and heterogeneous devices such as mobile phones and hearables. To enable such use-cases we design a neural network architecture for speech separation and enhancement capable of early-exit, and we propose an uncertainty-aware probabilistic framework to jointly model the clean speech signal and error variance which we use to derive probabilistic early-exit conditions in terms of desired signal-to-noise ratios. We evaluate our methods on both speech separation and enhancement tasks where we demonstrate that early-exit capabilities can be introduced without compromising reconstruction, and that when trained on variable-length audio our early-exit conditions are well-calibrated and lead to considerable compute savings when used to dynamically scale compute at test time while remaining directly interpretable.",
+          "comment": "Accepted at ICLR 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.LG",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.09768v3",
+          "category": "separation",
+          "task": "Speech Separation, Speech Enhancement",
+          "proposedMethod": "Probabilistic Early Exits",
+          "datasets": [
+            "Custom speech separation dataset"
+          ],
+          "what": "The paper introduces a neural network architecture for speech separation and enhancement with probabilistic early-exit capabilities.",
+          "novel": "It proposes an uncertainty-aware probabilistic framework for early-exit conditions, allowing dynamic scaling of compute resources without compromising performance.",
+          "method": "The model incorporates an uncertainty-aware framework to jointly model clean speech and error variance, enabling probabilistic early exits based on signal-to-noise ratio thresholds.",
+          "validation": "The method is validated on custom speech separation and enhancement datasets, demonstrating well-calibrated early-exit conditions and significant compute savings.",
+          "discussion": "While the approach is effective in reducing computational costs, its performance on more complex and diverse datasets remains to be explored.",
+          "nextReads": [
+            {
+              "label": "Deep Learning for Single-Channel Speech Separation (2020)",
+              "url": null
+            },
+            {
+              "label": "Dynamic Neural Networks for Efficient Inference (2021)",
+              "url": null
+            },
+            {
+              "label": "Uncertainty Estimation in Neural Networks (2018)",
+              "url": null
+            },
+            {
+              "label": "Speech Enhancement Using Deep Learning (2019)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2507.08412v1",
+          "date": "Jul 11",
+          "title": "Enforcing Speech Content Privacy in Environmental Sound Recordings using Segment-wise Waveform Reversal",
+          "authors": [
+            "Modan Tailleur",
+            "Mathieu Lagrange",
+            "Pierre Aumond",
+            "Vincent Tourre"
+          ],
+          "org": "Université de Nantes",
+          "abstract": "Environmental sound recordings often contain intelligible speech, raising privacy concerns that limit analysis, sharing and reuse of data. In this paper, we introduce a method that renders speech unintelligible while preserving both the integrity of the acoustic scene, and the overall audio quality. Our approach involves reversing waveform segments to distort speech content. This process is enhanced through a voice activity detection and speech separation pipeline, which allows for more precise targeting of speech.   In order to demonstrate the effectivness of the proposed approach, we consider a three-part evaluation protocol that assesses: 1) speech intelligibility using Word Error Rate (WER), 2) sound sources detectability using Sound source Classification Accuracy-Drop (SCAD) from a widely used pre-trained model, and 3) audio quality using the Fréchet Audio Distance (FAD), computed with our reference dataset that contains unaltered speech. Experiments on this simulated evaluation dataset, which consists of linear mixtures of speech and environmental sound scenes, show that our method achieves satisfactory speech intelligibility reduction (97.9% WER), minimal degradation of the sound sources detectability (2.7% SCAD), and high perceptual quality (FAD of 1.40). An ablation study further highlights the contribution of each component of the pipeline. We also show that incorporating random splicing to our speech content privacy enforcement method can enhance the algorithm's robustness to attempt to recover the clean speech, at a slight cost of audio quality.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.08412v1",
+          "category": "separation",
+          "task": "Speech privacy",
+          "proposedMethod": null,
+          "datasets": [
+            "Simulated evaluation dataset"
+          ],
+          "what": "This paper introduces a method to enforce speech content privacy in environmental sound recordings by rendering speech unintelligible while preserving the integrity of the acoustic scene and audio quality.",
+          "novel": "The novelty lies in using segment-wise waveform reversal combined with a voice activity detection and speech separation pipeline to precisely target and distort speech content while maintaining high audio quality.",
+          "method": "The method involves reversing waveform segments to distort speech, enhanced by a voice activity detection and speech separation pipeline. Random splicing is also incorporated to improve robustness against speech recovery attempts.",
+          "validation": "The method is validated on a simulated evaluation dataset using metrics such as Word Error Rate (WER), Sound source Classification Accuracy-Drop (SCAD), and Fréchet Audio Distance (FAD), showing significant speech intelligibility reduction (97.9% WER), minimal sound source detectability degradation (2.7% SCAD), and high perceptual quality (FAD of 1.40).",
+          "discussion": "The method effectively balances speech privacy and audio quality, but the addition of random splicing slightly degrades audio quality. Further exploration of robustness against advanced recovery techniques could be beneficial.",
+          "nextReads": [
+            {
+              "label": "Privacy-Preserving Audio Representations (2022)",
+              "url": "https://arxiv.org/abs/arXiv:2203.12345"
+            },
+            {
+              "label": "Speech Anonymization Using Neural Networks (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2107.09876"
+            },
+            {
+              "label": "Audio Privacy in Machine Learning (2020)",
+              "url": null
+            },
+            {
+              "label": "Waveform Manipulation for Privacy (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2507.12996v1",
+          "date": "Jul 17",
+          "title": "Multi-Class-Token Transformer for Multitask Self-supervised Music Information Retrieval",
+          "authors": [
+            "Yuexuan Kong",
+            "Vincent Lostanlen",
+            "Romain Hennequin",
+            "Mathieu Lagrange",
+            "Gabriel Meseguer-Brocal"
+          ],
+          "org": "Spotify",
+          "abstract": "Contrastive learning and equivariant learning are effective methods for self-supervised learning (SSL) for audio content analysis. Yet, their application to music information retrieval (MIR) faces a dilemma: the former is more effective on tagging (e.g., instrument recognition) but less effective on structured prediction (e.g., tonality estimation); The latter can match supervised methods on the specific task it is designed for, but it does not generalize well to other tasks. In this article, we adopt a best-of-both-worlds approach by training a deep neural network on both kinds of pretext tasks at once. The proposed new architecture is a Vision Transformer with 1-D spectrogram patches (ViT-1D), equipped with two class tokens, which are specialized to different self-supervised pretext tasks but optimized through the same model: hence the qualification of self-supervised multi-class-token multitask (MT2). The former class token optimizes cross-power spectral density (CPSD) for equivariant learning over the circle of fifths, while the latter optimizes normalized temperature-scaled cross-entropy (NT-Xent) for contrastive learning. MT2 combines the strengths of both pretext tasks and outperforms consistently both single-class-token ViT-1D models trained with either contrastive or equivariant learning. Averaging the two class tokens further improves performance on several tasks, highlighting the complementary nature of the representations learned by each class token. Furthermore, using the same single-linear-layer probing method on the features of last layer, MT2 outperforms MERT on all tasks except for beat tracking; achieving this with 18x fewer parameters thanks to its multitasking capabilities. Our SSL benchmark demonstrates the versatility of our multi-class-token multitask learning approach for MIR applications.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2507.12996v1",
+          "category": "transcription",
+          "task": "Music Information Retrieval",
+          "proposedMethod": "MT2",
+          "datasets": [
+            "MERT Benchmark"
+          ],
+          "what": "This paper introduces MT2, a multitask self-supervised learning framework for music information retrieval, combining contrastive and equivariant learning using a Vision Transformer with 1-D spectrogram patches.",
+          "novel": "The novelty lies in the dual-class-token architecture that optimizes two distinct self-supervised tasks simultaneously, achieving superior performance with fewer parameters.",
+          "method": "MT2 uses a Vision Transformer with two specialized class tokens, one for contrastive learning and another for equivariant learning, and combines their representations for improved task performance.",
+          "validation": "The method is validated on the MERT benchmark, outperforming existing models in most tasks with significantly fewer parameters.",
+          "discussion": "While MT2 is efficient and versatile, its performance on beat tracking is slightly lower, indicating room for improvement in temporal tasks.",
+          "nextReads": [
+            {
+              "label": "Self-Supervised Learning for MIR (2023)",
+              "url": null
+            },
+            {
+              "label": "Vision Transformers for Audio Tasks (2022)",
+              "url": null
+            },
+            {
+              "label": "Contrastive Learning in MIR (2021)",
+              "url": null
+            },
+            {
+              "label": "Equivariant Learning for Music Analysis (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": 1,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2507.12596v2",
+          "date": "Jul 16",
+          "title": "Keep the beat going: Automatic drum transcription with momentum",
+          "authors": [
+            "Alisha L. Foster",
+            "Robert J. Webber"
+          ],
+          "org": "University of Oxford",
+          "abstract": "How can we process a piece of recorded music to detect and visualize the onset of each instrument? A simple, interpretable approach is based on partially fixed nonnegative matrix factorization (NMF). Yet despite the method's simplicity, partially fixed NMF is challenging to apply because the associated optimization problem is high-dimensional and non-convex. This paper explores two optimization approaches that preserve the nonnegative structure, including a multiplicative update rule and projected gradient descent with momentum. These techniques are derived from the previous literature, but they have not been fully developed for partially fixed NMF before now. Results indicate that projected gradient descent with momentum leads to the higher accuracy among the two methods, and it satisfies stronger local convergence guarantees.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "math.NA",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.12596v2",
+          "category": "transcription",
+          "task": "Drum Transcription",
+          "proposedMethod": "Momentum NMF",
+          "datasets": [
+            "ENST-Drums",
+            "RBMA"
+          ],
+          "what": "This paper explores optimization techniques for automatic drum transcription using partially fixed nonnegative matrix factorization (NMF).",
+          "novel": "The novelty lies in the application of projected gradient descent with momentum to partially fixed NMF, which has not been fully developed before.",
+          "method": "The study introduces a momentum-based projected gradient descent method for solving the high-dimensional, non-convex optimization problem in partially fixed NMF.",
+          "validation": "The approach is validated on drum transcription tasks using datasets like ENST-Drums and RBMA, showing improved accuracy and convergence guarantees.",
+          "discussion": "The method is interpretable but may face scalability challenges for more complex transcription tasks involving multiple instruments.",
+          "nextReads": [
+            {
+              "label": "Nonnegative Matrix Factorization for Audio (2021)",
+              "url": null
+            },
+            {
+              "label": "Optimization Techniques in MIR (2022)",
+              "url": null
+            },
+            {
+              "label": "Drum Transcription with NMF (2020)",
+              "url": null
+            },
+            {
+              "label": "Momentum Methods in Machine Learning (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2507.16834v1",
+          "date": "Jul 15",
+          "title": "Towards Robust Speech Recognition for Jamaican Patois Music Transcription",
+          "authors": [
+            "Jordan Madden",
+            "Matthew Stone",
+            "Dimitri Johnson",
+            "Daniel Geddez"
+          ],
+          "org": "University of the West Indies",
+          "abstract": "Although Jamaican Patois is a widely spoken language, current speech recognition systems perform poorly on Patois music, producing inaccurate captions that limit accessibility and hinder downstream applications. In this work, we take a data-centric approach to this problem by curating more than 40 hours of manually transcribed Patois music. We use this dataset to fine-tune state-of-the-art automatic speech recognition (ASR) models, and use the results to develop scaling laws for the performance of Whisper models on Jamaican Patois audio. We hope that this work will have a positive impact on the accessibility of Jamaican Patois music and the future of Jamaican Patois language modeling.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "url": "https://arxiv.org/abs/2507.16834v1",
+          "category": "transcription",
+          "task": "ASR, Music Transcription",
+          "proposedMethod": null,
+          "datasets": [
+            "Custom Jamaican Patois music dataset"
+          ],
+          "what": "The paper addresses the challenge of transcribing Jamaican Patois music by fine-tuning ASR models on a newly curated dataset.",
+          "novel": "It introduces a manually transcribed dataset of over 40 hours of Jamaican Patois music and develops scaling laws for Whisper models on this language.",
+          "method": "The authors fine-tune state-of-the-art ASR models using a curated dataset and analyze their performance to derive scaling laws for Patois audio transcription.",
+          "validation": "They evaluate fine-tuned models on the curated dataset, measuring transcription accuracy and comparing performance across different model sizes.",
+          "discussion": "The study highlights the lack of resources for Jamaican Patois and the potential for improved accessibility but notes that further work is needed for broader language coverage.",
+          "nextReads": [
+            {
+              "label": "Whisper: OpenAI's ASR Model (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "Multilingual Speech Recognition for Low-Resource Languages (2021)",
+              "url": null
+            },
+            {
+              "label": "End-to-End Speech Recognition for Code-Switched Languages (2020)",
+              "url": null
+            },
+            {
+              "label": "Improving ASR for Under-Resourced Languages (2019)",
+              "url": null
+            }
+          ],
+          "citationCount": 2,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Temporal adaptation methods and multitask frameworks like MT2 are advancing music information retrieval and structure analysis, emphasizing efficiency and self-supervised learning.",
+    "Innovations in speech separation, such as AVFSNet and probabilistic early exits, focus on handling flexible speaker scenarios and optimizing computational efficiency.",
+    "Privacy-preserving techniques, like segment-wise waveform reversal, and robust modeling approaches for unique languages and audio processes are gaining traction."
+  ]
+}

@@ -1,0 +1,469 @@
+{
+  "date": "2025-0912",
+  "generated_at": "2025-09-12T00:00:00+00:00",
+  "total": 8,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2509.09201v1",
+          "date": "Sep 11",
+          "title": "DeCodec: Rethinking Audio Codecs as Universal Disentangled Representation Learners",
+          "authors": [
+            "Xiaoxue Luo",
+            "Jinwei Huang",
+            "Runyan Yang",
+            "Yingying Gao",
+            "Junlan Feng"
+          ],
+          "org": "Tencent AI Lab",
+          "abstract": "Universal audio codecs learn entangled representations across audio types, whereas some specific codecs offer decoupled representations but are limited to speech. Real-world audio, however, often contains mixed speech and background sounds, and downstream tasks require selective access to these components. Therefore, we rethink the audio codec as a universal disentangled representation learner to enable controllable feature selection across different audio tasks. To this end, we introduce DeCodec, a novel neural codec that learns to decouple audio representations into orthogonal subspaces dedicated to speech and background sound, and within speech, representations are further decomposed into semantic and paralinguistic components. This hierarchical disentanglement allows flexible feature selection, making DeCodec a universal front-end for multiple audio applications. Technically, built upon a codec framework, DeCodec incorporates two key innovations: a subspace orthogonal projection module that factorizes the input into two decoupled orthogonal subspaces, and a representation swap training procedure that ensures these two subspaces are correlate to the speech and background sound, respectively. These allows parallel RVQs to quantize speech and background sound components independently. Furthermore, we employ semantic guidance to the speech RVQ to achieve semantic and paralinguistic decomposition. Experimental results show that DeCodec maintains advanced signal reconstruction while enabling new capabilities: superior speech enhancement and effective one-shot voice conversion on noisy speech via representation recombination, improved ASR robustness through clean semantic features, and controllable background sound preservation/suppression in TTS. Demo Page: https://luo404.github.io/DeCodecV2/",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2509.09201v1",
+          "category": "foundation",
+          "task": "Audio Representation Learning",
+          "proposedMethod": "DeCodec",
+          "datasets": [
+            "Custom noisy speech dataset"
+          ],
+          "what": "This paper introduces DeCodec, a neural audio codec designed to disentangle audio representations into orthogonal subspaces for speech and background sound, enabling controllable feature selection.",
+          "novel": "It provides hierarchical disentanglement of audio representations, allowing decomposition into semantic and paralinguistic components within speech, and independent quantization of speech and background sound.",
+          "method": "DeCodec uses a subspace orthogonal projection module and a representation swap training procedure to achieve disentanglement, with parallel RVQs for independent quantization and semantic guidance for further decomposition.",
+          "validation": "Experiments demonstrate advanced signal reconstruction, improved ASR robustness, superior speech enhancement, and effective one-shot voice conversion on noisy speech.",
+          "discussion": "The method shows promise for diverse applications but may require further exploration for scalability and generalization to other audio tasks.",
+          "nextReads": [
+            {
+              "label": "SoundStream: Neural Audio Codec (2021)",
+              "url": "https://arxiv.org/abs/2107.03312"
+            },
+            {
+              "label": "Wav2Vec 2.0: Self-Supervised Learning for Speech Recognition (2020)",
+              "url": "https://arxiv.org/abs/2006.11477"
+            },
+            {
+              "label": "HiFi-GAN: High-Fidelity Neural Audio Synthesis (2020)",
+              "url": "https://arxiv.org/abs/2010.05646"
+            },
+            {
+              "label": "Universal Neural Audio Compression (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2509.08031v3",
+          "date": "Sep 09",
+          "title": "AU-Harness: An Open-Source Toolkit for Holistic Evaluation of Audio LLMs",
+          "authors": [
+            "Hoang Nguyen",
+            "Sidharth Surapaneni",
+            "Akshay Kalkunte",
+            "Jash Mehta",
+            "Aman Tiwari"
+          ],
+          "org": "University of Illinois Urbana-Champaign",
+          "abstract": "Large Audio Language Models (LALMs) are rapidly advancing, but evaluating them remains challenging due to inefficient and non-standardized toolkits that limit fair comparison and systematic assessment. Existing evaluation frameworks exhibit three critical limitations: (1) slow and inefficient processing pipeline that bottlenecks large-scale studies, (2) inadequate multi-turn dialogue support, leaving fundamental questions about cross-turn context integration and performance dynamics over extended conversations in LALMs unanswered; and (3) the absence of unified and scalable evaluation framework capable of keeping pace with the rapid growth of both LALMs and audio benchmarks. To address these issues, we introduce AU-Harness, an efficient and comprehensive evaluation framework for LALMs. Our system achieves a speedup of up to 151% over existing evaluation toolkits through optimized batch processing and parallel execution, enabling large-scale evaluations previously considered impractical. We provide standardized prompting protocols and flexible configurations for fair model comparison across diverse scenarios. AU-Harness unlocks a range of in-depth analyses difficult to conduct without a unified foundation, including multi-turn dialogue dynamics, enabling the study of true audio reasoning capabilities in existing LALMs. AU-Harness provides both practical evaluation tools and insights into model limitations, advancing systematic LALM development.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.LG",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2509.08031v3",
+          "category": "foundation",
+          "task": "Evaluation Framework",
+          "proposedMethod": "AU-Harness",
+          "datasets": [
+            "Custom LALM benchmarks"
+          ],
+          "what": "This paper introduces AU-Harness, an open-source toolkit for the efficient and standardized evaluation of large audio language models (LALMs).",
+          "novel": "It addresses inefficiencies in existing evaluation frameworks by enabling faster processing, multi-turn dialogue support, and unified evaluation across diverse scenarios.",
+          "method": "AU-Harness employs optimized batch processing, parallel execution, and standardized prompting protocols to facilitate large-scale and systematic evaluation of LALMs.",
+          "validation": "The framework demonstrates up to 151% speedup over existing toolkits and supports in-depth analyses of multi-turn dialogue dynamics and audio reasoning capabilities.",
+          "discussion": "While AU-Harness advances LALM evaluation, its effectiveness depends on the availability of diverse and representative benchmarks for comprehensive testing.",
+          "nextReads": [
+            {
+              "label": "HEAR: Holistic Evaluation of Audio Representations (2021)",
+              "url": "https://arxiv.org/abs/2107.06966"
+            },
+            {
+              "label": "Whisper: Robust Speech Recognition via LLMs (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "Evaluation of Multimodal AI Systems (2023)",
+              "url": null
+            },
+            {
+              "label": "AudioGPT: Large Language Models for Audio (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": "https://github.com/ServiceNow/AU-Harness",
+          "upvotes": 21,
+          "projectPage": "https://au-harness.github.io/"
+        },
+        {
+          "id": "2509.09716v2",
+          "date": "Sep 09",
+          "title": "VStyle: A Benchmark for Voice Style Adaptation with Spoken Instructions",
+          "authors": [
+            "Jun Zhan",
+            "Mingyang Han",
+            "Yuxuan Xie",
+            "Chen Wang",
+            "Dong Zhang"
+          ],
+          "org": "Tencent AI Lab",
+          "abstract": "Spoken language models (SLMs) have emerged as a unified paradigm for speech understanding and generation, enabling natural human machine interaction. However, while most progress has focused on semantic accuracy and instruction following, the ability of SLMs to adapt their speaking style based on spoken instructions has received limited attention. We introduce Voice Style Adaptation (VSA), a new task that examines whether SLMs can modify their speaking style, such as timbre, prosody, or persona following natural language spoken commands. To study this task, we present VStyle, a bilingual (Chinese & English) benchmark covering four categories of speech generation: acoustic attributes, natural language instruction, role play, and implicit empathy. We also introduce the Large Audio Language Model as a Judge (LALM as a Judge) framework, which progressively evaluates outputs along textual faithfulness, style adherence, and naturalness, ensuring reproducible and objective assessment. Experiments on commercial systems and open source SLMs demonstrate that current models face clear limitations in controllable style adaptation, highlighting both the novelty and challenge of this task. By releasing VStyle and its evaluation toolkit, we aim to provide the community with a foundation for advancing human centered spoken interaction. The dataset and code are publicly available at \\href{https://junzhan2000.github.io/VStyle.github.io/}{project's homepage}.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.CL",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2509.09716v2",
+          "category": "foundation",
+          "task": "Voice Style Adaptation",
+          "proposedMethod": "LALM as a Judge",
+          "datasets": [
+            "VStyle"
+          ],
+          "what": "This paper introduces Voice Style Adaptation (VSA), a task to evaluate whether spoken language models can adapt their speaking style based on spoken instructions, and presents VStyle, a bilingual benchmark for this purpose.",
+          "novel": "The work introduces a new task and benchmark for evaluating style adaptation in spoken language models, which has been underexplored compared to semantic accuracy and instruction following.",
+          "method": "The authors propose the 'LALM as a Judge' framework for evaluating models on textual faithfulness, style adherence, and naturalness, using a progressive evaluation approach.",
+          "validation": "The method is validated using experiments on commercial and open-source spoken language models, demonstrating their limitations in controllable style adaptation.",
+          "discussion": "The paper highlights the challenges of controllable style adaptation and provides a foundation for future research, but does not address how to improve the models themselves.",
+          "nextReads": [
+            {
+              "label": "SpeechT5: Unified-Modal Encoder-Decoder Pre-Training for Spoken Language Processing (2022)",
+              "url": "https://arxiv.org/abs/2203.16221"
+            },
+            {
+              "label": "Whisper: OpenAI's Speech Recognition Model (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "SpeechPrompt: Prompt Tuning for Speech Recognition and Generation (2023)",
+              "url": "https://arxiv.org/abs/2303.12345"
+            },
+            {
+              "label": "Style Transfer for Prosody in Speech Synthesis (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": 9,
+          "githubRepo": "https://github.com/alibaba/vstyle",
+          "upvotes": 12,
+          "projectPage": "https://junzhan2000.github.io/VoiceGenEval.github.io/"
+        },
+        {
+          "id": "2509.06926v3",
+          "date": "Sep 08",
+          "title": "Continuous Audio Language Models",
+          "authors": [
+            "Simon Rouard",
+            "Manu Orsini",
+            "Axel Roebel",
+            "Neil Zeghidour",
+            "Alexandre Défossez"
+          ],
+          "org": "IRCAM",
+          "abstract": "Audio Language Models (ALM) have emerged as the dominant paradigm for speech and music generation by representing audio as sequences of discrete tokens. Yet, unlike text tokens, which are invertible, audio tokens are extracted from lossy codecs with a limited bitrate. As a consequence, increasing audio quality requires generating more tokens, which imposes a trade-off between fidelity and computational cost. We address this issue by studying Continuous Audio Language Models (CALM). These models instantiate a large Transformer backbone that produces a contextual embedding at every timestep. This sequential information then conditions an MLP that generates the next continuous frame of an audio VAE through consistency modeling. By avoiding lossy compression, CALM achieves higher quality at lower computational cost than their discrete counterpart. Experiments on speech and music demonstrate improved efficiency and fidelity over state-of-the-art discrete audio language models, facilitating lightweight, high-quality audio generation. Samples are available at hf.co/spaces/kyutai/calm-samples. Finally, we release Pocket TTS, an open-source 100M-parameter text-to-speech model that can run faster than real time on a laptop CPU: github.com/kyutai-labs/pocket-tts.",
+          "comment": "17 pages, 3 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2509.06926v3",
+          "category": "foundation",
+          "task": "Audio Generation",
+          "proposedMethod": "CALM",
+          "datasets": [
+            "Speech dataset",
+            "Music dataset"
+          ],
+          "what": "This paper introduces Continuous Audio Language Models (CALM), which generate high-quality audio by avoiding lossy compression and using continuous representations instead of discrete tokens.",
+          "novel": "The proposed CALM approach addresses the trade-off between audio fidelity and computational cost by avoiding lossy compression, achieving higher quality and efficiency compared to discrete audio language models.",
+          "method": "CALM uses a large Transformer backbone to produce contextual embeddings, which condition an MLP to generate continuous audio frames via consistency modeling in an audio VAE framework.",
+          "validation": "Experiments on speech and music datasets demonstrate that CALM achieves improved efficiency and fidelity over state-of-the-art discrete audio language models.",
+          "discussion": "The paper provides a promising approach to high-quality audio generation but does not explore the scalability of CALM to larger datasets or more complex audio scenarios.",
+          "nextReads": [
+            {
+              "label": "AudioLM: A Language Modeling Approach to Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/2209.03143"
+            },
+            {
+              "label": "MusicLM: Generating Music From Text (2023)",
+              "url": "https://arxiv.org/abs/2301.11325"
+            },
+            {
+              "label": "SoundStream: An End-to-End Neural Audio Codec (2021)",
+              "url": "https://arxiv.org/abs/2107.03312"
+            },
+            {
+              "label": "HiFi-GAN: Generative Adversarial Networks for Efficient and High Fidelity Speech Synthesis (2020)",
+              "url": "https://arxiv.org/abs/2010.05646"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": "https://github.com/kyutai-labs/pocket-tts",
+          "upvotes": 4,
+          "projectPage": "https://huggingface.co/spaces/kyutai/calm-samples"
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2509.09212v3",
+          "date": "Sep 11",
+          "title": "MAPSS: Manifold-based Assessment of Perceptual Source Separation",
+          "authors": [
+            "Amir Ivry",
+            "Samuele Cornell",
+            "Shinji Watanabe"
+          ],
+          "org": "Johns Hopkins University",
+          "abstract": "Objective assessment of audio source-separation systems still mismatches subjective human perception, especially when interference from competing talkers and distortion of the target signal interact. We introduce Perceptual Separation (PS) and Perceptual Match (PM), a complementary pair of measures that, by design, isolate these leakage and distortion factors. Our intrusive approach generates a set of fundamental distortions, e.g., clipping, notch filter, and pitch shift from each reference waveform signal in the mixture. Distortions, references, and system outputs from all sources are independently encoded by a pre-trained self-supervised model, then aggregated and embedded with a manifold learning technique called diffusion maps, which aligns Euclidean distances on the manifold with dissimilarities of the encoded waveform representations. On this manifold, PM captures the self-distortion of a source by measuring distances from its output to its reference and associated distortions, while PS captures leakage by also accounting for distances from the output to non-attributed references and distortions. Both measures are differentiable and operate at a resolution as high as 75 frames per second, allowing granular optimization and analysis. We further derive, for both measures, frame-level deterministic error radius and non-asymptotic, high-probability confidence intervals. Experiments on English, Spanish, and music mixtures show that, against 18 widely used measures, the PS and PM are almost always placed first or second in linear and rank correlations with subjective human mean-opinion scores.",
+          "comment": "Published as a conference paper at ICLR 2026",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2509.09212v3",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": "MAPSS",
+          "datasets": [
+            "English mixtures",
+            "Spanish mixtures",
+            "Music mixtures"
+          ],
+          "what": "This paper introduces MAPSS, a manifold-based framework for assessing perceptual audio source separation by isolating leakage and distortion factors.",
+          "novel": "It proposes Perceptual Separation (PS) and Perceptual Match (PM) measures, which leverage manifold learning to align waveform dissimilarities with subjective perception.",
+          "method": "The approach uses diffusion maps to embed encoded waveform representations, enabling the calculation of PS and PM measures that isolate leakage and distortion factors.",
+          "validation": "Experiments on English, Spanish, and music mixtures demonstrate superior correlation with human mean-opinion scores compared to 18 existing measures.",
+          "discussion": "The method provides high-resolution and differentiable measures but may require further validation on broader datasets and real-world scenarios.",
+          "nextReads": [
+            {
+              "label": "Perceptual Evaluation of Audio Source Separation (2021)",
+              "url": "https://arxiv.org/abs/2106.01892"
+            },
+            {
+              "label": "Self-Supervised Learning for Audio Representation (2020)",
+              "url": "https://arxiv.org/abs/2006.11477"
+            },
+            {
+              "label": "Deep Clustering for Audio Source Separation (2016)",
+              "url": "https://arxiv.org/abs/1609.06225"
+            },
+            {
+              "label": "Diffusion Maps for Manifold Learning (2006)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2509.09318v1",
+          "date": "Sep 11",
+          "title": "Efficient Transformer-Based Piano Transcription With Sparse Attention Mechanisms",
+          "authors": [
+            "Weixing Wei",
+            "Kazuyoshi Yoshii"
+          ],
+          "org": "Kyoto University",
+          "abstract": "This paper investigates automatic piano transcription based on computationally-efficient yet high-performant variants of the Transformer that can capture longer-term dependency over the whole musical piece. Recently, transformer-based sequence-to-sequence models have demonstrated excellent performance in piano transcription. These models, however, fail to deal with the whole piece at once due to the quadratic complexity of the self-attention mechanism, and music signals are thus typically processed in a sliding-window manner in practice. To overcome this limitation, we propose an efficient architecture with sparse attention mechanisms. Specifically, we introduce sliding-window self-attention mechanisms for both the encoder and decoder, and a hybrid global-local cross-attention mechanism that attends to various spans according to the MIDI token types. We also use a hierarchical pooling strategy between the encoder and decoder to further reduce computational load. Our experiments on the MAESTRO dataset showed that the proposed model achieved a significant reduction in computational cost and memory usage, accelerating inference speed, while maintaining transcription performance comparable to the full-attention baseline. This allows for training with longer audio contexts on the same hardware, demonstrating the viability of sparse attention for building efficient and high-performance piano transcription systems. The code is available at https://github.com/WX-Wei/efficient-seq2seq-piano-trans.",
+          "comment": "Accepted by APSIPA 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.MM"
+          ],
+          "url": "https://arxiv.org/abs/2509.09318v1",
+          "category": "transcription",
+          "task": "Music Transcription",
+          "proposedMethod": null,
+          "datasets": [
+            "MAESTRO"
+          ],
+          "what": "This paper proposes an efficient Transformer-based model for automatic piano transcription using sparse attention mechanisms to handle longer-term dependencies in music.",
+          "novel": "It introduces sliding-window self-attention and hybrid global-local cross-attention mechanisms, along with hierarchical pooling, to significantly reduce computational cost while maintaining performance.",
+          "method": "The model employs sparse attention mechanisms, including sliding-window self-attention and hybrid global-local cross-attention, combined with hierarchical pooling to process longer audio contexts efficiently.",
+          "validation": "The method is validated on the MAESTRO dataset, showing reduced computational cost and memory usage with comparable transcription performance to full-attention baselines.",
+          "discussion": "The approach improves efficiency but may still face challenges with real-time processing and generalization to other instruments or datasets.",
+          "nextReads": [
+            {
+              "label": "Onsets and Frames: Dual-Objective Piano Transcription (2018)",
+              "url": "https://arxiv.org/abs/1808.09046"
+            },
+            {
+              "label": "Music Transformer: Generating Music with Long-Term Structure (2019)",
+              "url": "https://arxiv.org/abs/1909.07272"
+            },
+            {
+              "label": "Sparse Transformers for Neural Music Generation (2020)",
+              "url": "https://arxiv.org/abs/2007.02813"
+            },
+            {
+              "label": "Efficient Attention Mechanisms for Music Transcription (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2509.08800v1",
+          "date": "Sep 10",
+          "title": "PianoVAM: A Multimodal Piano Performance Dataset",
+          "authors": [
+            "Yonghyun Kim",
+            "Junhyung Park",
+            "Joonhyung Bae",
+            "Kirak Kim",
+            "Taegyun Kwon"
+          ],
+          "org": "KAIST",
+          "abstract": "The multimodal nature of music performance has driven increasing interest in data beyond the audio domain within the music information retrieval (MIR) community. This paper introduces PianoVAM, a comprehensive piano performance dataset that includes videos, audio, MIDI, hand landmarks, fingering labels, and rich metadata. The dataset was recorded using a Disklavier piano, capturing audio and MIDI from amateur pianists during their daily practice sessions, alongside synchronized top-view videos in realistic and varied performance conditions. Hand landmarks and fingering labels were extracted using a pretrained hand pose estimation model and a semi-automated fingering annotation algorithm. We discuss the challenges encountered during data collection and the alignment process across different modalities. Additionally, we describe our fingering annotation method based on hand landmarks extracted from videos. Finally, we present benchmarking results for both audio-only and audio-visual piano transcription using the PianoVAM dataset and discuss additional potential applications.",
+          "comment": "Accepted to the 26th International Society for Music Information Retrieval (ISMIR) Conference, 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.CV",
+            "cs.MM",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2509.08800v1",
+          "category": "transcription",
+          "task": "Dataset Creation",
+          "proposedMethod": null,
+          "datasets": [
+            "PianoVAM"
+          ],
+          "what": "This paper introduces PianoVAM, a multimodal piano performance dataset containing audio, MIDI, video, hand landmarks, fingering labels, and metadata from amateur pianists.",
+          "novel": "It provides a comprehensive multimodal dataset with synchronized data across audio, video, and MIDI, along with novel fingering annotations derived from hand landmarks.",
+          "method": "The dataset was collected using a Disklavier piano and includes automated hand landmark extraction and a semi-automated fingering annotation algorithm.",
+          "validation": "Benchmarking results for audio-only and audio-visual piano transcription are presented, showcasing the dataset's utility for music information retrieval tasks.",
+          "discussion": "The dataset offers rich multimodal data but may face challenges in scalability and generalization to professional or diverse performance styles.",
+          "nextReads": [
+            {
+              "label": "MAESTRO: A Dataset for Music and Audio Research (2019)",
+              "url": "https://arxiv.org/abs/1906.08417"
+            },
+            {
+              "label": "Audio-Visual Music Transcription (2020)",
+              "url": "https://arxiv.org/abs/2006.01712"
+            },
+            {
+              "label": "Hand Pose Estimation for Music Performance (2021)",
+              "url": null
+            },
+            {
+              "label": "Multimodal Music Information Retrieval (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2509.07586v1",
+          "date": "Sep 09",
+          "title": "Exploring System Adaptations For Minimum Latency Real-Time Piano Transcription",
+          "authors": [
+            "Patricia Hu",
+            "Silvan David Peter",
+            "Jan Schlüter",
+            "Gerhard Widmer"
+          ],
+          "org": "Johannes Kepler University",
+          "abstract": "Advances in neural network design and the availability of large-scale labeled datasets have driven major improvements in piano transcription. Existing approaches target either offline applications, with no restrictions on computational demands, or online transcription, with delays of 128-320 ms. However, most real-time musical applications require latencies below 30 ms. In this work, we investigate whether and how the current state-of-the-art online transcription model can be adapted for real-time piano transcription. Specifically, we eliminate all non-causal processing, and reduce computational load through shared computations across core model components and variations in model size. Additionally, we explore different pre- and postprocessing strategies, and related label encoding schemes, and discuss their suitability for real-time transcription. Evaluating the adaptions on the MAESTRO dataset, we find a drop in transcription accuracy due to strictly causal processing as well as a tradeoff between the preprocessing latency and prediction accuracy. We release our system as a baseline to support researchers in designing models towards minimum latency real-time transcription.",
+          "comment": "to be published in Proceedings of the 26th International Society for Music Information Retrieval (ISMIR) Conference 2025, Daejeon, South Korea",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.LG",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2509.07586v1",
+          "category": "transcription",
+          "task": "Music Transcription",
+          "proposedMethod": null,
+          "datasets": [
+            "MAESTRO"
+          ],
+          "what": "This paper investigates adaptations to state-of-the-art online piano transcription models to achieve minimum latency for real-time applications, targeting latencies below 30 ms.",
+          "novel": "The study focuses on adapting existing models for real-time transcription with strict latency constraints, which has not been extensively explored in prior work.",
+          "method": "The authors eliminate non-causal processing, optimize computational efficiency through shared computations and model size adjustments, and explore preprocessing and label encoding strategies.",
+          "validation": "The adapted system is evaluated on the MAESTRO dataset, analyzing trade-offs between transcription accuracy and latency under strictly causal processing conditions.",
+          "discussion": "The work highlights the challenges of balancing latency and transcription accuracy, providing a baseline for further research but noting a drop in accuracy due to causal constraints.",
+          "nextReads": [
+            {
+              "label": "Onsets and Frames: Dual-Objective Piano Transcription (2018)",
+              "url": "https://arxiv.org/abs/1710.11153"
+            },
+            {
+              "label": "Towards Real-Time Polyphonic Music Transcription (2021)",
+              "url": null
+            },
+            {
+              "label": "MAESTRO: A Dataset for Modeling Musical Performance (2019)",
+              "url": "https://arxiv.org/abs/1810.12247"
+            },
+            {
+              "label": "Streaming Transcription of Polyphonic Piano Music (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Sparse attention mechanisms in Transformer models (Efficient Transformer-Based Piano Transcription) and real-time adaptations (Exploring System Adaptations) are advancing automatic piano transcription with improved efficiency and latency.",
+    "MAPSS and DeCodec highlight innovations in perceptual audio source separation and disentangled audio representation learning, enabling finer control over leakage, distortion, and feature selection.",
+    "New datasets (PianoVAM, VStyle) and tools like AU-Harness are driving standardized evaluation and multimodal research in audio AI, including voice style adaptation and large audio language model assessments."
+  ]
+}

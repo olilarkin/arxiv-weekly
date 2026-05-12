@@ -1,0 +1,95 @@
+{
+  "date": "2025-1205",
+  "generated_at": "2025-12-05T00:00:00+00:00",
+  "total": 2,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2512.09066v1",
+          "date": "Nov 28",
+          "title": "ORCA: Open-ended Response Correctness Assessment for Audio Question Answering",
+          "authors": [
+            "Šimon Sedláček",
+            "Sara Barahona",
+            "Bolaji Yusuf",
+            "Laura Herrera-Alarcón",
+            "Santosh Kesiraju"
+          ],
+          "org": "Šimon Sedláček et al.",
+          "abstract": "Evaluating open-ended responses from large audio language models (LALMs) is challenging because human annotators often genuinely disagree on answer correctness due to multiple valid interpretations, partial correctness, and subjective judgment. Traditional metrics reporting only mean scores fail to capture this uncertainty. We present ORCA (Open-ended Response Correctness Assessment), a framework that models the variability in human judgments using Beta distributions to predict both expected correctness and uncertainty. Our three-stage annotation framework combines human judgment with structured feedback and iterative refinement to simultaneously curate training data and improve benchmark quality. We collected 11,721 annotations across 3,580 question-answer pairs from 15 LALMs on two audio QA benchmarks, achieving inter-annotator agreement of 0.82 (Krippendorff's alpha). ORCA achieves 0.91 Spearman correlation with mean human judgments, matching or outperforming LLM-judge baselines while providing uncertainty estimates and requiring significantly less compute. We release our models, code, and curated dataset.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "url": "https://arxiv.org/abs/2512.09066v1",
+          "category": "foundation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2512.02432v1",
+          "date": "Dec 02",
+          "title": "Continual Learning for Singing Voice Separation with Human in the Loop Adaptation",
+          "authors": [
+            "Ankur Gupta",
+            "Anshul Rai",
+            "Archit Bansal",
+            "Vipul Arora"
+          ],
+          "org": "Ankur Gupta et al.",
+          "abstract": "Deep learning-based works for singing voice separation have performed exceptionally well in the recent past. However, most of these works do not focus on allowing users to interact with the model to improve performance. This can be crucial when deploying the model in real-world scenarios where music tracks can vary from the original training data in both genre and instruments. In this paper, we present a deep learning-based interactive continual learning framework for singing voice separation that allows users to fine-tune the vocal separation model to conform it to new target songs. We use a U-Net-based base model architecture that produces a mask for separating vocals from the spectrogram, followed by a human-in-the-loop task where the user provides feedback by marking a few false positives, i.e., regions in the extracted vocals that should have been silence. We propose two continual learning algorithms. Experiments substantiate the improvement in singing voice separation performance by the proposed algorithms over the base model in intra-dataset and inter-dataset settings.",
+          "comment": "Proceedings of the 26th International Symposium on Frontiers of Research in Speech and Music, 2021",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2512.02432v1",
+          "category": "separation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Analyzing this week's audio foundation model research trends.",
+    "Many new approaches for source separation and music transcription were submitted.",
+    "See the individual papers for details."
+  ]
+}

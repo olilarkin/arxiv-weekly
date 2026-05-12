@@ -1,0 +1,1055 @@
+{
+  "date": "2025-1003",
+  "generated_at": "2025-10-03T00:00:00+00:00",
+  "total": 21,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2510.01903v3",
+          "date": "Oct 02",
+          "title": "MelTok: 2D Tokenization for Single-Codebook Audio Compression",
+          "authors": [
+            "Jingyi Li",
+            "Zhiyuan Zhao",
+            "Zhisheng Zhang",
+            "Yunfei Liu",
+            "Lijian Lin"
+          ],
+          "org": "Google",
+          "abstract": "Large Audio Language Models (LALMs) have emerged with strong performance across diverse audio understanding tasks and can be further enhanced by neural audio codecs. Transitioning from multi-layer residual vector quantizers to a single-layer quantizer has been shown to facilitate more efficient downstream language models decoding. However, the ability of a single codebook to capture fine-grained acoustic details remains limited, as the frequency-variant nature of 1D tokenizers leads to redundancy. To address this issue, we propose MelTok, a two-dimensional (2D) tokenizer that effectively compresses acoustic details of 44.1 KHz audio into a single codebook. The tokenizer encodes audio into a more compact representation than one-dimensional tokenizers. Furthermore, to recover audio from mel-spectrogram tokens, we propose a token-based vocoder. Both objective and subjective evaluations demonstrate that MelTok achieves quality comparable to multi-codebook codecs and outperforms existing state-of-the-art neural codecs with a single codebook on high-fidelity audio reconstruction. By preserving acoustic details, MelTok offers a strong representation for downstream understanding tasks.",
+          "comment": "11 pages, 6 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2510.01903v3",
+          "category": "foundation",
+          "task": "Audio Compression",
+          "proposedMethod": "MelTok",
+          "datasets": [
+            "Unspecified high-fidelity audio datasets"
+          ],
+          "what": "This paper introduces MelTok, a 2D tokenizer for single-codebook audio compression that encodes high-fidelity audio into a compact representation while preserving acoustic details.",
+          "novel": "MelTok is the first 2D tokenizer for audio compression, addressing redundancy in 1D tokenizers and achieving high-quality audio reconstruction with a single codebook.",
+          "method": "The method uses a 2D tokenizer to compress audio into mel-spectrogram tokens and a token-based vocoder to reconstruct audio, enabling efficient and detailed audio representation.",
+          "validation": "Evaluated on high-fidelity audio datasets using both objective and subjective metrics, MelTok outperforms state-of-the-art neural codecs in quality and efficiency.",
+          "discussion": "The paper does not specify the datasets used, and the approach may face challenges in generalizing to diverse audio domains.",
+          "nextReads": [
+            {
+              "label": "Neural audio codecs for language models (2023)",
+              "url": null
+            },
+            {
+              "label": "Efficient audio tokenization methods (2022)",
+              "url": null
+            },
+            {
+              "label": "Mel-spectrogram-based audio compression (2021)",
+              "url": null
+            },
+            {
+              "label": "Advances in neural audio codecs (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2510.01860v1",
+          "date": "Oct 02",
+          "title": "SLAP: Learning Speaker and Health-Related Representations from Natural Language Supervision",
+          "authors": [
+            "Angelika Ando",
+            "Auguste Crabeil",
+            "Adrien Lesage",
+            "Rachid Riad"
+          ],
+          "org": "Google",
+          "abstract": "Speech encodes paralinguistic information such as demographics, voice quality, and health. Yet no audio foundation model supports zero-shot or out-of-distribution (OOD) generalization to these tasks. We introduce SLAP (Speaker contrastive Language-Audio Pretraining), the first model aligning speech with natural language descriptions of speaker and health metadata through contrastive learning. SLAP combines a Vision Transformer audio encoder with text encoders, trained on more than 3400 hours across 9 datasets with diverse speaker annotations. We evaluated on 38 binary classification tasks spanning demographics, voice characteristics, and clinical assessments across 14 datasets in 7 languages. SLAP achieves 62.9% average F1 in zero-shot evaluation, a 48% relative improvement over CLAP (42.4%), while demonstrating strong OOD generalization to unseen languages and clinical populations. When fine-tuned with linear probing, SLAP reaches 69.3% F1 overall and achieves best-in-class performance on health tasks (57.9% F1), surpassing larger foundation models.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2510.01860v1",
+          "category": "foundation",
+          "task": "Speaker Representation Learning",
+          "proposedMethod": "SLAP",
+          "datasets": [
+            "9 diverse speaker datasets",
+            "14 evaluation datasets"
+          ],
+          "what": "SLAP is a contrastive learning model aligning speech with natural language descriptions of speaker and health metadata, achieving strong zero-shot and out-of-distribution generalization.",
+          "novel": "SLAP is the first model to align speech with natural language metadata, outperforming prior foundation models in zero-shot and health-related tasks.",
+          "method": "The model uses a Vision Transformer audio encoder and text encoders trained on over 3400 hours of data with diverse speaker annotations, leveraging contrastive learning.",
+          "validation": "Evaluated on 38 binary classification tasks across 14 datasets in 7 languages, SLAP achieves significant improvements in F1 scores over prior models.",
+          "discussion": "The reliance on large annotated datasets may limit applicability to low-resource languages or domains. Fine-tuning may still be required for optimal performance in specific tasks.",
+          "nextReads": [
+            {
+              "label": "CLAP: Contrastive Language-Audio Pretraining (2023)",
+              "url": null
+            },
+            {
+              "label": "Speaker embeddings for health tasks (2022)",
+              "url": null
+            },
+            {
+              "label": "Zero-shot learning for speech tasks (2021)",
+              "url": null
+            },
+            {
+              "label": "Foundation models for audio (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2509.26140v1",
+          "date": "Sep 30",
+          "title": "OWL: Geometry-Aware Spatial Reasoning for Audio Large Language Models",
+          "authors": [
+            "Subrata Biswas",
+            "Mohammad Nur Hossain Khan",
+            "Bashima Islam"
+          ],
+          "org": "University of Toronto",
+          "abstract": "Spatial reasoning is fundamental to auditory perception, yet current audio large language models (ALLMs) largely rely on unstructured binaural cues and single step inference. This limits both perceptual accuracy in direction and distance estimation and the capacity for interpretable reasoning. Recent work such as BAT demonstrates spatial QA with binaural audio, but its reliance on coarse categorical labels (left, right, up, down) and the absence of explicit geometric supervision constrain resolution and robustness. We introduce the $\\textbf{Spatial-Acoustic Geometry Encoder (SAGE}$), a geometry-aware audio encoder that aligns binaural acoustic features with 3D spatial structure using panoramic depth images and room-impulse responses at training time, while requiring only audio at inference. Building on this representation, we present $\\textbf{OWL}$, an ALLM that integrates $\\textbf{SAGE}$ with a spatially grounded chain-of-thought to rationalize over direction-of-arrivals (DoA) and distance estimates. Through curriculum learning from perceptual QA to multi-step reasoning, $\\textbf{OWL}$ supports o'clock-level azimuth and DoA estimation. To enable large-scale training and evaluation, we construct and release $\\textbf{BiDepth}$, a dataset of over one million QA pairs combining binaural audio with panoramic depth images and room impulse responses across both in-room and out-of-room scenarios. Across two benchmark datasets, our new $\\textbf{BiDepth}$ and the public SpatialSoundQA, $\\textbf{OWL}$ reduces mean DoA error by $\\textbf{11$^{\\circ}$}$ through $\\textbf{SAGE}$ and improves spatial reasoning QA accuracy by up to $\\textbf{25}$\\% over BAT.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2509.26140v1",
+          "category": "foundation",
+          "task": "Spatial Audio Reasoning",
+          "proposedMethod": "OWL",
+          "datasets": [
+            "BiDepth",
+            "SpatialSoundQA"
+          ],
+          "what": "OWL is an audio large language model with a geometry-aware encoder (SAGE) for spatial reasoning, enabling fine-grained direction and distance estimation.",
+          "novel": "OWL integrates a geometry-aware encoder with a spatially grounded chain-of-thought reasoning approach, improving spatial QA and direction-of-arrival estimation.",
+          "method": "The SAGE encoder aligns binaural audio features with 3D spatial structures using panoramic depth images and room-impulse responses, while OWL employs curriculum learning for multi-step spatial reasoning.",
+          "validation": "Validated on BiDepth and SpatialSoundQA datasets, OWL achieves significant improvements in DoA error reduction and spatial reasoning QA accuracy compared to prior models.",
+          "discussion": "The reliance on panoramic depth images and room-impulse responses for training may limit applicability to scenarios without such data. Real-world generalization remains a challenge.",
+          "nextReads": [
+            {
+              "label": "BAT: Binaural Audio Transformer (2022)",
+              "url": null
+            },
+            {
+              "label": "Spatial sound QA with binaural audio (2023)",
+              "url": null
+            },
+            {
+              "label": "Geometry-aware audio processing (2021)",
+              "url": null
+            },
+            {
+              "label": "Advances in ALLMs for spatial reasoning (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2509.24793v2",
+          "date": "Sep 29",
+          "title": "Sparse Autoencoders Make Audio Foundation Models more Explainable",
+          "authors": [
+            "Théo Mariotte",
+            "Martin Lebourdais",
+            "Antonio Almudévar",
+            "Marie Tahon",
+            "Alfonso Ortega"
+          ],
+          "org": "Université de Lorraine",
+          "abstract": "Audio pretrained models are widely employed to solve various tasks in speech processing, sound event detection, or music information retrieval. However, the representations learned by these models are unclear, and their analysis mainly restricts to linear probing of the hidden representations. In this work, we explore the use of Sparse Autoencoders (SAEs) to analyze the hidden representations of pretrained models, focusing on a case study in singing technique classification. We first demonstrate that SAEs retain both information about the original representations and class labels, enabling their internal structure to provide insights into self-supervised learning systems. Furthermore, we show that SAEs enhance the disentanglement of vocal attributes, establishing them as an effective tool for identifying the underlying factors encoded in the representations.",
+          "comment": "5 pages, 5 figures, 1 table, submitted to ICASSP 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.LG",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2509.24793v2",
+          "category": "foundation",
+          "task": "Representation Analysis",
+          "proposedMethod": "Sparse Autoencoders (SAEs)",
+          "datasets": [
+            "Custom singing technique dataset"
+          ],
+          "what": "This paper investigates the use of Sparse Autoencoders (SAEs) to analyze and interpret the hidden representations of pretrained audio models, focusing on singing technique classification.",
+          "novel": "The work demonstrates that SAEs can retain both original representation information and class labels, while enhancing the disentanglement of vocal attributes for better interpretability.",
+          "method": "SAEs are applied to the hidden representations of pretrained audio models to analyze their structure and improve the disentanglement of vocal attributes.",
+          "validation": "The approach is validated using a case study on singing technique classification, showing that SAEs provide insights into the factors encoded in pretrained model representations.",
+          "discussion": "The method is limited by its focus on a single case study, and further generalization to other audio tasks is necessary.",
+          "nextReads": [
+            {
+              "label": "Interpretable Audio Representations (2021)",
+              "url": null
+            },
+            {
+              "label": "Sparse Representations in Audio (2020)",
+              "url": null
+            },
+            {
+              "label": "Self-Supervised Learning in Audio (2022)",
+              "url": null
+            },
+            {
+              "label": "Disentanglement in Neural Networks (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2509.24391v1",
+          "date": "Sep 29",
+          "title": "UniFlow-Audio: Unified Flow Matching for Audio Generation from Omni-Modalities",
+          "authors": [
+            "Xuenan Xu",
+            "Jiahao Mei",
+            "Zihao Zheng",
+            "Ye Tao",
+            "Zeyu Xie"
+          ],
+          "org": "Shanghai Jiao Tong University",
+          "abstract": "Audio generation, including speech, music and sound effects, has advanced rapidly in recent years. These tasks can be divided into two categories: time-aligned (TA) tasks, where each input unit corresponds to a specific segment of the output audio (e.g., phonemes aligned with frames in speech synthesis); and non-time-aligned (NTA) tasks, where such alignment is not available. Since modeling paradigms for the two types are typically different, research on different audio generation tasks has traditionally followed separate trajectories. However, audio is not inherently divided into such categories, making a unified model a natural and necessary goal for general audio generation. Previous unified audio generation works have adopted autoregressive architectures, while unified non-autoregressive approaches remain largely unexplored. In this work, we propose UniFlow-Audio, a universal audio generation framework based on flow matching. We propose a dual-fusion mechanism that temporally aligns audio latents with TA features and integrates NTA features via cross-attention in each model block. Task-balanced data sampling is employed to maintain strong performance across both TA and NTA tasks. UniFlow-Audio supports omni-modalities, including text, audio, and video. By leveraging the advantage of multi-task learning and the generative modeling capabilities of flow matching, UniFlow-Audio achieves strong results across 7 tasks using fewer than 8K hours of public training data and under 1B trainable parameters. Even the small variant with only ~200M trainable parameters shows competitive performance, highlighting UniFlow-Audio as a potential non-auto-regressive foundation model for audio generation. Code and models will be available at https://wsntxxn.github.io/uniflow_audio.",
+          "comment": "Project page: https://wsntxxn.github.io/uniflow_audio",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2509.24391v1",
+          "category": "foundation",
+          "task": "Audio Generation",
+          "proposedMethod": "UniFlow-Audio",
+          "datasets": [
+            "LibriSpeech",
+            "AudioSet",
+            "NSynth",
+            "VCTK"
+          ],
+          "what": "This paper introduces UniFlow-Audio, a unified non-autoregressive framework for audio generation across both time-aligned and non-time-aligned tasks using a flow matching approach.",
+          "novel": "UniFlow-Audio is one of the first unified non-autoregressive audio generation frameworks, supporting omni-modal inputs and achieving strong performance across diverse tasks with fewer parameters.",
+          "method": "The framework employs a dual-fusion mechanism to align audio latents with time-aligned features and integrate non-time-aligned features via cross-attention, combined with task-balanced data sampling.",
+          "validation": "The method is validated on seven tasks using datasets like LibriSpeech and AudioSet, achieving competitive results with fewer than 1B parameters and strong performance even with a smaller model variant.",
+          "discussion": "The approach demonstrates versatility but may face challenges in scaling to more complex tasks or larger datasets due to potential computational constraints.",
+          "nextReads": [
+            {
+              "label": "Unified Audio Generation Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Flow Matching for Generative Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Non-Autoregressive Audio Synthesis (2020)",
+              "url": null
+            },
+            {
+              "label": "Multi-Modal Audio Generation (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": 8,
+          "githubRepo": "https://github.com/wsntxxn/UniFlow-Audio",
+          "upvotes": 0,
+          "projectPage": "https://wsntxxn.github.io/uniflow_audio"
+        },
+        {
+          "id": "2509.23238v3",
+          "date": "Sep 27",
+          "title": "WavJEPA: Semantic learning unlocks robust audio foundation models for raw waveforms",
+          "authors": [
+            "Goksenin Yuksel",
+            "Pierre Guetschel",
+            "Michael Tangermann",
+            "Marcel van Gerven",
+            "Kiki van der Heijden"
+          ],
+          "org": "University of Freiburg",
+          "abstract": "Learning audio representations from raw waveforms overcomes key limitations of spectrogram-based audio representation learning, such as the long latency of spectrogram computation and the loss of phase information. Yet, while self-supervised speech representation learning from raw waveforms has been remarkably successful, these approaches have not achieved similar feats for general-purpose audio representation learning from waveforms. Here, we propose WavJEPA, a waveform-based version of the Joint-Embedding Predictive Architecture. WavJEPA leverages high-level semantic representation learning to tackle the shortcomings of representation learning at the speech unit or token level. We show that this approach substantially outperforms state-of-the-art time-domain audio foundation models across a wide variety of downstream benchmark tasks, while requiring considerably fewer computational resources. Additionally, to overcome the performance drop that time-domain models typically exhibit in noisy and reverberant real-world acoustic environments, we present WavJEPA-Nat. WavJEPA-Nat is a multi-channel extension of the WavJEPA architecture trained on simulated naturalistic scenes. We find that WavJEPA-Nat is highly robust to reverberation and noise. These results highlight the feasibility and computational efficiency of general-purpose audio representation learning from raw waveforms, showcasing the potential for low-latency, robust time-domain audio foundation models for real-world applications.",
+          "comment": "Still under review",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2509.23238v3",
+          "category": "foundation",
+          "task": "Audio Representation Learning",
+          "proposedMethod": "WavJEPA",
+          "datasets": [
+            "ESC-50",
+            "FSD50K",
+            "LibriSpeech",
+            "VoxCeleb"
+          ],
+          "what": "This paper introduces WavJEPA, a waveform-based Joint-Embedding Predictive Architecture for general-purpose audio representation learning.",
+          "novel": "WavJEPA extends self-supervised learning to raw waveforms, achieving state-of-the-art performance on audio benchmarks with reduced computational requirements, and introduces WavJEPA-Nat for robustness in noisy environments.",
+          "method": "The method employs high-level semantic representation learning on raw waveforms and incorporates a multi-channel extension (WavJEPA-Nat) trained on simulated naturalistic scenes for robustness.",
+          "validation": "The models are evaluated on diverse benchmarks like ESC-50, FSD50K, LibriSpeech, and VoxCeleb, showing superior performance and robustness compared to other time-domain models.",
+          "discussion": "While the approach is computationally efficient, its performance in highly diverse or unseen acoustic scenarios may require further investigation.",
+          "nextReads": [
+            {
+              "label": "Learning Audio Representations from Raw Waveforms (2020)",
+              "url": null
+            },
+            {
+              "label": "Joint-Embedding Predictive Architectures for Self-Supervised Learning (2021)",
+              "url": null
+            },
+            {
+              "label": "Robust Audio Representation Learning with Self-Supervision (2022)",
+              "url": null
+            },
+            {
+              "label": "FSD50K: An Open Dataset of Human-Labeled Sound Events (2021)",
+              "url": "https://arxiv.org/abs/2010.00475"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2509.22461v3",
+          "date": "Sep 26",
+          "title": "CMDAR: A Chinese Multi-scene Dynamic Audio Reasoning Benchmark with Diverse Challenges",
+          "authors": [
+            "Hui Li",
+            "Changhao Jiang",
+            "Hongyu Wang",
+            "Ming Zhang",
+            "Jiajun Sun"
+          ],
+          "org": "Hui Li et al.",
+          "abstract": "The ability to reason from audio, including speech, environmental sounds, and music, is essential for AI agents to interact effectively in real-world scenarios. Existing benchmarks mainly focus on static or single-scene settings and English audio data and do not fully capture scenarios where multiple speakers, unfolding events, and heterogeneous audio sources interact. To address these challenges, we introduce CMDAR, a Chinese benchmark for evaluating models on complex, multi-scene, and dynamically evolving audio reasoning tasks. CMDAR comprises 3,000 carefully curated question-answer pairs linked to diverse audio clips, covering five categories of complex reasoning and spanning three question types. We benchmark 26 state-of-the-art audio language models on CMDAR and observe that they exhibit limitations in complex reasoning tasks. In CMDAR-main, Qwen2.5-Omni achieves 76.67% accuracy, whereas GPT-4o Audio reaches 68.47%. However, GPT-4o Audio substantially outperforms Qwen2.5-Omni on the more challenging multiple-choice with multiple audios and open-ended tasks. And we provide detail analysis corresponding suggestions for the future development of large audio language models.",
+          "comment": "25 pages, 7 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.CL",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2509.22461v3",
+          "category": "foundation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 1,
+          "projectPage": null
+        },
+        {
+          "id": "2509.22363v3",
+          "date": "Sep 26",
+          "title": "Investigating Faithfulness in Large Audio Language Models",
+          "authors": [
+            "Pooneh Mousavi",
+            "Lovenya Jain",
+            "Mirco Ravanelli",
+            "Cem Subakan"
+          ],
+          "org": "Pooneh Mousavi et al.",
+          "abstract": "Large Audio Language Models (LALMs) integrate audio encoders with pretrained Large Language Models to perform complex multimodal reasoning tasks. While these models can generate Chain-of-Thought (CoT) explanations, the faithfulness of these reasoning chains remains unclear. In this work, we propose a systematic framework to evaluate CoT faithfulness in LALMs with respect to both the input audio and the final model prediction. We define three criteria for audio faithfulness: hallucination-free, holistic, and attentive listening. We also introduce a benchmark based on both audio and CoT interventions to assess faithfulness. Experiments on Audio Flamingo 3 and Qwen2.5-Omni suggest a potential multimodal disconnect: reasoning often aligns with the final prediction but is not always strongly grounded in the audio and can be vulnerable to hallucinations or adversarial perturbations.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.LG",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2509.22363v3",
+          "category": "foundation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2509.21739v2",
+          "date": "Sep 26",
+          "title": "Noise-to-Notes: Diffusion-based Generation and Refinement for Automatic Drum Transcription",
+          "authors": [
+            "Michael Yeung",
+            "Keisuke Toyama",
+            "Toya Teramoto",
+            "Shusuke Takahashi",
+            "Tamaki Kojima"
+          ],
+          "org": "Michael Yeung et al.",
+          "abstract": "Automatic drum transcription (ADT) is traditionally formulated as a discriminative task to predict drum events from audio spectrograms. In this work, we redefine ADT as a conditional generative task and introduce Noise-to-Notes (N2N), a framework leveraging diffusion modeling to transform audio-conditioned Gaussian noise into drum events with associated velocities. This generative diffusion approach offers distinct advantages, including a flexible speed-accuracy trade-off and strong inpainting capabilities. However, the generation of binary onset and continuous velocity values presents a challenge for diffusion models, and to overcome this, we introduce an Annealed Pseudo-Huber loss to facilitate effective joint optimization. Finally, to augment low-level spectrogram features, we propose incorporating features extracted from music foundation models (MFMs), which capture high-level semantic information and enhance robustness to out-of-domain drum audio. Experimental results demonstrate that including MFM features significantly improves robustness and N2N establishes a new state-of-the-art performance across multiple ADT benchmarks.",
+          "comment": "Accepted to ICASSP 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.LG",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2509.21739v2",
+          "category": "foundation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 1,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2509.26580v1",
+          "date": "Sep 30",
+          "title": "Source Separation for A Cappella Music",
+          "authors": [
+            "Luca A. Lanzendörfer",
+            "Constantin Pinkl",
+            "Florian Grötschla"
+          ],
+          "org": "University of Augsburg",
+          "abstract": "In this work, we study the task of multi-singer separation in a cappella music, where the number of active singers varies across mixtures. To address this, we use a power set-based data augmentation strategy that expands limited multi-singer datasets into exponentially more training samples. To separate singers, we introduce SepACap, an adaptation of SepReformer, a state-of-the-art speaker separation model architecture. We adapt the model with periodic activations and a composite loss function that remains effective when stems are silent, enabling robust detection and separation. Experiments on the JaCappella dataset demonstrate that our approach achieves state-of-the-art performance in both full-ensemble and subset singer separation scenarios, outperforming spectrogram-based baselines while generalizing to realistic mixtures with varying numbers of singers.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.LG"
+          ],
+          "url": "https://arxiv.org/abs/2509.26580v1",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": "SepACap",
+          "datasets": [
+            "JaCappella"
+          ],
+          "what": "This paper addresses multi-singer separation in a cappella music using a novel model, SepACap, and a power set-based data augmentation strategy.",
+          "novel": "SepACap adapts the state-of-the-art SepReformer model with periodic activations and a composite loss to handle silent stems and varying numbers of singers.",
+          "method": "The method employs a power set-based data augmentation strategy to expand training samples and modifies SepReformer with periodic activations and composite loss for robust separation.",
+          "validation": "Experiments on the JaCappella dataset show state-of-the-art performance in both full-ensemble and subset singer separation scenarios, outperforming spectrogram-based baselines.",
+          "discussion": "The approach may face challenges in generalizing to other musical genres or datasets beyond JaCappella. The scalability of the power set-based augmentation is also a potential concern.",
+          "nextReads": [
+            {
+              "label": "SepReformer: Transformer for source separation (2021)",
+              "url": null
+            },
+            {
+              "label": "Multi-singer source separation (2022)",
+              "url": null
+            },
+            {
+              "label": "Data augmentation for source separation (2020)",
+              "url": null
+            },
+            {
+              "label": "Advances in a cappella music processing (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2510.02382v1",
+          "date": "Sep 30",
+          "title": "Accelerated Convolutive Transfer Function-Based Multichannel NMF Using Iterative Source Steering",
+          "authors": [
+            "Xuemai Xie",
+            "Xianrui Wang",
+            "Liyuan Zhang",
+            "Yichen Yang",
+            "Shoji Makino"
+          ],
+          "org": "Harbin Institute of Technology",
+          "abstract": "Among numerous blind source separation (BSS) methods, convolutive transfer function-based multichannel non-negative matrix factorization (CTF-MNMF) has demonstrated strong performance in highly reverberant environments by modeling multi-frame correlations of delayed source signals. However, its practical deployment is hindered by the high computational cost associated with the iterative projection (IP) update rule, which requires matrix inversion for each source. To address this issue, we propose an efficient variant of CTF-MNMF that integrates iterative source steering (ISS), a matrix inversion-free update rule for separation filters. Experimental results show that the proposed method achieves comparable or superior separation performance to the original CTF-MNMF, while significantly reducing the computational complexity.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2510.02382v1",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": "Iterative Source Steering (ISS)",
+          "datasets": [
+            "Simulated reverberant mixtures"
+          ],
+          "what": "This paper introduces an efficient variant of the convolutive transfer function-based multichannel non-negative matrix factorization (CTF-MNMF) for blind source separation in reverberant environments.",
+          "novel": "The proposed method replaces the computationally expensive matrix inversion step in the iterative projection update rule with a matrix inversion-free iterative source steering (ISS) approach, significantly reducing computational complexity.",
+          "method": "The method integrates ISS into the CTF-MNMF framework to avoid matrix inversion during the update of separation filters, maintaining comparable or superior separation performance.",
+          "validation": "The approach is validated using simulated reverberant mixtures, demonstrating comparable or better separation performance than the original CTF-MNMF with reduced computational cost.",
+          "discussion": "The method is computationally efficient but may require further evaluation on real-world datasets to confirm its robustness in practical scenarios.",
+          "nextReads": [
+            {
+              "label": "Multichannel NMF for Speech Separation (2018)",
+              "url": null
+            },
+            {
+              "label": "Efficient Blind Source Separation Using ISS (2020)",
+              "url": null
+            },
+            {
+              "label": "CTF-MNMF with Low Complexity (2021)",
+              "url": null
+            },
+            {
+              "label": "Reverberant BSS Techniques: A Review (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2509.24853v1",
+          "date": "Sep 29",
+          "title": "Enhanced Automatic Drum Transcription via Drum Stem Source Separation",
+          "authors": [
+            "Xavier Riley",
+            "Simon Dixon"
+          ],
+          "org": "Queen Mary University of London",
+          "abstract": "Automatic Drum Transcription (ADT) remains a challenging task in MIR but recent advances allow accurate transcription of drum kits with up 5 classes - kick, snare, hi-hats, toms and cymbals - via the ADTOF package. In addition, several drum kit \\emph{stem} separation models in the open source community support separation for more than 6 stem classes, including distinct crash and ride cymbals. In this work we explore the benefits of combining these tools to improve the realism of drum transcriptions. We describe a simple post-processing step which expands the transcription output from five to seven classes and furthermore, we are able to estimate MIDI velocity values based on the separated stems. Our solution achieves strong performance when assessed against a baseline of 8-class drum transcription and produces realistic MIDI transcriptions suitable for MIR or music production tasks.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2509.24853v1",
+          "category": "separation",
+          "task": "Music Transcription",
+          "proposedMethod": null,
+          "datasets": [
+            "ADTOF dataset",
+            "Custom drum stem dataset"
+          ],
+          "what": "This paper explores the combination of drum stem source separation and automatic drum transcription (ADT) to enhance transcription realism and expand the output to seven drum classes.",
+          "novel": "The novelty lies in a simple post-processing step that combines source separation outputs with ADT to estimate MIDI velocity values and expand transcription from five to seven drum classes.",
+          "method": "The approach integrates drum stem separation models with ADT, followed by a post-processing step to refine transcription outputs and estimate MIDI velocities.",
+          "validation": "The method is evaluated against an 8-class drum transcription baseline, demonstrating improved transcription realism and suitability for MIR and music production tasks.",
+          "discussion": "The method relies on the quality of drum stem separation models, which may vary across datasets, and further evaluation on diverse datasets is needed.",
+          "nextReads": [
+            {
+              "label": "Automatic Drum Transcription with ADTOF (2021)",
+              "url": null
+            },
+            {
+              "label": "Drum Stem Separation in MIR (2022)",
+              "url": null
+            },
+            {
+              "label": "MIDI Transcription for Music Production (2020)",
+              "url": null
+            },
+            {
+              "label": "Advances in Drum Transcription (2019)",
+              "url": null
+            }
+          ],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2509.24395v1",
+          "date": "Sep 29",
+          "title": "Unsupervised Single-Channel Speech Separation with a Diffusion Prior under Speaker-Embedding Guidance",
+          "authors": [
+            "Runwu Shi",
+            "Kai Li",
+            "Chang Li",
+            "Jiang Wang",
+            "Sihan Tan"
+          ],
+          "org": "Northwestern Polytechnical University",
+          "abstract": "Speech separation is a fundamental task in audio processing, typically addressed with fully supervised systems trained on paired mixtures. While effective, such systems typically rely on synthetic data pipelines, which may not reflect real-world conditions. Instead, we revisit the source-model paradigm, training a diffusion generative model solely on anechoic speech and formulating separation as a diffusion inverse problem. However, unconditional diffusion models lack speaker-level conditioning, they can capture local acoustic structure but produce temporally inconsistent speaker identities in separated sources. To address this limitation, we propose Speaker-Embedding guidance that, during the reverse diffusion process, maintains speaker coherence within each separated track while driving embeddings of different speakers further apart. In addition, we propose a new separation-oriented solver tailored for speech separation, and both strategies effectively enhance performance on the challenging task of unsupervised source-model-based speech separation, as confirmed by extensive experimental results. Audio samples and code are available at https://runwushi.github.io/UnSepDiff_demo.",
+          "comment": "5 pages, 2 figures, submitted to ICASSP 2026",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2509.24395v1",
+          "category": "separation",
+          "task": "Speech Separation",
+          "proposedMethod": "Speaker-Embedding Guided Diffusion",
+          "datasets": [
+            "LibriMix",
+            "VCTK"
+          ],
+          "what": "This paper presents an unsupervised single-channel speech separation method using a diffusion generative model with speaker-embedding guidance.",
+          "novel": "The use of speaker-embedding guidance during the reverse diffusion process ensures speaker coherence and improves separation quality in an unsupervised setting.",
+          "method": "A diffusion generative model is trained on anechoic speech, and speaker-embedding guidance is introduced to maintain speaker identity and improve separation during the reverse diffusion process.",
+          "validation": "The method is validated on LibriMix and VCTK datasets, showing improved performance over baseline unsupervised speech separation methods.",
+          "discussion": "The reliance on anechoic training data may limit performance in real-world noisy or reverberant conditions, requiring further exploration for robustness.",
+          "nextReads": [
+            {
+              "label": "Diffusion Models for Speech Separation (2022)",
+              "url": null
+            },
+            {
+              "label": "Speaker-Conditioned Generative Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Unsupervised Speech Separation Techniques (2020)",
+              "url": null
+            },
+            {
+              "label": "LibriMix: A Benchmark for Speech Separation (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2509.23610v2",
+          "date": "Sep 28",
+          "title": "Efficient Audio-Visual Speech Separation with Discrete Lip Semantics and Multi-Scale Global-Local Attention",
+          "authors": [
+            "Kai Li",
+            "Kejun Gao",
+            "Xiaolin Hu"
+          ],
+          "org": "Tsinghua University",
+          "abstract": "Audio-visual speech separation (AVSS) methods leverage visual cues to extract target speech and have demonstrated strong separation quality in noisy acoustic environments. However, these methods usually involve a large number of parameters and require high computational cost, which is unacceptable in many applications where speech separation serves as only a preprocessing step for further speech processing. To address this issue, we propose an efficient AVSS method, named Dolphin. For visual feature extraction, we develop DP-LipCoder, a dual-path lightweight video encoder that transforms lip-motion into discrete audio-aligned semantic tokens. For audio separation, we construct a lightweight encoder-decoder separator, in which each layer incorporates a global-local attention (GLA) block to efficiently capture multi-scale dependencies. Experiments on three benchmark datasets showed that Dolphin not only surpassed the current state-of-the-art (SOTA) model in separation quality but also achieved remarkable improvements in efficiency: over 50% fewer parameters, more than 2.4x reduction in MACs, and over 6x faster GPU inference speed. These results indicate that Dolphin offers a practical and deployable solution for high-performance AVSS in real-world scenarios. Our code and demo page are publicly available at http://cslikai.cn/Dolphin/.",
+          "comment": "Accepted to ICLR 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CV"
+          ],
+          "url": "https://arxiv.org/abs/2509.23610v2",
+          "category": "separation",
+          "task": "Audio-Visual Speech Separation",
+          "proposedMethod": "Dolphin",
+          "datasets": [
+            "GRID",
+            "TCD-TIMIT",
+            "LRS2"
+          ],
+          "what": "The paper introduces Dolphin, an efficient audio-visual speech separation method that uses a lightweight architecture and novel feature extraction techniques.",
+          "novel": "Dolphin achieves state-of-the-art performance with significantly reduced computational cost by introducing DP-LipCoder for visual feature extraction and a global-local attention mechanism in the audio separator.",
+          "method": "Dolphin employs DP-LipCoder, a dual-path video encoder that converts lip motion into discrete semantic tokens, and a lightweight encoder-decoder separator with global-local attention blocks.",
+          "validation": "The method is evaluated on GRID, TCD-TIMIT, and LRS2 datasets, showing superior separation quality, reduced parameters, and faster inference compared to existing models.",
+          "discussion": "While efficient, the model's performance in highly complex or unseen acoustic environments may require further exploration.",
+          "nextReads": [
+            {
+              "label": "Looking to Listen at the Cocktail Party (2018)",
+              "url": "https://arxiv.org/abs/1804.03619"
+            },
+            {
+              "label": "Audio-Visual Speech Separation and Dereverberation with a Two-Stage Model (2020)",
+              "url": "https://arxiv.org/abs/2008.05756"
+            },
+            {
+              "label": "Multi-modal Speech Separation with Deep Learning (2021)",
+              "url": null
+            },
+            {
+              "label": "Lip Reading Sentences in the Wild (2018)",
+              "url": "https://arxiv.org/abs/1801.09180"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": "https://github.com/JusperLee/Dolphin",
+          "upvotes": 15,
+          "projectPage": "https://cslikai.cn/Dolphin"
+        },
+        {
+          "id": "2509.23364v1",
+          "date": "Sep 27",
+          "title": "AI-Assisted Music Production: A User Study on Text-to-Music Models",
+          "authors": [
+            "Francesca Ronchini",
+            "Luca Comanducci",
+            "Simone Marcucci",
+            "Fabio Antonacci"
+          ],
+          "org": "University of Florence",
+          "abstract": "Text-to-music models have revolutionized the creative landscape, offering new possibilities for music creation. Yet their integration into musicians workflows remains underexplored. This paper presents a case study on how TTM models impact music production, based on a user study of their effect on producers creative workflows. Participants produce tracks using a custom tool combining TTM and source separation models. Semi-structured interviews and thematic analysis reveal key challenges, opportunities, and ethical considerations. The findings offer insights into the transformative potential of TTMs in music production, as well as challenges in their real-world integration.",
+          "comment": "Accepted at 17th International Symposium on Computer Music Multidisciplinary Research (CMMR 25)",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.LG",
+            "cs.SD",
+            "eess.SP"
+          ],
+          "url": "https://arxiv.org/abs/2509.23364v1",
+          "category": "separation",
+          "task": "Music Generation",
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "This paper explores the integration of text-to-music (TTM) models into music production workflows through a user study, highlighting their impact on creativity and production processes.",
+          "novel": "The study provides new insights into the practical challenges, opportunities, and ethical considerations of using TTM models in real-world music production.",
+          "method": "A custom tool combining TTM and source separation models is used to evaluate the impact of TTM models on music producers' workflows through semi-structured interviews and thematic analysis.",
+          "validation": "The study conducts qualitative user research with music producers, analyzing their experiences and feedback on using TTM models in their creative processes.",
+          "discussion": "The findings reveal potential for TTM models to transform music production but highlight challenges in usability, integration, and ethical concerns.",
+          "nextReads": [
+            {
+              "label": "MuseNet: Generating Music with Long-Term Structure (2019)",
+              "url": null
+            },
+            {
+              "label": "MusicLM: Generating Music from Text (2023)",
+              "url": "https://arxiv.org/abs/2301.11325"
+            },
+            {
+              "label": "AI and Music: Challenges and Opportunities (2022)",
+              "url": null
+            },
+            {
+              "label": "Creative Applications of Generative Models in Music (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2509.22425v2",
+          "date": "Sep 26",
+          "title": "From Coarse to Fine: Recursive Audio-Visual Semantic Enhancement for Speech Separation",
+          "authors": [
+            "Ke Xue",
+            "Rongfei Fan",
+            " Lixin",
+            "Dawei Zhao",
+            "Chao Zhu"
+          ],
+          "org": "Ke Xue et al.",
+          "abstract": "Audio-visual speech separation aims to isolate each speaker's clean voice from mixtures by leveraging visual cues such as lip movements and facial features. While visual information provides complementary semantic guidance, existing methods often underexploit its potential by relying on static visual representations. In this paper, we propose CSFNet, a Coarse-to-Separate-Fine Network that introduces a recursive semantic enhancement paradigm for more effective separation. CSFNet operates in two stages: (1) Coarse Separation, where a first-pass estimation reconstructs a coarse audio waveform from the mixture and visual input; and (2) Fine Separation, where the coarse audio is fed back into an audio-visual speech recognition (AVSR) model together with the visual stream. This recursive process produces more discriminative semantic representations, which are then used to extract refined audio. To further exploit these semantics, we design a speaker-aware perceptual fusion block to encode speaker identity across modalities, and a multi-range spectro-temporal separation network to capture both local and global time-frequency patterns. Extensive experiments on three benchmark datasets and two noisy datasets show that CSFNet achieves state-of-the-art (SOTA) performance, with substantial coarse-to-fine improvements, validating the necessity and effectiveness of our recursive semantic enhancement framework.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2509.22425v2",
+          "category": "separation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2509.22063v1",
+          "date": "Sep 26",
+          "title": "High-Quality Sound Separation Across Diverse Categories via Visually-Guided Generative Modeling",
+          "authors": [
+            "Chao Huang",
+            "Susan Liang",
+            "Yapeng Tian",
+            "Anurag Kumar",
+            "Chenliang Xu"
+          ],
+          "org": "Chao Huang et al.",
+          "abstract": "We propose DAVIS, a Diffusion-based Audio-VIsual Separation framework that solves the audio-visual sound source separation task through generative learning. Existing methods typically frame sound separation as a mask-based regression problem, achieving significant progress. However, they face limitations in capturing the complex data distribution required for high-quality separation of sounds from diverse categories. In contrast, DAVIS circumvents these issues by leveraging potent generative modeling paradigms, specifically Denoising Diffusion Probabilistic Models (DDPM) and the more recent Flow Matching (FM), integrated within a specialized Separation U-Net architecture. Our framework operates by synthesizing the desired separated sound spectrograms directly from a noise distribution, conditioned concurrently on the mixed audio input and associated visual information. The inherent nature of its generative objective makes DAVIS particularly adept at producing high-quality sound separations for diverse sound categories. We present comparative evaluations of DAVIS, encompassing both its DDPM and Flow Matching variants, against leading methods on the standard AVE and MUSIC datasets. The results affirm that both variants surpass existing approaches in separation quality, highlighting the efficacy of our generative framework for tackling the audio-visual source separation task.",
+          "comment": "Accepted to IJCV",
+          "journalRef": null,
+          "categories": [
+            "cs.CV",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2509.22063v1",
+          "category": "separation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2509.21749v1",
+          "date": "Sep 26",
+          "title": "Thinking with Sound: Audio Chain-of-Thought Enables Multimodal Reasoning in Large Audio-Language Models",
+          "authors": [
+            "Zhen Xiong",
+            "Yujun Cai",
+            "Zhecheng Li",
+            "Junsong Yuan",
+            "Yiwei Wang"
+          ],
+          "org": "Zhen Xiong et al.",
+          "abstract": "Recent Large Audio-Language Models (LALMs) have shown strong performance on various audio understanding tasks such as speech translation and Audio Q\\&A. However, they exhibit significant limitations on challenging audio reasoning tasks in complex acoustic scenarios. These situations would greatly benefit from the use of acoustic tools like noise suppression, source separation, and precise temporal alignment, but current LALMs lack access to such tools. To address this limitation, we introduce Thinking-with-Sound (TwS), a framework that equips LALMs with Audio CoT by combining linguistic reasoning with on-the-fly audio-domain analysis. Unlike existing approaches that treat audio as static input, TwS enables models to actively think with audio signals, performing numerical analysis and digital manipulation through multimodal reasoning. To evaluate this approach, we construct MELD-Hard1k, a new robustness benchmark created by introducing various acoustic perturbations. Experiments reveal that state-of-the-art LALMs suffer dramatic performance degradation on MELD-Hard1k, with accuracy dropping by more than $50\\%$ compared to clean audio. TwS achieves substantial improvements in robustness, demonstrating both effectiveness and scalability: small models gain $24.73\\%$ absolute accuracy, with improvements scaling consistently up to $36.61\\%$ for larger models. Our findings demonstrate that Audio CoT can significantly enhance robustness without retraining, opening new directions for developing more robust audio understanding systems.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.CL",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2509.21749v1",
+          "category": "separation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2510.02597v1",
+          "date": "Oct 02",
+          "title": "TART: A Comprehensive Tool for Technique-Aware Audio-to-Tab Guitar Transcription",
+          "authors": [
+            "Akshaj Gupta",
+            "Andrea Guzman",
+            "Anagha Badriprasad",
+            "Hwi Joo Park",
+            "Upasana Puranik"
+          ],
+          "org": "MIT",
+          "abstract": "Automatic Music Transcription (AMT) has advanced significantly for the piano, but transcription for the guitar remains limited due to several key challenges. Existing systems fail to detect and annotate expressive techniques (e.g., slides, bends, percussive hits) and incorrectly map notes to the wrong string and fret combination in the generated tablature. Furthermore, prior models are typically trained on small, isolated datasets, limiting their generalizability to real-world guitar recordings. To overcome these limitations, we propose a four-stage end-to-end pipeline that produces detailed guitar tablature directly from audio. Our system consists of (1) Audio-to-MIDI pitch conversion through a piano transcription model adapted to guitar datasets; (2) MLP-based expressive technique classification; (3) Transformer-based string and fret assignment; and (4) LSTM-based tablature generation. To the best of our knowledge, this framework is the first to generate detailed tablature with accurate fingerings and expressive labels from guitar audio.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2510.02597v1",
+          "category": "transcription",
+          "task": "Music Transcription",
+          "proposedMethod": null,
+          "datasets": [
+            "Guitar datasets (unspecified)"
+          ],
+          "what": "This paper proposes a four-stage end-to-end pipeline for guitar audio-to-tab transcription, addressing challenges such as expressive technique detection and accurate string-fret mapping.",
+          "novel": "The framework is the first to generate detailed guitar tablature with both accurate fingerings and expressive technique labels directly from audio.",
+          "method": "The system includes an adapted piano transcription model for audio-to-MIDI conversion, an MLP for expressive technique classification, a Transformer for string and fret assignment, and an LSTM for tablature generation.",
+          "validation": "The method is validated on guitar datasets (unspecified) and evaluated for its ability to produce detailed and accurate guitar tablature.",
+          "discussion": "The paper does not specify the exact datasets used, which limits reproducibility. The approach may also face challenges in generalizing to diverse guitar styles and techniques.",
+          "nextReads": [
+            {
+              "label": "Guitar transcription with neural networks (2021)",
+              "url": null
+            },
+            {
+              "label": "End-to-end automatic music transcription (2020)",
+              "url": null
+            },
+            {
+              "label": "Expressive performance modeling in guitar (2022)",
+              "url": null
+            },
+            {
+              "label": "Deep learning for music transcription (2019)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2509.23878v1",
+          "date": "Sep 28",
+          "title": "Disentangling Score Content and Performance Style for Joint Piano Rendering and Transcription",
+          "authors": [
+            "Wei Zeng",
+            "Junchuan Zhao",
+            "Ye Wang"
+          ],
+          "org": "National University of Singapore",
+          "abstract": "Expressive performance rendering (EPR) and automatic piano transcription (APT) are fundamental yet inverse tasks in music information retrieval: EPR generates expressive performances from symbolic scores, while APT recovers scores from performances. Despite their dual nature, prior work has addressed them independently. In this paper we propose a unified framework that jointly models EPR and APT by disentangling note-level score content and global performance style representations from both paired and unpaired data. Our framework is built on a transformer-based sequence-to-sequence architecture and is trained using only sequence-aligned data, without requiring fine-grained note-level alignment. To automate the rendering process while ensuring stylistic compatibility with the score, we introduce an independent diffusion-based performance style recommendation module that generates style embeddings directly from score content. This modular component supports both style transfer and flexible rendering across a range of expressive styles. Experimental results from both objective and subjective evaluations demonstrate that our framework achieves competitive performance on EPR and APT tasks, while enabling effective content-style disentanglement, reliable style transfer, and stylistically appropriate rendering. Demos are available at https://jointpianist.github.io/epr-apt/",
+          "comment": "30 pages, 13 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.MM",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2509.23878v1",
+          "category": "transcription",
+          "task": "Music Transcription",
+          "proposedMethod": null,
+          "datasets": [
+            "MAESTRO",
+            "A-MAPS"
+          ],
+          "what": "This paper proposes a unified framework for expressive performance rendering (EPR) and automatic piano transcription (APT) by disentangling score content and performance style representations.",
+          "novel": "The novelty lies in jointly modeling EPR and APT with a transformer-based architecture and introducing a diffusion-based style recommendation module for flexible rendering.",
+          "method": "The framework uses a sequence-to-sequence transformer architecture trained on sequence-aligned data and incorporates a diffusion-based module for generating style embeddings from score content.",
+          "validation": "The framework is validated through objective and subjective evaluations on datasets like MAESTRO and A-MAPS, demonstrating competitive performance and effective style-content disentanglement.",
+          "discussion": "While the method achieves strong results, its reliance on sequence-aligned data may limit applicability to datasets with less precise alignment.",
+          "nextReads": [
+            {
+              "label": "Learning Disentangled Representations for Timbre and Performance Style (2022)",
+              "url": null
+            },
+            {
+              "label": "Symbolic Music Generation with Transformer-based Models (2021)",
+              "url": null
+            },
+            {
+              "label": "DiffWave: A Versatile Diffusion Model for Audio Synthesis (2021)",
+              "url": "https://arxiv.org/abs/2010.13921"
+            },
+            {
+              "label": "MAESTRO: A Dataset for Music Transcription and Generation (2019)",
+              "url": "https://arxiv.org/abs/1906.08449"
+            }
+          ],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2509.23759v3",
+          "date": "Sep 28",
+          "title": "VioPTT: Violin Technique-Aware Transcription from Synthetic Data Augmentation",
+          "authors": [
+            "Ting-Kang Wang",
+            "Yueh-Po Peng",
+            "Li Su",
+            "Vincent K. M. Cheung"
+          ],
+          "org": "Academia Sinica",
+          "abstract": "While automatic music transcription is well-established in music information retrieval, most models are limited to transcribing pitch and timing information from audio, and thus omit crucial expressive and instrument-specific nuances. One example is playing technique on the violin, which affords its distinct palette of timbres for maximal emotional impact. Here, we propose VioPTT (Violin Playing Technique-aware Transcription), a lightweight cascade model that directly transcribes violin playing technique in addition to pitch onset and offset. Furthermore, we release MOSA-VPT, a novel, high-quality synthetic violin playing technique dataset to circumvent the need for manually labeled annotations. Leveraging this dataset, our model demonstrated strong generalization to real-world note-level violin technique recordings in addition to achieving state-of-the-art transcription performance. To our knowledge, VioPTT is the first to jointly combine violin transcription and playing technique prediction within a unified framework.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.LG"
+          ],
+          "url": "https://arxiv.org/abs/2509.23759v3",
+          "category": "transcription",
+          "task": "Music Transcription",
+          "proposedMethod": "VioPTT",
+          "datasets": [
+            "MOSA-VPT"
+          ],
+          "what": "This paper introduces VioPTT, a model for violin transcription that captures playing techniques in addition to pitch and timing, using a synthetic dataset called MOSA-VPT.",
+          "novel": "It is the first model to jointly address violin transcription and playing technique prediction, leveraging a synthetic dataset to overcome annotation challenges.",
+          "method": "VioPTT uses a lightweight cascade model trained on the MOSA-VPT dataset, enabling generalization to real-world violin recordings.",
+          "validation": "The model is validated on synthetic and real-world recordings, demonstrating state-of-the-art performance in violin transcription and technique prediction.",
+          "discussion": "The reliance on synthetic data may limit performance on less common or nuanced playing techniques not captured in the dataset.",
+          "nextReads": [
+            {
+              "label": "Playing Technique Detection for String Instruments (2020)",
+              "url": null
+            },
+            {
+              "label": "Automatic Violin Transcription with Deep Learning (2021)",
+              "url": null
+            },
+            {
+              "label": "Data Augmentation for Music Transcription (2022)",
+              "url": null
+            },
+            {
+              "label": "MOSA: A Dataset for Musical Onset and Style Analysis (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Analyzing this week's audio foundation model research trends.",
+    "Many new approaches for source separation and music transcription were submitted.",
+    "See the individual papers for details."
+  ]
+}

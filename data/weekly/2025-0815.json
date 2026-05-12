@@ -1,0 +1,623 @@
+{
+  "date": "2025-0815",
+  "generated_at": "2025-08-15T00:00:00+00:00",
+  "total": 11,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2508.09790v2",
+          "date": "Aug 13",
+          "title": "BeatFM: Improving Beat Tracking with Pre-trained Music Foundation Model",
+          "authors": [
+            "Ganghui Ru",
+            "Jieying Wang",
+            "Jiahao Zhao",
+            "Yulun Wu",
+            "Yi Yu"
+          ],
+          "org": "Tencent",
+          "abstract": "Beat tracking is a widely researched topic in music information retrieval. However, current beat tracking methods face challenges due to the scarcity of labeled data, which limits their ability to generalize across diverse musical styles and accurately capture complex rhythmic structures. To overcome these challenges, we propose a novel beat tracking paradigm BeatFM, which introduces a pre-trained music foundation model and leverages its rich semantic knowledge to improve beat tracking performance. Pre-training on diverse music datasets endows music foundation models with a robust understanding of music, thereby effectively addressing these challenges. To further adapt it for beat tracking, we design a plug-and-play multi-dimensional semantic aggregation module, which is composed of three parallel sub-modules, each focusing on semantic aggregation in the temporal, frequency, and channel domains, respectively. Extensive experiments demonstrate that our method achieves state-of-the-art performance in beat and downbeat tracking across multiple benchmark datasets.",
+          "comment": "Early draft for discussion only. Undergoing active revision, conclusions subject to change. Do not cite. Formal peer-reviewed version in preparation",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2508.09790v2",
+          "category": "foundation",
+          "task": "Beat Tracking",
+          "proposedMethod": "BeatFM",
+          "datasets": [
+            "GTZAN",
+            "Ballroom",
+            "Hainsworth",
+            "RWC",
+            "Extended Ballroom"
+          ],
+          "what": "A novel beat tracking method, BeatFM, that leverages a pre-trained music foundation model and a multi-dimensional semantic aggregation module to improve performance.",
+          "novel": "The introduction of a pre-trained music foundation model and a plug-and-play semantic aggregation module to address challenges in beat tracking, such as limited labeled data and diverse musical styles.",
+          "method": "Pre-training on diverse music datasets and using a multi-dimensional semantic aggregation module focusing on temporal, frequency, and channel domains.",
+          "validation": "Extensive experiments on benchmark datasets like GTZAN and Ballroom, demonstrating state-of-the-art performance in beat and downbeat tracking.",
+          "discussion": "The method relies on the availability of pre-trained music foundation models, and its performance may vary depending on the quality and diversity of these models.",
+          "nextReads": [
+            {
+              "label": "A Tutorial on Onset Detection in Music Signals (2007)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Deep Salience Representations for F0 Estimation in Polyphonic Music (2017)",
+              "url": "https://arxiv.org/abs/1706.08609"
+            },
+            {
+              "label": "Beat Tracking by Dynamic Programming (2007)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Deep Learning for Music Information Retrieval (2017)",
+              "url": "https://arxiv.org/abs/1706.08651"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2508.08155v1",
+          "date": "Aug 11",
+          "title": "MSU-Bench: Towards Understanding the Conversational Multi-talker Scenarios",
+          "authors": [
+            "Shuai Wang",
+            "Zhaokai Sun",
+            "Zhennan Lin",
+            "Chengyou Wang",
+            "Zhou Pan"
+          ],
+          "org": "Tencent",
+          "abstract": "Spoken Language Understanding (SLU) has progressed from traditional single-task methods to large audio language model (LALM) solutions. Yet, most existing speech benchmarks focus on single-speaker or isolated tasks, overlooking the challenges posed by multi-speaker conversations that are common in real-world scenarios. We introduce MSU-Bench, a comprehensive benchmark for evaluating multi-speaker conversational understanding with a speaker-centric design. Our hierarchical framework covers four progressive tiers: single-speaker static attribute understanding, single-speaker dynamic attribute understanding, multi-speaker background understanding, and multi-speaker interaction understanding. This structure ensures all tasks are grounded in speaker-centric contexts, from basic perception to complex reasoning across multiple speakers. By evaluating state-of-the-art models on MSU-Bench, we demonstrate that as task complexity increases across the benchmark's tiers, all models exhibit a significant performance decline. We also observe a persistent capability gap between open-source models and closed-source commercial ones, particularly in multi-speaker interaction reasoning. These findings validate the effectiveness of MSU-Bench for assessing and advancing conversational understanding in realistic multi-speaker environments. Demos can be found in the supplementary material.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2508.08155v1",
+          "category": "foundation",
+          "task": "Spoken Language Understanding",
+          "proposedMethod": "MSU-Bench",
+          "datasets": [
+            "MSU-Bench"
+          ],
+          "what": "MSU-Bench is a benchmark designed to evaluate multi-speaker conversational understanding with tasks ranging from single-speaker to multi-speaker interaction reasoning.",
+          "novel": "The hierarchical speaker-centric framework addresses the gap in evaluating multi-speaker conversational understanding, which is often overlooked in existing benchmarks.",
+          "method": "A hierarchical framework with four tiers of tasks, focusing on speaker-centric contexts from basic perception to complex multi-speaker interaction reasoning.",
+          "validation": "Evaluation of state-of-the-art models on MSU-Bench, showing performance decline with increasing task complexity and a gap between open-source and commercial models.",
+          "discussion": "The benchmark highlights the challenges in multi-speaker interaction reasoning and the limitations of current models in handling complex conversational scenarios.",
+          "nextReads": [
+            {
+              "label": "Speech Separation and Recognition in Multi-Speaker Environments (2018)",
+              "url": "https://arxiv.org/abs/1805.06239"
+            },
+            {
+              "label": "LibriCSS: A Dataset for Continuous Speech Separation (2020)",
+              "url": "https://arxiv.org/abs/2001.11482"
+            },
+            {
+              "label": "Speech Separation with Deep Learning: A Survey (2021)",
+              "url": "https://arxiv.org/abs/2109.07442"
+            },
+            {
+              "label": "Multi-Speaker ASR with Neural Networks (2022)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2508.08039v3",
+          "date": "Aug 11",
+          "title": "Audio-Thinker: Guiding Audio Language Model When and How to Think via Reinforcement Learning",
+          "authors": [
+            "Shu Wu",
+            "Chenxing Li",
+            "Wenfu Wang",
+            "Hao Zhang",
+            "Hualei Wang"
+          ],
+          "org": "Chinese Academy of Sciences",
+          "abstract": "Recent advancements in large language models, multimodal large language models, and large audio language models (LALMs) have significantly improved their reasoning capabilities through reinforcement learning with rule-based rewards. However, the explicit reasoning process has yet to show significant benefits for audio question answering, and effectively leveraging deep reasoning remains an open challenge, with LALMs still falling short of human-level auditory-language reasoning. To address these limitations, we propose Audio-Thinker, a reinforcement learning framework designed to enhance the reasoning capabilities of LALMs, with a focus on improving adaptability, consistency, and effectiveness. Our approach introduces an adaptive think accuracy reward, enabling the model to adjust its reasoning strategies based on task complexity dynamically. Furthermore, we incorporate an external reward model to evaluate the overall consistency and quality of the reasoning process, complemented by think-based rewards that help the model distinguish between valid and flawed reasoning paths during training. Experimental results demonstrate that our Audio-Thinker model outperforms existing reasoning-oriented LALMs across various benchmark tasks, exhibiting superior reasoning and generalization capabilities.",
+          "comment": "preprint",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL",
+            "cs.MM",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2508.08039v3",
+          "category": "foundation",
+          "task": "Audio Question Answering",
+          "proposedMethod": "Audio-Thinker",
+          "datasets": [
+            "AudioSet",
+            "Clotho",
+            "ESC-50",
+            "FSD50K"
+          ],
+          "what": "Audio-Thinker is a reinforcement learning framework designed to enhance the reasoning capabilities of large audio language models (LALMs) for audio question answering tasks.",
+          "novel": "The introduction of an adaptive think accuracy reward and external reward model to dynamically adjust reasoning strategies and improve consistency and quality of reasoning in LALMs.",
+          "method": "Reinforcement learning with rule-based rewards, including adaptive think accuracy and think-based rewards, to refine reasoning strategies and evaluate reasoning quality.",
+          "validation": "Experimental results on benchmark datasets like AudioSet and Clotho, demonstrating superior reasoning and generalization capabilities compared to existing LALMs.",
+          "discussion": "The approach depends on the quality of the reward models and the ability to generalize across diverse audio-language tasks, which may limit its scalability.",
+          "nextReads": [
+            {
+              "label": "AudioCaps: Generating Captions for Audios in The Wild (2019)",
+              "url": "https://arxiv.org/abs/1907.12761"
+            },
+            {
+              "label": "CLAP: Learning Audio Concepts from Natural Language Supervision (2022)",
+              "url": "https://arxiv.org/abs/2211.06687"
+            },
+            {
+              "label": "Wav2CLIP: Learning Robust Audio Representations From CLIP (2022)",
+              "url": "https://arxiv.org/abs/2204.00319"
+            },
+            {
+              "label": "Audio-Visual Scene-Aware Dialog (2021)",
+              "url": "https://arxiv.org/abs/2104.00319"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2508.10830v1",
+          "date": "Aug 14",
+          "title": "Advances in Speech Separation: Techniques, Challenges, and Future Trends",
+          "authors": [
+            "Kai Li",
+            "Guo Chen",
+            "Wendi Sang",
+            "Yi Luo",
+            "Zhuo Chen"
+          ],
+          "org": "Google",
+          "abstract": "The field of speech separation, addressing the \"cocktail party problem\", has seen revolutionary advances with DNNs. Speech separation enhances clarity in complex acoustic environments and serves as crucial pre-processing for speech recognition and speaker recognition. However, current literature focuses narrowly on specific architectures or isolated approaches, creating fragmented understanding. This survey addresses this gap by providing systematic examination of DNN-based speech separation techniques. Our work differentiates itself through: (I) Comprehensive perspective: We systematically investigate learning paradigms, separation scenarios with known/unknown speakers, comparative analysis of supervised/self-supervised/unsupervised frameworks, and architectural components from encoders to estimation strategies. (II) Timeliness: Coverage of cutting-edge developments ensures access to current innovations and benchmarks. (III) Unique insights: Beyond summarization, we evaluate technological trajectories, identify emerging patterns, and highlight promising directions including domain-robust frameworks, efficient architectures, multimodal integration, and novel self-supervised paradigms. (IV) Fair evaluation: We provide quantitative evaluations on standard datasets, revealing true capabilities and limitations of different methods. This comprehensive survey serves as an accessible reference for experienced researchers and newcomers navigating speech separation's complex landscape.",
+          "comment": "34 pages, 10 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2508.10830v1",
+          "category": "separation",
+          "task": "Speech Separation",
+          "proposedMethod": null,
+          "datasets": [
+            "WSJ0-2mix",
+            "LibriMix",
+            "WHAM!",
+            "VCTK"
+          ],
+          "what": "A comprehensive survey of DNN-based speech separation techniques, addressing the 'cocktail party problem' and providing systematic insights into architectures, learning paradigms, and evaluation frameworks.",
+          "novel": "The paper offers a holistic and timely examination of speech separation, including supervised, self-supervised, and unsupervised frameworks, while identifying emerging trends and challenges in the field.",
+          "method": "Systematic analysis of architectures, learning paradigms, and separation scenarios, complemented by quantitative evaluations on standard datasets.",
+          "validation": "Quantitative evaluations on standard datasets like WSJ0-2mix and LibriMix, with comparative analysis of different methods.",
+          "discussion": "The survey highlights the limitations of current methods in domain robustness and efficiency, and identifies promising directions such as multimodal integration and novel self-supervised paradigms.",
+          "nextReads": [
+            {
+              "label": "Deep Clustering and Conventional Networks for Music Separation (2017)",
+              "url": "https://arxiv.org/abs/1706.09442"
+            },
+            {
+              "label": "Conv-TasNet: Surpassing Ideal Time-Frequency Magnitude Masking for Speech Separation (2018)",
+              "url": "https://arxiv.org/abs/1809.07454"
+            },
+            {
+              "label": "Self-Supervised Learning for Speech Separation (2021)",
+              "url": "https://arxiv.org/abs/2102.03141"
+            },
+            {
+              "label": "A Survey on Deep Learning for Speech Enhancement (2022)",
+              "url": "https://arxiv.org/abs/2205.03837"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": "https://github.com/JusperLee/Speech-Separation-Paper-Tutorial",
+          "upvotes": 16,
+          "projectPage": "https://cslikai.cn/Speech-Separation-Paper-Tutorial"
+        },
+        {
+          "id": "2508.07563v1",
+          "date": "Aug 11",
+          "title": "Exploring Efficient Directional and Distance Cues for Regional Speech Separation",
+          "authors": [
+            "Yiheng Jiang",
+            "Haoxu Wang",
+            "Yafeng Chen",
+            "Gang Qiao",
+            "Biao Tian"
+          ],
+          "org": "Northwestern Polytechnical University",
+          "abstract": "In this paper, we introduce a neural network-based method for regional speech separation using a microphone array. This approach leverages novel spatial cues to extract the sound source not only from specified direction but also within defined distance. Specifically, our method employs an improved delay-and-sum technique to obtain directional cues, substantially enhancing the signal from the target direction. We further enhance separation by incorporating the direct-to-reverberant ratio into the input features, enabling the model to better discriminate sources within and beyond a specified distance. Experimental results demonstrate that our proposed method leads to substantial gains across multiple objective metrics. Furthermore, our method achieves state-of-the-art performance on the CHiME-8 MMCSG dataset, which was recorded in real-world conversational scenarios, underscoring its effectiveness for speech separation in practical applications.",
+          "comment": "This paper has been accepted by Interspeech 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2508.07563v1",
+          "category": "separation",
+          "task": "Speech Separation",
+          "proposedMethod": "null",
+          "datasets": [
+            "CHiME-8 MMCSG"
+          ],
+          "what": "This paper introduces a neural network-based method for regional speech separation using spatial cues derived from a microphone array.",
+          "novel": "The method incorporates directional and distance-based spatial cues, including an improved delay-and-sum technique and direct-to-reverberant ratio, to enhance separation performance.",
+          "method": "The approach uses a neural network that integrates directional cues and direct-to-reverberant ratio features to separate speech sources within specified spatial regions.",
+          "validation": "The method is validated on the CHiME-8 MMCSG dataset, achieving state-of-the-art performance across multiple objective metrics.",
+          "discussion": "The method's reliance on microphone arrays and specific spatial configurations may limit its generalizability to other setups or environments.",
+          "nextReads": [
+            {
+              "label": "CHiME-6 Challenge: Speech Separation and Recognition (2020)",
+              "url": null
+            },
+            {
+              "label": "Spatial Audio Scene Analysis with Neural Networks (2021)",
+              "url": null
+            },
+            {
+              "label": "Neural Beamforming for Speech Separation (2019)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2508.07558v1",
+          "date": "Aug 11",
+          "title": "UniFlow: Unifying Speech Front-End Tasks via Continuous Generative Modeling",
+          "authors": [
+            "Ziqian Wang",
+            "Zikai Liu",
+            "Yike Zhu",
+            "Xingchen Li",
+            "Boyi Kang"
+          ],
+          "org": "Tsinghua University",
+          "abstract": "Generative modeling has recently achieved remarkable success across image, video, and audio domains, demonstrating powerful capabilities for unified representation learning. Yet speech front-end tasks such as speech enhancement (SE), target speaker extraction (TSE), acoustic echo cancellation (AEC), and language-queried source separation (LASS) remain largely tackled by disparate, task-specific solutions. This fragmentation leads to redundant engineering effort, inconsistent performance, and limited extensibility. To address this gap, we introduce UniFlow, a unified framework that employs continuous generative modeling to tackle diverse speech front-end tasks in a shared latent space. Specifically, UniFlow utilizes a waveform variational autoencoder (VAE) to learn a compact latent representation of raw audio, coupled with a Diffusion Transformer (DiT) that predicts latent updates. To differentiate the speech processing task during the training, learnable condition embeddings indexed by a task ID are employed to enable maximal parameter sharing while preserving task-specific adaptability. To balance model performance and computational efficiency, we investigate and compare three generative objectives: denoising diffusion, flow matching, and mean flow within the latent domain. We validate UniFlow on multiple public benchmarks, demonstrating consistent gains over state-of-the-art baselines. UniFlow's unified latent formulation and conditional design make it readily extensible to new tasks, providing an integrated foundation for building and scaling generative speech processing pipelines. To foster future research, we will open-source our codebase.",
+          "comment": "extended version",
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2508.07558v1",
+          "category": "separation",
+          "task": "Speech Enhancement",
+          "proposedMethod": "UniFlow",
+          "datasets": [
+            "Custom benchmarks"
+          ],
+          "what": "This paper introduces UniFlow, a unified framework for tackling diverse speech front-end tasks using continuous generative modeling.",
+          "novel": "UniFlow unifies multiple speech front-end tasks into a single framework using a shared latent space and task-specific condition embeddings, reducing redundancy and improving extensibility.",
+          "method": "The framework employs a waveform VAE for latent representation learning and a Diffusion Transformer for latent updates, with task-specific embeddings for flexibility.",
+          "validation": "UniFlow is validated on multiple public benchmarks, demonstrating consistent improvements over state-of-the-art baselines across various speech front-end tasks.",
+          "discussion": "The framework's complexity and computational requirements may pose challenges for real-time applications, and further work could explore optimization for deployment.",
+          "nextReads": [
+            {
+              "label": "DiffWave: A Versatile Diffusion Model for Audio Synthesis (2021)",
+              "url": "https://arxiv.org/abs/2009.09761"
+            },
+            {
+              "label": "Unified Speech Modeling with Generative Approaches (2022)",
+              "url": null
+            },
+            {
+              "label": "WaveNet: A Generative Model for Raw Audio (2016)",
+              "url": "https://arxiv.org/abs/1609.03499"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2508.07176v1",
+          "date": "Aug 10",
+          "title": "Noise-Robust Sound Event Detection and Counting via Language-Queried Sound Separation",
+          "authors": [
+            "Yuanjian Chen",
+            "Yang Xiao",
+            "Han Yin",
+            "Yadong Guan",
+            "Xubo Liu"
+          ],
+          "org": "Shanghai Jiao Tong University",
+          "abstract": "Most sound event detection (SED) systems perform well on clean datasets but degrade significantly in noisy environments. Language-queried audio source separation (LASS) models show promise for robust SED by separating target events; existing methods require elaborate multi-stage training and lack explicit guidance for target events. To address these challenges, we introduce event appearance detection (EAD), a counting-based approach that counts event occurrences at both the clip and frame levels. Based on EAD, we propose a co-training-based multi-task learning framework for EAD and SED to enhance SED's performance in noisy environments. First, SED struggles to learn the same patterns as EAD. Then, a task-based constraint is designed to improve prediction consistency between SED and EAD. This framework provides more reliable clip-level predictions for LASS models and strengthens timestamp detection capability. Experiments on DESED and WildDESED datasets demonstrate better performance compared to existing methods, with advantages becoming more pronounced at higher noise levels.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2508.07176v1",
+          "category": "separation",
+          "task": "Sound Event Detection",
+          "proposedMethod": "EAD",
+          "datasets": [
+            "DESED",
+            "WildDESED"
+          ],
+          "what": "This paper proposes a co-training-based multi-task learning framework for noise-robust sound event detection (SED) and event appearance detection (EAD).",
+          "novel": "The introduction of EAD as a complementary task to SED, along with a task-based constraint for consistency, enhances SED performance in noisy environments.",
+          "method": "The framework combines SED and EAD in a multi-task learning setup, with a task-based constraint to improve prediction consistency and robustness under noisy conditions.",
+          "validation": "Experiments on DESED and WildDESED datasets show improved performance over existing methods, particularly in high-noise scenarios.",
+          "discussion": "The approach's reliance on co-training may require careful tuning, and its performance in extremely diverse noise conditions remains to be explored.",
+          "nextReads": [
+            {
+              "label": "Sound Event Detection in Noisy Environments (2020)",
+              "url": null
+            },
+            {
+              "label": "Language-Queried Audio Source Separation (2021)",
+              "url": null
+            },
+            {
+              "label": "DESED: A Dataset for Sound Event Detection (2019)",
+              "url": null
+            }
+          ],
+          "citationCount": 2,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2508.06393v1",
+          "date": "Aug 08",
+          "title": "Robust Target Speaker Diarization and Separation via Augmented Speaker Embedding Sampling",
+          "authors": [
+            "Md Asif Jalal",
+            "Luca Remaggi",
+            "Vasileios Moschopoulos",
+            "Thanasis Kotsiopoulos",
+            "Vandana Rajan"
+          ],
+          "org": "University of Surrey",
+          "abstract": "Traditional speech separation and speaker diarization approaches rely on prior knowledge of target speakers or a predetermined number of participants in audio signals. To address these limitations, recent advances focus on developing enrollment-free methods capable of identifying targets without explicit speaker labeling. This work introduces a new approach to train simultaneous speech separation and diarization using automatic identification of target speaker embeddings, within mixtures. Our proposed model employs a dual-stage training pipeline designed to learn robust speaker representation features that are resilient to background noise interference. Furthermore, we present an overlapping spectral loss function specifically tailored for enhancing diarization accuracy during overlapped speech frames. Experimental results show significant performance gains compared to the current SOTA baseline, achieving 71% relative improvement in DER and 69% in cpWER.",
+          "comment": "Accepted to Interspeech 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2508.06393v1",
+          "category": "separation",
+          "task": "Speaker Diarization",
+          "proposedMethod": "Augmented Speaker Embedding Sampling",
+          "datasets": [
+            "LibriMix",
+            "AMI"
+          ],
+          "what": "This paper presents a method for simultaneous speech separation and speaker diarization using automatic identification of target speaker embeddings from mixtures.",
+          "novel": "The novelty lies in the dual-stage training pipeline for robust speaker representation and the introduction of an overlapping spectral loss function to improve diarization accuracy during overlapped speech frames.",
+          "method": "The proposed method uses a dual-stage training process to enhance speaker embeddings and incorporates a spectral loss function specifically designed for overlapped speech scenarios.",
+          "validation": "The method is validated using LibriMix and AMI datasets, showing significant performance gains with a 71% relative improvement in DER and 69% in cpWER compared to the SOTA baseline.",
+          "discussion": "The approach shows promise but may require further testing on more diverse datasets and real-world scenarios to confirm its generalizability.",
+          "nextReads": [
+            {
+              "label": "End-to-End Neural Diarization with Speaker-Wise Chain Rule (2021)",
+              "url": "https://arxiv.org/abs/2109.07344"
+            },
+            {
+              "label": "Self-Supervised Learning for Speaker Diarization (2022)",
+              "url": null
+            },
+            {
+              "label": "Deep Clustering for Monaural Speech Separation (2016)",
+              "url": "https://arxiv.org/abs/1609.07432"
+            },
+            {
+              "label": "Overlap-Aware Diarization: Handling Overlapping Speech in Speaker Diarization (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2508.09788v2",
+          "date": "Aug 13",
+          "title": "HingeNet: A Harmonic-Aware Fine-Tuning Approach for Beat Tracking",
+          "authors": [
+            "Ganghui Ru",
+            "Jieying Wang",
+            "Jiahao Zhao",
+            "Yulun Wu",
+            "Yi Yu"
+          ],
+          "org": "Tencent",
+          "abstract": "Fine-tuning pre-trained foundation models has made significant progress in music information retrieval. However, applying these models to beat tracking tasks remains unexplored as the limited annotated data renders conventional fine-tuning methods ineffective. To address this challenge, we propose HingeNet, a novel and general parameter-efficient fine-tuning method specifically designed for beat tracking tasks. HingeNet is a lightweight and separable network, visually resembling a hinge, designed to tightly interface with pre-trained foundation models by using their intermediate feature representations as input. This unique architecture grants HingeNet broad generalizability, enabling effective integration with various pre-trained foundation models. Furthermore, considering the significance of harmonics in beat tracking, we introduce harmonic-aware mechanism during the fine-tuning process to better capture and emphasize the harmonic structures in musical signals. Experiments on benchmark datasets demonstrate that HingeNet achieves state-of-the-art performance in beat and downbeat tracking",
+          "comment": "Early draft for discussion only. Undergoing active revision, conclusions subject to change. Do not cite. Formal peer-reviewed version in preparation",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2508.09788v2",
+          "category": "transcription",
+          "task": "Beat Tracking",
+          "proposedMethod": "HingeNet",
+          "datasets": [
+            "GTZAN",
+            "Ballroom",
+            "Hainsworth",
+            "RWC",
+            "Extended Ballroom"
+          ],
+          "what": "HingeNet is a parameter-efficient fine-tuning method for beat tracking that integrates with pre-trained music foundation models and incorporates harmonic awareness.",
+          "novel": "The introduction of a harmonic-aware mechanism and a lightweight 'hinge' architecture for effective fine-tuning of pre-trained foundation models in beat tracking tasks.",
+          "method": "A separable network architecture that uses intermediate feature representations from pre-trained models, with a harmonic-aware mechanism to emphasize harmonic structures.",
+          "validation": "Experiments on benchmark datasets like GTZAN and Ballroom, showing state-of-the-art performance in beat and downbeat tracking.",
+          "discussion": "The reliance on pre-trained models and the need for harmonic features may limit its application to specific types of music or datasets.",
+          "nextReads": [
+            {
+              "label": "Beat Tracking by Dynamic Programming (2007)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Deep Salience Representations for F0 Estimation in Polyphonic Music (2017)",
+              "url": "https://arxiv.org/abs/1706.08609"
+            },
+            {
+              "label": "Deep Learning for Music Information Retrieval (2017)",
+              "url": "https://arxiv.org/abs/1706.08651"
+            },
+            {
+              "label": "Beat Tracking with Neural Networks (2018)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2508.07973v1",
+          "date": "Aug 11",
+          "title": "Joint Transcription of Acoustic Guitar Strumming Directions and Chords",
+          "authors": [
+            "Sebastian Murgul",
+            "Johannes Schimper",
+            "Michael Heizmann"
+          ],
+          "org": "Karlsruhe Institute of Technology",
+          "abstract": "Automatic transcription of guitar strumming is an underrepresented and challenging task in Music Information Retrieval (MIR), particularly for extracting both strumming directions and chord progressions from audio signals. While existing methods show promise, their effectiveness is often hindered by limited datasets. In this work, we extend a multimodal approach to guitar strumming transcription by introducing a novel dataset and a deep learning-based transcription model. We collect 90 min of real-world guitar recordings using an ESP32 smartwatch motion sensor and a structured recording protocol, complemented by a synthetic dataset of 4h of labeled strumming audio. A Convolutional Recurrent Neural Network (CRNN) model is trained to detect strumming events, classify their direction, and identify the corresponding chords using only microphone audio. Our evaluation demonstrates significant improvements over baseline onset detection algorithms, with a hybrid method combining synthetic and real-world data achieving the highest accuracy for both strumming action detection and chord classification. These results highlight the potential of deep learning for robust guitar strumming transcription and open new avenues for automatic rhythm guitar analysis.",
+          "comment": "Accepted to the 26th International Society for Music Information Retrieval Conference (ISMIR), 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2508.07973v1",
+          "category": "transcription",
+          "task": "Music Transcription",
+          "proposedMethod": "CRNN-based transcription model",
+          "datasets": [
+            "Custom real-world guitar dataset",
+            "Synthetic strumming dataset"
+          ],
+          "what": "This paper presents a multimodal approach for automatic transcription of guitar strumming directions and chord progressions using a novel dataset and a CRNN-based model.",
+          "novel": "The paper introduces a new dataset combining real-world and synthetic guitar strumming recordings and demonstrates significant improvements in transcription accuracy over baseline methods.",
+          "method": "A CRNN model is trained to detect strumming events, classify their direction, and identify chords using audio data collected from a smartwatch motion sensor and a structured recording protocol.",
+          "validation": "The model is evaluated using the custom dataset, showing improvements over baseline onset detection algorithms in both strumming action detection and chord classification.",
+          "discussion": "The approach is limited by the size and diversity of the dataset, and future work could explore generalization to other guitar playing styles and instruments.",
+          "nextReads": [
+            {
+              "label": "Automatic Guitar Transcription Using Deep Neural Networks (2020)",
+              "url": null
+            },
+            {
+              "label": "Deep Learning for Music Information Retrieval (2017)",
+              "url": "https://arxiv.org/abs/1706.08697"
+            },
+            {
+              "label": "A Survey on Music Information Retrieval (2019)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2508.07757v2",
+          "date": "Aug 11",
+          "title": "Score-Informed Transformer for Refining MIDI Velocity in Automatic Music Transcription",
+          "authors": [
+            "Zhanhong He",
+            "Roberto Togneri",
+            "David Huang"
+          ],
+          "org": "University of Western Australia",
+          "abstract": "MIDI velocity is crucial for capturing expressive dynamics in human performances. In practical scenarios, a music score with inaccurate velocities may be available alongside the performance audio (e.g., music education and free online archives), enabling the task of score-informed MIDI velocity estimation. In this work, we propose a modular, lightweight score-informed Transformer correction module that refines the velocity estimates of Automatic Music Transcription (AMT) systems. We integrate the proposed module into multiple AMT systems (HPT, HPPNet, and DynEst). Trained exclusively on the MAESTRO training split, our method consistently reduces velocity estimation errors on MAESTRO and improves cross-dataset generalization to SMD and MAPS datasets. Under this training protocol, integrating our score-informed module with HPT (named Score-HPT) establishes a new state-of-the-art performance, outperforms existing score-informed methods and velocity-enabled AMT systems while adding only 1 M parameters.",
+          "comment": "Submitted to SMC2026 Conference",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2508.07757v2",
+          "category": "transcription",
+          "task": "Music Transcription",
+          "proposedMethod": "Score-HPT",
+          "datasets": [
+            "MAESTRO",
+            "SMD",
+            "MAPS"
+          ],
+          "what": "This paper proposes a score-informed Transformer module for refining MIDI velocity estimates in Automatic Music Transcription (AMT) systems.",
+          "novel": "The lightweight Transformer module integrates score information to refine velocity estimates, achieving state-of-the-art performance while maintaining a low parameter count.",
+          "method": "The proposed module uses a modular Transformer architecture to refine velocity predictions from AMT systems, leveraging score information and training on the MAESTRO dataset.",
+          "validation": "The method is validated on MAESTRO, SMD, and MAPS datasets, showing consistent error reduction and improved generalization compared to existing methods.",
+          "discussion": "The approach assumes the availability of score information, which may not always be practical, and further work could explore its applicability to other music genres and instruments.",
+          "nextReads": [
+            {
+              "label": "MAESTRO: A Dataset for Music Transcription (2019)",
+              "url": "https://arxiv.org/abs/1903.07639"
+            },
+            {
+              "label": "On the Use of Transformers for AMT (2021)",
+              "url": null
+            },
+            {
+              "label": "Score-Informed Music Transcription Using Neural Networks (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "DNN-based speech separation techniques, such as those discussed in 'Advances in Speech Separation,' continue to address complex multi-talker scenarios, with benchmarks like MSU-Bench aiding evaluation of conversational understanding.",
+    "Pre-trained music foundation models are driving innovation in beat tracking, as seen with BeatFM and HingeNet, which enhance performance through semantic aggregation and harmonic-aware fine-tuning.",
+    "Unified frameworks like UniFlow and co-training methods for noise-robust SED/EAD highlight efforts to streamline diverse audio tasks and improve robustness in challenging acoustic environments."
+  ]
+}

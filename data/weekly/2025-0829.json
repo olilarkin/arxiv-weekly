@@ -1,0 +1,303 @@
+{
+  "date": "2025-0829",
+  "generated_at": "2025-08-29T00:00:00+00:00",
+  "total": 5,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2508.20976v1",
+          "date": "Aug 28",
+          "title": "WoW-Bench: Evaluating Fine-Grained Acoustic Perception in Audio-Language Models via Marine Mammal Vocalizations",
+          "authors": [
+            "Jaeyeon Kim",
+            "Heeseung Yun",
+            "Sang Hoon Woo",
+            "Chao-Han Huck Yang",
+            "Gunhee Kim"
+          ],
+          "org": "KAIST",
+          "abstract": "Large audio language models (LALMs) extend language understanding into the auditory domain, yet their ability to perform low-level listening, such as pitch and duration detection, remains underexplored. However, low-level listening is critical for real-world, out-of-distribution tasks where models must reason about unfamiliar sounds based on fine-grained acoustic cues. To address this gap, we introduce the World-of-Whale benchmark (WoW-Bench) to evaluate low-level auditory perception and cognition using marine mammal vocalizations. WoW-bench is composed of a Perception benchmark for categorizing novel sounds and a Cognition benchmark, inspired by Bloom's taxonomy, to assess the abilities to remember, understand, apply, and analyze sound events. For the Cognition benchmark, we additionally introduce distractor questions to evaluate whether models are truly solving problems through listening rather than relying on other heuristics. Experiments with state-of-the-art LALMs show performance far below human levels, indicating a need for stronger auditory grounding in LALMs.",
+          "comment": "Preprint. Project page: https://jaeyeonkim99.github.io/wow_bench/",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2508.20976v1",
+          "category": "foundation",
+          "task": "Audio-Language Evaluation",
+          "proposedMethod": "WoW-Bench",
+          "datasets": [
+            "WoW-Bench"
+          ],
+          "what": "This paper introduces WoW-Bench, a benchmark designed to evaluate fine-grained auditory perception and cognition in large audio-language models using marine mammal vocalizations.",
+          "novel": "The novelty lies in the focus on low-level auditory perception and cognition, which is underexplored in existing audio-language models, and the inclusion of distractor questions to assess true auditory reasoning.",
+          "method": "The benchmark is divided into Perception and Cognition tasks, inspired by Bloom's taxonomy, to evaluate models' abilities to categorize, remember, understand, apply, and analyze sound events.",
+          "validation": "The authors tested state-of-the-art large audio-language models on WoW-Bench, showing performance significantly below human levels, highlighting the need for better auditory grounding.",
+          "discussion": "The study reveals the limitations of current models in fine-grained auditory perception and suggests that more robust auditory grounding is required for real-world applications.",
+          "nextReads": [
+            {
+              "label": "AudioLDM: Text-to-Audio Generation with Latent Diffusion Models (2023)",
+              "url": "https://arxiv.org/abs/2301.12503"
+            },
+            {
+              "label": "Whale Song Classification Using Deep Learning (2020)",
+              "url": null
+            },
+            {
+              "label": "HEAR: Holistic Evaluation of Audio Representations (2021)",
+              "url": "https://arxiv.org/abs/2111.03590"
+            },
+            {
+              "label": "Self-Supervised Learning for Audio-Language Tasks (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2508.18295v1",
+          "date": "Aug 22",
+          "title": "H-PRM: A Pluggable Hotword Pre-Retrieval Module for Various Speech Recognition Systems",
+          "authors": [
+            "Huangyu Dai",
+            "Lingtao Mao",
+            "Ben Chen",
+            "Zihan Wang",
+            "Zihan Liang"
+          ],
+          "org": "Alibaba DAMO Academy",
+          "abstract": "Hotword customization is crucial in ASR to enhance the accuracy of domain-specific terms. It has been primarily driven by the advancements in traditional models and Audio large language models (LLMs). However, existing models often struggle with large-scale hotwords, as the recognition rate drops dramatically with the number of hotwords increasing. In this paper, we introduce a novel hotword customization system that utilizes a hotword pre-retrieval module (H-PRM) to identify the most relevant hotword candidate by measuring the acoustic similarity between the hotwords and the speech segment. This plug-and-play solution can be easily integrated into traditional models such as SeACo-Paraformer, significantly enhancing hotwords post-recall rate (PRR). Additionally, we incorporate H-PRM into Audio LLMs through a prompt-based approach, enabling seamless customization of hotwords. Extensive testing validates that H-PRM can outperform existing methods, showing a new direction for hotword customization in ASR.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.CL",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2508.18295v1",
+          "category": "foundation",
+          "task": "ASR Hotword Customization",
+          "proposedMethod": "H-PRM",
+          "datasets": [
+            "Custom ASR datasets"
+          ],
+          "what": "This paper proposes H-PRM, a hotword pre-retrieval module that enhances the accuracy of domain-specific terms in ASR systems by identifying the most relevant hotword candidates.",
+          "novel": "H-PRM introduces a plug-and-play solution that measures acoustic similarity to improve hotword recognition, addressing the challenge of scaling to large hotword lists.",
+          "method": "The module uses a pre-retrieval mechanism to rank hotword candidates based on acoustic similarity and integrates seamlessly with traditional and Audio LLM-based ASR systems.",
+          "validation": "Extensive testing on custom ASR datasets demonstrates that H-PRM significantly improves hotword post-recall rate compared to existing methods.",
+          "discussion": "While effective, the approach's reliance on pre-retrieval may limit its performance in highly noisy environments or with phonetically similar hotwords.",
+          "nextReads": [
+            {
+              "label": "SeACo-Paraformer: A Streaming End-to-End ASR Model with Contextual Biasing (2022)",
+              "url": null
+            },
+            {
+              "label": "Hotword Detection with Acoustic Similarity (2021)",
+              "url": null
+            },
+            {
+              "label": "Contextual Speech Recognition with Audio LLMs (2023)",
+              "url": null
+            },
+            {
+              "label": "Improving ASR with Personalized Hotword Models (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2508.20474v1",
+          "date": "Aug 28",
+          "title": "Unifying Diarization, Separation, and ASR with Multi-Speaker Encoder",
+          "authors": [
+            "Muhammad Shakeel",
+            "Yui Sudo",
+            "Yifan Peng",
+            "Chyi-Jiunn Lin",
+            "Shinji Watanabe"
+          ],
+          "org": "LINE Corporation",
+          "abstract": "This paper presents a unified multi-speaker encoder (UME), a novel architecture that jointly learns representations for speaker diarization (SD), speech separation (SS), and multi-speaker automatic speech recognition (ASR) tasks using a shared speech foundational encoder. We leverage the hidden representations from multiple layers of UME as a residual weighted-sum encoding (RWSE) to effectively use information from different semantic levels, contributing to bottom-up alignment between tasks. This joint training approach captures the inherent interdependencies among the tasks, enhancing overall performance on overlapping speech data. Our evaluations demonstrate that UME substantially improves over the single-task baselines dedicated to SD, SS, and multi-speaker ASR on LibriMix evaluation sets. Notably, for SD, UME outperforms the previous studies, achieving diarization error rates of 1.37% and 2.29% on Libri2Mix and Libri3Mix evaluation sets, respectively.",
+          "comment": "Accepted to IEEE ASRU 2025",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.CL",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2508.20474v1",
+          "category": "separation",
+          "task": "Diarization / Separation / ASR",
+          "proposedMethod": "UME",
+          "datasets": [
+            "LibriMix",
+            "Libri2Mix",
+            "Libri3Mix"
+          ],
+          "what": "This paper proposes UME, a unified multi-speaker encoder that jointly learns representations for speaker diarization, speech separation, and multi-speaker ASR.",
+          "novel": "UME introduces a shared foundational encoder with residual weighted-sum encoding to align semantic levels across tasks, improving performance on overlapping speech data.",
+          "method": "The model leverages hidden representations from multiple encoder layers and uses joint training to capture interdependencies among diarization, separation, and ASR tasks.",
+          "validation": "Evaluations on LibriMix datasets show that UME achieves state-of-the-art performance, including diarization error rates of 1.37% and 2.29% on Libri2Mix and Libri3Mix, respectively.",
+          "discussion": "While UME improves multi-task performance, its effectiveness on real-world noisy and diverse datasets remains to be explored.",
+          "nextReads": [
+            {
+              "label": "WavLM: Large-Scale Self-Supervised Pre-Training for Full Stack Speech Processing (2022)",
+              "url": "https://arxiv.org/abs/2110.13900"
+            },
+            {
+              "label": "Speech Separation Based on Multi-Scale Attention (2021)",
+              "url": null
+            },
+            {
+              "label": "End-to-End Neural Speaker Diarization with Encoder-Decoder Based Attractor (2020)",
+              "url": "https://arxiv.org/abs/2005.07272"
+            },
+            {
+              "label": "Speech Separation and Recognition with Multi-Task Learning (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2508.20273v1",
+          "date": "Aug 27",
+          "title": "Live Vocal Extraction from K-pop Performances",
+          "authors": [
+            "Yujin Kim",
+            "Richa Namballa",
+            "Magdalena Fuentes"
+          ],
+          "org": "University of Southern California",
+          "abstract": "K-pop's global success is fueled by its dynamic performances and vibrant fan engagement. Inspired by K-pop fan culture, we propose a methodology for automatically extracting live vocals from performances. We use a combination of source separation, cross-correlation, and amplitude scaling to automatically remove pre-recorded vocals and instrumentals from a live performance. Our preliminary work introduces the task of live vocal separation and provides a foundation for future research in this topic.",
+          "comment": "2 pages + references, 1 figure, Extended Abstracts for the Late-Breaking Demo Session of the 26th International Society for Music Information Retrieval Conference",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD",
+            "eess.SP"
+          ],
+          "url": "https://arxiv.org/abs/2508.20273v1",
+          "category": "separation",
+          "task": "Voice Separation",
+          "proposedMethod": null,
+          "datasets": [
+            "Custom K-pop dataset"
+          ],
+          "what": "This paper introduces a methodology for automatically extracting live vocals from K-pop performances by separating live vocals from pre-recorded vocals and instrumentals.",
+          "novel": "The work pioneers the task of live vocal separation, which has not been specifically addressed in prior research, particularly in the context of K-pop performances.",
+          "method": "The approach combines source separation, cross-correlation, and amplitude scaling to isolate live vocals from other audio components in performance recordings.",
+          "validation": "The method is evaluated on a custom K-pop dataset, demonstrating its potential as a foundation for further research in live vocal separation.",
+          "discussion": "The study is preliminary and focuses on a specific genre, suggesting the need for broader validation across diverse musical styles and more robust models.",
+          "nextReads": [
+            {
+              "label": "Singing Voice Separation with Deep U-Net Convolutional Networks (2017)",
+              "url": "https://arxiv.org/abs/1710.11428"
+            },
+            {
+              "label": "Open-Unmix: A Reference Implementation for Music Source Separation (2019)",
+              "url": "https://arxiv.org/abs/1905.03330"
+            },
+            {
+              "label": "Spleeter: A Fast and State-of-the Art Music Source Separation Tool with Pre-trained Models (2020)",
+              "url": null
+            },
+            {
+              "label": "Deep Karaoke: Extracting Vocals from Musical Mixtures (2019)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2508.19528v1",
+          "date": "Aug 27",
+          "title": "FLASepformer: Efficient Speech Separation with Gated Focused Linear Attention Transformer",
+          "authors": [
+            "Haoxu Wang",
+            "Yiheng Jiang",
+            "Gang Qiao",
+            "Pengteng Shi",
+            "Biao Tian"
+          ],
+          "org": "Tencent",
+          "abstract": "Speech separation always faces the challenge of handling prolonged time sequences. Past methods try to reduce sequence lengths and use the Transformer to capture global information. However, due to the quadratic time complexity of the attention module, memory usage and inference time still increase significantly with longer segments. To tackle this, we introduce Focused Linear Attention and build FLASepformer with linear complexity for efficient speech separation. Inspired by SepReformer and TF-Locoformer, we have two variants: FLA-SepReformer and FLA-TFLocoformer. We also add a new Gated module to improve performance further. Experimental results on various datasets show that FLASepformer matches state-of-the-art performance with less memory consumption and faster inference. FLA-SepReformer-T/B/L increases speed by 2.29x, 1.91x, and 1.49x, with 15.8%, 20.9%, and 31.9% GPU memory usage, proving our model's effectiveness.",
+          "comment": "Accepted by Interspeech 2025",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2508.19528v1",
+          "category": "separation",
+          "task": "Speech Separation",
+          "proposedMethod": "FLASepformer",
+          "datasets": [
+            "WSJ0-2mix",
+            "WSJ0-3mix",
+            "LibriMix"
+          ],
+          "what": "This paper introduces FLASepformer, a speech separation model using Focused Linear Attention to achieve linear complexity and improve efficiency.",
+          "novel": "The model reduces memory usage and inference time while maintaining state-of-the-art performance, addressing the challenge of handling prolonged time sequences in speech separation.",
+          "method": "FLASepformer employs Focused Linear Attention and a new Gated module to enhance efficiency and performance, with two variants inspired by SepReformer and TF-Locoformer.",
+          "validation": "Experiments on WSJ0-2mix, WSJ0-3mix, and LibriMix datasets demonstrate FLASepformer achieves comparable performance to state-of-the-art models with significantly reduced memory and faster inference.",
+          "discussion": "The model's efficiency gains are promising, but its performance on real-world noisy datasets and scalability to larger datasets require further investigation.",
+          "nextReads": [
+            {
+              "label": "SepFormer: Speech Separation with Segmental Transformers (2021)",
+              "url": "https://arxiv.org/abs/2010.13154"
+            },
+            {
+              "label": "TF-Locoformer: Efficient Speech Separation with Local Attention (2022)",
+              "url": null
+            },
+            {
+              "label": "Dual-Path RNN: Efficient Long Sequence Modeling for Time-Domain Single-Channel Speech Separation (2020)",
+              "url": "https://arxiv.org/abs/2007.14832"
+            },
+            {
+              "label": "Conformer: Convolution-augmented Transformer for Speech Recognition (2020)",
+              "url": "https://arxiv.org/abs/2005.08100"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "WoW-Bench highlights advancements in fine-grained auditory perception for audio-language models using marine mammal vocalizations as a benchmark.",
+    "UME and FLASepformer showcase innovations in multi-speaker processing, with UME unifying diarization, separation, and ASR, and FLASepformer enhancing speech separation efficiency through linear attention.",
+    "Live Vocal Extraction and H-PRM focus on specialized applications, with methods for isolating live K-pop vocals and improving ASR accuracy for domain-specific terms, respectively."
+  ]
+}

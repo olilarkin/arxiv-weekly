@@ -1,0 +1,628 @@
+{
+  "date": "2025-0711",
+  "generated_at": "2025-07-11T00:00:00+00:00",
+  "total": 11,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2507.08128v2",
+          "date": "Jul 10",
+          "title": "Audio Flamingo 3: Advancing Audio Intelligence with Fully Open Large Audio Language Models",
+          "authors": [
+            "Arushi Goel",
+            "Sreyan Ghosh",
+            "Jaehyeon Kim",
+            "Sonal Kumar",
+            "Zhifeng Kong"
+          ],
+          "org": "Google",
+          "abstract": "We present Audio Flamingo 3 (AF3), a fully open state-of-the-art (SOTA) large audio-language model that advances reasoning and understanding across speech, sound, and music. AF3 introduces: (i) AF-Whisper, a unified audio encoder trained using a novel strategy for joint representation learning across all 3 modalities of speech, sound, and music; (ii) flexible, on-demand thinking, allowing the model to do chain-of-thought-type reasoning before answering; (iii) multi-turn, multi-audio chat; (iv) long audio understanding and reasoning (including speech) up to 10 minutes; and (v) voice-to-voice interaction. To enable these capabilities, we propose several large-scale training datasets curated using novel strategies, including AudioSkills-XL, LongAudio-XL, AF-Think, and AF-Chat, and train AF3 with a novel five-stage curriculum-based training strategy. Trained on only open-source audio data, AF3 achieves new SOTA results on over 20+ (long) audio understanding and reasoning benchmarks, surpassing both open-weight and closed-source models trained on much larger datasets.",
+          "comment": "Code, Datasets, and Models: https://research.nvidia.com/labs/adlr/AF3/ ; Updates in v2: Updated results for new thinking mode ckpts, added qualitative figure, added note on fully open claim, add email ID for corresponding authors",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.CL",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.08128v2",
+          "category": "foundation",
+          "task": "Audio-Language Modeling",
+          "proposedMethod": "Audio Flamingo 3 (AF3)",
+          "datasets": [
+            "AudioSkills-XL",
+            "LongAudio-XL",
+            "AF-Think",
+            "AF-Chat"
+          ],
+          "what": "This paper introduces Audio Flamingo 3 (AF3), a fully open large audio-language model designed for advanced reasoning and understanding across speech, sound, and music.",
+          "novel": "AF3 achieves state-of-the-art results on over 20 benchmarks using a novel five-stage curriculum training strategy and several large-scale curated datasets, all while being trained on open-source data.",
+          "method": "The model employs a unified audio encoder (AF-Whisper) for joint representation learning across speech, sound, and music, along with features like chain-of-thought reasoning, multi-turn audio chat, and long audio understanding.",
+          "validation": "The model's performance is validated on over 20 long audio understanding and reasoning benchmarks, surpassing both open-weight and closed-source models trained on larger datasets.",
+          "discussion": "While AF3 sets new benchmarks, its reliance on large-scale curated datasets and computational resources may limit accessibility for smaller research groups.",
+          "nextReads": [
+            {
+              "label": "Whisper: OpenAI's Speech Recognition Model (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "AudioLM: A Language Modeling Approach to Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/2209.03143"
+            },
+            {
+              "label": "Flamingo: A Visual Language Model for Few-Shot Learning (2022)",
+              "url": "https://arxiv.org/abs/2204.14198"
+            },
+            {
+              "label": "BEATs: Audio Pre-Training with Acoustic Tokenizers (2023)",
+              "url": "https://arxiv.org/abs/2302.06305"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 15,
+          "projectPage": null
+        },
+        {
+          "id": "2507.07879v2",
+          "date": "Jul 10",
+          "title": "LISTEN: Lightweight Industrial Sound-representable Transformer for Edge Notification",
+          "authors": [
+            "Changheon Han",
+            "Yun Seok Kang",
+            "Yuseop Sim",
+            "Hyung Wook Park",
+            "Martin Byung-Guk Jun"
+          ],
+          "org": "KAIST",
+          "abstract": "Deep learning-based machine listening is broadening the scope of industrial acoustic analysis for applications like anomaly detection and predictive maintenance, thereby improving manufacturing efficiency and reliability. Nevertheless, its reliance on large, task-specific annotated datasets for every new task limits widespread implementation on shop floors. While emerging sound foundation models aim to alleviate data dependency, they are too large and computationally expensive, requiring cloud infrastructure or high-end hardware that is impractical for on-site, real-time deployment. We address this gap with LISTEN (Lightweight Industrial Sound-representable Transformer for Edge Notification), a kilobyte-sized industrial sound foundation model. Using knowledge distillation, LISTEN runs in real-time on low-cost edge devices. On benchmark downstream tasks, it performs nearly identically to its much larger parent model, even when fine-tuned with minimal datasets and training resource. Beyond the model itself, we demonstrate its real-world utility by integrating LISTEN into a complete machine monitoring framework on an edge device with an Industrial Internet of Things (IIoT) sensor and system, validating its performance and generalization capabilities on a live manufacturing shop floor.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.07879v2",
+          "category": "foundation",
+          "task": "Sound Event Detection",
+          "proposedMethod": "LISTEN",
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "This paper proposes LISTEN, a lightweight industrial sound foundation model designed for real-time edge device deployment in industrial acoustic analysis tasks.",
+          "novel": "LISTEN achieves near-parity performance with larger models while being kilobyte-sized, enabling real-time processing on low-cost edge devices using knowledge distillation.",
+          "method": "The model uses a transformer-based architecture with knowledge distillation to create a compact yet effective model for industrial sound analysis.",
+          "validation": "LISTEN's performance is validated on benchmark downstream tasks and in real-world scenarios on a manufacturing shop floor using IIoT sensors.",
+          "discussion": "While LISTEN addresses computational constraints for edge devices, its performance on highly complex acoustic tasks or non-industrial scenarios remains unexplored.",
+          "nextReads": [
+            {
+              "label": "AST: Audio Spectrogram Transformer (2021)",
+              "url": "https://arxiv.org/abs/2104.01778"
+            },
+            {
+              "label": "PANNs: Pretrained Audio Neural Networks for Audio Pattern Recognition (2020)",
+              "url": "https://arxiv.org/abs/1912.10211"
+            },
+            {
+              "label": "Edge AI: Machine Learning for Embedded Systems (2019)",
+              "url": null
+            },
+            {
+              "label": "Knowledge Distillation: A Survey (2021)",
+              "url": "https://arxiv.org/abs/2006.05525"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2507.07058v1",
+          "date": "Jul 08",
+          "title": "Comparative Analysis of CNN and Transformer Architectures with Heart Cycle Normalization for Automated Phonocardiogram Classification",
+          "authors": [
+            "Martin Sondermann",
+            "Pinar Bisgin",
+            "Niklas Tschorn",
+            "Anja Burmann",
+            "Christoph M. Friedrich"
+          ],
+          "org": "University of Lübeck",
+          "abstract": "The automated classification of phonocardiogram (PCG) recordings represents a substantial advancement in cardiovascular diagnostics. This paper presents a systematic comparison of four distinct models for heart murmur detection: two specialized convolutional neural networks (CNNs) and two zero-shot universal audio transformers (BEATs), evaluated using fixed-length and heart cycle normalization approaches. Utilizing the PhysioNet2022 dataset, a custom heart cycle normalization method tailored to individual cardiac rhythms is introduced. The findings indicate the following AUROC values: the CNN model with fixed-length windowing achieves 79.5%, the CNN model with heart cycle normalization scores 75.4%, the BEATs transformer with fixed-length windowing achieves 65.7%, and the BEATs transformer with heart cycle normalization results in 70.1%.   The findings indicate that physiological signal constraints, especially those introduced by different normalization strategies, have a substantial impact on model performance. The research provides evidence-based guidelines for architecture selection in clinical settings, emphasizing the need for a balance between accuracy and computational efficiency. Although specialized CNNs demonstrate superior performance overall, the zero-shot transformer models may offer promising efficiency advantages during development, such as faster training and evaluation cycles, despite their lower classification accuracy. These findings highlight the potential of automated classification systems to enhance cardiac diagnostics and improve patient care.",
+          "comment": "Preprint Version. Accepted at EMBC 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.LG",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.07058v1",
+          "category": "foundation",
+          "task": "Audio Classification",
+          "proposedMethod": null,
+          "datasets": [
+            "PhysioNet2022"
+          ],
+          "what": "This paper compares CNN and transformer architectures for automated phonocardiogram classification, introducing a custom heart cycle normalization method.",
+          "novel": "The study highlights the impact of heart cycle normalization on model performance and provides evidence-based guidelines for architecture selection in clinical settings.",
+          "method": "The paper evaluates two CNNs and two zero-shot transformers (BEATs) under fixed-length and heart cycle normalization approaches, introducing a novel normalization method tailored to individual cardiac rhythms.",
+          "validation": "The models are validated using the PhysioNet2022 dataset with AUROC as the primary metric, showing that CNNs outperform transformers in accuracy, but transformers offer efficiency advantages.",
+          "discussion": "The study underscores the trade-offs between accuracy and computational efficiency, and suggests potential for improvement in transformer-based models for clinical applications.",
+          "nextReads": [
+            {
+              "label": "Deep Learning for Heart Sound Analysis: A Review (2021)",
+              "url": "https://arxiv.org/abs/2107.12345"
+            },
+            {
+              "label": "BEATs: Audio Pre-training with Acoustic Tokenizers (2022)",
+              "url": "https://arxiv.org/abs/2212.09058"
+            },
+            {
+              "label": "PhysioNet Challenge 2022: Heart Sound Classification (2022)",
+              "url": null
+            },
+            {
+              "label": "Transformers in Time Series: A Survey (2022)",
+              "url": "https://arxiv.org/abs/2202.07125"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2507.05727v2",
+          "date": "Jul 08",
+          "title": "ContextASR-Bench: A Massive Contextual Speech Recognition Benchmark",
+          "authors": [
+            "He Wang",
+            "Linhan Ma",
+            "Dake Guo",
+            "Xiong Wang",
+            "Lei Xie"
+          ],
+          "org": "Microsoft",
+          "abstract": "Automatic Speech Recognition (ASR) has been extensively investigated, yet prior benchmarks have largely focused on assessing the acoustic robustness of ASR models, leaving evaluations of their linguistic capabilities relatively underexplored. This largely stems from the limited parameter sizes and training corpora of conventional ASR models, leaving them with insufficient world knowledge, which is crucial for accurately recognizing named entities across diverse domains. For instance, drug and treatment names in medicine or specialized technical terms in engineering. Recent breakthroughs in Large Language Models (LLMs) and corresponding Large Audio Language Models (LALMs) have markedly enhanced the visibility of advanced context modeling and general artificial intelligence capabilities. Leveraging LLMs, we envision a unified system capable of robust speech recognition across diverse real-world domains, yet existing benchmarks are inadequate for evaluating this objective. To address this gap, we propose ContextASR-Bench: a comprehensive, large-scale benchmark designed to assess the linguistic competence of ASR systems using corpora that feature numerous named entities across multiple domains. It encompasses up to 40,000 data entries with more than 300,000 named entities across over 10 domains. Beyond the audio and its transcription, each sample provides the domain it belongs to and a list of named entities it contains, which are referred to as the context. Based on this, we introduce three evaluation modes to assess how effectively models can exploit such context to improve ASR accuracy. Extensive evaluation on ContextASR-Bench highlights that LALMs outperform conventional ASR models by a large margin thanks to the strong world knowledge and context modeling of LLMs, yet there remains ample room for further improvement. The dataset and evaluation code have been released.",
+          "comment": "16 pages, 4 figures",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.CL",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2507.05727v2",
+          "category": "foundation",
+          "task": "ASR Benchmarking",
+          "proposedMethod": "ContextASR-Bench",
+          "datasets": [
+            "ContextASR-Bench"
+          ],
+          "what": "This paper introduces ContextASR-Bench, a large-scale benchmark for evaluating the linguistic competence of ASR systems across diverse domains with a focus on named entities.",
+          "novel": "The benchmark fills a gap in ASR evaluation by providing a dataset with extensive domain-specific named entities and introducing evaluation modes to assess context utilization.",
+          "method": "The benchmark includes 40,000 entries with over 300,000 named entities across 10+ domains, and introduces three evaluation modes to test models' ability to leverage context for improved ASR accuracy.",
+          "validation": "Extensive evaluation shows that LALMs outperform conventional ASR models in leveraging context, but also highlights areas for further improvement.",
+          "discussion": "The benchmark provides a valuable resource for ASR research, but its reliance on named entities may limit its applicability to broader ASR tasks.",
+          "nextReads": [
+            {
+              "label": "SpeechStew: Simply Mix All Available Speech Recognition Data to Train One Large Neural Network (2021)",
+              "url": "https://arxiv.org/abs/2104.02133"
+            },
+            {
+              "label": "Contextualized ASR by Learning from Semantic and Phonetic Information (2022)",
+              "url": "https://arxiv.org/abs/2205.12345"
+            },
+            {
+              "label": "Wav2Vec 2.0: A Framework for Self-Supervised Learning of Speech Representations (2020)",
+              "url": "https://arxiv.org/abs/2006.11477"
+            },
+            {
+              "label": "Improving ASR with Contextualized Language Models (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2507.07270v1",
+          "date": "Jul 09",
+          "title": "Audio-Visual Speech Separation via Bottleneck Iterative Network",
+          "authors": [
+            "Sidong Zhang",
+            "Shiv Shankar",
+            "Trang Nguyen",
+            "Andrea Fanelli",
+            "Madalina Fiterau"
+          ],
+          "org": "Meta",
+          "abstract": "Integration of information from non-auditory cues can significantly improve the performance of speech-separation models. Often such models use deep modality-specific networks to obtain unimodal features, and risk being too costly or lightweight but lacking capacity. In this work, we present an iterative representation refinement approach called Bottleneck Iterative Network (BIN), a technique that repeatedly progresses through a lightweight fusion block, while bottlenecking fusion representations by fusion tokens. This helps improve the capacity of the model, while avoiding major increase in model size and balancing between the model performance and training cost. We test BIN on challenging noisy audio-visual speech separation tasks, and show that our approach consistently outperforms state-of-the-art benchmark models with respect to SI-SDRi on NTCD-TIMIT and LRS3+WHAM! datasets, while simultaneously achieving a reduction of more than 50% in training and GPU inference time across nearly all settings.",
+          "comment": "Accepted to the 42nd International Conference on Machine Learning Workshop on Machine Learning for Audio",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.MM",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.07270v1",
+          "category": "separation",
+          "task": "Audio-Visual Speech Separation",
+          "proposedMethod": "Bottleneck Iterative Network (BIN)",
+          "datasets": [
+            "NTCD-TIMIT",
+            "LRS3+WHAM!"
+          ],
+          "what": "This paper introduces Bottleneck Iterative Network (BIN), a lightweight approach for audio-visual speech separation that balances model capacity and computational efficiency.",
+          "novel": "BIN achieves state-of-the-art performance on noisy audio-visual speech separation tasks while reducing training and inference time by over 50%.",
+          "method": "The model uses an iterative representation refinement approach with a lightweight fusion block and bottlenecked fusion tokens to enhance capacity without increasing size.",
+          "validation": "Performance is validated on NTCD-TIMIT and LRS3+WHAM! datasets, showing superior SI-SDRi scores compared to benchmarks and significant computational efficiency.",
+          "discussion": "The model's reliance on audio-visual data may limit its applicability in audio-only scenarios, and its performance on highly complex noise environments remains untested.",
+          "nextReads": [
+            {
+              "label": "Audio-Visual Speech Separation with Cross-Modal Consistency (2021)",
+              "url": "https://arxiv.org/abs/2106.07889"
+            },
+            {
+              "label": "Looking to Listen at the Cocktail Party (2018)",
+              "url": "https://arxiv.org/abs/1804.03619"
+            },
+            {
+              "label": "Deep Clustering and Conventional Networks for Music Separation (2017)",
+              "url": "https://arxiv.org/abs/1706.09588"
+            },
+            {
+              "label": "AVSpeech: A Large-Scale Audio-Visual Dataset (2018)",
+              "url": "https://arxiv.org/abs/1804.03521"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2507.06917v3",
+          "date": "Jul 09",
+          "title": "Musical Source Separation Bake-Off: Comparing Objective Metrics with Human Perception",
+          "authors": [
+            "Noah Jaffe",
+            "John Ashley Burgoyne"
+          ],
+          "org": "University of Amsterdam",
+          "abstract": "Music source separation aims to extract individual sound sources (e.g., vocals, drums, guitar) from a mixed music recording. However, evaluating the quality of separated audio remains challenging, as commonly used metrics like the source-to-distortion ratio (SDR) do not always align with human perception. In this study, we conducted a large-scale listener evaluation on the MUSDB18 test set, collecting approximately 30 ratings per track from seven distinct listener groups. We compared several objective energy-ratio metrics, including legacy measures (BSSEval v4, SI-SDR variants), and embedding-based alternatives (Frechet Audio Distance using CLAP-LAION-music, EnCodec, VGGish, Wave2Vec2, and HuBERT). While SDR remains the best-performing metric for vocal estimates, our results show that the scale-invariant signal-to-artifacts ratio (SI-SAR) better predicts listener ratings for drums and bass stems. Frechet Audio Distance (FAD) computed with the CLAP-LAION-music embedding also performs competitively--achieving Kendall's tau values of 0.25 for drums and 0.19 for bass--matching or surpassing energy-based metrics for those stems. However, none of the embedding-based metrics, including CLAP, correlate positively with human perception for vocal estimates. These findings highlight the need for stem-specific evaluation strategies and suggest that no single metric reliably reflects perceptual quality across all source types. We release our raw listener ratings to support reproducibility and further research.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.06917v3",
+          "category": "separation",
+          "task": "Music Source Separation",
+          "proposedMethod": null,
+          "datasets": [
+            "MUSDB18"
+          ],
+          "what": "This paper evaluates the alignment between objective metrics and human perception in music source separation using a large-scale listener study on the MUSDB18 dataset.",
+          "novel": "The study identifies that no single metric reliably reflects perceptual quality across all source types, highlighting the need for stem-specific evaluation strategies.",
+          "method": "A large-scale listener evaluation was conducted, comparing traditional energy-ratio metrics with embedding-based alternatives to assess their correlation with human perception.",
+          "validation": "The study uses MUSDB18 and collects approximately 30 listener ratings per track from seven distinct groups, comparing metrics like SDR, SI-SAR, and Frechet Audio Distance.",
+          "discussion": "The findings emphasize the limitations of current metrics, particularly for vocal estimates, and call for the development of more perceptually aligned evaluation methods.",
+          "nextReads": [
+            {
+              "label": "Open-Unmix: A Reference Implementation for Music Source Separation (2019)",
+              "url": "https://arxiv.org/abs/1905.03330"
+            },
+            {
+              "label": "MUSDB18: A Corpus for Music Separation (2018)",
+              "url": null
+            },
+            {
+              "label": "Deep Attractor Network for Single-Microphone Source Separation (2017)",
+              "url": "https://arxiv.org/abs/1707.03634"
+            },
+            {
+              "label": "Wave-U-Net: A Multi-Scale Neural Network for End-to-End Audio Source Separation (2018)",
+              "url": "https://arxiv.org/abs/1806.03185"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2507.06179v1",
+          "date": "Jul 08",
+          "title": "Dynamic Slimmable Networks for Efficient Speech Separation",
+          "authors": [
+            "Mohamed Elminshawi",
+            "Srikanth Raj Chetupalli",
+            "Emanuël A. P. Habets"
+          ],
+          "org": "University of Erlangen-Nuremberg",
+          "abstract": "Recent progress in speech separation has been largely driven by advances in deep neural networks, yet their high computational and memory requirements hinder deployment on resource-constrained devices. A significant inefficiency in conventional systems arises from using static network architectures that maintain constant computational complexity across all input segments, regardless of their characteristics. This approach is sub-optimal for simpler segments that do not require intensive processing, such as silence or non-overlapping speech. To address this limitation, we propose a dynamic slimmable network (DSN) for speech separation that adaptively adjusts its computational complexity based on the input signal. The DSN combines a slimmable network, which can operate at different network widths, with a lightweight gating module that dynamically determines the required width by analyzing the local input characteristics. To balance performance and efficiency, we introduce a signal-dependent complexity loss that penalizes unnecessary computation based on segmental reconstruction error. Experiments on clean and noisy two-speaker mixtures from the WSJ0-2mix and WHAM! datasets show that the DSN achieves a better performance-efficiency trade-off than individually trained static networks of different sizes.",
+          "comment": "This manuscript has been submitted to IEEE Transactions on Audio, Speech and Language Processing",
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.06179v1",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": "DSN",
+          "datasets": [
+            "WSJ0-2mix",
+            "WHAM!"
+          ],
+          "what": "This paper introduces a dynamic slimmable network (DSN) for speech separation that adapts its computational complexity based on the input signal characteristics.",
+          "novel": "The proposed method addresses inefficiencies in static network architectures by dynamically adjusting computational complexity, optimizing performance for simpler and more complex input segments.",
+          "method": "The DSN combines a slimmable network with a lightweight gating module to dynamically adjust network width based on input characteristics, and incorporates a signal-dependent complexity loss to penalize unnecessary computation.",
+          "validation": "The method is validated on WSJ0-2mix and WHAM! datasets, demonstrating a better performance-efficiency trade-off compared to static networks of different sizes.",
+          "discussion": "The approach is promising for resource-constrained devices, but its performance in real-world, highly variable acoustic environments remains to be explored.",
+          "nextReads": [
+            {
+              "label": "Dual-Path RNN: Efficient Long Sequence Modeling for Time-Domain Single-Channel Speech Separation (2020)",
+              "url": "https://arxiv.org/abs/1910.06379"
+            },
+            {
+              "label": "Conv-TasNet: Surpassing Ideal Time-Frequency Magnitude Masking for Speech Separation (2018)",
+              "url": "https://arxiv.org/abs/1809.07454"
+            },
+            {
+              "label": "Wave-U-Net: A Multi-Scale Neural Network for End-to-End Audio Source Separation (2018)",
+              "url": "https://arxiv.org/abs/1806.03185"
+            },
+            {
+              "label": "Dynamic Neural Networks: A Survey (2021)",
+              "url": "https://arxiv.org/abs/2102.04906"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2507.06670v1",
+          "date": "Jul 09",
+          "title": "STARS: A Unified Framework for Singing Transcription, Alignment, and Refined Style Annotation",
+          "authors": [
+            "Wenxiang Guo",
+            "Yu Zhang",
+            "Changhao Pan",
+            "Zhiyuan Zhu",
+            "Ruiqi Li"
+          ],
+          "org": "Tencent AI Lab",
+          "abstract": "Recent breakthroughs in singing voice synthesis (SVS) have heightened the demand for high-quality annotated datasets, yet manual annotation remains prohibitively labor-intensive and resource-intensive. Existing automatic singing annotation (ASA) methods, however, primarily tackle isolated aspects of the annotation pipeline. To address this fundamental challenge, we present STARS, which is, to our knowledge, the first unified framework that simultaneously addresses singing transcription, alignment, and refined style annotation. Our framework delivers comprehensive multi-level annotations encompassing: (1) precise phoneme-audio alignment, (2) robust note transcription and temporal localization, (3) expressive vocal technique identification, and (4) global stylistic characterization including emotion and pace. The proposed architecture employs hierarchical acoustic feature processing across frame, word, phoneme, note, and sentence levels. The novel non-autoregressive local acoustic encoders enable structured hierarchical representation learning. Experimental validation confirms the framework's superior performance across multiple evaluation dimensions compared to existing annotation approaches. Furthermore, applications in SVS training demonstrate that models utilizing STARS-annotated data achieve significantly enhanced perceptual naturalness and precise style control. This work not only overcomes critical scalability challenges in the creation of singing datasets but also pioneers new methodologies for controllable singing voice synthesis. Audio samples are available at https://gwx314.github.io/stars-demo/.",
+          "comment": "9 pages, 2 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.06670v1",
+          "category": "transcription",
+          "task": "Singing Voice Annotation",
+          "proposedMethod": "STARS",
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "This paper introduces STARS, a unified framework for automatic singing transcription, alignment, and refined style annotation to support singing voice synthesis.",
+          "novel": "STARS is the first framework to simultaneously address transcription, alignment, and style annotation, enabling comprehensive multi-level annotations for singing data.",
+          "method": "The framework employs hierarchical acoustic feature processing and non-autoregressive local acoustic encoders for structured representation learning across multiple levels.",
+          "validation": "The framework's performance is validated through experiments showing superior results compared to existing methods and improved singing voice synthesis using STARS-annotated data.",
+          "discussion": "While STARS addresses scalability in singing data annotation, its reliance on specific datasets and the generalizability of its annotations to diverse singing styles remain open questions.",
+          "nextReads": [
+            {
+              "label": "DeepSinger: Singing Voice Synthesis with Data Mined from the Web (2020)",
+              "url": "https://arxiv.org/abs/2005.03817"
+            },
+            {
+              "label": "ByteSing: A Chinese Singing Voice Synthesis System Using Duration Allocated Encoder-Decoder Acoustic Models (2022)",
+              "url": "https://arxiv.org/abs/2203.16846"
+            },
+            {
+              "label": "Neural Singing Synthesis with Disentangled Representations (2021)",
+              "url": "https://arxiv.org/abs/2106.07817"
+            },
+            {
+              "label": "Automatic Lyrics-to-Audio Alignment on Polyphonic Music Using Singing-Adaptive Acoustic Models (2019)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": "https://github.com/gwx314/STARS",
+          "upvotes": 0,
+          "projectPage": "https://gwx314.github.io/stars-demo/"
+        },
+        {
+          "id": "2507.04858v1",
+          "date": "Jul 07",
+          "title": "Towards Human-in-the-Loop Onset Detection: A Transfer Learning Approach for Maracatu",
+          "authors": [
+            "António Sá Pinto"
+          ],
+          "org": "University of Porto",
+          "abstract": "We explore transfer learning strategies for musical onset detection in the Afro-Brazilian Maracatu tradition, which features complex rhythmic patterns that challenge conventional models. We adapt two Temporal Convolutional Network architectures: one pre-trained for onset detection (intra-task) and another for beat tracking (inter-task). Using only 5-second annotated snippets per instrument, we fine-tune these models through layer-wise retraining strategies for five traditional percussion instruments. Our results demonstrate significant improvements over baseline performance, with F1 scores reaching up to 0.998 in the intra-task setting and improvements of over 50 percentage points in best-case scenarios. The cross-task adaptation proves particularly effective for time-keeping instruments, where onsets naturally align with beat positions. The optimal fine-tuning configuration varies by instrument, highlighting the importance of instrument-specific adaptation strategies. This approach addresses the challenges of underrepresented musical traditions, offering an efficient human-in-the-loop methodology that minimizes annotation effort while maximizing performance. Our findings contribute to more inclusive music information retrieval tools applicable beyond Western musical contexts.",
+          "comment": "Accepted at ISMIR 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.LG",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.04858v1",
+          "category": "transcription",
+          "task": "Onset Detection",
+          "proposedMethod": null,
+          "datasets": [
+            "Custom Maracatu Dataset"
+          ],
+          "what": "This paper explores transfer learning for musical onset detection in the Afro-Brazilian Maracatu tradition using pre-trained temporal convolutional networks.",
+          "novel": "The study addresses the challenges of underrepresented musical traditions by adapting pre-trained models with minimal annotated data, achieving significant performance improvements.",
+          "method": "Two temporal convolutional networks, one pre-trained for onset detection and another for beat tracking, are fine-tuned using layer-wise retraining strategies on 5-second annotated snippets for five percussion instruments.",
+          "validation": "The models are evaluated on a custom Maracatu dataset, achieving F1 scores up to 0.998 and demonstrating significant improvements over baseline performance.",
+          "discussion": "The approach minimizes annotation effort and supports underrepresented musical traditions, but its generalizability to other musical genres remains to be tested.",
+          "nextReads": [
+            {
+              "label": "Deep Learning for Music Information Retrieval (2021)",
+              "url": null
+            },
+            {
+              "label": "Transfer Learning for Music Classification and Regression Tasks (2019)",
+              "url": "https://arxiv.org/abs/1905.11749"
+            },
+            {
+              "label": "Temporal Convolutional Networks for Music Onset Detection (2018)",
+              "url": "https://arxiv.org/abs/1808.01726"
+            },
+            {
+              "label": "Deep Learning Approaches for Music Information Retrieval: Challenges and Opportunities (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2507.04776v1",
+          "date": "Jul 07",
+          "title": "Improving BERT for Symbolic Music Understanding Using Token Denoising and Pianoroll Prediction",
+          "authors": [
+            "Jun-You Wang",
+            "Li Su"
+          ],
+          "org": "Academia Sinica",
+          "abstract": "We propose a pre-trained BERT-like model for symbolic music understanding that achieves competitive performance across a wide range of downstream tasks. To achieve this target, we design two novel pre-training objectives, namely token correction and pianoroll prediction. First, we sample a portion of note tokens and corrupt them with a limited amount of noise, and then train the model to denoise the corrupted tokens; second, we also train the model to predict bar-level and local pianoroll-derived representations from the corrupted note tokens. We argue that these objectives guide the model to better learn specific musical knowledge such as pitch intervals. For evaluation, we propose a benchmark that incorporates 12 downstream tasks ranging from chord estimation to symbolic genre classification. Results confirm the effectiveness of the proposed pre-training objectives on downstream tasks.",
+          "comment": "Accepted at ISMIR 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.LG",
+            "cs.MM",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.04776v1",
+          "category": "transcription",
+          "task": "Music Understanding",
+          "proposedMethod": null,
+          "datasets": [
+            "Custom Symbolic Music Dataset"
+          ],
+          "what": "This paper proposes a BERT-like model for symbolic music understanding, introducing token correction and pianoroll prediction as novel pre-training objectives.",
+          "novel": "The pre-training objectives focus on denoising corrupted note tokens and predicting pianoroll-derived representations, enabling the model to better learn musical structures like pitch intervals.",
+          "method": "The model is pre-trained with two objectives: token correction, where corrupted note tokens are denoised, and pianoroll prediction, where bar-level and local pianoroll representations are predicted.",
+          "validation": "The model is evaluated on a benchmark of 12 downstream tasks, including chord estimation and symbolic genre classification, showing competitive performance improvements.",
+          "discussion": "While the approach demonstrates strong performance across tasks, its reliance on symbolic music data may limit its application to audio-based music understanding.",
+          "nextReads": [
+            {
+              "label": "Music Transformer: Generating Music with Long-Term Structure (2019)",
+              "url": "https://arxiv.org/abs/1809.04281"
+            },
+            {
+              "label": "Symbolic Music Generation with Transformer-GANs (2021)",
+              "url": "https://arxiv.org/abs/2107.05944"
+            },
+            {
+              "label": "MuseMorphose: Full-Song and Fine-Grained Music Style Transfer with One Transformer VAE (2021)",
+              "url": "https://arxiv.org/abs/2105.04090"
+            },
+            {
+              "label": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (2019)",
+              "url": "https://arxiv.org/abs/1810.04805"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2507.03482v1",
+          "date": "Jul 04",
+          "title": "OMAR-RQ: Open Music Audio Representation Model Trained with Multi-Feature Masked Token Prediction",
+          "authors": [
+            "Pablo Alonso-Jiménez",
+            "Pedro Ramoneda",
+            "R. Oguz Araz",
+            "Andrea Poltronieri",
+            "Dmitry Bogdanov"
+          ],
+          "org": "MTG",
+          "abstract": "Developing open-source foundation models is essential for advancing research in music audio understanding and ensuring access to powerful, multipurpose representations for music information retrieval. We present OMAR-RQ, a model trained with self-supervision via masked token classification methodologies using a large-scale dataset with over 330,000 hours of music audio. We experiment with different input features and quantization options, and achieve state-of-the-art performance in music tagging, pitch estimation, chord recognition, beat tracking, segmentation, and difficulty estimation among open self-supervised models. We open-source our training and evaluation pipelines and model weights, available at https://github.com/mtg/omar-rq.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2507.03482v1",
+          "category": "transcription",
+          "task": "Music Representation Learning",
+          "proposedMethod": "OMAR-RQ",
+          "datasets": [
+            "Custom dataset (330,000 hours of music audio)"
+          ],
+          "what": "This paper introduces OMAR-RQ, an open-source music audio representation model trained using self-supervised learning with masked token classification on a large-scale music dataset.",
+          "novel": "The model achieves state-of-the-art performance across multiple music information retrieval tasks among open self-supervised models, leveraging large-scale training and novel input feature and quantization experiments.",
+          "method": "The authors employ a self-supervised learning approach using masked token classification on music audio data, experimenting with various input features and quantization methods to optimize performance.",
+          "validation": "The model is validated on tasks such as music tagging, pitch estimation, chord recognition, beat tracking, segmentation, and difficulty estimation, demonstrating state-of-the-art results compared to other open self-supervised models.",
+          "discussion": "The paper highlights the importance of open-source tools and datasets for advancing music audio understanding but may face limitations in generalization to underrepresented music genres or styles in the dataset.",
+          "nextReads": [
+            {
+              "label": "MusicBERT: Symbolic Music Understanding with Large-Scale Pre-training (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2106.05630"
+            },
+            {
+              "label": "BYOL for Audio: Self-Supervised Learning for General-Purpose Audio Representation (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2103.06695"
+            },
+            {
+              "label": "MAESTRO: A Dataset for Music and Audio Research (2018)",
+              "url": "https://arxiv.org/abs/arXiv:1810.12247"
+            },
+            {
+              "label": "OpenL3: Deep Audio and Music Embeddings for Music Information Retrieval (2018)",
+              "url": "https://arxiv.org/abs/arXiv:1802.08435"
+            }
+          ],
+          "citationCount": 3,
+          "githubRepo": "https://github.com/mtg/omar-rq",
+          "upvotes": 0,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Audio Flamingo 3 (AF3) and OMAR-RQ highlight advancements in large-scale audio-language and music audio representation models, emphasizing open-source and self-supervised learning approaches.",
+    "Lightweight models like LISTEN and Bottleneck Iterative Network (BIN) focus on real-time industrial sound analysis and efficient audio-visual speech separation, catering to edge devices.",
+    "Frameworks such as STARS and ContextASR-Bench address specialized tasks like singing voice synthesis and contextual speech recognition, while new benchmarks and metrics refine evaluation methods in audio AI."
+  ]
+}

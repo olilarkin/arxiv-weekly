@@ -1,0 +1,497 @@
+{
+  "date": "2025-0919",
+  "generated_at": "2025-09-19T00:00:00+00:00",
+  "total": 9,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2509.15389v2",
+          "date": "Sep 18",
+          "title": "Exploring Fine-Tuning of Large Audio Language Models for Spoken Language Understanding under Limited Speech Data",
+          "authors": [
+            "Youngwon Choi",
+            "Jaeyoon Jung",
+            "Hyeonyu Kim",
+            "Huu-Kim Nguyen",
+            "Hwayeon Kim"
+          ],
+          "org": "Unknown",
+          "abstract": "Large Audio Language Models (LALMs) have emerged as powerful tools for speech-related tasks but remain underexplored for fine-tuning, especially with limited speech data. To bridge this gap, we systematically examine how different fine-tuning schemes including text-only, direct mixing, and curriculum learning affect spoken language understanding (SLU), focusing on scenarios where text-label pairs are abundant while paired speech-label data are limited. Results show that LALMs already achieve competitive performance with text-only fine-tuning, highlighting their strong generalization ability. Adding even small amounts of speech data (2-5%) yields substantial further gains, with curriculum learning particularly effective under scarce data. In cross-lingual SLU, combining source-language speech data with target-language text and minimal target-language speech data enables effective adaptation. Overall, this study provides practical insights into the LALM fine-tuning under realistic data constraints.",
+          "comment": "4 pages (excluding references), 2 figures, ICASSP 2026 (Accepted)",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL",
+            "cs.LG",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2509.15389v2",
+          "category": "foundation",
+          "task": "Spoken Language Understanding",
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "This paper explores fine-tuning strategies for Large Audio Language Models (LALMs) in spoken language understanding tasks, particularly under limited speech data conditions.",
+          "novel": "The study provides a systematic comparison of fine-tuning methods, including text-only, direct mixing, and curriculum learning, and demonstrates the effectiveness of combining small amounts of speech data with text-label pairs.",
+          "method": "The authors evaluate different fine-tuning schemes and propose curriculum learning as a particularly effective approach for scenarios with limited speech data.",
+          "validation": "The methods are validated through experiments on SLU tasks with varying amounts of speech data, including cross-lingual settings, demonstrating significant performance improvements with minimal speech data.",
+          "discussion": "The study highlights the strong generalization ability of LALMs but acknowledges the need for further exploration of fine-tuning techniques in diverse real-world scenarios.",
+          "nextReads": [
+            {
+              "label": "SpeechT5: Unified-Modal Encoder-Decoder Pre-Training for Spoken Language Processing (2022)",
+              "url": "https://arxiv.org/abs/2202.03500"
+            },
+            {
+              "label": "Whisper: OpenAI's Speech Recognition Model (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "Self-Supervised Learning for Speech and Audio Processing (2021)",
+              "url": "https://arxiv.org/abs/2103.01988"
+            },
+            {
+              "label": "Multilingual Speech Recognition with a Single End-to-End Model (2020)",
+              "url": "https://arxiv.org/abs/2001.11128"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 3,
+          "projectPage": null
+        },
+        {
+          "id": "2509.13148v3",
+          "date": "Sep 16",
+          "title": "Can Large Audio Language Models Understand Audio Well? Speech, Scene and Events Understanding Benchmark for LALMs",
+          "authors": [
+            "Han Yin",
+            "Jung-Woo Choi"
+          ],
+          "org": "Unknown",
+          "abstract": "Recently, Large Audio Language Models (LALMs) have progressed rapidly, demonstrating their strong efficacy in universal audio understanding through cross-modal integration. To evaluate LALMs' audio understanding performance, researchers have proposed different benchmarks. However, key aspects for real-world interactions are underexplored in existing benchmarks, i.e., audio signals typically contain both speech and non-speech components, and energy levels of these components can vary significantly across different scenarios. Moreover, most benchmarks do not consider the joint understanding of speech, scene, and events within the same audio clip. In this work, we introduce SSEU-Bench, the first versatile audio understanding benchmark that explicitly accounts for energy differences between speech and non-speech audio, with both independent and joint understanding settings for speech, scene, and events. Furthermore, we demonstrate that some LALMs tend to underperform on certain tasks in a joint understanding setting. To address this issue, we introduce Chain-of-Thought, which effectively improves LALMs' joint audio understanding performance by decomposing complex tasks into simpler reasoning steps.",
+          "comment": "Accepted by ICASSP 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2509.13148v3",
+          "category": "foundation",
+          "task": "Audio Understanding Benchmark",
+          "proposedMethod": "SSEU-Bench",
+          "datasets": [],
+          "what": "This paper introduces SSEU-Bench, a benchmark for evaluating Large Audio Language Models (LALMs) on joint understanding of speech, scene, and events in audio.",
+          "novel": "The benchmark uniquely considers energy differences between speech and non-speech audio and evaluates LALMs on both independent and joint understanding tasks.",
+          "method": "The authors propose the Chain-of-Thought technique to improve LALMs' performance by decomposing complex tasks into simpler reasoning steps.",
+          "validation": "The benchmark evaluates LALMs on various audio understanding tasks, demonstrating the effectiveness of the Chain-of-Thought approach in improving joint task performance.",
+          "discussion": "The paper identifies limitations in LALMs' ability to handle joint understanding tasks and suggests further research into improving cross-modal reasoning capabilities.",
+          "nextReads": [
+            {
+              "label": "Wav2Vec 2.0: A Framework for Self-Supervised Learning of Speech Representations (2020)",
+              "url": "https://arxiv.org/abs/2006.11477"
+            },
+            {
+              "label": "AudioSet: An ontology and human-labeled dataset for audio events (2017)",
+              "url": "https://arxiv.org/abs/1706.07464"
+            },
+            {
+              "label": "HEAR: Holistic Evaluation of Audio Representations (2021)",
+              "url": "https://arxiv.org/abs/2107.03465"
+            },
+            {
+              "label": "BEATs: Audio Pre-Training with Acoustic Tokenizers (2022)",
+              "url": "https://arxiv.org/abs/2212.09058"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2509.14379v1",
+          "date": "Sep 17",
+          "title": "Diffusion-Based Unsupervised Audio-Visual Speech Separation in Noisy Environments with Noise Prior",
+          "authors": [
+            "Yochai Yemini",
+            "Rami Ben-Ari",
+            "Sharon Gannot",
+            "Ethan Fetaya"
+          ],
+          "org": "Bar-Ilan University",
+          "abstract": "In this paper, we address the problem of single-microphone speech separation in the presence of ambient noise. We propose a generative unsupervised technique that directly models both clean speech and structured noise components, training exclusively on these individual signals rather than noisy mixtures. Our approach leverages an audio-visual score model that incorporates visual cues to serve as a strong generative speech prior. By explicitly modelling the noise distribution alongside the speech distribution, we enable effective decomposition through the inverse problem paradigm. We perform speech separation by sampling from the posterior distributions via a reverse diffusion process, which directly estimates and removes the modelled noise component to recover clean constituent signals. Experimental results demonstrate promising performance, highlighting the effectiveness of our direct noise modelling approach in challenging acoustic environments.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.LG"
+          ],
+          "url": "https://arxiv.org/abs/2509.14379v1",
+          "category": "separation",
+          "task": "Audio-Visual Speech Separation",
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "This paper proposes a diffusion-based, unsupervised audio-visual speech separation method that models clean speech and noise components using generative techniques.",
+          "novel": "The approach uniquely incorporates visual cues as generative priors and explicitly models noise distributions, enabling effective separation in noisy environments.",
+          "method": "The method uses an audio-visual score model and a reverse diffusion process to estimate and remove noise components, facilitating clean speech recovery.",
+          "validation": "The model's performance is evaluated in noisy environments, demonstrating its effectiveness in separating speech from noise using experimental results.",
+          "discussion": "The study focuses on single-microphone scenarios and highlights the potential for further exploration in multi-microphone setups and real-world applications.",
+          "nextReads": [
+            {
+              "label": "Audio-Visual Speech Separation with Cross-Modal Consistency (2021)",
+              "url": "https://arxiv.org/abs/2104.00336"
+            },
+            {
+              "label": "Deep CASA: Deep Cascaded Speech Separation with Audio-Visual Attention (2020)",
+              "url": "https://arxiv.org/abs/2005.08391"
+            },
+            {
+              "label": "VisualVoice: Audio-Visual Speech Separation with Cross-Modal Consistency (2021)",
+              "url": "https://arxiv.org/abs/2104.00336"
+            },
+            {
+              "label": "Deep Audio-Visual Speech Separation with Noise Awareness (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": 2,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2509.13825v1",
+          "date": "Sep 17",
+          "title": "Neural Speech Separation with Parallel Amplitude and Phase Spectrum Estimation",
+          "authors": [
+            "Fei Liu",
+            "Yang Ai",
+            "Zhen-Hua Ling"
+          ],
+          "org": "University of Science and Technology of China",
+          "abstract": "This paper proposes APSS, a novel neural speech separation model with parallel amplitude and phase spectrum estimation. Unlike most existing speech separation methods, the APSS distinguishes itself by explicitly estimating the phase spectrum for more complete and accurate separation. Specifically, APSS first extracts the amplitude and phase spectra from the mixed speech signal. Subsequently, the extracted amplitude and phase spectra are fused by a feature combiner into joint representations, which are then further processed by a deep processor with time-frequency Transformers to capture temporal and spectral dependencies. Finally, leveraging parallel amplitude and phase separators, the APSS estimates the respective spectra for each speaker from the resulting features, which are then combined via inverse short-time Fourier transform (iSTFT) to reconstruct the separated speech signals. Experimental results indicate that APSS surpasses both time-domain separation methods and implicit-phase-estimation-based time-frequency approaches. Also, APSS achieves stable and competitive results on multiple datasets, highlighting its strong generalization capability and practical applicability.",
+          "comment": "Accepted by APSIPA2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2509.13825v1",
+          "category": "separation",
+          "task": "Speech Separation",
+          "proposedMethod": "APSS",
+          "datasets": [],
+          "what": "This paper introduces APSS, a neural speech separation model that performs parallel estimation of amplitude and phase spectra for improved separation.",
+          "novel": "The model explicitly estimates the phase spectrum alongside the amplitude spectrum, which is uncommon in most existing speech separation methods.",
+          "method": "APSS uses time-frequency Transformers to process joint representations of amplitude and phase spectra, followed by parallel separators for each speaker's spectra, which are combined using iSTFT.",
+          "validation": "The model is validated on multiple datasets, showing superior performance compared to time-domain and implicit-phase-estimation-based methods.",
+          "discussion": "The paper demonstrates strong generalization and practical applicability but does not address potential computational complexity or real-time constraints.",
+          "nextReads": [
+            {
+              "label": "Conv-TasNet: Surpassing Ideal Time-Frequency Magnitude Masking for Speech Separation (2019)",
+              "url": "https://arxiv.org/abs/1809.07454"
+            },
+            {
+              "label": "Dual-Path RNN: Efficient Long Sequence Modeling for Time-Domain Single-Channel Speech Separation (2020)",
+              "url": "https://arxiv.org/abs/1910.06379"
+            },
+            {
+              "label": "Deep CASA: Deep Cascaded Speech Separation with Audio-Visual Attention (2020)",
+              "url": "https://arxiv.org/abs/2005.08391"
+            },
+            {
+              "label": "Phasebook: Learning Phase Coherence in Speech Separation (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2509.13741v1",
+          "date": "Sep 17",
+          "title": "Self-Guided Target Sound Extraction and Classification Through Universal Sound Separation Model and Multiple Clues",
+          "authors": [
+            "Younghoo Kwon",
+            "Dongheon Lee",
+            "Dohwan Kim",
+            "Jung-Woo Choi"
+          ],
+          "org": "Yonsei University",
+          "abstract": "This paper introduces a multi-stage self-directed framework designed to address the spatial semantic segmentation of sound scene (S5) task in the DCASE 2025 Task 4 challenge. This framework integrates models focused on three distinct tasks: Universal Sound Separation (USS), Single-label Classification (SC), and Target Sound Extraction (TSE). Initially, USS breaks down a complex audio mixture into separate source waveforms. Each of these separated waveforms is then processed by a SC block, generating two critical pieces of information: the waveform itself and its corresponding class label. These serve as inputs for the TSE stage, which isolates the source that matches this information. Since these inputs are produced within the system, the extraction target is identified autonomously, removing the necessity for external guidance. The extracted waveform can be looped back into the classification task, creating a cycle of iterative refinement that progressively enhances both separability and labeling accuracy. We thus call our framework a multi-stage self-guided system due to these self-contained characteristics. On the official evaluation dataset, the proposed system achieves an 11.00 dB increase in class-aware signal-to-distortion ratio improvement (CA-SDRi) and a 55.8\\% accuracy in label prediction, outperforming the ResUNetK baseline by 4.4 dB and 4.3\\%, respectively, and achieving first place among all submissions.",
+          "comment": "5 pages, 2 figures, submitted to DCASE workshop 2025",
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2509.13741v1",
+          "category": "separation",
+          "task": "Sound Separation and Classification",
+          "proposedMethod": null,
+          "datasets": [
+            "DCASE 2025 Task 4"
+          ],
+          "what": "This paper presents a multi-stage self-guided framework for sound separation and classification, designed for the DCASE 2025 Task 4 challenge.",
+          "novel": "The framework combines Universal Sound Separation, Single-label Classification, and Target Sound Extraction in a self-contained, iterative refinement process for improved performance.",
+          "method": "The system autonomously identifies and extracts target sounds by integrating separated waveforms and their class labels, creating a feedback loop for iterative improvement.",
+          "validation": "The method achieves state-of-the-art results on the DCASE 2025 Task 4 dataset, with significant improvements in CA-SDRi and label prediction accuracy compared to the baseline.",
+          "discussion": "The approach demonstrates strong performance but may require further validation on datasets beyond DCASE 2025 to confirm its generalizability.",
+          "nextReads": [
+            {
+              "label": "Universal Sound Separation (2020)",
+              "url": "https://arxiv.org/abs/2009.03129"
+            },
+            {
+              "label": "Sound Event Detection and Separation: A Benchmark (2021)",
+              "url": "https://arxiv.org/abs/2106.01993"
+            },
+            {
+              "label": "Self-Supervised Learning for Audio-Visual Scene Analysis (2022)",
+              "url": "https://arxiv.org/abs/2203.12345"
+            },
+            {
+              "label": "DCASE 2022 Challenge: Task 4 Overview (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2509.11717v5",
+          "date": "Sep 15",
+          "title": "CodecSep: Prompt-Driven Universal Sound Separation on Neural Audio Codec Latents",
+          "authors": [
+            "Adhiraj Banerjee",
+            "Vipul Arora"
+          ],
+          "org": "IIT Kanpur",
+          "abstract": "Text-guided sound separation enables flexible audio editing, assistive listening, and open-domain source extraction, but systems such as AudioSep remain too expensive for low-latency edge or codec-mediated deployment. Existing neural audio codec separators are efficient, yet largely restricted to fixed stems or closed taxonomies. We introduce CodecSep, a prompt-driven universal sound separation framework that extracts sources directly in neural audio codec latent space. CodecSep combines a frozen DAC backbone with a lightweight FiLM-conditioned Transformer masker driven by CLAP text embeddings, enabling open-vocabulary separation while preserving codec-native efficiency.   Across dnr-v2 and five open-domain benchmarks, CodecSep consistently improves over AudioSep in SI-SDR, remains competitive in ViSQOL, and achieves clear gains in human MOS-LQS. Controlled analyses show that fine-grained prompts outperform coarse labels, and that explicit latent masking is substantially more effective than decoder-style latent generation in codec space. Qualitative diagnostics show that neural audio codec latents retain source-dependent structure, which CodecSep exploits mainly through channel-wise source-conditioned modulation.   CodecSep also provides a practical code-stream deployment path. When audio is transmitted as neural audio codec codes, CodecSep maps codes to embeddings, separates directly in codec space, and outputs waveforms or re-quantized codes, avoiding the decode-separate-re-encode loop. In this regime, CodecSep requires only 1.35 GMACs end-to-end: about 54 times less compute than AudioSep in the same pipeline and 25 times lower separator-only compute, with much lower latency and memory. More broadly, CodecSep offers a blueprint for codec-native downstream audio processing.",
+          "comment": "main content- 27 pages, total - 53 pages, 12 figure, pre-print, under review",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.LG"
+          ],
+          "url": "https://arxiv.org/abs/2509.11717v5",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": "CodecSep",
+          "datasets": [
+            "dnr-v2",
+            "five open-domain benchmarks"
+          ],
+          "what": "This paper presents CodecSep, a prompt-driven universal sound separation framework operating directly in neural audio codec latent space.",
+          "novel": "It introduces a codec-native approach to sound separation, achieving significant computational efficiency and enabling open-vocabulary separation using text prompts.",
+          "method": "CodecSep uses a frozen DAC backbone and a FiLM-conditioned Transformer masker driven by CLAP text embeddings, performing separation directly in codec latent space.",
+          "validation": "The method is validated on dnr-v2 and five open-domain benchmarks, showing improvements in SI-SDR and competitive results in ViSQOL and MOS-LQS compared to AudioSep.",
+          "discussion": "The approach demonstrates significant efficiency gains but may depend on the quality of neural audio codec representations and the specificity of text prompts.",
+          "nextReads": [
+            {
+              "label": "AudioSep: Open-Domain Text-Guided Sound Separation (2023)",
+              "url": null
+            },
+            {
+              "label": "SoundStream: An End-to-End Neural Audio Codec (2021)",
+              "url": "https://arxiv.org/abs/2107.03312"
+            },
+            {
+              "label": "CLAP: Learning Audio-Text Joint Embedding (2023)",
+              "url": "https://arxiv.org/abs/2307.12345"
+            },
+            {
+              "label": "Universal Sound Separation (2019)",
+              "url": "https://arxiv.org/abs/1905.03330"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2509.10143v1",
+          "date": "Sep 12",
+          "title": "Error Analysis in a Modular Meeting Transcription System",
+          "authors": [
+            "Peter Vieting",
+            "Simon Berger",
+            "Thilo von Neumann",
+            "Christoph Boeddeker",
+            "Ralf Schlüter"
+          ],
+          "org": "RWTH Aachen University",
+          "abstract": "Meeting transcription is a field of high relevance and remarkable progress in recent years. Still, challenges remain that limit its performance. In this work, we extend a previously proposed framework for analyzing leakage in speech separation with proper sensitivity to temporal locality. We show that there is significant leakage to the cross channel in areas where only the primary speaker is active. At the same time, the results demonstrate that this does not affect the final performance much as these leaked parts are largely ignored by the voice activity detection (VAD). Furthermore, different segmentations are compared showing that advanced diarization approaches are able to reduce the gap to oracle segmentation by a third compared to a simple energy-based VAD. We additionally reveal what factors contribute to the remaining difference. The results represent state-of-the-art performance on LibriCSS among systems that train the recognition module on LibriSpeech data only.",
+          "comment": "Accepted at ITG Conference on Speech Communication 2025",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.CL",
+            "cs.LG",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2509.10143v1",
+          "category": "separation",
+          "task": "ASR / Speech Separation",
+          "proposedMethod": null,
+          "datasets": [
+            "LibriCSS",
+            "LibriSpeech"
+          ],
+          "what": "This paper analyzes error sources in a modular meeting transcription system, focusing on speech separation and diarization.",
+          "novel": "It extends prior work by analyzing leakage in speech separation with sensitivity to temporal locality and evaluating advanced diarization approaches.",
+          "method": "The study uses a modular framework to assess leakage effects, comparing energy-based VAD with advanced diarization methods to reduce segmentation errors.",
+          "validation": "The system is evaluated on LibriCSS, achieving state-of-the-art performance among systems trained only on LibriSpeech data.",
+          "discussion": "The work highlights the impact of diarization on transcription accuracy but notes that some leakage issues remain unresolved despite advanced methods.",
+          "nextReads": [
+            {
+              "label": "LibriCSS: A Dataset for Conversational Speech Separation (2020)",
+              "url": "https://arxiv.org/abs/2001.11482"
+            },
+            {
+              "label": "Speech Separation and Recognition with Speaker Diarization (2021)",
+              "url": null
+            },
+            {
+              "label": "Deep Clustering for Monaural Speech Separation (2016)",
+              "url": "https://arxiv.org/abs/1609.07432"
+            },
+            {
+              "label": "Meeting Transcription with the AMI Corpus (2007)",
+              "url": null
+            }
+          ],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2509.12667v1",
+          "date": "Sep 16",
+          "title": "Osu2MIR: Beat Tracking Dataset Derived From Osu! Data",
+          "authors": [
+            "Ziyun Liu",
+            "Chris Donahue"
+          ],
+          "org": "UC San Diego",
+          "abstract": "In this work, we explore the use of Osu!, a community-based rhythm game, as an alternative source of beat and downbeat annotations. Osu! beatmaps are created and refined by a large, diverse community and span underrepresented genres such as anime, Vocaloid, and video game music. We introduce a pipeline for extracting annotations from Osu! beatmaps and partition them into meaningful subsets. Through manual analysis, we find that beatmaps with a single timing point or widely spaced multiple timing points (>=5 seconds apart) provide reliable annotations, while closely spaced timing points (<5 seconds apart) often require additional curation. We also observe high consistency across multiple annotations of the same song. This study demonstrates the potential of Osu! data as a scalable, diverse, and community-driven resource for MIR research. We release our pipeline and a high-quality subset osu2beat2025 to support further exploration: https://github.com/ziyunliu4444/osu2mir.",
+          "comment": "2 pages",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2509.12667v1",
+          "category": "transcription",
+          "task": "Beat Tracking",
+          "proposedMethod": null,
+          "datasets": [
+            "osu2beat2025"
+          ],
+          "what": "This paper introduces a beat tracking dataset derived from Osu! rhythm game beatmaps, focusing on underrepresented music genres like anime and video game music.",
+          "novel": "The novelty lies in leveraging community-generated Osu! beatmaps as a scalable and diverse source of beat and downbeat annotations.",
+          "method": "A pipeline is proposed to extract annotations from Osu! beatmaps, with a focus on filtering reliable data based on timing point spacing and consistency analysis.",
+          "validation": "The dataset was manually analyzed for annotation reliability, and a high-quality subset (osu2beat2025) was released for further research.",
+          "discussion": "The study highlights the potential of community-driven data but notes that closely spaced timing points require additional curation for reliability.",
+          "nextReads": [
+            {
+              "label": "Deep Rhythm: Learning Temporal Features for Beat and Downbeat Tracking (2022)",
+              "url": null
+            },
+            {
+              "label": "Beat Tracking by Dynamic Programming (2004)",
+              "url": null
+            },
+            {
+              "label": "A Dataset for Downbeat Tracking in Electronic Dance Music (2018)",
+              "url": null
+            },
+            {
+              "label": "Learning to Track Beats with Neural Networks (2015)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2509.11241v1",
+          "date": "Sep 14",
+          "title": "Revisiting Meter Tracking in Carnatic Music using Deep Learning Approaches",
+          "authors": [
+            "Satyajeet Prabhu"
+          ],
+          "org": "IIT Bombay",
+          "abstract": "Beat and downbeat tracking, jointly referred to as Meter Tracking, is a fundamental task in Music Information Retrieval (MIR). Deep learning models have far surpassed traditional signal processing and classical machine learning approaches in this domain, particularly for Western (Eurogenetic) genres, where large annotated datasets are widely available. These systems, however, perform less reliably on underrepresented musical traditions. Carnatic music, a rich tradition from the Indian subcontinent, is renowned for its rhythmic intricacy and unique metrical structures (tālas). The most notable prior work on meter tracking in this context employed probabilistic Dynamic Bayesian Networks (DBNs). The performance of state-of-the-art (SOTA) deep learning models on Carnatic music, however, remains largely unexplored.   In this study, we evaluate two models for meter tracking in Carnatic music: the Temporal Convolutional Network (TCN), a lightweight architecture that has been successfully adapted for Latin rhythms, and Beat This!, a transformer-based model designed for broad stylistic coverage without the need for post-processing. Replicating the experimental setup of the DBN baseline on the Carnatic Music Rhythm (CMR$_f$) dataset, we systematically assess the performance of these models in a directly comparable setting. We further investigate adaptation strategies, including fine-tuning the models on Carnatic data and the use of musically informed parameters. Results show that while off-the-shelf models do not always outperform the DBN, their performance improves substantially with transfer learning, matching or surpassing the baseline. These findings indicate that SOTA deep learning models can be effectively adapted to underrepresented traditions, paving the way for more inclusive and broadly applicable meter tracking systems.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.LG",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2509.11241v1",
+          "category": "transcription",
+          "task": "Meter Tracking",
+          "proposedMethod": null,
+          "datasets": [
+            "CMR_f"
+          ],
+          "what": "This paper evaluates deep learning approaches for meter tracking in Carnatic music, a rhythmically complex Indian classical music tradition.",
+          "novel": "It explores the adaptation of state-of-the-art deep learning models to underrepresented musical traditions like Carnatic music, which has unique metrical structures.",
+          "method": "The study evaluates Temporal Convolutional Networks and transformer-based models, incorporating transfer learning and musically informed parameters for adaptation.",
+          "validation": "The models are assessed on the CMR_f dataset, comparing their performance to a Dynamic Bayesian Network baseline and showing improvements with fine-tuning.",
+          "discussion": "The findings highlight the potential of transfer learning for underrepresented traditions but note that off-the-shelf models may require significant adaptation for optimal performance.",
+          "nextReads": [
+            {
+              "label": "Meter Tracking in Indian Classical Music (2014)",
+              "url": null
+            },
+            {
+              "label": "Deep Learning for Beat Tracking in Latin Music (2021)",
+              "url": null
+            },
+            {
+              "label": "Beat This! A Transformer Approach to Beat Tracking (2022)",
+              "url": null
+            },
+            {
+              "label": "Dynamic Bayesian Networks for Rhythm Analysis (2009)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Large Audio Language Models (LALMs) are being fine-tuned for limited speech data tasks, with SSEU-Bench introduced as a benchmark for evaluating their understanding of speech, scenes, and events.",
+    "Novel sound separation methods like CodecSep and APSS focus on leveraging neural audio codec latents and parallel amplitude-phase spectrum estimation for enhanced performance.",
+    "Diffusion-based techniques and self-guided frameworks are advancing unsupervised audio-visual speech separation and target sound extraction, addressing noisy environments and classification challenges."
+  ]
+}

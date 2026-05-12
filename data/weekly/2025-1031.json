@@ -1,0 +1,274 @@
+{
+  "date": "2025-1031",
+  "generated_at": "2025-10-31T00:00:00+00:00",
+  "total": 7,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2510.25054v2",
+          "date": "Oct 29",
+          "title": "Evaluating Emotion Recognition in Spoken Language Models on Emotionally Incongruent Speech",
+          "authors": [
+            "Pedro Corrêa",
+            "João Lima",
+            "Victor Moreno",
+            "Lucas Ueda",
+            "Paula Dornhofer Paro Costa"
+          ],
+          "org": "Pedro Corrêa et al.",
+          "abstract": "Advancements in spoken language processing have driven the development of spoken language models (SLMs), designed to achieve universal audio understanding by jointly learning text and audio representations for a wide range of tasks. Although promising results have been achieved, there is growing discussion regarding these models' generalization capabilities and the extent to which they truly integrate audio and text modalities in their internal representations. In this work, we evaluate four SLMs on the task of speech emotion recognition using a dataset of emotionally incongruent speech samples, a condition under which the semantic content of the spoken utterance conveys one emotion while speech expressiveness conveys another. Our results indicate that SLMs rely predominantly on textual semantics rather than speech emotion to perform the task, indicating that text-related representations largely dominate over acoustic representations. We release both the code and the Emotionally Incongruent Synthetic Speech dataset (EMIS) to the community.",
+          "comment": "Submitted to IEEE ICASSP 2026. Copyright 2026 IEEE. Personal use of this material is permitted. Permission from IEEE must be obtained for all other uses",
+          "journalRef": null,
+          "categories": [
+            "cs.CL",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2510.25054v2",
+          "category": "foundation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2510.23558v1",
+          "date": "Oct 27",
+          "title": "ISA-Bench: Benchmarking Instruction Sensitivity for Large Audio Language Models",
+          "authors": [
+            "Bohan Li",
+            "Wenbin Huang",
+            "Yuhang Qiu",
+            "Yiwei Guo",
+            "Hankun Wang"
+          ],
+          "org": "Bohan Li et al.",
+          "abstract": "Large Audio Language Models (LALMs), which couple acoustic perception with large language models (LLMs) to extract and understand diverse information from audio, have attracted intense interest from both academic and industrial communities. However, existing LALMs are highly sensitive to how instructions are phrased, affecting both (i) instruction-following rates and (ii) task performance. Yet, no existing benchmarks offer a systematic and comprehensive evaluation of this sensitivity. We introduce ISA-Bench, a dynamic benchmark evaluating instruction sensitivity for LALMs along three axes: instruction description, output format, and task composition. We assess recent open-source and proprietary LALMs using ISA-Bench, profiling both compliance and accuracy under controlled instruction variations. Experimental results reveal that even state-of-the-art LALMs suffer significant instruction sensitivity, leading to degraded performance on fundamental audio understanding tasks. To mitigate this issue, we fine-tune Qwen2-Audio on a specifically constructed complex instruction-variant dataset, achieving a marked improvement in instruction-following performance. However, this also induces nontrivial catastrophic forgetting: the model loses some previously mastered task capabilities when exposed to new instruction styles. Our benchmark provides a standardized basis for assessing and improving instruction sensitivity in LALMs, underscoring the need for instruction-robust audio understanding in real-world pipelines.",
+          "comment": "submitted to icassp 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2510.23558v1",
+          "category": "foundation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2510.26372v1",
+          "date": "Oct 30",
+          "title": "UniTok-Audio: A Unified Audio Generation Framework via Generative Modeling on Discrete Codec Tokens",
+          "authors": [
+            "Chengwei Liu",
+            "Haoyin Yan",
+            "Shaofei Xue",
+            "Xiaotao Liang",
+            "Yinghao Liu"
+          ],
+          "org": "Chengwei Liu et al.",
+          "abstract": "Generative modeling has recently achieved remarkable success across text, image, and audio domains, demonstrating powerful capabilities for unified representation learning. However, audio generation models still face challenges in terms of audio quality and generalization ability across tasks. This fragmentation results in redundant development efforts, inconsistent performance, and limited extensibility. To address these issues, we propose \\textbf{UniTok-Audio}, a scalable and extensible framework for unified audio generation tasks. Specifically, 1) UniTok-Audio extracts continuous feature of conditions to generates discrete tokens of target audio in an autoregressive manner; 2) a special task identifier token unifies different learning patterns of multiple tasks in a single framework; 3) a dual-stream audio codec involving acoustic and semantic branch is developed for high-fidelity waveform reconstruction. Experimental results demonstrate that UniTok-Audio achieves competitive performance in comparation with state-of-the-art task-specific or multi-task systems across five time-aligned tasks: speech restoration, target speaker extraction, speech separation, voice conversion, and language-queried audio source separation. To foster future research, we will open-source our codebase. The demo page of our work can be found here: https://alibaba.github.io/unified-audio.",
+          "comment": "21 pages, 3 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2510.26372v1",
+          "category": "separation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": "https://github.com/alibaba/unified-audio",
+          "upvotes": 0,
+          "projectPage": "https://alibaba.github.io/unified-audio"
+        },
+        {
+          "id": "2510.25745v1",
+          "date": "Oct 29",
+          "title": "Efficient Vocal Source Separation Through Windowed Sink Attention",
+          "authors": [
+            "Christodoulos Benetatos",
+            "Yongyi Zang",
+            "Randal Leistikow"
+          ],
+          "org": "Christodoulos Benetatos / Yongyi Zang / Randal Leistikow",
+          "abstract": "State-of-the-art vocal separation models like Mel-Band-Roformer rely on full temporal self-attention mechanisms, where each temporal frame interacts with every other frames. This incurs heavy computational costs that scales quadratically with input audio length, motivating chunking and windowing approaches. Through analysis of a pre-trained vocal separation model, we discovered that temporal attention patterns are highly localized. Building on this insight, we replaced full attention with windowed sink attention (WSA) with small temporal attention window and attention sinks. We show empirically that fine-tuning from the original checkpoint recovers 92% of the original SDR performance while reducing FLOPs by 44.5x. We release our code and checkpoints under MIT license at https://github.com/smulelabs/windowed-roformer.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2510.25745v1",
+          "category": "separation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2510.23141v1",
+          "date": "Oct 27",
+          "title": "Treble10: A high-quality dataset for far-field speech recognition, dereverberation, and enhancement",
+          "authors": [
+            "Sarabeth S. Mullins",
+            "Georg Götz",
+            "Eric Bezzam",
+            "Steven Zheng",
+            "Daniel Gert Nielsen"
+          ],
+          "org": "Sarabeth S. Mullins et al.",
+          "abstract": "Accurate far-field speech datasets are critical for tasks such as automatic speech recognition (ASR), dereverberation, speech enhancement, and source separation. However, current datasets are limited by the trade-off between acoustic realism and scalability. Measured corpora provide faithful physics but are expensive, low-coverage, and rarely include paired clean and reverberant data. In contrast, most simulation-based datasets rely on simplified geometrical acoustics, thus failing to reproduce key physical phenomena like diffraction, scattering, and interference that govern sound propagation in complex environments. We introduce Treble10, a large-scale, physically accurate room-acoustic dataset. Treble10 contains over 3000 broadband room impulse responses (RIRs) simulated in 10 fully furnished real-world rooms, using a hybrid simulation paradigm implemented in the Treble SDK that combines a wave-based and geometrical acoustics solver. The dataset provides six complementary subsets, spanning mono, 8th-order Ambisonics, and 6-channel device RIRs, as well as pre-convolved reverberant speech scenes paired with LibriSpeech utterances. All signals are simulated at 32 kHz, accurately modelling low-frequency wave effects and high-frequency reflections. Treble10 bridges the realism gap between measurement and simulation, enabling reproducible, physically grounded evaluation and large-scale data augmentation for far-field speech tasks. The dataset is openly available via the Hugging Face Hub, and is intended as both a benchmark and a template for next-generation simulation-driven audio research.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.LG"
+          ],
+          "url": "https://arxiv.org/abs/2510.23141v1",
+          "category": "separation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": 5,
+          "projectPage": null
+        },
+        {
+          "id": "2510.21485v1",
+          "date": "Oct 24",
+          "title": "FlexIO: Flexible Single- and Multi-Channel Speech Separation and Enhancement",
+          "authors": [
+            "Yoshiki Masuyama",
+            "Kohei Saijo",
+            "Francesco Paissan",
+            "Jiangyu Han",
+            "Marc Delcroix"
+          ],
+          "org": "Yoshiki Masuyama et al.",
+          "abstract": "Speech separation and enhancement (SSE) has advanced remarkably and achieved promising results in controlled settings, such as a fixed number of speakers and a fixed array configuration. Towards a universal SSE system, single-channel systems have been extended to deal with a variable number of speakers (i.e., outputs). Meanwhile, multi-channel systems accommodating various array configurations (i.e., inputs) have been developed. However, these attempts have been pursued separately. In this paper, we propose a flexible input and output SSE system, named FlexIO. It performs conditional separation using prompt vectors, one per speaker as a condition, allowing separation of an arbitrary number of speakers. Multi-channel mixtures are processed together with the prompt vectors via an array-agnostic channel communication mechanism. Our experiments demonstrate that FlexIO successfully covers diverse conditions with one to five microphones and one to three speakers. We also confirm the robustness of FlexIO on CHiME-4 real data.",
+          "comment": "Submitted to ICASSP 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS",
+            "eess.SP"
+          ],
+          "url": "https://arxiv.org/abs/2510.21485v1",
+          "category": "separation",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2510.25560v1",
+          "date": "Oct 29",
+          "title": "Controlling Contrastive Self-Supervised Learning with Knowledge-Driven Multiple Hypothesis: Application to Beat Tracking",
+          "authors": [
+            "Antonin Gagnere",
+            "Slim Essid",
+            "Geoffroy Peeters"
+          ],
+          "org": "Antonin Gagnere / Slim Essid / Geoffroy Peeters",
+          "abstract": "Ambiguities in data and problem constraints can lead to diverse, equally plausible outcomes for a machine learning task. In beat and downbeat tracking, for instance, different listeners may adopt various rhythmic interpretations, none of which would necessarily be incorrect. To address this, we propose a contrastive self-supervised pre-training approach that leverages multiple hypotheses about possible positive samples in the data. Our model is trained to learn representations compatible with different such hypotheses, which are selected with a knowledge-based scoring function to retain the most plausible ones. When fine-tuned on labeled data, our model outperforms existing methods on standard benchmarks, showcasing the advantages of integrating domain knowledge with multi-hypothesis selection in music representation learning in particular.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2510.25560v1",
+          "category": "transcription",
+          "task": null,
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "Analysis failed.",
+          "novel": "",
+          "method": "",
+          "validation": "",
+          "discussion": "",
+          "nextReads": [],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Analyzing this week's audio foundation model research trends.",
+    "Many new approaches for source separation and music transcription were submitted.",
+    "See the individual papers for details."
+  ]
+}
