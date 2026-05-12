@@ -1,12 +1,6 @@
 {
   "weeks": [
     {
-      "date": "2026-0512",
-      "file": "weekly/2026-0512.json",
-      "count": 7,
-      "generated_at": "2026-05-12T10:02:12.064663+00:00"
-    },
-    {
       "date": "2026-0508",
       "file": "weekly/2026-0508.json",
       "count": 7,
