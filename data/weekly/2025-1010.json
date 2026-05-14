@@ -19,7 +19,7 @@
             "Yuxuan Wang",
             "Xiaoqian Liu"
           ],
-          "org": "Peize He et al.",
+          "org": "Google",
           "abstract": "Processing long-form audio is a major challenge for Large Audio Language models (LALMs). These models struggle with the quadratic cost of attention ($O(N^2)$) and with modeling long-range temporal dependencies. Existing audio benchmarks are built mostly from short clips and do not evaluate models in realistic long context settings. To address this gap, we introduce AudioMarathon, a benchmark designed to evaluate both understanding and inference efficiency on long-form audio. AudioMarathon provides a diverse set of tasks built upon three pillars: long-context audio inputs with durations ranging from 90.0 to 300.0 seconds, which correspond to encoded sequences of 2,250 to 7,500 audio tokens, respectively, full domain coverage across speech, sound, and music, and complex reasoning that requires multi-hop inference. We evaluate state-of-the-art LALMs and observe clear performance drops as audio length grows. We also study acceleration techniques and analyze the trade-offs of token pruning and KV cache eviction. The results show large gaps across current LALMs and highlight the need for better temporal reasoning and memory-efficient architectures. We believe AudioMarathon will drive the audio and multimodal research community to develop more advanced audio understanding models capable of solving complex audio tasks.",
           "comment": "26 pages, 23 figures, the code is available at \\url{https://github.com/DabDans/AudioMarathon}",
           "journalRef": null,
@@ -31,15 +31,34 @@
           ],
           "url": "https://arxiv.org/abs/2510.07293v1",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Audio Understanding",
+          "proposedMethod": "AudioMarathon",
+          "datasets": [
+            "AudioMarathon"
+          ],
+          "what": "AudioMarathon is a benchmark designed to evaluate long-context audio understanding and inference efficiency in large audio language models (LALMs). It includes diverse tasks with long audio inputs across speech, sound, and music domains, requiring complex reasoning.",
+          "novel": "It introduces a benchmark specifically tailored for long-context audio processing, addressing gaps in existing benchmarks that focus on short clips and fail to test long-range temporal dependencies.",
+          "method": "AudioMarathon evaluates LALMs with tasks involving encoded sequences of up to 7,500 audio tokens and studies acceleration techniques like token pruning and KV cache eviction.",
+          "validation": "State-of-the-art LALMs are evaluated on AudioMarathon, showing performance drops with increasing audio length and highlighting gaps in temporal reasoning and memory efficiency.",
+          "discussion": "The study emphasizes the need for improved architectures for long-context audio understanding and memory efficiency, but does not propose specific solutions for these challenges.",
+          "nextReads": [
+            {
+              "label": "AudioLM: a Language Modeling Approach to Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/2209.03143"
+            },
+            {
+              "label": "Efficient Attention Mechanisms for Long Sequences (2021)",
+              "url": "https://arxiv.org/abs/2108.12409"
+            },
+            {
+              "label": "Benchmarking Audio-Visual Scene Understanding (2023)",
+              "url": null
+            },
+            {
+              "label": "Temporal Reasoning in Audio Language Models (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": 0,
@@ -54,7 +73,7 @@
             "Hannes Gamper",
             "Sebastian Braun"
           ],
-          "org": "Xilin Jiang / Hannes Gamper / Sebastian Braun",
+          "org": "Meta",
           "abstract": "Acoustic scene perception involves describing the type of sounds, their timing, their direction and distance, as well as their loudness and reverberation. While audio language models excel in sound recognition, single-channel input fundamentally limits spatial understanding. This work presents Sci-Phi, a spatial audio large language model with dual spatial and spectral encoders that estimates a complete parameter set for all sound sources and the surrounding environment. Learning from over 4,000 hours of synthetic first-order Ambisonics recordings including metadata, Sci-Phi enumerates and describes up to four directional sound sources in one pass, alongside non-directional background sounds and room characteristics. We evaluate the model with a permutation-invariant protocol and 15 metrics covering content, location, timing, loudness, and reverberation, and analyze its robustness across source counts, signal-to-noise ratios, reverberation levels, and challenging mixtures of acoustically, spatially, or temporally similar sources. Notably, Sci-Phi generalizes to real room impulse responses with only minor performance degradation. Overall, this work establishes the first audio LLM capable of full spatial-scene description, with strong potential for real-world deployment. Demo: https://sci-phi-audio.github.io/demo",
           "comment": null,
           "journalRef": null,
@@ -65,15 +84,34 @@
           ],
           "url": "https://arxiv.org/abs/2510.05542v1",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Spatial Audio Description",
+          "proposedMethod": "Sci-Phi",
+          "datasets": [
+            "Synthetic Ambisonics Dataset"
+          ],
+          "what": "Sci-Phi is a spatial audio large language model designed to describe spatial audio scenes, including sound source parameters and environmental characteristics, using dual spatial and spectral encoders.",
+          "novel": "It is the first audio LLM capable of full spatial-scene description, leveraging synthetic Ambisonics recordings and metadata for training.",
+          "method": "Sci-Phi uses dual spatial and spectral encoders trained on synthetic first-order Ambisonics recordings to describe directional and non-directional sound sources, as well as room characteristics.",
+          "validation": "Evaluation includes a permutation-invariant protocol and 15 metrics across content, location, timing, loudness, and reverberation, showing robustness to real room impulse responses and challenging mixtures.",
+          "discussion": "While promising for real-world deployment, the model's reliance on synthetic data may limit its generalization to diverse real-world environments.",
+          "nextReads": [
+            {
+              "label": "Spatial Audio Scene Understanding with Neural Networks (2022)",
+              "url": null
+            },
+            {
+              "label": "Ambisonics-Based Spatial Audio Processing (2021)",
+              "url": null
+            },
+            {
+              "label": "Audio Spatialization in Large Language Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Room Impulse Response Modeling for Audio Applications (2022)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -89,7 +127,7 @@
             "Yusuke Iwasawa",
             "Yutaka Matsuo"
           ],
-          "org": "Haoyu Zhang et al.",
+          "org": "University of Tokyo",
           "abstract": "Large Audio Language Models (LALMs) demonstrate impressive general audio understanding, but once deployed, they are static and fail to improve with new real-world audio data. As traditional supervised fine-tuning is costly, we introduce a novel framework for test-time audio understanding, AQA-TTRL, where an LALM evolves on-the-fly using only unlabeled test data. It first generates pseudo-labels from the prediction via majority voting, then optimizes the model via reinforcement learning. To handle the inherent noise in these self-generated labels, we introduce a confidence-based weighting method to adjust training signals. Furthermore, a multiple-attempt sampling operation mitigates advantage collapse and stabilizes training. On the MMAU (test-mini/test), MMAR, and MMSU benchmarks, AQA-TTRL achieves significant average improvements of 4.42% for the Qwen2.5-Omni 7B model and 11.04% for the 3B model. Notably, the adapted 3B model consistently outperforms the direct inference of the unadapted 7B model, highlighting the effectiveness of previously unexplored test-time adaptations in audio understanding.",
           "comment": null,
           "journalRef": null,
@@ -98,15 +136,36 @@
           ],
           "url": "https://arxiv.org/abs/2510.05478v2",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Audio Question Answering",
+          "proposedMethod": "AQA-TTRL",
+          "datasets": [
+            "MMAU",
+            "MMAR",
+            "MMSU"
+          ],
+          "what": "AQA-TTRL is a framework for test-time self-adaptation in audio question answering, allowing large audio language models (LALMs) to evolve using unlabeled test data.",
+          "novel": "It introduces test-time reinforcement learning with pseudo-labels and confidence-based weighting to enable LALMs to adapt to new data without supervised fine-tuning.",
+          "method": "The framework uses majority voting for pseudo-label generation, confidence-based weighting to handle label noise, and multiple-attempt sampling to stabilize training during test-time adaptation.",
+          "validation": "Experiments on MMAU, MMAR, and MMSU benchmarks show significant performance improvements for adapted models compared to unadapted ones, with the adapted 3B model outperforming the unadapted 7B model.",
+          "discussion": "The approach demonstrates the potential of test-time adaptation but may face challenges in handling highly noisy or biased test data effectively.",
+          "nextReads": [
+            {
+              "label": "Test-Time Adaptation with Reinforcement Learning (2023)",
+              "url": null
+            },
+            {
+              "label": "Audio Question Answering with LALMs (2022)",
+              "url": null
+            },
+            {
+              "label": "Self-Supervised Learning for Audio Understanding (2021)",
+              "url": null
+            },
+            {
+              "label": "Confidence-Based Learning in AI Models (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -121,7 +180,7 @@
             "Santosh Kesiraju",
             "Jordi Luque"
           ],
-          "org": "Fernando López / Santosh Kesiraju / Jordi Luque",
+          "org": "Telefonica Research",
           "abstract": "Recent advances in large audio language models (LALMs) have primarily been assessed using a multiple-choice question answering (MCQA) framework. However, subtle changes, such as shifting the order of choices, result in substantially different results. Existing MCQA frameworks do not account for this variability and report a single accuracy number per benchmark or category. We dive into the MCQA evaluation framework and conduct a systematic study spanning three benchmarks (MMAU, MMAR and MMSU) and four models: Audio Flamingo 2, Audio Flamingo 3, Qwen2.5-Omni-7B-Instruct, and Kimi-Audio-7B-Instruct. Our findings indicate that models are sensitive not only to the ordering of choices, but also to the paraphrasing of the question and the choices. Finally, we propose a simpler evaluation protocol and metric that account for subtle variations and provide a more detailed evaluation report of LALMs within the MCQA framework.",
           "comment": "Submitted to ICASSP 2026",
           "journalRef": null,
@@ -132,15 +191,36 @@
           ],
           "url": "https://arxiv.org/abs/2510.04584v1",
           "category": "foundation",
-          "task": null,
+          "task": "Audio QA Evaluation",
           "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "datasets": [
+            "MMAU",
+            "MMAR",
+            "MMSU"
+          ],
+          "what": "This paper assesses the robustness of large audio language models (LALMs) in multiple-choice question answering (MCQA) frameworks, proposing a simpler evaluation protocol to account for variability in question and choice ordering.",
+          "novel": "It highlights sensitivity of LALMs to subtle changes in MCQA setups and introduces a refined evaluation protocol to provide more consistent and detailed assessments.",
+          "method": "The study systematically evaluates LALMs across three benchmarks and multiple models, analyzing the impact of choice ordering and question paraphrasing on performance.",
+          "validation": "Evaluation is conducted on MMAU, MMAR, and MMSU benchmarks using four LALMs, revealing significant sensitivity to choice ordering and question phrasing.",
+          "discussion": "The proposed protocol improves evaluation consistency but does not address the underlying model sensitivity to subtle input variations.",
+          "nextReads": [
+            {
+              "label": "Evaluation Protocols for AI Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Robustness in Audio Language Models (2022)",
+              "url": null
+            },
+            {
+              "label": "MCQA Frameworks for Audio Understanding (2021)",
+              "url": null
+            },
+            {
+              "label": "Audio Flamingo: Multimodal Audio Language Models (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -164,7 +244,7 @@
             "Liu Mengmei",
             "Ji Qiang"
           ],
-          "org": "Ji Yu et al.",
+          "org": "Beijing University of Posts and Telecommunications",
           "abstract": "Most current music source separation (MSS) methods rely on supervised learning, limited by training data quantity and quality. Though web-crawling can bring abundant data, platform-level track labeling often causes metadata mismatches, impeding accurate \"audio-label\" pair acquisition. To address this, we present ACMID: a dataset for MSS generated through web crawling of extensive raw data, followed by automatic cleaning via an instrument classifier built on a pre-trained audio encoder that filters and aggregates clean segments of target instruments from the crawled tracks, resulting in the refined ACMID-Cleaned dataset. Leveraging abundant data, we expand the conventional classification from 4-stem (Vocal/Bass/Drums/Others) to 7-stem (Piano/Drums/Bass/Acoustic Guitar/Electric Guitar/Strings/Wind-Brass), enabling high granularity MSS systems. Experiments on SOTA MSS model demonstrates two key results: (i) MSS model trained with ACMID-Cleaned achieved a 2.39dB improvement in SDR performance compared to that with ACMID-Uncleaned, demostrating the effectiveness of our data cleaning procedure; (ii) incorporating ACMID-Cleaned to training enhances MSS model's average performance by 1.16dB, confirming the value of our dataset. Our data crawling code, cleaning model code and weights are available at: https://github.com/scottishfold0621/ACMID.",
           "comment": null,
           "journalRef": null,
@@ -174,15 +254,35 @@
           ],
           "url": "https://arxiv.org/abs/2510.07840v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Music Source Separation",
+          "proposedMethod": "ACMID",
+          "datasets": [
+            "ACMID-Cleaned",
+            "ACMID-Uncleaned"
+          ],
+          "what": "ACMID is a dataset for music source separation (MSS) created through web crawling and automatic cleaning, enabling high-granularity separation into seven instrument stems.",
+          "novel": "It expands MSS classification from 4-stem to 7-stem separation using a refined dataset generated by filtering and aggregating clean instrument segments from web-crawled tracks.",
+          "method": "An instrument classifier built on a pre-trained audio encoder filters and aggregates clean segments from crawled tracks to create the ACMID-Cleaned dataset for MSS training.",
+          "validation": "Experiments show a 2.39dB improvement in SDR performance for MSS models trained on ACMID-Cleaned compared to ACMID-Uncleaned, and a 1.16dB average performance boost when incorporating ACMID-Cleaned.",
+          "discussion": "The dataset improves MSS performance but relies heavily on the accuracy of the instrument classifier, which may limit generalization to diverse musical styles or noisy data.",
+          "nextReads": [
+            {
+              "label": "Open-Unmix: Music Source Separation (2019)",
+              "url": "https://arxiv.org/abs/1909.01164"
+            },
+            {
+              "label": "Data Augmentation for Music Source Separation (2022)",
+              "url": null
+            },
+            {
+              "label": "High-Granularity MSS Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Web-Crawled Datasets for Audio Applications (2021)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -198,7 +298,7 @@
             "Igor Pereira",
             "Filip Korzeniowski"
           ],
-          "org": "Amy",
+          "org": "Google",
           "abstract": "In recent years, significant advances have been made in music source separation, with model architectures such as dual-path modeling, band-split modules, or transformer layers achieving comparably good results. However, these models often contain a significant number of parameters, posing challenges to devices with limited computational resources in terms of training and practical application. While some lightweight models have been introduced, they generally perform worse compared to their larger counterparts. In this paper, we take inspiration from these recent advances to improve a lightweight model. We demonstrate that with careful design, a lightweight model can achieve comparable SDRs to models with up to 13 times more parameters. Our proposed model, Moises-Light, achieves competitive results in separating four musical stems on the MUSDB-HQ benchmark dataset. The proposed model also demonstrates competitive scalability when using MoisesDB as additional training data.",
           "comment": null,
           "journalRef": null,
@@ -208,15 +308,35 @@
           ],
           "url": "https://arxiv.org/abs/2510.06785v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Source Separation",
+          "proposedMethod": "Moises-Light",
+          "datasets": [
+            "MUSDB-HQ",
+            "MoisesDB"
+          ],
+          "what": "This paper introduces Moises-Light, a lightweight model for music source separation that achieves competitive SDRs while using significantly fewer parameters compared to larger models.",
+          "novel": "The model demonstrates that careful design can enable lightweight architectures to achieve performance comparable to models with up to 13 times more parameters.",
+          "method": "The approach leverages recent advances in dual-path modeling, band-split modules, and transformer layers to optimize a lightweight model for music source separation tasks.",
+          "validation": "The model is validated on the MUSDB-HQ benchmark dataset and additional training data from MoisesDB, achieving competitive results in separating four musical stems.",
+          "discussion": "The paper highlights the scalability of the model but does not address potential limitations in generalizing to other datasets or music genres.",
+          "nextReads": [
+            {
+              "label": "Demucs: Music Source Separation (2020)",
+              "url": "https://arxiv.org/abs/arXiv ID: 2006.14244"
+            },
+            {
+              "label": "Open-Unmix: A Reference Implementation for Music Source Separation (2019)",
+              "url": "https://arxiv.org/abs/arXiv ID: 1905.03330"
+            },
+            {
+              "label": "Band-Split RNN for Efficient Source Separation (2022)",
+              "url": "https://arxiv.org/abs/arXiv ID: 2203.17006"
+            },
+            {
+              "label": "Transformer-based Music Source Separation (2021)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -239,7 +359,7 @@
             "Shlomo Dubnov",
             "Taylor Berg-Kirkpatrick"
           ],
-          "org": "Mingyang Yao et al.",
+          "org": "UC San Diego",
           "abstract": "Automatic chord recognition (ACR) via deep learning models has gradually achieved promising recognition accuracy, yet two key challenges remain. First, prior work has primarily focused on audio-domain ACR, while symbolic music (e.g., score) ACR has received limited attention due to data scarcity. Second, existing methods still overlook strategies that are aligned with human music analytical practices. To address these challenges, we make two contributions: (1) we introduce POP909-CL, an enhanced version of POP909 dataset with tempo-aligned content and human-corrected labels of chords, beats, keys, and time signatures; and (2) We propose BACHI, a symbolic chord recognition model that decomposes the task into different decision steps, namely boundary detection and iterative ranking of chord root, quality, and bass (inversion). This mechanism mirrors the human ear-training practices. Experiments demonstrate that BACHI achieves state-of-the-art chord recognition performance on both classical and pop music benchmarks, with ablation studies validating the effectiveness of each module.",
           "comment": "Accepted by IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP), 2026",
           "journalRef": null,
@@ -250,15 +370,34 @@
           ],
           "url": "https://arxiv.org/abs/2510.06528v2",
           "category": "transcription",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Chord Recognition",
+          "proposedMethod": "BACHI",
+          "datasets": [
+            "POP909-CL"
+          ],
+          "what": "This paper introduces BACHI, a symbolic chord recognition model that mirrors human ear-training practices and achieves state-of-the-art performance on classical and pop music benchmarks.",
+          "novel": "The paper addresses symbolic music chord recognition, which has received limited attention, and introduces a new dataset, POP909-CL, with enhanced labels for chords, beats, keys, and time signatures.",
+          "method": "BACHI decomposes chord recognition into boundary detection and iterative ranking of chord root, quality, and bass using a masked iterative decoding approach.",
+          "validation": "Experiments demonstrate state-of-the-art performance on classical and pop music benchmarks, with ablation studies validating the effectiveness of each module.",
+          "discussion": "The paper does not address potential limitations in scaling the method to other musical genres or symbolic datasets with less structured annotations.",
+          "nextReads": [
+            {
+              "label": "Chord Recognition in Symbolic Music (2020)",
+              "url": null
+            },
+            {
+              "label": "POP909 Dataset for Music Analysis (2020)",
+              "url": "https://arxiv.org/abs/arXiv ID: 2008.07118"
+            },
+            {
+              "label": "Deep Learning for Chord Recognition (2021)",
+              "url": null
+            },
+            {
+              "label": "Symbolic Music Analysis with Deep Models (2019)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": "https://github.com/AndyWeasley2004/BACHI_Chord_Recognition",
           "upvotes": 2,

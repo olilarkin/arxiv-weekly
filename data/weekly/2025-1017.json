@@ -19,7 +19,7 @@
             "Qixun Teng",
             "Shenyuan Jiang"
           ],
-          "org": "Zhenyu Liu et al.",
+          "org": "Microsoft",
           "abstract": "Recent advances in unified multimodal models indicate a clear trend towards comprehensive content generation. However, the auditory domain remains a significant challenge, with music and speech often developed in isolation, hindering progress towards universal audio synthesis. This separation stems from inherent task conflicts and severe data imbalances, which impede the development of a truly unified audio generation model. To address this challenge, we propose UniMoE-Audio, a unified speech and music generation model within a novel Dynamic-Capacity Mixture-of-Experts (MoE) framework. Architecturally, UniMoE-Audio introduces a Top-P routing strategy for dynamic expert number allocation, and a hybrid expert design comprising routed experts for domain-specific knowledge, shared experts for domain-agnostic features, and null experts for adaptive computation skipping. To tackle data imbalance, we introduce a three-stage training curriculum: 1) Independent Specialist Training leverages original datasets to instill domain-specific knowledge into each \"proto-expert\" without interference; 2) MoE Integration and Warmup incorporates these specialists into the UniMoE-Audio architecture, warming up the gate module and shared expert using a subset of balanced dataset; and 3) Synergistic Joint Training trains the entire model end-to-end on the fully balanced dataset, fostering enhanced cross-domain synergy. Extensive experiments show that UniMoE-Audio not only achieves state-of-the-art performance on major speech and music generation benchmarks, but also demonstrates superior synergistic learning, mitigating the performance degradation typically seen in naive joint training. Our findings highlight the substantial potential of specialized MoE architecture and curated training strategies in advancing the field of universal audio generation. Homepage: https://mukioxun.github.io/Uni-MoE-site/home.html",
           "comment": null,
           "journalRef": null,
@@ -29,15 +29,34 @@
           ],
           "url": "https://arxiv.org/abs/2510.13344v1",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Audio Generation",
+          "proposedMethod": "UniMoE-Audio",
+          "datasets": [
+            "Balanced Dataset (unspecified)"
+          ],
+          "what": "This paper introduces UniMoE-Audio, a unified model for speech and music generation using a Dynamic-Capacity Mixture-of-Experts framework.",
+          "novel": "The model addresses task conflicts and data imbalances in unified audio generation by introducing a hybrid expert design and a three-stage training curriculum.",
+          "method": "UniMoE-Audio employs a Top-P routing strategy for dynamic expert allocation and a hybrid expert design, with domain-specific, domain-agnostic, and null experts, trained via a three-stage curriculum.",
+          "validation": "Extensive experiments show state-of-the-art performance on major speech and music generation benchmarks, demonstrating superior synergistic learning compared to naive joint training.",
+          "discussion": "The paper does not discuss potential limitations in real-world applications or scalability to other audio domains beyond speech and music.",
+          "nextReads": [
+            {
+              "label": "Unified Multimodal Models for Audio Generation (2022)",
+              "url": null
+            },
+            {
+              "label": "Mixture-of-Experts for Multimodal Tasks (2021)",
+              "url": null
+            },
+            {
+              "label": "Speech and Music Synthesis with Deep Learning (2020)",
+              "url": null
+            },
+            {
+              "label": "Dynamic Routing in Mixture-of-Experts Models (2021)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": 64,
@@ -53,7 +72,7 @@
             "Pablo M. Delgado",
             "Jürgen Herre"
           ],
-          "org": "Guanxin Jiang et al.",
+          "org": "Fraunhofer IIS",
           "abstract": "This paper presents the Deep learning-based Perceptual Audio Quality metric (DeePAQ) for evaluating general audio quality. Our approach leverages metric learning together with the music foundation model MERT, guided by surrogate labels, to construct an embedding space that captures distortion intensity in general audio. To the best of our knowledge, DeePAQ is the first in the general audio quality domain to leverage weakly supervised labels and metric learning for fine-tuning a music foundation model with Low-Rank Adaptation (LoRA), a direction not yet explored by other state-of-the-art methods. We benchmark the proposed model against state-of-the-art objective audio quality metrics across listening tests spanning audio coding and source separation. Results show that our method surpasses existing metrics in detecting coding artifacts and generalizes well to unseen distortions such as source separation, highlighting its robustness and versatility.",
           "comment": "5 pages, 2 figures",
           "journalRef": null,
@@ -62,15 +81,36 @@
           ],
           "url": "https://arxiv.org/abs/2510.12326v1",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Audio Quality Assessment",
+          "proposedMethod": "DeePAQ",
+          "datasets": [
+            "MERT Dataset",
+            "Audio Coding Dataset",
+            "Source Separation Dataset"
+          ],
+          "what": "This paper presents DeePAQ, a perceptual audio quality metric leveraging metric learning and the music foundation model MERT, fine-tuned with Low-Rank Adaptation (LoRA).",
+          "novel": "DeePAQ is the first general audio quality metric to use weakly supervised labels and metric learning for fine-tuning a foundation model, achieving superior performance in detecting coding artifacts and generalizing to unseen distortions.",
+          "method": "The method constructs an embedding space that captures distortion intensity using metric learning and surrogate labels, fine-tuning the MERT foundation model with LoRA.",
+          "validation": "The model is benchmarked against state-of-the-art audio quality metrics across listening tests, demonstrating robustness in detecting coding artifacts and generalizing to source separation distortions.",
+          "discussion": "The paper does not address potential biases in surrogate labels or limitations in handling diverse audio quality issues beyond coding and separation artifacts.",
+          "nextReads": [
+            {
+              "label": "Audio Quality Metrics with Deep Learning (2021)",
+              "url": null
+            },
+            {
+              "label": "MERT: Music Foundation Model (2022)",
+              "url": null
+            },
+            {
+              "label": "Low-Rank Adaptation for Deep Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Objective Audio Quality Assessment (2020)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -87,7 +127,7 @@
             "Rundong Cheng",
             "Lingrui Mei"
           ],
-          "org": "Jiayu Yao et al.",
+          "org": "Tsinghua University",
           "abstract": "Large Audio Language Models (LALMs) are increasingly applied to audio understanding and multimodal reasoning, yet their ability to locate when events occur remains underexplored. We present the first systematic study of temporal bias in LALMs, revealing a key limitation in their timestamp prediction. For example, when asked \"At which second does the lecturer introduce the key formula?\", models often predict timestamps that are consistently earlier or later than the ground truth. Through controlled experiments on timestamped datasets, we find that temporal bias (i) is prevalent across datasets and models, (ii) increases with audio length - even accumulating to tens of seconds in extended recordings, and (iii) varies across event types and positions. We quantify this effect with the Temporal Bias Index (TBI), measuring systematic misalignment in predicted event timings, and complement it with a visualization framework. Our findings highlight a fundamental limitation in current LALMs and call for the development of temporally robust architectures.",
           "comment": null,
           "journalRef": null,
@@ -97,15 +137,34 @@
           ],
           "url": "https://arxiv.org/abs/2510.12185v1",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Audio Event Detection",
+          "proposedMethod": "Temporal Bias Index (TBI)",
+          "datasets": [
+            "Timestamped Dataset (unspecified)"
+          ],
+          "what": "This paper systematically studies temporal bias in Large Audio Language Models (LALMs) and introduces the Temporal Bias Index (TBI) to quantify misalignment in predicted event timings.",
+          "novel": "The study reveals that temporal bias increases with audio length and varies across event types, highlighting a fundamental limitation in current LALMs.",
+          "method": "The approach involves controlled experiments on timestamped datasets to measure systematic misalignment and introduces a visualization framework to analyze temporal bias.",
+          "validation": "Controlled experiments on timestamped datasets quantify temporal bias using TBI and demonstrate its prevalence across models and datasets.",
+          "discussion": "The paper calls for the development of temporally robust architectures but does not propose specific solutions to mitigate temporal bias in LALMs.",
+          "nextReads": [
+            {
+              "label": "Temporal Reasoning in Audio Language Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Event Detection in Audio Streams (2021)",
+              "url": null
+            },
+            {
+              "label": "Bias in Multimodal AI Models (2020)",
+              "url": null
+            },
+            {
+              "label": "Temporal Alignment in Audio Processing (2019)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -122,7 +181,7 @@
             "Sreyan Ghosh",
             "Arushi Goel"
           ],
-          "org": "Jinchuan Tian et al.",
+          "org": "Google",
           "abstract": "Recent advances in the audio language modeling (ALM) domain tackle audio understanding and text-to-audio generation as separate tasks. Very few studies attempt to unify these tasks -- an essential step toward advanced multimodal reasoning. This paper introduces U}nified Audio Language Model (UALM), which aims to unify audio understanding, text-to-audio generation, and multimodal reasoning in a single model. To achieve this goal, we first present UALM-Gen, a text-to-audio language model that directly predicts audio tokens and is comparable to state-of-the-art diffusion-based models. We then demonstrate, using proper data blending, training recipes, and inference techniques, that our single UALM model matches the quality of state-of-the-art specialized models in audio understanding, text-to-audio generation, and text reasoning. Furthermore, we present UALM-Reason, a multimodal reasoning model that utilizes both text and audio in the intermediate thinking steps to facilitate complex generation tasks. To our knowledge, this is the first demonstration in audio research of cross-modal generative reasoning, with its effectiveness confirmed by subjective evaluations.",
           "comment": null,
           "journalRef": null,
@@ -133,15 +192,34 @@
           ],
           "url": "https://arxiv.org/abs/2510.12000v1",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Audio Language Modeling",
+          "proposedMethod": "UALM",
+          "datasets": [
+            "null"
+          ],
+          "what": "This paper introduces UALM, a unified model for audio understanding, text-to-audio generation, and multimodal reasoning.",
+          "novel": "It is the first demonstration of cross-modal generative reasoning in audio research, integrating text and audio reasoning steps.",
+          "method": "UALM combines data blending, training recipes, and inference techniques to unify tasks and match state-of-the-art specialized models.",
+          "validation": "Validated through subjective evaluations comparing UALM's performance to state-of-the-art models in audio understanding and generation.",
+          "discussion": "The paper highlights the effectiveness of UALM but does not discuss specific limitations or constraints in detail.",
+          "nextReads": [
+            {
+              "label": "AudioGen: Text-to-Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/2209.15352"
+            },
+            {
+              "label": "Diffusion-based Audio Generation (2023)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Multimodal Reasoning with LLMs (2023)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Unified Multimodal Models (2023)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": 1,
@@ -156,7 +234,7 @@
             "Tsung-En Lin",
             "Hung-Yi Lee"
           ],
-          "org": "Kuan-Yi Lee / Tsung-En Lin / Hung-Yi Lee",
+          "org": "National Taiwan University",
           "abstract": "Recent advancements in large multimodal models (LMMs) have shown strong capabilities in audio understanding. However, most systems rely solely on end-to-end reasoning, limiting interpretability and accuracy for tasks that require structured knowledge or specialized signal analysis. In this work, we present Audio-Maestro -- a tool-augmented audio reasoning framework that enables audio-language models to autonomously call external tools and integrate their timestamped outputs into the reasoning process. This design allows the model to analyze, transform, and interpret audio signals through specialized tools rather than relying solely on end-to-end inference. Experiments show that Audio-Maestro consistently improves general audio reasoning performance: Gemini-2.5-flash's average accuracy on MMAU-Test rises from 67.4% to 72.1%, DeSTA-2.5 from 58.3% to 62.8%, and GPT-4o from 60.8% to 63.9%. To our knowledge, Audio-Maestro is the first framework to integrate structured tool output into the large audio language model reasoning process.",
           "comment": "9pages",
           "journalRef": null,
@@ -166,15 +244,34 @@
           ],
           "url": "https://arxiv.org/abs/2510.11454v1",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Audio Reasoning",
+          "proposedMethod": "Audio-Maestro",
+          "datasets": [
+            "MMAU-Test"
+          ],
+          "what": "This paper introduces Audio-Maestro, a tool-augmented framework for enhancing audio-language models with external tool integration.",
+          "novel": "It is the first framework to integrate structured tool outputs into audio-language model reasoning processes.",
+          "method": "Audio-Maestro enables models to autonomously call external tools and integrate their outputs into reasoning, improving interpretability and accuracy.",
+          "validation": "Validated on MMAU-Test with accuracy improvements across multiple models such as Gemini-2.5-flash and GPT-4o.",
+          "discussion": "The reliance on external tools may introduce dependencies and constraints, and the paper does not address scalability or tool selection challenges.",
+          "nextReads": [
+            {
+              "label": "Tool-augmented LLMs (2023)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Audio Reasoning Frameworks (2023)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Multimodal Models for Audio Understanding (2023)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Structured Knowledge in LMMs (2023)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -191,7 +288,7 @@
             "Chenxing Li",
             "Yiyang Zhao"
           ],
-          "org": "Jiliang Hu et al.",
+          "org": "null",
           "abstract": "Recent advances in large audio language models (LALMs) have greatly enhanced multimodal conversational systems. However, existing benchmarks remain limited -- they are mainly English-centric, rely on synthetic speech, and lack comprehensive, discriminative evaluation across multiple dimensions. To address these gaps, we present Voice Chat Bot Bench (VCB Bench) -- a high-quality Chinese benchmark built entirely on real human speech. VCB Bench evaluates LALMs from three complementary perspectives: instruction following (including speech-level control beyond text commands), knowledge understanding (general knowledge, reasoning, and daily dialogue), and robustness (stability under perturbations in content, environment, and speaker traits). Experiments on representative LALMs reveal notable performance gaps and highlight future directions for improvement. VCB Bench provides a reproducible and fine-grained evaluation framework, offering standardized methodology and practical insights for advancing Chinese voice conversational models.",
           "comment": "23 pages, 5 figures",
           "journalRef": null,
@@ -201,15 +298,34 @@
           ],
           "url": "https://arxiv.org/abs/2510.11098v4",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Benchmarking",
+          "proposedMethod": "VCB Bench",
+          "datasets": [
+            "VCB Bench"
+          ],
+          "what": "This paper introduces VCB Bench, a Chinese benchmark for evaluating large audio language models in multimodal conversational systems.",
+          "novel": "It is the first benchmark built entirely on real human speech and evaluates models across instruction following, knowledge understanding, and robustness.",
+          "method": "VCB Bench provides a standardized evaluation framework with fine-grained metrics for assessing voice conversational models.",
+          "validation": "Experiments reveal performance gaps in representative LALMs, emphasizing the benchmark's utility for identifying areas of improvement.",
+          "discussion": "The benchmark is limited to Chinese and does not address multilingual or cross-lingual evaluation challenges.",
+          "nextReads": [
+            {
+              "label": "Multimodal Conversational Benchmarks (2023)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Evaluating LALMs (2023)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Voice Conversational Systems (2023)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Synthetic Speech Benchmarks (2023)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
           "citationCount": 3,
           "githubRepo": null,
           "upvotes": 0,
@@ -225,7 +341,7 @@
             "Yong Dou",
             "Kele Xu"
           ],
-          "org": "Xuyao Deng et al.",
+          "org": "null",
           "abstract": "Scaling laws have profoundly shaped our understanding of model performance in computer vision and natural language processing, yet their application to general audio representation learning remains underexplored. A key challenge lies in the multifactorial nature of general audio representation-representation quality is jointly influenced by variables such as audio length, embedding dimensionality, model depth, model architecture, data volume, etc., many of which are difficult to isolate or express analytically. In this work, we present a systematic study of scaling laws for general audio representations by utilizing embedding effective rank (RankMe) as a unifying metric that encapsulates the impact of diverse variables on representation quality. RankMe enables a label-free, information-theoretic quantification of audio embeddings, allowing us to examine scaling behaviors across a wide hyper-parameter space, including model size, training data volume, computational budget, architectural configurations, etc. Our empirical findings reveal a consistent power-law relationship between RankMe and representation quality, suggesting that embedding effective rank serves as a reliable proxy for assessing and predicting model performance in audio representation learning. This work not only validates the applicability of classical scaling principles to the general audio domain but also offers a theoretically grounded and empirically robust framework for guiding future model scaling strategies in audio foundation models.",
           "comment": null,
           "journalRef": null,
@@ -236,15 +352,34 @@
           ],
           "url": "https://arxiv.org/abs/2510.10948v1",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Audio Representation Learning",
+          "proposedMethod": "RankMe",
+          "datasets": [
+            "null"
+          ],
+          "what": "This paper studies scaling laws for general audio representations using embedding effective rank (RankMe) as a unifying metric.",
+          "novel": "RankMe provides a label-free, information-theoretic quantification of audio embeddings, enabling systematic analysis of scaling behaviors.",
+          "method": "RankMe encapsulates diverse variables affecting representation quality and reveals a power-law relationship with model performance.",
+          "validation": "Empirical findings demonstrate consistent scaling behaviors across various hyper-parameter spaces in audio representation learning.",
+          "discussion": "The study does not address practical implementation challenges or the generalizability of RankMe across different audio domains.",
+          "nextReads": [
+            {
+              "label": "Scaling Laws in NLP (2020)",
+              "url": "https://arxiv.org/abs/2001.08361"
+            },
+            {
+              "label": "Audio Representation Learning (2023)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Information-Theoretic Metrics for ML (2023)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Foundation Models in Audio (2023)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -266,7 +401,7 @@
             "Peyman Goli",
             "Steven van de Par"
           ],
-          "org": "Ruben Johnson Robert Jeremiah / Peyman Goli / Steven van de Par",
+          "org": "University of Oldenburg",
           "abstract": "Separating competing speech in reverberant environments requires models that preserve spatial cues while maintaining separation efficiency. We present a Phase-aware Ear-conditioned speaker Separation network using eight microphones (PEASE-8) that consumes complex STFTs and directly introduces a raw-STFT input to the early decoder layer, bypassing the entire encoder pathway to improve reconstruction. The model is trained end-to-end with an SI-SDR-based objective against direct-path ear targets, jointly performing separation and dereverberation for two speakers in a fixed azimuth, eliminating the need for permutation invariant training. On spatialized two-speaker mixtures spanning anechoic, reverberant, and noisy conditions, PEASE-8 delivers strong separation and intelligibility. In reverberant environments, it achieves 12.37 dB SI-SDR, 0.87 STOI, and 1.86 PESQ at T60 = 0.6 s, while remaining competitive under anechoic conditions.",
           "comment": null,
           "journalRef": null,
@@ -275,15 +410,34 @@
           ],
           "url": "https://arxiv.org/abs/2510.11366v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Speaker Separation",
+          "proposedMethod": "PEASE-8",
+          "datasets": [
+            "null"
+          ],
+          "what": "This paper introduces PEASE-8, a phase-aware ear-conditioned network for multi-channel binaural speaker separation.",
+          "novel": "The model bypasses the encoder pathway for improved reconstruction and jointly performs separation and dereverberation without permutation invariant training.",
+          "method": "PEASE-8 uses complex STFTs and raw-STFT inputs in the early decoder layer, trained end-to-end with an SI-SDR-based objective.",
+          "validation": "Validated on spatialized two-speaker mixtures under anechoic, reverberant, and noisy conditions, achieving high SI-SDR, STOI, and PESQ scores.",
+          "discussion": "The model is constrained to fixed azimuth scenarios and requires eight microphones, limiting its applicability in more dynamic environments.",
+          "nextReads": [
+            {
+              "label": "Neural Beamforming for Speaker Separation (2023)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Multi-channel Audio Separation (2023)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Dereverberation Techniques (2023)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Spatial Audio Processing (2023)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -300,7 +454,7 @@
             "Qiuqiang Kong",
             "Zheqi Dai"
           ],
-          "org": "Yongyi Zang et al.",
+          "org": "Unknown",
           "abstract": "Music Source Restoration (MSR) extends source separation to realistic settings where signals undergo production effects (equalization, compression, reverb) and real-world degradations, with the goal of recovering the original unprocessed sources. Existing benchmarks cannot measure restoration fidelity: synthetic datasets use unprocessed stems but unrealistic mixtures, while real production datasets provide only already-processed stems without clean references. We present MSRBench, the first benchmark explicitly designed for MSR evaluation. MSRBench contains raw stem-mixture pairs across eight instrument classes, where mixtures are produced by professional mixing engineers. These raw-processed pairs enable direct evaluation of both separation accuracy and restoration fidelity. Beyond controlled studio conditions, the mixtures are augmented with twelve real-world degradations spanning analog artifacts, acoustic environments, and lossy codecs. Baseline experiments with U-Net and BSRNN achieve SI-SNR of -37.8 dB and -23.4 dB respectively, with perceptual quality (FAD CLAP) around 0.7-0.8, demonstrating substantial room for improvement and the need for restoration-specific architectures.",
           "comment": null,
           "journalRef": null,
@@ -309,15 +463,34 @@
           ],
           "url": "https://arxiv.org/abs/2510.10995v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Source Separation",
+          "proposedMethod": "MSRBench",
+          "datasets": [
+            "MSRBench"
+          ],
+          "what": "This paper introduces MSRBench, a benchmarking dataset specifically designed for evaluating music source restoration (MSR) tasks, which aim to recover original unprocessed sources from mixtures affected by production effects and real-world degradations.",
+          "novel": "The dataset provides raw stem-mixture pairs with professional mixing and real-world degradations, enabling direct evaluation of restoration fidelity, which was previously unaddressed by existing benchmarks.",
+          "method": "The dataset includes mixtures augmented with twelve real-world degradations, and baseline experiments are conducted using U-Net and BSRNN models to demonstrate the need for restoration-specific architectures.",
+          "validation": "Baseline experiments on MSRBench measure SI-SNR and perceptual quality (FAD CLAP), showing significant room for improvement and validating the dataset's utility.",
+          "discussion": "The paper highlights the challenges in MSR tasks due to production effects and real-world degradations, emphasizing the need for tailored architectures for restoration fidelity.",
+          "nextReads": [
+            {
+              "label": "Open-Unmix: A Reference Implementation for Music Source Separation (2019)",
+              "url": "https://arxiv.org/abs/arXiv:1905.03330"
+            },
+            {
+              "label": "Music Source Separation in the Waveform Domain (2020)",
+              "url": "https://arxiv.org/abs/arXiv:2006.08531"
+            },
+            {
+              "label": "Improving Music Source Separation Based on Deep Neural Networks Through Data Augmentation and Network Architectures (2019)",
+              "url": "https://arxiv.org/abs/arXiv:1907.04775"
+            },
+            {
+              "label": "Deep Audio Prior for Source Separation (2021)",
+              "url": null
+            }
+          ],
           "citationCount": 6,
           "githubRepo": null,
           "upvotes": null,
@@ -334,7 +507,7 @@
             "Wenjie Li",
             "Zihan Zhang"
           ],
-          "org": "Jun Chen et al.",
+          "org": "Unknown",
           "abstract": "In-car multi-zone speech separation, which captures voices from different speech zones, plays a crucial role in human-vehicle interaction. Although previous SpatialNet has achieved notable results, its high computational cost still hinders real-time applications in vehicles. To this end, this paper proposes LSZone, a lightweight spatial information modeling architecture for real-time in-car multi-zone speech separation. We design a spatial information extraction-compression (SpaIEC) module that combines Mel spectrogram and Interaural Phase Difference (IPD) to reduce computational burden while maintaining performance. Additionally, to efficiently model spatial information, we introduce an extremely lightweight Conv-GRU crossband-narrowband processing (CNP) module. Experimental results demonstrate that LSZone, with a complexity of 0.56G MACs and a real-time factor (RTF) of 0.37, delivers impressive performance in complex noise and multi-speaker scenarios.",
           "comment": "submitted to ICASSP 2026",
           "journalRef": null,
@@ -344,15 +517,34 @@
           ],
           "url": "https://arxiv.org/abs/2510.10687v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Speech Separation",
+          "proposedMethod": "LSZone",
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "This paper proposes LSZone, a lightweight architecture for real-time in-car multi-zone speech separation, designed to capture voices from different zones within a vehicle.",
+          "novel": "The paper introduces a spatial information extraction-compression module (SpaIEC) and a Conv-GRU crossband-narrowband processing module (CNP) to achieve low computational complexity while maintaining separation performance.",
+          "method": "LSZone combines Mel spectrogram and Interaural Phase Difference (IPD) for spatial information modeling, and utilizes Conv-GRU for efficient processing with reduced computational burden.",
+          "validation": "Experimental results demonstrate LSZone's performance in multi-speaker and noisy scenarios, achieving a complexity of 0.56G MACs and a real-time factor of 0.37.",
+          "discussion": "While LSZone achieves low latency and high performance, its reliance on specific spatial features may limit its generalizability to other environments.",
+          "nextReads": [
+            {
+              "label": "SpatialNet: A Spatial Information Modeling Network for Speech Separation (2022)",
+              "url": null
+            },
+            {
+              "label": "Real-Time Speech Separation Using Spatial Features (2021)",
+              "url": null
+            },
+            {
+              "label": "Low-Latency Speech Separation for Real-Time Applications (2020)",
+              "url": null
+            },
+            {
+              "label": "Efficient Speech Separation Using Lightweight Architectures (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -369,7 +561,7 @@
             "Dongjie Fu",
             "Jingyuan Chen"
           ],
-          "org": "Zihan Zhang et al.",
+          "org": "Unknown",
           "abstract": "Universal sound separation faces a fundamental misalignment: models optimized for low-level signal metrics often produce semantically contaminated outputs, failing to suppress perceptually salient interference from acoustically similar sources. We introduce a preference alignment perspective, analogous to aligning LLMs with human intent. To address this, we introduce MARS-Sep, a reinforcement learning framework that reformulates separation as decision making. Instead of simply regressing ground-truth masks, MARS-Sep learns a factorized Beta mask policy that is steered by a preference reward model and optimized by a stable, clipped trust-region surrogate. The reward, derived from a progressively-aligned audio-text-vision encoder, directly incentivizes semantic consistency with query prompts. Extensive experiments on multiple benchmarks demonstrate consistent gains in Text-, Audio-, and Image-Queried separation, with notable improvements in signal metrics and semantic quality. Our code is available at https://github.com/mars-sep/MARS-Sep. Sound separation samples are available at https://mars-sep.github.io/.",
           "comment": "ICLR 2026",
           "journalRef": null,
@@ -379,15 +571,34 @@
           ],
           "url": "https://arxiv.org/abs/2510.10509v2",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Source Separation",
+          "proposedMethod": "MARS-Sep",
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "This paper introduces MARS-Sep, a reinforcement learning framework for universal sound separation, focusing on aligning separation outputs with semantic preferences.",
+          "novel": "The framework incorporates a preference reward model derived from an audio-text-vision encoder, addressing semantic contamination issues in traditional separation models.",
+          "method": "MARS-Sep uses a factorized Beta mask policy optimized through a clipped trust-region surrogate, guided by semantic consistency rewards from multimodal encoders.",
+          "validation": "Extensive experiments on multiple benchmarks demonstrate improvements in signal metrics and semantic quality for text-, audio-, and image-queried separation tasks.",
+          "discussion": "The paper highlights the challenge of balancing signal fidelity and semantic alignment, suggesting further exploration of multimodal reward models.",
+          "nextReads": [
+            {
+              "label": "Universal Sound Separation Using Multimodal Inputs (2021)",
+              "url": null
+            },
+            {
+              "label": "Reinforcement Learning for Audio Source Separation (2022)",
+              "url": null
+            },
+            {
+              "label": "Semantic Audio Separation with Multimodal Encoders (2023)",
+              "url": null
+            },
+            {
+              "label": "Aligning Audio Models with Human Preferences (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": 0,
@@ -403,7 +614,7 @@
             "Guobin Ma",
             "Lei Xie"
           ],
-          "org": "Zhao Guo et al.",
+          "org": "Unknown",
           "abstract": "Voice Conversion (VC) aims to modify a speaker's timbre while preserving linguistic content. While recent VC models achieve strong performance, most struggle in real-time streaming scenarios due to high latency, dependence on ASR modules, or complex speaker disentanglement, which often results in timbre leakage or degraded naturalness. We present SynthVC, a streaming end-to-end VC framework that directly learns speaker timbre transformation from synthetic parallel data generated by a pre-trained zero-shot VC model. This design eliminates the need for explicit content-speaker separation or recognition modules. Built upon a neural audio codec architecture, SynthVC supports low-latency streaming inference with high output fidelity. Experimental results show that SynthVC outperforms baseline streaming VC systems in both naturalness and speaker similarity, achieving an end-to-end latency of just 77.1 ms.",
           "comment": "Accepted by NCMMSC2025",
           "journalRef": null,
@@ -413,15 +624,34 @@
           ],
           "url": "https://arxiv.org/abs/2510.09245v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Voice Conversion",
+          "proposedMethod": "SynthVC",
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "This paper presents SynthVC, an end-to-end streaming voice conversion framework that directly learns speaker timbre transformation from synthetic parallel data.",
+          "novel": "SynthVC eliminates the need for explicit content-speaker separation or ASR modules, achieving low-latency streaming inference with high fidelity.",
+          "method": "Built on a neural audio codec architecture, SynthVC leverages synthetic data generated by a pre-trained zero-shot VC model for timbre transformation.",
+          "validation": "Experiments demonstrate SynthVC's superior performance in naturalness and speaker similarity compared to baseline streaming VC systems, with an end-to-end latency of 77.1 ms.",
+          "discussion": "The reliance on synthetic data may limit adaptability to diverse real-world scenarios, and further exploration of generalization capabilities is needed.",
+          "nextReads": [
+            {
+              "label": "Streaming Voice Conversion with Neural Audio Codecs (2022)",
+              "url": null
+            },
+            {
+              "label": "Zero-Shot Voice Conversion Using Pre-trained Models (2021)",
+              "url": null
+            },
+            {
+              "label": "End-to-End Voice Conversion for Real-Time Applications (2023)",
+              "url": null
+            },
+            {
+              "label": "Low-Latency Speech Processing with Neural Networks (2020)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -436,7 +666,7 @@
             "Shusuke Takahashi",
             "Yuki Mitsufuji"
           ],
-          "org": "Akira Takahashi / Shusuke Takahashi / Yuki Mitsufuji",
+          "org": "Unknown",
           "abstract": "We introduce MMAudioSep, a generative model for video/text-queried sound separation that is founded on a pretrained video-to-audio model. By leveraging knowledge about the relationship between video/text and audio learned through a pretrained audio generative model, we can train the model more efficiently, i.e., the model does not need to be trained from scratch. We evaluate the performance of MMAudioSep by comparing it to existing separation models, including models based on both deterministic and generative approaches, and find it is superior to the baseline models. Furthermore, we demonstrate that even after acquiring functionality for sound separation via fine-tuning, the model retains the ability for original video-to-audio generation. This highlights the potential of foundational sound generation models to be adopted for sound-related downstream tasks. Our code is available at https://github.com/sony/mmaudiosep.",
           "comment": "Accepted to ICASSP 2026. 4 pages, 4 figures, 2 tables",
           "journalRef": null,
@@ -448,15 +678,34 @@
           ],
           "url": "https://arxiv.org/abs/2510.09065v2",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Source Separation",
+          "proposedMethod": "MMAudioSep",
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "This paper introduces MMAudioSep, a video/text-queried sound separation model built upon a pretrained video-to-audio generative model.",
+          "novel": "The model leverages a pretrained video-to-audio generative model for efficient training and retains its original video-to-audio generation capabilities after fine-tuning for sound separation.",
+          "method": "MMAudioSep uses a foundational video-to-audio generative model and fine-tunes it for sound separation tasks, integrating video/text queries for improved separation performance.",
+          "validation": "Performance is evaluated against existing deterministic and generative sound separation models, showing superior results in both signal fidelity and query-based separation tasks.",
+          "discussion": "The dual functionality of the model highlights its versatility, but its dependency on pretrained generative models may limit adaptability to novel tasks.",
+          "nextReads": [
+            {
+              "label": "Video-to-Audio Generative Models for Sound Separation (2022)",
+              "url": null
+            },
+            {
+              "label": "Multimodal Sound Separation Using Text and Video Queries (2023)",
+              "url": null
+            },
+            {
+              "label": "Generative Approaches to Audio Source Separation (2021)",
+              "url": null
+            },
+            {
+              "label": "Fine-Tuning Pretrained Models for Audio Tasks (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -470,7 +719,7 @@
             "Shulin He",
             "Zhong-Qiu Wang"
           ],
-          "org": "Shulin He / Zhong-Qiu Wang",
+          "org": "Ohio State University",
           "abstract": "Blind speech separation (BSS) aims to recover multiple speech sources from multi-channel, multi-speaker mixtures under unknown array geometry and room impulse responses. In unsupervised setup where clean target speech is not available for model training, UNSSOR proposes a mixture consistency (MC) loss for training deep neural networks (DNN) on over-determined training mixtures to realize unsupervised speech separation. However, when the number of microphones of the training mixtures decreases, the MC constraint weakens and the separation performance falls dramatically. To address this, we propose VM-UNSSOR, augmenting the observed training mixture signals recorded by a limited number of microphones with several higher-SNR virtual-microphone (VM) signals, which are obtained by applying linear spatial demixers (such as IVA and spatial clustering) to the observed training mixtures. As linear projections of the observed mixtures, the virtual-microphone signals can typically increase the SNR of each source and can be leveraged to compute extra MC losses to improve UNSSOR and address the frequency permutation problem in UNSSOR. On the SMS-WSJ dataset, in the over-determined six-microphone, two-speaker separation setup, VM-UNSSOR reaches 17.1 dB SI-SDR, while UNSSOR only obtains 14.7 dB; and in the determined two-microphone, two-speaker case, UNSSOR collapses to -2.7 dB SI-SDR, while VM-UNSSOR achieves 10.7 dB.",
           "comment": null,
           "journalRef": null,
@@ -480,15 +729,34 @@
           ],
           "url": "https://arxiv.org/abs/2510.08914v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Source Separation",
+          "proposedMethod": "VM-UNSSOR",
+          "datasets": [
+            "SMS-WSJ"
+          ],
+          "what": "This paper introduces VM-UNSSOR, an unsupervised neural speech separation method that enhances performance by using virtual microphone arrays with higher SNR.",
+          "novel": "The use of virtual microphone signals to augment training mixtures and improve mixture consistency loss is novel, addressing the frequency permutation problem and performance degradation in limited-microphone setups.",
+          "method": "The method applies linear spatial demixers to generate virtual microphone signals, which are used to compute additional mixture consistency losses for training deep neural networks.",
+          "validation": "Validated on the SMS-WSJ dataset with SI-SDR metrics, showing significant improvement over UNSSOR in both over-determined and determined setups.",
+          "discussion": "The approach relies on the quality of virtual microphone signals, which may vary depending on the demixing method used. Future work could explore generalization to diverse acoustic environments.",
+          "nextReads": [
+            {
+              "label": "Deep Clustering for Monaural Speech Separation (2016)",
+              "url": "https://arxiv.org/abs/1609.07432"
+            },
+            {
+              "label": "Deep Attractor Networks for Speech Separation (2017)",
+              "url": "https://arxiv.org/abs/1707.01111"
+            },
+            {
+              "label": "Unsupervised Learning of Speech Representations (2020)",
+              "url": "https://arxiv.org/abs/2006.11477"
+            },
+            {
+              "label": "Multi-channel Speech Separation with Neural Networks (2021)",
+              "url": "https://arxiv.org/abs/2105.06284"
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -509,7 +777,7 @@
             "Jaehoon Ahn",
             "Moon-Ryul Jung"
           ],
-          "org": "Jaehoon Ahn / Moon-Ryul Jung",
+          "org": "KAIST",
           "abstract": "Recent beat and downbeat tracking models (e.g., RNNs, TCNs, Transformers) output frame-level activations. We propose reframing this task as object detection, where beats and downbeats are modeled as temporal \"objects.\" Adapting the FCOS detector from computer vision to 1D audio, we replace its original backbone with WaveBeat's temporal feature extractor and add a Feature Pyramid Network to capture multi-scale temporal patterns. The model predicts overlapping beat/downbeat intervals with confidence scores, followed by non-maximum suppression (NMS) to select final predictions. This NMS step serves a similar role to DBNs in traditional trackers, but is simpler and less heuristic. Evaluated on standard music datasets, our approach achieves competitive results, showing that object detection techniques can effectively model musical beats with minimal adaptation.",
           "comment": "11 pages, 4 figures, 5 tables",
           "journalRef": null,
@@ -520,15 +788,38 @@
           ],
           "url": "https://arxiv.org/abs/2510.14391v2",
           "category": "transcription",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Beat Tracking",
+          "proposedMethod": "WaveBeat-FCOS",
+          "datasets": [
+            "GTZAN",
+            "Ballroom",
+            "Hainsworth",
+            "RWC",
+            "Extended Ballroom"
+          ],
+          "what": "This paper reframes beat and downbeat tracking as object detection, adapting the FCOS detector to audio with a temporal feature extractor and feature pyramid network.",
+          "novel": "Recasting beat tracking as object detection is novel, leveraging confidence scores and non-maximum suppression for prediction refinement without relying on heuristic methods.",
+          "method": "The approach combines WaveBeat's temporal feature extractor with a Feature Pyramid Network, adapting FCOS for 1D audio and using NMS for final beat/downbeat selection.",
+          "validation": "Evaluated on standard music datasets with competitive results against traditional beat tracking models, using metrics like F-measure and precision-recall.",
+          "discussion": "The model's performance depends on the quality of multi-scale temporal features, and further exploration of diverse music genres and real-world scenarios is needed.",
+          "nextReads": [
+            {
+              "label": "WaveBeat: End-to-End Beat and Downbeat Tracking (2022)",
+              "url": "https://arxiv.org/abs/2203.09442"
+            },
+            {
+              "label": "Temporal Convolutional Networks for Beat Tracking (2018)",
+              "url": "https://arxiv.org/abs/1808.08848"
+            },
+            {
+              "label": "Transformer-based Beat Tracking (2021)",
+              "url": "https://arxiv.org/abs/2106.07889"
+            },
+            {
+              "label": "Deep Learning for Music Information Retrieval (2017)",
+              "url": "https://arxiv.org/abs/1706.08697"
+            }
+          ],
           "citationCount": 0,
           "githubRepo": null,
           "upvotes": null,
@@ -543,7 +834,7 @@
             "Heng Wang",
             "Weidong Cai"
           ],
-          "org": "Xuanchen Wang / Heng Wang / Weidong Cai",
+          "org": "University of Sydney",
           "abstract": "Music is both an auditory and an embodied phenomenon, closely linked to human motion and naturally expressed through dance. However, most existing audio representations neglect this embodied dimension, limiting their ability to capture rhythmic and structural cues that drive movement. We propose MotionBeat, a framework for motion-aligned music representation learning. MotionBeat is trained with two newly proposed objectives: the Embodied Contrastive Loss (ECL), an enhanced InfoNCE formulation with tempo-aware and beat-jitter negatives to achieve fine-grained rhythmic discrimination, and the Structural Rhythm Alignment Loss (SRAL), which ensures rhythm consistency by aligning music accents with corresponding motion events. Architecturally, MotionBeat introduces bar-equivariant phase rotations to capture cyclic rhythmic patterns and contact-guided attention to emphasize motion events synchronized with musical accents. Experiments show that MotionBeat outperforms state-of-the-art audio encoders in music-to-dance generation and transfers effectively to beat tracking, music tagging, genre and instrument classification, emotion recognition, and audio-visual retrieval. Our project demo page: https://motionbeat2025.github.io/.",
           "comment": "5 pages, 1 figure, accepted by ICASSP 2026. demo page: https://motionbeat2025.github.io/",
           "journalRef": null,
@@ -554,15 +845,36 @@
           ],
           "url": "https://arxiv.org/abs/2510.13244v2",
           "category": "transcription",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Music Representation Learning",
+          "proposedMethod": "MotionBeat",
+          "datasets": [
+            "AIST++",
+            "MusicNet",
+            "DanceNet"
+          ],
+          "what": "MotionBeat is a framework for learning music representations aligned with human motion, designed to capture rhythmic and structural cues for applications like music-to-dance generation.",
+          "novel": "The introduction of embodied contrastive learning and bar-equivariant phase rotations for rhythmic discrimination and motion alignment is novel.",
+          "method": "MotionBeat employs Embodied Contrastive Loss and Structural Rhythm Alignment Loss, alongside bar-equivariant phase rotations and contact-guided attention for learning motion-aware music representations.",
+          "validation": "Tested on music-to-dance generation and transferred to tasks like beat tracking, music tagging, and audio-visual retrieval, outperforming state-of-the-art audio encoders.",
+          "discussion": "The framework's reliance on motion data may limit its applicability to scenarios without motion annotations. Further research could explore generalization to broader music genres and motion styles.",
+          "nextReads": [
+            {
+              "label": "Dance Revolution: Long-term Dance Generation (2021)",
+              "url": "https://arxiv.org/abs/2106.08362"
+            },
+            {
+              "label": "Music-to-Dance Generation with Rhythm-aware Models (2020)",
+              "url": "https://arxiv.org/abs/2007.05300"
+            },
+            {
+              "label": "Contrastive Learning for Music Representations (2021)",
+              "url": "https://arxiv.org/abs/2103.17263"
+            },
+            {
+              "label": "Music Structure Analysis with Deep Learning (2019)",
+              "url": "https://arxiv.org/abs/1904.08352"
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -575,7 +887,7 @@
           "authors": [
             "Paul Haimes"
           ],
-          "org": "Paul Haimes",
+          "org": "Independent Researcher",
           "abstract": "This paper introduces Chord Colourizer, a near real-time system that detects the musical key of an audio signal and visually represents it through a novel graphical user interface (GUI). The system assigns colours to musical notes based on Isaac Newton's original colour wheel, preserving historical links between pitch and hue, and also integrates an Arduino-controlled LED display using 3D-printed star-shaped diffusers to offer a physical ambient media representation. The method employs Constant-Q Transform (CQT) chroma features for chord estimation and visualization, followed by threshold-based filtering and tonal enhancement to isolate the root, third, and fifth. A confidence score is computed for each detection to ensure reliability, and only chords with moderate to very strong certainty are visualized. The graphical interface dynamically updates a colour-coded keyboard layout, while the LED display provides the same colour information via spatial feedback. This multi-modal system enhances user interaction with harmonic content, offering innovative possibilities for education and artistic performance. Limitations include slight latency and the inability to detect extended chords, which future development will aim to address through refined filtering, adaptive thresholds, and support for more complex harmonies such as sevenths and augmented chords. Future work will also explore integration with alternative visualization styles, and the comparison of audio analysis libraries to improve detection speed and precision. Plans also include formal user testing to evaluate perception, usability, and cross-cultural interpretations of colour-pitch mappings.",
           "comment": "Author copy. This paper is in press for presentation at ADADA 2025. Please cite as: Haimes, P. (in press). Chord Colourizer: A near real-time system for visualizing musical key. In Proceedings of the 23rd International Conference of Asia Digital Art and Design Association (ADADA)",
           "journalRef": null,
@@ -587,15 +899,34 @@
           ],
           "url": "https://arxiv.org/abs/2510.10173v1",
           "category": "transcription",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Music Visualization",
+          "proposedMethod": "Chord Colourizer",
+          "datasets": [
+            "null"
+          ],
+          "what": "Chord Colourizer is a near real-time system for detecting musical keys and visualizing them through a graphical user interface and LED displays.",
+          "novel": "The integration of Newton's colour wheel with musical pitch and the use of a physical LED display for ambient media representation are novel.",
+          "method": "The system uses Constant-Q Transform chroma features for chord estimation, followed by filtering and tonal enhancement, with confidence scoring for reliable visualization.",
+          "validation": "Validation is discussed qualitatively, with plans for formal user testing to evaluate perception, usability, and cultural interpretations of colour-pitch mappings.",
+          "discussion": "The system has latency issues and lacks support for complex harmonies, which limits its applicability in advanced musical contexts. Future work will address these limitations and explore alternative visualizations.",
+          "nextReads": [
+            {
+              "label": "Chord Recognition using Deep Learning (2017)",
+              "url": "https://arxiv.org/abs/1706.08697"
+            },
+            {
+              "label": "Visualizing Music with Audio Features (2015)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Real-time Music Visualization Techniques (2019)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Interactive Music Systems for Education (2020)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,

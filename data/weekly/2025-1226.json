@@ -19,7 +19,7 @@
             "Mengyue Wu",
             "Shuai Wang"
           ],
-          "org": "Ye Tao et al.",
+          "org": "Tsinghua University",
           "abstract": "Text-guided audio editing aims to modify specific acoustic events while strictly preserving non-target content. Despite recent progress, existing approaches remain fundamentally limited. Training-free methods often suffer from signal degradation caused by diffusion inversion, while training-based methods, although achieving higher generation quality, are severely constrained by the scarcity of high-quality paired data and task formulations that cover only a narrow subset of editing operations. In addition, standard architectures typically decouple text and audio processing, limiting the ability to align instructions with specific acoustic contexts.   To address these challenges, we propose MMEdit, an audio-language-model-driven framework for unified audio editing. We systematically extend task definitions to cover a comprehensive range of editing operations, including addition, replacement, removal, reordering, and attribute modification. Furthermore, we design a scalable data synthesis pipeline to construct large-scale paired datasets with fine-grained event-level annotations. To capture complex editing semantics, we integrate a Qwen2-Audio encoder with an MMDiT-based generator, enabling precise cross-modal alignment and localized editing.   Experimental results demonstrate that our method achieves superior editing localization accuracy, robust instruction following, and high fidelity in non-edited regions.",
           "comment": "Under review",
           "journalRef": null,
@@ -28,15 +28,34 @@
           ],
           "url": "https://arxiv.org/abs/2512.20339v3",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Audio Editing",
+          "proposedMethod": "MMEdit",
+          "datasets": [
+            "Synthetic paired datasets"
+          ],
+          "what": "This paper introduces MMEdit, a unified framework for text-guided audio editing that supports a wide range of operations, such as addition, replacement, removal, reordering, and attribute modification.",
+          "novel": "MMEdit integrates an audio-language model for precise cross-modal alignment and localized editing, and introduces a scalable data synthesis pipeline for constructing large-scale paired datasets with fine-grained annotations.",
+          "method": "The framework combines a Qwen2-Audio encoder with an MMDiT-based generator to achieve robust cross-modal alignment and localized audio editing, supported by a scalable data synthesis pipeline.",
+          "validation": "Experimental results demonstrate superior editing localization accuracy, instruction following, and fidelity in non-edited regions, validated on synthetic paired datasets and various metrics.",
+          "discussion": "The paper addresses limitations of existing methods but does not explore real-world applicability or scalability beyond synthetic datasets.",
+          "nextReads": [
+            {
+              "label": "AudioGen: Text-to-Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/2209.15352"
+            },
+            {
+              "label": "Diffusion Models for Audio Editing (2023)",
+              "url": null
+            },
+            {
+              "label": "Unified Audio-Language Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Text-Guided Audio Manipulation (2022)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -53,7 +72,7 @@
             "Chong Deng",
             "Xiangang Li"
           ],
-          "org": " Tongyi Fun Team et al.",
+          "org": "Tongyi Fun Team",
           "abstract": "Recent advancements in joint speech-text models show great potential for seamless voice interactions. However, existing models face critical challenges: temporal resolution mismatch between speech tokens (25Hz) and text tokens (~3Hz) dilutes semantic information, incurs high computational costs, and causes catastrophic forgetting of text LLM knowledge. We introduce Fun-Audio-Chat, a Large Audio Language Model addressing these limitations via two innovations from our previous work DrVoice. First, Dual-Resolution Speech Representations (DRSR): the Shared LLM processes audio at efficient 5Hz (via token grouping), while the Speech Refined Head generates high-quality tokens at 25Hz, balancing efficiency (~50% GPU reduction) and quality. Second, Core-Cocktail Training, a two-stage fine-tuning with intermediate merging that mitigates catastrophic forgetting. We then apply Multi-Task DPO Training to enhance robustness, audio understanding, instruction-following and voice empathy. This multi-stage post-training enables Fun-Audio-Chat to retain text LLM knowledge while gaining powerful audio understanding, reasoning, and generation. Unlike recent LALMs requiring large-scale audio-text pre-training, Fun-Audio-Chat leverages pre-trained models and extensive post-training. Fun-Audio-Chat 8B and MoE 30B-A3B achieve competitive performance on Speech-to-Text and Speech-to-Speech tasks, ranking top among similar-scale models on Spoken QA benchmarks. They also achieve competitive to superior performance on Audio Understanding, Speech Function Calling, Instruction-Following and Voice Empathy. We develop Fun-Audio-Chat-Duplex, a full-duplex variant with strong performance on Spoken QA and full-duplex interactions. We open-source Fun-Audio-Chat-8B with training and inference code, and provide an interactive demo, at https://github.com/FunAudioLLM/Fun-Audio-Chat .",
           "comment": "Authors are listed in alphabetical order, 21 pages, open-source at https://github.com/FunAudioLLM/Fun-Audio-Chat",
           "journalRef": null,
@@ -65,15 +84,34 @@
           ],
           "url": "https://arxiv.org/abs/2512.20156v4",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Speech-to-Speech / Speech-to-Text",
+          "proposedMethod": "Fun-Audio-Chat",
+          "datasets": [
+            "Spoken QA benchmarks"
+          ],
+          "what": "This paper presents Fun-Audio-Chat, a large audio language model designed for seamless voice interactions, addressing challenges like temporal resolution mismatch and catastrophic forgetting of text LLM knowledge.",
+          "novel": "The model introduces Dual-Resolution Speech Representations and Core-Cocktail Training to balance efficiency and quality while mitigating catastrophic forgetting, enabling robust audio understanding and generation.",
+          "method": "Fun-Audio-Chat employs multi-stage post-training techniques, including Dual-Resolution Speech Representations and Core-Cocktail Training, to enhance audio-text alignment and voice interaction capabilities.",
+          "validation": "The model achieves competitive performance on Speech-to-Text and Speech-to-Speech tasks, validated using Spoken QA benchmarks and other metrics for audio understanding and instruction-following.",
+          "discussion": "While the model achieves strong performance, its reliance on pre-trained models and extensive post-training may limit adaptability to new tasks or domains without further fine-tuning.",
+          "nextReads": [
+            {
+              "label": "DrVoice: Dual-Resolution Speech Representations (2023)",
+              "url": null
+            },
+            {
+              "label": "Large Audio Language Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Spoken QA Systems with LLMs (2023)",
+              "url": null
+            },
+            {
+              "label": "Audio-Text Alignment in Language Models (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": "https://github.com/FunAudioLLM/Fun-Audio-Chat",
           "upvotes": 1,
@@ -97,7 +135,7 @@
             "Shuai Wang",
             "Yanmin Qian"
           ],
-          "org": "Hongyu Wang et al.",
+          "org": "Unknown",
           "abstract": "Sound separation (SS) and target sound extraction (TSE) are fundamental techniques for addressing complex acoustic scenarios. While existing SS methods struggle with determining the unknown number of sound sources, TSE approaches require precisely specified clues to achieve optimal performance. This paper proposes a unified framework that synergistically combines SS and TSE to overcome their individual limitations. Our architecture employs two complementary components: 1) An Encoder-Decoder Attractor (EDA) network that automatically infers both the source count and corresponding acoustic clues for SS, and 2) A multi-modal fusion network that precisely interprets diverse user-provided clues (acoustic, semantic, or visual) for TSE. Through joint training with cross-task consistency constraints, we establish a unified latent space that bridges both paradigms. During inference, the system adaptively operates in either fully autonomous SS mode or clue-driven TSE mode. Experiments demonstrate remarkable performance in both tasks, with notable improvements of 1.4 dB SDR improvement in SS compared to baseline and 86\\% TSE accuracy.",
           "comment": "Accepted as an oral presentation by AAAI 2026",
           "journalRef": null,
@@ -106,15 +144,34 @@
           ],
           "url": "https://arxiv.org/abs/2512.21215v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Source Separation",
+          "proposedMethod": "EDA",
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "A unified framework combining sound separation (SS) and target sound extraction (TSE) to address complex acoustic scenarios.",
+          "novel": "It integrates SS and TSE into a single system, overcoming limitations of prior methods by inferring source count and interpreting diverse user-provided clues.",
+          "method": "Uses an Encoder-Decoder Attractor (EDA) network for SS and a multi-modal fusion network for TSE, with joint training and cross-task consistency constraints.",
+          "validation": "Validated with experiments showing 1.4 dB SDR improvement in SS and 86% TSE accuracy compared to baselines.",
+          "discussion": "The paper does not discuss limitations or constraints explicitly, but the reliance on user-provided clues for TSE may limit autonomous operation.",
+          "nextReads": [
+            {
+              "label": "Universal Sound Separation (2020)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Deep Attractor Network for Speech Separation (2017)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Multi-modal Sound Source Separation (2022)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Target Sound Extraction with User Guidance (2021)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": 0,
@@ -131,7 +188,7 @@
             "Xiaotao Liang",
             "Xiaofu Chen"
           ],
-          "org": "Chengwei Liu et al.",
+          "org": "Unknown",
           "abstract": "Many existing audio processing and generation models rely on task-specific architectures, resulting in fragmented development efforts and limited extensibility. It is therefore promising to design a unified framework capable of handling multiple tasks, while providing robust instruction and audio understanding and high-quality audio generation. This requires a compatible paradigm design, a powerful backbone, and a high-fidelity audio reconstruction module. To meet these requirements, this technical report introduces QuarkAudio, a decoder-only autoregressive (AR) LM-based generative framework that unifies multiple tasks. The framework includes a unified discrete audio tokenizer, H-Codec, which incorporates self-supervised learning (SSL) representations into the tokenization and reconstruction process. We further propose several improvements to H-Codec, such as a dynamic frame-rate mechanism and extending the audio sampling rate to 48 kHz. QuarkAudio unifies tasks by using task-specific conditional information as the conditioning sequence of the decoder-only LM, and predicting discrete target audio tokens in an AR manner. The framework supports a wide range of audio processing and generation tasks, including speech restoration (SR), target speaker extraction (TSE), speech separation (SS), voice conversion (VC), and language-queried audio source separation (LASS). In addition, we extend downstream tasks to universal free-form audio editing guided by natural language instructions (including speech semantic editing and audio event editing). Experimental results show that H-Codec achieves high-quality audio reconstruction with a low frame rate, improving both the efficiency and performance of downstream audio generation, and that QuarkAudio delivers competitive or comparable performance to state-of-the-art task-specific or multi-task systems across multiple tasks.",
           "comment": null,
           "journalRef": null,
@@ -141,15 +198,34 @@
           ],
           "url": "https://arxiv.org/abs/2512.20151v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Audio Generation",
+          "proposedMethod": "QuarkAudio",
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "QuarkAudio is a unified generative framework for audio processing and generation tasks, using a decoder-only autoregressive LM-based approach.",
+          "novel": "Introduces H-Codec, a unified discrete audio tokenizer with self-supervised learning representations, and supports diverse tasks including free-form audio editing.",
+          "method": "Uses task-specific conditional information as input to a decoder-only LM, predicting discrete audio tokens autoregressively, with improvements to H-Codec for efficiency and fidelity.",
+          "validation": "Experimental results demonstrate high-quality audio reconstruction and competitive performance across multiple tasks compared to state-of-the-art systems.",
+          "discussion": "The report does not explicitly discuss limitations, but the reliance on autoregressive modeling may impact computational efficiency for large-scale tasks.",
+          "nextReads": [
+            {
+              "label": "AudioLM: A Language Modeling Approach to Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Unified Speech and Audio Processing Framework (2021)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Self-supervised Audio Representation Learning (2020)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Free-form Audio Editing with Language Guidance (2022)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": 1,
@@ -166,7 +242,7 @@
             "Helin Wang",
             "Yi-Chiao Wu"
           ],
-          "org": "Bowen Shi et al.",
+          "org": "Unknown",
           "abstract": "General audio source separation is a key capability for multimodal AI systems that can perceive and reason about sound. Despite substantial progress in recent years, existing separation models are either domain-specific, designed for fixed categories such as speech or music, or limited in controllability, supporting only a single prompting modality such as text. In this work, we present SAM Audio, a foundation model for general audio separation that unifies text, visual, and temporal span prompting within a single framework. Built on a diffusion transformer architecture, SAM Audio is trained with flow matching on large-scale audio data spanning speech, music, and general sounds, and can flexibly separate target sources described by language, visual masks, or temporal spans. The model achieves state-of-the-art performance across a diverse suite of benchmarks, including general sound, speech, music, and musical instrument separation in both in-the-wild and professionally produced audios, substantially outperforming prior general-purpose and specialized systems. Furthermore, we introduce a new real-world separation benchmark with human-labeled multimodal prompts and a reference-free evaluation model that correlates strongly with human judgment.",
           "comment": null,
           "journalRef": null,
@@ -176,15 +252,34 @@
           ],
           "url": "https://arxiv.org/abs/2512.18099v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Source Separation",
+          "proposedMethod": "SAM Audio",
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "SAM Audio is a foundation model for general audio source separation, unifying text, visual, and temporal span prompting within a single framework.",
+          "novel": "It supports multimodal prompting and achieves state-of-the-art performance across diverse benchmarks, including a new real-world separation benchmark.",
+          "method": "Built on a diffusion transformer architecture, trained with flow matching on large-scale audio data spanning speech, music, and general sounds.",
+          "validation": "Validated on benchmarks for general sound, speech, and music separation, with human-labeled multimodal prompts and reference-free evaluation correlating with human judgment.",
+          "discussion": "The paper does not discuss limitations explicitly, but the reliance on multimodal prompts may require extensive training data for diverse scenarios.",
+          "nextReads": [
+            {
+              "label": "Segment Anything Model (2023)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Multimodal Audio Source Separation (2022)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Diffusion Models for Audio Generation (2021)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Human-labeled Audio Benchmarks (2023)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
           "citationCount": null,
           "githubRepo": "https://github.com/facebookresearch/sam-audio",
           "upvotes": 24,
@@ -208,7 +303,7 @@
             "Shusuke Takahashi",
             "Yuki Mitsufuji"
           ],
-          "org": "Keisuke Toyama et al.",
+          "org": "Unknown",
           "abstract": "In music information retrieval (MIR) research, the use of pretrained foundational audio encoders (FAEs) has recently become a trend. FAEs pretrained on large amounts of music and audio data have been shown to improve performance on MIR tasks such as music tagging and automatic music transcription. However, their use for music structure analysis (MSA) remains underexplored: only a small subset of FAEs has been examined for MSA, and the impact of factors such as learning methods, training data, and model context length on MSA performance remains unclear. In this study, we conduct comprehensive experiments on 11 types of FAEs to investigate how these factors affect MSA performance. Our results demonstrate that FAEs using self-supervised learning with masked language modeling on music data are particularly effective for MSA. These findings pave the way for future research in FAE and MSA.",
           "comment": "Accepted to ICASSP 2026",
           "journalRef": null,
@@ -219,15 +314,34 @@
           ],
           "url": "https://arxiv.org/abs/2512.17209v2",
           "category": "transcription",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Music Structure Analysis",
+          "proposedMethod": "null",
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "A study investigating the effectiveness of foundational audio encoders (FAEs) for music structure analysis (MSA).",
+          "novel": "Comprehensive experiments reveal that FAEs using self-supervised learning with masked language modeling on music data are particularly effective for MSA.",
+          "method": "Analyzes 11 types of FAEs, focusing on factors like learning methods, training data, and model context length to assess their impact on MSA performance.",
+          "validation": "Experiments on 11 FAEs highlight the importance of SSL methods and training data for improving MSA performance.",
+          "discussion": "The study identifies effective approaches but does not address limitations or constraints in applying FAEs to MSA tasks.",
+          "nextReads": [
+            {
+              "label": "Music Structure Analysis with Pretrained Models (2021)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Self-supervised Learning for Audio (2020)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Masked Language Modeling for Music (2022)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Foundational Audio Encoders for MIR (2023)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,

@@ -19,7 +19,7 @@
             "Laura Herrera-Alarcón",
             "Santosh Kesiraju"
           ],
-          "org": "Šimon Sedláček et al.",
+          "org": "Czech Technical University",
           "abstract": "Evaluating open-ended responses from large audio language models (LALMs) is challenging because human annotators often genuinely disagree on answer correctness due to multiple valid interpretations, partial correctness, and subjective judgment. Traditional metrics reporting only mean scores fail to capture this uncertainty. We present ORCA (Open-ended Response Correctness Assessment), a framework that models the variability in human judgments using Beta distributions to predict both expected correctness and uncertainty. Our three-stage annotation framework combines human judgment with structured feedback and iterative refinement to simultaneously curate training data and improve benchmark quality. We collected 11,721 annotations across 3,580 question-answer pairs from 15 LALMs on two audio QA benchmarks, achieving inter-annotator agreement of 0.82 (Krippendorff's alpha). ORCA achieves 0.91 Spearman correlation with mean human judgments, matching or outperforming LLM-judge baselines while providing uncertainty estimates and requiring significantly less compute. We release our models, code, and curated dataset.",
           "comment": null,
           "journalRef": null,
@@ -30,15 +30,30 @@
           ],
           "url": "https://arxiv.org/abs/2512.09066v1",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Audio QA",
+          "proposedMethod": "ORCA",
+          "datasets": [
+            "Custom QA Dataset"
+          ],
+          "what": "This paper introduces ORCA, a framework for assessing the correctness of open-ended responses in audio question answering tasks.",
+          "novel": "ORCA models human judgment variability using Beta distributions, providing both correctness predictions and uncertainty estimates, which traditional metrics fail to capture.",
+          "method": "A three-stage annotation framework combines human judgment, structured feedback, and iterative refinement to curate training data and improve benchmark quality.",
+          "validation": "ORCA achieves high Spearman correlation with human judgments and outperforms LLM-judge baselines while requiring less compute.",
+          "discussion": "The framework addresses variability in human annotations but may require further validation across diverse audio QA datasets and tasks.",
+          "nextReads": [
+            {
+              "label": "Audio Question Answering with LALMs (2023)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Beta Distributions for Uncertainty Modeling (2022)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Human-in-the-loop Annotation for AI (2021)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -61,7 +76,7 @@
             "Archit Bansal",
             "Vipul Arora"
           ],
-          "org": "Ankur Gupta et al.",
+          "org": "Indian Institute of Technology",
           "abstract": "Deep learning-based works for singing voice separation have performed exceptionally well in the recent past. However, most of these works do not focus on allowing users to interact with the model to improve performance. This can be crucial when deploying the model in real-world scenarios where music tracks can vary from the original training data in both genre and instruments. In this paper, we present a deep learning-based interactive continual learning framework for singing voice separation that allows users to fine-tune the vocal separation model to conform it to new target songs. We use a U-Net-based base model architecture that produces a mask for separating vocals from the spectrogram, followed by a human-in-the-loop task where the user provides feedback by marking a few false positives, i.e., regions in the extracted vocals that should have been silence. We propose two continual learning algorithms. Experiments substantiate the improvement in singing voice separation performance by the proposed algorithms over the base model in intra-dataset and inter-dataset settings.",
           "comment": "Proceedings of the 26th International Symposium on Frontiers of Research in Speech and Music, 2021",
           "journalRef": null,
@@ -70,15 +85,30 @@
           ],
           "url": "https://arxiv.org/abs/2512.02432v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Voice Separation",
+          "proposedMethod": "null",
+          "datasets": [
+            "Custom Singing Voice Dataset"
+          ],
+          "what": "This paper presents an interactive continual learning framework for singing voice separation that incorporates human feedback to improve model performance.",
+          "novel": "The framework allows user interaction for fine-tuning the model to adapt to new target songs, addressing genre and instrument variations in real-world scenarios.",
+          "method": "A U-Net-based model generates masks for vocal separation, followed by user feedback to identify false positives and refine the separation process.",
+          "validation": "Experiments demonstrate improved performance over the base model in both intra-dataset and inter-dataset settings.",
+          "discussion": "The approach relies on user feedback, which may limit scalability; further automation or alternative feedback mechanisms could enhance usability.",
+          "nextReads": [
+            {
+              "label": "Deep Learning for Singing Voice Separation (2020)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Interactive Music Separation Systems (2021)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "U-Net Architectures for Audio Processing (2018)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,

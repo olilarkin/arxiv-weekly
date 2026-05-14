@@ -19,7 +19,7 @@
             "Helin Wang",
             "Thomas Thebaud"
           ],
-          "org": "Yen-Ju Lu et al.",
+          "org": "National Taiwan University",
           "abstract": "Recent audio language models can follow long conversations. However, research on emotion-aware or spoken dialogue summarization is constrained by the lack of data that links speech, summaries, and paralinguistic cues. We introduce Spoken DialogSum, the first corpus aligning raw conversational audio with factual summaries, emotion-rich summaries, and utterance-level labels for speaker age, gender, and emotion. The dataset is built in two stages: first, an LLM rewrites DialogSum scripts with Switchboard-style fillers and back-channels, then tags each utterance with emotion, pitch, and speaking rate. Second, an expressive TTS engine synthesizes speech from the tagged scripts, aligned with paralinguistic labels. Spoken DialogSum comprises 13,460 emotion-diverse dialogues, each paired with both a factual and an emotion-focused summary. We release an online demo at https://fatfat-emosum.github.io/EmoDialog-Sum-Audio-Samples/, with plans to release the full dataset in the near future. Baselines show that an Audio-LLM raises emotional-summary ROUGE-L by 28% relative to a cascaded ASR-LLM system, confirming the value of end-to-end speech modeling.",
           "comment": "12 pages, 2 figures",
           "journalRef": null,
@@ -31,15 +31,34 @@
           ],
           "url": "https://arxiv.org/abs/2512.14687v2",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Dialogue Summarization",
+          "proposedMethod": "Spoken DialogSum",
+          "datasets": [
+            "Spoken DialogSum"
+          ],
+          "what": "This paper introduces Spoken DialogSum, a dataset for emotion-rich spoken dialogue summarization, linking raw audio with summaries and paralinguistic cues.",
+          "novel": "It is the first dataset aligning conversational audio with both factual and emotion-rich summaries, as well as utterance-level paralinguistic labels.",
+          "method": "The dataset is created using rewritten DialogSum scripts with paralinguistic annotations and synthesized speech via an expressive TTS engine.",
+          "validation": "Baselines show improved emotional-summary ROUGE-L scores using an Audio-LLM compared to a cascaded ASR-LLM system, validating the dataset's utility.",
+          "discussion": "The dataset provides a valuable resource for emotion-aware dialogue summarization but requires further exploration of its applicability to real-world conversational audio.",
+          "nextReads": [
+            {
+              "label": "DialogSum: A Dataset for Dialogue Summarization (2021)",
+              "url": "https://arxiv.org/abs/2105.06283"
+            },
+            {
+              "label": "Emotion Recognition in Speech (2023)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Expressive TTS for Dialogue Applications (2022)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Audio-LLMs for Dialogue Summarization (2023)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -62,7 +81,7 @@
             "Lin Wang",
             "Mark Sandler"
           ],
-          "org": "Ken O'Hanlon et al.",
+          "org": "University College Dublin",
           "abstract": "In this paper we propose a conditioned UNet for Music Source Separation (MSS). MSS is generally performed by multi-output neural networks, typically UNets, with each output representing a particular stem from a predefined instrument vocabulary. In contrast, conditioned MSS networks accept an audio query related to a stem of interest alongside the signal from which that stem is to be extracted. Thus, a strict vocabulary is not required and this enables more realistic tasks in MSS. The potential of conditioned approaches for such tasks has been somewhat hidden due to a lack of suitable data, an issue recently addressed with the MoisesDb dataset. A recent method, Banquet, employs this dataset with promising results seen on larger vocabularies. Banquet uses Bandsplit RNN rather than a UNet and the authors state that UNets should not be suitable for conditioned MSS. We counter this argument and propose QSCNet, a novel conditioned UNet for MSS that integrates network conditioning elements in the Sparse Compressed Network for MSS. We find QSCNet to outperform Banquet by over 1dB SNR on a couple of MSS tasks, while using less than half the number of parameters.",
           "comment": null,
           "journalRef": "Proceedings of the 17th International Symposium on Computer Music Multidisciplinary Research (2025) 322-333",
@@ -74,15 +93,34 @@
           ],
           "url": "https://arxiv.org/abs/2512.15532v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Source Separation",
+          "proposedMethod": "QSCNet",
+          "datasets": [
+            "MoisesDb"
+          ],
+          "what": "This paper proposes a conditioned UNet for music source separation, which uses audio queries related to specific stems to extract them from a mixed signal without requiring a predefined instrument vocabulary.",
+          "novel": "The paper counters the argument that UNets are unsuitable for conditioned MSS and introduces QSCNet, which integrates conditioning elements into a Sparse Compressed Network, achieving superior performance over prior methods like Banquet.",
+          "method": "The method involves a conditioned UNet architecture that incorporates network conditioning elements within a Sparse Compressed Network for improved performance in music source separation tasks.",
+          "validation": "Validation is performed using the MoisesDb dataset, comparing QSCNet against Banquet, with QSCNet achieving over 1dB SNR improvement while using fewer parameters.",
+          "discussion": "The paper highlights the potential of conditioned MSS networks for tasks with larger vocabularies but does not address scalability to other datasets or real-world scenarios.",
+          "nextReads": [
+            {
+              "label": "Banquet: Bandsplit RNN for Music Source Separation (2023)",
+              "url": null
+            },
+            {
+              "label": "Music Source Separation Using Deep Learning (2020)",
+              "url": "https://arxiv.org/abs/2006.04204"
+            },
+            {
+              "label": "Open-Unmix - A Reference Implementation for Music Source Separation (2019)",
+              "url": "https://arxiv.org/abs/1909.08464"
+            },
+            {
+              "label": "Conditioned Source Separation for Music Instrument Extraction (2021)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -98,7 +136,7 @@
             "Joseph Razik",
             "Ricard Marxer"
           ],
-          "org": "Séverin Baroudi et al.",
+          "org": "IRIT, University of Toulouse",
           "abstract": "Self-supervised speech models such as wav2vec2.0 and WavLM have been shown to significantly improve the performance of many downstream speech tasks, especially in low-resource settings, over the past few years. Despite this, evaluations on tasks such as Speaker Diarization and Speech Separation remain limited. This paper investigates the quality of recent self-supervised speech representations on these two speaker identity-related tasks, highlighting gaps in the current literature that stem from limitations in the existing benchmarks, particularly the lack of diversity in evaluation datasets and variety in downstream systems associated to both diarization and separation.",
           "comment": "accepted at ASRU25",
           "journalRef": null,
@@ -107,15 +145,34 @@
           ],
           "url": "https://arxiv.org/abs/2512.15224v1",
           "category": "separation",
-          "task": null,
+          "task": "Speaker Diarization / Separation",
           "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "This paper investigates the performance of self-supervised speech models like wav2vec2.0 and WavLM on speaker diarization and speech separation tasks.",
+          "novel": "The study highlights gaps in current benchmarks, such as limited diversity in evaluation datasets and downstream systems, and provides insights into the quality of self-supervised speech representations for speaker identity-related tasks.",
+          "method": "The paper evaluates self-supervised speech representations on speaker diarization and separation tasks, focusing on their ability to handle diverse datasets and systems.",
+          "validation": "The authors analyze existing benchmarks and datasets, emphasizing the need for more diverse and representative evaluation frameworks for speaker-related tasks.",
+          "discussion": "The paper discusses the limitations of current benchmarks and the need for more diverse datasets to better evaluate self-supervised speech models on speaker-related tasks.",
+          "nextReads": [
+            {
+              "label": "wav2vec 2.0: A Framework for Self-Supervised Learning of Speech Representations (2020)",
+              "url": "https://arxiv.org/abs/2006.11477"
+            },
+            {
+              "label": "WavLM: Unified Pre-training for Speech Processing (2021)",
+              "url": "https://arxiv.org/abs/2110.13900"
+            },
+            {
+              "label": "Self-Supervised Learning for Speech Processing (2021)",
+              "url": "https://arxiv.org/abs/2103.01988"
+            },
+            {
+              "label": "Speaker Diarization with Self-Supervised Learning (2023)",
+              "url": null
+            }
+          ],
           "citationCount": 2,
           "githubRepo": null,
           "upvotes": null,
@@ -137,7 +194,7 @@
             "Patricia Hu",
             "Gerhard Widmer"
           ],
-          "org": "Lukáš Samuel Marták / Patricia Hu / Gerhard Widmer",
+          "org": "Johannes Kepler University Linz",
           "abstract": "Automatic Music Transcription (AMT) -- the task of converting music audio into note representations -- has seen rapid progress, driven largely by deep learning systems. Due to the limited availability of richly annotated music datasets, much of the progress in AMT has been concentrated on classical piano music, and even a few very specific datasets. Whether these systems can generalize effectively to other musical contexts remains an open question. Complementing recent studies on distribution shifts in sound (e.g., recording conditions), in this work we investigate the musical dimension -- specifically, variations in genre, dynamics, and polyphony levels. To this end, we introduce the MDS corpus, comprising three distinct subsets -- (1) Genre, (2) Random, and (3) MAEtest -- to emulate different axes of distribution shift. We evaluate the performance of several state-of-the-art AMT systems on the MDS corpus using both traditional information-retrieval and musically-informed performance metrics. Our extensive evaluation isolates and exposes varying degrees of performance degradation under specific distribution shifts. In particular, we measure a note-level F1 performance drop of 20 percentage points due to sound, and 14 due to genre. Generally, we find that dynamics estimation proves more vulnerable to musical variation than onset prediction. Musically informed evaluation metrics, particularly those capturing harmonic structure, help identify potential contributing factors. Furthermore, experiments with randomly generated, non-musical sequences reveal clear limitations in system performance under extreme musical distribution shifts. Altogether, these findings offer new evidence of the persistent impact of the Corpus Bias problem in deep AMT systems.",
           "comment": "pre-print of the upcoming EURASIP JASM journal article",
           "journalRef": "EURASIP J. Audio Speech Music Process. Vol. 2026, Art. 5 (2026)",
@@ -147,15 +204,34 @@
           ],
           "url": "https://arxiv.org/abs/2512.14602v1",
           "category": "transcription",
-          "task": null,
+          "task": "Music Transcription",
           "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "datasets": [
+            "MDS corpus"
+          ],
+          "what": "This paper systematically analyzes biases in deep music transcription models, focusing on variations in genre, dynamics, and polyphony levels, using the newly introduced MDS corpus.",
+          "novel": "The study reveals significant performance degradation under specific distribution shifts, such as genre and dynamics, and introduces musically informed evaluation metrics to better understand transcription model limitations.",
+          "method": "The authors evaluate state-of-the-art AMT systems on the MDS corpus, isolating performance degradation due to distribution shifts and employing musically informed metrics to identify contributing factors.",
+          "validation": "Validation involves extensive evaluation on the MDS corpus using traditional and musically informed metrics, measuring performance drops under various distribution shifts.",
+          "discussion": "The paper highlights the persistent impact of corpus bias in AMT systems and the need for broader datasets and evaluation frameworks to improve generalization across musical contexts.",
+          "nextReads": [
+            {
+              "label": "Automatic Music Transcription with Deep Learning (2020)",
+              "url": "https://arxiv.org/abs/2006.14338"
+            },
+            {
+              "label": "On the Generalization of Music Transcription Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Distribution Shifts in Sound Recognition (2021)",
+              "url": null
+            },
+            {
+              "label": "Musically Informed Metrics for AMT Evaluation (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,

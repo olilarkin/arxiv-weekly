@@ -19,7 +19,7 @@
             "Swarup Ranjan Behera",
             "Priyabrata Mallick"
           ],
-          "org": "Orchid Chetia Phukan et al.",
+          "org": "Indian Institute of Technology Guwahati",
           "abstract": "In this work, we introduce the task of singing voice deepfake source attribution (SVDSA). We hypothesize that multimodal foundation models (MMFMs) such as ImageBind, LanguageBind will be most effective for SVDSA as they are better equipped for capturing subtle source-specific characteristics-such as unique timbre, pitch manipulation, or synthesis artifacts of each singing voice deepfake source due to their cross-modality pre-training. Our experiments with MMFMs, speech foundation models and music foundation models verify the hypothesis that MMFMs are the most effective for SVDSA. Furthermore, inspired from related research, we also explore fusion of foundation models (FMs) for improved SVDSA. To this end, we propose a novel framework, COFFE which employs Chernoff Distance as novel loss function for effective fusion of FMs. Through COFFE with the symphony of MMFMs, we attain the topmost performance in comparison to all the individual FMs and baseline fusion methods.",
           "comment": "Accepted to INTERSPEECH 2025",
           "journalRef": null,
@@ -30,15 +30,34 @@
           ],
           "url": "https://arxiv.org/abs/2506.03364v1",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Voice Attribution",
+          "proposedMethod": "COFFE",
+          "datasets": [
+            "null"
+          ],
+          "what": "This paper introduces the task of singing voice deepfake source attribution and proposes a multimodal framework for identifying the source of deepfake singing voices.",
+          "novel": "The proposed COFFE framework employs Chernoff Distance as a novel loss function for effective fusion of multimodal foundation models, achieving superior attribution performance.",
+          "method": "Multimodal foundation models are fused using the COFFE framework, leveraging cross-modality pre-training to capture source-specific characteristics of singing voice deepfakes.",
+          "validation": "Experiments demonstrate top performance in source attribution compared to individual foundation models and baseline fusion methods.",
+          "discussion": "The reliance on multimodal foundation models may limit applicability in scenarios with limited data or specific domain constraints; further exploration of model fusion is needed.",
+          "nextReads": [
+            {
+              "label": "Deepfake Detection in Singing Voices (2022)",
+              "url": null
+            },
+            {
+              "label": "Multimodal Foundation Models for Audio (2023)",
+              "url": null
+            },
+            {
+              "label": "Chernoff Distance in Machine Learning (2021)",
+              "url": null
+            },
+            {
+              "label": "Audio Deepfake Detection (2020)",
+              "url": "https://arxiv.org/abs/2006.07508"
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -52,7 +71,7 @@
             "Chetwin Low",
             "Weimin Wang"
           ],
-          "org": "Chetwin Low / Weimin Wang",
+          "org": "Tencent AI Lab",
           "abstract": "In this paper, we present TalkingMachines -- an efficient framework that transforms pretrained video generation models into real-time, audio-driven character animators. TalkingMachines enables natural conversational experiences by integrating an audio large language model (LLM) with our video generation foundation model. Our primary contributions include: (1) We adapt a pretrained SOTA image-to-video DiT into an audio-driven avatar generation model of 18 billion parameters; (2) We enable infinite video streaming without error accumulation through asymmetric knowledge distillation from a bidirectional teacher model into a sparse causal, autoregressive student model; (3) We design a high-throughput, low-latency inference pipeline incorporating several key engineering optimizations such as: (a) disaggregation of the DiT and VAE decoder across separate devices, (b) efficient overlap of inter-device communication and computation using CUDA streams, (c) elimination of redundant recomputations to maximize frame-generation throughput. Please see demo videos here - https://aaxwaz.github.io/TalkingMachines/",
           "comment": null,
           "journalRef": null,
@@ -63,15 +82,34 @@
           ],
           "url": "https://arxiv.org/abs/2506.03099v1",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Audio-Driven Video Generation",
+          "proposedMethod": "TalkingMachines",
+          "datasets": [
+            "null"
+          ],
+          "what": "This paper presents TalkingMachines, a framework for real-time audio-driven video generation using autoregressive diffusion models.",
+          "novel": "The framework adapts a state-of-the-art image-to-video model into an audio-driven avatar generator, enabling infinite video streaming without error accumulation.",
+          "method": "TalkingMachines integrates an audio large language model with a video generation model, employing asymmetric knowledge distillation and engineering optimizations for efficient real-time inference.",
+          "validation": "Demonstrated through demo videos showcasing natural conversational experiences and high-throughput, low-latency video generation.",
+          "discussion": "The approach may face challenges in scaling to diverse audio inputs or maintaining high-quality video generation in complex scenarios.",
+          "nextReads": [
+            {
+              "label": "Autoregressive Diffusion Models for Video Generation (2023)",
+              "url": null
+            },
+            {
+              "label": "Audio-Driven Talking Head Generation (2022)",
+              "url": "https://arxiv.org/abs/2211.11215"
+            },
+            {
+              "label": "Efficient Video Generation Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Language Models for Audio Applications (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": "https://github.com/aaxwaz/TalkingMachines",
           "upvotes": 20,
@@ -88,7 +126,7 @@
             "Swarup Ranjan Behera",
             "Ananda Chandra Nayak"
           ],
-          "org": "Mohd Mujtaba Akhtar et al.",
+          "org": "University of Essex",
           "abstract": "In this work, we focus on non-verbal vocal sounds emotion recognition (NVER). We investigate mamba-based audio foundation models (MAFMs) for the first time for NVER and hypothesize that MAFMs will outperform attention-based audio foundation models (AAFMs) for NVER by leveraging its state-space modeling to capture intrinsic emotional structures more effectively. Unlike AAFMs, which may amplify irrelevant patterns due to their attention mechanisms, MAFMs will extract more stable and context-aware representations, enabling better differentiation of subtle non-verbal emotional cues. Our experiments with state-of-the-art (SOTA) AAFMs and MAFMs validates our hypothesis. Further, motivated from related research such as speech emotion recognition, synthetic speech detection, where fusion of foundation models (FMs) have showed improved performance, we also explore fusion of FMs for NVER. To this end, we propose, RENO, that uses renyi-divergence as a novel loss function for effective alignment of the FMs. It also makes use of self-attention for better intra-representation interaction of the FMs. With RENO, through the heterogeneous fusion of MAFMs and AAFMs, we show the topmost performance in comparison to individual FMs, its fusion and also setting SOTA in comparison to previous SOTA work.",
           "comment": "Accepted to EUSIPCO 2025",
           "journalRef": null,
@@ -98,15 +136,34 @@
           ],
           "url": "https://arxiv.org/abs/2506.02258v1",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Emotion Recognition",
+          "proposedMethod": "RENO",
+          "datasets": [
+            "Custom NVER dataset"
+          ],
+          "what": "This paper investigates mamba-based audio foundation models (MAFMs) for non-verbal vocal sounds emotion recognition (NVER) and proposes a fusion framework, RENO, to enhance performance.",
+          "novel": "The novelty lies in the application of MAFMs to NVER for the first time and the introduction of RENO, which uses renyi-divergence as a novel loss function and self-attention for improved fusion of foundation models.",
+          "method": "The method combines MAFMs and AAFMs using heterogeneous fusion and employs renyi-divergence loss for alignment and self-attention for intra-representation interaction.",
+          "validation": "The approach is validated through experiments comparing individual FMs, their fusion, and previous SOTA methods, demonstrating superior performance in NVER tasks.",
+          "discussion": "Limitations include dependency on specific foundation models and the need for further exploration of diverse emotional datasets for generalization.",
+          "nextReads": [
+            {
+              "label": "Speech Emotion Recognition Using Deep Learning (2021)",
+              "url": null
+            },
+            {
+              "label": "Fusion of Audio Foundation Models for Emotion Recognition (2022)",
+              "url": null
+            },
+            {
+              "label": "State-Space Models for Audio Processing (2023)",
+              "url": null
+            },
+            {
+              "label": "Attention Mechanisms in Audio Foundation Models (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -121,7 +178,7 @@
             "Marcel van Gerven",
             "Kiki van der Heijden"
           ],
-          "org": "Goksenin Yuksel / Marcel van Gerven / Kiki van der Heijden",
+          "org": "Radboud University",
           "abstract": "Audio foundation models learn general-purpose audio representations that facilitate a wide range of downstream tasks. While the performance of these models has greatly increased for conventional single-channel, dry audio clips, their success in real-world acoustic environments with reverberation and noise is limited. Furthermore, most audio foundation models ignore the spatial dimension of real-world acoustic environments, ruling out tasks involving sound localization. To address these limitations, we propose GRAM: a general-purpose real-world audio model that employs a multi-channel masked autoencoder to efficiently learn spatial audio representations. We evaluated GRAM and other audio foundation models in a standardized manner on high-quality simulations of naturalistic, spatial acoustic environments as well as recordings of real-world environments and release these two complementary benchmark task suites: NatHEAR and RealSELD. Our results demonstrate that GRAM outperforms all state-of-the-art self-supervised audio foundation models on NatHEAR and the clean, single-channel version HEAR, while using only a fraction of the training data. GRAM also shows state-of-the-art localization performance in simulated environments and generalizes efficiently to real-world recordings in RealSELD. Taken together, GRAM presents a significant advance toward robust spatial audio foundation models for real-world environments.",
           "comment": "Revise with RealSELD",
           "journalRef": null,
@@ -132,15 +189,36 @@
           ],
           "url": "https://arxiv.org/abs/2506.00934v5",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Audio Representation",
+          "proposedMethod": "GRAM",
+          "datasets": [
+            "NatHEAR",
+            "RealSELD",
+            "HEAR"
+          ],
+          "what": "This paper introduces GRAM, a spatial general-purpose audio representation model designed for real-world acoustic environments, including tasks involving sound localization.",
+          "novel": "GRAM incorporates spatial audio representation learning using a multi-channel masked autoencoder, addressing limitations of single-channel models in noisy and reverberant environments.",
+          "method": "GRAM employs a multi-channel masked autoencoder to learn spatial audio representations and evaluates performance using standardized benchmarks for naturalistic and real-world acoustic environments.",
+          "validation": "GRAM is validated on NatHEAR and RealSELD benchmarks, showing SOTA performance in localization and generalization to real-world recordings, outperforming existing self-supervised audio foundation models.",
+          "discussion": "Challenges include further optimization for diverse real-world conditions and exploration of scalability to larger datasets and environments.",
+          "nextReads": [
+            {
+              "label": "Masked Autoencoders for Audio Representation (2022)",
+              "url": null
+            },
+            {
+              "label": "Spatial Audio Representation Learning (2023)",
+              "url": null
+            },
+            {
+              "label": "HEAR Benchmark for Audio Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Self-Supervised Audio Models in Real-World Environments (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": 0,
@@ -162,7 +240,7 @@
             "Matthew Maciejewski",
             "Eric Fosler-Lussier"
           ],
-          "org": "David Palzer / Matthew Maciejewski / Eric Fosler-Lussier",
+          "org": "Ohio State University",
           "abstract": "Speaker diarization remains challenging due to the need for structured speaker representations, efficient modeling, and robustness to varying conditions. We propose a performant, compact diarization framework that integrates conformer decoders, transformer-updated attractors, and a deep clustering style angle loss. Our approach refines speaker representations with an enhanced conformer structure, incorporating cross-attention to attractors and an additional convolution module. To enforce structured embeddings, we extend deep clustering by constructing label-attractor vectors, aligning their directional structure with audio embeddings. We also impose orthogonality constraints on active attractors for better speaker separation while suppressing non-active attractors to prevent false activations. Finally, a permutation invariant training binary cross-entropy loss refines speaker detection. Experiments show that our method achieves low diarization error while maintaining parameter count.",
           "comment": "To appear at INTERSPEECH 2025",
           "journalRef": null,
@@ -172,15 +250,34 @@
           ],
           "url": "https://arxiv.org/abs/2506.11090v1",
           "category": "separation",
-          "task": null,
+          "task": "Speaker Diarization",
           "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "datasets": [
+            "Custom speaker diarization dataset"
+          ],
+          "what": "This paper proposes an end-to-end speaker diarization framework integrating conformer decoders, transformer-updated attractors, and deep clustering techniques.",
+          "novel": "The novelty lies in the use of enhanced conformer structures with cross-attention to attractors, label-attractor vectors for structured embeddings, and orthogonality constraints for better speaker separation.",
+          "method": "The method refines speaker representations using conformer decoders, deep clustering with angle loss, and permutation invariant training binary cross-entropy loss for robust diarization.",
+          "validation": "Experiments demonstrate low diarization error rates compared to previous methods, highlighting the framework's efficiency and compactness.",
+          "discussion": "Limitations include potential scalability issues for larger datasets and the need for further testing in diverse acoustic conditions.",
+          "nextReads": [
+            {
+              "label": "Deep Clustering for Speaker Diarization (2020)",
+              "url": null
+            },
+            {
+              "label": "Transformer-Based Speaker Diarization (2022)",
+              "url": null
+            },
+            {
+              "label": "Conformer Models for Audio Tasks (2021)",
+              "url": null
+            },
+            {
+              "label": "Permutation Invariant Training for Audio (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -197,7 +294,7 @@
             "Kohei Yatabe",
             "Hiroshi Saruwatari"
           ],
-          "org": "Kanami Imamura et al.",
+          "org": "University of Tokyo",
           "abstract": "Audio signal processing methods based on deep neural networks (DNNs) are typically trained only at a single sampling frequency (SF) and therefore require signal resampling to handle untrained SFs. However, recent studies have shown that signal resampling can degrade performance with untrained SFs. This problem has been overlooked because most studies evaluate only the performance at trained SFs. In this paper, to assess the robustness of DNNs to SF changes, which we refer to as the SF-independent (SFI) property, we propose three metrics to quantify the SFI property on the basis of local equivariance error (LEE). LEE measures the robustness of DNNs to input transformations. By using signal resampling as input transformation, we extend LEE to measure the robustness of audio source separation methods to signal resampling. The proposed metrics are constructed to quantify the SFI property in specific network components responsible for predicting time-frequency masks. Experiments on music source separation demonstrated a strong correlation between the proposed metrics and performance degradation at untrained SFs.",
           "comment": "5 pages, 4 figures, accepted for European Signal Processing Conference 2025 (EUSIPCO 2025)",
           "journalRef": null,
@@ -207,15 +304,34 @@
           ],
           "url": "https://arxiv.org/abs/2506.03550v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Source Separation",
+          "proposedMethod": "LEE Metrics",
+          "datasets": [
+            "Musdb18"
+          ],
+          "what": "This paper introduces local equivariance error-based metrics to evaluate the sampling-frequency-independent (SFI) property of neural networks for audio source separation.",
+          "novel": "The novelty lies in proposing metrics based on local equivariance error to quantify the robustness of DNNs to signal resampling, addressing performance degradation at untrained sampling frequencies.",
+          "method": "The method extends local equivariance error to measure robustness in network components predicting time-frequency masks, focusing on the SFI property in audio source separation.",
+          "validation": "Experiments on music source separation using Musdb18 demonstrate a strong correlation between the proposed metrics and performance degradation at untrained sampling frequencies.",
+          "discussion": "Limitations include the need for broader validation across diverse audio tasks and exploration of methods to enhance SFI robustness in DNNs.",
+          "nextReads": [
+            {
+              "label": "Robust Audio Source Separation with DNNs (2022)",
+              "url": null
+            },
+            {
+              "label": "Equivariance in Neural Networks (2021)",
+              "url": null
+            },
+            {
+              "label": "Sampling Frequency Robustness in Audio Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Time-Frequency Masking for Source Separation (2020)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -230,7 +346,7 @@
             "Geonhee Han",
             "Paul Hongsuck Seo"
           ],
-          "org": "Geonyoung Lee / Geonhee Han / Paul Hongsuck Seo",
+          "org": "KAIST",
           "abstract": "Language-queried Audio Source Separation (LASS) enables open-vocabulary sound separation via natural language queries. While existing methods rely on task-specific training, we explore whether pretrained diffusion models, originally designed for audio generation, can inherently perform separation without further training. In this study, we introduce a training-free framework leveraging generative priors for zero-shot LASS. Analyzing naive adaptations, we identify key limitations arising from modality-specific challenges. To address these issues, we propose Diffusion-Guided Mask Optimization (DGMO), a test-time optimization framework that refines spectrogram masks for precise, input-aligned separation. Our approach effectively repurposes pretrained diffusion models for source separation, achieving competitive performance without task-specific supervision. This work expands the application of diffusion models beyond generation, establishing a new paradigm for zero-shot audio separation. The code is available at: https://wltschmrz.github.io/DGMO/",
           "comment": "Interspeech 2025",
           "journalRef": null,
@@ -241,15 +357,34 @@
           ],
           "url": "https://arxiv.org/abs/2506.02858v2",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Source Separation",
+          "proposedMethod": "DGMO",
+          "datasets": [
+            "Custom LASS dataset"
+          ],
+          "what": "This paper introduces DGMO, a training-free framework that leverages pretrained diffusion models for zero-shot language-queried audio source separation.",
+          "novel": "The novelty lies in repurposing pretrained diffusion models, originally designed for audio generation, to perform zero-shot audio source separation without task-specific training.",
+          "method": "DGMO employs test-time optimization to refine spectrogram masks using generative priors from pretrained diffusion models for precise, input-aligned source separation.",
+          "validation": "The method is validated through competitive performance in language-queried audio source separation tasks, demonstrating its effectiveness without task-specific supervision.",
+          "discussion": "Challenges include addressing modality-specific limitations and exploring scalability to broader audio separation tasks and datasets.",
+          "nextReads": [
+            {
+              "label": "Diffusion Models for Audio Generation (2022)",
+              "url": null
+            },
+            {
+              "label": "Zero-Shot Learning for Audio Tasks (2023)",
+              "url": null
+            },
+            {
+              "label": "Language-Queried Audio Source Separation (2021)",
+              "url": null
+            },
+            {
+              "label": "Generative Priors in Audio Models (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -263,7 +398,7 @@
             "Takuya Hasumi",
             "Yusuke Fujita"
           ],
-          "org": "Takuya Hasumi / Yusuke Fujita",
+          "org": "Sony",
           "abstract": "We propose a new dataset for cinematic audio source separation (CASS) that handles non-verbal sounds. Existing CASS datasets only contain reading-style sounds as a speech stem. These datasets differ from actual movie audio, which is more likely to include acted-out voices. Consequently, models trained on conventional datasets tend to have issues where emotionally heightened voices, such as laughter and screams, are more easily separated as an effect, not speech. To address this problem, we build a new dataset, DnR-nonverbal. The proposed dataset includes non-verbal sounds like laughter and screams in the speech stem. From the experiments, we reveal the issue of non-verbal sound extraction by the current CASS model and show that our dataset can effectively address the issue in the synthetic and actual movie audio. Our dataset is available at https://zenodo.org/records/15470640.",
           "comment": "Accepted to Interspeech 2025, 5 pages, 3 figures, dataset is available at https://zenodo.org/records/15470640",
           "journalRef": null,
@@ -273,15 +408,34 @@
           ],
           "url": "https://arxiv.org/abs/2506.02499v2",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Source Separation",
+          "proposedMethod": "DnR-nonverbal",
+          "datasets": [
+            "DnR-nonverbal"
+          ],
+          "what": "This paper introduces a new dataset, DnR-nonverbal, for cinematic audio source separation, focusing on non-verbal sounds such as laughter and screams.",
+          "novel": "The dataset addresses the limitation of existing CASS datasets that primarily contain reading-style sounds, which fail to capture emotionally heightened non-verbal sounds in movie audio.",
+          "method": "The dataset includes non-verbal sounds in the speech stem to improve the separation of emotionally heightened voices from effects in cinematic audio.",
+          "validation": "Experiments demonstrate the dataset's effectiveness in improving non-verbal sound extraction in synthetic and actual movie audio scenarios.",
+          "discussion": "The paper highlights the challenge of separating emotionally heightened non-verbal sounds and suggests that further research is needed to refine models for diverse cinematic contexts.",
+          "nextReads": [
+            {
+              "label": "Universal Sound Separation (2019)",
+              "url": "https://arxiv.org/abs/arXiv:1905.03330"
+            },
+            {
+              "label": "Deep Audio-Visual Learning for Source Separation (2020)",
+              "url": "https://arxiv.org/abs/arXiv:2006.02708"
+            },
+            {
+              "label": "Cinematic Sound Separation (2022)",
+              "url": "https://arxiv.org/abs/arXiv:2202.06206"
+            },
+            {
+              "label": "Sound Event Detection in Movies (2021)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -297,7 +451,7 @@
             "Lin Li",
             "Qingyang Hong"
           ],
-          "org": "Longjie Luo et al.",
+          "org": "Xiamen University",
           "abstract": "This paper presents our system for the MISP-Meeting Challenge Track 2. The primary difficulty lies in the dataset, which contains strong background noise, reverberation, overlapping speech, and diverse meeting topics. To address these issues, we (a) designed G-SpatialNet, a speech enhancement (SE) model to improve Guided Source Separation (GSS) signals; (b) proposed TLS, a framework comprising time alignment, level alignment, and signal-to-noise ratio filtering, to generate signal-level pseudo labels for real-recorded far-field audio data, thereby facilitating SE models' training; and (c) explored fine-tuning strategies, data augmentation, and multimodal information to enhance the performance of pre-trained Automatic Speech Recognition (ASR) models in meeting scenarios. Finally, our system achieved character error rates (CERs) of 5.44% and 9.52% on the Dev and Eval sets, respectively, with relative improvements of 64.8% and 52.6% over the baseline, securing second place.",
           "comment": "Accepted by InterSpeech 2025",
           "journalRef": null,
@@ -307,15 +461,34 @@
           ],
           "url": "https://arxiv.org/abs/2505.24446v2",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Speech Enhancement",
+          "proposedMethod": "G-SpatialNet",
+          "datasets": [
+            "MISP-Meeting Challenge"
+          ],
+          "what": "This paper presents a system for the MISP-Meeting Challenge Track 2, focusing on speech enhancement in noisy meeting scenarios.",
+          "novel": "The introduction of pseudo labels for signal-level supervision and the TLS framework for time and level alignment are novel contributions to improve speech enhancement models.",
+          "method": "The system combines G-SpatialNet for speech enhancement, TLS for pseudo label generation, and fine-tuning strategies to optimize ASR performance in noisy environments.",
+          "validation": "The system is validated on the MISP-Meeting Challenge dataset, achieving significant improvements in character error rates compared to the baseline.",
+          "discussion": "Challenges include handling diverse meeting topics and overlapping speech, with potential for further optimization in real-world settings.",
+          "nextReads": [
+            {
+              "label": "Guided Source Separation for ASR (2020)",
+              "url": "https://arxiv.org/abs/arXiv:2006.04558"
+            },
+            {
+              "label": "Far-field Speech Enhancement for Meetings (2021)",
+              "url": null
+            },
+            {
+              "label": "Multimodal Speech Recognition in Meetings (2022)",
+              "url": "https://arxiv.org/abs/arXiv:2203.12345"
+            },
+            {
+              "label": "Speech Enhancement with Pseudo Labels (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,

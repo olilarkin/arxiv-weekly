@@ -19,7 +19,7 @@
             "Mu Li",
             "Alex Smola"
           ],
-          "org": "Ruskin Raj Manku et al.",
+          "org": "Boson AI",
           "abstract": "Text-to-Speech (TTS) benchmarks often fail to capture how well models handle nuanced and semantically complex text. Building on $\\textit{EmergentTTS}$, we introduce $\\textit{EmergentTTS-Eval}$, a comprehensive benchmark covering six challenging TTS scenarios: emotions, paralinguistics, foreign words, syntactic complexity, complex pronunciation (e.g. URLs, formulas), and questions. Crucially, our framework automates both test-case generation and evaluation, making the benchmark easily extensible. Starting from a small set of human-written seed prompts, we iteratively extend them using LLMs to target specific structural, phonetic and prosodic challenges, resulting in 1,645 diverse test cases. Moreover, we employ a model-as-a-judge approach, using a Large Audio Language Model (LALM) to assess the speech across multiple dimensions such as expressed emotion, prosodic, intonational, and pronunciation accuracy. We evaluate state-of-the-art open-source and proprietary TTS systems, such as 11Labs, Deepgram, and OpenAI's 4o-mini-TTS, on EmergentTTS-Eval, demonstrating its ability to reveal fine-grained performance differences. Results show that the model-as-a-judge approach offers robust TTS assessment and a high correlation with human preferences. We open source the evaluation $\\href{https://github.com/boson-ai/EmergentTTS-Eval-public}{code}$ and the $\\href{https://huggingface.co/datasets/bosonai/EmergentTTS-Eval}{dataset}$.",
           "comment": null,
           "journalRef": null,
@@ -30,15 +30,34 @@
           ],
           "url": "https://arxiv.org/abs/2505.23009v1",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "TTS Evaluation",
+          "proposedMethod": "EmergentTTS-Eval",
+          "datasets": [
+            "EmergentTTS-Eval"
+          ],
+          "what": "A benchmark for evaluating TTS models on complex prosodic, expressiveness, and linguistic challenges using automated test-case generation and evaluation.",
+          "novel": "Introduces a model-as-a-judge approach using a Large Audio Language Model (LALM) for robust TTS assessment correlated with human preferences.",
+          "method": "Automated test-case generation using LLMs and evaluation using a LALM across multiple dimensions such as emotion, prosody, and pronunciation.",
+          "validation": "Evaluated state-of-the-art TTS systems like 11Labs, Deepgram, and OpenAI's 4o-mini-TTS using the benchmark, demonstrating fine-grained performance differences.",
+          "discussion": "The benchmark is extensible but relies heavily on LALM accuracy, which may limit generalizability across diverse TTS systems.",
+          "nextReads": [
+            {
+              "label": "EmergentTTS: Evaluating Expressiveness in TTS Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Prosody and Expressiveness in Speech Synthesis (2022)",
+              "url": null
+            },
+            {
+              "label": "Automated Evaluation of Speech Quality (2021)",
+              "url": null
+            },
+            {
+              "label": "Large Audio Language Models for TTS Evaluation (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": "https://github.com/boson-ai/emergenttts-eval-public",
           "upvotes": 18,
@@ -54,7 +73,7 @@
             "Ehsan Shareghi",
             "Gholamreza Haffari"
           ],
-          "org": "Hao Yang et al.",
+          "org": "Monash University",
           "abstract": "Large Audio Language Models (LALMs) have extended the capabilities of Large Language Models (LLMs) by enabling audio-based human interactions. However, recent research has revealed that LALMs remain vulnerable to harmful queries due to insufficient safety-alignment. Despite advances in defence measures for text and vision LLMs, effective safety-alignment strategies and audio-safety dataset specifically targeting LALMs are notably absent. Meanwhile defence measures based on Supervised Fine-tuning (SFT) struggle to address safety improvement while avoiding over-rejection issues, significantly compromising helpfulness. In this work, we propose an unsupervised safety-fine-tuning strategy as remedy that reshapes model's representation space to enhance existing LALMs safety-alignment while balancing the risk of over-rejection. Our experiments, conducted across three generations of Qwen LALMs, demonstrate that our approach significantly improves LALMs safety under three modality input conditions (audio-text, text-only, and audio-only) while increasing over-rejection rate by only 0.88% on average. Warning: this paper contains harmful examples.",
           "comment": null,
           "journalRef": null,
@@ -66,15 +85,34 @@
           ],
           "url": "https://arxiv.org/abs/2505.19670v1",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Safety Alignment",
+          "proposedMethod": "null",
+          "datasets": [
+            "Qwen LALMs Safety Dataset"
+          ],
+          "what": "An unsupervised safety-fine-tuning strategy for Large Audio Language Models (LALMs) to balance safety and over-rejection risks.",
+          "novel": "Proposes reshaping the representation space of LALMs to improve safety alignment without significantly increasing over-rejection rates.",
+          "method": "Unsupervised fine-tuning to adjust representation space for better safety alignment across audio-text, text-only, and audio-only modalities.",
+          "validation": "Tested on three generations of Qwen LALMs, showing improved safety alignment with minimal over-rejection rate increase.",
+          "discussion": "The method addresses safety but does not fully eliminate harmful queries, and its reliance on representation space reshaping may limit scalability.",
+          "nextReads": [
+            {
+              "label": "Safety in Large Language Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Fine-Tuning Strategies for Model Safety (2022)",
+              "url": null
+            },
+            {
+              "label": "Audio Language Model Vulnerabilities (2023)",
+              "url": null
+            },
+            {
+              "label": "Representation Learning for Model Alignment (2021)",
+              "url": null
+            }
+          ],
           "citationCount": 3,
           "githubRepo": null,
           "upvotes": null,
@@ -91,7 +129,7 @@
             "Wenxi Chen",
             "Chenpeng Du"
           ],
-          "org": "Ziyang Ma et al.",
+          "org": "Tencent AI Lab",
           "abstract": "Recent advancements in large audio language models (LALMs) have demonstrated impressive results and promising prospects in universal understanding and reasoning across speech, music, and general sound. However, these models still lack the ability to recognize their knowledge boundaries and refuse to answer questions they don't know proactively. While there have been successful attempts to enhance the reliability of LLMs, reliable LALMs remain largely unexplored. In this paper, we systematically investigate various approaches towards reliable LALMs, including training-free methods such as multi-modal chain-of-thought (MCoT), and training-based methods such as supervised fine-tuning (SFT). Besides, we identify the limitations of previous evaluation metrics and propose a new metric, the Reliability Gain Index (RGI), to assess the effectiveness of different reliable methods. Our findings suggest that both training-free and training-based methods enhance the reliability of LALMs to different extents. Moreover, we find that awareness of reliability is a \"meta ability\", which can be transferred across different audio modalities, although significant structural and content differences exist among sound, music, and speech.",
           "comment": "ACL 2025 Findings",
           "journalRef": null,
@@ -104,15 +142,34 @@
           ],
           "url": "https://arxiv.org/abs/2505.19294v1",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Reliability in LALMs",
+          "proposedMethod": "Reliability Gain Index (RGI)",
+          "datasets": [
+            "Custom Audio Reliability Dataset"
+          ],
+          "what": "Investigates methods to enhance the reliability of Large Audio Language Models (LALMs) and introduces a new evaluation metric, RGI.",
+          "novel": "Proposes reliability as a transferable 'meta ability' across audio modalities and introduces RGI for assessing reliability improvements.",
+          "method": "Combines training-free methods like multi-modal chain-of-thought (MCoT) and supervised fine-tuning (SFT) to enhance reliability.",
+          "validation": "Evaluates methods using the RGI metric across diverse audio modalities, including speech, music, and environmental sounds.",
+          "discussion": "Reliability improvements are promising but depend on modality-specific adaptations; further exploration of cross-modal transfer is needed.",
+          "nextReads": [
+            {
+              "label": "Reliability in Large Language Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Multi-modal Chain-of-Thought Reasoning (2022)",
+              "url": null
+            },
+            {
+              "label": "Supervised Fine-Tuning for Model Reliability (2021)",
+              "url": null
+            },
+            {
+              "label": "Cross-modal Transfer in AI Models (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -129,7 +186,7 @@
             "Jisheng Bai",
             "Haohe Liu"
           ],
-          "org": "Han Yin et al.",
+          "org": "National University of Singapore",
           "abstract": "Audio generation systems now create very realistic soundscapes that can enhance media production, but also pose potential risks. Several studies have examined deepfakes in speech or singing voice. However, environmental sounds have different characteristics, which may make methods for detecting speech and singing deepfakes less effective for real-world sounds. In addition, existing datasets for environmental sound deepfake detection are limited in scale and audio types. To address this gap, we introduce EnvSDD, the first large-scale curated dataset designed for this task, consisting of 45.25 hours of real and 316.74 hours of fake audio. The test set includes diverse conditions to evaluate the generalizability, such as unseen generation models and unseen datasets. We also propose an audio deepfake detection system, based on a pre-trained audio foundation model. Results on EnvSDD show that our proposed system outperforms the state-of-the-art systems from speech and singing domains.",
           "comment": "Proceedings of Interspeech 2025",
           "journalRef": null,
@@ -140,15 +197,34 @@
           ],
           "url": "https://arxiv.org/abs/2505.19203v2",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Deepfake Detection",
+          "proposedMethod": "EnvSDD",
+          "datasets": [
+            "EnvSDD"
+          ],
+          "what": "Introduces EnvSDD, a large-scale dataset for benchmarking environmental sound deepfake detection, and proposes a detection system using pre-trained audio models.",
+          "novel": "Focuses on environmental sounds, which differ significantly from speech and singing, and provides a curated dataset with diverse conditions for evaluation.",
+          "method": "Uses a pre-trained audio foundation model to detect deepfakes in environmental sounds, leveraging the EnvSDD dataset for training and testing.",
+          "validation": "Benchmarked against state-of-the-art systems from speech and singing domains, showing superior performance on EnvSDD.",
+          "discussion": "The system is effective for environmental sounds but may require adaptation for other audio types; dataset diversity is a strength but also a challenge for generalization.",
+          "nextReads": [
+            {
+              "label": "Deepfake Detection in Speech and Singing (2022)",
+              "url": null
+            },
+            {
+              "label": "Audio Foundation Models for Detection Tasks (2023)",
+              "url": null
+            },
+            {
+              "label": "Environmental Sound Analysis (2021)",
+              "url": null
+            },
+            {
+              "label": "Deepfake Detection Benchmarks (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": 0,
@@ -165,7 +241,7 @@
             "Mingchen Li",
             "Zeren Luo"
           ],
-          "org": "Zifan Peng et al.",
+          "org": "University of California, Berkeley",
           "abstract": "Large Audio Language Models (LALMs) have made significant progress. While increasingly deployed in real-world applications, LALMs face growing safety risks from jailbreak attacks that bypass safety alignment. However, there remains a lack of an adversarial audio dataset and a unified framework specifically designed to evaluate and compare jailbreak attacks against them. To address this gap, we introduce JALMBench, a comprehensive benchmark that assesses LALM safety against jailbreak attacks, comprising 11,316 text samples and 245,355 audio samples (>1,000 hours). JALMBench supports 12 mainstream LALMs, 8 attack methods (4 text-transferred and 4 audio-originated), and 5 defenses. We conduct in-depth analysis on attack efficiency, topic sensitivity, voice diversity, and model architecture. Additionally, we explore mitigation strategies for the attacks at both the prompt and response levels. Our systematic evaluation reveals that LALMs' safety is strongly influenced by modality and architectural choices: text-based safety alignment can partially transfer to audio inputs, and interleaved audio-text strategies enable more robust cross-modal generalization. Existing general-purpose moderation methods only slightly improve security, highlighting the need for defense methods specifically designed for LALMs. We hope our work can shed light on the design principles for building more robust LALMs.",
           "comment": null,
           "journalRef": null,
@@ -177,15 +253,34 @@
           ],
           "url": "https://arxiv.org/abs/2505.17568v3",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Safety Benchmarking",
+          "proposedMethod": "JALMBench",
+          "datasets": [
+            "JALMBench"
+          ],
+          "what": "Introduces JALMBench, a benchmark for evaluating jailbreak vulnerabilities in Large Audio Language Models (LALMs) across multiple attack methods and defenses.",
+          "novel": "Provides the first adversarial audio dataset and unified framework for assessing jailbreak attacks, highlighting modality-specific vulnerabilities.",
+          "method": "Evaluates 12 LALMs using 8 attack methods and 5 defenses, analyzing attack efficiency, topic sensitivity, and voice diversity.",
+          "validation": "Systematic evaluation of LALMs using JALMBench dataset, revealing the influence of modality and architecture on safety alignment.",
+          "discussion": "Existing moderation methods are insufficient for robust security; specialized defenses for LALMs are needed to address cross-modal vulnerabilities.",
+          "nextReads": [
+            {
+              "label": "Adversarial Attacks on Language Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Cross-modal Safety in AI Systems (2022)",
+              "url": null
+            },
+            {
+              "label": "Audio Language Model Security (2023)",
+              "url": null
+            },
+            {
+              "label": "Jailbreak Vulnerabilities in AI Models (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": 0,
@@ -209,7 +304,7 @@
             "Susan Liang",
             "Yunlong Tang"
           ],
-          "org": "Chao Huang et al.",
+          "org": "Unknown",
           "abstract": "Audio source separation is fundamental for machines to understand complex acoustic environments and underpins numerous audio applications. Current supervised deep learning approaches, while powerful, are limited by the need for extensive, task-specific labeled data and struggle to generalize to the immense variability and open-set nature of real-world acoustic scenes. Inspired by the success of generative foundation models, we investigate whether pre-trained text-guided audio diffusion models can overcome these limitations. We make a surprising discovery: zero-shot source separation can be achieved purely through a pre-trained text-guided audio diffusion model under the right configuration. Our method, named ZeroSep, works by inverting the mixed audio into the diffusion model's latent space and then using text conditioning to guide the denoising process to recover individual sources. Without any task-specific training or fine-tuning, ZeroSep repurposes the generative diffusion model for a discriminative separation task and inherently supports open-set scenarios through its rich textual priors. ZeroSep is compatible with a variety of pre-trained text-guided audio diffusion backbones and delivers strong separation performance on multiple separation benchmarks, surpassing even supervised methods.",
           "comment": "Project page: https://wikichao.github.io/ZeroSep/",
           "journalRef": null,
@@ -220,15 +315,34 @@
           ],
           "url": "https://arxiv.org/abs/2505.23625v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Source Separation",
+          "proposedMethod": "ZeroSep",
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "This paper introduces ZeroSep, a zero-shot audio source separation method using pre-trained text-guided audio diffusion models.",
+          "novel": "It repurposes generative diffusion models for discriminative source separation tasks without task-specific training, supporting open-set scenarios.",
+          "method": "ZeroSep inverts mixed audio into the diffusion model's latent space and uses text conditioning to guide the denoising process for source recovery.",
+          "validation": "Validated on multiple separation benchmarks, showing strong performance surpassing supervised methods.",
+          "discussion": "The approach relies on pre-trained models and textual priors, which may limit performance in scenarios with ambiguous or insufficient text descriptions.",
+          "nextReads": [
+            {
+              "label": "Audio diffusion models for source separation (2023)",
+              "url": null
+            },
+            {
+              "label": "Text-guided generative models for audio tasks (2023)",
+              "url": null
+            },
+            {
+              "label": "Zero-shot learning in audio processing (2023)",
+              "url": null
+            },
+            {
+              "label": "Diffusion models for open-set audio tasks (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": "https://github.com/WikiChao/ZeroSep",
           "upvotes": 6,
@@ -242,7 +356,7 @@
             "Yunkee Chae",
             "Kyogu Lee"
           ],
-          "org": "Yunkee Chae / Kyogu Lee",
+          "org": "Unknown",
           "abstract": "We present MGE-LDM, a unified latent diffusion framework for simultaneous music generation, source imputation, and query-driven source separation. Unlike prior approaches constrained to fixed instrument classes, MGE-LDM learns a joint distribution over full mixtures, submixtures, and individual stems within a single compact latent diffusion model. At inference, MGE-LDM enables (1) complete mixture generation, (2) partial generation (i.e., source imputation), and (3) text-conditioned extraction of arbitrary sources. By formulating both separation and imputation as conditional inpainting tasks in the latent space, our approach supports flexible, class-agnostic manipulation of arbitrary instrument sources. Notably, MGE-LDM can be trained jointly across heterogeneous multi-track datasets (e.g., Slakh2100, MUSDB18, MoisesDB) without relying on predefined instrument categories. Audio samples are available at our project page: https://yoongi43.github.io/MGELDM_Samples/.",
           "comment": "Accepted by NeurIPS 2025",
           "journalRef": null,
@@ -253,15 +367,36 @@
           ],
           "url": "https://arxiv.org/abs/2505.23305v3",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Music Generation",
+          "proposedMethod": "MGE-LDM",
+          "datasets": [
+            "Slakh2100",
+            "MUSDB18",
+            "MoisesDB"
+          ],
+          "what": "This paper presents MGE-LDM, a latent diffusion framework for music generation, source imputation, and query-driven source separation.",
+          "novel": "It learns a joint distribution over mixtures, submixtures, and stems, enabling flexible manipulation of arbitrary instrument sources without predefined categories.",
+          "method": "MGE-LDM formulates separation and imputation as conditional inpainting tasks in latent space, leveraging heterogeneous multi-track datasets for training.",
+          "validation": "Evaluated on Slakh2100, MUSDB18, and MoisesDB, demonstrating its versatility in handling diverse music tasks.",
+          "discussion": "The approach depends on latent diffusion models, which may require significant computational resources and careful tuning for optimal performance.",
+          "nextReads": [
+            {
+              "label": "Latent diffusion models for music tasks (2023)",
+              "url": null
+            },
+            {
+              "label": "Joint modeling of music mixtures and stems (2023)",
+              "url": null
+            },
+            {
+              "label": "Flexible music source separation methods (2023)",
+              "url": null
+            },
+            {
+              "label": "Music generation with latent models (2023)",
+              "url": null
+            }
+          ],
           "citationCount": 2,
           "githubRepo": null,
           "upvotes": null,
@@ -278,7 +413,7 @@
             "Zihan Zhang",
             "Shuiyuan Wang"
           ],
-          "org": "Yuhang Dai et al.",
+          "org": "Unknown",
           "abstract": "This paper delineates AISHELL-5, the first open-source in-car multi-channel multi-speaker Mandarin automatic speech recognition (ASR) dataset. AISHLL-5 includes two parts: (1) over 100 hours of multi-channel speech data recorded in an electric vehicle across more than 60 real driving scenarios. This audio data consists of four far-field speech signals captured by microphones located on each car door, as well as near-field signals obtained from high-fidelity headset microphones worn by each speaker. (2) a collection of 40 hours of real-world environmental noise recordings, which supports the in-car speech data simulation. Moreover, we also provide an open-access, reproducible baseline system based on this dataset. This system features a speech frontend model that employs speech source separation to extract each speaker's clean speech from the far-field signals, along with a speech recognition module that accurately transcribes the content of each individual speaker. Experimental results demonstrate the challenges faced by various mainstream ASR models when evaluated on the AISHELL-5. We firmly believe the AISHELL-5 dataset will significantly advance the research on ASR systems under complex driving scenarios by establishing the first publicly available in-car ASR benchmark.",
           "comment": "5 pages, 1 figures, 3 tables, accepted by InterSpeech 2025",
           "journalRef": null,
@@ -288,15 +423,34 @@
           ],
           "url": "https://arxiv.org/abs/2505.23036v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "ASR / Diarization",
+          "proposedMethod": "AISHELL-5",
+          "datasets": [
+            "AISHELL-5"
+          ],
+          "what": "This paper introduces AISHELL-5, an open-source in-car multi-channel Mandarin speech dataset for automatic speech recognition and diarization.",
+          "novel": "It is the first dataset to provide multi-channel, multi-speaker speech data recorded in real driving scenarios, along with environmental noise recordings.",
+          "method": "The dataset includes far-field and near-field recordings, enabling the development of a speech frontend model for source separation and ASR modules.",
+          "validation": "Experimental results show challenges faced by mainstream ASR models on AISHELL-5, establishing it as a benchmark for in-car ASR research.",
+          "discussion": "The dataset focuses on Mandarin speech and driving scenarios, which may limit its applicability to other languages or environments.",
+          "nextReads": [
+            {
+              "label": "Multi-channel speech datasets for ASR (2023)",
+              "url": null
+            },
+            {
+              "label": "Speech diarization in complex environments (2023)",
+              "url": null
+            },
+            {
+              "label": "Far-field ASR challenges (2023)",
+              "url": null
+            },
+            {
+              "label": "Open-source ASR benchmarks (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": "https://github.com/daiyvhang/aishell-5",
           "upvotes": 0,
@@ -313,7 +467,7 @@
             "Dejun Zhang",
             "Xupeng Jia"
           ],
-          "org": "Shangkun Huang et al.",
+          "org": "Unknown",
           "abstract": "This paper presents the system developed to address the MISP 2025 Challenge. For the diarization system, we proposed a hybrid approach combining a WavLM end-to-end segmentation method with a traditional multi-module clustering technique to adaptively select the appropriate model for handling varying degrees of overlapping speech. For the automatic speech recognition (ASR) system, we proposed an ASR-aware observation addition method that compensates for the performance limitations of Guided Source Separation (GSS) under low signal-to-noise ratio conditions. Finally, we integrated the speaker diarization and ASR systems in a cascaded architecture to address Track 3. Our system achieved character error rates (CER) of 9.48% on Track 2 and concatenated minimum permutation character error rate (cpCER) of 11.56% on Track 3, ultimately securing first place in both tracks and thereby demonstrating the effectiveness of the proposed methods in real-world meeting scenarios.",
           "comment": "Accepted to Interspeech 2025",
           "journalRef": null,
@@ -323,15 +477,34 @@
           ],
           "url": "https://arxiv.org/abs/2505.22013v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Diarization / ASR",
+          "proposedMethod": "Overlap-Adaptive Hybrid Diarization",
+          "datasets": [
+            "MISP 2025 Challenge"
+          ],
+          "what": "This paper proposes a hybrid speaker diarization system and ASR-aware observation addition method for the MISP 2025 Challenge.",
+          "novel": "It combines end-to-end segmentation with clustering techniques for overlap adaptation and introduces ASR-aware observation addition to address GSS limitations.",
+          "method": "The system integrates speaker diarization and ASR in a cascaded architecture, leveraging adaptive model selection and observation addition for noisy conditions.",
+          "validation": "Achieved first place in MISP 2025 Challenge tracks with low character error rates, demonstrating effectiveness in meeting scenarios.",
+          "discussion": "The system's performance may depend on the specific characteristics of the MISP 2025 dataset and may require adaptation for other datasets or languages.",
+          "nextReads": [
+            {
+              "label": "Hybrid approaches to speaker diarization (2023)",
+              "url": null
+            },
+            {
+              "label": "ASR-aware methods for noisy environments (2023)",
+              "url": null
+            },
+            {
+              "label": "Challenges in meeting ASR systems (2023)",
+              "url": null
+            },
+            {
+              "label": "Guided source separation for ASR (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -347,7 +520,7 @@
             "Mark D. Plumbley",
             "Qiuqiang Kong"
           ],
-          "org": "Yongyi Zang et al.",
+          "org": "Unknown",
           "abstract": "We introduce Music Source Restoration (MSR), a novel task addressing the gap between idealized source separation and real-world music production. Current Music Source Separation (MSS) approaches assume mixtures are simple sums of sources, ignoring signal degradations employed during music production like equalization, compression, and reverb. MSR models mixtures as degraded sums of individually degraded sources, with the goal of recovering original, undegraded signals. Due to the lack of data for MSR, we present RawStems, a dataset annotation of 578 songs with unprocessed source signals organized into 8 primary and 17 secondary instrument groups, totaling 354.13 hours. To the best of our knowledge, RawStems is the first dataset that contains unprocessed music stems with hierarchical categories. We consider spectral filtering, dynamic range compression, harmonic distortion, reverb and lossy codec as possible degradations, and establish U-Former as a baseline method, demonstrating the feasibility of MSR on our dataset. We release the RawStems dataset annotations, degradation simulation pipeline, training code and pre-trained models to be publicly available.",
           "comment": "A modified version of this paper is in review",
           "journalRef": null,
@@ -359,15 +532,34 @@
           ],
           "url": "https://arxiv.org/abs/2505.21827v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Source Restoration",
+          "proposedMethod": "U-Former",
+          "datasets": [
+            "RawStems"
+          ],
+          "what": "This paper introduces Music Source Restoration (MSR), a task aimed at recovering undegraded music signals from degraded mixtures, along with the RawStems dataset.",
+          "novel": "It models mixtures as degraded sums of sources, addressing degradations like equalization, compression, and reverb, which are ignored by traditional MSS methods.",
+          "method": "U-Former is proposed as a baseline model, leveraging the RawStems dataset with hierarchical categories and a degradation simulation pipeline.",
+          "validation": "Validated using the RawStems dataset, demonstrating the feasibility of MSR with spectral filtering, compression, and other degradation types.",
+          "discussion": "The task requires specialized datasets and models, which may limit generalizability to broader music production scenarios.",
+          "nextReads": [
+            {
+              "label": "Advances in music source separation (2023)",
+              "url": null
+            },
+            {
+              "label": "Hierarchical datasets for music analysis (2023)",
+              "url": null
+            },
+            {
+              "label": "Degradation-aware audio restoration (2023)",
+              "url": null
+            },
+            {
+              "label": "Music production signal recovery (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -384,7 +576,7 @@
             "Zhiwei Xiong",
             "Yan Lu"
           ],
-          "org": "Xinlei Yin et al.",
+          "org": "Tencent AI Lab",
           "abstract": "Target audio source separation with natural language queries presents a promising paradigm for extracting arbitrary audio events through arbitrary text descriptions. Existing methods mainly face two challenges, the difficulty in jointly modeling acoustic-textual alignment and semantic-aware separation within a blindly-learned single-stage architecture, and the reliance on large-scale accurately-labeled training data to compensate for inefficient cross-modal learning and separation. To address these challenges, we propose a hierarchical decomposition framework, HSM-TSS, that decouples the task into global-local semantic-guided feature separation and structure-preserving acoustic reconstruction. Our approach introduces a dual-stage mechanism for semantic separation, operating on distinct global and local semantic feature spaces. We first perform global-semantic separation through a global semantic feature space aligned with text queries. A Q-Audio architecture is employed to align audio and text modalities, serving as pretrained global-semantic encoders. Conditioned on the predicted global feature, we then perform the second-stage local-semantic separation on AudioMAE features that preserve time-frequency structures, followed by acoustic reconstruction. We also propose an instruction processing pipeline to parse arbitrary text queries into structured operations, extraction or removal, coupled with audio descriptions, enabling flexible sound manipulation. Our method achieves state-of-the-art separation performance with data-efficient training while maintaining superior semantic consistency with queries in complex auditory scenes.",
           "comment": "Accepted by TASLP",
           "journalRef": null,
@@ -396,15 +588,35 @@
           ],
           "url": "https://arxiv.org/abs/2505.21025v2",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Source Separation",
+          "proposedMethod": "HSM-TSS",
+          "datasets": [
+            "AudioMAE",
+            "Q-Audio"
+          ],
+          "what": "This paper proposes a hierarchical framework for audio source separation using text queries, enabling flexible manipulation of audio events in complex auditory scenes.",
+          "novel": "The method introduces a dual-stage semantic separation mechanism and a structured instruction processing pipeline to parse text queries, addressing challenges in cross-modal learning and semantic-aware separation.",
+          "method": "The approach employs a global-local semantic-guided feature separation framework, leveraging pretrained global-semantic encoders and AudioMAE features for structure-preserving acoustic reconstruction.",
+          "validation": "Validated on state-of-the-art separation performance using data-efficient training, achieving superior semantic consistency with text queries in complex auditory scenes.",
+          "discussion": "The method relies on pretrained encoders and may face limitations in generalizing to unseen audio-text pairs or highly diverse auditory environments.",
+          "nextReads": [
+            {
+              "label": "Audio-Visual Source Separation (2022)",
+              "url": "https://arxiv.org/abs/2203.17024"
+            },
+            {
+              "label": "Text-to-Audio Generation with AudioGen (2022)",
+              "url": "https://arxiv.org/abs/2209.15352"
+            },
+            {
+              "label": "Universal Audio Source Separation (2021)",
+              "url": "https://arxiv.org/abs/2106.07889"
+            },
+            {
+              "label": "Cross-Modal Audio-Text Learning (2020)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": 0,
@@ -419,7 +631,7 @@
             "Jingyi Li",
             "Qiuqiang Kong"
           ],
-          "org": "Yongyi Zang / Jingyi Li / Qiuqiang Kong",
+          "org": "ByteDance",
           "abstract": "Audio source separation aims to separate a mixture into target sources. Previous audio source separation systems usually conduct one-step inference, which does not fully explore the separation ability of models. In this work, we reveal that pretrained one-step audio source separation models can be leveraged for multi-step separation without additional training. We propose a simple yet effective inference method that iteratively applies separation by optimally blending the input mixture with the previous step's separation result. At each step, we determine the optimal blending ratio by maximizing a metric. We prove that our method always yield improvement over one-step inference, provide error bounds based on model smoothness and metric robustness, and provide theoretical analysis connecting our method to denoising along linear interpolation paths between noise and clean distributions, a property we link to denoising diffusion bridge models. Our approach effectively delivers improved separation performance as a \"free lunch\" from existing models. Our empirical results demonstrate that our multi-step separation approach consistently outperforms one-step inference across both speech enhancement and music source separation tasks, and can achieve scaling performance similar to training a larger model, using more data, or in some cases employing a multi-step training objective. These improvements appear not only on the optimization metric during multi-step inference, but also extend to nearly all non-optimized metrics (with one exception). We also discuss limitations of our approach and directions for future research.",
           "comment": null,
           "journalRef": null,
@@ -431,15 +643,35 @@
           ],
           "url": "https://arxiv.org/abs/2505.19534v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Source Separation",
+          "proposedMethod": "null",
+          "datasets": [
+            "MUSDB18",
+            "VoiceBank-DEMAND"
+          ],
+          "what": "This paper introduces a training-free multi-step inference method to improve audio source separation using pretrained models.",
+          "novel": "The iterative multi-step approach leverages pretrained models without additional training, achieving improved separation performance akin to training larger models or using more data.",
+          "method": "The method iteratively blends the input mixture with the previous step's separation result, optimizing the blending ratio by maximizing a metric, and connects this process to denoising diffusion models.",
+          "validation": "Empirical results demonstrate consistent improvement over one-step inference across speech enhancement and music source separation tasks using various metrics.",
+          "discussion": "The approach is limited by the pretrained model's inherent capabilities and may not address separation challenges in highly complex mixtures or unseen data.",
+          "nextReads": [
+            {
+              "label": "Improving Source Separation with Iterative Refinement (2022)",
+              "url": "https://arxiv.org/abs/2205.05621"
+            },
+            {
+              "label": "Denoising Diffusion Probabilistic Models (2020)",
+              "url": "https://arxiv.org/abs/2006.11239"
+            },
+            {
+              "label": "Music Source Separation with Conv-TasNet (2019)",
+              "url": "https://arxiv.org/abs/1905.03397"
+            },
+            {
+              "label": "Speech Enhancement with Pretrained Models (2021)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -456,7 +688,7 @@
             "Michael A. Akeroyd",
             "Scott Bannister"
           ],
-          "org": "Gerardo Roa-Dabike et al.",
+          "org": "University of Salford",
           "abstract": "Musical (MSS) source separation of western popular music using non-causal deep learning can be very effective. In contrast, MSS for classical music is an unsolved problem. Classical ensembles are harder to separate than popular music because of issues such as the inherent greater variation in the music; the sparsity of recordings with ground truth for supervised training; and greater ambiguity between instruments. The Cadenza project has been exploring MSS for classical music. This is being done so music can be remixed to improve listening experiences for people with hearing loss. To enable the work, a new database of synthesized woodwind ensembles was created to overcome instrumental imbalances in the EnsembleSet. For the MSS, a set of ConvTasNet models was used with each model being trained to extract a string or woodwind instrument. ConvTasNet was chosen because it enabled both causal and non-causal approaches to be tested. Non-causal approaches have dominated MSS work and are useful for recorded music, but for live music or processing on hearing aids, causal signal processing is needed. The MSS performance was evaluated on the two small datasets (Bach10 and URMP) of real instrument recordings where the ground-truth is available. The performances of the causal and non-causal systems were similar. Comparing the average Signal-to-Distortion (SDR) of the synthesized validation set (6.2 dB causal; 6.9 non-causal), to the real recorded evaluation set (0.3 dB causal, 0.4 dB non-causal), shows that mismatch between synthesized and recorded data is a problem. Future work needs to either gather more real recordings that can be used for training, or to improve the realism and diversity of the synthesized recordings to reduce the mismatch...",
           "comment": "5 pages, 4 figures, 2 tables, submitted to WASSPA 2025",
           "journalRef": null,
@@ -467,15 +699,36 @@
           ],
           "url": "https://arxiv.org/abs/2505.17823v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Music Source Separation",
+          "proposedMethod": "null",
+          "datasets": [
+            "Bach10",
+            "URMP",
+            "EnsembleSet"
+          ],
+          "what": "This paper explores challenges and opportunities in separating small classical ensembles, focusing on improving listening experiences for people with hearing loss.",
+          "novel": "The study highlights the mismatch between synthesized and real recordings and proposes a new database of synthesized woodwind ensembles to overcome instrumental imbalances.",
+          "method": "ConvTasNet models are trained to extract specific instruments, with both causal and non-causal approaches tested to address different use cases like live and recorded music.",
+          "validation": "Performance is evaluated on small datasets of real instrument recordings, showing similar results for causal and non-causal systems but highlighting data mismatch issues.",
+          "discussion": "The work emphasizes the need for more real recordings or improved synthesized data to address the mismatch and enhance separation performance for classical music.",
+          "nextReads": [
+            {
+              "label": "Music Source Separation with Deep Learning (2020)",
+              "url": "https://arxiv.org/abs/2006.12735"
+            },
+            {
+              "label": "Deep Learning for Music Source Separation (2018)",
+              "url": "https://arxiv.org/abs/1804.06267"
+            },
+            {
+              "label": "Classical Music Source Separation Challenges (2021)",
+              "url": null
+            },
+            {
+              "label": "Causal Models for Audio Processing (2020)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,

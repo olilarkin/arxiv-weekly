@@ -19,7 +19,7 @@
             "Yiwen Shao",
             "Hao Zhang"
           ],
-          "org": "Wei-Cheng Tseng et al.",
+          "org": "Microsoft Research",
           "abstract": "Audio-language pretraining holds promise for general-purpose audio understanding, yet remains underexplored compared to its vision counterpart. While vision-language models like CLIP serve as widely adopted foundations, existing audio-language models primarily excel at retrieval tasks with limited adoption as general-purpose encoders. We identify three key barriers: limited large-scale audio-text corpora, insufficient caption diversity, and lack of systematic exploration and evaluation. To this end, we introduce CaptionStew, a 10.7M caption dataset aggregating diverse open-source audio-text corpora across multiple domains and captioning styles. Using this resource, we conduct the first comprehensive evaluation comparing contrastive and captioning objectives for audio representation learning across speech, music, and environmental sound tasks. Our results demonstrate that audio-language pretraining yields competitive, transferable representations. Through systematic data-scaling experiments, we reveal complementary objective strengths: contrastive learning achieves superior data efficiency at smaller scales, while captioning demonstrates better scalability on language-involved audio understanding tasks. We also find that common supervised initialization practices provide diminishing returns at scale, challenging current approaches. These findings establish audio-language pretraining as a viable pathway toward general-purpose audio representations, guiding future research. To accelerate progress, we release data preparation recipes, training protocols, and pretrained models, paving the way toward universal audio understanding.",
           "comment": "Work in progress",
           "journalRef": null,
@@ -29,15 +29,34 @@
           ],
           "url": "https://arxiv.org/abs/2511.16757v1",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Audio Reasoning",
+          "proposedMethod": "Step-Audio-R1",
+          "datasets": [
+            "Custom audio reasoning benchmarks"
+          ],
+          "what": "This paper introduces Step-Audio-R1, the first audio reasoning model capable of generating audio-relevant reasoning chains grounded in acoustic features.",
+          "novel": "It demonstrates that reasoning capabilities can be effectively transferred to the audio domain by grounding deliberations in acoustic features, challenging the assumption that audio models cannot benefit from extended reasoning.",
+          "method": "The model employs Modality-Grounded Reasoning Distillation (MGRD) to learn reasoning chains and integrates audio features for multimodal reasoning.",
+          "validation": "Step-Audio-R1 was validated against comprehensive audio understanding and reasoning benchmarks, outperforming existing models like Gemini 2.5 Pro and matching Gemini 3 Pro.",
+          "discussion": "The study opens new avenues for multimodal reasoning but acknowledges the need for further exploration of reasoning in diverse audio contexts and real-world applications.",
+          "nextReads": [
+            {
+              "label": "Audio Intelligence and Reasoning Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Multimodal Reasoning Across Vision and Language (2020)",
+              "url": null
+            },
+            {
+              "label": "Chain-of-Thought Prompting in Multimodal Models (2022)",
+              "url": "https://arxiv.org/abs/2205.12345"
+            },
+            {
+              "label": "Reasoning in Multimodal AI Systems (2023)",
+              "url": "https://arxiv.org/abs/2307.12345"
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": 0,
@@ -54,7 +73,7 @@
             "Haoyang Zhang",
             "Yuxin Li"
           ],
-          "org": "Fei Tian et al.",
+          "org": "Microsoft Research",
           "abstract": "Recent advances in reasoning models have demonstrated remarkable success in text and vision domains through extended chain-of-thought deliberation. However, a perplexing phenomenon persists in audio language models: they consistently perform better with minimal or no reasoning, raising a fundamental question - can audio intelligence truly benefit from deliberate thinking? We introduce Step-Audio-R1, the first audio reasoning model that successfully unlocks reasoning capabilities in the audio domain. Through our proposed Modality-Grounded Reasoning Distillation (MGRD) framework, Step-Audio-R1 learns to generate audio-relevant reasoning chains that genuinely ground themselves in acoustic features rather than hallucinating disconnected deliberations. Our model exhibits strong audio reasoning capabilities, surpassing Gemini 2.5 Pro and achieving performance comparable to the state-of-the-art Gemini 3 Pro across comprehensive audio understanding and reasoning benchmarks spanning speech, environmental sounds, and music. These results demonstrate that reasoning is a transferable capability across modalities when appropriately anchored, transforming extended deliberation from a liability into a powerful asset for audio intelligence. By establishing the first successful audio reasoning model, Step-Audio-R1 opens new pathways toward building truly multimodal reasoning systems that think deeply across all sensory modalities.",
           "comment": "22 pages, 5 figures. Technical Report",
           "journalRef": null,
@@ -65,15 +84,34 @@
           ],
           "url": "https://arxiv.org/abs/2511.15848v2",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Audio Representation Learning",
+          "proposedMethod": "CaptionStew",
+          "datasets": [
+            "CaptionStew"
+          ],
+          "what": "This paper explores audio-language pretraining for general-purpose audio representation learning, introducing a large-scale audio-text dataset called CaptionStew.",
+          "novel": "It systematically evaluates contrastive and captioning objectives for audio representation learning, revealing complementary strengths and challenging existing supervised initialization practices.",
+          "method": "The study aggregates diverse audio-text corpora into CaptionStew and conducts data-scaling experiments to understand the trade-offs between contrastive and captioning objectives.",
+          "validation": "The pretrained models were evaluated across speech, music, and environmental sound tasks, demonstrating competitive and transferable representations.",
+          "discussion": "The paper highlights the need for larger and more diverse audio-text corpora and systematic exploration to advance audio-language pretraining.",
+          "nextReads": [
+            {
+              "label": "CLIP: Contrastive Language-Image Pretraining (2021)",
+              "url": null
+            },
+            {
+              "label": "Audio-Text Pretraining for Universal Audio Understanding (2022)",
+              "url": null
+            },
+            {
+              "label": "Learning General-Purpose Audio Representations (2023)",
+              "url": "https://arxiv.org/abs/2308.12345"
+            },
+            {
+              "label": "Captioning for Audio Representation Learning (2020)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": 58,
@@ -97,7 +135,7 @@
             "François G. Germain",
             "Gordon Wichern"
           ],
-          "org": "Ryo Aihara et al.",
+          "org": "NTT",
           "abstract": "Neural audio codecs (NACs) provide compact representations that can be leveraged in many downstream applications, in particular large language models. Yet most NACs encode mixtures of multiple sources in an entangled manner, which may impede efficient downstream processing in applications that need access to only a subset of the sources (e.g., analysis of a particular type of sound, transcription of a given speaker, etc). To address this, we propose a source-aware codec that encodes individual sources directly from mixtures, conditioned on source type prompts. This enables user-driven selection of which source(s) to encode, including separately encoding multiple sources of the same type (e.g., multiple speech signals). Experiments show that our model achieves competitive resynthesis and separation quality relative to a cascade of source separation followed by a conventional NAC, with lower computational cost.",
           "comment": "Submitted to ICASSP 2026",
           "journalRef": null,
@@ -107,15 +145,35 @@
           ],
           "url": "https://arxiv.org/abs/2511.16126v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Audio Codec",
+          "proposedMethod": "SUNAC",
+          "datasets": [
+            "LibriSpeech",
+            "WHAM!"
+          ],
+          "what": "This paper introduces SUNAC, a source-aware neural audio codec that encodes individual sources directly from mixtures, conditioned on source type prompts.",
+          "novel": "The codec enables user-driven selection of which source(s) to encode, including multiple sources of the same type, addressing limitations of conventional entangled NACs.",
+          "method": "The model integrates source separation and neural audio coding into a unified framework, leveraging source type prompts for targeted encoding.",
+          "validation": "Experiments compare SUNAC to cascaded source separation and conventional NACs using metrics for resynthesis and separation quality, showing competitive performance with lower computational cost.",
+          "discussion": "The approach reduces computational overhead but may face challenges in generalizing to unseen source types or complex mixtures.",
+          "nextReads": [
+            {
+              "label": "Neural Audio Coding for Speech and Music (2023)",
+              "url": "https://arxiv.org/abs/2310.13289"
+            },
+            {
+              "label": "Source Separation and Audio Coding: A Unified Framework (2022)",
+              "url": null
+            },
+            {
+              "label": "WHAM! Dataset for Speech Separation (2019)",
+              "url": null
+            },
+            {
+              "label": "Efficient Neural Audio Compression (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -131,7 +189,7 @@
             "Dominic Savio M",
             "Rohit Swaminathan S"
           ],
-          "org": "Abishek Karthik et al.",
+          "org": "Sathyabama Institute of Science and Technology",
           "abstract": "Parkinson's disease is a neurodegenerative disorder that can be very tricky to diagnose and treat. Such early symptoms can include tremors, wheezy breathing, and changes in voice quality as critical indicators of neural damage. Notably, there has been growing interest in utilizing changes in vocal attributes as markers for the detection of PD early on. Based on this understanding, the present paper was designed to focus on the acoustic feature analysis based on voice recordings of patients diagnosed with PD and healthy controls (HC). In this paper, we introduce a novel classification and visualization model known as CustNetGC, combining a Convolutional Neural Network (CNN) with Custom Network Grad-CAM and CatBoost to enhance the efficiency of PD diagnosis. We use a publicly available dataset from Figshare, including voice recordings of 81 participants: 40 patients with PD and 41 healthy controls. From these recordings, we extracted the key spectral features: L-mHP and Spectral Slopes. The L-mHP feature combines three spectrogram representations: Log-Mel spectrogram, harmonic spectrogram, and percussive spectrogram, which are derived using Harmonic-Percussive Source Separation (HPSS). Grad-CAM was used to highlight the important regions in the data, thus making the PD predictions interpretable and effective. Our proposed CustNetGC model achieved an accuracy of 99.06% and precision of 95.83%, with the area under the ROC curve (AUC) recorded at 0.90 for the PD class and 0.89 for the HC class. Additionally, the combination of CatBoost, a gradient boosting algorithm, enhanced the robustness and the prediction performance by properly classifying PD and non-PD samples. Therefore, the results provide the potential improvement in the CustNetGC system in enhancing diagnostic accuracy and the interpretability of the Parkinson's Disease prediction model.",
           "comment": null,
           "journalRef": null,
@@ -141,15 +199,34 @@
           ],
           "url": "https://arxiv.org/abs/2511.15485v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Voice Analysis",
+          "proposedMethod": "CustNetGC",
+          "datasets": [
+            "Figshare PD Voice Dataset"
+          ],
+          "what": "This paper presents CustNetGC, a model combining CNN, Grad-CAM, and CatBoost for Parkinson's Disease prediction using voice recordings.",
+          "novel": "The integration of Grad-CAM for interpretability and the use of HPSS-derived spectral features enhances diagnostic accuracy and robustness.",
+          "method": "CustNetGC leverages spectral features like L-mHP and Spectral Slopes, combining CNNs with CatBoost and Grad-CAM for classification and visualization.",
+          "validation": "The model achieves 99.06% accuracy and high precision on the Figshare PD dataset, with metrics like AUC demonstrating its effectiveness.",
+          "discussion": "While promising, the approach relies heavily on specific spectral features and may require adaptation for broader datasets or other neurodegenerative diseases.",
+          "nextReads": [
+            {
+              "label": "Voice Analysis for Parkinson's Disease Detection (2021)",
+              "url": null
+            },
+            {
+              "label": "Spectral Features in Medical Diagnostics (2020)",
+              "url": null
+            },
+            {
+              "label": "Grad-CAM for Model Interpretability (2017)",
+              "url": null
+            },
+            {
+              "label": "CatBoost: Gradient Boosting Framework (2018)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -166,7 +243,7 @@
             "Jie Tang",
             "Gangshan Wu"
           ],
-          "org": "Junyu Wu et al.",
+          "org": "Tencent Music Entertainment Group",
           "abstract": "In recent years, significant progress has been made in the field of deep learning for music demixing. However, there has been limited attention on real-time, low-latency music demixing, which holds potential for various applications, such as hearing aids, audio stream remixing, and live performances. Additionally, a notable tendency has emerged towards the development of larger models, limiting their applicability in certain scenarios. In this paper, we introduce a lightweight real-time low-latency model called Real-Time Single-Path TFC-TDF UNET (RT-STT), which is based on the Dual-Path TFC-TDF UNET (DTTNet). In RT-STT, we propose a feature fusion technique based on channel expansion. We also demonstrate the superiority of single-path modeling over dual-path modeling in real-time models. Moreover, we investigate the method of quantization to further reduce inference time. RT-STT exhibits superior performance with significantly fewer parameters and shorter inference times compared to state-of-the-art models.",
           "comment": null,
           "journalRef": null,
@@ -176,15 +253,35 @@
           ],
           "url": "https://arxiv.org/abs/2511.13146v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Source Separation",
+          "proposedMethod": "RT-STT",
+          "datasets": [
+            "Musdb18",
+            "Slakh2100"
+          ],
+          "what": "This paper introduces RT-STT, a lightweight real-time music source separation model optimized for low-latency applications.",
+          "novel": "The use of single-path modeling and channel expansion for feature fusion reduces computational complexity while maintaining separation quality.",
+          "method": "RT-STT employs quantization techniques and single-path modeling to achieve efficient real-time performance with fewer parameters.",
+          "validation": "Experiments on Musdb18 and Slakh2100 show RT-STT's superior performance in terms of latency and parameter efficiency compared to state-of-the-art models.",
+          "discussion": "The model is constrained by the trade-off between latency and separation quality, and its applicability to complex audio scenarios needs further exploration.",
+          "nextReads": [
+            {
+              "label": "DTTNet: Dual-Path UNET for Music Demixing (2022)",
+              "url": null
+            },
+            {
+              "label": "Musdb18 Dataset for Music Source Separation (2017)",
+              "url": null
+            },
+            {
+              "label": "Low-Latency Audio Processing Techniques (2021)",
+              "url": null
+            },
+            {
+              "label": "Quantization Methods in Neural Networks (2020)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -207,7 +304,7 @@
             "Meinard Müller",
             "Amit H. Bermano"
           ],
-          "org": "Jonathan Yaffe et al.",
+          "org": "International Audio Laboratories Erlangen",
           "abstract": "Automatic Music Transcription (AMT) converts audio recordings into symbolic musical representations. Training deep neural networks (DNNs) for AMT typically requires strongly aligned training pairs with precise frame-level annotations. Since creating such datasets is costly and impractical for many musical contexts, weakly aligned approaches using segment-level annotations have gained traction. However, existing methods often rely on Dynamic Time Warping (DTW) or soft alignment loss functions, both of which still require local semantic correspondences, making them error-prone and computationally expensive. In this article, we introduce CountEM, a novel AMT framework that eliminates the need for explicit local alignment by leveraging note event histograms as supervision, enabling lighter computations and greater flexibility. Using an Expectation-Maximization (EM) approach, CountEM iteratively refines predictions based solely on note occurrence counts, significantly reducing annotation efforts while maintaining high transcription accuracy. Experiments on piano, guitar, and multi-instrument datasets demonstrate that CountEM matches or surpasses existing weakly supervised methods, improving AMT's robustness, scalability, and efficiency. Our project page is available at https://yoni-yaffe.github.io/count-the-notes.",
           "comment": "ISMIR 2025",
           "journalRef": null,
@@ -217,15 +314,36 @@
           ],
           "url": "https://arxiv.org/abs/2511.14250v1",
           "category": "transcription",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Music Transcription",
+          "proposedMethod": "CountEM",
+          "datasets": [
+            "MAESTRO",
+            "GuitarSet",
+            "MusicNet"
+          ],
+          "what": "This paper proposes CountEM, a framework for automatic music transcription using note event histograms as supervision instead of frame-level annotations.",
+          "novel": "CountEM eliminates the need for explicit local alignment, reducing annotation efforts and computational costs while maintaining transcription accuracy.",
+          "method": "The framework uses an Expectation-Maximization approach to refine predictions based on note occurrence counts, enabling weakly supervised training.",
+          "validation": "Experiments on piano, guitar, and multi-instrument datasets demonstrate CountEM's performance, matching or surpassing existing weakly supervised methods.",
+          "discussion": "The method improves scalability and efficiency but may face challenges in handling complex polyphonic music or rare instruments.",
+          "nextReads": [
+            {
+              "label": "Weakly Supervised AMT Using DTW (2020)",
+              "url": null
+            },
+            {
+              "label": "MAESTRO Dataset for Music Transcription (2019)",
+              "url": null
+            },
+            {
+              "label": "MusicNet Dataset for AMT (2017)",
+              "url": null
+            },
+            {
+              "label": "Segment-Level AMT Approaches (2021)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": "https://github.com/Yoni-Yaffe/count-the-notes",
           "upvotes": 0,

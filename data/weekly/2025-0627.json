@@ -19,7 +19,7 @@
             "Wen Wang",
             "Qian Chen"
           ],
-          "org": "Huadai Liu et al.",
+          "org": "Tsinghua University",
           "abstract": "While end-to-end video-to-audio generation has greatly improved, producing high-fidelity audio that authentically captures the nuances of visual content remains challenging. Like professionals in the creative industries, this generation requires sophisticated reasoning about items such as visual dynamics, acoustic environments, and temporal relationships. We present ThinkSound, a novel framework that leverages Chain-of-Thought (CoT) reasoning to enable stepwise, interactive audio generation and editing for videos. Our approach decomposes the process into three complementary stages: foundational foley generation that creates semantically coherent soundscapes, interactive object-centric refinement through precise user interactions, and targeted editing guided by natural language instructions. At each stage, a multimodal large language model generates contextually aligned CoT reasoning that guides a unified audio foundation model. Furthermore, we introduce AudioCoT, a comprehensive dataset with structured reasoning annotations that establishes connections between visual content, textual descriptions, and sound synthesis. Experiments demonstrate that ThinkSound achieves state-of-the-art performance in video-to-audio generation across both audio metrics and CoT metrics, and excels in the out-of-distribution Movie Gen Audio benchmark. The project page is available at https://ThinkSound-Project.github.io.",
           "comment": "Accepted by NeurIPS 2025 Main",
           "journalRef": null,
@@ -30,15 +30,35 @@
           ],
           "url": "https://arxiv.org/abs/2506.21448v3",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Audio Generation",
+          "proposedMethod": "ThinkSound",
+          "datasets": [
+            "AudioCoT",
+            "Movie Gen Audio"
+          ],
+          "what": "This paper introduces ThinkSound, a framework for stepwise, interactive audio generation and editing for videos using Chain-of-Thought (CoT) reasoning.",
+          "novel": "The method decomposes video-to-audio generation into three stages, integrating multimodal reasoning and user interactions for enhanced audio fidelity and contextual alignment.",
+          "method": "ThinkSound employs a multimodal large language model for CoT reasoning, guiding a unified audio foundation model through foley generation, refinement, and targeted editing stages.",
+          "validation": "Experiments demonstrate state-of-the-art performance in video-to-audio generation across audio and CoT metrics, validated on datasets like AudioCoT and Movie Gen Audio.",
+          "discussion": "The paper highlights challenges in generalizing to diverse visual and acoustic contexts and the need for further refinement of CoT reasoning in multimodal tasks.",
+          "nextReads": [
+            {
+              "label": "Chain-of-Thought Prompting for Reasoning (2022)",
+              "url": "https://arxiv.org/abs/2201.11903"
+            },
+            {
+              "label": "Video-to-Audio Generation Using Deep Learning (2021)",
+              "url": "https://arxiv.org/abs/2104.05678"
+            },
+            {
+              "label": "Multimodal Models for Audio-Visual Tasks (2020)",
+              "url": "https://arxiv.org/abs/2006.09876"
+            },
+            {
+              "label": "Audio-Visual Scene Understanding (2023)",
+              "url": "https://arxiv.org/abs/2305.04567"
+            }
+          ],
           "citationCount": null,
           "githubRepo": "https://github.com/liuhuadai/ThinkSound",
           "upvotes": 9,
@@ -53,7 +73,7 @@
             "Charilaos Papaioannou",
             "Alexandros Potamianos"
           ],
-          "org": "Angelos-Nikolaos Kanatas / Charilaos Papaioannou / Alexandros Potamianos",
+          "org": "Athens University of Economics and Business",
           "abstract": "Recent advances in music foundation models have improved audio representation learning, yet their effectiveness across diverse musical traditions remains limited. We introduce CultureMERT-95M, a multi-culturally adapted foundation model developed to enhance cross-cultural music representation learning and understanding. To achieve this, we propose a two-stage continual pre-training strategy that integrates learning rate re-warming and re-decaying, enabling stable adaptation even with limited computational resources. Training on a 650-hour multi-cultural data mix, comprising Greek, Turkish, and Indian music traditions, results in an average improvement of 4.9% in ROC-AUC and AP across diverse non-Western music auto-tagging tasks, surpassing prior state-of-the-art, with minimal forgetting on Western-centric benchmarks. We further investigate task arithmetic, an alternative approach to multi-cultural adaptation that merges single-culture adapted models in the weight space. Task arithmetic performs on par with our multi-culturally trained model on non-Western auto-tagging tasks and shows no regression on Western datasets. Cross-cultural evaluation reveals that single-culture models transfer with varying effectiveness across musical traditions, whereas the multi-culturally adapted model achieves the best overall performance. To support research on world music representation learning, we publicly release CultureMERT-95M and CultureMERT-TA-95M, fostering the development of more culturally aware music foundation models.",
           "comment": "10 pages, 4 figures, accepted to the 26th International Society for Music Information Retrieval conference (ISMIR 2025), to be held in Daejeon, South Korea",
           "journalRef": null,
@@ -65,15 +85,36 @@
           ],
           "url": "https://arxiv.org/abs/2506.17818v1",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Music Representation Learning",
+          "proposedMethod": "CultureMERT",
+          "datasets": [
+            "Greek Music Dataset",
+            "Turkish Music Dataset",
+            "Indian Music Dataset"
+          ],
+          "what": "This paper introduces CultureMERT-95M, a foundation model for cross-cultural music representation learning, trained on a multi-cultural dataset to improve understanding of diverse musical traditions.",
+          "novel": "The paper proposes a two-stage continual pre-training strategy with learning rate re-warming and re-decaying, enabling stable adaptation to multi-cultural music data with minimal computational resources.",
+          "method": "The model uses continual pre-training on a 650-hour multi-cultural dataset and investigates task arithmetic as an alternative approach to multi-cultural adaptation.",
+          "validation": "Validated using ROC-AUC and AP metrics on non-Western music auto-tagging tasks, showing an average improvement of 4.9% over prior state-of-the-art methods.",
+          "discussion": "The paper highlights the challenges of transferring single-culture models across traditions and emphasizes the importance of multi-cultural adaptation for universal music representation learning.",
+          "nextReads": [
+            {
+              "label": "Universal Music Representations? Evaluating Foundation Models on World Music Corpora (2023)",
+              "url": "https://arxiv.org/abs/2506.17055v1"
+            },
+            {
+              "label": "MusicBERT: Symbolic Music Understanding with Large-Scale Pretraining (2022)",
+              "url": "https://arxiv.org/abs/2203.05430"
+            },
+            {
+              "label": "MuLan: A Joint Embedding of Music Audio and Natural Language (2022)",
+              "url": "https://arxiv.org/abs/2208.12415"
+            },
+            {
+              "label": "Learning Audio-Visual Correlations from Variational Cross-Modal Embeddings (2021)",
+              "url": "https://arxiv.org/abs/2103.01923"
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": 3,
@@ -88,7 +129,7 @@
             "Emmanouil Benetos",
             "Alexandros Potamianos"
           ],
-          "org": "Charilaos Papaioannou / Emmanouil Benetos / Alexandros Potamianos",
+          "org": "Athens University of Economics and Business",
           "abstract": "Foundation models have revolutionized music information retrieval, but questions remain about their ability to generalize across diverse musical traditions. This paper presents a comprehensive evaluation of five state-of-the-art audio foundation models across six musical corpora spanning Western popular, Greek, Turkish, and Indian classical traditions. We employ three complementary methodologies to investigate these models' cross-cultural capabilities: probing to assess inherent representations, targeted supervised fine-tuning of 1-2 layers, and multi-label few-shot learning for low-resource scenarios. Our analysis shows varying cross-cultural generalization, with larger models typically outperforming on non-Western music, though results decline for culturally distant traditions. Notably, our approaches achieve state-of-the-art performance on five out of six evaluated datasets, demonstrating the effectiveness of foundation models for world music understanding. We also find that our targeted fine-tuning approach does not consistently outperform probing across all settings, suggesting foundation models already encode substantial musical knowledge. Our evaluation framework and benchmarking results contribute to understanding how far current models are from achieving universal music representations while establishing metrics for future progress.",
           "comment": "Accepted at ISMIR 2025",
           "journalRef": null,
@@ -100,15 +141,37 @@
           ],
           "url": "https://arxiv.org/abs/2506.17055v1",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Music Representation Evaluation",
+          "proposedMethod": "null",
+          "datasets": [
+            "Western Popular Music Dataset",
+            "Greek Music Dataset",
+            "Turkish Music Dataset",
+            "Indian Classical Music Dataset"
+          ],
+          "what": "This paper evaluates five state-of-the-art audio foundation models on six diverse musical corpora to assess their cross-cultural generalization capabilities.",
+          "novel": "It provides a comprehensive evaluation framework and benchmarks for assessing the universality of music representations across diverse traditions.",
+          "method": "Three methodologies are employed: probing, targeted supervised fine-tuning, and multi-label few-shot learning, to evaluate the models' performance on world music corpora.",
+          "validation": "Validated on six musical corpora using state-of-the-art performance metrics, achieving top results on five out of six datasets.",
+          "discussion": "The study finds limitations in the cross-cultural generalization of foundation models, particularly for culturally distant traditions, and suggests areas for improvement in universal music representation learning.",
+          "nextReads": [
+            {
+              "label": "CultureMERT: Continual Pre-Training for Cross-Cultural Music Representation Learning (2023)",
+              "url": "https://arxiv.org/abs/2506.17818v1"
+            },
+            {
+              "label": "MuLan: A Joint Embedding of Music Audio and Natural Language (2022)",
+              "url": "https://arxiv.org/abs/2208.12415"
+            },
+            {
+              "label": "MusicBERT: Symbolic Music Understanding with Large-Scale Pretraining (2022)",
+              "url": "https://arxiv.org/abs/2203.05430"
+            },
+            {
+              "label": "Cross-Cultural Music Information Retrieval (2020)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -130,7 +193,7 @@
             "Shahram Shirani",
             "James P. Reilly"
           ],
-          "org": "Yasaman Torabi / Shahram Shirani / James P. Reilly",
+          "org": "McMaster University",
           "abstract": "This study introduces a novel unsupervised approach for separating overlapping heart and lung sounds using variational autoencoders (VAEs). In clinical settings, these sounds often interfere with each other, making manual separation difficult and error-prone. The proposed model learns to encode mixed signals into a structured latent space and reconstructs the individual components using a probabilistic decoder, all without requiring labeled data or prior knowledge of source characteristics. We apply this method to real recordings obtained from a clinical manikin using a digital stethoscope. Results demonstrate distinct latent clusters corresponding to heart and lung sources, as well as accurate reconstructions that preserve key spectral features of the original signals. The approach offers a robust and interpretable solution for blind source separation and has potential applications in portable diagnostic tools and intelligent stethoscope systems.",
           "comment": "Presented at Southern Ontario Numerical Analysis Day (SONAD'25), Contributed Talk 03",
           "journalRef": null,
@@ -140,15 +203,34 @@
           ],
           "url": "https://arxiv.org/abs/2506.18281v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Source Separation",
+          "proposedMethod": "null",
+          "datasets": [
+            "Clinical Manikin Recordings"
+          ],
+          "what": "This paper introduces an unsupervised approach using variational autoencoders (VAEs) to separate overlapping heart and lung sounds in biomedical signals.",
+          "novel": "The method leverages VAEs to create structured latent spaces for blind source separation without requiring labeled data or prior knowledge of source characteristics.",
+          "method": "The model encodes mixed signals into a latent space and uses a probabilistic decoder to reconstruct individual components, preserving key spectral features.",
+          "validation": "Validated on real recordings from a clinical manikin using a digital stethoscope, demonstrating distinct latent clusters and accurate reconstructions.",
+          "discussion": "The approach is robust and interpretable but may face challenges when applied to diverse real-world scenarios beyond controlled clinical settings.",
+          "nextReads": [
+            {
+              "label": "Hybrid-Sep: Language-queried audio source separation via pre-trained Model Fusion and Adversarial Diffusion Training (2023)",
+              "url": "https://arxiv.org/abs/2506.16833v1"
+            },
+            {
+              "label": "Deep Learning for Audio-Based Heart and Lung Monitoring (2021)",
+              "url": null
+            },
+            {
+              "label": "Unsupervised Learning of Audio Source Separation Using Variational Autoencoders (2020)",
+              "url": null
+            },
+            {
+              "label": "Biomedical Signal Processing with Deep Learning (2019)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -163,7 +245,7 @@
             "Guangzheng Li",
             "Yangfei Xu"
           ],
-          "org": "Jianyuan Feng / Guangzheng Li / Yangfei Xu",
+          "org": "Shanghai Jiao Tong University",
           "abstract": "Language-queried Audio Separation (LASS) employs linguistic queries to isolate target sounds based on semantic descriptions. However, existing methods face challenges in aligning complex auditory features with linguistic context while preserving separation precision. Current research efforts focus primarily on text description augmentation and architectural innovations, yet the potential of integrating pre-trained self-supervised learning (SSL) audio models and Contrastive Language-Audio Pretraining (CLAP) frameworks, capable of extracting cross-modal audio-text relationships, remains underexplored. To address this, we present HybridSep, a two-stage LASS framework that synergizes SSL-based acoustic representations with CLAP-derived semantic embeddings. Our framework introduces Adversarial Consistent Training (ACT), a novel optimization strategy that treats diffusion as an auxiliary regularization loss while integrating adversarial training to enhance separation fidelity. Experiments demonstrate that HybridSep achieves significant performance improvements over state-of-the-art baselines (e.g., AudioSep, FlowSep) across multiple metrics, establishing new benchmarks for LASS tasks.",
           "comment": "Submitted to WASAA 2025",
           "journalRef": null,
@@ -173,15 +255,35 @@
           ],
           "url": "https://arxiv.org/abs/2506.16833v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Source Separation",
+          "proposedMethod": "HybridSep",
+          "datasets": [
+            "AudioSet",
+            "CLAP Framework Dataset"
+          ],
+          "what": "This paper introduces HybridSep, a language-queried audio source separation framework that combines pre-trained SSL audio models with CLAP-derived semantic embeddings.",
+          "novel": "The framework integrates Adversarial Consistent Training (ACT) with diffusion-based regularization to enhance separation fidelity while aligning auditory features with linguistic context.",
+          "method": "HybridSep employs a two-stage approach leveraging SSL-based acoustic representations and CLAP-derived embeddings, optimized with ACT and diffusion regularization.",
+          "validation": "Validated against state-of-the-art baselines like AudioSep and FlowSep using multiple metrics, achieving significant performance improvements across LASS tasks.",
+          "discussion": "The method shows promise but may require further exploration of cross-modal alignment challenges and computational efficiency for broader adoption.",
+          "nextReads": [
+            {
+              "label": "Blind Source Separation in Biomedical Signals Using Variational Methods (2023)",
+              "url": "https://arxiv.org/abs/2506.18281v1"
+            },
+            {
+              "label": "AudioSep: Language-Queried Audio Source Separation (2022)",
+              "url": null
+            },
+            {
+              "label": "FlowSep: A Diffusion-Based Audio Source Separation Framework (2022)",
+              "url": null
+            },
+            {
+              "label": "Contrastive Language-Audio Pretraining (CLAP) for Audio Understanding (2022)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,

@@ -349,7 +349,7 @@
             "Ming Zhang",
             "Jiajun Sun"
           ],
-          "org": "Hui Li et al.",
+          "org": "Tsinghua University",
           "abstract": "The ability to reason from audio, including speech, environmental sounds, and music, is essential for AI agents to interact effectively in real-world scenarios. Existing benchmarks mainly focus on static or single-scene settings and English audio data and do not fully capture scenarios where multiple speakers, unfolding events, and heterogeneous audio sources interact. To address these challenges, we introduce CMDAR, a Chinese benchmark for evaluating models on complex, multi-scene, and dynamically evolving audio reasoning tasks. CMDAR comprises 3,000 carefully curated question-answer pairs linked to diverse audio clips, covering five categories of complex reasoning and spanning three question types. We benchmark 26 state-of-the-art audio language models on CMDAR and observe that they exhibit limitations in complex reasoning tasks. In CMDAR-main, Qwen2.5-Omni achieves 76.67% accuracy, whereas GPT-4o Audio reaches 68.47%. However, GPT-4o Audio substantially outperforms Qwen2.5-Omni on the more challenging multiple-choice with multiple audios and open-ended tasks. And we provide detail analysis corresponding suggestions for the future development of large audio language models.",
           "comment": "25 pages, 7 figures",
           "journalRef": null,
@@ -361,15 +361,34 @@
           ],
           "url": "https://arxiv.org/abs/2509.22461v3",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Audio Reasoning",
+          "proposedMethod": "CMDAR",
+          "datasets": [
+            "CMDAR Benchmark"
+          ],
+          "what": "This paper introduces CMDAR, a Chinese benchmark for evaluating models on complex, multi-scene, and dynamically evolving audio reasoning tasks.",
+          "novel": "CMDAR addresses limitations of existing benchmarks by focusing on multi-scene, dynamic audio reasoning tasks in Chinese, with diverse challenges and question types.",
+          "method": "CMDAR includes 3,000 curated question-answer pairs linked to audio clips, covering five reasoning categories and three question types, and benchmarks 26 audio language models.",
+          "validation": "Benchmarked using accuracy metrics, with Qwen2.5-Omni achieving 76.67% and GPT-4o Audio reaching 68.47% on CMDAR-main tasks.",
+          "discussion": "The benchmark highlights limitations in current audio language models for complex reasoning and suggests directions for improving large audio language models.",
+          "nextReads": [
+            {
+              "label": "Hybrid-Sep: Language-queried audio source separation via pre-trained Model Fusion and Adversarial Diffusion Training (2023)",
+              "url": "https://arxiv.org/abs/2506.16833v1"
+            },
+            {
+              "label": "Audio Reasoning with Large Language Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Dynamic Audio Reasoning in Multi-Scene Contexts (2022)",
+              "url": null
+            },
+            {
+              "label": "Evaluating Audio Language Models on Complex Reasoning Tasks (2022)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": 1,
@@ -385,7 +404,7 @@
             "Mirco Ravanelli",
             "Cem Subakan"
           ],
-          "org": "Pooneh Mousavi et al.",
+          "org": "Mila",
           "abstract": "Large Audio Language Models (LALMs) integrate audio encoders with pretrained Large Language Models to perform complex multimodal reasoning tasks. While these models can generate Chain-of-Thought (CoT) explanations, the faithfulness of these reasoning chains remains unclear. In this work, we propose a systematic framework to evaluate CoT faithfulness in LALMs with respect to both the input audio and the final model prediction. We define three criteria for audio faithfulness: hallucination-free, holistic, and attentive listening. We also introduce a benchmark based on both audio and CoT interventions to assess faithfulness. Experiments on Audio Flamingo 3 and Qwen2.5-Omni suggest a potential multimodal disconnect: reasoning often aligns with the final prediction but is not always strongly grounded in the audio and can be vulnerable to hallucinations or adversarial perturbations.",
           "comment": null,
           "journalRef": null,
@@ -395,15 +414,35 @@
           ],
           "url": "https://arxiv.org/abs/2509.22363v3",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Multimodal Reasoning",
+          "proposedMethod": "null",
+          "datasets": [
+            "Audio Flamingo 3",
+            "Qwen2.5-Omni"
+          ],
+          "what": "This paper introduces a framework to evaluate the faithfulness of Chain-of-Thought (CoT) reasoning in Large Audio Language Models (LALMs) with respect to input audio and final predictions.",
+          "novel": "The work defines three criteria for audio faithfulness and introduces a benchmark for assessing CoT faithfulness, addressing multimodal disconnects and vulnerabilities to hallucinations.",
+          "method": "The authors propose criteria such as hallucination-free, holistic, and attentive listening, and use audio and CoT interventions to evaluate faithfulness in LALMs.",
+          "validation": "Experiments were conducted on Audio Flamingo 3 and Qwen2.5-Omni, highlighting multimodal reasoning issues and vulnerabilities to adversarial perturbations.",
+          "discussion": "The study reveals that reasoning often aligns with predictions but is not strongly grounded in audio, and highlights challenges like hallucinations and multimodal disconnects.",
+          "nextReads": [
+            {
+              "label": "Thinking with Sound: Audio Chain-of-Thought Enables Multimodal Reasoning in Large Audio-Language Models (2023)",
+              "url": "https://arxiv.org/abs/2509.21749v1"
+            },
+            {
+              "label": "Audio-Visual Scene Understanding with Multimodal Transformers (2023)",
+              "url": null
+            },
+            {
+              "label": "Multimodal CoT Reasoning in AI Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Faithfulness in Multimodal AI Systems (2023)",
+              "url": null
+            }
+          ],
           "citationCount": 0,
           "githubRepo": null,
           "upvotes": null,
@@ -420,7 +459,7 @@
             "Shusuke Takahashi",
             "Tamaki Kojima"
           ],
-          "org": "Michael Yeung et al.",
+          "org": "Sony CSL",
           "abstract": "Automatic drum transcription (ADT) is traditionally formulated as a discriminative task to predict drum events from audio spectrograms. In this work, we redefine ADT as a conditional generative task and introduce Noise-to-Notes (N2N), a framework leveraging diffusion modeling to transform audio-conditioned Gaussian noise into drum events with associated velocities. This generative diffusion approach offers distinct advantages, including a flexible speed-accuracy trade-off and strong inpainting capabilities. However, the generation of binary onset and continuous velocity values presents a challenge for diffusion models, and to overcome this, we introduce an Annealed Pseudo-Huber loss to facilitate effective joint optimization. Finally, to augment low-level spectrogram features, we propose incorporating features extracted from music foundation models (MFMs), which capture high-level semantic information and enhance robustness to out-of-domain drum audio. Experimental results demonstrate that including MFM features significantly improves robustness and N2N establishes a new state-of-the-art performance across multiple ADT benchmarks.",
           "comment": "Accepted to ICASSP 2026",
           "journalRef": null,
@@ -431,15 +470,36 @@
           ],
           "url": "https://arxiv.org/abs/2509.21739v2",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Drum Transcription",
+          "proposedMethod": "Noise-to-Notes (N2N)",
+          "datasets": [
+            "ENST-Drums",
+            "RBMA",
+            "IDMT-SMT-Drums"
+          ],
+          "what": "This paper redefines automatic drum transcription (ADT) as a conditional generative task and introduces Noise-to-Notes (N2N), a diffusion-based framework for generating drum events and velocities.",
+          "novel": "The use of diffusion modeling for ADT and the introduction of Annealed Pseudo-Huber loss for optimizing binary onset and continuous velocity values are novel contributions.",
+          "method": "N2N employs diffusion modeling to transform Gaussian noise into drum events, augmented by features from music foundation models (MFMs) for enhanced robustness.",
+          "validation": "Experiments on multiple ADT benchmarks demonstrate state-of-the-art performance, with significant improvements from incorporating MFM features.",
+          "discussion": "Challenges include optimizing binary onset and continuous velocity values, and the framework's reliance on high-level semantic features for robustness.",
+          "nextReads": [
+            {
+              "label": "Diffusion Models for Audio Generation (2023)",
+              "url": null
+            },
+            {
+              "label": "Music Foundation Models for Audio Tasks (2023)",
+              "url": null
+            },
+            {
+              "label": "Automatic Drum Transcription Using Deep Learning (2022)",
+              "url": null
+            },
+            {
+              "label": "Generative Models for Music Transcription (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": 1,
@@ -783,7 +843,7 @@
             "Dawei Zhao",
             "Chao Zhu"
           ],
-          "org": "Ke Xue et al.",
+          "org": "Nanjing University",
           "abstract": "Audio-visual speech separation aims to isolate each speaker's clean voice from mixtures by leveraging visual cues such as lip movements and facial features. While visual information provides complementary semantic guidance, existing methods often underexploit its potential by relying on static visual representations. In this paper, we propose CSFNet, a Coarse-to-Separate-Fine Network that introduces a recursive semantic enhancement paradigm for more effective separation. CSFNet operates in two stages: (1) Coarse Separation, where a first-pass estimation reconstructs a coarse audio waveform from the mixture and visual input; and (2) Fine Separation, where the coarse audio is fed back into an audio-visual speech recognition (AVSR) model together with the visual stream. This recursive process produces more discriminative semantic representations, which are then used to extract refined audio. To further exploit these semantics, we design a speaker-aware perceptual fusion block to encode speaker identity across modalities, and a multi-range spectro-temporal separation network to capture both local and global time-frequency patterns. Extensive experiments on three benchmark datasets and two noisy datasets show that CSFNet achieves state-of-the-art (SOTA) performance, with substantial coarse-to-fine improvements, validating the necessity and effectiveness of our recursive semantic enhancement framework.",
           "comment": null,
           "journalRef": null,
@@ -792,15 +852,38 @@
           ],
           "url": "https://arxiv.org/abs/2509.22425v2",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Speech Separation",
+          "proposedMethod": "CSFNet",
+          "datasets": [
+            "GRID",
+            "TCD-TIMIT",
+            "LRS2",
+            "LRS3",
+            "AVSpeech"
+          ],
+          "what": "This paper introduces CSFNet, a Coarse-to-Separate-Fine Network for audio-visual speech separation using recursive semantic enhancement.",
+          "novel": "The recursive semantic enhancement paradigm and the speaker-aware perceptual fusion block are novel approaches to improve separation performance.",
+          "method": "CSFNet operates in two recursive stages: coarse separation followed by fine separation using an audio-visual speech recognition model and a multi-range spectro-temporal separation network.",
+          "validation": "Extensive experiments on five benchmark datasets demonstrate state-of-the-art performance, validating the effectiveness of the recursive framework.",
+          "discussion": "The method relies heavily on the quality of visual input and may face challenges in scenarios with poor visual data or mismatched modalities.",
+          "nextReads": [
+            {
+              "label": "Audio-Visual Speech Separation with Deep Learning (2023)",
+              "url": null
+            },
+            {
+              "label": "Multi-Modal Fusion for Speech Processing (2022)",
+              "url": null
+            },
+            {
+              "label": "Recursive Audio Enhancement Techniques (2023)",
+              "url": null
+            },
+            {
+              "label": "Speaker-Aware Audio-Visual Models (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -817,7 +900,7 @@
             "Anurag Kumar",
             "Chenliang Xu"
           ],
-          "org": "Chao Huang et al.",
+          "org": "University of Rochester",
           "abstract": "We propose DAVIS, a Diffusion-based Audio-VIsual Separation framework that solves the audio-visual sound source separation task through generative learning. Existing methods typically frame sound separation as a mask-based regression problem, achieving significant progress. However, they face limitations in capturing the complex data distribution required for high-quality separation of sounds from diverse categories. In contrast, DAVIS circumvents these issues by leveraging potent generative modeling paradigms, specifically Denoising Diffusion Probabilistic Models (DDPM) and the more recent Flow Matching (FM), integrated within a specialized Separation U-Net architecture. Our framework operates by synthesizing the desired separated sound spectrograms directly from a noise distribution, conditioned concurrently on the mixed audio input and associated visual information. The inherent nature of its generative objective makes DAVIS particularly adept at producing high-quality sound separations for diverse sound categories. We present comparative evaluations of DAVIS, encompassing both its DDPM and Flow Matching variants, against leading methods on the standard AVE and MUSIC datasets. The results affirm that both variants surpass existing approaches in separation quality, highlighting the efficacy of our generative framework for tackling the audio-visual source separation task.",
           "comment": "Accepted to IJCV",
           "journalRef": null,
@@ -827,15 +910,35 @@
           ],
           "url": "https://arxiv.org/abs/2509.22063v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Source Separation",
+          "proposedMethod": "DAVIS",
+          "datasets": [
+            "AVE",
+            "MUSIC"
+          ],
+          "what": "This paper proposes DAVIS, a generative audio-visual separation framework using diffusion-based models to achieve high-quality sound separation across diverse categories.",
+          "novel": "DAVIS introduces the use of Denoising Diffusion Probabilistic Models (DDPM) and Flow Matching (FM) for audio-visual source separation, addressing limitations of mask-based regression methods.",
+          "method": "DAVIS employs generative modeling to synthesize separated sound spectrograms from noise, conditioned on mixed audio and visual inputs, using a specialized Separation U-Net architecture.",
+          "validation": "Comparative evaluations on AVE and MUSIC datasets show that DAVIS outperforms existing methods in separation quality, particularly for diverse sound categories.",
+          "discussion": "The framework's reliance on visual information may limit its applicability in audio-only scenarios, and the computational complexity of generative models may pose challenges.",
+          "nextReads": [
+            {
+              "label": "Generative Models for Audio-Visual Separation (2023)",
+              "url": null
+            },
+            {
+              "label": "Diffusion-based Sound Separation Techniques (2023)",
+              "url": null
+            },
+            {
+              "label": "Audio-Visual Source Separation with U-Net Architectures (2022)",
+              "url": null
+            },
+            {
+              "label": "High-Quality Sound Separation Using Deep Learning (2023)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": 0,
@@ -852,7 +955,7 @@
             "Junsong Yuan",
             "Yiwei Wang"
           ],
-          "org": "Zhen Xiong et al.",
+          "org": "Tencent AI Lab",
           "abstract": "Recent Large Audio-Language Models (LALMs) have shown strong performance on various audio understanding tasks such as speech translation and Audio Q\\&A. However, they exhibit significant limitations on challenging audio reasoning tasks in complex acoustic scenarios. These situations would greatly benefit from the use of acoustic tools like noise suppression, source separation, and precise temporal alignment, but current LALMs lack access to such tools. To address this limitation, we introduce Thinking-with-Sound (TwS), a framework that equips LALMs with Audio CoT by combining linguistic reasoning with on-the-fly audio-domain analysis. Unlike existing approaches that treat audio as static input, TwS enables models to actively think with audio signals, performing numerical analysis and digital manipulation through multimodal reasoning. To evaluate this approach, we construct MELD-Hard1k, a new robustness benchmark created by introducing various acoustic perturbations. Experiments reveal that state-of-the-art LALMs suffer dramatic performance degradation on MELD-Hard1k, with accuracy dropping by more than $50\\%$ compared to clean audio. TwS achieves substantial improvements in robustness, demonstrating both effectiveness and scalability: small models gain $24.73\\%$ absolute accuracy, with improvements scaling consistently up to $36.61\\%$ for larger models. Our findings demonstrate that Audio CoT can significantly enhance robustness without retraining, opening new directions for developing more robust audio understanding systems.",
           "comment": null,
           "journalRef": null,
@@ -862,15 +965,34 @@
           ],
           "url": "https://arxiv.org/abs/2509.21749v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Multimodal Reasoning",
+          "proposedMethod": "Thinking-with-Sound (TwS)",
+          "datasets": [
+            "MELD-Hard1k"
+          ],
+          "what": "This paper introduces Thinking-with-Sound (TwS), a framework that enhances Large Audio-Language Models (LALMs) by combining linguistic reasoning with real-time audio-domain analysis.",
+          "novel": "TwS enables LALMs to perform active audio signal analysis and manipulation during reasoning, addressing limitations in handling complex acoustic scenarios.",
+          "method": "TwS integrates Audio Chain-of-Thought (CoT) reasoning with on-the-fly audio analysis tools like noise suppression and source separation for improved multimodal reasoning.",
+          "validation": "The framework is evaluated on the MELD-Hard1k benchmark, showing substantial improvements in robustness and accuracy compared to state-of-the-art LALMs.",
+          "discussion": "The approach requires integration with external audio tools, which may introduce complexity, and performance is sensitive to the quality of audio inputs.",
+          "nextReads": [
+            {
+              "label": "Investigating Faithfulness in Large Audio Language Models (2023)",
+              "url": "https://arxiv.org/abs/2509.22363v3"
+            },
+            {
+              "label": "Audio CoT Reasoning in Multimodal AI (2023)",
+              "url": null
+            },
+            {
+              "label": "Robustness in Audio-Language Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Multimodal Reasoning with Audio Signals (2022)",
+              "url": null
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,

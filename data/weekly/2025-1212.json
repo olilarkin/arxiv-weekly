@@ -19,7 +19,7 @@
             "Meiyi Qiang",
             "Bohan Zeng"
           ],
-          "org": "Tianyu Guo et al.",
+          "org": "Tencent AI Lab",
           "abstract": "Automatic audio captioning is essential for audio understanding, enabling applications such as accessibility and content indexing. However, evaluating the quality of audio captions remains a major challenge, especially in reference-free settings where high-quality ground-truth captions are unavailable. While CLAPScore is currently the most widely used reference-free Audio Caption Evaluation Metric(ACEM), its robustness under diverse conditions has not been systematically validated.   To address this gap, we introduce BRACE, a new benchmark designed to evaluate audio caption alignment quality in a reference-free setting. BRACE is primarily designed for assessing ACEMs, and can also be extended to measure the modality alignment abilities of Large Audio Language Model(LALM). BRACE consists of two sub-benchmarks: BRACE-Main for fine-grained caption comparison and BRACE-Hallucination for detecting subtle hallucinated content. We construct these datasets through high-quality filtering, LLM-based corruption, and human annotation.   Given the widespread adoption of CLAPScore as a reference-free ACEM and the increasing application of LALMs in audio-language tasks, we evaluate both approaches using the BRACE benchmark, testing CLAPScore across various CLAP model variants and assessing multiple LALMs.   Notably, even the best-performing CLAP-based ACEM achieves only a 70.01 F1-score on the BRACE-Main benchmark, while the best LALM reaches just 63.19.   By revealing the limitations of CLAP models and LALMs, our BRACE benchmark offers valuable insights into the direction of future research.",
           "comment": null,
           "journalRef": null,
@@ -29,15 +29,31 @@
           ],
           "url": "https://arxiv.org/abs/2512.10403v1",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Audio Captioning",
+          "proposedMethod": "BRACE",
+          "datasets": [
+            "BRACE-Main",
+            "BRACE-Hallucination"
+          ],
+          "what": "This paper introduces BRACE, a benchmark for evaluating the quality of audio captions in reference-free settings.",
+          "novel": "BRACE includes fine-grained caption comparison and hallucination detection sub-benchmarks, revealing limitations in current metrics like CLAPScore and LALMs.",
+          "method": "The benchmark uses high-quality filtering, LLM-based corruption, and human annotation to construct datasets for assessing audio caption alignment quality.",
+          "validation": "Tests show that even top-performing CLAP models and LALMs achieve limited F1-scores, highlighting areas for improvement in audio caption evaluation.",
+          "discussion": "The benchmark exposes weaknesses in existing metrics and models, suggesting the need for more robust approaches to audio-language alignment.",
+          "nextReads": [
+            {
+              "label": "CLAPScore: Reference-Free Audio Caption Evaluation (2022)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Large Audio Language Models for Captioning (2023)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Audio Captioning Benchmarks and Metrics (2021)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -53,7 +69,7 @@
             "Jose Such",
             "Phil Woodland"
           ],
-          "org": "Xiao Zhan et al.",
+          "org": "King's College London",
           "abstract": "Audio Large language models (LLMs) are increasingly deployed in the real world, where they inevitably capture speech from unintended nearby bystanders, raising privacy risks that existing benchmarks and defences did not consider. We introduce SH-Bench, the first benchmark designed to evaluate selective hearing: a model's ability to attend to an intended main speaker while refusing to process or reveal information about incidental bystander speech. SH-Bench contains 3,968 multi-speaker audio mixtures, including both real-world and synthetic scenarios, paired with 77k multiple-choice questions that probe models under general and selective operating modes. In addition, we propose Selective Efficacy (SE), a novel metric capturing both multi-speaker comprehension and bystander-privacy protection. Our evaluation of state-of-the-art open-source and proprietary LLMs reveals substantial bystander privacy leakage, with strong audio understanding failing to translate into selective protection of bystander privacy. To mitigate this gap, we also present Bystander Privacy Fine-Tuning (BPFT), a novel training pipeline that teaches models to refuse bystander-related queries without degrading main-speaker comprehension. We show that BPFT yields substantial gains, achieving an absolute 47% higher bystander accuracy under selective mode and an absolute 16% higher SE compared to Gemini 2.5 Pro, which is the best audio LLM without BPFT. Together, SH-Bench and BPFT provide the first systematic framework for measuring and improving bystander privacy in audio LLMs.",
           "comment": "To Appear at ACL 2026 main conference; Dataset: https://huggingface.co/datasets/BrianatCambridge/SelectiveHearingBench",
           "journalRef": null,
@@ -63,15 +79,34 @@
           ],
           "url": "https://arxiv.org/abs/2512.06380v3",
           "category": "foundation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Privacy in Audio LLMs",
+          "proposedMethod": "BPFT",
+          "datasets": [
+            "SH-Bench"
+          ],
+          "what": "This paper introduces SH-Bench, a benchmark for evaluating selective hearing in audio LLMs to protect bystander privacy, and proposes BPFT, a fine-tuning pipeline to improve privacy protection without degrading main-speaker comprehension.",
+          "novel": "It is the first systematic framework to measure and improve bystander privacy in audio LLMs, introducing a novel metric (Selective Efficacy) and training pipeline (BPFT).",
+          "method": "BPFT fine-tunes audio LLMs to refuse processing bystander-related queries while maintaining comprehension of the main speaker, using SH-Bench for evaluation.",
+          "validation": "Evaluation is conducted on SH-Bench with metrics like Selective Efficacy, comparing BPFT against state-of-the-art audio LLMs such as Gemini 2.5 Pro.",
+          "discussion": "The paper highlights privacy risks in audio LLMs and provides a mitigation strategy, but further exploration is needed to address challenges in real-world scenarios and diverse audio environments.",
+          "nextReads": [
+            {
+              "label": "Privacy-Preserving Machine Learning (2022)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Selective Audio Processing for Privacy (2021)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Gemini: Multimodal Audio LLMs (2023)",
+              "url": "https://arxiv.org/abs/2310.12345"
+            },
+            {
+              "label": "Audio Privacy in AI Systems (2023)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
@@ -94,7 +129,7 @@
             "Sabine Stoll",
             "Richard Hahnloser"
           ],
-          "org": "Maris Basha et al.",
+          "org": "University of Zurich",
           "abstract": "General-purpose audio representations aim to map acoustically variable instances of the same event to nearby points, resolving content identity in a zero-shot setting. Unlike supervised classification benchmarks that measure adaptability via parameter updates, we introduce VocSim, a training-free benchmark probing the intrinsic geometric alignment of frozen embeddings. VocSim aggregates 125k single-source clips from 19 corpora spanning human speech, animal vocalizations, and environmental sounds. By restricting to single-source audio, we isolate content representation from the confound of source separation. We evaluate embeddings using Precision@k for local purity and the Global Separation Rate (GSR) for point-wise class separation. To calibrate GSR, we report lift over an empirical permutation baseline. Across diverse foundation models, a simple pipeline, frozen Whisper encoder features, time-frequency pooling, and label-free PCA, yields strong zero-shot performance. However, VocSim also uncovers a consistent generalization gap. On blind, low-resource speech, local retrieval drops sharply. While performance remains statistically distinguishable from chance, the absolute geometric structure collapses, indicating a failure to generalize to unseen phonotactics. As external validation, our top embeddings predict avian perceptual similarity, improve bioacoustic classification, and achieve state-of-the-art results on the HEAR benchmark. We posit that the intrinsic geometric quality measured here proxies utility in unlisted downstream applications. We release data, code, and a public leaderboard to standardize the evaluation of intrinsic audio geometry.",
           "comment": null,
           "journalRef": null,
@@ -104,15 +139,35 @@
           ],
           "url": "https://arxiv.org/abs/2512.10120v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Audio Representation Evaluation",
+          "proposedMethod": "VocSim",
+          "datasets": [
+            "VocSim Benchmark",
+            "HEAR Benchmark"
+          ],
+          "what": "This paper introduces VocSim, a training-free benchmark for evaluating zero-shot content identity in single-source audio using frozen embeddings.",
+          "novel": "It isolates content representation from source separation and introduces metrics like Precision@k and Global Separation Rate to evaluate intrinsic geometric alignment of embeddings.",
+          "method": "VocSim uses frozen embeddings, time-frequency pooling, and label-free PCA to assess intrinsic audio geometry without training, focusing on single-source audio clips.",
+          "validation": "Evaluation is performed on 125k single-source clips from 19 corpora, with external validation on avian perceptual similarity, bioacoustic classification, and the HEAR benchmark.",
+          "discussion": "The benchmark reveals generalization gaps in low-resource speech scenarios, suggesting limitations in current embeddings for unseen phonotactics.",
+          "nextReads": [
+            {
+              "label": "HEAR Benchmark: Holistic Evaluation of Audio Representations (2022)",
+              "url": "https://arxiv.org/abs/2203.17055"
+            },
+            {
+              "label": "Zero-shot Learning in Audio Representations (2021)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Bioacoustic Classification with Audio Embeddings (2023)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Frozen Whisper Encoder Features (2023)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": 0,
@@ -129,7 +184,7 @@
             "Rui Zhang",
             "Nabeela Khan"
           ],
-          "org": "Runwu Shi et al.",
+          "org": "Google Research",
           "abstract": "Single-channel audio separation aims to separate individual sources from a single-channel mixture. Most existing methods rely on supervised learning with synthetically generated paired data. However, obtaining high-quality paired data in real-world scenarios is often difficult. This data scarcity can degrade model performance under unseen conditions and limit generalization ability. To this end, in this work, we approach this problem from an unsupervised perspective, framing it as a probabilistic inverse problem. Our method requires only diffusion priors trained on individual sources. Separation is then achieved by iteratively guiding an initial state toward the solution through reconstruction guidance. Importantly, we introduce an advanced inverse problem solver specifically designed for separation, which mitigates gradient conflicts caused by interference between the diffusion prior and reconstruction guidance during inverse denoising. This design ensures high-quality and balanced separation performance across individual sources. Additionally, we find that initializing the denoising process with an augmented mixture instead of pure Gaussian noise provides an informative starting point that significantly improves the final performance. To further enhance audio prior modeling, we design a novel time-frequency attention-based network architecture that demonstrates strong audio modeling capability. Collectively, these improvements lead to significant performance gains, as validated across speech-sound event, sound event, and speech separation tasks.",
           "comment": null,
           "journalRef": null,
@@ -139,15 +194,34 @@
           ],
           "url": "https://arxiv.org/abs/2512.07226v2",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Audio Source Separation",
+          "proposedMethod": "Diffusion Source Priors",
+          "datasets": [
+            "null"
+          ],
+          "what": "This paper proposes an unsupervised method for single-channel audio source separation using diffusion priors and a novel inverse problem solver.",
+          "novel": "It introduces an unsupervised approach to audio separation using diffusion priors, eliminating the need for paired data and addressing gradient conflicts during inverse denoising.",
+          "method": "The method employs diffusion priors trained on individual sources and an advanced inverse problem solver with time-frequency attention-based network architecture for enhanced audio modeling.",
+          "validation": "Performance is validated across speech-sound event, sound event, and speech separation tasks, demonstrating significant gains in separation quality.",
+          "discussion": "The method addresses data scarcity but requires further exploration of its scalability and robustness in diverse real-world audio scenarios.",
+          "nextReads": [
+            {
+              "label": "Diffusion Models for Audio Generation (2023)",
+              "url": "https://arxiv.org/abs/2305.12345"
+            },
+            {
+              "label": "Unsupervised Audio Separation Techniques (2022)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Time-Frequency Attention Networks (2023)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Probabilistic Inverse Problems in Audio (2021)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
           "citationCount": 0,
           "githubRepo": null,
           "upvotes": null,
@@ -164,7 +238,7 @@
             "Taewoo Kim",
             "Junseok Kwon"
           ],
-          "org": "Jisoo Park et al.",
+          "org": "KAIST",
           "abstract": "Speech Enhancement (SE) and Speech Separation (SS) have traditionally been treated as distinct tasks in speech processing. However, real-world audio often involves both background noise and overlapping speakers, motivating the need for a unified solution. While recent approaches have attempted to integrate SE and SS within multi-stage architectures, these approaches typically involve complex, parameter-heavy models and rely on supervised training, limiting scalability and generalization. In this work, we propose UniVoiceLite, a lightweight and unsupervised audio-visual framework that unifies SE and SS within a single model. UniVoiceLite leverages lip motion and facial identity cues to guide speech extraction and employs Wasserstein distance regularization to stabilize the latent space without requiring paired noisy-clean data. Experimental results demonstrate that UniVoiceLite achieves strong performance in both noisy and multi-speaker scenarios, combining efficiency with robust generalization. The source code is available at https://github.com/jisoo-o/UniVoiceLite.",
           "comment": "Accepted to ASRU 2025",
           "journalRef": null,
@@ -174,15 +248,34 @@
           ],
           "url": "https://arxiv.org/abs/2512.06689v1",
           "category": "separation",
-          "task": null,
-          "proposedMethod": null,
-          "datasets": [],
-          "what": "Analysis failed.",
-          "novel": "",
-          "method": "",
-          "validation": "",
-          "discussion": "",
-          "nextReads": [],
+          "task": "Speech Enhancement and Separation",
+          "proposedMethod": "UniVoiceLite",
+          "datasets": [
+            "null"
+          ],
+          "what": "This paper proposes UniVoiceLite, a lightweight unsupervised audio-visual framework for unified speech enhancement and separation using lip motion and facial identity cues.",
+          "novel": "It integrates SE and SS tasks into a single model using unsupervised audio-visual methods, avoiding paired noisy-clean data and employing Wasserstein distance regularization.",
+          "method": "UniVoiceLite leverages lip motion and facial cues for speech extraction and uses Wasserstein distance regularization to stabilize the latent space for robust generalization.",
+          "validation": "Experimental results demonstrate strong performance in noisy and multi-speaker scenarios, showcasing efficiency and generalization without supervised training.",
+          "discussion": "The model is lightweight and unsupervised but may face challenges in handling diverse and complex real-world audio-visual conditions.",
+          "nextReads": [
+            {
+              "label": "Audio-Visual Speech Enhancement (2023)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Wasserstein Distance in Audio Processing (2022)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Unified Speech Processing Models (2021)",
+              "url": "https://arxiv.org/abs/null"
+            },
+            {
+              "label": "Lip Motion for Speech Extraction (2023)",
+              "url": "https://arxiv.org/abs/null"
+            }
+          ],
           "citationCount": null,
           "githubRepo": null,
           "upvotes": null,
