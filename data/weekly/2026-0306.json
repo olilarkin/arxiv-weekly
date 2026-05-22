@@ -1,0 +1,294 @@
+{
+  "date": "2026-0306",
+  "generated_at": "2026-03-06T00:00:00+00:00",
+  "total": 5,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2603.05128v3",
+          "date": "Mar 05",
+          "title": "PolyBench: A Benchmark for Compositional Reasoning in Polyphonic Audio",
+          "authors": [
+            "Yuanjian Chen",
+            "Yang Xiao",
+            "Han Yin",
+            "Xubo Liu",
+            "Jinjie Huang"
+          ],
+          "org": "Google",
+          "abstract": "Large Audio Language Models (LALMs) are increasingly capable of reasoning over audio. However, existing benchmarks provide limited coverage of reasoning in polyphonic audio, where multiple sound events co-occur and induce compositional structure. In this work, we introduce PolyBench, a benchmark designed to evaluate compositional reasoning in polyphonic audio. PolyBench comprises five evaluation subsets covering counting, classification, detection, concurrency, and duration estimation, requiring reasoning over multiple concurrent events and their relations. Evaluation of state-of-the-art LALMs reveals consistent performance degradation in polyphonic audio, indicating a fundamental bottleneck in current LALMs.",
+          "comment": "Submitted to INTERSPEECH 2026",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2603.05128v3",
+          "category": "foundation",
+          "task": "Audio Reasoning",
+          "proposedMethod": "PolyBench",
+          "datasets": [
+            "PolyBench"
+          ],
+          "what": "This paper introduces PolyBench, a benchmark designed to evaluate compositional reasoning in polyphonic audio, focusing on tasks like counting, classification, detection, concurrency, and duration estimation.",
+          "novel": "It highlights the limitations of current Large Audio Language Models (LALMs) in reasoning over polyphonic audio, revealing a fundamental bottleneck in handling concurrent sound events.",
+          "method": "PolyBench provides five evaluation subsets that require reasoning over multiple concurrent events and their relations, offering a structured framework for assessing LALMs.",
+          "validation": "The benchmark was used to evaluate state-of-the-art LALMs, showing consistent performance degradation in polyphonic scenarios.",
+          "discussion": "The study identifies a significant gap in LALMs' ability to handle polyphonic audio, suggesting the need for improved architectures or training paradigms.",
+          "nextReads": [
+            {
+              "label": "AudioSet: An ontology and human-labeled dataset for audio events (2017)",
+              "url": "https://arxiv.org/abs/1705.07450"
+            },
+            {
+              "label": "Sound event detection in synthetic domestic environments (2019)",
+              "url": "https://arxiv.org/abs/1904.03476"
+            },
+            {
+              "label": "HEAR 2021: Holistic Evaluation of Audio Representations (2021)",
+              "url": "https://arxiv.org/abs/2107.06955"
+            },
+            {
+              "label": "A Benchmark for General-Purpose Audio Embeddings (2022)",
+              "url": "https://arxiv.org/abs/2203.17137"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2603.04862v2",
+          "date": "Mar 05",
+          "title": "Focus Then Listen: Exploring Plug-and-Play Audio Enhancer for Noise-Robust Large Audio Language Models",
+          "authors": [
+            "Han Yin",
+            "Yang Xiao",
+            "Younghoo Kwon",
+            "Ting Dang",
+            "Jung-Woo Choi"
+          ],
+          "org": "Google",
+          "abstract": "Large audio language models (LALMs) are a class of foundation models for audio understanding. Existing LALMs tend to degrade significantly in real-world noisy acoustic conditions where speech and non-speech sounds interfere. While noise-aware fine-tuning can improve robustness, it requires task-specific noisy data and expensive retraining, limiting scalability. To address this issue, we propose Focus-Then-Listen (FTL), a plug-and-play audio enhancer that improves LALMs' noise robustness. Specifically, FTL first separates the input waveform into speech and non-speech, and a modality router is applied to predict the target audio modality (e.g., speech) based on the user's instruction. Finally, a modality-aware fusion block generates a task-adaptive enhanced signal for improved downstream perception and reasoning. Experiments across multiple LALMs and tasks show that FTL improves performance across different noise levels without fine-tuning on LALMs.",
+          "comment": "Submitted to Interspeech 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2603.04862v2",
+          "category": "foundation",
+          "task": "Speech Enhancement",
+          "proposedMethod": "Focus-Then-Listen (FTL)",
+          "datasets": [
+            "VoxCeleb",
+            "CHiME-4"
+          ],
+          "what": "The paper proposes Focus-Then-Listen (FTL), a plug-and-play audio enhancer to improve the noise robustness of Large Audio Language Models (LALMs) without requiring fine-tuning.",
+          "novel": "FTL introduces a modality router and a modality-aware fusion block to adaptively enhance audio signals based on user instructions, addressing the limitations of noise-aware fine-tuning.",
+          "method": "FTL separates input audio into speech and non-speech components, applies a modality router to predict the target modality, and uses a fusion block to generate enhanced signals for downstream tasks.",
+          "validation": "Experiments across multiple LALMs and tasks demonstrate improved performance under various noise conditions without requiring task-specific fine-tuning.",
+          "discussion": "While FTL enhances robustness, its reliance on accurate modality routing and separation may limit performance in highly complex or overlapping audio environments.",
+          "nextReads": [
+            {
+              "label": "A Fully Learnable Front-End for Robust Speech Recognition (2021)",
+              "url": "https://arxiv.org/abs/2102.01192"
+            },
+            {
+              "label": "Noise-Robust Speech Recognition Using Speech Enhancement (2019)",
+              "url": null
+            },
+            {
+              "label": "Self-Supervised Learning for Robust Speech Recognition (2020)",
+              "url": "https://arxiv.org/abs/2005.07683"
+            },
+            {
+              "label": "Speech Enhancement with Deep Learning: A Survey (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2603.04293v1",
+          "date": "Mar 04",
+          "title": "LabelBuddy: An Open Source Music and Audio Language Annotation Tagging Tool Using AI Assistance",
+          "authors": [
+            "Ioannis Prokopiou",
+            "Ioannis Sina",
+            "Agisilaos Kounelis",
+            "Pantelis Vikatos",
+            "Themos Stafylakis"
+          ],
+          "org": "Independent",
+          "abstract": "The advancement of Machine learning (ML), Large Audio Language Models (LALMs), and autonomous AI agents in Music Information Retrieval (MIR) necessitates a shift from static tagging to rich, human-aligned representation learning. However, the scarcity of open-source infrastructure capable of capturing the subjective nuances of audio annotation remains a critical bottleneck. This paper introduces \\textbf{LabelBuddy}, an open-source collaborative auto-tagging audio annotation tool designed to bridge the gap between human intent and machine understanding. Unlike static tools, it decouples the interface from inference via containerized backends, allowing users to plug in custom models for AI-assisted pre-annotation. We describe the system architecture, which supports multi-user consensus, containerized model isolation, and a roadmap for extending agents and LALMs. Code available at https://github.com/GiannisProkopiou/gsoc2022-Label-buddy.",
+          "comment": "Accepted at NLP4MusA 2026 (4th Workshop on NLP for Music and Audio)",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.IR",
+            "cs.LG"
+          ],
+          "url": "https://arxiv.org/abs/2603.04293v1",
+          "category": "foundation",
+          "task": "Audio Annotation",
+          "proposedMethod": "LabelBuddy",
+          "datasets": [],
+          "what": "This paper introduces LabelBuddy, an open-source collaborative tool for audio annotation that integrates AI-assisted pre-annotation and supports multi-user consensus.",
+          "novel": "LabelBuddy decouples the annotation interface from inference using containerized backends, allowing users to integrate custom models for flexible and extensible annotation workflows.",
+          "method": "The tool employs containerized model isolation and supports multi-user collaboration, enabling rich, human-aligned representation learning for music and audio annotation.",
+          "validation": "The system's architecture and functionality are described, and its open-source nature allows for community-driven validation and extension.",
+          "discussion": "The tool addresses the lack of open-source infrastructure for subjective audio annotation but requires further adoption and testing to evaluate its effectiveness in diverse use cases.",
+          "nextReads": [
+            {
+              "label": "OpenL3: Deep audio and music representation learning (2019)",
+              "url": "https://arxiv.org/abs/1903.06691"
+            },
+            {
+              "label": "A Framework for Evaluation of Music Information Retrieval Systems (2014)",
+              "url": null
+            },
+            {
+              "label": "MIRtoolbox: An Integrated Toolbox for Music Information Retrieval (2007)",
+              "url": null
+            },
+            {
+              "label": "AI-Assisted Music Composition: A Survey (2020)",
+              "url": "https://arxiv.org/abs/2007.09289"
+            }
+          ],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2603.00355v1",
+          "date": "Feb 27",
+          "title": "StethoLM: Audio Language Model for Cardiopulmonary Analysis Across Clinical Tasks",
+          "authors": [
+            "Yishan Wang",
+            "Tsai-Ning Wang",
+            "Mathias Funk",
+            "Aaqib Saeed"
+          ],
+          "org": "Eindhoven University of Technology",
+          "abstract": "Listening to heart and lung sounds - auscultation - is one of the first and most fundamental steps in a clinical examination. Despite being fast and non-invasive, it demands years of experience to interpret subtle audio cues. Recent deep learning methods have made progress in automating cardiopulmonary sound analysis, yet most are restricted to simple classification and offer little clinical interpretability or decision support. We present StethoLM, the first audio-language model specialized for cardiopulmonary auscultation, capable of performing instruction-driven clinical tasks across the full spectrum of auscultation analysis. StethoLM integrates audio encoding with a medical language model backbone and is trained on StethoBench, a comprehensive benchmark comprising 77,027 instruction-response pairs synthesized from 16,125 labeled cardiopulmonary recordings spanning seven clinical task categories: binary classification, detection, reporting, reasoning, differential diagnosis, comparison, and location-based analysis. Through multi-stage training that combines supervised fine-tuning and direct preference optimization, StethoLM achieves substantial gains in performance and robustness on out-of-distribution data. Our work establishes a foundation for instruction-following AI systems in clinical auscultation.",
+          "comment": "To be published in TMLR",
+          "journalRef": null,
+          "categories": [
+            "cs.LG",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2603.00355v1",
+          "category": "foundation",
+          "task": "Clinical Audio Analysis",
+          "proposedMethod": "StethoLM",
+          "datasets": [
+            "StethoBench"
+          ],
+          "what": "This paper introduces StethoLM, an audio-language model designed for instruction-driven clinical tasks in cardiopulmonary auscultation analysis.",
+          "novel": "StethoLM is the first model to integrate audio encoding with a medical language model for comprehensive clinical auscultation tasks, offering interpretability and decision support.",
+          "method": "The model uses multi-stage training with supervised fine-tuning and direct preference optimization, leveraging a large dataset of 77,027 instruction-response pairs from cardiopulmonary recordings.",
+          "validation": "StethoLM is validated on StethoBench, demonstrating significant improvements in performance and robustness on out-of-distribution data across seven clinical task categories.",
+          "discussion": "The model establishes a foundation for AI in clinical auscultation but may require further validation in real-world clinical settings to assess its practical utility.",
+          "nextReads": [
+            {
+              "label": "Automatic Detection of Abnormal Heart Sounds (2016)",
+              "url": "https://arxiv.org/abs/1608.05987"
+            },
+            {
+              "label": "Deep Learning for Heart Sound Analysis (2019)",
+              "url": null
+            },
+            {
+              "label": "A Review of Heart Sound Signal Analysis Techniques (2018)",
+              "url": null
+            },
+            {
+              "label": "Deep learning for respiratory sound analysis in the medical field (2020)",
+              "url": "https://arxiv.org/abs/2004.06122"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2603.01316v2",
+          "date": "Mar 01",
+          "title": "Inter-Speaker Relative Cues for Two-Stage Text-Guided Target Speech Extraction",
+          "authors": [
+            "Wang Dai",
+            "Archontis Politis",
+            "Tuomas Virtanen"
+          ],
+          "org": "Tampere University",
+          "abstract": "This paper investigates the use of relative cues for text-based target speech extraction (TSE). We first provide a theoretical justification for relative cues from the perspectives of human perception and label quantization, showing that relative cues preserve fine-grained distinctions that are often lost in absolute categorical representations for continuous-valued attributes. Building on this analysis, we propose a two-stage TSE framework in which a speech separation model first generates candidate sources, followed by a text-guided classifier that selects the target speaker based on embedding similarity. Within this framework, we train two separate classification models to evaluate the advantages of relative cues over independent cues in case of continuous-valued attributes, considering both classification accuracy and TSE performance. Experimental results demonstrate that (i) relative cues achieve higher overall classification accuracy and improved TSE performance compared with independent cues; (ii) the proposed two-stage framework substantially outperforms single-stage text-conditioned extraction methods on both signal-level and objective perceptual metrics; and (iii) several relative cues, including language, loudness, distance, temporal order, speaking duration, random cues, and all cues, can even surpass the performance of an enrollment-audio-based TSE system. Further analysis reveals notable differences in discriminative power across cue types, providing insights into the effectiveness of different relative cues for TSE.",
+          "comment": "Submitted to IEEE TASLP",
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2603.01316v2",
+          "category": "separation",
+          "task": "Target Speech Extraction",
+          "proposedMethod": "Two-Stage TSE Framework",
+          "datasets": [
+            "LibriSpeech",
+            "VoxCeleb"
+          ],
+          "what": "This paper proposes a two-stage framework for text-guided target speech extraction (TSE) that leverages relative cues for improved performance.",
+          "novel": "The use of relative cues for TSE is shown to preserve fine-grained distinctions better than absolute representations, enhancing both classification accuracy and extraction performance.",
+          "method": "The framework first separates candidate sources using a speech separation model, then employs a text-guided classifier to select the target speaker based on embedding similarity.",
+          "validation": "Experiments on LibriSpeech and VoxCeleb demonstrate that the proposed framework outperforms single-stage methods in terms of signal-level and perceptual metrics.",
+          "discussion": "While the approach shows promise, its reliance on accurate relative cues may limit its applicability in scenarios with ambiguous or low-quality input data.",
+          "nextReads": [
+            {
+              "label": "Deep Clustering and Conventional Networks for Music Separation (2016)",
+              "url": "https://arxiv.org/abs/1611.06265"
+            },
+            {
+              "label": "VoiceFilter: Targeted Voice Separation by Speaker-Conditioned Spectrogram Masking (2019)",
+              "url": "https://arxiv.org/abs/1810.04826"
+            },
+            {
+              "label": "Deep Attractor Networks for Single-Microphone Speaker Separation (2017)",
+              "url": "https://arxiv.org/abs/1707.01118"
+            },
+            {
+              "label": "Text-Independent Speaker Verification Using 3D Convolutional Neural Networks (2018)",
+              "url": "https://arxiv.org/abs/1804.09653"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "PolyBench highlights compositional reasoning in polyphonic audio, advancing benchmarks for tasks like concurrency and duration estimation.",
+    "Focus-Then-Listen (FTL) enhances noise robustness in Large Audio Language Models without fine-tuning, showcasing plug-and-play adaptability.",
+    "LabelBuddy and StethoLM emphasize AI-driven annotation tools and clinical audio-language models, addressing collaborative tagging and cardiopulmonary analysis."
+  ]
+}

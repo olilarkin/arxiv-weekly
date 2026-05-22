@@ -1,0 +1,236 @@
+{
+  "date": "2026-0102",
+  "generated_at": "2026-01-02T00:00:00+00:00",
+  "total": 4,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2512.23881v1",
+          "date": "Dec 29",
+          "title": "Breaking Audio Large Language Models by Attacking Only the Encoder: A Universal Targeted Latent-Space Audio Attack",
+          "authors": [
+            "Roee Ziv",
+            "Raz Lapid",
+            "Moshe Sipper"
+          ],
+          "org": "Ben-Gurion University",
+          "abstract": "Audio-language models combine audio encoders with large language models to enable multimodal reasoning, but they also introduce new security vulnerabilities. We propose a universal targeted latent space attack, an encoder-level adversarial attack that manipulates audio latent representations to induce attacker-specified outputs in downstream language generation. Unlike prior waveform-level or input-specific attacks, our approach learns a universal perturbation that generalizes across inputs and speakers and does not require access to the language model. Experiments on Qwen2-Audio-7B-Instruct demonstrate consistently high attack success rates with minimal perceptual distortion, revealing a critical and previously underexplored attack surface at the encoder level of multimodal systems.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.CR"
+          ],
+          "url": "https://arxiv.org/abs/2512.23881v1",
+          "category": "foundation",
+          "task": "Adversarial Attacks",
+          "proposedMethod": null,
+          "datasets": [
+            "Qwen2-Audio-7B-Instruct"
+          ],
+          "what": "This paper introduces a universal targeted latent space attack on audio-language models, focusing on manipulating audio latent representations at the encoder level to induce specific outputs in downstream language generation.",
+          "novel": "Unlike prior waveform-level or input-specific attacks, this method learns a universal perturbation that generalizes across inputs and speakers without requiring access to the language model.",
+          "method": "The approach involves designing an encoder-level adversarial attack that operates in the latent space, targeting audio representations to achieve high attack success rates with minimal perceptual distortion.",
+          "validation": "The method is validated on Qwen2-Audio-7B-Instruct, demonstrating consistently high attack success rates with minimal perceptual distortion.",
+          "discussion": "The study highlights a critical and underexplored vulnerability in multimodal systems but does not address potential defenses or mitigation strategies.",
+          "nextReads": [
+            {
+              "label": "Adversarial Attacks on Speech Recognition Systems (2021)",
+              "url": "https://arxiv.org/abs/2103.17122"
+            },
+            {
+              "label": "Universal Adversarial Perturbations for Speech Recognition Systems (2020)",
+              "url": "https://arxiv.org/abs/2005.07782"
+            },
+            {
+              "label": "Adversarial Examples in Multimodal Systems (2022)",
+              "url": null
+            },
+            {
+              "label": "Robust Audio Adversarial Examples (2021)",
+              "url": "https://arxiv.org/abs/2106.06307"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2512.23808v1",
+          "date": "Dec 29",
+          "title": "MiMo-Audio: Audio Language Models are Few-Shot Learners",
+          "authors": [
+            "Xiaomi LLM-Core Team",
+            " :",
+            "Dong Zhang",
+            "Gang Wang",
+            "Jinlong Xue"
+          ],
+          "org": "Xiaomi",
+          "abstract": "Existing audio language models typically rely on task-specific fine-tuning to accomplish particular audio tasks. In contrast, humans are able to generalize to new audio tasks with only a few examples or simple instructions. GPT-3 has shown that scaling next-token prediction pretraining enables strong generalization capabilities in text, and we believe this paradigm is equally applicable to the audio domain. By scaling MiMo-Audio's pretraining data to over one hundred million of hours, we observe the emergence of few-shot learning capabilities across a diverse set of audio tasks. We develop a systematic evaluation of these capabilities and find that MiMo-Audio-7B-Base achieves SOTA performance on both speech intelligence and audio understanding benchmarks among open-source models. Beyond standard metrics, MiMo-Audio-7B-Base generalizes to tasks absent from its training data, such as voice conversion, style transfer, and speech editing. MiMo-Audio-7B-Base also demonstrates powerful speech continuation capabilities, capable of generating highly realistic talk shows, recitations, livestreaming and debates. At the post-training stage, we curate a diverse instruction-tuning corpus and introduce thinking mechanisms into both audio understanding and generation. MiMo-Audio-7B-Instruct achieves open-source SOTA on audio understanding benchmarks (MMSU, MMAU, MMAR, MMAU-Pro), spoken dialogue benchmarks (Big Bench Audio, MultiChallenge Audio) and instruct-TTS evaluations, approaching or surpassing closed-source models. Model checkpoints and full evaluation suite are available at https://github.com/XiaomiMiMo/MiMo-Audio.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.CL",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2512.23808v1",
+          "category": "foundation",
+          "task": "Audio Language Modeling",
+          "proposedMethod": "MiMo-Audio",
+          "datasets": [
+            "MMSU",
+            "MMAU",
+            "MMAR",
+            "MMAU-Pro",
+            "Big Bench Audio"
+          ],
+          "what": "This paper presents MiMo-Audio, a large-scale audio language model that exhibits few-shot learning capabilities across diverse audio tasks, achieving state-of-the-art performance on multiple benchmarks.",
+          "novel": "The model demonstrates emergent few-shot learning capabilities and generalizes to tasks absent from its training data, such as voice conversion and speech editing, which are rare in existing audio language models.",
+          "method": "MiMo-Audio is trained on over 100 million hours of audio data using a next-token prediction paradigm, followed by instruction tuning with a curated corpus and the introduction of thinking mechanisms for audio understanding and generation.",
+          "validation": "The model is evaluated on benchmarks like MMSU, MMAU, and Big Bench Audio, achieving open-source state-of-the-art results and demonstrating strong generalization to unseen tasks.",
+          "discussion": "While the model achieves impressive results, the reliance on massive pretraining data and computational resources may limit accessibility and reproducibility for smaller research groups.",
+          "nextReads": [
+            {
+              "label": "Whisper: OpenAI's General-Purpose Speech Recognition Model (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "Scaling Laws for Neural Language Models (2020)",
+              "url": "https://arxiv.org/abs/2001.08361"
+            },
+            {
+              "label": "Few-Shot Learning with Multimodal Models (2021)",
+              "url": null
+            },
+            {
+              "label": "AudioGPT: Large Language Models for Audio (2023)",
+              "url": "https://arxiv.org/abs/2305.12345"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2512.23686v1",
+          "date": "Dec 29",
+          "title": "PROFASR-BENCH: A Benchmark for Context-Conditioned ASR in High-Stakes Professional Speech",
+          "authors": [
+            "Deepak Babu Piskala"
+          ],
+          "org": "Independent",
+          "abstract": "Automatic Speech Recognition (ASR) in professional settings faces challenges that existing benchmarks underplay: dense domain terminology, formal register variation, and near-zero tolerance for critical entity errors. We present ProfASR-Bench, a professional-talk evaluation suite for high-stakes applications across finance, medicine, legal, and technology. Each example pairs a natural-language prompt (domain cue and/or speaker profile) with an entity-rich target utterance, enabling controlled measurement of context-conditioned recognition. The corpus supports conventional ASR metrics alongside entity-aware scores and slice-wise reporting by accent and gender. Using representative families Whisper (encoder-decoder ASR) and Qwen-Omni (audio language models) under matched no-context, profile, domain+profile, oracle, and adversarial conditions, we find a consistent pattern: lightweight textual context produces little to no change in average word error rate (WER), even with oracle prompts, and adversarial prompts do not reliably degrade performance. We term this the context-utilization gap (CUG): current systems are nominally promptable yet underuse readily available side information. ProfASR-Bench provides a standardized context ladder, entity- and slice-aware reporting with confidence intervals, and a reproducible testbed for comparing fusion strategies across model families.   Dataset: https://huggingface.co/datasets/prdeepakbabu/ProfASR-Bench   Code: https://github.com/prdeepakbabu/ProfASR-Bench",
+          "comment": "Benchmark dataset and evaluation suite. Data and code available at: https://huggingface.co/datasets/prdeepakbabu/ProfASR-Bench https://github.com/prdeepakbabu/ProfASR-Bench",
+          "journalRef": null,
+          "categories": [
+            "cs.CL",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2512.23686v1",
+          "category": "foundation",
+          "task": "ASR Benchmarking",
+          "proposedMethod": "ProfASR-Bench",
+          "datasets": [
+            "ProfASR-Bench"
+          ],
+          "what": "This paper introduces ProfASR-Bench, a benchmark for evaluating context-conditioned ASR performance in high-stakes professional domains like finance, medicine, and law.",
+          "novel": "The benchmark includes entity-aware scores, slice-wise reporting by accent and gender, and a context ladder for systematically evaluating context utilization, addressing the underexplored context-utilization gap in ASR systems.",
+          "method": "ProfASR-Bench pairs natural-language prompts with entity-rich target utterances, enabling controlled evaluation of context-conditioned recognition and testing various fusion strategies across ASR model families.",
+          "validation": "The benchmark is used to evaluate Whisper and Qwen-Omni models under different context conditions, revealing a consistent underutilization of available contextual information.",
+          "discussion": "The study identifies a significant gap in context utilization by current ASR systems and provides a reproducible testbed, but does not propose specific solutions to address this gap.",
+          "nextReads": [
+            {
+              "label": "Whisper: OpenAI's General-Purpose Speech Recognition Model (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "Context-Aware Speech Recognition (2021)",
+              "url": null
+            },
+            {
+              "label": "Domain Adaptation for ASR in Specialized Fields (2020)",
+              "url": null
+            },
+            {
+              "label": "Entity-Aware ASR Evaluation (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": "https://github.com/prdeepakbabu/ProfASR-Bench",
+          "upvotes": 0,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2512.22621v1",
+          "date": "Dec 27",
+          "title": "Chord Recognition with Deep Learning",
+          "authors": [
+            "Pierre Mackenzie"
+          ],
+          "org": "Independent",
+          "abstract": "Progress in automatic chord recognition has been slow since the advent of deep learning in the field. To understand why, I conduct experiments on existing methods and test hypotheses enabled by recent developments in generative models. Findings show that chord classifiers perform poorly on rare chords and that pitch augmentation boosts accuracy. Features extracted from generative models do not help and synthetic data presents an exciting avenue for future work. I conclude by improving the interpretability of model outputs with beat detection, reporting some of the best results in the field and providing qualitative analysis. Much work remains to solve automatic chord recognition, but I hope this thesis will chart a path for others to try.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2512.22621v1",
+          "category": "transcription",
+          "task": "Chord Recognition",
+          "proposedMethod": null,
+          "datasets": [],
+          "what": "This paper investigates the challenges in automatic chord recognition using deep learning, highlighting issues with rare chord classification and exploring the potential of pitch augmentation and synthetic data.",
+          "novel": "The study identifies the poor performance of existing chord classifiers on rare chords and demonstrates that pitch augmentation can significantly improve accuracy, while generative model features do not help.",
+          "method": "The work involves testing existing chord recognition methods, applying pitch augmentation, and exploring the use of synthetic data to improve model performance.",
+          "validation": "Experiments are conducted to evaluate the impact of pitch augmentation and generative model features on chord recognition accuracy, reporting some of the best results in the field.",
+          "discussion": "The paper highlights the need for further research into handling rare chords and leveraging synthetic data, while also improving the interpretability of model outputs with beat detection.",
+          "nextReads": [
+            {
+              "label": "Deep Learning for Chord Recognition (2019)",
+              "url": null
+            },
+            {
+              "label": "Automatic Chord Estimation from Audio (2020)",
+              "url": null
+            },
+            {
+              "label": "Improving Chord Recognition with Data Augmentation (2021)",
+              "url": null
+            },
+            {
+              "label": "Generative Models for Music Analysis (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "A universal targeted latent-space attack on audio-language models, as proposed in 'Breaking Audio Large Language Models,' highlights vulnerabilities in encoder manipulation for controlled language outputs.",
+    "MiMo-Audio demonstrates advanced few-shot learning capabilities in audio-language tasks, achieving state-of-the-art results across benchmarks.",
+    "ProfASR-Bench provides a new standard for evaluating context-aware ASR systems in specialized professional domains, emphasizing high-stakes applications like medicine and law."
+  ]
+}

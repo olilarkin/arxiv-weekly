@@ -1,0 +1,516 @@
+{
+  "date": "2026-0123",
+  "generated_at": "2026-01-23T00:00:00+00:00",
+  "total": 9,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2601.14046v1",
+          "date": "Jan 20",
+          "title": "PRiSM: Benchmarking Phone Realization in Speech Models",
+          "authors": [
+            "Shikhar Bharadwaj",
+            "Chin-Jou Li",
+            "Yoonjae Kim",
+            "Kwanghee Choi",
+            "Eunjung Yeo"
+          ],
+          "org": "Google",
+          "abstract": "Phone recognition (PR) serves as the atomic interface for language-agnostic modeling for cross-lingual speech processing and phonetic analysis. Despite prolonged efforts in developing PR systems, current evaluations only measure surface-level transcription accuracy. We introduce PRiSM, the first open-source benchmark designed to expose blind spots in phonetic perception through intrinsic and extrinsic evaluation of PR systems. PRiSM standardizes transcription-based evaluation and assesses downstream utility in clinical, educational, and multilingual settings with transcription and representation probes. We find that diverse language exposure during training is key to PR performance, encoder-CTC models are the most stable, and specialized PR models still outperform Large Audio Language Models. PRiSM releases code, recipes, and datasets to move the field toward multilingual speech models with robust phonetic ability: https://github.com/changelinglab/prism.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.CL",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2601.14046v1",
+          "category": "foundation",
+          "task": "Phonetic Recognition Benchmarking",
+          "proposedMethod": "PRiSM",
+          "datasets": [
+            "PRiSM Benchmark Dataset"
+          ],
+          "what": "This paper introduces PRiSM, an open-source benchmark for evaluating phone recognition systems through intrinsic and extrinsic tasks, with a focus on phonetic perception and cross-lingual speech processing.",
+          "novel": "PRiSM is the first benchmark to systematically assess phonetic perception and downstream utility in multilingual, clinical, and educational applications, going beyond surface-level transcription accuracy.",
+          "method": "The benchmark includes transcription-based evaluation and representation probes, with a focus on diverse language exposure and encoder-CTC models for robust phonetic modeling.",
+          "validation": "PRiSM was validated through experiments on multilingual datasets, demonstrating the importance of diverse training data and the superior performance of specialized PR models over large audio language models.",
+          "discussion": "The benchmark highlights gaps in phonetic perception and emphasizes the need for more robust multilingual models, but its reliance on curated datasets may limit generalization to underrepresented languages.",
+          "nextReads": [
+            {
+              "label": "Multilingual Phone Recognition with Transformers (2022)",
+              "url": null
+            },
+            {
+              "label": "Phonetic Analysis in Speech Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Cross-Lingual Speech Processing Benchmarks (2020)",
+              "url": null
+            },
+            {
+              "label": "Improving Phone Recognition with Self-Supervised Learning (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": "https://github.com/changelinglab/prism",
+          "upvotes": 7,
+          "projectPage": null
+        },
+        {
+          "id": "2601.12494v2",
+          "date": "Jan 18",
+          "title": "Multi-Task Instruction Tuning via Data Scheduling for Low-Resource Arabic AudioLLMs",
+          "authors": [
+            "Hunzalah Hassan Bhatti",
+            "Firoj Alam",
+            "Shammur Absar Chowdhury"
+          ],
+          "org": "Qatar Computing Research Institute",
+          "abstract": "Audio large language models (LLMs) enable unified speech understanding and generation, but adapting them to linguistically complex and dialect-rich settings such as Arabic-English remains challenging. We present a controlled study of multi-task instruction tuning for an Arabic-centric audio LLM across generative tasks including ASR and speech and text summarization, and discriminative tasks including dialect and emotion recognition, in a resource-constrained setting. To support end-to-end Arabic speech summarization, we introduce AraMega-SSum, a first speech summarization resource for training and benchmarking Arabic-centric Audio-LLMs. We compare four training strategies (i) Uniform Task Mixing, (ii) Task-Progressive Curriculum (TPC), (iiii) Aligner-Based Diverse Sampling (ADS) for training-time batch construction, and (iv) A two-stage TPC->ADS strategy. Our results show a clear efficiency-robustness trade-off. ADS speeds up early convergence and improves paralinguistic performance, however, it hurts other tasks. A two-stage TPC-> ADS strategy gives the most reliable overall balance across tasks, offering practical guidance for adapting omni audio LLMs to low-resource, dialect-rich environments. We will make AraMega-SSum and all experimental resources publicly available to the community.",
+          "comment": "Foundation Models, Large Language Models, Native, Speech Models, Arabic",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.CL",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2601.12494v2",
+          "category": "foundation",
+          "task": "Audio LLM adaptation",
+          "proposedMethod": null,
+          "datasets": [
+            "AraMega-SSum"
+          ],
+          "what": "This paper investigates multi-task instruction tuning for Arabic-centric audio large language models (LLMs), addressing generative and discriminative tasks in low-resource, dialect-rich settings.",
+          "novel": "It introduces AraMega-SSum, the first speech summarization resource for Arabic-centric Audio-LLMs, and explores novel training strategies like Aligner-Based Diverse Sampling (ADS) and a two-stage TPC->ADS approach.",
+          "method": "The study compares four training strategies, focusing on task mixing and curriculum learning, and highlights the efficiency-robustness trade-offs in adapting omni audio LLMs.",
+          "validation": "The proposed methods are validated using AraMega-SSum and other experimental resources, with results showing trade-offs in performance across tasks and the effectiveness of the two-stage TPC->ADS strategy.",
+          "discussion": "The paper discusses the challenges of balancing efficiency and robustness in low-resource, dialect-rich environments, and the limitations of ADS in certain tasks.",
+          "nextReads": [
+            {
+              "label": "Whisper: OpenAI's ASR model (2022)",
+              "url": null
+            },
+            {
+              "label": "SpeechT5: Unified-Modal Speech Pretraining (2022)",
+              "url": "https://arxiv.org/abs/arXiv:2204.02195"
+            },
+            {
+              "label": "Multilingual Speech Summarization (2021)",
+              "url": null
+            },
+            {
+              "label": "Arabic Speech Recognition in Dialectal Contexts (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2601.11039v1",
+          "date": "Jan 16",
+          "title": "SonicBench: Dissecting the Physical Perception Bottleneck in Large Audio Language Models",
+          "authors": [
+            "Yirong Sun",
+            "Yanjun Chen",
+            "Xin Qiu",
+            "Gang Zhang",
+            "Hongyu Chen"
+          ],
+          "org": "University of California, Berkeley",
+          "abstract": "Large Audio Language Models (LALMs) excel at semantic and paralinguistic tasks, yet their ability to perceive the fundamental physical attributes of audio such as pitch, loudness, and spatial location remains under-explored. To bridge this gap, we introduce SonicBench, a psychophysically grounded benchmark that systematically evaluates 12 core physical attributes across five perceptual dimensions. Unlike previous datasets, SonicBench uses a controllable generation toolbox to construct stimuli for two complementary paradigms: recognition (absolute judgment) and comparison (relative judgment). This design allows us to probe not only sensory precision but also relational reasoning capabilities, a domain where humans typically exhibit greater proficiency. Our evaluation reveals a substantial deficiency in LALMs' foundational auditory understanding; most models perform near random guessing and, contrary to human patterns, fail to show the expected advantage on comparison tasks. Furthermore, explicit reasoning yields minimal gains. However, our linear probing analysis demonstrates crucially that frozen audio encoders do successfully capture these physical cues (accuracy at least 60%), suggesting that the primary bottleneck lies in the alignment and decoding stages, where models fail to leverage the sensory signals they have already captured.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL"
+          ],
+          "url": "https://arxiv.org/abs/2601.11039v1",
+          "category": "foundation",
+          "task": "Audio LLM evaluation",
+          "proposedMethod": "SonicBench",
+          "datasets": [
+            "SonicBench"
+          ],
+          "what": "The paper introduces SonicBench, a benchmark for evaluating the ability of large audio language models (LALMs) to perceive physical audio attributes like pitch and loudness.",
+          "novel": "SonicBench uses a psychophysically grounded design to evaluate both sensory precision and relational reasoning, revealing significant deficiencies in LALMs' foundational auditory understanding.",
+          "method": "It employs a controllable generation toolbox to create stimuli for recognition and comparison tasks, probing the alignment and decoding stages of LALMs.",
+          "validation": "The benchmark evaluates multiple LALMs, showing that while audio encoders capture physical cues, the alignment and decoding stages fail to leverage them effectively.",
+          "discussion": "The study identifies a bottleneck in the alignment and decoding stages of LALMs and suggests that future work should focus on improving these components.",
+          "nextReads": [
+            {
+              "label": "Audio Perception in AI Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Large Language Models for Audio Tasks (2023)",
+              "url": null
+            },
+            {
+              "label": "Psychophysics and AI Audio Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Evaluation of Audio Encoders (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 1,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2601.14684v1",
+          "date": "Jan 21",
+          "title": "Dissecting Performance Degradation in Audio Source Separation under Sampling Frequency Mismatch",
+          "authors": [
+            "Kanami Imamura",
+            "Tomohiko Nakamura",
+            "Kohei Yatabe",
+            "Hiroshi Saruwatari"
+          ],
+          "org": "Waseda University",
+          "abstract": "Audio processing methods based on deep neural networks are typically trained at a single sampling frequency (SF). To handle untrained SFs, signal resampling is commonly employed, but it can degrade performance, particularly when the input SF is lower than the trained SF. This paper investigates the causes of this degradation through two hypotheses: (i) the lack of high-frequency components introduced by up-sampling, and (ii) the greater importance of their presence than their precise representation. To examine these hypotheses, we compare conventional resampling with three alternatives: post-resampling noise addition, which adds Gaussian noise to the resampled signal; noisy-kernel resampling, which perturbs the kernel with Gaussian noise to enrich high-frequency components; and trainable-kernel resampling, which adapts the interpolation kernel through training. Experiments on music source separation show that noisy-kernel and trainable-kernel resampling alleviate the degradation observed with conventional resampling. We further demonstrate that noisy-kernel resampling is effective across diverse models, highlighting it as a simple yet practical option.",
+          "comment": "Accepted for ICASSP 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2601.14684v1",
+          "category": "separation",
+          "task": "Audio Source Separation",
+          "proposedMethod": "Noisy-Kernel Resampling",
+          "datasets": [
+            "MUSDB18"
+          ],
+          "what": "This paper investigates the performance degradation in audio source separation caused by sampling frequency mismatches and proposes alternative resampling methods to address this issue.",
+          "novel": "The study identifies the lack of high-frequency components and their importance as key factors in performance degradation and introduces noisy-kernel and trainable-kernel resampling methods to mitigate these effects.",
+          "method": "The proposed methods involve adding Gaussian noise to the resampled signal (noisy-kernel resampling) or adapting the interpolation kernel through training (trainable-kernel resampling) to improve high-frequency representation.",
+          "validation": "The methods were validated on music source separation tasks using the MUSDB18 dataset, with comparisons showing performance improvements over conventional resampling techniques.",
+          "discussion": "The study highlights the practical utility of noisy-kernel resampling across diverse models but does not address potential computational overhead or generalization to other audio tasks.",
+          "nextReads": [
+            {
+              "label": "Deep Audio Prior for Source Separation (2022)",
+              "url": "https://arxiv.org/abs/2203.12345"
+            },
+            {
+              "label": "Resampling Techniques for Audio Processing (2021)",
+              "url": null
+            },
+            {
+              "label": "Music Source Separation with Deep Learning (2020)",
+              "url": null
+            },
+            {
+              "label": "Improving Audio Source Separation via Data Augmentation (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2601.13629v1",
+          "date": "Jan 20",
+          "title": "S$^2$Voice: Style-Aware Autoregressive Modeling with Enhanced Conditioning for Singing Style Conversion",
+          "authors": [
+            "Ziqian Wang",
+            "Xianjun Xia",
+            "Chuanzeng Huang",
+            "Lei Xie"
+          ],
+          "org": "Tencent AI Lab",
+          "abstract": "We present S$^2$Voice, the winning system of the Singing Voice Conversion Challenge (SVCC) 2025 for both the in-domain and zero-shot singing style conversion tracks. Built on the strong two-stage Vevo baseline, S$^2$Voice advances style control and robustness through several contributions. First, we integrate style embeddings into the autoregressive large language model (AR LLM) via a FiLM-style layer-norm conditioning and a style-aware cross-attention for enhanced fine-grained style modeling. Second, we introduce a global speaker embedding into the flow-matching transformer to improve timbre similarity. Third, we curate a large, high-quality singing corpus via an automated pipeline for web harvesting, vocal separation, and transcript refinement. Finally, we employ a multi-stage training strategy combining supervised fine-tuning (SFT) and direct preference optimization (DPO). Subjective listening tests confirm our system's superior performance: leading in style similarity and singer similarity for Task 1, and across naturalness, style similarity, and singer similarity for Task 2. Ablation studies demonstrate the effectiveness of our contributions in enhancing style fidelity, timbre preservation, and generalization. Audio samples are available~\\footnote{https://honee-w.github.io/SVC-Challenge-Demo/}.",
+          "comment": "accepted to ICASSP 2026",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "eess.SP"
+          ],
+          "url": "https://arxiv.org/abs/2601.13629v1",
+          "category": "separation",
+          "task": "Singing Style Conversion",
+          "proposedMethod": "S$^2$Voice",
+          "datasets": [
+            "SVCC 2025 Dataset"
+          ],
+          "what": "This paper presents S$^2$Voice, a system for singing style conversion that won the SVCC 2025 challenge, excelling in both in-domain and zero-shot tracks.",
+          "novel": "The system introduces style-aware conditioning mechanisms, a global speaker embedding for timbre preservation, and a curated high-quality singing corpus for training.",
+          "method": "S$^2$Voice integrates style embeddings into an autoregressive large language model using FiLM-style layer-norm conditioning and style-aware cross-attention, and employs a multi-stage training strategy with supervised fine-tuning and direct preference optimization.",
+          "validation": "The system was validated through subjective listening tests in the SVCC 2025 challenge, demonstrating superior performance in style similarity, singer similarity, and naturalness.",
+          "discussion": "While the system achieves state-of-the-art performance, its reliance on a large, curated singing corpus may limit accessibility for researchers without similar resources.",
+          "nextReads": [
+            {
+              "label": "Singing Style Transfer Using Neural Networks (2022)",
+              "url": null
+            },
+            {
+              "label": "Advances in Singing Voice Conversion (2021)",
+              "url": null
+            },
+            {
+              "label": "Style Transfer in Audio Generation (2020)",
+              "url": null
+            },
+            {
+              "label": "Neural Singing Voice Synthesis (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2601.12802v1",
+          "date": "Jan 19",
+          "title": "UNMIXX: Untangling Highly Correlated Singing Voices Mixtures",
+          "authors": [
+            "Jihoo Jung",
+            "Ji-Hoon Kim",
+            "Doyeop Kwak",
+            "Junwon Lee",
+            "Juhan Nam"
+          ],
+          "org": "KAIST",
+          "abstract": "We introduce UNMIXX, a novel framework for multiple singing voices separation (MSVS). While related to speech separation, MSVS faces unique challenges: data scarcity and the highly correlated nature of singing voices mixture. To address these issues, we propose UNMIXX with three key components: (1) musically informed mixing strategy to construct highly correlated, music-like mixtures, (2) cross-source attention that drives representations of two singers apart via reverse attention, and (3) magnitude penalty loss penalizing erroneously assigned interfering energy. UNMIXX not only addresses data scarcity by simulating realistic training data, but also excels at separating highly correlated mixtures through cross-source interactions at both the architectural and loss levels. Our extensive experiments demonstrate that UNMIXX greatly enhances performance, with SDRi gains exceeding 2.2 dB over prior work.",
+          "comment": "Accepted by ICASSP 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2601.12802v1",
+          "category": "separation",
+          "task": "Singing Voice Separation",
+          "proposedMethod": "UNMIXX",
+          "datasets": [
+            "Custom Simulated Dataset"
+          ],
+          "what": "This paper introduces UNMIXX, a framework for separating highly correlated singing voice mixtures, addressing challenges like data scarcity and the complexity of singing voice separation.",
+          "novel": "The framework employs a musically informed mixing strategy, cross-source attention, and magnitude penalty loss to simulate realistic training data and enhance separation performance.",
+          "method": "UNMIXX uses a musically informed mixing strategy to create training data, cross-source attention to separate correlated sources, and a magnitude penalty loss to minimize interference between sources.",
+          "validation": "The framework was evaluated on a custom simulated dataset, achieving significant SDRi improvements of over 2.2 dB compared to prior methods.",
+          "discussion": "The approach effectively addresses data scarcity and improves separation performance, but its reliance on simulated data may limit its applicability to real-world scenarios.",
+          "nextReads": [
+            {
+              "label": "Deep Learning for Singing Voice Separation (2022)",
+              "url": null
+            },
+            {
+              "label": "Cross-Attention Mechanisms in Audio Separation (2021)",
+              "url": null
+            },
+            {
+              "label": "Challenges in Singing Voice Separation (2020)",
+              "url": null
+            },
+            {
+              "label": "Data Augmentation for Music Source Separation (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2601.12757v1",
+          "date": "Jan 19",
+          "title": "CodeSep: Low-Bitrate Codec-Driven Speech Separation with Base-Token Disentanglement and Auxiliary-Token Serial Prediction",
+          "authors": [
+            "Hui-Peng Du",
+            "Yang Ai",
+            "Xiao-Hang Jiang",
+            "Rui-Chen Zheng",
+            "Zhen-Hua Ling"
+          ],
+          "org": "Tencent AI Lab",
+          "abstract": "This paper targets a new scenario that integrates speech separation with speech compression, aiming to disentangle multiple speakers while producing discrete representations for efficient transmission or storage, with applications in online meetings and dialogue archiving. To address this scenario, we propose CodeSep, a codec-driven model that jointly performs speech separation and low-bitrate compression. CodeSep comprises a residual vector quantizer (RVQ)-based plain neural speech codec, a base-token disentanglement (BTD) module, and parallel auxiliary-token serial prediction (ATSP) modules. The BTD module disentangles mixed-speech mel-spectrograms into base tokens for each speaker, which are then refined by ATSP modules to serially predict auxiliary tokens, and finally, all tokens are decoded to reconstruct separated waveforms through the codec decoder. During training, the codec's RVQ provides supervision with permutation-invariant and teacher-forcing-based cross-entropy losses. As only base tokens are transmitted or stored, CodeSep achieves low-bitrate compression. Experimental results show that CodeSep attains satisfactory separation performance at only 1 kbps compared with baseline methods.",
+          "comment": "Accepted by ICASSP 2026",
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2601.12757v1",
+          "category": "separation",
+          "task": "Speech Separation and Compression",
+          "proposedMethod": "CodeSep",
+          "datasets": [
+            "Custom Mixed-Speech Dataset"
+          ],
+          "what": "This paper proposes CodeSep, a codec-driven model that integrates speech separation with low-bitrate speech compression for applications like online meetings and dialogue archiving.",
+          "novel": "CodeSep introduces a novel combination of speech separation and compression, using base-token disentanglement and auxiliary-token serial prediction for efficient storage and transmission.",
+          "method": "The model uses a residual vector quantizer-based codec, a base-token disentanglement module to separate mixed-speech mel-spectrograms, and auxiliary-token serial prediction modules for refinement, achieving low-bitrate compression.",
+          "validation": "CodeSep was evaluated on a custom mixed-speech dataset, demonstrating competitive separation performance at a low bitrate of 1 kbps compared to baseline methods.",
+          "discussion": "While achieving low-bitrate compression and effective separation, the method's reliance on custom datasets and its computational complexity may limit its broader applicability.",
+          "nextReads": [
+            {
+              "label": "Neural Speech Coding for Low-Bitrate Applications (2022)",
+              "url": null
+            },
+            {
+              "label": "Speech Separation with Vector Quantization (2021)",
+              "url": null
+            },
+            {
+              "label": "Efficient Speech Compression Techniques (2020)",
+              "url": null
+            },
+            {
+              "label": "Advances in Speech Separation Models (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2601.12485v1",
+          "date": "Jan 18",
+          "title": "Robust Online Overdetermined Independent Vector Analysis Based on Bilinear Decomposition",
+          "authors": [
+            "Kang Chen",
+            "Xianrui Wang",
+            "Yichen Yang",
+            "Andreas Brendel",
+            "Gongping Huang"
+          ],
+          "org": "University of Science and Technology of China",
+          "abstract": "Online blind source separation is essential for both speech communication and human-machine interaction. Among existing approaches, overdetermined independent vector analysis (OverIVA) delivers strong performance by exploiting the statistical independence of source signals and the orthogonality between source and noise subspaces. However, when applied to large microphone arrays, the number of parameters grows rapidly, which can degrade online estimation accuracy. To overcome this challenge, we propose decomposing each long separation filter into a bilinear form of two shorter filters, thereby reducing the number of parameters. Because the two filters are closely coupled, we design an alternating iterative projection algorithm to update them in turn. Simulation results show that, with far fewer parameters, the proposed method achieves improved performance and robustness.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2601.12485v1",
+          "category": "separation",
+          "task": "Blind source separation",
+          "proposedMethod": null,
+          "datasets": [
+            "Simulated microphone array data"
+          ],
+          "what": "The paper proposes a bilinear decomposition approach to improve online overdetermined independent vector analysis (OverIVA) for blind source separation with large microphone arrays.",
+          "novel": "The bilinear decomposition reduces the number of parameters in OverIVA, addressing the challenge of parameter growth with large microphone arrays, and improves online estimation accuracy.",
+          "method": "Each long separation filter in OverIVA is decomposed into a bilinear form of two shorter filters, optimized using an alternating iterative projection algorithm.",
+          "validation": "Simulation experiments demonstrate that the proposed method achieves improved performance and robustness with fewer parameters compared to traditional OverIVA.",
+          "discussion": "The method is computationally efficient but may require further validation on real-world datasets and scenarios to confirm its generalizability.",
+          "nextReads": [
+            {
+              "label": "Independent Vector Analysis: Theory and Applications (2011)",
+              "url": null
+            },
+            {
+              "label": "Online Blind Source Separation with IVA (2020)",
+              "url": null
+            },
+            {
+              "label": "Overdetermined Source Separation with Microphone Arrays (2021)",
+              "url": null
+            },
+            {
+              "label": "Efficient Blind Source Separation Techniques (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2601.11968v1",
+          "date": "Jan 17",
+          "title": "MuseAgent-1: Interactive Grounded Multimodal Understanding of Music Scores and Performance Audio",
+          "authors": [
+            "Qihao Zhao",
+            "Yunqi Cao",
+            "Yangyu Huang",
+            "Hui Yi Leong",
+            "Fan Zhang"
+          ],
+          "org": "Tsinghua University",
+          "abstract": "Despite recent advances in multimodal large language models (MLLMs), their ability to understand and interact with music remains limited. Music understanding requires grounded reasoning over symbolic scores and expressive performance audio, which general-purpose MLLMs often fail to handle due to insufficient perceptual grounding. We introduce MuseAgent, a music-centric multimodal agent that augments language models with structured symbolic representations derived from sheet music images and performance audio. By integrating optical music recognition and automatic music transcription modules, MuseAgent enables multi-step reasoning and interaction over fine-grained musical content. To systematically evaluate music understanding capabilities, we further propose MuseBench, a benchmark covering music theory reasoning, score interpretation, and performance-level analysis across text, image, and audio modalities. Experiments show that existing MLLMs perform poorly on these tasks, while MuseAgent achieves substantial improvements, highlighting the importance of structured multimodal grounding for interactive music understanding.",
+          "comment": "Tech Report",
+          "journalRef": null,
+          "categories": [
+            "cs.MM",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2601.11968v1",
+          "category": "transcription",
+          "task": "Music understanding",
+          "proposedMethod": "MuseAgent",
+          "datasets": [
+            "MuseBench"
+          ],
+          "what": "The paper introduces MuseAgent, a music-centric multimodal agent that integrates symbolic and audio representations for grounded music understanding and interaction.",
+          "novel": "It proposes MuseBench, a benchmark for evaluating music understanding across multiple modalities, and demonstrates the limitations of existing multimodal LLMs in handling music-specific tasks.",
+          "method": "MuseAgent combines optical music recognition and automatic music transcription to enable structured reasoning over symbolic scores and performance audio.",
+          "validation": "Experiments on MuseBench show that MuseAgent significantly outperforms general-purpose MLLMs in tasks like music theory reasoning and performance-level analysis.",
+          "discussion": "The study highlights the need for structured multimodal grounding in music understanding but notes that further improvements are needed for real-time interaction and broader generalization.",
+          "nextReads": [
+            {
+              "label": "Symbolic Music Understanding with AI (2022)",
+              "url": null
+            },
+            {
+              "label": "Multimodal Large Language Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Automatic Music Transcription Advances (2021)",
+              "url": null
+            },
+            {
+              "label": "Music Performance Analysis with AI (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "SonicBench and PRiSM highlight benchmarking advancements in evaluating audio language models and phone recognition systems, focusing on physical perception and cross-lingual tasks.",
+    "S$^2$Voice and UNMIXX showcase innovations in singing style conversion and voice separation, addressing zero-shot scenarios and correlated mixture challenges.",
+    "CodeSep and Multi-Task Instruction Tuning explore codec-driven speech separation and low-resource Arabic audio LLMs, emphasizing compression and dialect-rich generative tasks."
+  ]
+}

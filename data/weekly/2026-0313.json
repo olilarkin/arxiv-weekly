@@ -1,0 +1,516 @@
+{
+  "date": "2026-0313",
+  "generated_at": "2026-03-13T00:00:00+00:00",
+  "total": 9,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2603.11947v1",
+          "date": "Mar 12",
+          "title": "Resurfacing Paralinguistic Awareness in Large Audio Language Models",
+          "authors": [
+            "Hao Yang",
+            "Minghan Wang",
+            "Tongtong Wu",
+            "Lizhen Qu",
+            "Ehsan Shareghi"
+          ],
+          "org": "Google",
+          "abstract": "Large Audio Language Models (LALMs) have expanded the interaction with human to speech modality, which introduces great interactive potential, due to the paralinguistic cues implicitly indicating the user context. However, building on the current content-centred paradigm, LALMs usually neglect such paralinguistic cues and respond solely based on query content. In this work, to resurface the paralinguistic awareness in LALMs, we introduce five diverse layer-wise analyses to jointly identify paralinguistic layers and semantic understanding layers. Based on these insights, we propose a paralinguistic-enhanced fine-tuning (PE-FT) protocol accordingly to equip LALMs with paralinguistic-aware capabilities, including (1) selective-layer fine-tuning, and (2) an auxiliary dual-level classification head. Our experiments demonstrate that PE-FT protocol efficiently and effectively resurfaces the paralinguistic awareness, even surpassing the performance of the all-layer fine-tuning strategy.",
+          "comment": "Submitted to Interspeech 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL",
+            "cs.MM",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2603.11947v1",
+          "category": "foundation",
+          "task": "Paralinguistic Analysis",
+          "proposedMethod": "PE-FT",
+          "datasets": [
+            "Not specified"
+          ],
+          "what": "This paper introduces a paralinguistic-enhanced fine-tuning (PE-FT) protocol to improve the paralinguistic awareness of Large Audio Language Models (LALMs). It identifies specific layers for paralinguistic and semantic understanding and proposes selective-layer fine-tuning and an auxiliary dual-level classification head.",
+          "novel": "The paper resurfaces paralinguistic awareness in LALMs, which is often neglected in content-centered paradigms, and demonstrates that PE-FT surpasses all-layer fine-tuning strategies.",
+          "method": "The approach involves layer-wise analysis to identify relevant layers and employs selective-layer fine-tuning along with a dual-level classification head to enhance paralinguistic capabilities.",
+          "validation": "The method is validated through experiments showing improved paralinguistic awareness and better performance compared to all-layer fine-tuning. Specific datasets and metrics are not detailed.",
+          "discussion": "The paper does not specify datasets, which may limit reproducibility. Further exploration of broader paralinguistic cues and real-world applications is needed.",
+          "nextReads": [
+            {
+              "label": "Speech and Language Model Fine-Tuning (2022)",
+              "url": null
+            },
+            {
+              "label": "Paralinguistic Features in Speech Processing (2021)",
+              "url": null
+            },
+            {
+              "label": "Layer-wise Analysis in Neural Networks (2020)",
+              "url": null
+            },
+            {
+              "label": "Improving LALMs with Auxiliary Tasks (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2603.11661v1",
+          "date": "Mar 12",
+          "title": "Resonate: Reinforcing Text-to-Audio Generation via Online Feedback from Large Audio Language Models",
+          "authors": [
+            "Xiquan Li",
+            "Junxi Liu",
+            "Wenxi Chen",
+            "Haina Zhu",
+            "Ziyang Ma"
+          ],
+          "org": "Unknown",
+          "abstract": "Reinforcement Learning (RL) has become an effective paradigm for enhancing Large Language Models (LLMs) and visual generative models. However, its application in text-to-audio (TTA) generation remains largely under-explored. Prior work typically employs offline methods like Direct Preference Optimization (DPO) and leverages Contrastive Language-Audio Pretraining (CLAP) models as reward functions. In this study, we investigate the integration of online Group Relative Policy Optimization (GRPO) into TTA generation. We adapt the algorithm for Flow Matching-based audio models and demonstrate that online RL significantly outperforms its offline counterparts. Furthermore, we incorporate rewards derived from Large Audio Language Models (LALMs), which can provide fine-grained scoring signals that are better aligned with human perception. With only 470M parameters, our final model, \\textbf{Resonate}, establishes a new SOTA on TTA-Bench in terms of both audio quality and semantic alignment.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2603.11661v1",
+          "category": "foundation",
+          "task": "Text-to-Audio Generation",
+          "proposedMethod": "Resonate",
+          "datasets": [
+            "TTA-Bench"
+          ],
+          "what": "This paper introduces Resonate, a text-to-audio generation model enhanced with online reinforcement learning (RL) and rewards from Large Audio Language Models (LALMs).",
+          "novel": "It is the first to integrate online Group Relative Policy Optimization (GRPO) into text-to-audio generation, leveraging fine-grained scoring signals from LALMs for improved audio quality and semantic alignment.",
+          "method": "The method adapts GRPO for Flow Matching-based audio models and incorporates LALM-derived rewards to refine the generation process.",
+          "validation": "The model achieves state-of-the-art performance on TTA-Bench, demonstrating superior audio quality and semantic alignment compared to offline methods.",
+          "discussion": "The reliance on LALMs for reward signals may introduce biases, and the scalability of the approach to larger datasets and models remains unexplored.",
+          "nextReads": [
+            {
+              "label": "Contrastive Language-Audio Pretraining (2022)",
+              "url": null
+            },
+            {
+              "label": "Reinforcement Learning for Generative Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Flow Matching for Audio Generation (2023)",
+              "url": null
+            },
+            {
+              "label": "TTA-Bench: Benchmark for Text-to-Audio Generation (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2603.10725v2",
+          "date": "Mar 11",
+          "title": "Towards Robust Speech Deepfake Detection via Human-Inspired Reasoning",
+          "authors": [
+            "Artem Dvirniak",
+            "Evgeny Kushnir",
+            "Dmitrii Tarasov",
+            "Artem Iudin",
+            "Oleg Kiriukhin"
+          ],
+          "org": "Unknown",
+          "abstract": "The modern generative audio models can be used by an adversary in an unlawful manner, specifically, to impersonate other people to gain access to private information. To mitigate this issue, speech deepfake detection (SDD) methods started to evolve. Unfortunately, current SDD methods generally suffer from the lack of generalization to new audio domains and generators. More than that, they lack interpretability, especially human-like reasoning that would naturally explain the attribution of a given audio to the bona fide or spoof class and provide human-perceptible cues. In this paper, we propose HIR-SDD, a novel SDD framework that combines the strengths of Large Audio Language Models (LALMs) with the chain-of-thought reasoning derived from the novel proposed human-annotated dataset. Experimental evaluation demonstrates both the effectiveness of the proposed method and its ability to provide reasonable justifications for predictions.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2603.10725v2",
+          "category": "foundation",
+          "task": "Speech Deepfake Detection",
+          "proposedMethod": "HIR-SDD",
+          "datasets": [
+            "Not specified"
+          ],
+          "what": "This paper proposes HIR-SDD, a novel framework for speech deepfake detection that combines Large Audio Language Models (LALMs) with chain-of-thought reasoning and a human-annotated dataset.",
+          "novel": "The framework introduces human-inspired reasoning to improve interpretability and generalization in speech deepfake detection, addressing limitations in current methods.",
+          "method": "HIR-SDD leverages LALMs and chain-of-thought reasoning, supported by a novel human-annotated dataset, to provide interpretable and generalizable deepfake detection.",
+          "validation": "The method is evaluated experimentally, demonstrating improved detection performance and the ability to provide reasonable justifications for predictions. Specific datasets and metrics are not detailed.",
+          "discussion": "The lack of detailed dataset information limits reproducibility, and the approach may require further validation across diverse audio domains and deepfake generators.",
+          "nextReads": [
+            {
+              "label": "Deepfake Detection with Explainability (2022)",
+              "url": null
+            },
+            {
+              "label": "Chain-of-Thought Reasoning in AI (2022)",
+              "url": null
+            },
+            {
+              "label": "Large Audio Language Models for Detection Tasks (2023)",
+              "url": null
+            },
+            {
+              "label": "Human-Inspired Reasoning in AI (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2603.10175v1",
+          "date": "Mar 10",
+          "title": "Calibration-Reasoning Framework for Descriptive Speech Quality Assessment",
+          "authors": [
+            "Elizaveta Kostenok",
+            "Mathieu Salzmann",
+            "Milos Cernak"
+          ],
+          "org": "Unknown",
+          "abstract": "Explainable speech quality assessment requires moving beyond Mean Opinion Scores (MOS) to analyze underlying perceptual dimensions. To address this, we introduce a novel post-training method that tailors the foundational Audio Large Language Model for multidimensional reasoning, detection and classification of audio artifacts. First, a calibration stage aligns the model to predict predefined perceptual dimensions. Second, a reinforcement learning stage leverages Group Relative Policy Optimization (GRPO) with dimension-specific rewards to heavily enhance accuracy of descriptions and temporal localization of quality issues. With this approach we reach state-of-the-art results of 0.71 mean PCC score on the multidimensional QualiSpeech benchmark and 13% improvement in MOS prediction driven by RL-based reasoning. Furthermore, our fine-grained GRPO rewards substantially advance the model's ability to pinpoint and classify audio artifacts in time.",
+          "comment": "Submitted to Interspeech 2026",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.CL"
+          ],
+          "url": "https://arxiv.org/abs/2603.10175v1",
+          "category": "foundation",
+          "task": "Speech Quality Assessment",
+          "proposedMethod": "Calibration-Reasoning Framework",
+          "datasets": [
+            "QualiSpeech"
+          ],
+          "what": "This paper introduces a Calibration-Reasoning Framework for descriptive speech quality assessment, focusing on multidimensional reasoning and artifact classification.",
+          "novel": "The framework moves beyond traditional MOS by enabling fine-grained reasoning and temporal localization of audio artifacts using reinforcement learning with dimension-specific rewards.",
+          "method": "The approach involves a calibration stage to align the model with perceptual dimensions, followed by reinforcement learning using Group Relative Policy Optimization (GRPO) with tailored rewards.",
+          "validation": "The framework achieves state-of-the-art results on the multidimensional QualiSpeech benchmark, with a 0.71 mean PCC score and a 13% improvement in MOS prediction.",
+          "discussion": "The reliance on a specific benchmark may limit generalizability, and the method's performance on other datasets and real-world scenarios is not explored.",
+          "nextReads": [
+            {
+              "label": "Multidimensional Speech Quality Assessment (2022)",
+              "url": null
+            },
+            {
+              "label": "Reinforcement Learning for Audio Models (2021)",
+              "url": null
+            },
+            {
+              "label": "QualiSpeech Benchmark Introduction (2023)",
+              "url": null
+            },
+            {
+              "label": "Explainable Audio Quality Metrics (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2603.09853v1",
+          "date": "Mar 10",
+          "title": "SCENEBench: An Audio Understanding Benchmark Grounded in Assistive and Industrial Use Cases",
+          "authors": [
+            "Laya Iyer",
+            "Angelina Wang",
+            "Sanmi Koyejo"
+          ],
+          "org": "Stanford",
+          "abstract": "Advances in large language models (LLMs) have enabled significant capabilities in audio processing, resulting in state-of-the-art models now known as Large Audio Language Models (LALMs). However, minimal work has been done to measure audio understanding beyond automatic speech recognition (ASR). This paper closes that gap by proposing a benchmark suite, SCENEBench (Spatial, Cross-lingual, Environmental, Non-speech Evaluation), that targets a broad form of audio comprehension across four real-world categories: background sound understanding, noise localization, cross-linguistic speech understanding, and vocal characterizer recognition. These four categories are selected based on understudied needs from accessibility technology and industrial noise monitoring. In addition to performance, we also measure model latency. The purpose of this benchmark suite is to assess audio beyond just what words are said - rather, how they are said and the non-speech components of the audio. Because our audio samples are synthetically constructed (e.g., by overlaying two natural audio samples), we further validate our benchmark against 20 natural audio items per task, sub-sampled from existing datasets to match our task criteria, to assess ecological validity. We assess five state-of-the-art LALMs and find critical gaps: performance varies across tasks, with some tasks performing below random chance and others achieving high accuracy. These results provide direction for targeted improvements in model capabilities.",
+          "comment": "Accepted to EACL 2026 (Main Conference). 10 pages, 10 figures. Camera-ready version",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2603.09853v1",
+          "category": "foundation",
+          "task": "Audio Benchmarking",
+          "proposedMethod": "SCENEBench",
+          "datasets": [
+            "SCENEBench synthetic",
+            "20 natural audio items"
+          ],
+          "what": "This paper introduces SCENEBench, a benchmark suite for evaluating audio comprehension across four categories: background sound understanding, noise localization, cross-linguistic speech understanding, and vocal characterizer recognition.",
+          "novel": "It focuses on audio understanding beyond ASR, targeting real-world assistive and industrial use cases, and highlights critical gaps in current LALM performance.",
+          "method": "The benchmark includes synthetic audio samples and validates them against natural audio items to ensure ecological validity, while also measuring model latency.",
+          "validation": "Five state-of-the-art LALMs are evaluated on SCENEBench, revealing significant performance variability across tasks and identifying areas for improvement.",
+          "discussion": "The study highlights the need for targeted improvements in LALMs and raises questions about their robustness across diverse audio tasks.",
+          "nextReads": [
+            {
+              "label": "HEAR 2021: Holistic Evaluation of Audio Representations (2021)",
+              "url": null
+            },
+            {
+              "label": "AudioLDM: Text-to-Audio Generation with Latent Diffusion Models (2023)",
+              "url": "https://arxiv.org/abs/2301.12503"
+            },
+            {
+              "label": "Universal Speech Model (2022)",
+              "url": "https://arxiv.org/abs/2210.05333"
+            },
+            {
+              "label": "General-purpose Audio Representation Learning (2022)",
+              "url": "https://arxiv.org/abs/2206.04769"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2603.09232v1",
+          "date": "Mar 10",
+          "title": "How Contrastive Decoding Enhances Large Audio Language Models?",
+          "authors": [
+            "Tzu-Quan Lin",
+            "Wei-Ping Huang",
+            "Yi-Cheng Lin",
+            "Hung-yi Lee"
+          ],
+          "org": "National Taiwan University",
+          "abstract": "While Contrastive Decoding (CD) has proven effective at enhancing Large Audio Language Models (LALMs), the underlying mechanisms driving its success and the comparative efficacy of different strategies remain unclear. This study systematically evaluates four distinct CD strategies across diverse LALM architectures. We identify Audio-Aware Decoding and Audio Contrastive Decoding as the most effective methods. However, their impact varies significantly by model. To explain this variability, we introduce a Transition Matrix framework to map error pattern shifts during inference. Our analysis demonstrates that CD reliably rectifies errors in which models falsely claim an absence of audio or resort to uncertainty-driven guessing. Conversely, it fails to correct flawed reasoning or confident misassertions. Ultimately, these findings provide a clear guideline for determining which LALM architectures are most suitable for CD enhancement based on their baseline error profiles.",
+          "comment": "Submitted to INTERSPEECH 2026. Code and additional analysis results are provided in our repository: https://github.com/nervjack2/LALM-Contrastive-Decoding-Error-Profiles",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2603.09232v1",
+          "category": "foundation",
+          "task": "Audio Decoding",
+          "proposedMethod": "Contrastive Decoding (CD)",
+          "datasets": [
+            "Custom evaluation datasets"
+          ],
+          "what": "This paper investigates how Contrastive Decoding (CD) enhances Large Audio Language Models (LALMs) and evaluates four CD strategies across different architectures.",
+          "novel": "It introduces a Transition Matrix framework to analyze error pattern shifts during inference and identifies the conditions under which CD is most effective.",
+          "method": "The study evaluates four CD strategies, with a focus on Audio-Aware Decoding and Audio Contrastive Decoding, and uses the Transition Matrix framework to map error corrections.",
+          "validation": "The methods are tested on diverse LALM architectures, analyzing their baseline error profiles and the impact of CD on error correction.",
+          "discussion": "The findings highlight the variability in CD effectiveness across models and emphasize the need for architecture-specific optimization.",
+          "nextReads": [
+            {
+              "label": "AudioLDM: Text-to-Audio Generation with Latent Diffusion Models (2023)",
+              "url": "https://arxiv.org/abs/2301.12503"
+            },
+            {
+              "label": "Contrastive Learning of General-Purpose Audio Representations (2021)",
+              "url": "https://arxiv.org/abs/2102.06679"
+            },
+            {
+              "label": "Universal Speech Model (2022)",
+              "url": "https://arxiv.org/abs/2210.05333"
+            },
+            {
+              "label": "HEAR 2021: Holistic Evaluation of Audio Representations (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": 2,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2603.05852v1",
+          "date": "Mar 06",
+          "title": "How Well Do Current Speech Deepfake Detection Methods Generalize to the Real World?",
+          "authors": [
+            "Daixian Li",
+            "Jun Xue",
+            "Yanzhen Ren",
+            "Zhuolin Yi",
+            "Yihuan Huang"
+          ],
+          "org": "Zhejiang University",
+          "abstract": "Recent advances in speech synthesis and voice conversion have greatly improved the naturalness and authenticity of generated audio. Meanwhile, evolving encoding, compression, and transmission mechanisms on social media platforms further obscure deepfake artifacts. These factors complicate reliable detection in real-world environments, underscoring the need for representative evaluation benchmarks. To this end, we introduce ML-ITW (Multilingual In-The-Wild), a multilingual dataset covering 14 languages, seven major platforms, and 180 public figures, totaling 28.39 hours of audio. We evaluate three detection paradigms: end-to-end neural models, self-supervised feature-based (SSL) methods, and audio large language models (Audio LLMs). Experimental results reveal significant performance degradation across diverse languages and real-world acoustic conditions, highlighting the limited generalization ability of existing detectors in practical scenarios. The ML-ITW dataset is publicly available.",
+          "comment": "Submitted to Interspeech 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2603.05852v1",
+          "category": "foundation",
+          "task": "Speech Deepfake Detection",
+          "proposedMethod": "ML-ITW",
+          "datasets": [
+            "ML-ITW"
+          ],
+          "what": "This paper introduces ML-ITW, a multilingual dataset for evaluating speech deepfake detection methods under real-world conditions.",
+          "novel": "It provides a comprehensive benchmark covering 14 languages, seven platforms, and diverse acoustic conditions, highlighting the limited generalization of current detectors.",
+          "method": "The study evaluates three detection paradigms—end-to-end neural models, SSL methods, and Audio LLMs—on the ML-ITW dataset.",
+          "validation": "Performance is assessed across languages and platforms, revealing significant degradation in real-world scenarios.",
+          "discussion": "The results underscore the need for more robust and generalizable detection methods to handle real-world variability.",
+          "nextReads": [
+            {
+              "label": "DeepSonar: Towards Effective and Robust Detection of AI-Synthesized Fake Voices (2020)",
+              "url": null
+            },
+            {
+              "label": "FakeAVCeleb: A Novel Audio-Video Multimodal Deepfake Dataset (2021)",
+              "url": null
+            },
+            {
+              "label": "Adversarial Attacks and Defenses for Speech Deepfake Detection (2022)",
+              "url": null
+            },
+            {
+              "label": "WaveFake: A Data Set to Facilitate Audio Deepfake Detection (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2603.09187v1",
+          "date": "Mar 10",
+          "title": "The Costs of Reproducibility in Music Separation Research: a Replication of Band-Split RNN",
+          "authors": [
+            "Paul Magron",
+            "Romain Serizel",
+            "Constance Douwes"
+          ],
+          "org": "Inria",
+          "abstract": "Music source separation is the task of isolating the instrumental tracks from a music song. Despite its spectacular recent progress, the trend towards more complex architectures and training protocols exacerbates reproducibility issues. The band-split recurrent neural networks (BSRNN) model is promising in this regard, since it yields close to state-of-the-art results on public datasets, and requires reasonable resources for training. Unfortunately, it is not straightforward to reproduce since its full code is not available. In this paper, we attempt to replicate BSRNN as closely as possible to the original paper through extensive experiments, which allows us to conduct a critical reflection on this reproducibility issue. Our contributions are three-fold. First, this study yields several insights on the model design and training pipeline, which sheds light on potential future improvements. In particular, since we were unsuccessful in reproducing the original results, we explore additional variants that ultimately yield an optimized BSRNN model, whose performance largely improves that of the original. Second, we discuss reproducibility issues from both methodological and practical perspectives. We notably underline how substantial time and energy costs could have been saved upon availability of the full pipeline. Third, our code and pre-trained models are released publicly to foster reproducible research. We hope that this study will contribute to spread awareness on the importance of reproducible research in the music separation community, and help promoting more transparent and sustainable practices.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.LG"
+          ],
+          "url": "https://arxiv.org/abs/2603.09187v1",
+          "category": "separation",
+          "task": "Music Source Separation",
+          "proposedMethod": "Optimized BSRNN",
+          "datasets": [
+            "MUSDB18",
+            "Custom replication datasets"
+          ],
+          "what": "This paper replicates and optimizes the Band-Split RNN (BSRNN) model for music source separation, addressing reproducibility challenges.",
+          "novel": "It provides insights into the design and training pipeline of BSRNN, proposes optimized variants, and emphasizes the importance of reproducibility in the field.",
+          "method": "The authors replicate BSRNN through extensive experiments, propose optimized variants, and release code and pre-trained models to enhance reproducibility.",
+          "validation": "The optimized BSRNN is evaluated on MUSDB18 and compared to the original model, showing significant performance improvements.",
+          "discussion": "The study highlights the high costs of reproducibility and advocates for more transparent and sustainable research practices.",
+          "nextReads": [
+            {
+              "label": "Demucs: Deep Extractor for Music Sources (2021)",
+              "url": null
+            },
+            {
+              "label": "Open-Unmix: A Reference Implementation for Music Source Separation (2019)",
+              "url": null
+            },
+            {
+              "label": "Spleeter: A Fast and State-of-the Art Music Source Separation Tool with Pre-trained Models (2019)",
+              "url": null
+            },
+            {
+              "label": "Wave-U-Net: A Multi-Scale Neural Network for End-to-End Audio Source Separation (2018)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2603.10420v1",
+          "date": "Mar 11",
+          "title": "FireRedASR2S: A State-of-the-Art Industrial-Grade All-in-One Automatic Speech Recognition System",
+          "authors": [
+            "Kaituo Xu",
+            "Yan Jia",
+            "Kai Huang",
+            "Junjie Chen",
+            "Wenpeng Li"
+          ],
+          "org": "Unknown",
+          "abstract": "We present FireRedASR2S, a state-of-the-art industrial-grade all-in-one automatic speech recognition (ASR) system. It integrates four modules in a unified pipeline: ASR, Voice Activity Detection (VAD), Spoken Language Identification (LID), and Punctuation Prediction (Punc). All modules achieve SOTA performance on the evaluated benchmarks: FireRedASR2: An ASR module with two variants, FireRedASR2-LLM (8B+ parameters) and FireRedASR2-AED (1B+ parameters), supporting speech and singing transcription for Mandarin, Chinese dialects and accents, English, and code-switching. Compared to FireRedASR, FireRedASR2 delivers improved recognition accuracy and broader dialect and accent coverage. FireRedASR2-LLM achieves 2.89% average CER on 4 public Mandarin benchmarks and 11.55% on 19 public Chinese dialects and accents benchmarks, outperforming competitive baselines including Doubao-ASR, Qwen3-ASR, and Fun-ASR. FireRedVAD: An ultra-lightweight module (0.6M parameters) based on the Deep Feedforward Sequential Memory Network (DFSMN), supporting streaming VAD, non-streaming VAD, and multi-label VAD (mVAD). On the FLEURS-VAD-102 benchmark, it achieves 97.57% frame-level F1 and 99.60% AUC-ROC, outperforming Silero-VAD, TEN-VAD, FunASR-VAD, and WebRTC-VAD. FireRedLID: An Encoder-Decoder LID module supporting 100+ languages and 20+ Chinese dialects and accents. On FLEURS (82 languages), it achieves 97.18% utterance-level accuracy, outperforming Whisper and SpeechBrain. FireRedPunc: A BERT-style punctuation prediction module for Chinese and English. On multi-domain benchmarks, it achieves 78.90% average F1, outperforming FunASR-Punc (62.77%). To advance research in speech processing, we release model weights and code at https://github.com/FireRedTeam/FireRedASR2S.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2603.10420v1",
+          "category": "transcription",
+          "task": "Automatic Speech Recognition",
+          "proposedMethod": "FireRedASR2S",
+          "datasets": [
+            "FLEURS-VAD-102",
+            "FLEURS"
+          ],
+          "what": "This paper presents FireRedASR2S, an industrial-grade all-in-one ASR system integrating ASR, Voice Activity Detection (VAD), Spoken Language Identification (LID), and Punctuation Prediction (Punc).",
+          "novel": "The system achieves state-of-the-art performance across multiple benchmarks and supports a wide range of languages, dialects, and accents, with significant improvements over previous versions.",
+          "method": "FireRedASR2S combines advanced modules for ASR, VAD, LID, and Punc, utilizing large-scale models like FireRedASR2-LLM and lightweight modules like FireRedVAD.",
+          "validation": "The system is validated on multiple benchmarks, including FLEURS-VAD-102 and FLEURS, achieving state-of-the-art results in recognition accuracy, VAD, LID, and punctuation prediction.",
+          "discussion": "The system's high parameter count for some modules may limit accessibility for smaller organizations, and the performance on non-Chinese languages could be further explored.",
+          "nextReads": [
+            {
+              "label": "Advances in ASR Systems (2022)",
+              "url": null
+            },
+            {
+              "label": "Voice Activity Detection Techniques (2021)",
+              "url": null
+            },
+            {
+              "label": "Spoken Language Identification Methods (2023)",
+              "url": null
+            },
+            {
+              "label": "Punctuation Prediction in ASR (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": "https://github.com/FireRedTeam/FireRedASR2S",
+          "upvotes": 6,
+          "projectPage": "https://github.com/FireRedTeam/FireRedASR2S"
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Large Audio Language Models (LALMs) are central to advancements this week, with innovations like PE-FT for paralinguistic awareness, Resonate for RL-enhanced text-to-audio generation, and HIR-SDD for robust deepfake detection using chain-of-thought reasoning.",
+    "Benchmarks and frameworks such as SCENEBench for diverse audio tasks and the Calibration-Reasoning Framework for speech quality assessment highlight a focus on practical evaluation and multidimensional reasoning.",
+    "Reproducibility and optimization in music separation (Band-Split RNN) and explorations of Contrastive Decoding strategies in LALMs reflect ongoing efforts to refine and generalize AI methods in audio research."
+  ]
+}

@@ -1,0 +1,401 @@
+{
+  "date": "2026-0213",
+  "generated_at": "2026-02-13T00:00:00+00:00",
+  "total": 7,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2602.11909v2",
+          "date": "Feb 12",
+          "title": "Echo: Towards Advanced Audio Comprehension via Audio-Interleaved Reasoning",
+          "authors": [
+            "Daiqing Wu",
+            "Xuan Zhang",
+            "Dongbao Yang",
+            "Jiashu Yao",
+            "Longfei Chen"
+          ],
+          "org": "Tencent AI Lab",
+          "abstract": "The maturation of Large Audio Language Models (LALMs) has raised growing expectations for them to comprehend complex audio much like humans. Current efforts primarily replicate text-based reasoning by contextualizing audio content through a one-time encoding, which introduces a critical information bottleneck. Drawing inspiration from human cognition, we propose audio-interleaved reasoning to break through this bottleneck. It treats audio as an active reasoning component, enabling sustained audio engagement and perception-grounded analysis. To instantiate it, we introduce a two-stage training framework, first teaching LALMs to localize salient audio segments through supervised fine-tuning, and then incentivizing proficient re-listening via reinforcement learning. In parallel, a structured data generation pipeline is developed to produce high-quality training data. Consequently, we present Echo, a LALM capable of dynamically re-listening to audio in demand during reasoning. On audio comprehension benchmarks, Echo achieves overall superiority in both challenging expert-level and general-purpose tasks. Comprehensive analysis further confirms the efficiency and generalizability of audio-interleaved reasoning, establishing it as a promising direction for advancing audio comprehension. Project page: https://github.com/wdqqdw/Echo.",
+          "comment": "Accepted by ICLR 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.LG"
+          ],
+          "url": "https://arxiv.org/abs/2602.11909v2",
+          "category": "foundation",
+          "task": "Audio Comprehension",
+          "proposedMethod": "Echo",
+          "datasets": [
+            "Custom audio comprehension benchmarks"
+          ],
+          "what": "This paper introduces Echo, a large audio language model (LALM) capable of advanced audio comprehension through a novel audio-interleaved reasoning framework.",
+          "novel": "The proposed audio-interleaved reasoning allows dynamic re-listening to audio during reasoning, breaking the traditional one-time encoding bottleneck.",
+          "method": "A two-stage training framework is used: supervised fine-tuning for salient audio segment localization and reinforcement learning to encourage re-listening.",
+          "validation": "Performance is validated on expert-level and general-purpose audio comprehension benchmarks, showing superiority over existing methods.",
+          "discussion": "The approach demonstrates efficiency and generalizability but may rely heavily on the quality of the structured data generation pipeline.",
+          "nextReads": [
+            {
+              "label": "Whisper: OpenAI's Speech Recognition Model (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "AudioLM: A Language Modeling Approach to Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/2209.03143"
+            },
+            {
+              "label": "SpeechT5: Unified-Modal Encoder-Decoder Pre-Training for Spoken Language Processing (2022)",
+              "url": "https://arxiv.org/abs/2202.03555"
+            },
+            {
+              "label": "Self-Supervised Learning for Audio-Visual Scene Understanding (2021)",
+              "url": "https://arxiv.org/abs/2104.12807"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2602.10934v2",
+          "date": "Feb 11",
+          "title": "MOSS-Audio-Tokenizer: Scaling Audio Tokenizers for Future Audio Foundation Models",
+          "authors": [
+            "Yitian Gong",
+            "Kuangwei Chen",
+            "Zhaoye Fei",
+            "Xiaogui Yang",
+            "Ke Chen"
+          ],
+          "org": "Microsoft Research",
+          "abstract": "Discrete audio tokenizers are fundamental to empowering large language models with native audio processing and generation capabilities. Despite recent progress, existing approaches often rely on pretrained encoders, semantic distillation, or heterogeneous CNN-based architectures. These designs introduce fixed inductive biases that limit reconstruction fidelity and hinder effective scaling. In this paper, we argue that discrete audio tokenization should be learned fully end-to-end using a homogeneous and scalable architecture. To this end, we first propose CAT (Causal Audio Tokenizer with Transformer), a purely Transformer-based architecture that jointly optimizes the encoder, quantizer, and decoder from scratch for high-fidelity reconstruction. Building on the CAT architecture, we develop MOSS-Audio-Tokenizer, a large-scale audio tokenizer featuring 1.6 billion parameters, pre-trained on 3 million hours of diverse, general audio data. We show that this simple, fully end-to-end approach built from homogeneous, causal Transformer blocks scales gracefully and supports high-fidelity reconstruction across diverse audio domains. Across speech, sound, and music, MOSS-Audio-Tokenizer consistently outperforms prior codecs over a wide range of bitrates, while exhibiting predictable improvements with increased scale. Notably, leveraging the discrete tokens from our model, we develop the first purely autoregressive TTS model that surpasses prior non-autoregressive and cascaded systems. Furthermore, MOSS-Audio-Tokenizer enables competitive ASR performance without auxiliary encoders. Our findings position the CAT architecture as a unified, scalable interface for the next generation of native audio foundation models.",
+          "comment": "27 pages, 8 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2602.10934v2",
+          "category": "foundation",
+          "task": "Audio Tokenization",
+          "proposedMethod": "MOSS-Audio-Tokenizer",
+          "datasets": [
+            "3 million hours of diverse audio data"
+          ],
+          "what": "This paper presents MOSS-Audio-Tokenizer, a large-scale audio tokenizer based on a fully end-to-end Transformer architecture for high-fidelity audio reconstruction and processing.",
+          "novel": "The use of a homogeneous, scalable, and purely Transformer-based architecture for end-to-end audio tokenization is a significant departure from prior approaches relying on heterogeneous or pretrained components.",
+          "method": "The proposed Causal Audio Tokenizer (CAT) jointly optimizes the encoder, quantizer, and decoder using a Transformer-based architecture, enabling high-fidelity audio reconstruction and scalability.",
+          "validation": "The model is evaluated across speech, sound, and music domains, outperforming prior codecs in reconstruction fidelity and demonstrating scalability across bitrates.",
+          "discussion": "While the approach shows promise for future audio foundation models, the computational cost and scalability to even larger datasets remain open challenges.",
+          "nextReads": [
+            {
+              "label": "AudioLM: A Language Modeling Approach to Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/2209.03143"
+            },
+            {
+              "label": "SoundStream: An End-to-End Neural Audio Codec (2021)",
+              "url": "https://arxiv.org/abs/2107.03312"
+            },
+            {
+              "label": "EnCodec: High Fidelity Neural Audio Compression (2022)",
+              "url": "https://arxiv.org/abs/2210.13438"
+            },
+            {
+              "label": "Wav2Vec 2.0: A Framework for Self-Supervised Learning of Speech Representations (2020)",
+              "url": "https://arxiv.org/abs/2006.11477"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": "https://github.com/OpenMOSS/MOSS-Audio-Tokenizer",
+          "upvotes": 49,
+          "projectPage": null
+        },
+        {
+          "id": "2602.10439v1",
+          "date": "Feb 11",
+          "title": "AudioRouter: Data Efficient Audio Understanding via RL based Dual Reasoning",
+          "authors": [
+            "Liyang Chen",
+            "Hongkai Chen",
+            "Yujun Cai",
+            "Sifan Li",
+            "Qingwen Ye"
+          ],
+          "org": "National University of Singapore",
+          "abstract": "Large Audio Language Models (LALMs) have demonstrated strong capabilities in audio understanding and reasoning. However, their performance on fine grained auditory perception remains unreliable, and existing approaches largely rely on data intensive training to internalize perceptual abilities. We propose AudioRouter, a reinforcement learning framework that enables LALMs to improve audio understanding by learning when and how to use external audio tools. Rather than tightly coupling tool usage with audio reasoning, AudioRouter formulates tool use as an explicit decision making problem and optimizes a lightweight routing policy while keeping the underlying reasoning model frozen. Experimental results show that AudioRouter achieves substantial improvements on standard audio understanding benchmarks while requiring up to 600x less training data to learn tool usage compared with conventional training paradigms. These findings suggest that learning effective tool usage offers a data efficient and scalable alternative to internalizing perceptual abilities in LALMs.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2602.10439v1",
+          "category": "foundation",
+          "task": "Audio Understanding",
+          "proposedMethod": "AudioRouter",
+          "datasets": [
+            "Standard audio understanding benchmarks"
+          ],
+          "what": "This paper introduces AudioRouter, a reinforcement learning-based framework that improves audio understanding by teaching large audio language models (LALMs) how to use external audio tools effectively.",
+          "novel": "The explicit formulation of tool usage as a decision-making problem allows for significant data efficiency, requiring up to 600x less training data compared to traditional methods.",
+          "method": "AudioRouter employs a lightweight routing policy optimized via reinforcement learning, enabling LALMs to decide when and how to use external tools while keeping the reasoning model fixed.",
+          "validation": "The method is tested on standard audio understanding benchmarks, showing substantial improvements in performance and data efficiency over conventional training paradigms.",
+          "discussion": "The reliance on external tools may limit the model's standalone capabilities, and further exploration is needed to understand the scalability of this approach.",
+          "nextReads": [
+            {
+              "label": "Echo: Towards Advanced Audio Comprehension via Audio-Interleaved Reasoning (2023)",
+              "url": "https://arxiv.org/abs/2602.11909v2"
+            },
+            {
+              "label": "Reinforcement Learning with Human Feedback (2022)",
+              "url": "https://arxiv.org/abs/2204.05862"
+            },
+            {
+              "label": "Toolformer: Language Models Can Teach Themselves to Use Tools (2023)",
+              "url": "https://arxiv.org/abs/2302.04761"
+            },
+            {
+              "label": "Self-supervised Learning for Audio Understanding (2020)",
+              "url": "https://arxiv.org/abs/2006.03261"
+            }
+          ],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2602.10230v1",
+          "date": "Feb 10",
+          "title": "Frame-Level Internal Tool Use for Temporal Grounding in Audio LMs",
+          "authors": [
+            "Joesph An",
+            "Phillip Keung",
+            "Jiaqi Wang",
+            "Orevaoghene Ahia",
+            "Noah A. Smith"
+          ],
+          "org": "Meta AI",
+          "abstract": "Large audio language models are increasingly used for complex audio understanding tasks, but they struggle with temporal tasks that require precise temporal grounding, such as word alignment and speaker diarization. The standard approach, where we generate timestamps as sequences of text tokens, is computationally expensive and prone to hallucination, especially when processing audio lengths outside the model's training distribution. In this work, we propose frame-level internal tool use, a method that trains audio LMs to use their own internal audio representations to perform temporal grounding directly. We introduce a lightweight prediction mechanism trained via two objectives: a binary frame classifier and a novel inhomogeneous Poisson process (IHP) loss that models temporal event intensity. Across word localization, speaker diarization, and event localization tasks, our approach outperforms token-based baselines. Most notably, it achieves a >50x inference speedup and demonstrates robust length generalization, maintaining high accuracy on out-of-distribution audio durations where standard token-based models collapse completely.",
+          "comment": "Under review. See https://github.com/inkitori/taudio/",
+          "journalRef": null,
+          "categories": [
+            "cs.LG",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2602.10230v1",
+          "category": "foundation",
+          "task": "Temporal Grounding",
+          "proposedMethod": "Frame-Level Internal Tool Use",
+          "datasets": [
+            "Custom temporal grounding datasets"
+          ],
+          "what": "This paper proposes a method for training large audio language models to perform precise temporal grounding tasks, such as word alignment and speaker diarization, using frame-level internal representations.",
+          "novel": "The introduction of frame-level internal tool use with a novel inhomogeneous Poisson process (IHP) loss enables robust temporal grounding and significant speedups over token-based methods.",
+          "method": "The approach trains a lightweight prediction mechanism with a binary frame classifier and IHP loss to model temporal event intensity, allowing direct use of internal audio representations for temporal tasks.",
+          "validation": "The method is validated on word localization, speaker diarization, and event localization tasks, achieving >50x inference speedup and robust performance on out-of-distribution audio durations.",
+          "discussion": "The reliance on custom datasets for training and evaluation may limit generalizability, and further testing on diverse datasets is necessary to confirm robustness.",
+          "nextReads": [
+            {
+              "label": "AudioRouter: Data Efficient Audio Understanding via RL based Dual Reasoning (2023)",
+              "url": "https://arxiv.org/abs/2602.10439v1"
+            },
+            {
+              "label": "Whisper: OpenAI's Speech Recognition Model (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "Wav2Vec 2.0: A Framework for Self-Supervised Learning of Speech Representations (2020)",
+              "url": "https://arxiv.org/abs/2006.11477"
+            },
+            {
+              "label": "Self-supervised Learning for Audio-Visual Scene Understanding (2021)",
+              "url": "https://arxiv.org/abs/2104.12807"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2602.11896v1",
+          "date": "Feb 12",
+          "title": "Musical Metamerism with Time--Frequency Scattering",
+          "authors": [
+            "Vincent Lostanlen",
+            "Han Han"
+          ],
+          "org": "Cornell University",
+          "abstract": "The concept of metamerism originates from colorimetry, where it describes a sensation of visual similarity between two colored lights despite significant differences in spectral content. Likewise, we propose to call ``musical metamerism'' the sensation of auditory similarity which is elicited by two music fragments which differ in terms of underlying waveforms. In this technical report, we describe a method to generate musical metamers from any audio recording. Our method is based on joint time--frequency scattering in Kymatio, an open-source software in Python which enables GPU computing and automatic differentiation. The advantage of our method is that it does not require any manual preprocessing, such as transcription, beat tracking, or source separation. We provide a mathematical description of JTFS as well as some excerpts from the Kymatio source code. Lastly, we review the prior work on JTFS and draw connections with closely related algorithms, such as spectrotemporal receptive fields (STRF), modulation power spectra (MPS), and Gabor filterbank (GBFB).",
+          "comment": "Technical report, 15 pages, 1 figure. Written in November 2024 as part of a collaboration with Henkjan Honing's music cognition group at the University of Amsterdam",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2602.11896v1",
+          "category": "separation",
+          "task": "Audio Similarity",
+          "proposedMethod": "Musical Metamerism",
+          "datasets": [
+            "Custom audio datasets"
+          ],
+          "what": "This paper introduces the concept of musical metamerism, where two different audio waveforms can elicit similar auditory perceptions, and proposes a method to generate such metamers using joint time-frequency scattering (JTFS).",
+          "novel": "The paper extends the concept of metamerism from colorimetry to audio, providing a novel perspective on auditory similarity.",
+          "method": "The method employs JTFS, implemented in the Kymatio library, to generate auditory metamers without requiring preprocessing steps like transcription or beat tracking.",
+          "validation": "The approach is demonstrated with mathematical descriptions and examples, and connections are drawn to related algorithms like STRF and MPS.",
+          "discussion": "The paper provides a conceptual foundation but lacks extensive empirical evaluation, leaving open questions about the practical applications of musical metamerism.",
+          "nextReads": [
+            {
+              "label": "Time-Frequency Scattering for Audio Classification (2019)",
+              "url": "https://arxiv.org/abs/1910.10279"
+            },
+            {
+              "label": "Kymatio: Scattering Transforms in Python (2019)",
+              "url": "https://arxiv.org/abs/1812.11214"
+            },
+            {
+              "label": "Wavelet Scattering Networks for Audio Classification (2013)",
+              "url": null
+            },
+            {
+              "label": "Modulation Spectrogram Features for Music Genre Recognition (2005)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2602.08671v1",
+          "date": "Feb 09",
+          "title": "Input-Adaptive Spectral Feature Compression by Sequence Modeling for Source Separation",
+          "authors": [
+            "Kohei Saijo",
+            "Yoshiaki Bando"
+          ],
+          "org": "Nagoya University",
+          "abstract": "Time-frequency domain dual-path models have demonstrated strong performance and are widely used in source separation. Because their computational cost grows with the number of frequency bins, these models often use the band-split (BS) module in high-sampling-rate tasks such as music source separation (MSS) and cinematic audio source separation (CASS). The BS encoder compresses frequency information by encoding features for each predefined subband. It achieves effective compression by introducing an inductive bias that places greater emphasis on low-frequency parts. Despite its success, the BS module has two inherent limitations: (i) it is not input-adaptive, preventing the use of input-dependent information, and (ii) the parameter count is large, since each subband requires a dedicated module. To address these issues, we propose Spectral Feature Compression (SFC). SFC compresses the input using a single sequence modeling module, making it both input-adaptive and parameter-efficient. We investigate two variants of SFC, one based on cross-attention and the other on Mamba, and introduce inductive biases inspired by the BS module to make them suitable for frequency information compression. Experiments on MSS and CASS tasks demonstrate that the SFC module consistently outperforms the BS module across different separator sizes and compression ratios. We also provide an analysis showing that SFC adaptively captures frequency patterns from the input.",
+          "comment": "Accepted by IEEE TASLP. \\c{opyright} 2026 IEEE. Personal use of this material is permitted. Permission from IEEE must be obtained for all other uses",
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2602.08671v1",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": "Spectral Feature Compression (SFC)",
+          "datasets": [
+            "MUSDB18",
+            "Cinematic Audio Dataset"
+          ],
+          "what": "This paper proposes Spectral Feature Compression (SFC), a method for compressing spectral features in source separation tasks, aiming to address limitations of the band-split (BS) module.",
+          "novel": "The method introduces input-adaptive compression and reduces parameter count compared to the BS module, while maintaining or improving performance.",
+          "method": "SFC uses a single sequence modeling module, with variants based on cross-attention and Mamba, and incorporates inductive biases inspired by the BS module for frequency compression.",
+          "validation": "Experiments on music and cinematic audio source separation tasks demonstrate consistent performance improvements over the BS module, evaluated across separator sizes and compression ratios.",
+          "discussion": "The method's reliance on inductive biases and specific sequence modeling techniques may limit its generalizability to other tasks or domains.",
+          "nextReads": [
+            {
+              "label": "Dual-Path Transformer Network: Direct Modeling of Long-Term Dependencies for Time-Domain Speech Separation (2020)",
+              "url": "https://arxiv.org/abs/arXiv:2007.13975"
+            },
+            {
+              "label": "Band-Split RNN: Efficient High-Resolution Audio Source Separation (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2106.05141"
+            },
+            {
+              "label": "Attention Is All You Need (2017)",
+              "url": "https://arxiv.org/abs/arXiv:1706.03762"
+            },
+            {
+              "label": "Music Source Separation with Deep Learning: A Survey (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2602.07211v1",
+          "date": "Feb 06",
+          "title": "Equipping LLM with Directional Multi-Talker Speech Understanding Capabilities",
+          "authors": [
+            "Ju Lin",
+            "Jing Pan",
+            "Ruizhi Li",
+            "Ming Sun",
+            "Yuzong Liu"
+          ],
+          "org": "Meta AI",
+          "abstract": "Recent studies have demonstrated that prompting large language models (LLM) with audio encodings enables effective speech understanding capabilities. However, most speech LLMs are trained on single-channel, single-talker data, which makes it challenging to directly apply them to multi-talker and multi-channel speech understanding task. In this work, we present a comprehensive investigation on how to enable directional multi-talker speech understanding capabilities for LLMs, specifically in smart glasses usecase. We propose two novel approaches to integrate directivity into LLMs: (1) a cascaded system that leverages a source separation front-end module, and (2) an end-to-end system that utilizes serialized output training. All of the approaches utilize a multi-microphone array embedded in smart glasses to optimize directivity interpretation and processing in a streaming manner. Experimental results demonstrate the efficacy of our proposed methods in endowing LLMs with directional speech understanding capabilities, achieving strong performance in both speech recognition and speech translation tasks.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.CL",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2602.07211v1",
+          "category": "separation",
+          "task": "Speech Understanding",
+          "proposedMethod": null,
+          "datasets": [
+            "LibriSpeech",
+            "AMI Meeting Corpus"
+          ],
+          "what": "This paper explores methods to enable large language models (LLMs) to perform directional multi-talker speech understanding, focusing on smart glasses applications.",
+          "novel": "The work introduces two approaches—cascaded systems with source separation and end-to-end systems with serialized output training—to integrate directivity into LLMs for multi-talker scenarios.",
+          "method": "The proposed methods leverage multi-microphone arrays in smart glasses to process directional audio and use either a source separation front-end or end-to-end serialized training to enhance LLMs.",
+          "validation": "Performance is validated on speech recognition and translation tasks using multi-talker and multi-channel datasets, demonstrating strong results for directional speech understanding.",
+          "discussion": "The approach may face challenges in real-world scenarios with complex noise environments or limited computational resources in wearable devices.",
+          "nextReads": [
+            {
+              "label": "Whisper: OpenAI's Speech Recognition Model (2022)",
+              "url": null
+            },
+            {
+              "label": "Conformer: Convolution-augmented Transformer for Speech Recognition (2020)",
+              "url": "https://arxiv.org/abs/arXiv:2005.08100"
+            },
+            {
+              "label": "ESPnet-SE: End-to-End Speech Enhancement and Separation Toolkit Designed for ASR Integration (2021)",
+              "url": "https://arxiv.org/abs/arXiv:2105.03091"
+            },
+            {
+              "label": "Multi-Channel Speech Separation with Deep Learning: A Review (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Echo and AudioRouter highlight advancements in large audio language models (LALMs), with Echo leveraging audio-interleaved reasoning and AudioRouter using RL-based dual reasoning for enhanced audio comprehension.",
+    "Musical Metamerism with JTFS introduces a novel approach to generating perceptually similar audio waveforms, while SFC addresses spectral feature compression challenges in source separation tasks.",
+    "MOSS-Audio-Tokenizer and temporal grounding methods improve foundational audio model scalability and precision, while directional multi-talker speech understanding expands LLM applications to spatial audio contexts."
+  ]
+}

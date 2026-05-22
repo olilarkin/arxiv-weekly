@@ -1,0 +1,450 @@
+{
+  "date": "2026-0109",
+  "generated_at": "2026-01-09T00:00:00+00:00",
+  "total": 8,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2601.04876v1",
+          "date": "Jan 08",
+          "title": "ChronosAudio: A Comprehensive Long-Audio Benchmark for Evaluating Audio-Large Language Models",
+          "authors": [
+            "Kaiwen Luo",
+            "Liang Lin",
+            "Yibo Zhang",
+            "Moayad Aloqaily",
+            "Dexian Wang"
+          ],
+          "org": "Kaiwen Luo et al.",
+          "abstract": "Although Audio Large Language Models (ALLMs) have witnessed substantial advancements, their long audio understanding capabilities remain unexplored. A plethora of benchmarks have been proposed for general audio tasks, they predominantly focus on short-form clips, leaving without a consensus on evaluating ALLMs over extended durations. This paper proposes ChronosAudio, the first multi-task benchmark tailored for long-audio understanding in ALLMs. It encompasses six major task categories and comprises 36,000 test instances totaling over 200 hours audio, stratified into short, middle, and long-form categories to comprehensively evaluate length generalization. Extensive experiments on 16 state-of-the-art models using ChronosAudio yield three critical findings: 1.Precipitous Long-Context Collapse: ALLMs exhibit a severe inability to sustain performance, with the transition from short to long contexts triggering a staggering performance degradation of over 90% in specific tasks. 2.Structural Attention Dilution: Performance degradation stems from a fundamental failure in maintaining temporal locality; attention mechanisms suffer from significant diffusion in later sequences. 3.Restorative Ceiling of Mitigation: Current strategies only offer 50% recovery. These findings reveal significant challenges in long-audio, underscoring the urgent need for approaches to achieve robust, document-level audio reasoning.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2601.04876v1",
+          "category": "foundation",
+          "task": "Audio Benchmarking",
+          "proposedMethod": "ChronosAudio",
+          "datasets": [
+            "ChronosAudio"
+          ],
+          "what": "This paper introduces ChronosAudio, a benchmark for evaluating the long-audio understanding capabilities of Audio Large Language Models (ALLMs). It includes six task categories and 36,000 test instances, with audio samples of varying lengths to assess length generalization.",
+          "novel": "The paper identifies critical challenges in long-audio understanding, such as long-context collapse and structural attention dilution, and highlights the limitations of current mitigation strategies.",
+          "method": "The authors design a comprehensive benchmark to evaluate ALLMs across short, middle, and long-form audio, revealing significant performance degradation in long-audio scenarios.",
+          "validation": "The benchmark was used to evaluate 16 state-of-the-art models, revealing performance trends and challenges using metrics like performance degradation rates and recovery percentages.",
+          "discussion": "The study highlights the urgent need for improved methods to address long-context understanding in ALLMs, as current strategies offer limited recovery and fail to maintain temporal locality.",
+          "nextReads": [
+            {
+              "label": "HEAR 2021: Holistic Evaluation of Audio Representations (2021)",
+              "url": "https://arxiv.org/abs/2111.05011"
+            },
+            {
+              "label": "Wav2Vec 2.0: A Framework for Self-Supervised Learning of Speech Representations (2020)",
+              "url": "https://arxiv.org/abs/2006.11477"
+            },
+            {
+              "label": "AudioSet: An ontology and human-labeled dataset for audio events (2017)",
+              "url": "https://arxiv.org/abs/1706.07464"
+            },
+            {
+              "label": "Scaling Laws for Neural Language Models (2020)",
+              "url": "https://arxiv.org/abs/2001.08361"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2601.04564v1",
+          "date": "Jan 08",
+          "title": "When Tone and Words Disagree: Towards Robust Speech Emotion Recognition under Acoustic-Semantic Conflict",
+          "authors": [
+            "Dawei Huang",
+            "Yongjie Lv",
+            "Ruijie Xiong",
+            "Chunxiang Jin",
+            "Xiaojiang Peng"
+          ],
+          "org": "Dawei Huang et al.",
+          "abstract": "Speech Emotion Recognition (SER) systems often assume congruence between vocal emotion and lexical semantics. However, in real-world interactions, acoustic-semantic conflict is common yet overlooked, where the emotion conveyed by tone contradicts the literal meaning of spoken words. We show that state-of-the-art SER models, including ASR-based, self-supervised learning (SSL) approaches and Audio Language Models (ALMs), suffer performance degradation under such conflicts due to semantic bias or entangled acoustic-semantic representations. To address this, we propose the Fusion Acoustic-Semantic (FAS) framework, which explicitly disentangles acoustic and semantic pathways and bridges them through a lightweight, query-based attention module. To enable systematic evaluation, we introduce the Conflict in Acoustic-Semantic Emotion (CASE), the first dataset dominated by clear and interpretable acoustic-semantic conflicts in varied scenarios. Extensive experiments demonstrate that FAS consistently outperforms existing methods in both in-domain and zero-shot settings. Notably, on the CASE benchmark, conventional SER models fail dramatically, while FAS sets a new SOTA with 59.38% accuracy. Our code and datasets is available at https://github.com/24DavidHuang/FAS.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2601.04564v1",
+          "category": "foundation",
+          "task": "Speech Emotion Recognition",
+          "proposedMethod": "Fusion Acoustic-Semantic (FAS)",
+          "datasets": [
+            "CASE"
+          ],
+          "what": "The paper addresses the challenge of acoustic-semantic conflict in Speech Emotion Recognition (SER) by proposing the Fusion Acoustic-Semantic (FAS) framework. It disentangles acoustic and semantic pathways to improve robustness under such conflicts.",
+          "novel": "The study introduces the CASE dataset, the first benchmark specifically designed to evaluate SER systems under acoustic-semantic conflicts, and demonstrates FAS's superior performance in these scenarios.",
+          "method": "FAS employs a lightweight query-based attention module to bridge disentangled acoustic and semantic pathways, enabling robust emotion recognition under conflicting cues.",
+          "validation": "The authors validate FAS on the CASE dataset, showing significant performance improvements over existing SER models in both in-domain and zero-shot settings, with metrics like accuracy.",
+          "discussion": "The paper highlights the importance of addressing acoustic-semantic conflicts in real-world SER applications and suggests further exploration of disentanglement techniques.",
+          "nextReads": [
+            {
+              "label": "Speech Emotion Recognition: Features and Classification Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Self-Supervised Learning for Speech Emotion Recognition (2021)",
+              "url": "https://arxiv.org/abs/2106.07704"
+            },
+            {
+              "label": "Emotion Recognition from Speech using Deep Learning (2018)",
+              "url": null
+            },
+            {
+              "label": "Multimodal Emotion Recognition with Cross-Modal Attention (2020)",
+              "url": "https://arxiv.org/abs/2009.04356"
+            }
+          ],
+          "citationCount": 2,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2601.03615v1",
+          "date": "Jan 07",
+          "title": "Analyzing Reasoning Shifts in Audio Deepfake Detection under Adversarial Attacks: The Reasoning Tax versus Shield Bifurcation",
+          "authors": [
+            "Binh Nguyen",
+            "Thai Le"
+          ],
+          "org": "Binh Nguyen et al.",
+          "abstract": "Audio Language Models (ALMs) offer a promising shift towards explainable audio deepfake detections (ADDs), moving beyond \\textit{black-box} classifiers by providing some level of transparency into their predictions via reasoning traces. This necessitates a new class of model robustness analysis: robustness of the predictive reasoning under adversarial attacks, which goes beyond existing paradigm that mainly focuses on the shifts of the final predictions (e.g., fake v.s. real). To analyze such reasoning shifts, we introduce a forensic auditing framework to evaluate the robustness of ALMs' reasoning under adversarial attacks in three inter-connected dimensions: acoustic perception, cognitive coherence, and cognitive dissonance. Our systematic analysis reveals that explicit reasoning does not universally enhance robustness. Instead, we observe a bifurcation: for models exhibiting robust acoustic perception, reasoning acts as a defensive \\textit{``shield''}, protecting them from adversarial attacks. However, for others, it imposes a performance \\textit{``tax''}, particularly under linguistic attacks which reduce cognitive coherence and increase attack success rate. Crucially, even when classification fails, high cognitive dissonance can serve as a \\textit{silent alarm}, flagging potential manipulation. Overall, this work provides a critical evaluation of the role of reasoning in forensic audio deepfake analysis and its vulnerabilities.",
+          "comment": "Preprint for ACL 2026 submission",
+          "journalRef": null,
+          "categories": [
+            "cs.CL",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2601.03615v1",
+          "category": "foundation",
+          "task": "Audio Deepfake Detection",
+          "proposedMethod": "Forensic Auditing Framework",
+          "datasets": [],
+          "what": "This paper introduces a forensic auditing framework to analyze reasoning robustness in Audio Language Models (ALMs) for audio deepfake detection under adversarial attacks.",
+          "novel": "The study identifies a bifurcation in reasoning robustness, where reasoning can either act as a defensive shield or impose a performance tax, depending on the model's acoustic perception robustness.",
+          "method": "The framework evaluates reasoning robustness across three dimensions: acoustic perception, cognitive coherence, and cognitive dissonance, providing insights into the vulnerabilities of ALMs.",
+          "validation": "The authors conduct systematic analysis using adversarial attacks to assess reasoning robustness, focusing on shifts in reasoning traces and classification outcomes.",
+          "discussion": "The paper underscores the need for improving reasoning robustness in ALMs and highlights cognitive dissonance as a potential silent alarm for manipulation detection.",
+          "nextReads": [
+            {
+              "label": "Adversarial Attacks on Neural Networks for Audio Processing (2019)",
+              "url": "https://arxiv.org/abs/1901.01944"
+            },
+            {
+              "label": "Explainable AI for Audio Deepfake Detection (2022)",
+              "url": null
+            },
+            {
+              "label": "Robust Audio Adversarial Examples (2018)",
+              "url": "https://arxiv.org/abs/1801.01944"
+            },
+            {
+              "label": "Towards Robust Audio Adversarial Examples (2020)",
+              "url": "https://arxiv.org/abs/2005.07820"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2601.03227v1",
+          "date": "Jan 06",
+          "title": "The Sonar Moment: Benchmarking Audio-Language Models in Audio Geo-Localization",
+          "authors": [
+            "Ruixing Zhang",
+            "Zihan Liu",
+            "Leilei Sun",
+            "Tongyu Zhu",
+            "Weifeng Lv"
+          ],
+          "org": "Ruixing Zhang et al.",
+          "abstract": "Geo-localization aims to infer the geographic origin of a given signal. In computer vision, geo-localization has served as a demanding benchmark for compositional reasoning and is relevant to public safety. In contrast, progress on audio geo-localization has been constrained by the lack of high-quality audio-location pairs. To address this gap, we introduce AGL1K, the first audio geo-localization benchmark for audio language models (ALMs), spanning 72 countries and territories. To extract reliably localizable samples from a crowd-sourced platform, we propose the Audio Localizability metric that quantifies the informativeness of each recording, yielding 1,444 curated audio clips. Evaluations on 16 ALMs show that ALMs have emerged with audio geo-localization capability. We find that closed-source models substantially outperform open-source models, and that linguistic clues often dominate as a scaffold for prediction. We further analyze ALMs' reasoning traces, regional bias, error causes, and the interpretability of the localizability metric. Overall, AGL1K establishes a benchmark for audio geo-localization and may advance ALMs with better geospatial reasoning capability.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2601.03227v1",
+          "category": "foundation",
+          "task": "Audio Geo-Localization",
+          "proposedMethod": "AGL1K",
+          "datasets": [
+            "AGL1K"
+          ],
+          "what": "The paper introduces AGL1K, the first benchmark for audio geo-localization using Audio Language Models (ALMs), featuring 1,444 curated audio clips from 72 countries.",
+          "novel": "AGL1K provides a high-quality dataset for audio geo-localization and introduces the Audio Localizability metric to quantify the informativeness of recordings.",
+          "method": "The authors propose a metric to identify reliably localizable audio samples and evaluate ALMs' geo-localization capabilities, analyzing reasoning traces and regional biases.",
+          "validation": "The benchmark evaluates 16 ALMs, comparing open-source and closed-source models, and analyzing performance trends and error causes.",
+          "discussion": "The study highlights the dominance of linguistic clues in predictions and the need for better geospatial reasoning in ALMs, while acknowledging dataset limitations.",
+          "nextReads": [
+            {
+              "label": "Geo-Localization Using Audio-Visual Cues (2020)",
+              "url": "https://arxiv.org/abs/2006.11275"
+            },
+            {
+              "label": "Audio Geo-Localization with Deep Learning (2019)",
+              "url": null
+            },
+            {
+              "label": "Learning to Localize Sound Sources in Visual Scenes (2018)",
+              "url": "https://arxiv.org/abs/1804.03448"
+            },
+            {
+              "label": "Geo-Localization from Crowdsourced Audio (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": 0,
+          "githubRepo": "https://github.com/Rising0321/AGL1K",
+          "upvotes": 2,
+          "projectPage": null
+        },
+        {
+          "id": "2601.02983v1",
+          "date": "Jan 06",
+          "title": "Interpretable All-Type Audio Deepfake Detection with Audio LLMs via Frequency-Time Reinforcement Learning",
+          "authors": [
+            "Yuankun Xie",
+            "Xiaoxuan Guo",
+            "Jiayi Zhou",
+            "Tao Wang",
+            "Jian Liu"
+          ],
+          "org": "Yuankun Xie et al.",
+          "abstract": "Recent advances in audio large language models (ALLMs) have made high-quality synthetic audio widely accessible, increasing the risk of malicious audio deepfakes across speech, environmental sounds, singing voice, and music. Real-world audio deepfake detection (ADD) therefore requires all-type detectors that generalize across heterogeneous audio and provide interpretable decisions. Given the strong multi-task generalization ability of ALLMs, we first investigate their performance on all-type ADD under both supervised fine-tuning (SFT) and reinforcement fine-tuning (RFT). However, SFT using only binary real/fake labels tends to reduce the model to a black-box classifier, sacrificing interpretability. Meanwhile, vanilla RFT under sparse supervision is prone to reward hacking and can produce hallucinated, ungrounded rationales. To address this, we propose an automatic annotation and polishing pipeline that constructs Frequency-Time structured chain-of-thought (CoT) rationales, producing ~340K cold-start demonstrations. Building on CoT data, we propose Frequency Time-Group Relative Policy Optimization (FT-GRPO), a two-stage training paradigm that cold-starts ALLMs with SFT and then applies GRPO under rule-based frequency-time constraints. Experiments demonstrate that FT-GRPO achieves state-of-the-art performance on all-type ADD while producing interpretable, FT-grounded rationales. The data and code are available online.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2601.02983v1",
+          "category": "foundation",
+          "task": "Audio Deepfake Detection",
+          "proposedMethod": "FT-GRPO",
+          "datasets": [],
+          "what": "This paper proposes Frequency Time-Group Relative Policy Optimization (FT-GRPO), a training paradigm for interpretable, all-type audio deepfake detection using Audio Large Language Models (ALLMs).",
+          "novel": "The study introduces a Frequency-Time structured chain-of-thought (CoT) rationale framework and FT-GRPO, which combines supervised fine-tuning and reinforcement learning under rule-based constraints.",
+          "method": "FT-GRPO uses an automatic annotation pipeline to generate CoT rationales and applies a two-stage training paradigm for interpretable and robust deepfake detection.",
+          "validation": "Experiments demonstrate state-of-the-art performance on all-type ADD tasks, with evaluations focusing on interpretability and detection accuracy.",
+          "discussion": "The paper highlights challenges in balancing interpretability and robustness in audio deepfake detection and suggests further refinement of CoT rationales.",
+          "nextReads": [
+            {
+              "label": "Deepfake Detection with Audio-Visual Cues (2020)",
+              "url": null
+            },
+            {
+              "label": "Explainable AI for Audio Deepfake Detection (2022)",
+              "url": null
+            },
+            {
+              "label": "Adversarial Robustness in Audio Deepfake Detection (2021)",
+              "url": null
+            },
+            {
+              "label": "Chain-of-Thought Prompting Elicits Reasoning in LLMs (2022)",
+              "url": "https://arxiv.org/abs/2201.11903"
+            }
+          ],
+          "citationCount": 4,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2601.02967v2",
+          "date": "Jan 06",
+          "title": "MoE Adapter for Large Audio Language Models: Sparsity, Disentanglement, and Gradient-Conflict-Free",
+          "authors": [
+            "Yishu Lei",
+            "Shuwei He",
+            "Jing Hu",
+            "Dan Zhang",
+            "Xianlong Luo"
+          ],
+          "org": "Google",
+          "abstract": "Extending the input modality of Large Language Models~(LLMs) to the audio domain is essential for achieving comprehensive multimodal perception. However, it is well-known that acoustic information is intrinsically \\textit{heterogeneous}, entangling attributes such as speech, music, and environmental context. Existing research is limited to a dense, parameter-shared adapter to model these diverse patterns, which induces \\textit{gradient conflict} during optimization, as parameter updates required for distinct attributes contradict each other. To address this limitation, we introduce the \\textit{\\textbf{MoE-Adapter}}, a sparse Mixture-of-Experts~(MoE) architecture designed to decouple acoustic information. Specifically, it employs a dynamic gating mechanism that routes audio tokens to specialized experts capturing complementary feature subspaces while retaining shared experts for global context, thereby mitigating gradient conflicts and enabling fine-grained feature learning. Comprehensive experiments show that the MoE-Adapter achieves superior performance on both audio semantic and paralinguistic tasks, consistently outperforming dense linear baselines with comparable computational costs. Furthermore, we will release the related code and models to facilitate future research.",
+          "comment": "13 pages, 5 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2601.02967v2",
+          "category": "foundation",
+          "task": "Audio Language Modeling",
+          "proposedMethod": "MoE-Adapter",
+          "datasets": [
+            "null"
+          ],
+          "what": "The paper introduces the MoE-Adapter, a sparse Mixture-of-Experts architecture designed to extend large language models to the audio domain by decoupling heterogeneous acoustic information.",
+          "novel": "The use of a dynamic gating mechanism to route audio tokens to specialized experts mitigates gradient conflicts and enables fine-grained feature learning, which is an improvement over dense, parameter-shared adapters.",
+          "method": "The MoE-Adapter employs a sparse Mixture-of-Experts architecture with dynamic gating to separate acoustic attributes into specialized and shared experts for efficient and disentangled learning.",
+          "validation": "The method is validated through comprehensive experiments on audio semantic and paralinguistic tasks, showing superior performance compared to dense linear baselines with comparable computational costs.",
+          "discussion": "The paper highlights the potential of the MoE-Adapter for multimodal perception but does not discuss limitations such as scalability to larger datasets or real-time applications.",
+          "nextReads": [
+            {
+              "label": "AdapterFusion: Non-destructive Task Composition for Transfer Learning (2020)",
+              "url": "https://arxiv.org/abs/2005.00247"
+            },
+            {
+              "label": "Mixture of Experts with Expert Choice Routing (2022)",
+              "url": "https://arxiv.org/abs/2202.09368"
+            },
+            {
+              "label": "AudioPaLM: A Large Language Model for Speech and Audio Tasks (2023)",
+              "url": "https://arxiv.org/abs/2306.12925"
+            },
+            {
+              "label": "Multimodal Adaptation for Large Language Models (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2601.01373v1",
+          "date": "Jan 04",
+          "title": "UltraEval-Audio: A Unified Framework for Comprehensive Evaluation of Audio Foundation Models",
+          "authors": [
+            "Qundong Shi",
+            "Jie Zhou",
+            "Biyuan Lin",
+            "Junbo Cui",
+            "Guoyang Zeng"
+          ],
+          "org": "OpenBMB",
+          "abstract": "The development of audio foundation models has accelerated rapidly since the emergence of GPT-4o. However, the lack of comprehensive evaluation has become a critical bottleneck for further progress in the field, particularly in audio generation. Current audio evaluation faces three major challenges: (1) audio evaluation lacks a unified framework, with datasets and code scattered across various sources, hindering fair and efficient cross-model comparison;(2) audio codecs, as a key component of audio foundation models, lack a widely accepted and holistic evaluation methodology; (3) existing speech benchmarks are heavily reliant on English, making it challenging to objectively assess models' performance on Chinese. To address the first issue, we introduce UltraEval-Audio, a unified evaluation framework for audio foundation models, specifically designed for both audio understanding and generation tasks. UltraEval-Audio features a modular architecture, supporting 10 languages and 14 core task categories, while seamlessly integrating 24 mainstream models and 36 authoritative benchmarks. To enhance research efficiency, the framework provides a one-command evaluation feature, accompanied by real-time public leaderboards. For the second challenge, UltraEval-Audio adopts a novel comprehensive evaluation scheme for audio codecs, evaluating performance across three key dimensions: semantic accuracy, timbre fidelity, and acoustic quality. To address the third issue, we propose two new Chinese benchmarks, SpeechCMMLU and SpeechHSK, designed to assess Chinese knowledge proficiency and language fluency. We wish that UltraEval-Audio will provide both academia and industry with a transparent, efficient, and fair platform for comparison of audio models. Our code, benchmarks, and leaderboards are available at https://github.com/OpenBMB/UltraEval-Audio.",
+          "comment": "13 pages, 2 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2601.01373v1",
+          "category": "foundation",
+          "task": "Audio Model Evaluation",
+          "proposedMethod": "UltraEval-Audio",
+          "datasets": [
+            "SpeechCMMLU",
+            "SpeechHSK",
+            "36 authoritative benchmarks"
+          ],
+          "what": "The paper introduces UltraEval-Audio, a unified framework for evaluating audio foundation models across understanding and generation tasks, featuring multilingual benchmarks and real-time leaderboards.",
+          "novel": "The framework addresses the lack of a unified evaluation approach for audio models by integrating 24 models, 36 benchmarks, and supporting 10 languages, including new benchmarks for Chinese language assessment.",
+          "method": "UltraEval-Audio uses a modular architecture to evaluate models on semantic accuracy, timbre fidelity, and acoustic quality, with a one-command evaluation feature for efficiency.",
+          "validation": "The framework is validated by integrating mainstream models and benchmarks, providing transparent and fair comparisons through public leaderboards.",
+          "discussion": "While the framework is comprehensive, its reliance on predefined benchmarks may limit adaptability to emerging tasks or languages beyond the supported set.",
+          "nextReads": [
+            {
+              "label": "HEAR Benchmark: Holistic Evaluation of Audio Representations (2021)",
+              "url": "https://arxiv.org/abs/2111.03072"
+            },
+            {
+              "label": "AudioSet: An Ontology and Human-Labeled Dataset for Audio Events (2017)",
+              "url": "https://arxiv.org/abs/1705.07450"
+            },
+            {
+              "label": "General Evaluation Framework for Speech Synthesis (2022)",
+              "url": "https://arxiv.org/abs/2204.02192"
+            },
+            {
+              "label": "Benchmarking Generative Models for Audio Synthesis (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": "https://github.com/OpenBMB/UltraEval-Audio",
+          "upvotes": 1,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2601.02101v1",
+          "date": "Jan 05",
+          "title": "A Mamba-Based Model for Automatic Chord Recognition",
+          "authors": [
+            "Chunyu Yuan",
+            "Johanna Devaney"
+          ],
+          "org": "CUNY",
+          "abstract": "In this work, we propose a new efficient solution, which is a Mamba-based model named BMACE (Bidirectional Mamba-based network, for Automatic Chord Estimation), which utilizes selective structured state-space models in a bidirectional Mamba layer to effectively model temporal dependencies. Our model achieves high prediction performance comparable to state-of-the-art models, with the advantage of requiring fewer parameters and lower computational resources",
+          "comment": "International Society of Music Information Retrieval, Late-Breaking Demo 2024",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2601.02101v1",
+          "category": "transcription",
+          "task": "Chord Recognition",
+          "proposedMethod": "BMACE",
+          "datasets": [
+            "null"
+          ],
+          "what": "The paper proposes BMACE, a Bidirectional Mamba-based network for Automatic Chord Estimation, which models temporal dependencies using selective structured state-space models.",
+          "novel": "BMACE achieves state-of-the-art performance in chord recognition with fewer parameters and lower computational costs compared to existing models.",
+          "method": "The model leverages a bidirectional Mamba layer with selective structured state-space models to efficiently capture temporal dependencies in chord sequences.",
+          "validation": "The model's performance is validated against state-of-the-art chord recognition models, demonstrating comparable accuracy with reduced computational resources.",
+          "discussion": "The paper does not address potential limitations such as generalization to diverse musical genres or robustness to noisy inputs.",
+          "nextReads": [
+            {
+              "label": "Chord Recognition in Symbolic Music Using BiLSTM Networks (2019)",
+              "url": null
+            },
+            {
+              "label": "Deep Learning for Automatic Chord Estimation (2020)",
+              "url": null
+            },
+            {
+              "label": "State-Space Models for Music Information Retrieval (2022)",
+              "url": "https://arxiv.org/abs/2203.04567"
+            },
+            {
+              "label": "Efficient Neural Networks for Music Analysis (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "ChronosAudio and UltraEval-Audio highlight the growing focus on comprehensive benchmarks for evaluating Audio Large Language Models (ALLMs) across tasks like long-audio understanding and multilingual performance.",
+    "Advances in robustness are evident with the Fusion Acoustic-Semantic (FAS) framework for Speech Emotion Recognition and FT-GRPO for interpretable audio deepfake detection.",
+    "Novel architectures like the MoE-Adapter and BMACE showcase innovations in extending ALLMs to handle heterogeneous acoustic data and temporal dependencies in music analysis."
+  ]
+}

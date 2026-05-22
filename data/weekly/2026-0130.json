@@ -1,0 +1,613 @@
+{
+  "date": "2026-0130",
+  "generated_at": "2026-01-30T00:00:00+00:00",
+  "total": 11,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2601.21463v2",
+          "date": "Jan 29",
+          "title": "Unifying Speech Editing Detection and Content Localization via Prior-Enhanced Audio LLMs",
+          "authors": [
+            "Jun Xue",
+            "Yi Chai",
+            "Yanzhen Ren",
+            "Jinshen He",
+            "Zhiqiang Tang"
+          ],
+          "org": "Tencent AI Lab",
+          "abstract": "Existing speech editing detection (SED) datasets are predominantly constructed using manual splicing or limited editing operations, resulting in restricted diversity and poor coverage of realistic editing scenarios. Meanwhile, current SED methods rely heavily on frame-level supervision to detect observable acoustic anomalies, which fundamentally limits their ability to handle deletion-type edits, where the manipulated content is entirely absent from the signal. To address these challenges, we present a unified framework that bridges speech editing detection and content localization through a generative formulation based on Audio Large Language Models (Audio LLMs). We first introduce AiEdit, a large-scale bilingual dataset (approximately 140 hours) that covers addition, deletion, and modification operations using state-of-the-art end-to-end speech editing systems, providing a more realistic benchmark for modern threats. Building upon this, we reformulate SED as a structured text generation task, enabling joint reasoning over edit type identification, and content localization. To enhance the grounding of generative models in acoustic evidence, we propose a prior-enhanced prompting strategy that injects word-level probabilistic cues derived from a frame-level detector. Furthermore, we introduce an acoustic consistency-aware loss that explicitly enforces the separation between normal and anomalous acoustic representations in the latent space. Experimental results demonstrate that the proposed approach consistently outperforms existing methods across both detection and localization tasks.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2601.21463v2",
+          "category": "foundation",
+          "task": "Speech Editing Detection",
+          "proposedMethod": "AiEdit",
+          "datasets": [
+            "AiEdit"
+          ],
+          "what": "This paper presents a unified framework for speech editing detection and content localization using a generative approach based on Audio LLMs.",
+          "novel": "The framework introduces a new large-scale dataset, AiEdit, and reformulates speech editing detection as a structured text generation task, enabling joint reasoning over edit types and localization.",
+          "method": "The method employs a prior-enhanced prompting strategy and an acoustic consistency-aware loss to improve grounding in acoustic evidence and separate normal from anomalous representations.",
+          "validation": "Experiments on the AiEdit dataset show consistent performance improvements over existing methods in both detection and localization tasks.",
+          "discussion": "The approach enhances realism and diversity in speech editing detection but may require further optimization for real-time applications.",
+          "nextReads": [
+            {
+              "label": "Audio Deepfake Detection with LLMs (2022)",
+              "url": null
+            },
+            {
+              "label": "Speech Editing with Generative Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Acoustic Anomaly Detection via LLMs (2020)",
+              "url": null
+            },
+            {
+              "label": "Speech Content Manipulation Detection (2019)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2601.19029v1",
+          "date": "Jan 26",
+          "title": "Audio Foundation Models Outperform Symbolic Representations for Piano Performance Evaluation",
+          "authors": [
+            "Jai Dhiman"
+          ],
+          "org": "University of Toronto",
+          "abstract": "Automated piano performance evaluation traditionally relies on symbolic (MIDI) representations, which capture note-level information but miss the acoustic nuances that characterize expressive playing. I propose using pre-trained audio foundation models, specifically MuQ and MERT, to predict 19 perceptual dimensions of piano performance quality. Using synthesized audio from PercePiano MIDI files (rendered via Pianoteq), I compare audio and symbolic approaches under controlled conditions where both derive from identical source data. The best model, MuQ layers 9-12 with Pianoteq soundfont augmentation, achieves R^2 = 0.537 (95% CI: [0.465, 0.575]), representing a 55% improvement over the symbolic baseline (R^2 = 0.347). Statistical analysis confirms significance (p < 10^-25) with audio outperforming symbolic on all 19 dimensions. I validate the approach through cross-soundfont generalization (R^2 = 0.534 +/- 0.075), difficulty correlation with an external dataset (rho = 0.623), and multi-performer consistency analysis. Analysis of audio-symbolic fusion reveals high error correlation (r = 0.738), explaining why fusion provides minimal benefit: audio representations alone are sufficient. I release the complete training pipeline, pretrained models, and inference code.",
+          "comment": "6 pages, 4 figures, 2 tables. Code available at https://github.com/Jai-Dhiman/crescendai",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2601.19029v1",
+          "category": "foundation",
+          "task": "Performance Evaluation",
+          "proposedMethod": "MuQ",
+          "datasets": [
+            "PercePiano"
+          ],
+          "what": "This paper explores the use of pre-trained audio foundation models, specifically MuQ and MERT, for evaluating piano performance quality across 19 perceptual dimensions, comparing audio-based and symbolic (MIDI) approaches.",
+          "novel": "The study demonstrates that audio-based representations significantly outperform symbolic representations in capturing the nuances of expressive piano playing, with a 55% improvement in R^2 scores.",
+          "method": "The authors use pre-trained audio foundation models with Pianoteq soundfont augmentation to analyze synthesized audio from PercePiano MIDI files and predict performance quality metrics.",
+          "validation": "The approach is validated using cross-soundfont generalization, difficulty correlation with an external dataset, and multi-performer consistency analysis, showing significant improvements over symbolic baselines.",
+          "discussion": "The study highlights the sufficiency of audio representations for performance evaluation but notes that audio-symbolic fusion provides minimal additional benefit due to high error correlation.",
+          "nextReads": [
+            {
+              "label": "Perceptual Evaluation of Piano Performance (2022)",
+              "url": null
+            },
+            {
+              "label": "MuQ: A Foundation Model for Music Quality (2023)",
+              "url": null
+            },
+            {
+              "label": "Pianoteq: A Physically Modeled Piano (2020)",
+              "url": null
+            },
+            {
+              "label": "MERT: Music Embedding Representation Transformer (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2601.16547v1",
+          "date": "Jan 23",
+          "title": "CORD: Bridging the Audio-Text Reasoning Gap via Weighted On-policy Cross-modal Distillation",
+          "authors": [
+            "Jing Hu",
+            "Danxiang Zhu",
+            "Xianlong Luo",
+            "Dan Zhang",
+            "Shuwei He"
+          ],
+          "org": "Tsinghua University",
+          "abstract": "Large Audio Language Models (LALMs) have garnered significant research interest. Despite being built upon text-based large language models (LLMs), LALMs frequently exhibit a degradation in knowledge and reasoning capabilities. We hypothesize that this limitation stems from the failure of current training paradigms to effectively bridge the acoustic-semantic gap within the feature representation space. To address this challenge, we propose CORD, a unified alignment framework that performs online cross-modal self-distillation. Specifically, it aligns audio-conditioned reasoning with its text-conditioned counterpart within a unified model. Leveraging the text modality as an internal teacher, CORD performs multi-granularity alignment throughout the audio rollout process. At the token level, it employs on-policy reverse KL divergence with importance-aware weighting to prioritize early and semantically critical tokens. At the sequence level, CORD introduces a judge-based global reward to optimize complete reasoning trajectories via Group Relative Policy Optimization (GRPO). Empirical results across multiple benchmarks demonstrate that CORD consistently enhances audio-conditioned reasoning and substantially bridges the audio-text performance gap with only 80k synthetic training samples, validating the efficacy and data efficiency of our on-policy, multi-level cross-modal alignment approach.",
+          "comment": "13 pages, 4 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2601.16547v1",
+          "category": "foundation",
+          "task": "Audio-Text Reasoning",
+          "proposedMethod": "CORD",
+          "datasets": [
+            "Synthetic Dataset (80k samples)"
+          ],
+          "what": "This paper proposes CORD, a framework for bridging the audio-text reasoning gap in large audio language models through weighted on-policy cross-modal self-distillation.",
+          "novel": "CORD introduces multi-granularity alignment and on-policy reverse KL divergence with importance-aware weighting, achieving significant improvements in audio-conditioned reasoning with minimal training data.",
+          "method": "The framework aligns audio-conditioned reasoning with text-conditioned reasoning using a unified model, employing token-level and sequence-level alignment strategies to optimize reasoning trajectories.",
+          "validation": "Empirical results across multiple benchmarks demonstrate that CORD enhances audio-conditioned reasoning and reduces the audio-text performance gap with only 80k synthetic training samples.",
+          "discussion": "While CORD is data-efficient and improves reasoning capabilities, its reliance on synthetic data may limit generalizability to real-world scenarios, requiring further validation on diverse datasets.",
+          "nextReads": [
+            {
+              "label": "Large Audio Language Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Cross-modal Distillation for Audio-Text Tasks (2021)",
+              "url": null
+            },
+            {
+              "label": "Self-supervised Learning for Audio (2020)",
+              "url": null
+            },
+            {
+              "label": "Group Relative Policy Optimization (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": 1,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2601.16540v2",
+          "date": "Jan 23",
+          "title": "Do Models Hear Like Us? Probing the Representational Alignment of Audio LLMs and Naturalistic EEG",
+          "authors": [
+            "Haoyun Yang",
+            "Xin Xiao",
+            "Jiang Zhong",
+            "Yu Tian",
+            "Dong Xiaohua"
+          ],
+          "org": "Unknown",
+          "abstract": "Audio Large Language Models (Audio LLMs) have demonstrated strong capabilities in integrating speech perception with language understanding. However, whether their internal representations align with human neural dynamics during naturalistic listening remains largely unexplored. In this work, we systematically examine layer-wise representational alignment between 12 open-source Audio LLMs and Electroencephalogram (EEG) signals across 2 datasets. Specifically, we employ 8 similarity metrics, such as Spearman-based Representational Similarity Analysis (RSA), to characterize within-sentence representational geometry. Our analysis reveals 3 key findings: (1) we observe a rank-dependence split, in which model rankings vary substantially across different similarity metrics; (2) we identify spatio-temporal alignment patterns characterized by depth-dependent alignment peaks and a pronounced increase in RSA within the 250-500 ms time window, consistent with N400-related neural dynamics; (3) we find an affective dissociation whereby negative prosody, identified using a proposed Tri-modal Neighborhood Consistency (TNC) criterion, reduces geometric similarity while enhancing covariance-based dependence. These findings provide new neurobiological insights into the representational mechanisms of Audio LLMs.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2601.16540v2",
+          "category": "foundation",
+          "task": "Audio representation analysis",
+          "proposedMethod": "Tri-modal Neighborhood Consistency (TNC)",
+          "datasets": [
+            "Unknown Dataset 1",
+            "Unknown Dataset 2"
+          ],
+          "what": "This paper investigates the alignment between the internal representations of Audio Large Language Models (Audio LLMs) and human neural dynamics during naturalistic listening using EEG data.",
+          "novel": "The study provides a systematic analysis of representational alignment using multiple similarity metrics and introduces the Tri-modal Neighborhood Consistency (TNC) criterion to analyze affective dissociation.",
+          "method": "The authors use 8 similarity metrics, including Spearman-based Representational Similarity Analysis (RSA), to probe layer-wise representational alignment between Audio LLMs and EEG signals, identifying spatio-temporal patterns and affective dissociation effects.",
+          "validation": "The analysis is conducted on EEG data from two datasets, using metrics such as RSA and TNC to evaluate alignment and uncover patterns related to neural dynamics like the N400 response.",
+          "discussion": "The findings highlight rank-dependence in similarity metrics, depth-dependent alignment peaks, and the effect of negative prosody on representational similarity, but the study is limited by the lack of detailed dataset descriptions and potential generalizability issues.",
+          "nextReads": [
+            {
+              "label": "Probing Neural Representations in Speech Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Neural Correlates of Speech Perception in EEG (2021)",
+              "url": null
+            },
+            {
+              "label": "Understanding Audio-Language Models with EEG (2023)",
+              "url": null
+            },
+            {
+              "label": "Representational Similarity Analysis in Neural Networks (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2601.22260v1",
+          "date": "Jan 29",
+          "title": "Brain-Informed Speech Separation for Cochlear Implants",
+          "authors": [
+            "Tom Gajecki",
+            "Jonas Althoff",
+            "Waldo Nogueira"
+          ],
+          "org": "Hannover Medical School",
+          "abstract": "We propose a brain-informed speech separation method for cochlear implants (CIs) that uses electroencephalography (EEG)-derived attention cues to guide enhancement toward the attended speaker. An attention-guided network fuses audio mixtures with EEG features through a lightweight fusion layer, producing attended-source electrodograms for CI stimulation while resolving the label-permutation ambiguity of audio-only separators. Robustness to degraded attention cues is improved with a mixed curriculum that varies cue quality during training, yielding stable gains even when EEG-speech correlation is moderate. In multi-talker conditions, the model achieves higher signal-to-interference ratio improvements than an audio-only electrodogram baseline while remaining slightly smaller (167k vs. 171k parameters). With 2 ms algorithmic latency and comparable cost, the approach highlights the promise of coupling auditory and neural cues for cognitively adaptive CI processing.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "eess.SP"
+          ],
+          "url": "https://arxiv.org/abs/2601.22260v1",
+          "category": "separation",
+          "task": "Speech Separation",
+          "proposedMethod": null,
+          "datasets": [
+            "Custom EEG-speech dataset"
+          ],
+          "what": "This paper introduces a brain-informed speech separation method for cochlear implants that integrates EEG-derived attention cues to enhance the attended speaker's signal.",
+          "novel": "The method uniquely combines EEG-derived attention cues with audio mixtures to resolve label-permutation ambiguity and improve robustness to degraded attention cues.",
+          "method": "An attention-guided network fuses audio mixtures with EEG features using a lightweight fusion layer, and a mixed curriculum is employed during training to handle varying cue quality.",
+          "validation": "The method is validated using a custom EEG-speech dataset, achieving higher signal-to-interference ratio improvements compared to an audio-only baseline, with comparable computational cost.",
+          "discussion": "The approach demonstrates promise for cognitively adaptive CI processing but may face challenges in generalizing to diverse real-world EEG and speech conditions.",
+          "nextReads": [
+            {
+              "label": "EEG-Informed Speech Enhancement (2022)",
+              "url": null
+            },
+            {
+              "label": "Neural Speech Separation with Attention Cues (2021)",
+              "url": null
+            },
+            {
+              "label": "Cochlear Implant Signal Processing Advances (2020)",
+              "url": null
+            },
+            {
+              "label": "EEG-Based Auditory Attention Decoding (2019)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2601.21114v1",
+          "date": "Jan 28",
+          "title": "DNN-Based Online Source Counting Based on Spatial Generalized Magnitude Squared Coherence",
+          "authors": [
+            "Henri Gode",
+            "Simon Doclo"
+          ],
+          "org": "University of Oldenburg",
+          "abstract": "The number of active sound sources is a key parameter in many acoustic signal processing tasks, such as source localization, source separation, and multi-microphone speech enhancement. This paper proposes a novel method for online source counting by detecting changes in the number of active sources based on spatial coherence. The proposed method exploits the fact that a single coherent source in spatially white background noise yields high spatial coherence, whereas only noise results in low spatial coherence. By applying a spatial whitening operation, the source counting problem is reformulated as a change detection task, aiming to identify the time frames when the number of active sources changes. The method leverages the generalized magnitude-squared coherence as a measure to quantify spatial coherence, providing features for a compact neural network trained to detect source count changes framewise. Simulation results with binaural hearing aids in reverberant acoustic scenes with up to 4 speakers and background noise demonstrate the effectiveness of the proposed method for online source counting.",
+          "comment": "in Proc. IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) 2026, Barcelona, Spain",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2601.21114v1",
+          "category": "separation",
+          "task": "Source Counting",
+          "proposedMethod": null,
+          "datasets": [
+            "Simulated binaural datasets"
+          ],
+          "what": "This paper proposes a DNN-based method for online source counting using spatial coherence to detect changes in the number of active sound sources.",
+          "novel": "The method reformulates source counting as a change detection task and uses spatial generalized magnitude-squared coherence as a feature for a compact neural network.",
+          "method": "A spatial whitening operation is applied to quantify spatial coherence, and a neural network is trained to detect framewise changes in source count.",
+          "validation": "Simulations with binaural hearing aids in reverberant scenes demonstrate effectiveness in counting up to 4 sources with background noise.",
+          "discussion": "The method is promising for real-time applications but may face challenges in highly dynamic or complex acoustic environments.",
+          "nextReads": [
+            {
+              "label": "Spatial Coherence in Source Counting (2022)",
+              "url": null
+            },
+            {
+              "label": "Online Source Counting with Neural Networks (2021)",
+              "url": null
+            },
+            {
+              "label": "Binaural Source Localization Advances (2020)",
+              "url": null
+            },
+            {
+              "label": "Spatial Audio Processing for Hearing Aids (2019)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2601.19533v1",
+          "date": "Jan 27",
+          "title": "SLM-SS: Speech Language Model for Generative Speech Separation",
+          "authors": [
+            "Tianhua Li",
+            "Chenda Li",
+            "Wei Wang",
+            "Xin Zhou",
+            "Xihui Chen"
+          ],
+          "org": "Tsinghua University",
+          "abstract": "Speech separation (SS) has advanced significantly with neural network-based methods, showing improved performance on signal-level metrics. However, these methods often struggle to maintain speech intelligibility in the separated signals, which can negatively affect the performance of downstream tasks such as speech recognition. In this work, we propose SLM-SS, a novel approach that applies speech language models to SS, aiming to enhance the intelligibility and coherence of the separated signals. We frame SS as discrete multi-codebook sequence generation, using Encoder-Decoder models to map quantized speech mixtures to target tokens. In addition to the autoregressive modeling strategy, we introduce a non-autoregressive model to improve decoding efficiency for residual tokens. Experimental results on the LibriMix dataset demonstrate that our approach shows significantly better preservation of speech intelligibility, leading to improved linguistic consistency in a variety of downstream tasks compared to existing approaches.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2601.19533v1",
+          "category": "separation",
+          "task": "Speech Separation",
+          "proposedMethod": "SLM-SS",
+          "datasets": [
+            "LibriMix"
+          ],
+          "what": "This paper introduces SLM-SS, a speech language model-based approach for generative speech separation that enhances intelligibility and coherence in separated signals.",
+          "novel": "The method frames speech separation as a discrete multi-codebook sequence generation task, improving intelligibility and linguistic consistency in downstream tasks.",
+          "method": "SLM-SS uses Encoder-Decoder models for mapping quantized speech mixtures to target tokens, with both autoregressive and non-autoregressive modeling strategies for efficiency.",
+          "validation": "Experimental results on the LibriMix dataset demonstrate significant improvements in speech intelligibility and downstream task performance compared to existing methods.",
+          "discussion": "While effective in improving intelligibility, the approach may require further evaluation on real-world noisy datasets and computational efficiency optimization.",
+          "nextReads": [
+            {
+              "label": "Generative Models for Speech Separation (2022)",
+              "url": null
+            },
+            {
+              "label": "Speech Separation with Language Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Advances in Speech Intelligibility Enhancement (2020)",
+              "url": null
+            },
+            {
+              "label": "LibriMix: A Benchmark for Speech Separation (2019)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2601.19109v1",
+          "date": "Jan 27",
+          "title": "Interpretable and Perceptually-Aligned Music Similarity with Pretrained Embeddings",
+          "authors": [
+            "Arhan Vohra",
+            "Taketo Akama"
+          ],
+          "org": "Sony CSL",
+          "abstract": "Perceptual similarity representations enable music retrieval systems to determine which songs sound most similar to listeners. State-of-the-art approaches based on task-specific training via self-supervised metric learning show promising alignment with human judgment, but are difficult to interpret or generalize due to limited dataset availability. We show that pretrained text-audio embeddings (CLAP and MuQ-MuLan) offer comparable perceptual alignment on similarity tasks without any additional fine-tuning. To surpass this baseline, we introduce a novel method to perceptually align pretrained embeddings with source separation and linear optimization on ABX preference data from listening tests. Our model provides interpretable and controllable instrument-wise weights, allowing music producers to retrieve stem-level loops and samples based on mixed reference songs.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2601.19109v1",
+          "category": "separation",
+          "task": "Music Similarity",
+          "proposedMethod": null,
+          "datasets": [
+            "CLAP",
+            "MuQ-MuLan",
+            "ABX preference data"
+          ],
+          "what": "This paper explores perceptual music similarity using pretrained text-audio embeddings and introduces a method to align these embeddings with perceptual data for improved interpretability.",
+          "novel": "The method offers interpretable and controllable instrument-wise weights for music retrieval, surpassing pretrained embeddings by aligning them with perceptual data using source separation and linear optimization.",
+          "method": "Pretrained text-audio embeddings are perceptually aligned using source separation and linear optimization based on ABX preference data from listening tests.",
+          "validation": "The method is validated on perceptual similarity tasks using CLAP, MuQ-MuLan, and ABX preference data, showing improved alignment with human judgment.",
+          "discussion": "The approach provides interpretability and control but may require further exploration of generalization across diverse music genres and listener preferences.",
+          "nextReads": [
+            {
+              "label": "Perceptual Music Similarity with Embeddings (2022)",
+              "url": null
+            },
+            {
+              "label": "CLAP: Text-Audio Embeddings for Music (2021)",
+              "url": null
+            },
+            {
+              "label": "Self-Supervised Music Metric Learning (2020)",
+              "url": null
+            },
+            {
+              "label": "Music Retrieval with Pretrained Models (2019)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2601.18456v1",
+          "date": "Jan 26",
+          "title": "Geneses: Unified Generative Speech Enhancement and Separation",
+          "authors": [
+            "Kohei Asai",
+            "Wataru Nakata",
+            "Yuki Saito",
+            "Hiroshi Saruwatari"
+          ],
+          "org": "NTT Corporation",
+          "abstract": "Real-world audio recordings often contain multiple speakers and various degradations, which limit both the quantity and quality of speech data available for building state-of-the-art speech processing models. Although end-to-end approaches that concatenate speech enhancement (SE) and speech separation (SS) to obtain a clean speech signal for each speaker are promising, conventional SE-SS methods suffer from complex degradations beyond additive noise. To this end, we propose \\textbf{Geneses}, a generative framework to achieve unified, high-quality SE--SS. Our Geneses leverages latent flow matching to estimate each speaker's clean speech features using multi-modal diffusion Transformer conditioned on self-supervised learning representation from noisy mixture. We conduct experimental evaluation using two-speaker mixtures from LibriTTS-R under two conditions: additive-noise-only and complex degradations. The results demonstrate that Geneses significantly outperforms a conventional mask-based SE--SS method across various objective metrics with high robustness against complex degradations. Audio samples are available in our demo page.",
+          "comment": "Accepted to ICASSP 2025 workshop",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2601.18456v1",
+          "category": "separation",
+          "task": "Speech Enhancement and Separation",
+          "proposedMethod": "Geneses",
+          "datasets": [
+            "LibriTTS-R"
+          ],
+          "what": "This paper introduces Geneses, a unified generative framework for speech enhancement and separation, designed to handle both additive noise and complex degradations in multi-speaker scenarios.",
+          "novel": "Geneses employs a multi-modal diffusion Transformer with latent flow matching, demonstrating robustness against complex degradations and outperforming conventional mask-based methods.",
+          "method": "The framework uses self-supervised learning representations from noisy mixtures and a multi-modal diffusion Transformer to estimate clean speech features for each speaker.",
+          "validation": "Experiments on two-speaker mixtures from LibriTTS-R under additive-noise-only and complex degradation conditions show significant improvements across various objective metrics.",
+          "discussion": "While Geneses achieves high robustness and performance, its reliance on diffusion models may introduce computational complexity, which could be a limitation in real-time applications.",
+          "nextReads": [
+            {
+              "label": "WaveGrad: Diffusion-based Speech Enhancement (2021)",
+              "url": "https://arxiv.org/abs/2102.04200"
+            },
+            {
+              "label": "Self-supervised Learning for Speech Separation (2022)",
+              "url": null
+            },
+            {
+              "label": "Unified Speech Enhancement and Separation (2023)",
+              "url": null
+            },
+            {
+              "label": "LibriTTS: A Corpus for Speech Synthesis (2019)",
+              "url": "https://arxiv.org/abs/1904.02882"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2601.18037v1",
+          "date": "Jan 25",
+          "title": "SpatialEmb: Extract and Encode Spatial Information for 1-Stage Multi-channel Multi-speaker ASR on Arbitrary Microphone Arrays",
+          "authors": [
+            "Yiwen Shao",
+            "Yong Xu",
+            "Sanjeev Khudanpur",
+            "Dong Yu"
+          ],
+          "org": "Johns Hopkins University",
+          "abstract": "Spatial information is a critical clue for multi-channel multi-speaker target speech recognition. Most state-of-the-art multi-channel Automatic Speech Recognition (ASR) systems extract spatial features only during the speech separation stage, followed by standard single-channel ASR on the separated speech. This approach results in an inefficient, lengthy pipeline and sub-optimal ASR performance due to the accumulated errors from preprocessing modules. Furthermore, most spatial feature extraction methods depend on the knowledge of speaker positions and microphone topology, making the systems reliant on specific settings and challenging to adapt to new equipment. In this work, we propose a solution to these issues with a lightweight embedding module named SpatialEmb, which extracts and encodes spatial information directly for the ASR model, supporting both fixed and arbitrary microphone topology. We conduct comprehensive experiments on AliMeeting, a real meeting corpus, to determine the optimal model design for SpatialEmb in terms of both performance and efficiency. Our best model trained with 105 hours Train-Ali-far achieves 17.04% and 20.32% character error rates (CER) on the Eval and Test sets, establishing a new state-of-the-art result with the same training data.",
+          "comment": "SLT 2024",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.AI",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2601.18037v1",
+          "category": "separation",
+          "task": "Multi-speaker ASR",
+          "proposedMethod": "SpatialEmb",
+          "datasets": [
+            "AliMeeting"
+          ],
+          "what": "This paper presents SpatialEmb, a lightweight embedding module for one-stage multi-channel multi-speaker ASR that extracts and encodes spatial information directly, supporting arbitrary microphone arrays.",
+          "novel": "SpatialEmb eliminates the need for separate spatial feature extraction stages and reliance on specific microphone setups, enabling efficient and adaptable ASR for diverse environments.",
+          "method": "The proposed module integrates spatial information extraction into the ASR model, optimizing performance and efficiency for both fixed and arbitrary microphone topologies.",
+          "validation": "The model is validated on the AliMeeting corpus, achieving state-of-the-art character error rates (CER) of 17.04% and 20.32% on Eval and Test sets, respectively, using 105 hours of training data.",
+          "discussion": "While SpatialEmb achieves state-of-the-art results, its performance in highly dynamic or noisy environments with extreme microphone configurations remains to be explored.",
+          "nextReads": [
+            {
+              "label": "Multi-channel Speech Recognition with Spatial Features (2022)",
+              "url": null
+            },
+            {
+              "label": "AliMeeting: A Meeting Speech Corpus (2021)",
+              "url": null
+            },
+            {
+              "label": "End-to-End Multi-Speaker ASR (2020)",
+              "url": null
+            },
+            {
+              "label": "Spatial Information in ASR (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2601.16603v1",
+          "date": "Jan 23",
+          "title": "Omni-directional attention mechanism based on Mamba for speech separation",
+          "authors": [
+            "Ke Xue",
+            "Chang Sun",
+            "Rongfei Fan",
+            "Jing Wang",
+            "Han Hu"
+          ],
+          "org": "Tencent AI Lab",
+          "abstract": "Mamba, a selective state-space model (SSM), has emerged as an efficient alternative to Transformers for speech modeling, enabling long-sequence processing with linear complexity. While effective in speech separation, existing approaches, whether in the time or time-frequency domain, typically decompose the input along a single dimension into short one-dimensional sequences before processing them with Mamba, which restricts it to local 1D modeling and limits its ability to capture global dependencies across the 2D spectrogram. In this work, we propose an efficient omni-directional attention (OA) mechanism built upon unidirectional Mamba, which models global dependencies from ten different directions on the spectrogram. We expand the proposed mechanism into two baseline separation models and evaluate on three public datasets. Experimental results show that our approach consistently achieves significant performance gains over the baselines while preserving linear complexity, outperforming existing state-of-the-art (SOTA) systems.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2601.16603v1",
+          "category": "separation",
+          "task": "Speech Separation",
+          "proposedMethod": "Omni-directional Attention",
+          "datasets": [
+            "WSJ0-2mix",
+            "WSJ0-3mix",
+            "LibriMix"
+          ],
+          "what": "This paper introduces an omni-directional attention mechanism based on the Mamba model to improve global dependency modeling in speech separation tasks.",
+          "novel": "The proposed omni-directional attention mechanism enables Mamba to model global dependencies across 2D spectrograms, overcoming the limitations of traditional 1D sequence processing.",
+          "method": "The approach extends Mamba with omni-directional attention, capturing dependencies in ten directions on the spectrogram, and integrates this mechanism into two baseline separation models.",
+          "validation": "The method is evaluated on WSJ0-2mix, WSJ0-3mix, and LibriMix datasets, showing consistent performance improvements over state-of-the-art systems while maintaining linear complexity.",
+          "discussion": "The method achieves significant gains in performance but may face challenges in scalability for larger datasets or real-time applications due to the added complexity of omni-directional modeling.",
+          "nextReads": [
+            {
+              "label": "Mamba: State-Space Models for Speech (2022)",
+              "url": null
+            },
+            {
+              "label": "Speech Separation with Transformers (2021)",
+              "url": null
+            },
+            {
+              "label": "WSJ0-2mix Dataset for Speech Separation (2016)",
+              "url": null
+            },
+            {
+              "label": "LibriMix: A Dataset for Speech Separation (2020)",
+              "url": "https://arxiv.org/abs/2005.11262"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Brain-informed methods like EEG-guided speech separation (e.g., Brain-Informed Speech Separation for Cochlear Implants) and neural alignment studies (e.g., Do Models Hear Like Us?) highlight advances in leveraging cognitive signals for audio processing.",
+    "Generative frameworks such as SLM-SS and Geneses are driving progress in speech separation and enhancement, emphasizing intelligibility and adaptability to complex acoustic environments.",
+    "Innovations in spatial and multimodal embeddings, including SpatialEmb and CORD, enhance multi-speaker ASR and audio-text reasoning, while pretrained models like MuQ and MERT outperform symbolic approaches in music and performance evaluation."
+  ]
+}

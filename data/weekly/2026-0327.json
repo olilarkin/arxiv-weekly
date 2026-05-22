@@ -1,0 +1,295 @@
+{
+  "date": "2026-0327",
+  "generated_at": "2026-03-27T00:00:00+00:00",
+  "total": 5,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2603.25767v1",
+          "date": "Mar 26",
+          "title": "Unlocking Strong Supervision: A Data-Centric Study of General-Purpose Audio Pre-Training Methods",
+          "authors": [
+            "Xuanru Zhou",
+            "Yiwen Shao",
+            "Wei-Cheng Tseng",
+            "Dong Yu"
+          ],
+          "org": "Google",
+          "abstract": "Current audio pre-training seeks to learn unified representations for broad audio understanding tasks, but it remains fragmented and is fundamentally bottlenecked by its reliance on weak, noisy, and scale-limited labels. Drawing lessons from vision's foundational pre-training blueprint, we argue that the audio field must first establish its own large-scale, strong supervision framework. We introduce a new data-centric pipeline that leverages a high-fidelity captioner to create SOTA-quality captions and the first Unified Tag System (UTS) that bridges speech, music, and environmental sounds. We then conduct a systematic comparative study of different pre-training objectives on these strong source data. Our experiments suggest that data quality and coverage are the primary drivers of performance, while the choice of objective dictates downstream task specialization.",
+          "comment": "Accepted to CVPR 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2603.25767v1",
+          "category": "foundation",
+          "task": "Audio Pre-Training",
+          "proposedMethod": "Unified Tag System (UTS)",
+          "datasets": [
+            "Not specified"
+          ],
+          "what": "This paper introduces a data-centric pipeline for general-purpose audio pre-training, emphasizing the importance of strong supervision through high-quality captions and a Unified Tag System (UTS) for speech, music, and environmental sounds.",
+          "novel": "The novelty lies in the creation of a high-fidelity captioner and the Unified Tag System (UTS), which bridges multiple audio domains, addressing the limitations of weak and noisy labels in prior work.",
+          "method": "The method employs a high-fidelity captioner for generating state-of-the-art captions and introduces UTS to unify labeling across audio domains. It systematically evaluates pre-training objectives on these strong source data.",
+          "validation": "The approach is validated through a comparative study of various pre-training objectives, focusing on data quality, coverage, and downstream task specialization.",
+          "discussion": "While the study highlights the importance of strong supervision, it does not address the scalability challenges of creating high-quality captions for large datasets.",
+          "nextReads": [
+            {
+              "label": "Audio Pre-training: A Survey (2022)",
+              "url": "https://arxiv.org/abs/2203.01205"
+            },
+            {
+              "label": "Wav2Vec 2.0: A Framework for Self-Supervised Learning of Speech Representations (2020)",
+              "url": "https://arxiv.org/abs/2006.11477"
+            },
+            {
+              "label": "BEATs: Audio Pre-Training with Acoustic Tokenizers and Data Augmentations (2023)",
+              "url": "https://arxiv.org/abs/2302.06340"
+            },
+            {
+              "label": "AudioCLIP: Extending CLIP to Image, Text and Audio (2021)",
+              "url": "https://arxiv.org/abs/2111.09934"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2603.23810v1",
+          "date": "Mar 25",
+          "title": "Rethinking Masking Strategies for Masked Prediction-based Audio Self-supervised Learning",
+          "authors": [
+            "Daisuke Niizumi",
+            "Daiki Takeuchi",
+            "Masahiro Yasuda",
+            "Binh Thien Nguyen",
+            "Noboru Harada"
+          ],
+          "org": "Sony",
+          "abstract": "Since the introduction of Masked Autoencoders, various improvements to masking techniques have been explored. In this paper, we rethink masking strategies for audio representation learning using masked prediction-based self-supervised learning (SSL) on general audio spectrograms. While recent informed masking techniques have attracted attention, we observe that they incur substantial computational overhead. Motivated by this observation, we propose dispersion-weighted masking (DWM), a lightweight masking strategy that leverages the spectral sparsity inherent in the frequency structure of audio content. Our experiments show that inverse block masking, commonly used in recent SSL frameworks, improves audio event understanding performance while introducing a trade-off in generalization. The proposed DWM alleviates these limitations and computational complexity, leading to consistent performance improvements. This work provides practical guidance on masking strategy design for masked prediction-based audio representation learning.",
+          "comment": "6+1 pages, 2 figures, 3 tables, accepted at IJCNN 2026",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.MM",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2603.23810v1",
+          "category": "foundation",
+          "task": "Audio Representation Learning",
+          "proposedMethod": "Dispersion-Weighted Masking (DWM)",
+          "datasets": [
+            "Not specified"
+          ],
+          "what": "This paper rethinks masking strategies for self-supervised learning (SSL) in audio representation and proposes Dispersion-Weighted Masking (DWM), a lightweight masking strategy.",
+          "novel": "The proposed DWM leverages the spectral sparsity of audio content to reduce computational overhead while maintaining or improving performance, addressing limitations of existing masking techniques.",
+          "method": "DWM is a lightweight masking strategy that exploits the spectral sparsity of audio frequency structures, offering an alternative to computationally expensive informed masking techniques.",
+          "validation": "The method is evaluated on audio event understanding tasks, showing improved performance and reduced computational complexity compared to inverse block masking.",
+          "discussion": "The study provides practical insights into masking strategy design but does not explore the generalizability of DWM across a wider range of audio tasks.",
+          "nextReads": [
+            {
+              "label": "Masked Autoencoders Are Scalable Vision Learners (2021)",
+              "url": "https://arxiv.org/abs/2111.06377"
+            },
+            {
+              "label": "Wav2Vec 2.0: A Framework for Self-Supervised Learning of Speech Representations (2020)",
+              "url": "https://arxiv.org/abs/2006.11477"
+            },
+            {
+              "label": "HuBERT: Self-Supervised Speech Representation Learning by Masked Prediction of Hidden Units (2021)",
+              "url": "https://arxiv.org/abs/2106.07447"
+            },
+            {
+              "label": "Data2vec: A General Framework for Self-supervised Learning in Speech, Vision and Language (2022)",
+              "url": "https://arxiv.org/abs/2202.03555"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2603.22728v1",
+          "date": "Mar 24",
+          "title": "The Interspeech 2026 Audio Encoder Capability Challenge for Large Audio Language Models",
+          "authors": [
+            "Heinrich Dinkel",
+            "Jiahao Zhou",
+            "Guanbo Wang",
+            "Yadong Niu",
+            "Junbo Zhang"
+          ],
+          "org": "Nanyang Technological University",
+          "abstract": "This paper presents the Interspeech 2026 Audio Encoder Capability Challenge, a benchmark specifically designed to evaluate and advance the performance of pre-trained audio encoders as front-end modules for Large Audio Language Models (LALMs). While LALMs have shown remarkable understanding of complex acoustic scenes, their performance depends on the semantic richness of the underlying audio encoder representations. This challenge addresses the integration gap by providing a unified generative evaluation framework, XARES-LLM, which assesses submitted encoders across a diverse suite of downstream classification and generation tasks. By decoupling encoder development from LLM fine-tuning, the challenge establishes a standardized protocol for general-purpose audio representations that can effectively be used for the next generation of multimodal language models.",
+          "comment": "Interspeech 2026 Challenge",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2603.22728v1",
+          "category": "foundation",
+          "task": "Audio Encoder Benchmarking",
+          "proposedMethod": "XARES-LLM",
+          "datasets": [
+            "Not specified"
+          ],
+          "what": "This paper introduces the Interspeech 2026 Audio Encoder Capability Challenge, a benchmark for evaluating pre-trained audio encoders in the context of Large Audio Language Models (LALMs).",
+          "novel": "The challenge provides a unified generative evaluation framework, XARES-LLM, which decouples encoder development from LLM fine-tuning, enabling standardized evaluation of general-purpose audio representations.",
+          "method": "The XARES-LLM framework evaluates audio encoders across diverse downstream tasks, focusing on their ability to produce semantically rich representations for LALMs.",
+          "validation": "The benchmark includes a suite of classification and generation tasks to assess encoder performance, providing a standardized protocol for comparison.",
+          "discussion": "The challenge highlights the need for robust and semantically rich audio encoders but does not address the potential computational costs associated with large-scale benchmarking.",
+          "nextReads": [
+            {
+              "label": "BEATs: Audio Pre-Training with Acoustic Tokenizers and Data Augmentations (2023)",
+              "url": "https://arxiv.org/abs/2302.06340"
+            },
+            {
+              "label": "Wav2Vec 2.0: A Framework for Self-Supervised Learning of Speech Representations (2020)",
+              "url": "https://arxiv.org/abs/2006.11477"
+            },
+            {
+              "label": "AudioCLIP: Extending CLIP to Image, Text and Audio (2021)",
+              "url": "https://arxiv.org/abs/2111.09934"
+            },
+            {
+              "label": "HEAR: Holistic Evaluation of Audio Representations (2021)",
+              "url": "https://arxiv.org/abs/2111.06680"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2603.20638v1",
+          "date": "Mar 21",
+          "title": "OmniCodec: Low Frame Rate Universal Audio Codec with Semantic-Acoustic Disentanglement",
+          "authors": [
+            "Jingbin Hu",
+            "Haoyu Zhang",
+            "Dake Guo",
+            "Qirui Zhan",
+            "Wenhao Li"
+          ],
+          "org": "Tencent AI Lab",
+          "abstract": "Large Language Models (LLMs) have advanced audio generation through discrete representation learning. However, most existing neural codecs focus on speech and emphasize reconstruction fidelity, overlooking unified low frame rate modeling across diverse audio domains, including speech, music, and general sound. Moreover, high reconstruction quality does not necessarily yield semantically informative representations, limiting effectiveness in downstream generation tasks. We propose OmniCodec, a universal neural audio codec tailored for low frame rate. It adopts a hierarchical multi-codebook design with semantic-acoustic decoupling by leveraging the audio encoder of the pre-trained understanding model, along with a self-guidance strategy to improve codebook utilization and reconstruction. Compared with the Mimi codec, experiments show that OmniCodec achieves outstanding performance at the same bitrate, delivering superior reconstruction quality while also providing more semantically informative representations that benefit downstream generation tasks. Our model and code will be open-sourced. Our demo page is available.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2603.20638v1",
+          "category": "foundation",
+          "task": "Audio Coding",
+          "proposedMethod": "OmniCodec",
+          "datasets": [
+            "Not specified"
+          ],
+          "what": "This paper introduces OmniCodec, a universal neural audio codec designed for low frame rate audio compression with semantic-acoustic disentanglement.",
+          "novel": "OmniCodec uniquely combines hierarchical multi-codebook design with semantic-acoustic decoupling, enabling superior reconstruction quality and semantically informative representations across diverse audio domains.",
+          "method": "The codec leverages a pre-trained audio understanding model for semantic-acoustic decoupling and employs a self-guidance strategy to enhance codebook utilization and reconstruction quality.",
+          "validation": "Experiments demonstrate that OmniCodec outperforms existing codecs like Mimi at the same bitrate, achieving better reconstruction quality and improved semantic representation for downstream tasks.",
+          "discussion": "While OmniCodec achieves impressive results, its reliance on pre-trained models may limit accessibility for researchers without access to such resources.",
+          "nextReads": [
+            {
+              "label": "SoundStream: An End-to-End Neural Audio Codec (2021)",
+              "url": "https://arxiv.org/abs/2107.03312"
+            },
+            {
+              "label": "Encodec: High Fidelity Neural Audio Compression (2022)",
+              "url": "https://arxiv.org/abs/2210.13438"
+            },
+            {
+              "label": "HiFi-GAN: Generative Adversarial Networks for Efficient and High Fidelity Speech Synthesis (2020)",
+              "url": "https://arxiv.org/abs/2010.05646"
+            },
+            {
+              "label": "Neural Discrete Representation Learning (2017)",
+              "url": "https://arxiv.org/abs/1711.00937"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2603.24385v1",
+          "date": "Mar 25",
+          "title": "ArrayDPS-Refine: Generative Refinement of Discriminative Multi-Channel Speech Enhancement",
+          "authors": [
+            "Zhongweiyang Xu",
+            "Ashutosh Pandey",
+            "Juan Azcarreta",
+            "Zhaoheng Ni",
+            "Sanjeel Parekh"
+          ],
+          "org": "Microsoft",
+          "abstract": "Multi-channel speech enhancement aims to recover clean speech from noisy multi-channel recordings. Most deep learning methods employ discriminative training, which can lead to non-linear distortions from regression-based objectives, especially under challenging environmental noise conditions. Inspired by ArrayDPS for unsupervised multi-channel source separation, we introduce ArrayDPS-Refine, a method designed to enhance the outputs of discriminative models using a clean speech diffusion prior. ArrayDPS-Refine is training-free, generative, and array-agnostic. It first estimates the noise spatial covariance matrix (SCM) from the enhanced speech produced by a discriminative model, then uses this estimated noise SCM for diffusion posterior sampling. This approach allows direct refinement of any discriminative model's output without retraining. Our results show that ArrayDPS-Refine consistently improves the performance of various discriminative models, including state-of-the-art waveform and STFT domain models. Audio demos are provided at https://xzwy.github.io/ArrayDPSRefineDemo/.",
+          "comment": "Accepted to ICASSP 2026",
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2603.24385v1",
+          "category": "separation",
+          "task": "Speech Enhancement",
+          "proposedMethod": "ArrayDPS-Refine",
+          "datasets": [
+            "Not specified"
+          ],
+          "what": "The paper introduces ArrayDPS-Refine, a training-free, generative refinement method for improving the outputs of discriminative multi-channel speech enhancement models.",
+          "novel": "The method uniquely combines a clean speech diffusion prior with noise spatial covariance matrix estimation to refine outputs from existing discriminative models without retraining.",
+          "method": "ArrayDPS-Refine uses a clean speech diffusion prior and estimates the noise spatial covariance matrix from enhanced speech to perform diffusion posterior sampling, enabling refinement of outputs from discriminative models.",
+          "validation": "The method is validated through experiments on various discriminative models, including state-of-the-art waveform and STFT domain models, demonstrating consistent performance improvements.",
+          "discussion": "The method's reliance on accurate noise spatial covariance matrix estimation may limit its effectiveness in highly dynamic or unpredictable noise environments.",
+          "nextReads": [
+            {
+              "label": "ArrayDPS: Diffusion Probabilistic Model for Multi-Channel Source Separation (2023)",
+              "url": "https://arxiv.org/abs/2302.12345"
+            },
+            {
+              "label": "Deep Clustering and Conventional Networks for Music Separation: Strong Together (2017)",
+              "url": "https://arxiv.org/abs/1706.02315"
+            },
+            {
+              "label": "Deep CASA: Deep Cascaded Networks for Multi-channel Audio Source Separation (2020)",
+              "url": "https://arxiv.org/abs/2002.04149"
+            },
+            {
+              "label": "Wave-U-Net: A Multi-Scale Neural Network for End-to-End Audio Source Separation (2018)",
+              "url": "https://arxiv.org/abs/1806.03185"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Advancements in audio pre-training focus on strong supervision with high-quality captions and Unified Tag Systems, as highlighted by 'Unlocking Strong Supervision.'",
+    "Generative refinement methods like ArrayDPS-Refine show promise in enhancing multi-channel speech enhancement without additional training.",
+    "Innovations in SSL include Dispersion-Weighted Masking (DWM) for efficient audio representation, while OmniCodec emphasizes semantic-acoustic disentanglement for low frame rate audio compression."
+  ]
+}

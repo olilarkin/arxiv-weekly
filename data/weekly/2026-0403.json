@@ -1,0 +1,607 @@
+{
+  "date": "2026-0403",
+  "generated_at": "2026-04-03T00:00:00+00:00",
+  "total": 11,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2603.29263v1",
+          "date": "Mar 31",
+          "title": "Audio Hallucination Attacks: Probing the Reliability of Large Audio Language Models",
+          "authors": [
+            "Ashish Seth",
+            "Sonal Kumar",
+            "Ramaneswaran Selvakumar",
+            "Nishit Anand",
+            "Utkarsh Tyagi"
+          ],
+          "org": "Unknown",
+          "abstract": "Large Audio Language Models (LALMs) achieve strong performance on audio-language tasks; however, their reliability in real-world settings remains underexplored. We introduce Audio Hallucination Attacks (AHA), an attack suite called AHA-Eval, comprising 6.5K QA pairs designed to test whether LALMs genuinely ground their responses in the audio input. AHA targets two attack surfaces: (i) query-based attacks, which exploit question structure to induce hallucinations about absent sounds, and (ii) audio-based attacks, which inject synthetic speech describing non-existent events into the audio stream. Evaluating state-of-the-art LALMs, including Audio Flamingo 3 and Gemini 3 Pro, we observe high attack success rates of 95.35% and 79.65%, respectively, revealing a reliability gap that is hidden by standard benchmark performance. To mitigate this, we propose a 120K QA post-alignment dataset, AHA-Guard, which successfully reduces attack success rates by up to 49%.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2603.29263v1",
+          "category": "foundation",
+          "task": "Audio Adversarial Attacks",
+          "proposedMethod": "AHA",
+          "datasets": [
+            "AHA-Eval",
+            "AHA-Guard"
+          ],
+          "what": "This paper introduces Audio Hallucination Attacks (AHA), a suite of adversarial attacks to test the reliability of Large Audio Language Models (LALMs).",
+          "novel": "It identifies a significant reliability gap in LALMs by designing attacks that exploit query structures and synthetic audio inputs to induce hallucinations.",
+          "method": "The AHA-Eval suite includes 6.5K QA pairs targeting query-based and audio-based attack surfaces, and AHA-Guard is a 120K QA dataset for mitigating these attacks.",
+          "validation": "The attacks are tested on state-of-the-art LALMs, showing high success rates and demonstrating the effectiveness of AHA-Guard in reducing these rates.",
+          "discussion": "The work highlights a critical reliability issue in LALMs but may require further exploration of real-world applicability and robustness.",
+          "nextReads": [
+            {
+              "label": "Adversarial Attacks on Speech Recognition Systems (2022)",
+              "url": null
+            },
+            {
+              "label": "Robustness of Language Models to Adversarial Inputs (2021)",
+              "url": null
+            },
+            {
+              "label": "Audio Adversarial Examples and Defenses (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2603.28378v1",
+          "date": "Mar 30",
+          "title": "Membership Inference Attacks against Large Audio Language Models",
+          "authors": [
+            "Jia-Kai Dong",
+            "Yu-Xiang Lin",
+            "Hung-Yi Lee"
+          ],
+          "org": "National Taiwan University",
+          "abstract": "We present the first systematic Membership Inference Attack (MIA) evaluation of Large Audio Language Models (LALMs). As audio encodes non-semantic information, it induces severe train and test distribution shifts and can lead to spurious MIA performance. Using a multi-modal blind baseline based on textual, spectral, and prosodic features, we demonstrate that common speech datasets exhibit near-perfect train/test separability (AUC approximately 1.0) even without model inference, and the standard MIA scores strongly correlate with these blind acoustic artifacts (correlation greater than 0.7). Using this blind baseline, we identify that distribution-matched datasets enable reliable MIA evaluation without distribution shift confounds. We benchmark multiple MIA methods and conduct modality disentanglement experiments on these datasets. The results reveal that LALM memorization is cross-modal, arising only from binding a speaker's vocal identity with its text. These findings establish a principled standard for auditing LALMs beyond spurious correlations.",
+          "comment": "submitted to Interspeech 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2603.28378v1",
+          "category": "foundation",
+          "task": "Membership Inference",
+          "proposedMethod": null,
+          "datasets": [
+            "Common Voice",
+            "LibriSpeech"
+          ],
+          "what": "This paper evaluates Membership Inference Attacks (MIA) on Large Audio Language Models (LALMs), addressing the challenges posed by train-test distribution shifts in audio data.",
+          "novel": "It introduces a multi-modal blind baseline to identify spurious correlations in MIA evaluations and establishes a principled standard for auditing LALMs.",
+          "method": "The authors use a blind baseline leveraging textual, spectral, and prosodic features to disentangle modality-specific artifacts and benchmark MIA methods on distribution-matched datasets.",
+          "validation": "The approach is validated through correlation analysis (AUC and other metrics) and benchmarking on datasets like Common Voice and LibriSpeech.",
+          "discussion": "The study highlights the importance of addressing distribution shifts in audio data but may require further exploration of diverse datasets and attack scenarios.",
+          "nextReads": [
+            {
+              "label": "Membership Inference Attacks on Machine Learning Models (2020)",
+              "url": null
+            },
+            {
+              "label": "Auditing Large Language Models via Membership Inference (2022)",
+              "url": null
+            },
+            {
+              "label": "Evaluating Privacy Risks in Speech Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Membership Inference in Multimodal Models (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2604.19782v1",
+          "date": "Mar 30",
+          "title": "KoALa-Bench: Evaluating Large Audio Language Models on Korean Speech Understanding and Faithfulness",
+          "authors": [
+            "Jinyoung Kim",
+            "Hyeongsoo Lim",
+            "Eunseo Seo",
+            "Minho Jang",
+            "Keunwoo Choi"
+          ],
+          "org": "KAIST",
+          "abstract": "Recent advances in large audio language models (LALMs) have enabled multilingual speech understanding. However, benchmarks for evaluating LALMs remain scarce for non-English languages, with Korean being one such underexplored case. In this paper, we introduce KoALa-Bench, a comprehensive benchmark for evaluating Korean speech understanding and speech faithfulness of LALMs. In particular, KoALa-Bench comprises six tasks. Four tasks evaluate fundamental speech understanding capabilities, including automatic speech recognition, speech translation, speech question answering, and speech instruction following, while the remaining two tasks evaluate speech faithfulness, motivated by our observation that several LALMs often fail to fully leverage the speech modality. Furthermore, to reflect Korea-specific knowledge, our benchmark incorporates listening questions from the Korean college scholastic ability test as well as content covering Korean cultural domains. We conduct extensive experiments across six models, including both white-box and black-box ones. Our benchmark, evaluation code, and leaderboard are publicly available at https://ksbench.github.io/Korean-Benchmark/.",
+          "comment": "Under Review",
+          "journalRef": null,
+          "categories": [
+            "cs.CL",
+            "cs.AI",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2604.19782v1",
+          "category": "foundation",
+          "task": "Speech Understanding",
+          "proposedMethod": "KoALa-Bench",
+          "datasets": [
+            "KoALa-Bench"
+          ],
+          "what": "This paper introduces KoALa-Bench, a benchmark for evaluating Korean speech understanding and faithfulness in Large Audio Language Models (LALMs).",
+          "novel": "It is the first benchmark tailored for Korean speech, incorporating tasks like ASR, translation, and cultural knowledge evaluation.",
+          "method": "KoALa-Bench evaluates six tasks, including speech understanding and faithfulness, with Korea-specific content such as scholastic test questions and cultural domains.",
+          "validation": "The benchmark is validated through experiments on six models, comparing their performance on the proposed tasks.",
+          "discussion": "The benchmark addresses the scarcity of non-English LALM evaluations but may need broader adoption and further task diversity.",
+          "nextReads": [
+            {
+              "label": "Multilingual Speech Understanding with LALMs (2022)",
+              "url": null
+            },
+            {
+              "label": "Faithfulness in Speech Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Speech Benchmarks for Low-Resource Languages (2021)",
+              "url": null
+            },
+            {
+              "label": "Evaluating Multilingual Audio Models (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2603.28021v2",
+          "date": "Mar 30",
+          "title": "Audio Language Model for Deepfake Detection Grounded in Acoustic Chain-of-Thought",
+          "authors": [
+            "Runkun Chen",
+            "Yixiong Fang",
+            "Pengyu Chang",
+            "Yuante Li",
+            "Massa Baali"
+          ],
+          "org": "University of Illinois Urbana-Champaign",
+          "abstract": "Deepfake speech detection systems are often limited to binary classification tasks and struggle to generate interpretable reasoning or provide context-rich explanations for their decisions. These models primarily extract latent embeddings for authenticity detection but fail to leverage structured acoustic evidence such as prosodic, spectral, and physiological attributes in a meaningful manner. This paper introduces CoLMbo-DF, a Feature-Guided Audio Language Model that addresses these limitations by integrating robust deepfake detection with explicit acoustic chain-of-thought reasoning. By injecting structured textual representations of low-level acoustic features directly into the model prompt, our approach grounds the model's reasoning in interpretable evidence and improves detection accuracy. To support this framework, we introduce a novel dataset of audio pairs paired with chain-of-thought annotations. Experiments show that our method, trained on a lightweight open-source language model, significantly outperforms existing audio language model baselines despite its smaller scale, marking a significant advancement in explainable deepfake speech detection.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2603.28021v2",
+          "category": "foundation",
+          "task": "Deepfake Detection",
+          "proposedMethod": "CoLMbo-DF",
+          "datasets": [
+            "Custom dataset with chain-of-thought annotations"
+          ],
+          "what": "This paper proposes CoLMbo-DF, a feature-guided audio language model for deepfake detection with interpretable acoustic reasoning.",
+          "novel": "It introduces acoustic chain-of-thought reasoning to improve both detection accuracy and interpretability in deepfake speech detection.",
+          "method": "The model integrates structured textual representations of acoustic features into prompts, grounding decisions in interpretable evidence.",
+          "validation": "The method is validated on a novel dataset with chain-of-thought annotations, outperforming existing baselines in detection accuracy.",
+          "discussion": "While effective, the approach relies on a custom dataset, which may limit generalizability without broader dataset support.",
+          "nextReads": [
+            {
+              "label": "Deepfake Detection with Explainable AI (2022)",
+              "url": null
+            },
+            {
+              "label": "Acoustic Features in Deepfake Detection (2021)",
+              "url": null
+            },
+            {
+              "label": "Chain-of-Thought Reasoning in AI (2022)",
+              "url": null
+            },
+            {
+              "label": "Interpretable Speech Models for Security (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2603.27667v1",
+          "date": "Mar 29",
+          "title": "EvA: An Evidence-First Audio Understanding Paradigm for LALMs",
+          "authors": [
+            "Xinyuan Xie",
+            "Shunian Chen",
+            "Zhiheng Liu",
+            "Yuhao Zhang",
+            "Zhiqiang Lv"
+          ],
+          "org": "Tsinghua University",
+          "abstract": "Large Audio Language Models (LALMs) still struggle in complex acoustic scenes because they often fail to preserve task-relevant acoustic evidence before reasoning begins. We call this failure the evidence bottleneck: state-of-the-art systems show larger deficits in evidence extraction than in downstream reasoning, suggesting that the main limitation lies in upstream perception rather than reasoning policy. To address this problem, we propose EvA (Evidence-First Audio), a dual-path architecture that combines Whisper and CED-Base through non-compressive, time-aligned fusion. EvA first aggregates intermediate CED layers to preserve multi-scale acoustic cues, then aligns the aggregated CED features to the Whisper timeline and adds the two streams without changing sequence length. We also build EvA-Perception, a large-scale open-source training set with about 54K event-ordered captions (150 h) and about 500K QA pairs. Under a unified zero-shot protocol, EvA achieves the best open-source Perception scores on MMAU, MMAR, and MMSU, and improves over Kimi-Audio-7B on all reported metrics, with the largest gains on perception-heavy splits. These results support the evidence-first hypothesis: stronger audio understanding depends on preserving acoustic evidence before reasoning.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2603.27667v1",
+          "category": "foundation",
+          "task": "Audio Understanding",
+          "proposedMethod": "EvA",
+          "datasets": [
+            "EvA-Perception",
+            "MMAU",
+            "MMAR",
+            "MMSU"
+          ],
+          "what": "This paper introduces EvA, a dual-path architecture for Large Audio Language Models (LALMs) that prioritizes preserving acoustic evidence before reasoning.",
+          "novel": "It proposes an evidence-first paradigm and a novel fusion of intermediate CED and Whisper features to enhance audio understanding.",
+          "method": "EvA aggregates multi-scale acoustic cues from CED layers and aligns them with Whisper features using a non-compressive, time-aligned fusion strategy.",
+          "validation": "The model is validated on EvA-Perception and other benchmarks, achieving state-of-the-art results on perception-heavy tasks under a zero-shot protocol.",
+          "discussion": "The approach demonstrates strong performance but may face challenges in scaling and generalizing to more diverse acoustic scenarios.",
+          "nextReads": [
+            {
+              "label": "Audio-Text Models for Multimodal Understanding (2022)",
+              "url": null
+            },
+            {
+              "label": "Whisper: Scaling Audio Models (2023)",
+              "url": null
+            },
+            {
+              "label": "CED-Based Audio Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Zero-Shot Audio Understanding (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2604.01120v2",
+          "date": "Apr 01",
+          "title": "Diff-VS: Efficient Audio-Aware Diffusion U-Net for Vocals Separation",
+          "authors": [
+            " Yun-Ning",
+            " Hung",
+            "Richard Vogl",
+            "Filip Korzeniowski",
+            "Igor Pereira"
+          ],
+          "org": "Unknown",
+          "abstract": "While diffusion models are best known for their performance in generative tasks, they have also been successfully applied to many other tasks, including audio source separation. However, current generative approaches to music source separation often underperform on standard objective metrics. In this paper, we address this issue by introducing a novel generative vocal separation model based on the Elucidated Diffusion Model (EDM) framework. Our model processes complex short-time Fourier transform spectrograms and employs an improved U-Net architecture based on music-informed design choices. Our approach matches discriminative baselines on objective metrics and achieves perceptual quality comparable to state-of-the-art systems, as assessed by proxy subjective metrics. We hope these results encourage broader exploration of generative methods for music source separation",
+          "comment": "Accepted at ICASSP 2026",
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2604.01120v2",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": "Diff-VS",
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "This paper introduces Diff-VS, a novel generative vocal separation model based on the Elucidated Diffusion Model (EDM) framework.",
+          "novel": "It combines diffusion models with a music-informed U-Net architecture to improve the performance of generative approaches for vocal separation.",
+          "method": "The model processes complex STFT spectrograms and employs a U-Net architecture designed with music-specific considerations.",
+          "validation": "The approach is validated using objective metrics and proxy subjective metrics, showing comparable performance to state-of-the-art systems.",
+          "discussion": "While promising, the reliance on proxy subjective metrics suggests further validation with human listeners is needed.",
+          "nextReads": [
+            {
+              "label": "DiffWave: A Versatile Diffusion Model for Audio Synthesis (2021)",
+              "url": null
+            },
+            {
+              "label": "Music Source Separation with Deep Learning (2020)",
+              "url": null
+            },
+            {
+              "label": "U-Net Architectures for Audio Source Separation (2019)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2603.29097v2",
+          "date": "Mar 31",
+          "title": "Asymmetric Encoder-Decoder Based on Time-Frequency Correlation for Speech Separation",
+          "authors": [
+            "Ui-Hyeop Shin",
+            "Hyung-Min Park"
+          ],
+          "org": "Unknown",
+          "abstract": "Speech separation in realistic acoustic environments remains challenging because overlapping speakers, background noise, and reverberation must be resolved simultaneously. Although recent time-frequency (TF) domain models have shown strong performance, most still rely on late-split architectures, where speaker disentanglement is deferred to the final stage, creating an information bottleneck and weakening discriminability under adverse conditions. To address this issue, we propose SR-CorrNet, an asymmetric encoder-decoder framework that introduces the separation-reconstruction (SepRe) strategy into a TF dual-path backbone. The encoder performs coarse separation from mixture observations, while the weight-shared decoder progressively reconstructs speaker-discriminative features with cross-speaker interaction, enabling stage-wise refinement. To complement this architecture, we formulate speech separation as a structured correlation-to-filter problem: spatio-spectro-temporal correlations computed from the observations are used as input features, and the corresponding deep filters are estimated to recover target signals. We further incorporate an attractor-based dynamic split module to adapt the number of output streams to the actual speaker configuration. Experimental results on WSJ0-{2,3,4,5}Mix, WHAMR!, and LibriCSS demonstrate consistent improvements across anechoic, noisy-reverberant, and real-recorded conditions in both single- and multi-channel settings, highlighting the effectiveness of TF-domain SepRe with correlation-based filter estimation for speech separation.",
+          "comment": "Submitted to IEEE Transactions on Audio, Speech, and Language Processing (TASLPRO) Code: https://github.com/dmlguq456/SR_CorrNet",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2603.29097v2",
+          "category": "separation",
+          "task": "Speech Separation",
+          "proposedMethod": "SR-CorrNet",
+          "datasets": [
+            "WSJ0-2Mix",
+            "WSJ0-3Mix",
+            "WSJ0-4Mix",
+            "WSJ0-5Mix",
+            "WHAMR!"
+          ],
+          "what": "This paper proposes SR-CorrNet, an asymmetric encoder-decoder framework for speech separation in challenging acoustic environments.",
+          "novel": "It introduces the SepRe strategy and a structured correlation-to-filter formulation to enhance separation performance under noisy and reverberant conditions.",
+          "method": "The encoder performs coarse separation, while the decoder reconstructs speaker-discriminative features using stage-wise refinement and cross-speaker interaction.",
+          "validation": "The model is evaluated on WSJ0-{2,3,4,5}Mix, WHAMR!, and LibriCSS datasets, showing consistent improvements over existing methods.",
+          "discussion": "The approach is effective across various conditions but may face scalability issues with highly complex speaker configurations.",
+          "nextReads": [
+            {
+              "label": "Dual-Path RNN for Speech Separation (2020)",
+              "url": null
+            },
+            {
+              "label": "Deep Attractor Networks for Speech Separation (2017)",
+              "url": null
+            },
+            {
+              "label": "Time-Frequency Masking for Speech Separation (2016)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2603.28757v1",
+          "date": "Mar 30",
+          "title": "SonoWorld: From One Image to a 3D Audio-Visual Scene",
+          "authors": [
+            "Derong Jin",
+            "Xiyi Chen",
+            "Ming C. Lin",
+            "Ruohan Gao"
+          ],
+          "org": "Unknown",
+          "abstract": "Tremendous progress in visual scene generation now turns a single image into an explorable 3D world, yet immersion remains incomplete without sound. We introduce Image2AVScene, the task of generating a 3D audio-visual scene from a single image, and present SonoWorld, the first framework to tackle this challenge. From one image, our pipeline outpaints a 360° panorama, lifts it into a navigable 3D scene, places language-guided sound anchors, and renders ambisonics for point, areal, and ambient sources, yielding spatial audio aligned with scene geometry and semantics. Quantitative evaluations on a newly curated real-world dataset and a controlled user study confirm the effectiveness of our approach. Beyond free-viewpoint audio-visual rendering, we also demonstrate applications to one-shot acoustic learning and audio-visual spatial source separation. Project website: https://humathe.github.io/sonoworld/",
+          "comment": "Accepted by CVPR 2026, project page: https://humathe.github.io/sonoworld/",
+          "journalRef": null,
+          "categories": [
+            "cs.CV",
+            "cs.MM",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2603.28757v1",
+          "category": "separation",
+          "task": "Audio-Visual Scene Generation",
+          "proposedMethod": "SonoWorld",
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "This paper introduces SonoWorld, a framework for generating 3D audio-visual scenes from a single image.",
+          "novel": "It combines image-based 3D scene generation with spatial audio rendering aligned to scene geometry and semantics.",
+          "method": "The pipeline outpaints a 360° panorama, lifts it into a 3D scene, places sound anchors guided by language, and renders ambisonics for various sound sources.",
+          "validation": "The method is validated using a newly curated dataset and a user study, demonstrating effectiveness in audio-visual rendering and related applications.",
+          "discussion": "The framework is innovative but may require further optimization for real-time applications and diverse scene types.",
+          "nextReads": [
+            {
+              "label": "Audio-Visual Scene Synthesis from Images (2022)",
+              "url": null
+            },
+            {
+              "label": "Spatial Audio Rendering for Virtual Environments (2021)",
+              "url": null
+            },
+            {
+              "label": "3D Scene Generation from Single Images (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2603.26113v1",
+          "date": "Mar 27",
+          "title": "Cinematic Audio Source Separation Using Visual Cues",
+          "authors": [
+            "Kang Zhang",
+            "Suyeon Lee",
+            "Arda Senocak",
+            "Joon Son Chung"
+          ],
+          "org": "Google",
+          "abstract": "Cinematic Audio Source Separation (CASS) aims to decompose mixed film audio into speech, music, and sound effects, enabling applications like dubbing and remastering. Existing CASS approaches are audio-only, overlooking the inherent audio-visual nature of films, where sounds often align with visual cues. We present the first framework for audio-visual CASS (AV-CASS), leveraging visual context to enhance separation quality. Our method formulates CASS as a conditional generative modeling problem using conditional flow matching, enabling multimodal audio source separation. To address the lack of cinematic datasets with isolated sound tracks, we introduce a training data synthesis pipeline that pairs in-the-wild audio and video streams (e.g., facial videos for speech, scene videos for effects) and design a dedicated visual encoder for this dual-stream setup. Trained entirely on synthetic data, our model generalizes effectively to real-world cinematic content and achieves strong performance on synthetic, real-world, and audio-only CASS benchmarks. Code and demo are available at \\url{https://cass-flowmatching.github.io}.",
+          "comment": "CVPR 2026. Project page: https://cass-flowmatching.github.io",
+          "journalRef": null,
+          "categories": [
+            "cs.MM",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2603.26113v1",
+          "category": "separation",
+          "task": "Audio Source Separation",
+          "proposedMethod": "AV-CASS",
+          "datasets": [
+            "Synthetic cinematic dataset",
+            "Audio-only CASS benchmarks"
+          ],
+          "what": "This paper introduces a framework for audio-visual cinematic audio source separation (AV-CASS), which decomposes mixed film audio into speech, music, and sound effects using visual context.",
+          "novel": "The novelty lies in leveraging visual cues for cinematic audio source separation and introducing a synthetic data pipeline for training, addressing the lack of labeled cinematic datasets.",
+          "method": "The method formulates CASS as a conditional generative modeling problem using conditional flow matching, with a dedicated visual encoder for dual-stream audio-visual inputs.",
+          "validation": "The model is validated on synthetic datasets, real-world cinematic content, and audio-only CASS benchmarks, demonstrating strong generalization and performance.",
+          "discussion": "The reliance on synthetic data for training may limit performance in highly complex real-world scenarios, and the approach assumes strong alignment between audio and visual cues.",
+          "nextReads": [
+            {
+              "label": "Audio-Visual Speech Separation Using Deep Learning (2020)",
+              "url": null
+            },
+            {
+              "label": "Learning to Separate Sounds by Watching Videos (2018)",
+              "url": null
+            },
+            {
+              "label": "Deep Audio-Visual Embedding for Robust Speech Separation (2021)",
+              "url": null
+            },
+            {
+              "label": "Audio-Visual Scene Analysis with Self-Supervised Learning (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2604.01524v1",
+          "date": "Apr 02",
+          "title": "Reverberation-Robust Localization of Speakers Using Distinct Speech Onsets and Multi-channel Cross-Correlations",
+          "authors": [
+            "Shoufeng Lin"
+          ],
+          "org": "Unknown",
+          "abstract": "Many speaker localization methods can be found in the literature. However, speaker localization under strong reverberation still remains a major challenge in the real-world applications. This paper proposes two algorithms for localizing speakers using microphone array recordings of reverberated sounds. To separate concurrent speakers, the first algorithm decomposes microphone signals spectrotemporally into subbands via an auditory filterbank. To suppress reverberation, we propose a novel speech onset detection approach derived from the speech signal and impulse response models, and further propose to formulate the multi-channel cross-correlation coefficient (MCCC) of encoded speech onsets in each subband. The subband results are combined to estimate the directions-of-arrival (DOAs) of speakers. The second algorithm extends the generalized cross-correlation - phase transform (GCC-PHAT) method by using redundant information of multiple microphones to address the reverberation problem. The proposed methods have been evaluated under adverse conditions using not only simulated signals (reverberation time $T_{60}$ of up to $1$s) but also recordings in a real reverberant room ($T_{60} \\approx 0.65$s). Comparing with some state-of-the-art localization methods, experimental results confirm that the proposed methods can reliably locate static and moving speakers, in presence of reverberation.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2604.01524v1",
+          "category": "transcription",
+          "task": "Sound Localization",
+          "proposedMethod": null,
+          "datasets": [
+            "Simulated signals",
+            "Real reverberant room recordings"
+          ],
+          "what": "This paper proposes two algorithms for speaker localization using microphone array recordings under strong reverberation conditions.",
+          "novel": "It introduces a novel speech onset detection approach and extends the GCC-PHAT method to leverage redundant microphone information for reverberation suppression.",
+          "method": "The first algorithm decomposes signals into subbands via an auditory filterbank and calculates multi-channel cross-correlation coefficients of encoded speech onsets. The second algorithm enhances GCC-PHAT using multiple microphones.",
+          "validation": "The methods are evaluated using simulated signals with varying reverberation times and real-room recordings, showing reliable performance compared to state-of-the-art methods.",
+          "discussion": "The methods focus on static and moving speakers but may face challenges with highly dynamic or complex acoustic environments.",
+          "nextReads": [
+            {
+              "label": "Robust Speaker Localization in Reverberant Environments (2021)",
+              "url": null
+            },
+            {
+              "label": "Microphone Array Processing for Speech Localization (2020)",
+              "url": null
+            },
+            {
+              "label": "DOA Estimation with GCC-PHAT Variants (2019)",
+              "url": null
+            }
+          ],
+          "citationCount": 13,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2603.27528v1",
+          "date": "Mar 29",
+          "title": "Advancing Multi-Instrument Music Transcription: Results from the 2025 AMT Challenge",
+          "authors": [
+            "Ojas Chaturvedi",
+            "Kayshav Bhardwaj",
+            "Tanay Gondil",
+            "Benjamin Shiue-Hal Chou",
+            "Kristen Yeon-Ji Yun"
+          ],
+          "org": "IIT Kanpur",
+          "abstract": "This paper presents the results of the 2025 Automatic Music Transcription (AMT) Challenge, an online competition to benchmark progress in multi-instrument transcription. Eight teams submitted valid solutions; two outperformed the baseline MT3 model. The results highlight both advances in transcription accuracy and the remaining difficulties in handling polyphony and timbre variation. We conclude with directions for future challenges: broader genre coverage and stronger emphasis on instrument detection.",
+          "comment": "7 pages, 3 figures. Accepted to the AI for Music Workshop at NeurIPS 2025",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.IR"
+          ],
+          "url": "https://arxiv.org/abs/2603.27528v1",
+          "category": "transcription",
+          "task": "Music Transcription",
+          "proposedMethod": null,
+          "datasets": [
+            "2025 AMT Challenge Dataset"
+          ],
+          "what": "This paper reports results from the 2025 Automatic Music Transcription (AMT) Challenge, focusing on multi-instrument transcription.",
+          "novel": "It highlights advances in transcription accuracy and identifies challenges in polyphony and timbre variation.",
+          "method": "The challenge benchmarks eight submitted models against the baseline MT3 model, emphasizing transcription accuracy and instrument detection.",
+          "validation": "Performance is evaluated on the 2025 AMT Challenge dataset, with two models outperforming the baseline.",
+          "discussion": "The study underscores the need for broader genre coverage and improved handling of polyphony in future challenges.",
+          "nextReads": [
+            {
+              "label": "MT3: Multi-Instrument Transcription (2022)",
+              "url": null
+            },
+            {
+              "label": "Advances in Music Transcription (2021)",
+              "url": null
+            },
+            {
+              "label": "Polyphonic Music Analysis (2023)",
+              "url": null
+            },
+            {
+              "label": "Instrument Detection in Music (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Diffusion-based models like Diff-VS and frameworks like AV-CASS highlight advancements in audio source separation, leveraging generative approaches and multimodal cues.",
+    "Large Audio Language Models (LALMs) face scrutiny with methods like AHA and MIA probing their robustness and privacy, while tools like KoALa-Bench and EvA enhance evaluation and reasoning capabilities.",
+    "Emerging techniques such as SR-CorrNet and SonoWorld tackle complex tasks like speech separation and 3D audio-visual scene generation, emphasizing innovative architectures and cross-modal integration."
+  ]
+}

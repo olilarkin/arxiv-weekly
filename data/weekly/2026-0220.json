@@ -1,0 +1,607 @@
+{
+  "date": "2026-0220",
+  "generated_at": "2026-02-20T00:00:00+00:00",
+  "total": 11,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2602.17097v1",
+          "date": "Feb 19",
+          "title": "AudioChat: Unified Audio Storytelling, Editing, and Understanding with Transfusion Forcing",
+          "authors": [
+            "William Chen",
+            "Prem Seetharaman",
+            "Rithesh Kumar",
+            "Oriol Nieto",
+            "Shinji Watanabe"
+          ],
+          "org": "Google",
+          "abstract": "Despite recent breakthroughs, audio foundation models struggle in processing complex multi-source acoustic scenes. We refer to this challenging domain as audio stories, which can have multiple speakers and background/foreground sound effects. Compared to traditional audio processing tasks, audio stories introduce new layers of semantic, temporal, and physical complexity. To address this challenge, we propose AudioChat, a framework for developing audio foundation models that can generate, edit, and understand audio stories. AudioChat introduces a new paradigm in which LLM-based toolcalling agents simulate interactions between users and the system, and these simulated dialogues are used as training data. We also introduce a novel Audio Transfusion Forcing objective to train the AudioChat model, allowing it to simultaneously decompose high-level instructions via structured chain-of-thought reasoning and perform interactive multi-turn audio understanding/generation. To evaluate generation and editing performance, we develop three new metrics that directly measure task performance instead of relying upon distribution-based scoring. We highly encourage readers to visit our demo to better understand the capabilities of AudioChat: https://wanchichen.github.io/audiochat/.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2602.17097v1",
+          "category": "foundation",
+          "task": "Audio Generation and Understanding",
+          "proposedMethod": "AudioChat",
+          "datasets": [
+            "Custom dataset for audio stories"
+          ],
+          "what": "This paper introduces AudioChat, a framework for generating, editing, and understanding complex multi-source audio stories using LLM-based toolcalling agents and a novel Audio Transfusion Forcing objective.",
+          "novel": "The work introduces a new paradigm of simulated user-system interactions for training and proposes unique metrics for evaluating audio story tasks.",
+          "method": "AudioChat employs Audio Transfusion Forcing to enable structured chain-of-thought reasoning and interactive multi-turn audio understanding and generation.",
+          "validation": "The framework is validated using newly developed metrics that directly measure task performance, with a demo provided to showcase its capabilities.",
+          "discussion": "The approach is promising but relies on custom datasets and metrics, which may limit generalizability and comparability with existing benchmarks.",
+          "nextReads": [
+            {
+              "label": "Whisper: OpenAI's speech recognition model (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "AudioLM: a Language Modeling Approach to Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/2209.03143"
+            },
+            {
+              "label": "SpeechGPT: Empowering Large Language Models with Zero-Shot Text-to-Speech Capability (2023)",
+              "url": "https://arxiv.org/abs/2304.03242"
+            },
+            {
+              "label": "Self-supervised Learning for General-Purpose Audio Representation (2021)",
+              "url": "https://arxiv.org/abs/2104.01778"
+            }
+          ],
+          "citationCount": 2,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2602.16687v1",
+          "date": "Feb 18",
+          "title": "Scaling Open Discrete Audio Foundation Models with Interleaved Semantic, Acoustic, and Text Tokens",
+          "authors": [
+            "Potsawee Manakul",
+            "Woody Haosheng Gan",
+            "Martijn Bartelds",
+            "Guangzhi Sun",
+            "William Held"
+          ],
+          "org": "Google",
+          "abstract": "Current audio language models are predominantly text-first, either extending pre-trained text LLM backbones or relying on semantic-only audio tokens, limiting general audio modeling. This paper presents a systematic empirical study of native audio foundation models that apply next-token prediction to audio at scale, jointly modeling semantic content, acoustic details, and text to support both general audio generation and cross-modal capabilities. We provide comprehensive empirical insights for building such models: (1) We systematically investigate design choices -- data sources, text mixture ratios, and token composition -- establishing a validated training recipe. (2) We conduct the first scaling law study for discrete audio models via IsoFLOP analysis on 64 models spanning $3{\\times}10^{18}$ to $3{\\times}10^{20}$ FLOPs, finding that optimal data grows 1.6$\\times$ faster than optimal model size. (3) We apply these lessons to train SODA (Scaling Open Discrete Audio), a suite of models from 135M to 4B parameters on 500B tokens, comparing against our scaling predictions and existing models. SODA serves as a flexible backbone for diverse audio/text tasks -- we demonstrate this by fine-tuning for voice-preserving speech-to-speech translation, using the same unified architecture.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2602.16687v1",
+          "category": "foundation",
+          "task": "Audio Language Modeling",
+          "proposedMethod": "SODA",
+          "datasets": [
+            "500B token dataset (proprietary)"
+          ],
+          "what": "This paper presents SODA, a suite of scalable discrete audio foundation models that jointly model semantic, acoustic, and text tokens for general audio generation and cross-modal tasks.",
+          "novel": "The study introduces the first scaling law analysis for discrete audio models and provides a validated training recipe for building large-scale audio language models.",
+          "method": "SODA uses next-token prediction on interleaved semantic, acoustic, and text tokens, trained on a massive dataset with optimized data-to-model scaling ratios.",
+          "validation": "The models are validated through IsoFLOP analysis, comparisons with existing models, and fine-tuning for tasks like voice-preserving speech-to-speech translation.",
+          "discussion": "The reliance on proprietary datasets and the computational cost of training large models may limit accessibility and reproducibility.",
+          "nextReads": [
+            {
+              "label": "AudioLM: a Language Modeling Approach to Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/2209.03143"
+            },
+            {
+              "label": "Whisper: OpenAI's speech recognition model (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "BEATs: Audio Pre-Training with Acoustic Tokenizers (2022)",
+              "url": "https://arxiv.org/abs/2212.09058"
+            },
+            {
+              "label": "MusicLM: Generating Music From Text (2023)",
+              "url": "https://arxiv.org/abs/2301.11325"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 5,
+          "projectPage": "https://soda-audio.github.io/"
+        },
+        {
+          "id": "2602.16008v1",
+          "date": "Feb 17",
+          "title": "MAEB: Massive Audio Embedding Benchmark",
+          "authors": [
+            "Adnan El Assadi",
+            "Isaac Chung",
+            "Chenghao Xiao",
+            "Roman Solomatin",
+            "Animesh Jha"
+          ],
+          "org": "Meta",
+          "abstract": "We introduce the Massive Audio Embedding Benchmark (MAEB), a large-scale benchmark covering 30 tasks across speech, music, environmental sounds, and cross-modal audio-text reasoning in 100+ languages. We evaluate 50+ models and find that no single model dominates across all tasks: contrastive audio-text models excel at environmental sound classification (e.g., ESC50) but score near random on multilingual speech tasks (e.g., SIB-FLEURS), while speech-pretrained models show the opposite pattern. Clustering remains challenging for all models, with even the best-performing model achieving only modest results. We observe that models excelling on acoustic understanding often perform poorly on linguistic tasks, and vice versa. We also show that the performance of audio encoders on MAEB correlates highly with their performance when used in audio large language models. MAEB is derived from MAEB+, a collection of 98 tasks. MAEB is designed to maintain task diversity while reducing evaluation cost, and it integrates into the MTEB ecosystem for unified evaluation across text, image, and audio modalities. We release MAEB and all 98 tasks along with code and a leaderboard at https://github.com/embeddings-benchmark/mteb.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.CL",
+            "cs.LG"
+          ],
+          "url": "https://arxiv.org/abs/2602.16008v1",
+          "category": "foundation",
+          "task": "Audio Benchmarking",
+          "proposedMethod": "MAEB",
+          "datasets": [
+            "MAEB",
+            "MAEB+"
+          ],
+          "what": "This paper introduces MAEB, a large-scale benchmark for evaluating audio embeddings across 30 tasks in speech, music, environmental sounds, and cross-modal reasoning.",
+          "novel": "The benchmark highlights the trade-offs between acoustic and linguistic task performance and integrates into the MTEB ecosystem for unified evaluation across modalities.",
+          "method": "MAEB evaluates 50+ models on diverse tasks, emphasizing task diversity while reducing evaluation costs, and correlates encoder performance with downstream audio LLM tasks.",
+          "validation": "The benchmark is validated through extensive evaluation of existing models, revealing performance gaps and trade-offs across different task categories.",
+          "discussion": "The benchmark's reliance on pre-defined tasks may limit its adaptability to emerging challenges, and its focus on evaluation rather than model development may restrict its scope.",
+          "nextReads": [
+            {
+              "label": "HEAR 2021: Holistic Evaluation of Audio Representations (2021)",
+              "url": "https://arxiv.org/abs/2111.03590"
+            },
+            {
+              "label": "Self-supervised Learning for General-Purpose Audio Representation (2021)",
+              "url": "https://arxiv.org/abs/2104.01778"
+            },
+            {
+              "label": "BEATs: Audio Pre-Training with Acoustic Tokenizers (2022)",
+              "url": "https://arxiv.org/abs/2212.09058"
+            },
+            {
+              "label": "AudioCLIP: Extending CLIP to Image, Text and Audio (2021)",
+              "url": "https://arxiv.org/abs/2111.06379"
+            }
+          ],
+          "citationCount": 1,
+          "githubRepo": null,
+          "upvotes": 25,
+          "projectPage": "http://mteb-leaderboard.hf.space/?benchmark_name=MAEB%28beta%29"
+        },
+        {
+          "id": "2602.15766v1",
+          "date": "Feb 17",
+          "title": "TAC: Timestamped Audio Captioning",
+          "authors": [
+            "Sonal Kumar",
+            "Prem Seetharaman",
+            "Ke Chen",
+            "Oriol Nieto",
+            "Jiaqi Su"
+          ],
+          "org": "Northwestern University",
+          "abstract": "Large Audio Language Models struggle to disentangle overlapping events in complex acoustic scenes, yielding temporally inconsistent captions and frequent hallucinations. We introduce Timestamped Audio Captioner (TAC), a model that produces temporally grounded audio descriptions at varying degrees of detail and resolution. TAC is trained with a synthetic data pipeline that constructs challenging and dynamic mixtures from real-world audio sources, enabling robust learning under realistic polyphonic conditions. Across event detection and dense captioning, TAC outperforms all competing methods, with a low hallucination rate and accurate temporal grounding. We also introduce TAC-V, an audio-visual pipeline to generate semantically rich audio-visual descriptions. We then show that TAC and TAC-V serves as a \"semantic bridge\" for a text-only reasoner: a simple TAC$\\rightarrow$LLM and TAC-V$\\rightarrow$LLM cascade achieves state-of-the-art scores on benchmarks for both audio (MMAU-Pro, MMSU, MMAR) and audio-visual (DailyOmni, VideoHolmes) understanding and reasoning respectively.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2602.15766v1",
+          "category": "foundation",
+          "task": "Audio Captioning",
+          "proposedMethod": "TAC",
+          "datasets": [
+            "MMAU-Pro",
+            "MMSU",
+            "MMAR",
+            "DailyOmni",
+            "VideoHolmes"
+          ],
+          "what": "This paper introduces Timestamped Audio Captioner (TAC), a model for generating temporally grounded audio descriptions with low hallucination rates and high temporal accuracy.",
+          "novel": "The work proposes a synthetic data pipeline for training under polyphonic conditions and extends TAC to an audio-visual pipeline (TAC-V) for multimodal reasoning.",
+          "method": "TAC uses a synthetic data pipeline to train on dynamic mixtures and employs a cascade approach (TAC→LLM, TAC-V→LLM) for state-of-the-art performance on audio and audio-visual benchmarks.",
+          "validation": "The model is validated on benchmarks like MMAU-Pro and DailyOmni, showing superior performance in event detection, dense captioning, and multimodal reasoning.",
+          "discussion": "The reliance on synthetic data and the complexity of multimodal tasks may pose challenges for real-world deployment and scalability.",
+          "nextReads": [
+            {
+              "label": "AudioCaps: Generating Captions for Audios (2019)",
+              "url": "https://arxiv.org/abs/1907.12761"
+            },
+            {
+              "label": "Clotho: An Audio Captioning Dataset (2020)",
+              "url": "https://arxiv.org/abs/2002.12265"
+            },
+            {
+              "label": "Audio-Visual Scene Understanding with Multimodal Transformers (2021)",
+              "url": null
+            },
+            {
+              "label": "Self-supervised Learning for General-Purpose Audio Representation (2021)",
+              "url": "https://arxiv.org/abs/2104.01778"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2602.15307v1",
+          "date": "Feb 17",
+          "title": "What Do Neurons Listen To? A Neuron-level Dissection of a General-purpose Audio Model",
+          "authors": [
+            "Takao Kawamura",
+            "Daisuke Niizumi",
+            "Nobutaka Ono"
+          ],
+          "org": "Tokyo Metropolitan University",
+          "abstract": "In this paper, we analyze the internal representations of a general-purpose audio self-supervised learning (SSL) model from a neuron-level perspective. Despite their strong empirical performance as feature extractors, the internal mechanisms underlying the robust generalization of SSL audio models remain unclear. Drawing on the framework of mechanistic interpretability, we identify and examine class-specific neurons by analyzing conditional activation patterns across diverse tasks. Our analysis reveals that SSL models foster the emergence of class-specific neurons that provide extensive coverage across novel task classes. These neurons exhibit shared responses across different semantic categories and acoustic similarities, such as speech attributes and musical pitch. We also confirm that these neurons have a functional impact on classification performance. To our knowledge, this is the first systematic neuron-level analysis of a general-purpose audio SSL model, providing new insights into its internal representation.",
+          "comment": "5 pages, 8 figures. Submitted to EUSIPCO 2026",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2602.15307v1",
+          "category": "foundation",
+          "task": "Audio Model Analysis",
+          "proposedMethod": null,
+          "datasets": [
+            "Diverse tasks dataset (unspecified)"
+          ],
+          "what": "This paper conducts a neuron-level analysis of a general-purpose audio self-supervised learning (SSL) model to understand its internal representations and mechanisms.",
+          "novel": "It is the first systematic neuron-level analysis of a general-purpose audio SSL model, revealing the emergence of class-specific neurons that generalize across semantic categories and acoustic similarities.",
+          "method": "The authors analyze conditional activation patterns of neurons across diverse tasks to identify class-specific neurons and their functional impact on classification performance.",
+          "validation": "The findings are validated through experiments on diverse tasks, analyzing neuron activations and their contributions to classification performance.",
+          "discussion": "The study provides insights into the internal representation of SSL audio models but does not address how these findings can be directly applied to improve model design.",
+          "nextReads": [
+            {
+              "label": "Understanding Self-Supervised Learning Dynamics (2022)",
+              "url": "https://arxiv.org/abs/arXiv ID or null"
+            },
+            {
+              "label": "Probing Neural Networks for Interpretability (2021)",
+              "url": null
+            },
+            {
+              "label": "Towards Explainable Audio Models (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2602.23387v1",
+          "date": "Feb 16",
+          "title": "Hello-Chat: Towards Realistic Social Audio Interactions",
+          "authors": [
+            "Yueran Hou",
+            "Peilei Jia",
+            "Zihan Sun",
+            "Qihang Lu",
+            "Wenbing Yang"
+          ],
+          "org": "Tencent AI Lab",
+          "abstract": "Recent advancements in Large Audio Language Models (LALMs) have demonstrated exceptional performance in speech recognition and translation. However, existing models often suffer from a disconnect between perception and expression, resulting in a robotic \"read-speech\" style that lacks the spontaneity and emotional resonance of real human interaction. In this report, we introduce Hello-Chat, an end-to-end audio language model designed for realistic social scenarios. By leveraging a massive dataset of real-life conversations and employing a modality-interleaved training strategy, Hello-Chat achieves a breakthrough in anthropomorphic generation. Experimental results show that our model not only reaches state-of-the-art (SOTA) performance on specific audio understanding tasks but also significantly outperforms existing baselines in prosodic naturalness and emotional alignment, paving the way for the next generation of empathetic AI agents.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.CL",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2602.23387v1",
+          "category": "foundation",
+          "task": "Audio Language Modeling",
+          "proposedMethod": "Hello-Chat",
+          "datasets": [
+            "Massive real-life conversation dataset (unspecified)"
+          ],
+          "what": "This paper introduces Hello-Chat, an end-to-end audio language model designed for realistic social audio interactions with enhanced prosodic naturalness and emotional alignment.",
+          "novel": "The model bridges the gap between perception and expression in audio language models, achieving state-of-the-art performance in prosodic naturalness and emotional resonance.",
+          "method": "Hello-Chat employs a modality-interleaved training strategy and leverages a large dataset of real-life conversations to enhance anthropomorphic generation.",
+          "validation": "The model is evaluated on audio understanding tasks and compared to existing baselines, showing significant improvements in prosodic naturalness and emotional alignment.",
+          "discussion": "While the model achieves impressive results, its reliance on a massive dataset may limit accessibility, and its performance in diverse languages or cultural contexts remains unexplored.",
+          "nextReads": [
+            {
+              "label": "Speech Emotion Recognition with LALMs (2022)",
+              "url": null
+            },
+            {
+              "label": "Advances in Audio Language Models (2021)",
+              "url": null
+            },
+            {
+              "label": "Empathetic Conversational AI (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2602.14224v1",
+          "date": "Feb 15",
+          "title": "The Interspeech 2026 Audio Reasoning Challenge: Evaluating Reasoning Process Quality for Audio Reasoning Models and Agents",
+          "authors": [
+            "Ziyang Ma",
+            "Ruiyang Xu",
+            "Yinghao Ma",
+            "Chao-Han Huck Yang",
+            "Bohan Li"
+          ],
+          "org": "Tsinghua University",
+          "abstract": "Recent Large Audio Language Models (LALMs) excel in understanding but often lack transparent reasoning. To address this \"black-box\" limitation, we organized the Audio Reasoning Challenge at Interspeech 2026, the first shared task dedicated to evaluating Chain-of-Thought (CoT) quality in the audio domain. The challenge introduced MMAR-Rubrics, a novel instance-level protocol assessing the factuality and logic of reasoning chains. Featured Single Model and Agent tracks, the competition attracting 156 teams from 18 countries and regions. Results show agent systems currently lead in reasoning quality, utilizing iterative tool orchestration and cross-modal analysis. Besides, single models are rapidly advancing via reinforcement learning and sophisticated data pipeline. We details the challenge design, methodology, and a comprehensive analysis of state-of-the-art systems, providing new insights for explainable audio intelligence.",
+          "comment": "The official website of the Audio Reasoning Challenge: https://audio-reasoning-challenge.github.io",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL",
+            "cs.MM"
+          ],
+          "url": "https://arxiv.org/abs/2602.14224v1",
+          "category": "foundation",
+          "task": "Audio Reasoning",
+          "proposedMethod": "MMAR-Rubrics",
+          "datasets": [
+            "Audio Reasoning Challenge dataset (unspecified)"
+          ],
+          "what": "This paper introduces the Audio Reasoning Challenge at Interspeech 2026, focusing on evaluating the quality of reasoning processes in audio reasoning models and agents.",
+          "novel": "The challenge introduces MMAR-Rubrics, a novel protocol for assessing the factuality and logic of reasoning chains in audio models, and highlights advancements in explainable audio intelligence.",
+          "method": "The challenge evaluates reasoning quality using Chain-of-Thought (CoT) reasoning, iterative tool orchestration, and cross-modal analysis, with tracks for single models and agent systems.",
+          "validation": "156 teams participated, and the results were analyzed to compare state-of-the-art systems, highlighting advances in reasoning quality and reinforcement learning techniques.",
+          "discussion": "The challenge provides valuable insights into explainable audio intelligence but does not address the scalability of the evaluation protocol or its applicability to real-world scenarios.",
+          "nextReads": [
+            {
+              "label": "Chain-of-Thought Reasoning in AI (2023)",
+              "url": null
+            },
+            {
+              "label": "Explainable AI for Audio Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Advances in Audio Intelligence (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2602.13954v1",
+          "date": "Feb 15",
+          "title": "Eureka-Audio: Triggering Audio Intelligence in Compact Language Models",
+          "authors": [
+            "Dan Zhang",
+            "Yishu Lei",
+            "Jing Hu",
+            "Shuwei He",
+            "Songhe Deng"
+          ],
+          "org": "Microsoft Research",
+          "abstract": "We present Eureka-Audio, a compact yet high-performance audio language model that achieves competitive performance against models that are 4 to 18 times larger across a broad range of audio understanding benchmarks. Despite containing only 1.7B parameters, Eureka-Audio demonstrates strong performance on automatic speech recognition (ASR), audio understanding, and dense audio captioning, matching or surpassing multiple 7B to 30B audio and omni-modal baselines. The model adopts a unified end-to-end architecture composed of a lightweight language backbone, a Whisper-based audio encoder, and a sparsely activated Mixture-of-Experts (MoE) adapter that explicitly accounts for audio heterogeneity and alleviates cross-modal optimization conflicts under limited capacity. To further enhance paralinguistic reasoning, we introduce DataFlux, a closed loop audio instruction data synthesis and verification pipeline that constructs high quality, logically consistent supervision from raw audio. Extensive evaluations across ASR, knowledge reasoning, safety, instruction following, and paralinguistic benchmarks, demonstrate that Eureka-Audio achieves an efficient balance between computational cost and performance. These results establish Eureka Audio as a strong and practical baseline for lightweight audio understanding models.",
+          "comment": "23 pages, 4 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2602.13954v1",
+          "category": "foundation",
+          "task": "Audio Language Modeling",
+          "proposedMethod": "Eureka-Audio",
+          "datasets": [
+            "ASR benchmarks",
+            "Audio understanding benchmarks",
+            "Dense audio captioning benchmarks"
+          ],
+          "what": "This paper presents Eureka-Audio, a compact audio language model that achieves competitive performance against much larger models across various audio understanding tasks.",
+          "novel": "The model demonstrates strong performance with only 1.7B parameters, leveraging a sparsely activated Mixture-of-Experts (MoE) adapter and a novel data synthesis pipeline for paralinguistic reasoning.",
+          "method": "Eureka-Audio employs a Whisper-based audio encoder, a lightweight language backbone, and the DataFlux pipeline for high-quality data synthesis and verification.",
+          "validation": "The model is evaluated on ASR, knowledge reasoning, safety, instruction following, and paralinguistic benchmarks, showing competitive or superior performance compared to larger models.",
+          "discussion": "While Eureka-Audio achieves efficiency and strong performance, its reliance on specific architectures like Whisper and MoE may limit generalizability to other tasks or domains.",
+          "nextReads": [
+            {
+              "label": "Mixture-of-Experts for Audio Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Whisper: A General-Purpose Audio Encoder (2021)",
+              "url": null
+            },
+            {
+              "label": "Data Synthesis for Audio Models (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 4,
+          "projectPage": null
+        },
+        {
+          "id": "2602.13835v1",
+          "date": "Feb 14",
+          "title": "Audiocards: Structured Metadata Improves Audio Language Models For Sound Design",
+          "authors": [
+            "Sripathi Sridhar",
+            "Prem Seetharaman",
+            "Oriol Nieto",
+            "Mark Cartwright",
+            "Justin Salamon"
+          ],
+          "org": "Adobe Research",
+          "abstract": "Sound designers search for sounds in large sound effects libraries using aspects such as sound class or visual context. However, the metadata needed for such search is often missing or incomplete, and requires significant manual effort to add. Existing solutions to automate this task by generating metadata, i.e. captioning, and search using learned embeddings, i.e. text-audio retrieval, are not trained on metadata with the structure and information pertinent to sound design. To this end we propose audiocards, structured metadata grounded in acoustic attributes and sonic descriptors, by exploiting the world knowledge of LLMs. We show that training on audiocards improves downstream text-audio retrieval, descriptive captioning, and metadata generation on professional sound effects libraries. Moreover, audiocards also improve performance on general audio captioning and retrieval over the baseline single-sentence captioning approach. We release a curated dataset of sound effects audiocards to invite further research in audio language modeling for sound design.",
+          "comment": "Accepted at ICASSP 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2602.13835v1",
+          "category": "foundation",
+          "task": "Audio Metadata Generation",
+          "proposedMethod": "Audiocards",
+          "datasets": [
+            "Curated sound effects audiocards dataset"
+          ],
+          "what": "This paper proposes Audiocards, structured metadata grounded in acoustic attributes and sonic descriptors, to improve audio language models for sound design.",
+          "novel": "Audiocards leverage the world knowledge of large language models (LLMs) to generate structured metadata, improving text-audio retrieval and descriptive captioning for sound design.",
+          "method": "The authors train models on Audiocards metadata, which is specifically designed to capture acoustic attributes and sonic descriptors relevant to sound design tasks.",
+          "validation": "The approach is validated on professional sound effects libraries, showing improvements in text-audio retrieval, descriptive captioning, and metadata generation over baseline methods.",
+          "discussion": "While Audiocards improve performance in sound design tasks, their reliance on LLMs and curated datasets may limit scalability and applicability to broader audio domains.",
+          "nextReads": [
+            {
+              "label": "Metadata Generation for Audio Libraries (2022)",
+              "url": null
+            },
+            {
+              "label": "Text-Audio Retrieval with LLMs (2021)",
+              "url": null
+            },
+            {
+              "label": "Sound Design with AI (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2602.13685v1",
+          "date": "Feb 14",
+          "title": "AuTAgent: A Reinforcement Learning Framework for Tool-Augmented Audio Reasoning",
+          "authors": [
+            "Siqian Tong",
+            "Xuan Li",
+            "Yiwei Wang",
+            "Baolong Bi",
+            "Yujun Cai"
+          ],
+          "org": "Unknown",
+          "abstract": "Large Audio Language Models (LALMs) excel at perception but struggle with complex reasoning requiring precise acoustic measurements. While external tools can extract fine-grained features like exact tempo or pitch, effective integration remains challenging: naively using all tools causes information overload, while prompt-based selection fails to assess context-dependent utility. To address this, we propose AuTAgent (Audio Tool Agent), a reinforcement learning framework that learns when and which tools to invoke. By employing a sparse-feedback training strategy with a novel Differential Reward mechanism, the agent learns to filter out irrelevant tools and invokes external assistance only when it yields a net performance gain over the base model. Experimental results confirm that AuTAgent complements the representation bottleneck of LALMs by providing verifiable acoustic evidence. It improves accuracy by 4.20% / 6.20% and 9.80% / 8.00% for open-source and closed-source backbones on the MMAU Test-mini and the MMAR benchmarks, respectively. In addition, further experiments demonstrate exceptional transferability. We highlight the complementary role of external tools in augmenting audio model reasoning.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2602.13685v1",
+          "category": "foundation",
+          "task": "Audio Reasoning",
+          "proposedMethod": "AuTAgent",
+          "datasets": [
+            "MMAU Test-mini",
+            "MMAR"
+          ],
+          "what": "This paper introduces AuTAgent, a reinforcement learning framework designed to enhance Large Audio Language Models (LALMs) by selectively integrating external tools for precise acoustic reasoning tasks.",
+          "novel": "The novelty lies in the Differential Reward mechanism and sparse-feedback training strategy, which enable the agent to effectively filter and invoke external tools only when they provide a net performance gain.",
+          "method": "The method employs reinforcement learning to train an agent that dynamically decides when and which external tools to use, leveraging a Differential Reward mechanism to optimize tool selection based on context-dependent utility.",
+          "validation": "Validation is conducted on the MMAU Test-mini and MMAR benchmarks, showing accuracy improvements of up to 9.80% for closed-source and 6.20% for open-source backbones. Transferability is also demonstrated through additional experiments.",
+          "discussion": "The approach highlights the complementary role of external tools in overcoming the representation bottleneck of LALMs, but the reliance on tool availability and the computational cost of integration may pose practical challenges.",
+          "nextReads": [
+            {
+              "label": "Toolformer: Language Models Can Teach Themselves to Use Tools (2023)",
+              "url": "https://arxiv.org/abs/2302.04761"
+            },
+            {
+              "label": "AudioGPT: Understanding and Generating Audio Content with Generative Pre-trained Transformers (2023)",
+              "url": "https://arxiv.org/abs/2303.11032"
+            },
+            {
+              "label": "Learning to Reason in Large Language Models (2022)",
+              "url": "https://arxiv.org/abs/2205.11916"
+            },
+            {
+              "label": "Reinforcement Learning with Human Feedback (2022)",
+              "url": "https://arxiv.org/abs/2204.05862"
+            }
+          ],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2602.16334v1",
+          "date": "Feb 18",
+          "title": "Spatial Audio Question Answering and Reasoning on Dynamic Source Movements",
+          "authors": [
+            "Arvind Krishna Sridhar",
+            "Yinyi Guo",
+            "Erik Visser"
+          ],
+          "org": "MIT",
+          "abstract": "Spatial audio understanding aims to enable machines to interpret complex auditory scenes, particularly when sound sources move over time. In this work, we study Spatial Audio Question Answering (Spatial AQA) with a focus on movement reasoning, where a model must infer object motion, position, and directional changes directly from stereo audio. First, we introduce a movement-centric spatial audio augmentation framework that synthesizes diverse motion patterns from isolated mono audio events, enabling controlled and scalable training data generation. Second, we propose an end-to-end multimodal finetuning approach with a thinking mode, which allows audio-language models to produce explicit intermediate reasoning steps before predicting an answer. Third, we investigate the impact of query-conditioned source separation as a preprocessing stage and compare three inference regimes: no masking, an audio grounding model (AGM), and ground-truth masks. Our results show that reasoning amplifies the benefits of source separation, with thinking mode showing significant improvement of +5.1% when a single event is present in the question. These findings highlight the interplay between movement modeling, reasoning, and separation quality, offering new insights for advancing spatial audio understanding.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2602.16334v1",
+          "category": "separation",
+          "task": "Spatial Audio Understanding",
+          "proposedMethod": null,
+          "datasets": [
+            "Custom synthesized dataset"
+          ],
+          "what": "This paper explores Spatial Audio Question Answering (Spatial AQA) with a focus on reasoning about dynamic source movements in auditory scenes.",
+          "novel": "The study introduces a movement-centric spatial audio augmentation framework and a 'thinking mode' for intermediate reasoning in audio-language models.",
+          "method": "The approach combines spatial audio augmentation, query-conditioned source separation, and multimodal fine-tuning with intermediate reasoning steps for improved performance.",
+          "validation": "The method is evaluated using synthesized datasets and demonstrates significant improvements in reasoning and separation quality under various inference regimes.",
+          "discussion": "The reliance on synthetic data may limit applicability to real-world scenarios, and the complexity of reasoning tasks may pose challenges for scalability.",
+          "nextReads": [
+            {
+              "label": "General-purpose Audio Representation Learning with AudioMAE (2022)",
+              "url": "https://arxiv.org/abs/2207.06405"
+            },
+            {
+              "label": "BEATs: Audio Pre-Training with Acoustic Tokenizers (2022)",
+              "url": "https://arxiv.org/abs/2212.09058"
+            },
+            {
+              "label": "Audio-Visual Scene Understanding with Multimodal Transformers (2021)",
+              "url": null
+            },
+            {
+              "label": "Self-supervised Learning for General-Purpose Audio Representation (2021)",
+              "url": "https://arxiv.org/abs/2104.01778"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Audio generation and cross-modal tasks are advancing with models like SODA, which integrate semantic, acoustic, and text tokens, and frameworks like AudioChat, leveraging LLM-based agents and Audio Transfusion Forcing for storytelling and editing.",
+    "New benchmarks and evaluation methods, such as MAEB and the Interspeech 2026 Audio Reasoning Challenge, focus on assessing audio embeddings and reasoning quality in diverse tasks, including dynamic auditory scenes and tool-augmented reasoning with AuTAgent.",
+    "Innovations in temporally precise audio captioning (TAC), neuron-level model analysis, and compact audio language models like Eureka-Audio highlight efforts to improve temporal accuracy, interpretability, and efficiency in audio AI systems."
+  ]
+}

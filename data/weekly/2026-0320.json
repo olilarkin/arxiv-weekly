@@ -1,0 +1,564 @@
+{
+  "date": "2026-0320",
+  "generated_at": "2026-03-20T00:00:00+00:00",
+  "total": 10,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2603.19195v1",
+          "date": "Mar 19",
+          "title": "How Auditory Knowledge in LLM Backbones Shapes Audio Language Models: A Holistic Evaluation",
+          "authors": [
+            "Ke-Han Lu",
+            "Szu-Wei Fu",
+            "Chao-Han Huck Yang",
+            "Zhehuai Chen",
+            "Sung-Feng Huang"
+          ],
+          "org": "Georgia Tech",
+          "abstract": "Large language models (LLMs) have been widely used as knowledge backbones of Large Audio Language Models (LALMs), yet how much auditory knowledge they encode through text-only pre-training and how this affects downstream performance remains unclear. We study this gap by comparing different LLMs under two text-only and one audio-grounded setting: (1) direct probing on AKB-2000, a curated benchmark testing the breadth and depth of auditory knowledge; (2) cascade evaluation, where LLMs reason over text descriptions from an audio captioner; and (3) audio-grounded evaluation, where each LLM is fine-tuned into a Large Audio Language Model (LALM) with an audio encoder. Our findings reveal that auditory knowledge varies substantially across families, and text-only results are strongly correlated with audio performance. Our work provides empirical grounding for a comprehensive understanding of LLMs in audio research.",
+          "comment": "Project website: https://kehanlu.github.io/AKB",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.CL",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2603.19195v1",
+          "category": "foundation",
+          "task": "Audio Language Models",
+          "proposedMethod": null,
+          "datasets": [
+            "AKB-2000"
+          ],
+          "what": "This paper evaluates how auditory knowledge encoded in large language models (LLMs) affects their performance when adapted as large audio language models (LALMs). It explores three evaluation settings: direct probing, cascade evaluation, and audio-grounded evaluation.",
+          "novel": "The study provides a comprehensive empirical analysis of auditory knowledge in LLMs, revealing substantial variations across model families and a strong correlation between text-only and audio performance.",
+          "method": "The paper uses a curated benchmark (AKB-2000) and three evaluation setups to assess the auditory knowledge of LLMs, including fine-tuning them with an audio encoder.",
+          "validation": "The approach is validated using the AKB-2000 benchmark and comparisons across different LLM families under text-only and audio-grounded settings.",
+          "discussion": "The findings highlight the need for better understanding and integration of auditory knowledge in LLMs, with potential limitations in generalizing to unseen audio tasks.",
+          "nextReads": [
+            {
+              "label": "AudioGPT: Understanding Audio with LLMs (2023)",
+              "url": "https://arxiv.org/abs/2303.03378"
+            },
+            {
+              "label": "Whisper: Robust Speech Recognition via LLMs (2023)",
+              "url": "https://arxiv.org/abs/2302.00776"
+            },
+            {
+              "label": "Audio-Language Pretraining for Multimodal Tasks (2022)",
+              "url": null
+            },
+            {
+              "label": "Exploring Multimodal LLMs for Audio Tasks (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": 0,
+          "githubRepo": "https://github.com/kehanlu/AKB",
+          "upvotes": 4,
+          "projectPage": "https://kehanlu.github.io/AKB"
+        },
+        {
+          "id": "2603.18678v1",
+          "date": "Mar 19",
+          "title": "Words at Play: Benchmarking Audio Pun Understanding in Large Audio-Language Models",
+          "authors": [
+            "Yuchen Su",
+            "Shaoxin Zhong",
+            "Yonghua Zhu",
+            "Ruofan Wang",
+            "Zijian Huang"
+          ],
+          "org": "Tencent AI Lab",
+          "abstract": "Puns represent a typical linguistic phenomenon that exploits polysemy and phonetic ambiguity to generate humour, posing unique challenges for natural language understanding. Within pun research, audio plays a central role in human communication except text and images, while datasets and systematic resources for spoken puns remain scarce, leaving this crucial modality largely underexplored. In this paper, we present APUN-Bench, the first benchmark dedicated to evaluating large audio language models (LALMs) on audio pun understanding. Our benchmark contains 4,434 audio samples annotated across three stages: pun recognition, pun word location and pun meaning inference. We conduct a deep analysis of APUN-Bench by systematically evaluating 10 state-of-the-art LALMs, uncovering substantial performance gaps in recognizing, localizing, and interpreting audio puns. This analysis reveals key challenges, such as positional biases in audio pun location and error cases in meaning inference, offering actionable insights for advancing humour-aware audio intelligence.",
+          "comment": "The paper is currently under review",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL"
+          ],
+          "url": "https://arxiv.org/abs/2603.18678v1",
+          "category": "foundation",
+          "task": "Audio Language Models",
+          "proposedMethod": "APUN-Bench",
+          "datasets": [
+            "APUN-Bench"
+          ],
+          "what": "This paper introduces APUN-Bench, a benchmark for evaluating large audio language models (LALMs) on audio pun understanding, covering recognition, localization, and meaning inference.",
+          "novel": "It is the first benchmark dedicated to audio pun understanding, addressing a largely unexplored modality in linguistic humor research.",
+          "method": "The benchmark includes 4,434 annotated audio samples and evaluates LALMs across three stages of pun understanding, analyzing performance gaps and biases.",
+          "validation": "The authors evaluate 10 state-of-the-art LALMs on APUN-Bench, identifying challenges such as positional biases and errors in meaning inference.",
+          "discussion": "The study highlights the difficulty of humor understanding in LALMs and the need for improved models to address biases and interpretive errors.",
+          "nextReads": [
+            {
+              "label": "Humor Understanding in NLP (2022)",
+              "url": null
+            },
+            {
+              "label": "Multimodal Humor Detection (2021)",
+              "url": null
+            },
+            {
+              "label": "Audio-Language Models for Humor (2023)",
+              "url": null
+            },
+            {
+              "label": "Challenges in Multimodal NLP (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2603.17822v1",
+          "date": "Mar 18",
+          "title": "Multi-Source Evidence Fusion for Audio Question Answering",
+          "authors": [
+            "Aivo Olev",
+            "Tanel Alumäe"
+          ],
+          "org": "TalTech",
+          "abstract": "Large audio language models (LALMs) can answer questions about speech, music, and environmental sounds, yet their internal reasoning is largely opaque and difficult to validate. We describe TalTech's solution to the Agent Track of the Interspeech 2026 Audio Reasoning Challenge, in which systems are evaluated on reasoning process quality, specifically the factual accuracy, logical soundness, and completeness of their reasoning chains. Our multi-source ensemble pipeline uses two LALMs that generate independent observations, while a separate text-only reasoning model cross-checks these against outputs from 25 acoustic tools organized into reliability tiers. By grounding every inference step in explicit, reliability-tagged evidence, the system produces dense, verifiable reasoning chains. Our system ranked first in the challenge, outperforming all competing systems by a wide margin in challenge's reasoning quality metric.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.CL"
+          ],
+          "url": "https://arxiv.org/abs/2603.17822v1",
+          "category": "foundation",
+          "task": "Audio Question Answering",
+          "proposedMethod": "Multi-Source Ensemble Pipeline",
+          "datasets": [
+            "Interspeech 2026 Audio Reasoning Challenge"
+          ],
+          "what": "This paper presents TalTech's winning solution for the Interspeech 2026 Audio Reasoning Challenge, focusing on multi-source evidence fusion for audio question answering.",
+          "novel": "The system introduces a novel multi-source ensemble pipeline that combines outputs from multiple LALMs and acoustic tools, ensuring dense, verifiable reasoning chains.",
+          "method": "The pipeline uses two LALMs for independent observations and a text-only reasoning model to cross-check outputs from 25 acoustic tools organized into reliability tiers.",
+          "validation": "The system's performance is validated through its first-place ranking in the Interspeech 2026 challenge, excelling in reasoning quality metrics.",
+          "discussion": "While the system achieves high reasoning quality, its complexity and reliance on multiple tools may limit scalability and real-time applications.",
+          "nextReads": [
+            {
+              "label": "Audio Reasoning with LALMs (2023)",
+              "url": null
+            },
+            {
+              "label": "Explainable AI for Audio Tasks (2022)",
+              "url": null
+            },
+            {
+              "label": "Multimodal Reasoning in AI (2023)",
+              "url": null
+            },
+            {
+              "label": "Audio QA with Evidence Fusion (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2603.18048v2",
+          "date": "Mar 17",
+          "title": "DEAF: A Benchmark for Diagnostic Evaluation of Acoustic Faithfulness in Audio Language Models",
+          "authors": [
+            "Jiaqi Xiong",
+            "Yunjia Qi",
+            "Qi Cao",
+            "Yu Zheng",
+            "Yutong Zhang"
+          ],
+          "org": "Tsinghua University",
+          "abstract": "Recent Audio Multimodal Large Language Models (Audio MLLMs) demonstrate impressive performance on speech benchmarks, yet it remains unclear whether these models genuinely process acoustic signals or rely on text-based semantic inference. To systematically study this question, we introduce DEAF (Diagnostic Evaluation of Acoustic Faithfulness), a benchmark of over 2,700 conflict stimuli spanning three acoustic dimensions: emotional prosody, background sounds, and speaker identity. Then, we design a controlled multi-level evaluation framework that progressively increases textual influence, ranging from semantic conflicts in the content to misleading prompts and their combination, allowing us to disentangle content-driven bias from prompt-induced sycophancy. We further introduce diagnostic metrics to quantify model reliance on textual cues over acoustic signals. Our evaluation of seven Audio MLLMs reveals a consistent pattern of text dominance: models are sensitive to acoustic variations, yet predictions are predominantly driven by textual inputs, revealing a gap between high performance on standard speech benchmarks and genuine acoustic understanding.",
+          "comment": "14 pages,6 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.AI",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2603.18048v2",
+          "category": "foundation",
+          "task": "Audio Language Models",
+          "proposedMethod": "DEAF",
+          "datasets": [
+            "DEAF"
+          ],
+          "what": "This paper introduces DEAF, a benchmark for evaluating the acoustic faithfulness of audio multimodal large language models (Audio MLLMs).",
+          "novel": "DEAF systematically evaluates models' reliance on textual cues versus acoustic signals, revealing a gap between high benchmark performance and genuine acoustic understanding.",
+          "method": "The benchmark uses 2,700 conflict stimuli across three acoustic dimensions and a multi-level evaluation framework to disentangle content-driven bias from prompt-induced sycophancy.",
+          "validation": "Seven Audio MLLMs are evaluated on DEAF using diagnostic metrics to assess their sensitivity to acoustic variations and reliance on textual inputs.",
+          "discussion": "The study exposes the dominance of textual inputs in current Audio MLLMs, suggesting the need for better integration of acoustic information.",
+          "nextReads": [
+            {
+              "label": "Audio MLLM Evaluation Frameworks (2023)",
+              "url": null
+            },
+            {
+              "label": "Faithfulness in Multimodal Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Acoustic Bias in AI Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Audio-Text Integration in AI (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2603.16966v1",
+          "date": "Mar 17",
+          "title": "CineSRD: Leveraging Visual, Acoustic, and Linguistic Cues for Open-World Visual Media Speaker Diarization",
+          "authors": [
+            "Liangbin Huang",
+            "Xiaohua Liao",
+            "Chaoqun Cui",
+            "Shijing Wang",
+            "Zhaolong Huang"
+          ],
+          "org": "Unknown",
+          "abstract": "Traditional speaker diarization systems have primarily focused on constrained scenarios such as meetings and interviews, where the number of speakers is limited and acoustic conditions are relatively clean. To explore open-world speaker diarization, we extend this task to the visual media domain, encompassing complex audiovisual programs such as films and TV series. This new setting introduces several challenges, including long-form video understanding, a large number of speakers, cross-modal asynchrony between audio and visual cues, and uncontrolled in-the-wild variability. To address these challenges, we propose Cinematic Speaker Registration & Diarization (CineSRD), a unified multimodal framework that leverages visual, acoustic, and linguistic cues from video, speech, and subtitles for speaker annotation. CineSRD first performs visual anchor clustering to register initial speakers and then integrates an audio language model for speaker turn detection, refining annotations and supplementing unregistered off-screen speakers. Furthermore, we construct and release a dedicated speaker diarization benchmark for visual media that includes Chinese and English programs. Experimental results demonstrate that CineSRD achieves superior performance on the proposed benchmark and competitive results on conventional datasets, validating its robustness and generalizability in open-world visual media settings.",
+          "comment": "Accepted to CVPR 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.CV",
+            "cs.AI",
+            "cs.MM",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2603.16966v1",
+          "category": "foundation",
+          "task": "Speaker Diarization",
+          "proposedMethod": "CineSRD",
+          "datasets": [
+            "Proposed visual media benchmark",
+            "Conventional datasets"
+          ],
+          "what": "This paper introduces CineSRD, a multimodal framework for open-world speaker diarization in visual media, leveraging visual, acoustic, and linguistic cues from videos, speech, and subtitles.",
+          "novel": "It extends speaker diarization to complex audiovisual programs like films and TV series, addressing challenges such as cross-modal asynchrony and uncontrolled variability.",
+          "method": "CineSRD uses visual anchor clustering for speaker registration and integrates an audio language model for speaker turn detection, refining annotations and handling off-screen speakers.",
+          "validation": "The method is validated on a newly constructed benchmark for visual media and conventional datasets, showing superior performance and robustness in open-world settings.",
+          "discussion": "The framework is robust but may face challenges in handling highly noisy or ambiguous audiovisual inputs, and its performance in other languages or domains remains to be explored.",
+          "nextReads": [
+            {
+              "label": "Multimodal Speaker Diarization for Video Content (2022)",
+              "url": null
+            },
+            {
+              "label": "End-to-End Neural Speaker Diarization with Self-Attention (2021)",
+              "url": "https://arxiv.org/abs/2109.07344"
+            },
+            {
+              "label": "Looking to Listen at the Cocktail Party (2018)",
+              "url": "https://arxiv.org/abs/1804.03619"
+            },
+            {
+              "label": "Deep Learning-Based Speaker Diarization: A Review (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2603.13768v1",
+          "date": "Mar 14",
+          "title": "Causal Tracing of Audio-Text Fusion in Large Audio Language Models",
+          "authors": [
+            "Wei-Chih Chen",
+            "Chien-yu Huang",
+            "Hung-yi Lee"
+          ],
+          "org": "Unknown",
+          "abstract": "Despite the strong performance of large audio language models (LALMs) in various tasks, exactly how and where they integrate acoustic features with textual context remains unclear. We adapt causal tracing to investigate the internal information flow of LALMs during audio comprehension. By conducting layer-wise and token-wise analyses across DeSTA, Qwen, and Voxtral, we evaluate the causal effects of individual hidden states. Layer-wise analysis identifies different fusion strategies, from progressive integration in DeSTA to abrupt late-stage fusion in Qwen. Token-wise analysis shows that the final sequence token acts as an informational bottleneck where the network decisively retrieves relevant information from the audio. We also observe an attention-like query mechanism at intermediate token positions that triggers the model to pull task-relevant audio context. These findings provide a clear characterization of when and where multi-modal integration occurs within LALMs.",
+          "comment": "Submitted to Interspeech 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL"
+          ],
+          "url": "https://arxiv.org/abs/2603.13768v1",
+          "category": "foundation",
+          "task": "Audio-Text Fusion Analysis",
+          "proposedMethod": null,
+          "datasets": [
+            "DeSTA",
+            "Qwen",
+            "Voxtral"
+          ],
+          "what": "This paper investigates how large audio language models (LALMs) integrate acoustic features with textual context using causal tracing.",
+          "novel": "It provides a detailed layer-wise and token-wise analysis of multi-modal integration strategies in LALMs, revealing distinct fusion mechanisms across different models.",
+          "method": "The study applies causal tracing to evaluate the causal effects of hidden states, identifying progressive, late-stage, and attention-like fusion strategies in different LALMs.",
+          "validation": "The analysis is conducted on three LALMs (DeSTA, Qwen, and Voxtral), providing insights into their internal mechanisms for audio-text integration.",
+          "discussion": "The findings are insightful but limited to the analyzed models, and further research is needed to generalize these observations to other architectures.",
+          "nextReads": [
+            {
+              "label": "Attention Is All You Need (2017)",
+              "url": "https://arxiv.org/abs/1706.03762"
+            },
+            {
+              "label": "SpeechT5: Unified-Modal Pre-trained Language Model for Spoken Language Processing (2022)",
+              "url": "https://arxiv.org/abs/2203.16502"
+            },
+            {
+              "label": "Whisper: OpenAI's Robust Speech Recognition Model (2022)",
+              "url": null
+            },
+            {
+              "label": "Multimodal Transformers for Audio-Visual Speech Recognition (2020)",
+              "url": "https://arxiv.org/abs/2001.08740"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2603.16668v1",
+          "date": "Mar 17",
+          "title": "HRTF-guided Binaural Target Speaker Extraction with Real-World Validation",
+          "authors": [
+            "Yoav Ellinson",
+            "Sharon Gannot"
+          ],
+          "org": "Bar-Ilan University",
+          "abstract": "This paper presents a Head-Related Transfer Function (HRTF)-guided framework for binaural Target Speaker Extraction (TSE) from mixtures of concurrent sources. Unlike conventional TSE methods based on Direction of Arrival (DOA) estimation or enrollment signals, which often distort perceived spatial location, the proposed approach leverages the listener's HRTF as an explicit spatial prior. The proposed framework is built upon a multi-channel deep blind source separation backbone, adapted to the binaural TSE setting. It is trained on measured HRTFs from a diverse population, enabling cross-listener generalization rather than subject-specific tuning. By conditioning the extraction on HRTF-derived spatial information, the method preserves binaural cues while enhancing speech quality and intelligibility. The performance of the proposed framework is validated through simulations and real recordings obtained from a head and torso simulator (HATS).",
+          "comment": "Submitted to Interspeech 2026",
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2603.16668v1",
+          "category": "separation",
+          "task": "Target Speaker Extraction",
+          "proposedMethod": null,
+          "datasets": [
+            "HATS recordings"
+          ],
+          "what": "This paper proposes an HRTF-guided framework for binaural target speaker extraction (TSE) that preserves spatial cues while enhancing speech quality.",
+          "novel": "The method uniquely leverages HRTFs as spatial priors, enabling cross-listener generalization and avoiding distortions caused by conventional DOA-based TSE methods.",
+          "method": "The framework adapts a multi-channel deep blind source separation backbone to the binaural TSE setting, conditioning on HRTF-derived spatial information.",
+          "validation": "Performance is validated through simulations and real-world recordings using a head and torso simulator (HATS), demonstrating improved speech quality and intelligibility.",
+          "discussion": "The approach may face challenges in environments with highly dynamic or overlapping sources, and its reliance on HRTF measurements may limit scalability.",
+          "nextReads": [
+            {
+              "label": "Binaural Audio Source Separation (2022)",
+              "url": null
+            },
+            {
+              "label": "HRTF-Based Audio Processing (2023)",
+              "url": null
+            },
+            {
+              "label": "Deep Learning for TSE (2023)",
+              "url": null
+            },
+            {
+              "label": "Spatial Audio in AI (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2603.14983v1",
+          "date": "Mar 16",
+          "title": "Cepstral Smoothing of Binary Masks for Convolutive Blind Separation of Speech Mixtures",
+          "authors": [
+            "Ibrahim Missaoui",
+            "Zied Lachiri"
+          ],
+          "org": "Unknown",
+          "abstract": "In this paper, we propose a novel separation system for extracting two speech signals from two microphone recordings. Our system combines the blind source separation technique with cepstral smoothing of binary time-frequency masks. The last is composed of two steps. First, the two binary masks are estimated from the separated output signals of BSS algorithm. In the second step, a cepstral smoothing is applied of these spectral masks in order to reduce musical noise typically produced by time-frequency masking. Experiments were carried out with both artificially mixed speech signals using simulated room model and two real recordings. The evaluation results are promising and have shown the effectiveness of our system.",
+          "comment": null,
+          "journalRef": "International Journal of Digital Content Technology and its Applications (JDCTA), vol. 6, no. 17, pp. 532-541, 2012",
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2603.14983v1",
+          "category": "separation",
+          "task": "Source Separation",
+          "proposedMethod": null,
+          "datasets": [
+            "Simulated room model",
+            "Real recordings"
+          ],
+          "what": "This paper proposes a system for separating two speech signals from two microphone recordings, combining blind source separation with cepstral smoothing of binary time-frequency masks.",
+          "novel": "The use of cepstral smoothing on binary masks to reduce musical noise in blind source separation is a novel contribution.",
+          "method": "The system estimates binary masks from separated signals using a BSS algorithm and applies cepstral smoothing to reduce musical noise.",
+          "validation": "Experiments on artificially mixed speech signals and real recordings demonstrate the system's effectiveness, with promising evaluation results.",
+          "discussion": "The approach may be limited in handling more complex or noisy mixtures and requires further testing on diverse real-world datasets.",
+          "nextReads": [
+            {
+              "label": "Deep Clustering and Conventional Networks for Music Separation (2017)",
+              "url": "https://arxiv.org/abs/1706.09588"
+            },
+            {
+              "label": "Blind Source Separation: The State of the Art (2010)",
+              "url": null
+            },
+            {
+              "label": "Time-Frequency Masking for Speech Enhancement (2005)",
+              "url": null
+            },
+            {
+              "label": "Deep Attractor Networks for Single-Microphone Source Separation (2017)",
+              "url": "https://arxiv.org/abs/1707.03634"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2603.16926v1",
+          "date": "Mar 13",
+          "title": "Music Source Restoration with Ensemble Separation and Targeted Reconstruction",
+          "authors": [
+            "Xinlong Deng",
+            "Yu Xia",
+            "Jie Jiang"
+          ],
+          "org": "Unknown",
+          "abstract": "The Inaugural Music Source Restoration (MSR) Challenge targets the recovery of original, unprocessed stems from fully mixed and mastered music. Unlike conventional music source separation, MSR requires reversing complex production processes such as equalization, compression, reverberation, and other real-world degradations. To address MSR, we propose a two-stage system. First, an ensemble of pre-trained separation models produces preliminary source estimates. Then a set of pre-trained BSRNN-based restoration models performs targeted reconstruction to refine these estimates. On the official MSR benchmark, our system surpasses the baselines on all metrics, ranking second among all submissions. The code is available at https://github.com/xinghour/Music-source-restoration-CUPAudioGroup",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2603.16926v1",
+          "category": "separation",
+          "task": "Music Source Restoration",
+          "proposedMethod": null,
+          "datasets": [
+            "MSR benchmark"
+          ],
+          "what": "This paper addresses music source restoration (MSR) by proposing a two-stage system that combines ensemble separation models with targeted reconstruction using BSRNN-based restoration models.",
+          "novel": "It tackles the challenge of reversing complex production processes in music, such as equalization and compression, which goes beyond conventional source separation.",
+          "method": "The system first uses pre-trained separation models for initial source estimates, followed by BSRNN-based models for targeted reconstruction to refine these estimates.",
+          "validation": "The system is validated on the official MSR benchmark, outperforming baselines on all metrics and ranking second among submissions.",
+          "discussion": "The approach is effective but may require further optimization for real-time applications and generalization to diverse music genres and production styles.",
+          "nextReads": [
+            {
+              "label": "Music Source Separation Tools for Audio Engineers (2020)",
+              "url": null
+            },
+            {
+              "label": "Open-Unmix: A Reference Implementation for Music Source Separation (2019)",
+              "url": "https://arxiv.org/abs/1905.03330"
+            },
+            {
+              "label": "Deep Attractor Networks for Music Source Separation (2017)",
+              "url": "https://arxiv.org/abs/1707.03634"
+            },
+            {
+              "label": "Demucs: Deep Extractions for Music Sources (2019)",
+              "url": "https://arxiv.org/abs/1909.01174"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2603.15905v1",
+          "date": "Mar 16",
+          "title": "INSTRUMENTAL: Automatic Synthesizer Parameter Recovery from Audio via Evolutionary Optimization",
+          "authors": [
+            "Philipp Bogdan"
+          ],
+          "org": "Unknown",
+          "abstract": "Existing audio-to-MIDI tools extract notes but discard the timbral characteristics that define an instrument's identity. We present Instrumental, a system that recovers continuous synthesizer parameters from audio by coupling a differentiable 28-parameter subtractive synthesizer with CMA-ES, a derivative-free evolutionary optimizer. We optimize a composite perceptual loss combining mel-scaled STFT, spectral centroid, and MFCC divergence, achieving a matching loss of 2.09 on real recorded audio. We systematically evaluate eight hypotheses for improving convergence and find that only parametric EQ boosting yields meaningful improvement. Our results show that CMA-ES outperforms gradient descent on this non-convex landscape, that more parameters do not monotonically improve matching, and that spectral analysis initialization accelerates convergence over random starts.",
+          "comment": "5 pages",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2603.15905v1",
+          "category": "transcription",
+          "task": "Audio Parameter Recovery",
+          "proposedMethod": "INSTRUMENTAL",
+          "datasets": [
+            "Real recorded audio"
+          ],
+          "what": "This paper presents INSTRUMENTAL, a system that recovers synthesizer parameters from audio using a differentiable subtractive synthesizer coupled with an evolutionary optimizer.",
+          "novel": "It focuses on recovering timbral characteristics, which are typically discarded in audio-to-MIDI tools, and demonstrates the effectiveness of CMA-ES for non-convex optimization in this context.",
+          "method": "The system optimizes a composite perceptual loss using mel-scaled STFT, spectral centroid, and MFCC divergence, with parametric EQ boosting improving convergence.",
+          "validation": "The method is evaluated on real recorded audio using a matching loss metric, demonstrating superior performance of CMA-ES over gradient descent and the benefits of spectral analysis initialization.",
+          "discussion": "The approach is limited by its reliance on a specific synthesizer model and may not generalize to other synthesis methods or highly complex timbres.",
+          "nextReads": [
+            {
+              "label": "Differentiable Digital Signal Processing (2020)",
+              "url": "https://arxiv.org/abs/2006.12094"
+            },
+            {
+              "label": "Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders (2017)",
+              "url": "https://arxiv.org/abs/1704.01279"
+            },
+            {
+              "label": "End-to-End Neural Audio Rendering of Animations (2021)",
+              "url": "https://arxiv.org/abs/2103.07286"
+            },
+            {
+              "label": "Automatic Synthesizer Programming with Differentiable DSP (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Large Audio Language Models (LALMs) are being evaluated for nuanced tasks like audio pun understanding (APUN-Bench) and acoustic faithfulness (DEAF), highlighting advancements in benchmarking and diagnostic tools.",
+    "Innovative frameworks such as HRTF-guided binaural TSE and CineSRD demonstrate progress in spatial audio processing and multimodal speaker diarization for real-world applications.",
+    "Techniques like INSTRUMENTAL for synthesizer parameter recovery and cepstral smoothing for speech separation showcase advancements in audio signal processing and optimization methods."
+  ]
+}

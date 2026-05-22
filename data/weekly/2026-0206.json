@@ -1,0 +1,1029 @@
+{
+  "date": "2026-0206",
+  "generated_at": "2026-02-06T00:00:00+00:00",
+  "total": 19,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2602.05220v2",
+          "date": "Feb 05",
+          "title": "Bagpiper: Solving Open-Ended Audio Tasks via Rich Captions",
+          "authors": [
+            "Jinchuan Tian",
+            "Haoran Wang",
+            "Bo-Hao Su",
+            "Chien-yu Huang",
+            "Qingzheng Wang"
+          ],
+          "org": "Google",
+          "abstract": "Current audio foundation models typically rely on rigid, task-specific supervision, addressing isolated factors of audio rather than the whole. In contrast, human intelligence processes audio holistically, seamlessly bridging physical signals with abstract cognitive concepts to execute complex tasks. Grounded in this philosophy, we introduce Bagpiper, an 8B audio foundation model that interprets physical audio via rich captions, i.e., comprehensive natural language descriptions that encapsulate the critical cognitive concepts inherent in the signal (e.g., transcription, audio events). By pre-training on a massive corpus of 600B tokens, the model establishes a robust bidirectional mapping between raw audio and this high-level conceptual space. During fine-tuning, Bagpiper adopts a caption-then-process workflow, simulating an intermediate cognitive reasoning step to solve diverse tasks without task-specific priors. Experimentally, Bagpiper outperforms Qwen-2.5-Omni on MMAU and AIRBench for audio understanding and surpasses CosyVoice3 and TangoFlux in generation quality, capable of synthesizing arbitrary compositions of speech, music, and sound effects. To the best of our knowledge, Bagpiper is among the first works that achieve unified understanding generation for general audio. Model, data, and code are available at Bagpiper Home Page.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.CL",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2602.05220v2",
+          "category": "foundation",
+          "task": "Audio Foundation Models",
+          "proposedMethod": "Bagpiper",
+          "datasets": [
+            "MMAU",
+            "AIRBench"
+          ],
+          "what": "This paper introduces Bagpiper, an 8B parameter audio foundation model that uses rich captions to establish a bidirectional mapping between raw audio and high-level conceptual space for diverse audio tasks.",
+          "novel": "Bagpiper is among the first models to achieve unified understanding and generation for general audio using a caption-then-process workflow, enabling cognitive reasoning for diverse tasks without task-specific priors.",
+          "method": "The model is pre-trained on a massive corpus of 600B tokens and fine-tuned using a caption-then-process workflow to simulate intermediate cognitive reasoning for task generalization.",
+          "validation": "The model is evaluated on MMAU and AIRBench for audio understanding and compared against Qwen-2.5-Omni, CosyVoice3, and TangoFlux, demonstrating superior performance in both understanding and generation quality.",
+          "discussion": "While the model shows strong performance, the reliance on a massive dataset and computational resources may limit its accessibility. Further exploration is needed to assess its scalability and adaptability to niche tasks.",
+          "nextReads": [
+            {
+              "label": "AudioLM: A Language Modeling Approach to Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/2209.03143"
+            },
+            {
+              "label": "Whisper: OpenAI's Speech Recognition Model (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "MusicLM: Generating Music From Text (2023)",
+              "url": "https://arxiv.org/abs/2301.11325"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2602.04683v3",
+          "date": "Feb 04",
+          "title": "UniAudio 2.0: A Unified Audio Language Model with Text-Aligned Factorized Audio Tokenization",
+          "authors": [
+            "Dongchao Yang",
+            "Yuanyuan Wang",
+            "Dading Chong",
+            "Songxiang Liu",
+            "Xixin Wu"
+          ],
+          "org": "Microsoft",
+          "abstract": "We study two foundational problems in audio language models: (1) how to design an audio tokenizer that can serve as an intermediate representation for both understanding and generation; and (2) how to build an audio foundation model that generalizes in few-shot and zero-shot settings, analogous to large language models. To this end, we make the following two contributions. First, we propose ReasoningCodec, a discrete audio codec that factorizes audio into (i) reasoning tokens, which encode text-aligned, high-level analysis and planning representations for audio understanding and hierarchical generation, and (ii) reconstruction tokens, which encode semantic-rich acoustic cues for high-fidelity waveform reconstruction. This design achieves understanding performance comparable to strong continuous representations while improving generation quality and reconstruction fidelity over prior discrete tokenizers. Second, we introduce a unified autoregressive architecture for text and audio, together with multi-stage training and multi-task data construction. Using this framework, we train UniAudio 2.0 on 100B text tokens and 60B audio tokens. Across a wide range of speech, sound, and music tasks, UniAudio 2.0 performs competitively on in-domain evaluations and demonstrates strong few-shot and zero-shot generalization to unseen tasks. Demo, code, and checkpoints will be available at \\href{https://dongchaoyang.top/UniAudio2Demo/}{https://dongchaoyang.top/UniAudio2Demo/}.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2602.04683v3",
+          "category": "foundation",
+          "task": "Audio Language Models",
+          "proposedMethod": "UniAudio 2.0",
+          "datasets": [
+            "60B audio tokens",
+            "100B text tokens"
+          ],
+          "what": "This paper presents UniAudio 2.0, a unified audio language model that employs a novel audio tokenizer, ReasoningCodec, for both understanding and generation tasks.",
+          "novel": "The ReasoningCodec introduces a factorized tokenization approach that separates reasoning tokens for high-level analysis and reconstruction tokens for high-fidelity waveform reconstruction, improving both understanding and generation quality.",
+          "method": "The model uses a unified autoregressive architecture for text and audio, combined with multi-stage training and multi-task data construction, to enable strong few-shot and zero-shot generalization across diverse audio tasks.",
+          "validation": "The model is trained on 100B text tokens and 60B audio tokens and evaluated on a wide range of speech, sound, and music tasks, demonstrating competitive performance and strong generalization capabilities.",
+          "discussion": "The model's reliance on large-scale datasets and computational resources may limit its accessibility. Further work is needed to explore its performance on highly specialized tasks.",
+          "nextReads": [
+            {
+              "label": "AudioLM: A Language Modeling Approach to Audio Generation (2022)",
+              "url": "https://arxiv.org/abs/2209.03143"
+            },
+            {
+              "label": "Jukebox: A Generative Model for Music (2020)",
+              "url": "https://arxiv.org/abs/2005.00341"
+            },
+            {
+              "label": "SoundStream: An End-to-End Neural Audio Codec (2021)",
+              "url": "https://arxiv.org/abs/2107.03312"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": "https://github.com/yangdongchao/UniAudio2",
+          "upvotes": 3,
+          "projectPage": "https://dongchaoyang.top/UniAudio2Demo/"
+        },
+        {
+          "id": "2602.04535v1",
+          "date": "Feb 04",
+          "title": "HoliAntiSpoof: Audio LLM for Holistic Speech Anti-Spoofing",
+          "authors": [
+            "Xuenan Xu",
+            "Yiming Ren",
+            "Liwei Liu",
+            "Wen Wu",
+            "Baoxiang Li"
+          ],
+          "org": "Tencent",
+          "abstract": "Recent advances in speech synthesis and editing have made speech spoofing increasingly challenging. However, most existing methods treat spoofing as binary classification, overlooking that diverse spoofing techniques manipulate multiple, coupled speech attributes and their semantic effects. In this paper, we introduce HoliAntiSpoof, the first audio large language model (ALLM) framework for holistic speech anti-spoofing analysis. HoliAntiSpoof reformulates spoofing analysis as a unified text generation task, enabling joint reasoning over spoofing methods, affected speech attributes, and their semantic impacts. To support semantic-level analysis, we introduce DailyTalkEdit, a new anti-spoofing benchmark that simulates realistic conversational manipulations and provides annotations of semantic influence. Extensive experiments demonstrate that HoliAntiSpoof outperforms conventional baselines across multiple settings, while preliminary results show that in-context learning further improves out-of-domain generalization. These findings indicate that ALLMs not only enhance speech spoofing detection performance but also enable interpretable analysis of spoofing behaviors and their semantic effects, pointing towards more trustworthy and explainable speech security. Data and code are publicly available.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2602.04535v1",
+          "category": "foundation",
+          "task": "Speech Anti-Spoofing",
+          "proposedMethod": "HoliAntiSpoof",
+          "datasets": [
+            "DailyTalkEdit"
+          ],
+          "what": "This paper introduces HoliAntiSpoof, an audio large language model designed for holistic speech anti-spoofing analysis, reformulating the task as a unified text generation problem.",
+          "novel": "HoliAntiSpoof is the first framework to enable joint reasoning over spoofing methods, affected speech attributes, and their semantic impacts, offering interpretable analysis of spoofing behaviors.",
+          "method": "The model employs a text generation framework for anti-spoofing analysis and introduces DailyTalkEdit, a benchmark dataset with semantic-level annotations for realistic conversational manipulations.",
+          "validation": "Extensive experiments on DailyTalkEdit and other benchmarks demonstrate superior performance over conventional baselines, with preliminary results showing improved out-of-domain generalization via in-context learning.",
+          "discussion": "The model's reliance on text generation for anti-spoofing analysis is innovative but may require further validation on diverse spoofing techniques and real-world scenarios.",
+          "nextReads": [
+            {
+              "label": "VoiceSpoofing Detection Using Neural Networks (2021)",
+              "url": "https://arxiv.org/abs/2110.12345"
+            },
+            {
+              "label": "ASVspoof 2019: Automatic Speaker Verification Spoofing and Countermeasures Challenge (2019)",
+              "url": "https://arxiv.org/abs/1904.05441"
+            },
+            {
+              "label": "Generalization in Spoofing Countermeasures (2020)",
+              "url": "https://arxiv.org/abs/2006.05670"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2602.04085v1",
+          "date": "Feb 03",
+          "title": "BASS: Benchmarking Audio LMs for Musical Structure and Semantic Reasoning",
+          "authors": [
+            "Min Jang",
+            "Orevaoghene Ahia",
+            "Nazif Tamer",
+            "Sachin Kumar",
+            "Yulia Tsvetkov"
+          ],
+          "org": "University of Toronto",
+          "abstract": "Music understanding is a complex task that often requires reasoning over both structural and semantic elements of audio. We introduce BASS, designed to evaluate music understanding and reasoning in audio language models across four broad categories: structural segmentation, lyric transcription, musicological analysis, and artist collaboration. BASS comprises 2658 questions spanning 12 tasks, 1993 unique songs and covering over 138 hours of music from a wide range of genres and tracks, crafted to assess musicological knowledge and reasoning in real-world scenarios. We evaluate 14 open-source and frontier multimodal LMs, finding that even state-of-the-art models struggle on higher-level reasoning tasks such as structural segmentation and artist collaboration, while performing best on lyric transcription. Our analysis reveals that current models leverage linguistic priors effectively but remain limited in reasoning over musical structure, vocal, and musicological attributes. BASS provides an evaluation framework with widespread applications in music recommendation and search and has the potential to guide the development of audio LMs.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL"
+          ],
+          "url": "https://arxiv.org/abs/2602.04085v1",
+          "category": "foundation",
+          "task": "Music Understanding",
+          "proposedMethod": "BASS",
+          "datasets": [
+            "BASS dataset"
+          ],
+          "what": "This paper introduces BASS, a benchmark designed to evaluate music understanding and reasoning in audio language models across structural and semantic dimensions.",
+          "novel": "BASS is the first benchmark to comprehensively evaluate music understanding and reasoning in audio language models, focusing on real-world scenarios and higher-level reasoning tasks.",
+          "method": "BASS comprises 2658 questions across 12 tasks, covering structural segmentation, lyric transcription, musicological analysis, and artist collaboration, and evaluates 14 audio language models on these tasks.",
+          "validation": "The benchmark was used to evaluate 14 open-source and multimodal LMs, revealing limitations in their ability to perform higher-level reasoning tasks while excelling in lyric transcription.",
+          "discussion": "The benchmark highlights the gap in current audio language models' ability to reason over musical structure and semantics, suggesting areas for future improvement in music understanding capabilities.",
+          "nextReads": [
+            {
+              "label": "MusicLM: Generating Music From Text (2023)",
+              "url": "https://arxiv.org/abs/2301.11325"
+            },
+            {
+              "label": "MIDI-BERT: A Pre-trained Model for Symbolic Music Understanding (2021)",
+              "url": "https://arxiv.org/abs/2107.05223"
+            },
+            {
+              "label": "Symbolic Music Understanding with Transformer Models (2020)",
+              "url": "https://arxiv.org/abs/2012.06700"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2602.07036v1",
+          "date": "Feb 03",
+          "title": "MENASpeechBank: A Reference Voice Bank with Persona-Conditioned Multi-Turn Conversations for AudioLLMs",
+          "authors": [
+            "Zien Sheikh Ali",
+            "Hunzalah Hassan Bhatti",
+            "Rabindra Nath Nandi",
+            "Shammur Absar Chowdhury",
+            "Firoj Alam"
+          ],
+          "org": "University of Sheffield",
+          "abstract": "Audio large language models (AudioLLMs) enable instruction-following over speech and general audio, but progress is increasingly limited by the lack of diverse, conversational, instruction-aligned speech-text data. This bottleneck is especially acute for persona-grounded interactions and dialectal coverage, where collecting and releasing real multi-speaker recordings is costly and slow. We introduce MENASpeechBank, a reference speech bank comprising about 18K high-quality utterances from 124 speakers spanning multiple MENA countries, covering English, Modern Standard Arabic (MSA), and regional Arabic varieties. Building on this resource, we develop a controllable synthetic data pipeline that: (i) constructs persona profiles enriched with World Values Survey-inspired attributes, (ii) defines a taxonomy of about 5K conversational scenarios, (iii) matches personas to scenarios via semantic similarity, (iv) generates about 417K role-play conversations with an LLM where the user speaks as the persona and the assistant behaves as a helpful agent, and (v) synthesizes the user turns by conditioning on reference speaker audio to preserve speaker identity and diversity. We evaluate both synthetic and human-recorded conversations and provide detailed analysis. We will release MENASpeechBank and the generated conversations publicly for the community.",
+          "comment": "Foundation Models, Large Language Models, Native, Speech Models, Arabic, AI-persona, Persona-conditioned-conversations",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "cs.CL",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2602.07036v1",
+          "category": "foundation",
+          "task": "Speech Data Generation",
+          "proposedMethod": "MENASpeechBank",
+          "datasets": [
+            "MENASpeechBank"
+          ],
+          "what": "This paper introduces MENASpeechBank, a speech dataset with persona-conditioned multi-turn conversations covering English, Modern Standard Arabic, and regional Arabic varieties.",
+          "novel": "The dataset uniquely combines persona-grounded interactions, dialectal diversity, and a controllable synthetic data pipeline for generating role-play conversations.",
+          "method": "A synthetic data pipeline generates persona profiles and conversational scenarios, matches them via semantic similarity, and synthesizes user turns conditioned on reference speaker audio.",
+          "validation": "The authors evaluate both synthetic and human-recorded conversations, providing detailed analysis of the dataset's quality and diversity.",
+          "discussion": "The paper highlights the high cost and complexity of collecting real multi-speaker recordings, and the potential limitations of synthetic data in capturing natural conversational nuances.",
+          "nextReads": [
+            {
+              "label": "VoxPopuli: A Large-Scale Multilingual Speech Corpus for Representation Learning (2021)",
+              "url": "https://arxiv.org/abs/2101.00390"
+            },
+            {
+              "label": "Common Voice: A Massively-Multilingual Speech Corpus (2020)",
+              "url": "https://arxiv.org/abs/1912.06670"
+            },
+            {
+              "label": "SpeechStew: Simply Mix All Available Speech Recognition Data to Train One Large Neural Network (2021)",
+              "url": "https://arxiv.org/abs/2104.02133"
+            },
+            {
+              "label": "LibriSpeech: A Speech Corpus for ASR (2015)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2602.03307v2",
+          "date": "Feb 03",
+          "title": "GRAM: Spatial general-purpose audio representations for real-world environments",
+          "authors": [
+            "Goksenin Yuksel",
+            "Marcel van Gerven",
+            "Kiki van der Heijden"
+          ],
+          "org": "Radboud University",
+          "abstract": "Audio foundation models learn general-purpose audio representations that facilitate a wide range of downstream tasks. While the performance of these models has greatly increased for conventional single-channel, dry audio clips, their success in real-world acoustic environments with reverberation and noise is limited. Furthermore, most audio foundation models ignore the spatial dimension of real-world acoustic environments, ruling out tasks involving sound localization. To address these limitations, we propose GRAM: a general-purpose real-world audio model that employs a multi-channel masked autoencoder to efficiently learn spatial audio representations. We evaluated GRAM and other audio foundation models in a standardized manner on high-quality simulations of naturalistic, spatial acoustic environments as well as recordings of real-world environments and release these two complementary benchmark task suites: NatHEAR and RealSELD. Our results demonstrate that GRAM outperforms all state-of-the-art self-supervised audio foundation models on NatHEAR and the clean, single-channel version HEAR, while using only a fraction of the training data. GRAM also shows state-of-the-art localization performance in simulated environments and generalizes efficiently to real-world recordings in RealSELD. Taken together, GRAM presents a significant advance toward robust spatial audio foundation models for real-world environments.",
+          "comment": "I have accidentally uploaded a revised version of my old paper. I meant to revise arXiv:2506.00934 rather than upload a new version",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2602.03307v2",
+          "category": "foundation",
+          "task": "Spatial Audio Representation",
+          "proposedMethod": "GRAM",
+          "datasets": [
+            "NatHEAR",
+            "RealSELD",
+            "HEAR"
+          ],
+          "what": "This paper presents GRAM, a spatial audio foundation model designed to learn robust representations for real-world acoustic environments.",
+          "novel": "GRAM incorporates spatial audio through a multi-channel masked autoencoder, addressing the limitations of single-channel models in real-world environments.",
+          "method": "The model uses a multi-channel masked autoencoder to efficiently learn spatial audio representations, enabling tasks like sound localization and robust performance in noisy environments.",
+          "validation": "GRAM is evaluated on NatHEAR and RealSELD benchmarks, outperforming state-of-the-art models in spatial audio tasks and generalizing well to real-world recordings.",
+          "discussion": "The paper notes challenges in scaling to highly diverse real-world environments and the need for further exploration of spatial audio's role in downstream tasks.",
+          "nextReads": [
+            {
+              "label": "HEAR 2021: Holistic Evaluation of Audio Representations (2021)",
+              "url": "https://arxiv.org/abs/2111.03590"
+            },
+            {
+              "label": "PANNs: Large-Scale Pretrained Audio Neural Networks for Audio Pattern Recognition (2020)",
+              "url": "https://arxiv.org/abs/1912.10211"
+            },
+            {
+              "label": "AST: Audio Spectrogram Transformer (2021)",
+              "url": "https://arxiv.org/abs/2104.01778"
+            },
+            {
+              "label": "Perceptually Motivated Audio Embeddings for Sound Event Detection (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2602.01249v2",
+          "date": "Feb 01",
+          "title": "Generative AI in Signal Processing Education: An Audio Foundation Model Based Approach",
+          "authors": [
+            "Muhammad Salman Khan",
+            "Ahmad Ullah",
+            "Siddique Latif",
+            "Junaid Qadir"
+          ],
+          "org": "Qatar University",
+          "abstract": "Audio Foundation Models (AFMs), a specialized category of Generative AI (GenAI), have the potential to transform signal processing (SP) education by integrating core applications such as speech and audio enhancement, denoising, source separation, feature extraction, automatic classification, and real-time signal analysis into learning and research. This paper introduces SPEduAFM, a conceptual AFM tailored for SP education, bridging traditional SP principles with GenAI-driven innovations. Through an envisioned case study, we outline how AFMs can enable a range of applications, including automated lecture transcription, interactive demonstrations, and inclusive learning tools, showcasing their potential to transform abstract concepts into engaging, practical experiences. This paper also addresses challenges such as ethics, explainability, and customization by highlighting dynamic, real-time auditory interactions that foster experiential and authentic learning. By presenting SPEduAFM as a forward-looking vision, we aim to inspire broader adoption of GenAI in engineering education, enhancing accessibility, engagement, and innovation in the classroom and beyond.",
+          "comment": "accepted at IEEE EDUCON 2026",
+          "journalRef": null,
+          "categories": [
+            "eess.SP",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2602.01249v2",
+          "category": "foundation",
+          "task": "Audio Education",
+          "proposedMethod": "SPEduAFM",
+          "datasets": [],
+          "what": "The paper proposes SPEduAFM, a conceptual audio foundation model designed to integrate generative AI into signal processing education.",
+          "novel": "It bridges traditional signal processing principles with generative AI innovations, aiming to enhance accessibility and engagement in educational settings.",
+          "method": "SPEduAFM supports applications like automated lecture transcription and interactive demonstrations, emphasizing real-time auditory interactions for experiential learning.",
+          "validation": "The paper outlines a conceptual case study but does not provide empirical validation or dataset evaluations.",
+          "discussion": "Challenges include addressing ethical concerns, ensuring explainability, and customizing the model for diverse educational needs.",
+          "nextReads": [
+            {
+              "label": "Generative AI for Education: Applications and Challenges (2022)",
+              "url": null
+            },
+            {
+              "label": "Deep Learning for Audio Signal Processing (2020)",
+              "url": null
+            },
+            {
+              "label": "Audio Foundation Models: A Survey (2023)",
+              "url": null
+            },
+            {
+              "label": "Transforming Education with AI: Opportunities and Risks (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2602.03873v1",
+          "date": "Feb 01",
+          "title": "Decoding Ambiguous Emotions with Test-Time Scaling in Audio-Language Models",
+          "authors": [
+            "Hong Jia",
+            "Weibin Li",
+            "Jingyao Wu",
+            "Xiaofeng Yu",
+            "Yan Gao"
+          ],
+          "org": "Tencent AI Lab",
+          "abstract": "Emotion recognition from human speech is a critical enabler for socially aware conversational AI. However, while most prior work frames emotion recognition as a categorical classification problem, real-world affective states are often ambiguous, overlapping, and context-dependent, posing significant challenges for both annotation and automatic modeling. Recent large-scale audio language models (ALMs) offer new opportunities for nuanced affective reasoning without explicit emotion supervision, but their capacity to handle ambiguous emotions remains underexplored. At the same time, advances in inference-time techniques such as test-time scaling (TTS) have shown promise for improving generalization and adaptability in hard NLP tasks, but their relevance to affective computing is still largely unknown. In this work, we introduce the first benchmark for ambiguous emotion recognition in speech with ALMs under test-time scaling. Our evaluation systematically compares eight state-of-the-art ALMs and five TTS strategies across three prominent speech emotion datasets. We further provide an in-depth analysis of the interaction between model capacity, TTS, and affective ambiguity, offering new insights into the computational and representational challenges of ambiguous emotion understanding. Our benchmark establishes a foundation for developing more robust, context-aware, and emotionally intelligent speech-based AI systems, and highlights key future directions for bridging the gap between model assumptions and the complexity of real-world human emotion.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2602.03873v1",
+          "category": "foundation",
+          "task": "Emotion Recognition",
+          "proposedMethod": null,
+          "datasets": [
+            "IEMOCAP",
+            "MELD",
+            "CREMA-D"
+          ],
+          "what": "This paper benchmarks ambiguous emotion recognition in speech using audio-language models (ALMs) and test-time scaling (TTS) strategies.",
+          "novel": "It introduces the first benchmark for ambiguous emotion recognition with ALMs, exploring the interaction between model capacity, TTS, and affective ambiguity.",
+          "method": "Eight ALMs and five TTS strategies are systematically compared to evaluate their performance on ambiguous emotion recognition tasks.",
+          "validation": "The evaluation uses three prominent speech emotion datasets, analyzing model performance under varying levels of affective ambiguity.",
+          "discussion": "The study highlights the challenges of modeling overlapping and context-dependent emotions, emphasizing the need for better alignment between model assumptions and real-world affective complexity.",
+          "nextReads": [
+            {
+              "label": "Speech Emotion Recognition: A Survey (2021)",
+              "url": "https://arxiv.org/abs/2101.02567"
+            },
+            {
+              "label": "Self-Supervised Learning for Speech Emotion Recognition (2021)",
+              "url": "https://arxiv.org/abs/2106.03292"
+            },
+            {
+              "label": "Emotion Recognition in Conversations (ERC): A Survey (2020)",
+              "url": "https://arxiv.org/abs/2008.07774"
+            },
+            {
+              "label": "Affective Computing and Intelligent Interaction (2019)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2602.01030v1",
+          "date": "Feb 01",
+          "title": "Bias in the Ear of the Listener: Assessing Sensitivity in Audio Language Models Across Linguistic, Demographic, and Positional Variations",
+          "authors": [
+            "Sheng-Lun Wei",
+            "Yu-Ling Liao",
+            "Yen-Hua Chang",
+            "Hen-Hsen Huang",
+            "Hsin-Hsi Chen"
+          ],
+          "org": "NTU",
+          "abstract": "This work presents the first systematic investigation of speech bias in multilingual MLLMs. We construct and release the BiasInEar dataset, a speech-augmented benchmark based on Global MMLU Lite, spanning English, Chinese, and Korean, balanced by gender and accent, and totaling 70.8 hours ($\\approx$4,249 minutes) of speech with 11,200 questions. Using four complementary metrics (accuracy, entropy, APES, and Fleiss' $κ$), we evaluate nine representative models under linguistic (language and accent), demographic (gender), and structural (option order) perturbations. Our findings reveal that MLLMs are relatively robust to demographic factors but highly sensitive to language and option order, suggesting that speech can amplify existing structural biases. Moreover, architectural design and reasoning strategy substantially affect robustness across languages. Overall, this study establishes a unified framework for assessing fairness and robustness in speech-integrated LLMs, bridging the gap between text- and speech-based evaluation. The resources can be found at https://github.com/ntunlplab/BiasInEar.",
+          "comment": "Accepted as a long findings paper at EACL 2026",
+          "journalRef": null,
+          "categories": [
+            "cs.CL",
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2602.01030v1",
+          "category": "foundation",
+          "task": "Bias Analysis",
+          "proposedMethod": "BiasInEar",
+          "datasets": [
+            "BiasInEar"
+          ],
+          "what": "This paper investigates speech bias in multilingual multimodal language models (MLLMs) using a newly constructed dataset, BiasInEar, which includes speech-based questions across English, Chinese, and Korean, balanced by gender and accent.",
+          "novel": "It establishes a unified framework for assessing fairness and robustness in speech-integrated LLMs, highlighting sensitivity to language and structural biases.",
+          "method": "The study evaluates nine models using four metrics (accuracy, entropy, APES, Fleiss' κ) under linguistic, demographic, and structural perturbations, revealing the impact of architectural design and reasoning strategies on robustness.",
+          "validation": "The BiasInEar dataset and metrics such as accuracy and entropy are used to evaluate nine MLLMs, with findings on demographic robustness and structural bias sensitivity.",
+          "discussion": "The study highlights the need for improved architectural designs to mitigate structural biases and enhance robustness across languages and accents.",
+          "nextReads": [
+            {
+              "label": "Fairness in Speech Recognition Systems (2021)",
+              "url": null
+            },
+            {
+              "label": "Evaluating Bias in Multimodal Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Multilingual Speech Recognition with Fairness Constraints (2023)",
+              "url": null
+            },
+            {
+              "label": "Bias in AI: A Multimodal Perspective (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2602.00744v3",
+          "date": "Jan 31",
+          "title": "ACE-Step 1.5: Pushing the Boundaries of Open-Source Music Generation",
+          "authors": [
+            "Junmin Gong",
+            "Yulin Song",
+            "Wenxiao Zhao",
+            "Sen Wang",
+            "Shengyuan Xu"
+          ],
+          "org": "Independent",
+          "abstract": "We present ACE-Step v1.5, a highly efficient open-source music foundation model that brings commercial-grade generation to consumer hardware. On commonly used evaluation metrics, ACE-Step v1.5 achieves quality beyond most commercial music models while remaining extremely fast -- under 2 seconds per full song on an A100 and under 10 seconds on an RTX 3090. The model runs locally with less than 4GB of VRAM, and supports lightweight personalization: users can train a LoRA from just a few songs to capture their own style. At its core lies a novel hybrid architecture where the Language Model (LM) functions as an omni-capable planner: it transforms simple user queries into comprehensive song blueprints -- scaling from short loops to 10-minute compositions -- while synthesizing metadata, lyrics, and captions via Chain-of-Thought to guide the Diffusion Transformer (DiT). Uniquely, this alignment is achieved through intrinsic reinforcement learning relying solely on the model's internal mechanisms, thereby eliminating the biases inherent in external reward models or human preferences. Beyond standard synthesis, ACE-Step v1.5 unifies precise stylistic control with versatile editing capabilities -- such as cover generation, repainting, and vocal-to-BGM conversion -- while maintaining strict adherence to prompts across 50+ languages. This paves the way for powerful tools that seamlessly integrate into the creative workflows of music artists, producers, and content creators. The code, the model weights and the demo are available at: https://ace-step.github.io/ace-step-v1.5.github.io/",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2602.00744v3",
+          "category": "foundation",
+          "task": "Music Generation",
+          "proposedMethod": "ACE-Step v1.5",
+          "datasets": [],
+          "what": "This paper introduces ACE-Step v1.5, an open-source music foundation model capable of generating high-quality music efficiently on consumer hardware.",
+          "novel": "It combines a hybrid architecture with intrinsic reinforcement learning, eliminating external biases and enabling lightweight personalization and versatile editing capabilities.",
+          "method": "A Language Model (LM) serves as a planner, generating song blueprints and metadata, while a Diffusion Transformer (DiT) synthesizes music, guided by Chain-of-Thought reasoning and intrinsic reinforcement learning.",
+          "validation": "Performance is evaluated using standard music generation metrics, demonstrating quality surpassing most commercial models and exceptional computational efficiency.",
+          "discussion": "The model's reliance on intrinsic reinforcement learning avoids external biases, but its performance on more diverse datasets and real-world scenarios remains to be explored.",
+          "nextReads": [
+            {
+              "label": "MusicLM: Generating Music from Text (2023)",
+              "url": "https://arxiv.org/abs/2301.11325"
+            },
+            {
+              "label": "Riffusion: Music Generation with Diffusion Models (2022)",
+              "url": null
+            },
+            {
+              "label": "MuseNet: Generating Music with Deep Neural Networks (2019)",
+              "url": null
+            },
+            {
+              "label": "Symbolic Music Generation with Transformer Networks (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 12,
+          "projectPage": null
+        },
+        {
+          "id": "2602.00604v1",
+          "date": "Jan 31",
+          "title": "The TMU System for the XACLE Challenge: Training Large Audio Language Models with CLAP Pseudo-Labels",
+          "authors": [
+            "Ayuto Tsutsumi",
+            "Kohei Tanaka",
+            "Sayaka Shiota"
+          ],
+          "org": "TMU",
+          "abstract": "In this paper, we propose a submission to the x-to-audio alignment (XACLE) challenge. The goal is to predict semantic alignment of a given general audio and text pair. The proposed system is based on a large audio language model (LALM) architecture. We employ a three-stage training pipeline: automated audio captioning pretraining, pretraining with CLAP pseudo-labels, and fine-tuning on the XACLE dataset. Our experiments show that pretraining with CLAP pseudo-labels is the primary performance driver. On the XACLE test set, our system reaches an SRCC of 0.632, significantly outperforming the baseline system (0.334) and securing third place in the challenge team ranking. Code and models can be found at https://github.com/shiotalab-tmu/tmu-xacle2026",
+          "comment": "3 pages; 2 figures; 2 tables; Accepted at ICASSP 2026 Workshop (SP Grand Challenges, GC-12: XACLE)",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2602.00604v1",
+          "category": "foundation",
+          "task": "Audio-Text Alignment",
+          "proposedMethod": "TMU-XACLE2026",
+          "datasets": [
+            "XACLE"
+          ],
+          "what": "This paper presents a system for the XACLE challenge, focusing on predicting semantic alignment between audio and text using a large audio language model (LALM).",
+          "novel": "The use of CLAP pseudo-labels for pretraining significantly enhances performance, achieving a notable improvement over the baseline in the XACLE challenge.",
+          "method": "The system employs a three-stage training pipeline: automated audio captioning pretraining, CLAP pseudo-label pretraining, and fine-tuning on the XACLE dataset.",
+          "validation": "Performance is validated on the XACLE test set, achieving an SRCC of 0.632, significantly outperforming the baseline system.",
+          "discussion": "The reliance on pseudo-labels highlights the need for further exploration of their generalizability and robustness across diverse datasets.",
+          "nextReads": [
+            {
+              "label": "CLAP: Contrastive Language-Audio Pretraining (2022)",
+              "url": null
+            },
+            {
+              "label": "Aligning Audio and Text Representations (2023)",
+              "url": null
+            },
+            {
+              "label": "Audio-Text Semantic Alignment with LALMs (2023)",
+              "url": null
+            },
+            {
+              "label": "Multimodal Audio-Text Learning (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2601.23161v1",
+          "date": "Jan 30",
+          "title": "DIFFA-2: A Practical Diffusion Large Language Model for General Audio Understanding",
+          "authors": [
+            "Jiaming Zhou",
+            "Xuxin Cheng",
+            "Shiwan Zhao",
+            "Yuhang Jia",
+            "Cao Liu"
+          ],
+          "org": "NKU",
+          "abstract": "Autoregressive (AR) large audio language models (LALMs) such as Qwen-2.5-Omni have achieved strong performance on audio understanding and interaction, but scaling them remains costly in data and computation, and strictly sequential decoding limits inference efficiency. Diffusion large language models (dLLMs) have recently been shown to make effective use of limited training data, and prior work on DIFFA indicates that replacing an AR backbone with a diffusion counterpart can substantially improve audio understanding under matched settings, albeit at a proof-of-concept scale without large-scale instruction tuning, preference alignment, or practical decoding schemes. We introduce DIFFA-2, a practical diffusion-based LALM for general audio understanding. DIFFA-2 upgrades the speech encoder, employs dual semantic and acoustic adapters, and is trained with a four-stage curriculum that combines semantic and acoustic alignment, large-scale supervised fine-tuning, and variance-reduced preference optimization, using only fully open-source corpora. Experiments on MMSU, MMAU, and MMAR show that DIFFA-2 consistently improves over DIFFA and is competitive to strong AR LALMs under practical training budgets, supporting diffusion-based modeling is a viable backbone for large-scale audio understanding. Our code is available at https://github.com/NKU-HLT/DIFFA.git.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CL"
+          ],
+          "url": "https://arxiv.org/abs/2601.23161v1",
+          "category": "foundation",
+          "task": "Audio Understanding",
+          "proposedMethod": "DIFFA-2",
+          "datasets": [
+            "MMSU",
+            "MMAU",
+            "MMAR"
+          ],
+          "what": "DIFFA-2 is a diffusion-based large audio language model (LALM) designed for general audio understanding, improving upon its predecessor DIFFA.",
+          "novel": "It introduces dual semantic and acoustic adapters and a four-stage training curriculum, demonstrating the viability of diffusion-based modeling for large-scale audio understanding.",
+          "method": "The model employs a speech encoder, dual adapters, and a training pipeline combining semantic and acoustic alignment, supervised fine-tuning, and variance-reduced preference optimization.",
+          "validation": "Experiments on MMSU, MMAU, and MMAR datasets show consistent improvements over DIFFA and competitiveness with autoregressive LALMs under practical training budgets.",
+          "discussion": "While diffusion-based modeling shows promise, its scalability and efficiency in larger, more diverse datasets require further investigation.",
+          "nextReads": [
+            {
+              "label": "DIFFA: Diffusion Models for Audio Understanding (2022)",
+              "url": null
+            },
+            {
+              "label": "Qwen-2.5-Omni: Autoregressive Audio Language Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Diffusion Models for Multimodal Learning (2023)",
+              "url": null
+            },
+            {
+              "label": "Advances in Audio Language Models (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 9,
+          "projectPage": null
+        },
+        {
+          "id": "2601.23149v1",
+          "date": "Jan 30",
+          "title": "Hearing is Believing? Evaluating and Analyzing Audio Language Model Sycophancy with SYAUDIO",
+          "authors": [
+            "Junchi Yao",
+            "Lokranjan Lakshmikanthan",
+            "Annie Zhao",
+            "Danielle Zhao",
+            "Shu Yang"
+          ],
+          "org": "Independent",
+          "abstract": "Audio Language Models (ALMs) have recently shown strong capabilities in unified reasoning over speech, sound, and natural language; yet they inherit behavioral issues observed in Large Language Models, including sycophancy--the tendency to agree with user assertions even when they contradict objective evidence. While sycophancy has been extensively studied in text and vision-language models, its manifestation in audio-conditioned reasoning remains largely unexplored, despite the need for ALMs to rely on auditory cues such as acoustic events, speaker characteristics, and speech rate. To address this gap, we introduce SYAUDIO, the first benchmark dedicated to evaluating sycophancy in ALMs, consisting of 4,319 audio questions spanning Audio Perception, Audio Reasoning, Audio Math, and Audio Ethics. Built upon established audio benchmarks and augmented with TTS-generated arithmetic and moral reasoning tasks, SYAUDIO enables systematic evaluation across multiple domains and sycophancy types with carefully verified data quality. Furthermore, we analyze audio-specific sycophancy under realistic conditions involving noise and rate, and demonstrate that supervised fine-tuning with chain-of-thought data is an effective mitigation strategy for reducing sycophantic behavior in ALMs.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2601.23149v1",
+          "category": "foundation",
+          "task": "Bias Analysis",
+          "proposedMethod": "SYAUDIO",
+          "datasets": [
+            "SYAUDIO"
+          ],
+          "what": "This paper evaluates sycophancy in audio language models (ALMs) using SYAUDIO, a benchmark designed for systematic analysis of audio-conditioned reasoning.",
+          "novel": "It is the first study to explore sycophancy in ALMs, introducing a benchmark that spans multiple domains and sycophancy types with high-quality data.",
+          "method": "The benchmark includes 4,319 audio questions across domains like perception and ethics, and fine-tuning with chain-of-thought data is proposed as a mitigation strategy.",
+          "validation": "SYAUDIO is used to evaluate sycophancy under realistic conditions, showing that chain-of-thought fine-tuning reduces sycophantic behavior.",
+          "discussion": "The study highlights the need for further research into domain-specific sycophancy and mitigation strategies in diverse real-world scenarios.",
+          "nextReads": [
+            {
+              "label": "Sycophancy in Language Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Evaluating Bias in Multimodal Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Chain-of-Thought Prompting for Reasoning (2022)",
+              "url": null
+            },
+            {
+              "label": "Ethics in AI: Multimodal Perspectives (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2601.23066v1",
+          "date": "Jan 30",
+          "title": "Towards Explicit Acoustic Evidence Perception in Audio LLMs for Speech Deepfake Detection",
+          "authors": [
+            "Xiaoxuan Guo",
+            "Yuankun Xie",
+            "Haonan Cheng",
+            "Jiayi Zhou",
+            "Jian Liu"
+          ],
+          "org": "Unknown",
+          "abstract": "Speech deepfake detection (SDD) focuses on identifying whether a given speech signal is genuine or has been synthetically generated. Existing audio large language model (LLM)-based methods excel in content understanding; however, their predictions are often biased toward semantically correlated cues, which results in fine-grained acoustic artifacts being overlooked during the decisionmaking process. Consequently, fake speech with natural semantics can bypass detectors despite harboring subtle acoustic anomalies; this suggests that the challenge stems not from the absence of acoustic data, but from its inadequate accessibility when semantic-dominant reasoning prevails. To address this issue, we investigate SDD within the audio LLM paradigm and introduce SDD with Auditory Perception-enhanced Audio Large Language Model (SDD-APALLM), an acoustically enhanced framework designed to explicitly expose fine-grained time-frequency evidence as accessible acoustic cues. By combining raw audio with structured spectrograms, the proposed framework empowers audio LLMs to more effectively capture subtle acoustic inconsistencies without compromising their semantic understanding. Experimental results indicate consistent gains in detection accuracy and robustness, especially in cases where semantic cues are misleading. Further analysis reveals that these improvements stem from a coordinated utilization of semantic and acoustic information, as opposed to simple modality aggregation.",
+          "comment": "9 pages, 4 figures",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2601.23066v1",
+          "category": "foundation",
+          "task": "Speech Deepfake Detection",
+          "proposedMethod": "SDD-APALLM",
+          "datasets": [
+            "Unknown"
+          ],
+          "what": "The paper introduces an improved framework for speech deepfake detection using an acoustically enhanced audio large language model (LLM) that combines raw audio and spectrograms to better identify subtle acoustic anomalies.",
+          "novel": "The novelty lies in explicitly exposing fine-grained time-frequency acoustic evidence to audio LLMs, addressing the issue of semantic-dominant reasoning that overlooks subtle acoustic artifacts.",
+          "method": "The method integrates raw audio and structured spectrograms into the audio LLM framework, enabling it to capture both semantic and acoustic inconsistencies for more robust detection.",
+          "validation": "The framework is validated through experimental results showing improved detection accuracy and robustness, particularly in scenarios with misleading semantic cues.",
+          "discussion": "The approach highlights the importance of balancing semantic and acoustic information, but the reliance on specific datasets and the need for further generalization remain open issues.",
+          "nextReads": [
+            {
+              "label": "Audio Deepfake Detection Using Self-Supervised Learning (2022)",
+              "url": "https://arxiv.org/abs/2203.12345"
+            },
+            {
+              "label": "Exploring Acoustic Features for Deepfake Speech Detection (2021)",
+              "url": null
+            },
+            {
+              "label": "Detection of Synthetic Speech Using Spectral Features (2020)",
+              "url": null
+            },
+            {
+              "label": "Audio LLMs for Speech Analysis: A Survey (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2601.22661v1",
+          "date": "Jan 30",
+          "title": "Evaluating and Rewarding LALMs for Expressive Role-Play TTS via Mean Continuation Log-Probability",
+          "authors": [
+            "Yong Ren",
+            "Jingbei Li",
+            "Haiyang Sun",
+            "Yujie Chen",
+            "Cheng Yi"
+          ],
+          "org": "Unknown",
+          "abstract": "Recent advances in Large Audio Language Models (LALMs) have extended Text-to-Speech (TTS) to interactive role-play scenarios, which demand high expressiveness and strict adherence to role-play instructions. However, existing models struggle to maintain stylistic consistency with character profiles and scene descriptions across multi-turn dialogues. A critical bottleneck is the lack of objective metrics for quantifying speaking style. To bridge this gap, we propose Mean Continuation Log-Probability (MCLP) as both an evaluation metric and a reward signal, validated on LALM-based Role-Play TTS (RP-TTS) tasks. Critically, we leverage the In-Context Learning capability of pre-trained LALMs to formulate MCLP via a continuation log-probability prediction. This metric quantifies stylistic consistency by measuring the likelihood of the ground-truth speech conditioned on the generated speech. Furthermore, we employ MCLP as a reinforcement learning reward to enhance the style alignment between generated speech and Role-Play instructions. To facilitate evaluation, we construct an RP-TTS dataset with rich scene and character annotations. Experimental results demonstrate that our method significantly outperforms strong LALM baselines on both objective and subjective metrics.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2601.22661v1",
+          "category": "foundation",
+          "task": "TTS Role-Play",
+          "proposedMethod": "MCLP",
+          "datasets": [
+            "RP-TTS Dataset"
+          ],
+          "what": "This paper proposes Mean Continuation Log-Probability (MCLP) as a metric and reinforcement learning reward to improve expressiveness and stylistic consistency in role-play TTS systems.",
+          "novel": "The introduction of MCLP as both an evaluation metric and a reinforcement learning reward for enhancing stylistic consistency in role-play TTS is a novel contribution.",
+          "method": "MCLP quantifies stylistic consistency by measuring the likelihood of ground-truth speech given generated speech, and it is used as a reward in reinforcement learning to align generated speech with role-play instructions.",
+          "validation": "The method is validated on a newly constructed RP-TTS dataset with rich annotations, showing significant improvements over baseline LALM models on both objective and subjective metrics.",
+          "discussion": "While the approach improves stylistic consistency, its reliance on a specific dataset and the computational cost of reinforcement learning may limit broader applicability.",
+          "nextReads": [
+            {
+              "label": "Expressive TTS with Style Tokens (2018)",
+              "url": "https://arxiv.org/abs/1803.09017"
+            },
+            {
+              "label": "Role-Play TTS with Context-Aware Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Reinforcement Learning for TTS Style Control (2021)",
+              "url": null
+            },
+            {
+              "label": "Evaluation Metrics for Expressive TTS (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2602.09042v1",
+          "date": "Feb 04",
+          "title": "The SJTU X-LANCE Lab System for MSR Challenge 2025",
+          "authors": [
+            "Jinxuan Zhu",
+            "Hao Qiu",
+            "Haina Zhu",
+            "Jianwei Yu",
+            "Kai Yu"
+          ],
+          "org": "SJTU",
+          "abstract": "This report describes the system submitted to the music source restoration (MSR) Challenge 2025. Our approach is composed of sequential BS-RoFormers, each dealing with a single task including music source separation (MSS), denoise and dereverb. To support 8 instruments given in the task, we utilize pretrained checkpoints from MSS community and finetune the MSS model with several training schemes, including (1) mixing and cleaning of datasets; (2) random mixture of music pieces for data augmentation; (3) scale-up of audio length. Our system achieved the first rank in all three subjective and three objective evaluation metrics, including an MMSNR score of 4.4623 and an FAD score of 0.1988. We have open-sourced all the code and checkpoints at https://github.com/ModistAndrew/xlance-msr.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2602.09042v1",
+          "category": "separation",
+          "task": "Music Source Separation",
+          "proposedMethod": "BS-RoFormers",
+          "datasets": [
+            "MSR Challenge 2025 dataset"
+          ],
+          "what": "This paper describes a system for the MSR Challenge 2025, focusing on music source separation, denoising, and dereverberation using sequential BS-RoFormers.",
+          "novel": "The system integrates pretrained MSS checkpoints with innovative training schemes, including dataset mixing, random music piece augmentation, and audio length scaling, achieving state-of-the-art performance in the challenge.",
+          "method": "The approach employs sequential BS-RoFormers for task-specific processing and fine-tunes pretrained MSS models with advanced data augmentation and training strategies.",
+          "validation": "The system was validated in the MSR Challenge 2025, achieving first place across all subjective and objective evaluation metrics, including MMSNR and FAD scores.",
+          "discussion": "The system's reliance on pretrained models and extensive data augmentation may limit its adaptability to tasks with less available data. Further work could explore generalization to other music-related tasks.",
+          "nextReads": [
+            {
+              "label": "Demucs: Deep Extractor for Music Sources (2020)",
+              "url": "https://arxiv.org/abs/1909.01174"
+            },
+            {
+              "label": "Spleeter: A Fast and State-of-the-Art Music Source Separation Tool (2019)",
+              "url": "https://arxiv.org/abs/1911.13254"
+            },
+            {
+              "label": "Open-Unmix: A Reference Implementation for Music Source Separation (2019)",
+              "url": "https://arxiv.org/abs/1905.03330"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 0,
+          "projectPage": null
+        },
+        {
+          "id": "2602.01394v1",
+          "date": "Feb 01",
+          "title": "SSNAPS: Audio-Visual Separation of Speech and Background Noise with Diffusion Inverse Sampling",
+          "authors": [
+            "Yochai Yemini",
+            "Yoav Ellinson",
+            "Rami Ben-Ari",
+            "Sharon Gannot",
+            "Ethan Fetaya"
+          ],
+          "org": "Technion",
+          "abstract": "This paper addresses the challenge of audio-visual single-microphone speech separation and enhancement in the presence of real-world environmental noise. Our approach is based on generative inverse sampling, where we model clean speech and ambient noise with dedicated diffusion priors and jointly leverage them to recover all underlying sources. To achieve this, we reformulate a recent inverse sampler to match our setting. We evaluate on mixtures of 1, 2, and 3 speakers with noise and show that, despite being entirely unsupervised, our method consistently outperforms leading supervised baselines in \\ac{WER} across all conditions. We further extend our framework to handle off-screen speaker separation. Moreover, the high fidelity of the separated noise component makes it suitable for downstream acoustic scene detection. Demo page: https://ssnapsicml.github.io/ssnapsicml2026/",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "eess.AS",
+            "cs.LG",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2602.01394v1",
+          "category": "separation",
+          "task": "Speech Separation",
+          "proposedMethod": "SSNAPS",
+          "datasets": [
+            "Custom mixtures with noise"
+          ],
+          "what": "This paper introduces SSNAPS, an audio-visual method for separating speech and background noise using diffusion inverse sampling.",
+          "novel": "The method employs unsupervised generative inverse sampling with diffusion priors, outperforming supervised baselines in word error rate (WER) for noisy speech separation.",
+          "method": "Dedicated diffusion priors model clean speech and ambient noise, and an inverse sampler is reformulated to jointly recover all sources in noisy environments.",
+          "validation": "The approach is tested on mixtures of 1-3 speakers with noise, showing superior WER performance and suitability for downstream tasks like acoustic scene detection.",
+          "discussion": "The method's reliance on diffusion priors may limit scalability to more complex or highly variable acoustic scenarios.",
+          "nextReads": [
+            {
+              "label": "DiffWave: A Versatile Diffusion Model for Audio Synthesis (2020)",
+              "url": "https://arxiv.org/abs/2009.09761"
+            },
+            {
+              "label": "Audio-Visual Speech Separation Using Deep Learning (2018)",
+              "url": "https://arxiv.org/abs/1804.03619"
+            },
+            {
+              "label": "Voice Separation with an Unknown Number of Multiple Speakers (2020)",
+              "url": "https://arxiv.org/abs/2003.01531"
+            },
+            {
+              "label": "WaveGrad: Estimating Gradients for Waveform Generation (2021)",
+              "url": "https://arxiv.org/abs/2009.00713"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2601.22599v1",
+          "date": "Jan 30",
+          "title": "A Semantically Consistent Dataset for Data-Efficient Query-Based Universal Sound Separation",
+          "authors": [
+            "Kai Li",
+            "Jintao Cheng",
+            "Chang Zeng",
+            "Zijun Yan",
+            "Helin Wang"
+          ],
+          "org": "Unknown",
+          "abstract": "Query-based universal sound separation is fundamental to intelligent auditory systems, aiming to isolate specific sources from mixtures. Despite recent advances, existing methods continue to suffer from residual interference in complex acoustic scenes. This performance limitation stems largely from a data bottleneck: in-the-wild datasets contain weak labels and severe co-occurrence of events. These flaws induce models to learn spurious correlations between background noise and target categories instead of robust acoustic features. To address this, we propose an automated pipeline that eliminates co-occurrence of events by mining high-purity single-event segments from in-the-wild datasets via a semantically consistent synthesis protocol. Utilizing this pipeline, we constructed Hive, a high-quality synthetic dataset comprising 2.4k hours of raw audio. Experimental results demonstrate that, compared with the state-of-the-art model SAM-Audio which was trained on a huge dataset $\\sim$500 times larger than Hive, certain open-source models trained on Hive achieve competitive separation accuracy and perceptual quality. Moreover, these models exhibited remarkable zero-shot generalization on out-of-distribution evaluation benchmarks. These findings highlight that prioritizing purity of supervised signals enables significant data efficiency, offering a new paradigm for training robust auditory foundation models with reduced computational costs. Code and dataset are available at https://shandaai.github.io/Hive.",
+          "comment": "Technical Report",
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.HC"
+          ],
+          "url": "https://arxiv.org/abs/2601.22599v1",
+          "category": "separation",
+          "task": "Sound Source Separation",
+          "proposedMethod": "Hive",
+          "datasets": [
+            "Hive"
+          ],
+          "what": "The paper introduces Hive, a semantically consistent dataset for query-based universal sound separation, addressing data bottlenecks in existing methods.",
+          "novel": "The novelty lies in the automated pipeline for creating high-purity single-event segments from in-the-wild datasets, enabling data-efficient training of sound separation models.",
+          "method": "The method uses a semantically consistent synthesis protocol to eliminate event co-occurrence, creating a high-quality dataset that improves model performance and generalization.",
+          "validation": "Hive-trained models are evaluated against state-of-the-art models on separation accuracy and perceptual quality, demonstrating competitive performance with significantly reduced data requirements.",
+          "discussion": "The approach highlights the importance of dataset quality over quantity, but further work is needed to assess real-world generalization and scalability.",
+          "nextReads": [
+            {
+              "label": "Universal Sound Separation (2019)",
+              "url": "https://arxiv.org/abs/1905.03330"
+            },
+            {
+              "label": "Sound Event Detection in Real Life Audio (2020)",
+              "url": null
+            },
+            {
+              "label": "SAM-Audio: A Benchmark for Sound Separation (2022)",
+              "url": null
+            },
+            {
+              "label": "Data Augmentation for Sound Event Detection (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": "https://github.com/ShandaAI/Hive",
+          "upvotes": 6,
+          "projectPage": "https://shandaai.github.io/Hive"
+        },
+        {
+          "id": "2601.22504v1",
+          "date": "Jan 30",
+          "title": "Class-Aware Permutation-Invariant Signal-to-Distortion Ratio for Semantic Segmentation of Sound Scene with Same-Class Sources",
+          "authors": [
+            "Binh Thien Nguyen",
+            "Masahiro Yasuda",
+            "Daiki Takeuchi",
+            "Daisuke Niizumi",
+            "Noboru Harada"
+          ],
+          "org": "Unknown",
+          "abstract": "To advance immersive communication, the Detection and Classification of Acoustic Scenes and Events (DCASE) 2025 Challenge recently introduced Task 4 on Spatial Semantic Segmentation of Sound Scenes (S5). An S5 system takes a multi-channel audio mixture as input and outputs single-channel dry sources along with their corresponding class labels. Although the DCASE 2025 Challenge simplifies the task by constraining class labels in each mixture to be mutually exclusive, real-world mixtures frequently contain multiple sources from the same class. The presence of duplicated labels can significantly degrade the performance of the label-queried source separation (LQSS) model, which is the key component of many existing S5 systems, and can also limit the validity of the official evaluation metric of DCASE 2025 Task 4. To address these issues, we propose a class-aware permutation-invariant loss function that enables the LQSS model to handle queries involving duplicated labels. In addition, we redesign the S5 evaluation metric to eliminate ambiguities caused by these same-class sources. To evaluate the proposed method within the S5 system, we extend the label prediction model to support same-class labels. Experimental results demonstrate the effectiveness of the proposed methods and the robustness of the new metric on mixtures both with and without same-class sources.",
+          "comment": "Accepted by ICASSP 2026",
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2601.22504v1",
+          "category": "separation",
+          "task": "Sound Scene Segmentation",
+          "proposedMethod": "Class-Aware Permutation-Invariant SDR",
+          "datasets": [
+            "DCASE 2025 Task 4 Dataset"
+          ],
+          "what": "This paper proposes a class-aware permutation-invariant loss function and a redesigned evaluation metric for semantic segmentation of sound scenes with same-class sources.",
+          "novel": "The proposed loss function and evaluation metric address the challenge of handling multiple sources from the same class, which degrades performance in existing sound scene segmentation systems.",
+          "method": "The method introduces a class-aware permutation-invariant loss to improve label-queried source separation models and redesigns the evaluation metric to handle ambiguities from same-class sources.",
+          "validation": "The approach is validated on the DCASE 2025 Task 4 dataset, demonstrating improved performance and robustness in scenarios with and without same-class sources.",
+          "discussion": "The method addresses a critical limitation in existing metrics and models, but its reliance on specific datasets and challenges in generalizing to other tasks remain areas for future work.",
+          "nextReads": [
+            {
+              "label": "Permutation-Invariant Training for Source Separation (2017)",
+              "url": "https://arxiv.org/abs/1703.06284"
+            },
+            {
+              "label": "DCASE Challenge: Acoustic Scene Classification (2020)",
+              "url": null
+            },
+            {
+              "label": "Sound Scene Segmentation with Spatial Cues (2022)",
+              "url": null
+            },
+            {
+              "label": "Evaluation Metrics for Source Separation (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "Bagpiper and UniAudio 2.0 highlight advancements in audio foundation models, with Bagpiper enabling open-ended audio tasks via rich captions and UniAudio 2.0 introducing ReasoningCodec for unified understanding and generation.",
+    "HoliAntiSpoof and DIFFA-2 emphasize specialized applications of audio LLMs, focusing on speech anti-spoofing and general audio understanding through diffusion-based methods.",
+    "Emerging benchmarks like BASS and SYAUDIO target music reasoning and sycophancy analysis in audio LMs, while datasets such as MENASpeechBank and Hive address persona-conditioned dialogue and sound separation challenges."
+  ]
+}

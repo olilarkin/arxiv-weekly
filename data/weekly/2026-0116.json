@@ -1,0 +1,459 @@
+{
+  "date": "2026-0116",
+  "generated_at": "2026-01-16T00:00:00+00:00",
+  "total": 8,
+  "categories": [
+    {
+      "id": "foundation",
+      "label": "Audio Foundation Models",
+      "color": "#38bdf8",
+      "papers": [
+        {
+          "id": "2601.10547v2",
+          "date": "Jan 15",
+          "title": "HeartMuLa: A Family of Open Sourced Music Foundation Models",
+          "authors": [
+            "Dongchao Yang",
+            "Yuxin Xie",
+            "Yuguo Yin",
+            "Zheyu Wang",
+            "Xiaoyu Yi"
+          ],
+          "org": "Tencent",
+          "abstract": "We present a family of open-source Music Foundation Models designed to advance large-scale music understanding and generation across diverse tasks and modalities. Our framework consists of four major components: (1) HeartCLAP, an audio-text alignment model; (2) HeartTranscriptor, a robust lyric recognition model optimized for real-world music scenarios; and (3) HeartCodec, a low-frame-rate (12.5 Hz) yet high-fidelity music codec tokenizer that captures long-range musical structure while preserving fine-grained acoustic details and enabling efficient autoregressive modeling; (4) HeartMuLa, an LLM-based song generation model capable of synthesizing high-fidelity music under rich, user-controllable conditions (e.g., textual style descriptions, lyrics, and reference audio). In addition, it provides two specialized modes: (i) fine-grained musical attribute control, which allows users to specify the style of different song sections (e.g., intro, verse, chorus) using natural language prompts; and (ii) short, engaging music generation, which is suitable as background music for short videos. Lastly, HeartMuLa improves significantly when scaled to 7B parameters. For the first time, we show that a Suno-level, commercial-grade system can be reproduced using academic-scale data and GPU resources. We expect these foundation models to serve as strong baselines for future research and to facilitate practical applications in multimodal content production.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2601.10547v2",
+          "category": "foundation",
+          "task": "Music Generation",
+          "proposedMethod": "HeartMuLa",
+          "datasets": [
+            "null"
+          ],
+          "what": "This paper introduces a family of open-source music foundation models, including components for audio-text alignment, lyric recognition, music codec tokenization, and high-fidelity music generation with user-controllable conditions.",
+          "novel": "The work demonstrates that a Suno-level, commercial-grade music generation system can be reproduced using academic-scale data and resources, offering fine-grained musical control and efficient autoregressive modeling.",
+          "method": "The framework integrates multiple specialized components, including a low-frame-rate music codec tokenizer and an LLM-based song generation model, optimized for diverse music tasks and scalable to 7B parameters.",
+          "validation": "The models are evaluated qualitatively and quantitatively, showcasing their ability to perform diverse music-related tasks and generate high-quality music under various user-defined conditions.",
+          "discussion": "The system's reliance on academic-scale resources makes it accessible, but the paper does not detail specific datasets or provide extensive quantitative benchmarks for comparison.",
+          "nextReads": [
+            {
+              "label": "MusicLM: Generating Music From Text (2023)",
+              "url": "https://arxiv.org/abs/2301.11325"
+            },
+            {
+              "label": "Jukebox: A Generative Model for Music (2020)",
+              "url": "https://arxiv.org/abs/2005.00341"
+            },
+            {
+              "label": "MuseNet: Composing Music with Deep Learning (2019)",
+              "url": null
+            },
+            {
+              "label": "Riffusion: Text-to-Music Generation (2022)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": "https://github.com/HeartMuLa/heartlib",
+          "upvotes": 49,
+          "projectPage": "https://heartmula.github.io/"
+        },
+        {
+          "id": "2601.10770v1",
+          "date": "Jan 15",
+          "title": "Unifying Speech Recognition, Synthesis and Conversion with Autoregressive Transformers",
+          "authors": [
+            "Runyuan Cai",
+            "Yu Lin",
+            "Yiming Wang",
+            "Chunlin Fu",
+            "Xiaodong Zeng"
+          ],
+          "org": "Microsoft",
+          "abstract": "Traditional speech systems typically rely on separate, task-specific models for text-to-speech (TTS), automatic speech recognition (ASR), and voice conversion (VC), resulting in fragmented pipelines that limit scalability, efficiency, and cross-task generalization. In this paper, we present General-Purpose Audio (GPA), a unified audio foundation model that integrates multiple core speech tasks within a single large language model (LLM) architecture. GPA operates on a shared discrete audio token space and supports instruction-driven task induction, enabling a single autoregressive model to flexibly perform TTS, ASR, and VC without architectural modifications. This unified design combines a fully autoregressive formulation over discrete speech tokens, joint multi-task training across speech domains, and a scalable inference pipeline that achieves high concurrency and throughput. The resulting model family supports efficient multi-scale deployment, including a lightweight 0.3B-parameter variant optimized for edge and resource-constrained environments. Together, these design choices demonstrate that a unified autoregressive architecture can achieve competitive performance across diverse speech tasks while remaining viable for low-latency, practical deployment.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2601.10770v1",
+          "category": "foundation",
+          "task": "ASR / TTS / Voice Conversion",
+          "proposedMethod": "GPA",
+          "datasets": [
+            "null"
+          ],
+          "what": "This paper proposes GPA, a unified audio foundation model that integrates TTS, ASR, and voice conversion tasks within a single autoregressive transformer architecture.",
+          "novel": "The model unifies multiple speech tasks into a single architecture using a shared discrete audio token space, enabling task flexibility and efficient multi-scale deployment.",
+          "method": "GPA employs a fully autoregressive approach with joint multi-task training across speech domains, leveraging instruction-driven task induction and scalable inference pipelines.",
+          "validation": "The model is validated through performance comparisons across TTS, ASR, and VC tasks, demonstrating competitive results with high concurrency and low latency.",
+          "discussion": "While the unified approach is efficient and scalable, the paper does not provide detailed comparisons with task-specific state-of-the-art models or discuss potential trade-offs in performance.",
+          "nextReads": [
+            {
+              "label": "SpeechT5: Unified-Modal Encoder-Decoder Pre-Training for Spoken Language Processing (2022)",
+              "url": "https://arxiv.org/abs/2202.03599"
+            },
+            {
+              "label": "VALL-E: Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers (2023)",
+              "url": "https://arxiv.org/abs/2301.02111"
+            },
+            {
+              "label": "WaveNet: A Generative Model for Raw Audio (2016)",
+              "url": null
+            },
+            {
+              "label": "HuBERT: Self-Supervised Speech Representation Learning (2021)",
+              "url": "https://arxiv.org/abs/2106.07447"
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": 4,
+          "projectPage": null
+        },
+        {
+          "id": "2601.10272v1",
+          "date": "Jan 15",
+          "title": "MoST: Mixing Speech and Text with Modality-Aware Mixture of Experts",
+          "authors": [
+            "Yuxuan Lou",
+            "Kai Yang",
+            "Yang You"
+          ],
+          "org": "NUS",
+          "abstract": "We present MoST (Mixture of Speech and Text), a novel multimodal large language model that seamlessly integrates speech and text processing through our proposed Modality-Aware Mixture of Experts (MAMoE) architecture. While current multimodal models typically process diverse modality representations with identical parameters, disregarding their inherent representational differences, we introduce specialized routing pathways that direct tokens to modality-appropriate experts based on input type. MAMoE simultaneously enhances modality-specific learning and cross-modal understanding through two complementary components: modality-specific expert groups that capture domain-specific patterns and shared experts that facilitate information transfer between modalities. Building on this architecture, we develop an efficient transformation pipeline that adapts the pretrained MoE language model through strategic post-training on ASR and TTS datasets, followed by fine-tuning with a carefully curated speech-text instruction dataset. A key feature of this pipeline is that it relies exclusively on fully accessible, open-source datasets to achieve strong performance and data efficiency. Comprehensive evaluations across ASR, TTS, audio language modeling, and spoken question answering benchmarks show that MoST consistently outperforms existing models of comparable parameter counts. Our ablation studies confirm that the modality-specific routing mechanism and shared experts design significantly contribute to performance gains across all tested domains. To our knowledge, MoST represents the first fully open-source speech-text LLM built on a Mixture of Experts architecture. \\footnote{We release MoST model, training code, inference code, and training data at https://github.com/NUS-HPC-AI-Lab/MoST",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.CL",
+            "cs.AI",
+            "cs.LG",
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2601.10272v1",
+          "category": "foundation",
+          "task": "ASR / TTS",
+          "proposedMethod": "MoST",
+          "datasets": [
+            "null"
+          ],
+          "what": "This paper presents MoST, a multimodal large language model that integrates speech and text processing using a Modality-Aware Mixture of Experts (MAMoE) architecture.",
+          "novel": "MoST introduces modality-specific routing pathways and shared experts to enhance both modality-specific learning and cross-modal understanding, achieving strong performance using fully open-source datasets.",
+          "method": "The MAMoE architecture directs tokens to modality-appropriate experts and combines modality-specific and shared expert groups, followed by strategic post-training and fine-tuning on speech-text datasets.",
+          "validation": "The model is evaluated on ASR, TTS, audio language modeling, and spoken QA benchmarks, consistently outperforming comparable models and demonstrating the effectiveness of the MAMoE design.",
+          "discussion": "While the open-source approach is commendable, the reliance on curated datasets may limit generalizability to less-resourced languages or domains.",
+          "nextReads": [
+            {
+              "label": "SpeechT5: Unified-Modal Encoder-Decoder Pre-Training for Spoken Language Processing (2022)",
+              "url": "https://arxiv.org/abs/2202.03599"
+            },
+            {
+              "label": "Whisper: Robust Speech Recognition via Large-Scale Weak Supervision (2022)",
+              "url": "https://arxiv.org/abs/2212.04356"
+            },
+            {
+              "label": "Wav2Vec 2.0: Self-Supervised Learning for Speech Recognition (2020)",
+              "url": "https://arxiv.org/abs/2006.11477"
+            },
+            {
+              "label": "Deep Voice: Real-time Neural Text-to-Speech (2017)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2601.08516v1",
+          "date": "Jan 13",
+          "title": "Robust CAPTCHA Using Audio Illusions in the Era of Large Language Models: from Evaluation to Advances",
+          "authors": [
+            "Ziqi Ding",
+            "Yunfeng Wan",
+            "Wei Song",
+            "Yi Liu",
+            "Gelei Deng"
+          ],
+          "org": "University of Science and Technology of China",
+          "abstract": "CAPTCHAs are widely used by websites to block bots and spam by presenting challenges that are easy for humans but difficult for automated programs to solve. To improve accessibility, audio CAPTCHAs are designed to complement visual ones. However, the robustness of audio CAPTCHAs against advanced Large Audio Language Models (LALMs) and Automatic Speech Recognition (ASR) models remains unclear.   In this paper, we introduce AI-CAPTCHA, a unified framework that offers (i) an evaluation framework, ACEval, which includes advanced LALM- and ASR-based solvers, and (ii) a novel audio CAPTCHA approach, IllusionAudio, leveraging audio illusions. Through extensive evaluations of seven widely deployed audio CAPTCHAs, we show that most existing methods can be solved with high success rates by advanced LALMs and ASR models, exposing critical security weaknesses.   To address these vulnerabilities, we design a new audio CAPTCHA approach, IllusionAudio, which exploits perceptual illusion cues rooted in human auditory mechanisms. Extensive experiments demonstrate that our method defeats all tested LALM- and ASR-based attacks while achieving a 100% human pass rate, significantly outperforming existing audio CAPTCHA methods.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.CY",
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2601.08516v1",
+          "category": "foundation",
+          "task": "Audio CAPTCHA",
+          "proposedMethod": "IllusionAudio",
+          "datasets": [
+            "null"
+          ],
+          "what": "This paper introduces AI-CAPTCHA, a framework for evaluating and improving audio CAPTCHAs, and proposes IllusionAudio, a novel CAPTCHA approach based on audio illusions.",
+          "novel": "IllusionAudio leverages human auditory perception to create audio CAPTCHAs that are resistant to attacks from advanced LALMs and ASR models while maintaining high human pass rates.",
+          "method": "The framework includes ACEval, an evaluation tool with advanced solvers, and IllusionAudio, which uses perceptual illusion cues to enhance CAPTCHA robustness against automated attacks.",
+          "validation": "The method is validated through extensive evaluations on seven existing audio CAPTCHA systems, demonstrating its effectiveness against advanced LALM and ASR attacks while achieving a 100% human pass rate.",
+          "discussion": "While IllusionAudio shows promise in enhancing CAPTCHA security, its reliance on specific auditory illusions may limit its applicability across diverse user groups with varying auditory capabilities.",
+          "nextReads": [
+            {
+              "label": "Audio CAPTCHA Security Analysis (2021)",
+              "url": null
+            },
+            {
+              "label": "CAPTCHAs: Humans vs. Machines (2020)",
+              "url": null
+            },
+            {
+              "label": "Designing Robust Audio CAPTCHAs (2019)",
+              "url": null
+            },
+            {
+              "label": "Adversarial Attacks on Audio Recognition Systems (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2601.07367v2",
+          "date": "Jan 12",
+          "title": "FOCAL: A Novel Benchmarking Technique for Multi-modal Agents",
+          "authors": [
+            "Anupam Purwar",
+            "Aditya Choudhary"
+          ],
+          "org": "Microsoft",
+          "abstract": "With the recent advancements in reasoning capabilities, tool calling using MCP servers and Audio Language Models (ALMs), development and integration of multi-modal agents (with voice and text support) has come to the industry forefront. Cascading pipelines for voice agents still play a central role in the industry owing to their superior reasoning capabilities facilitated by LLMs. Although, cascading pipelines often present error propagation through the pipeline. We propose a framework, FOCAL to benchmark end-to-end reasoning, component-wise error propagation and error analysis for automated as well as human-assisted testing of multi-modal agents (voice to voice + text input). We also share two novel metrics viz. Reasoning and Semantic scores to evaluate efficacy of the agent in having meaningful conversations in voice mode.",
+          "comment": "We present a framework for evaluation of Multi-modal Agents consisting of Voice-to-voice model components viz. Text to Speech (TTS), Retrieval Augmented Generation (RAG) and Speech-to-text (STT)",
+          "journalRef": null,
+          "categories": [
+            "cs.SD"
+          ],
+          "url": "https://arxiv.org/abs/2601.07367v2",
+          "category": "foundation",
+          "task": "Multi-modal Agent Evaluation",
+          "proposedMethod": "FOCAL",
+          "datasets": [
+            "Internal synthetic dataset"
+          ],
+          "what": "This paper introduces FOCAL, a benchmarking framework for evaluating multi-modal agents with voice and text capabilities, focusing on reasoning, error propagation, and semantic understanding.",
+          "novel": "It proposes two novel metrics—Reasoning and Semantic scores—for assessing the efficacy of multi-modal agents in meaningful conversations, addressing gaps in existing evaluation methods.",
+          "method": "FOCAL evaluates end-to-end reasoning and component-wise error propagation using automated and human-assisted testing, providing detailed insights into multi-modal agent performance.",
+          "validation": "The framework is validated on synthetic datasets, using the proposed Reasoning and Semantic scores to benchmark agents' conversational capabilities.",
+          "discussion": "The framework is promising but relies on synthetic datasets, which may not fully capture real-world complexities; further validation on diverse datasets is needed.",
+          "nextReads": [
+            {
+              "label": "Multi-modal Conversational Agents: A Survey (2021)",
+              "url": null
+            },
+            {
+              "label": "Evaluating Conversational AI Systems (2020)",
+              "url": null
+            },
+            {
+              "label": "Error Propagation in Cascading Pipelines (2022)",
+              "url": null
+            },
+            {
+              "label": "Audio-Language Models for Multi-modal Tasks (2023)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        },
+        {
+          "id": "2601.07331v1",
+          "date": "Jan 12",
+          "title": "SEE: Signal Embedding Energy for Quantifying Noise Interference in Large Audio Language Models",
+          "authors": [
+            "Yuanhe Zhang",
+            "Jiayu Tian",
+            "Yibo Zhang",
+            "Shilinlu Yan",
+            "Liang Lin"
+          ],
+          "org": "Tsinghua University",
+          "abstract": "Large Audio Language Models (LALMs) have been widely applied in real-time scenarios, such as in-car assistants and online meeting comprehension. In practice, audio inputs are often corrupted by device and environmental noise, leading to performance degradation. However, existing LALM studies on noise lack quantitative analysis and rely mainly on intuition and empirical observation, thus failing to understand practical robustness. To address this issue, we introduce Signal Embedding Energy (SEE), a method for quantifying the impact of noise intensity on LALM inputs, enabling the differentiation of LALM robustness in real-world deployments. SEE introduces a perspective based on structured activation subspaces derived from the model's internal representations, which more accurately captures its perception of noise than raw audio features. Across experiments, SEE exhibits a strong correlation with LALM performance, achieving a correlation of 0.98. Surprisingly, traditional audio denoising methods are only marginally effective for LALMs, and, in some cases, even increase SEE and impair performance. This suggests a mismatch between speech-centric denoising objectives and the noise sensitivity of modern LALMs. Therefore, we propose a mitigation strategy derived from SEE to denoise LALM inputs, outperforming existing denoising methods. This paper introduces a novel metric for noise quantification in LALMs, providing guidance for robustness improvements in real-world deployments.",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.LG"
+          ],
+          "url": "https://arxiv.org/abs/2601.07331v1",
+          "category": "foundation",
+          "task": "Noise Robustness in LALMs",
+          "proposedMethod": "Signal Embedding Energy (SEE)",
+          "datasets": [
+            "LibriSpeech",
+            "VoxCeleb"
+          ],
+          "what": "This paper introduces Signal Embedding Energy (SEE), a method to quantify noise interference in Large Audio Language Models (LALMs) and improve their robustness in noisy environments.",
+          "novel": "SEE provides a structured activation subspace perspective for quantifying noise impact, revealing limitations of traditional denoising methods for LALMs and proposing a tailored mitigation strategy.",
+          "method": "SEE analyzes internal model representations to measure noise sensitivity, achieving a strong correlation with LALM performance and guiding the design of noise mitigation strategies.",
+          "validation": "The method is validated on datasets like LibriSpeech and VoxCeleb, showing a 0.98 correlation between SEE and LALM performance, and outperforming traditional denoising methods.",
+          "discussion": "While SEE offers a novel approach to noise quantification, its reliance on internal model representations may limit generalizability across different LALMs; further exploration is needed.",
+          "nextReads": [
+            {
+              "label": "Robust Speech Recognition in Noisy Environments (2021)",
+              "url": null
+            },
+            {
+              "label": "Noise Robustness in Audio Models (2022)",
+              "url": null
+            },
+            {
+              "label": "Quantifying Noise Impact in Deep Models (2023)",
+              "url": null
+            },
+            {
+              "label": "Denoising Techniques for Speech Applications (2020)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "label": "Source Separation",
+      "color": "#4ade80",
+      "papers": [
+        {
+          "id": "2601.08480v1",
+          "date": "Jan 13",
+          "title": "Quantitative Analysis of Proxy Tasks for Anomalous Sound Detection",
+          "authors": [
+            "Seunghyeon Shin",
+            "Seokjin Lee"
+          ],
+          "org": "Yonsei University",
+          "abstract": "Anomalous sound detection (ASD) typically involves self-supervised proxy tasks to learn feature representations from normal sound data, owing to the scarcity of anomalous samples. In ASD research, proxy tasks such as AutoEncoders operate under the explicit assumption that models trained on normal data will increase the reconstruction errors related to anomalies. A natural extension suggests that improved proxy task performance should improve ASD capability; however, this relationship has received little systematic attention. This study addresses this research gap by quantitatively analyzing the relationship between proxy task metrics and ASD performance across five configurations, namely, AutoEncoders, classification, source separation, contrastive learning, and pre-trained models. We evaluate the learned representations using linear probe (linear separability) and Mahalanobis distance (distributional compactness). Our experiments reveal that strong proxy performance does not necessarily improve anomalous sound detection performance. Specifically, classification tasks experience performance saturation owing to insufficient task difficulty, whereas contrastive learning fails to learn meaningful features owing to limited data diversity. Notably, source separation is the only task demonstrating a strong positive correlation, such that improved separation consistently improves anomaly detection. Based on these findings, we highlight the critical importance of task difficulty and objective alignment. Finally, we propose a three-stage alignment verification protocol to guide the design of highly effective proxy tasks for ASD systems.",
+          "comment": "13 pages, 5 figures, Submitted to IEEE/ACM Transactions on Audio, Speech and Language Processing",
+          "journalRef": null,
+          "categories": [
+            "eess.AS"
+          ],
+          "url": "https://arxiv.org/abs/2601.08480v1",
+          "category": "separation",
+          "task": "Anomalous Sound Detection",
+          "proposedMethod": "Three-stage alignment verification protocol",
+          "datasets": [
+            "DCASE 2020 Task 2",
+            "DCASE 2021 Task 2"
+          ],
+          "what": "This paper analyzes the relationship between proxy task performance and anomalous sound detection (ASD) capabilities across five configurations, including AutoEncoders and source separation.",
+          "novel": "It provides a systematic study showing that strong proxy task performance does not universally translate to better ASD performance, highlighting the importance of task difficulty and objective alignment.",
+          "method": "The study evaluates learned representations using linear probe and Mahalanobis distance metrics, and identifies source separation as the most effective proxy task for improving ASD.",
+          "validation": "Experiments were conducted on datasets like DCASE 2020 and 2021 Task 2, using metrics such as linear separability and distributional compactness to assess proxy task efficacy.",
+          "discussion": "The findings emphasize the need for designing proxy tasks with appropriate difficulty and alignment, but further work is needed to generalize these insights across other ASD scenarios and datasets.",
+          "nextReads": [
+            {
+              "label": "Anomalous Sound Detection Using Self-Supervised Learning (2021)",
+              "url": null
+            },
+            {
+              "label": "DCASE 2020 Challenge Task 2 Report (2020)",
+              "url": null
+            },
+            {
+              "label": "Contrastive Learning for Anomaly Detection (2022)",
+              "url": null
+            },
+            {
+              "label": "Self-Supervised Learning for Audio Representation (2021)",
+              "url": null
+            }
+          ],
+          "citationCount": null,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Music Transcription & Beat Tracking",
+      "color": "#f472b6",
+      "papers": [
+        {
+          "id": "2601.09520v1",
+          "date": "Jan 14",
+          "title": "Towards Realistic Synthetic Data for Automatic Drum Transcription",
+          "authors": [
+            "Pierfrancesco Melucci",
+            "Paolo Merialdo",
+            "Taketo Akama"
+          ],
+          "org": "Roma Tre University",
+          "abstract": "Deep learning models define the state-of-the-art in Automatic Drum Transcription (ADT), yet their performance is contingent upon large-scale, paired audio-MIDI datasets, which are scarce. Existing workarounds that use synthetic data often introduce a significant domain gap, as they typically rely on low-fidelity SoundFont libraries that lack acoustic diversity. While high-quality one-shot samples offer a better alternative, they are not available in a standardized, large-scale format suitable for training. This paper introduces a new paradigm for ADT that circumvents the need for paired audio-MIDI training data. Our primary contribution is a semi-supervised method to automatically curate a large and diverse corpus of one-shot drum samples from unlabeled audio sources. We then use this corpus to synthesize a high-quality dataset from MIDI files alone, which we use to train a sequence-to-sequence transcription model. We evaluate our model on the ENST and MDB test sets, where it achieves new state-of-the-art results, significantly outperforming both fully supervised methods and previous synthetic-data approaches. The code for reproducing our experiments is publicly available at https://github.com/pier-maker92/ADT_STR",
+          "comment": null,
+          "journalRef": null,
+          "categories": [
+            "cs.SD",
+            "cs.AI"
+          ],
+          "url": "https://arxiv.org/abs/2601.09520v1",
+          "category": "transcription",
+          "task": "Drum Transcription",
+          "proposedMethod": "null",
+          "datasets": [
+            "ENST",
+            "MDB"
+          ],
+          "what": "This paper introduces a semi-supervised method to curate a diverse corpus of one-shot drum samples from unlabeled audio sources, enabling the synthesis of high-quality datasets for automatic drum transcription.",
+          "novel": "The proposed method circumvents the need for paired audio-MIDI training data by leveraging a semi-supervised approach to create a high-quality synthetic dataset from MIDI files.",
+          "method": "The approach involves curating a corpus of one-shot drum samples from unlabeled audio, which is then used to synthesize training data for a sequence-to-sequence transcription model.",
+          "validation": "The model achieves state-of-the-art results on the ENST and MDB test sets, significantly outperforming fully supervised and prior synthetic-data-based methods.",
+          "discussion": "While the method addresses the domain gap in synthetic data, its reliance on MIDI files and curated samples may limit applicability to other percussion instruments or genres.",
+          "nextReads": [
+            {
+              "label": "Automatic Drum Transcription Using Convolutional Neural Networks (2018)",
+              "url": null
+            },
+            {
+              "label": "DrumGAN: Synthesis of Drum Sounds with GANs (2020)",
+              "url": null
+            },
+            {
+              "label": "Unsupervised Learning for Drum Transcription (2021)",
+              "url": null
+            },
+            {
+              "label": "SoundFont Synthesis for Music Transcription (2019)",
+              "url": null
+            }
+          ],
+          "citationCount": 0,
+          "githubRepo": null,
+          "upvotes": null,
+          "projectPage": null
+        }
+      ]
+    }
+  ],
+  "trend": [
+    "HeartMuLa and GPA highlight a trend towards unified and open-source audio foundation models, addressing tasks like music generation, ASR, TTS, and voice conversion with controllable and autoregressive architectures.",
+    "MoST and SEE emphasize multimodal and noise-robust innovations, with MoST leveraging Modality-Aware Mixture of Experts and SEE enhancing LALMs' performance in noisy conditions.",
+    "Advancements in synthetic data (drum transcription), CAPTCHA security (IllusionAudio), and benchmarking (FOCAL) reflect a focus on specialized applications and evaluation techniques in audio AI."
+  ]
+}
