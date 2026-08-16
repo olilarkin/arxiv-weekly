@@ -51,6 +51,7 @@ jobs:
       - name: Reanalyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           FLAGS=""
           if [ "${{ github.event.inputs.only_failed }}" = "true" ]; then

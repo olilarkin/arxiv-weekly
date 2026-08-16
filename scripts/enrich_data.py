@@ -4,7 +4,6 @@ enrich_data.py
 Backfill any missing fields in existing weekly JSON files.
 """
 import json
-import os
 import time
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -12,6 +11,14 @@ from pathlib import Path
 
 import yaml
 from openai import OpenAI
+
+from model_utils import (
+    RequestLimitExceeded,
+    build_chat_kwargs,
+    create_client,
+    get_ai_config,
+    has_api_key,
+)
 
 ROOT = Path(__file__).parent.parent
 WEEKLY_DIR = ROOT / "data" / "weekly"
@@ -98,10 +105,9 @@ def build_batch_prompt(papers: list[dict]) -> str:
 
 
 def fetch_ai_fields_batch(client: OpenAI, papers: list[dict]) -> dict[str, dict]:
-    cfg = SETTINGS["github_models"]
+    _, cfg = get_ai_config(SETTINGS)
     prompt = build_batch_prompt(papers)
     paper_ids = [p["id"].split("v")[0] for p in papers]
-    fallback = {pid: {"task": None, "proposedMethod": None, "datasets": []} for pid in paper_ids}
 
     for attempt in range(cfg["retry_max"]):
         try:
@@ -111,18 +117,26 @@ def fetch_ai_fields_batch(client: OpenAI, papers: list[dict]) -> dict[str, dict]
                     {"role": "system", "content": "Reply with JSON only."},
                     {"role": "user", "content": prompt},
                 ],
-                max_tokens=800 * len(papers),
-                temperature=0.3,
+                **build_chat_kwargs(
+                    cfg["model"], 800 * len(papers), temperature=0.3
+                ),
             )
             raw = (resp.choices[0].message.content or "").strip()
             raw = raw.lstrip("```json").lstrip("```").rstrip("```").strip()
             result = json.loads(raw)
             if isinstance(result, dict):
                 return result
+        except RequestLimitExceeded:
+            # The run budget cannot be replenished by retrying.
+            raise
         except Exception as e:
             print(f"  [warn] AI error (attempt {attempt + 1}): {e}")
             time.sleep(cfg["retry_interval"] * (2 ** attempt))
-    return fallback
+
+    # Return nothing rather than null placeholders: enrich_file only writes
+    # fields it finds here, so these papers stay eligible on the next run.
+    print(f"  [warn] no AI fields for {', '.join(paper_ids)}; leaving for a later run")
+    return {}
 
 
 def enrich_file(path: Path, ai_client: OpenAI | None, ai_results: dict) -> bool:
@@ -183,14 +197,13 @@ def main():
     weekly_files = sorted(WEEKLY_DIR.glob("*.json"))
     print(f"[enrich] Processing {len(weekly_files)} weekly files")
 
-    token = os.environ.get("GITHUB_TOKEN")
     ai_client = None
-    if token:
-        cfg = SETTINGS["github_models"]
-        ai_client = OpenAI(base_url=cfg["endpoint"], api_key=token)
-        print("[enrich] AI field backfill via GPT-4o enabled (batched)")
+    provider, cfg = get_ai_config(SETTINGS)
+    if has_api_key(SETTINGS):
+        ai_client = create_client(SETTINGS)
+        print(f"[enrich] AI field backfill via {cfg['model']} enabled (batched)")
     else:
-        print("[enrich] GITHUB_TOKEN is not set; skipping AI fields")
+        print(f"[enrich] {cfg['api_key_env']} is not set; skipping AI fields")
 
     # Collect papers that are missing AI fields across all weekly files.
     ai_results: dict[str, dict] = {}

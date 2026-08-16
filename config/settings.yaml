@@ -9,10 +9,30 @@ arxiv:
   request_interval: 3.0     # Delay between API requests, in seconds (arXiv asks ≥3s).
   user_agent: "arxiv-weekly/1.0 (+https://github.com/olilarkin/arxiv-weekly)"
 
-# GitHub Models settings
+# AI provider selection. Must name one of the provider blocks below.
+ai:
+  provider: "gemini"        # "gemini" or "github_models"
+
+# Gemini settings (OpenAI-compatible API).
+gemini:
+  api_key_env: "GEMINI_API_KEY"
+  endpoint: "https://generativelanguage.googleapis.com/v1beta/openai/"
+  model: "gemini-3.5-flash"
+  request_limit_per_run: 80 # Hard cap on requests per run, retries included.
+  max_tokens: 16000
+  batch_size: 5
+  batch_max_tokens: 32000
+  min_request_interval: 6.0
+  retry_max: 3
+  retry_interval: 5.0       # Retry interval, in seconds.
+
+# GitHub Models settings.
+# NOTE: GitHub Models is being retired — this endpoint returns HTTP 410
+# ("github_models_retirement_brownout"). Kept only for reference.
 github_models:
-  endpoint: "https://models.inference.ai.azure.com"
-  model: "gpt-4o"
+  api_key_env: "GITHUB_TOKEN"
+  endpoint: "https://models.github.ai/inference"
+  model: "openai/gpt-4o"
   max_tokens: 1500
   batch_size: 5
   batch_max_tokens: 6000
