@@ -5,7 +5,6 @@ Format the analyzed papers into a weekly JSON file and update the index.
 """
 
 import json
-import os
 import time
 import urllib.request
 from datetime import datetime, timezone
@@ -14,7 +13,7 @@ from pathlib import Path
 import yaml
 from openai import OpenAI
 
-from model_utils import build_chat_kwargs
+from model_utils import build_chat_kwargs, create_client, get_ai_config, has_api_key
 
 ROOT = Path(__file__).parent.parent
 SETTINGS = yaml.safe_load((ROOT / "config/settings.yaml").read_text())
@@ -28,7 +27,7 @@ Reply as a JSON array of exactly 3 strings. Do not include code-fence markers.""
 
 
 def generate_trend(client: OpenAI, papers: list[dict]) -> list[str]:
-    cfg = SETTINGS["github_models"]
+    _, cfg = get_ai_config(SETTINGS)
     summaries = "\n".join(f"- {p['title']}: {p['what']}" for p in papers[:20])
     for attempt in range(cfg["retry_max"]):
         try:
@@ -165,14 +164,16 @@ def main(date_str: str | None = None):
         p["upvotes"] = m.get("upvotes")
         p["projectPage"] = m.get("projectPage")
 
-    # Generate the weekly trend summary via GitHub Models.
-    token = os.environ.get("GITHUB_TOKEN")
-    if token:
-        cfg = SETTINGS["github_models"]
-        client = OpenAI(base_url=cfg["endpoint"], api_key=token)
+    # Generate the weekly trend summary via the configured AI provider.
+    if has_api_key(SETTINGS):
+        client = create_client(SETTINGS)
         trend = generate_trend(client, papers)
     else:
-        print("[build] GITHUB_TOKEN is not set; skipping trend generation.")
+        provider, cfg = get_ai_config(SETTINGS)
+        print(
+            f"[build] {cfg['api_key_env']} is not set for provider {provider}; "
+            "skipping trend generation."
+        )
         trend = ["No trend info available.", "No trend info available.", "No trend info available."]
 
     # Group papers by category.

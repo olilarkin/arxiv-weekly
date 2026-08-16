@@ -42,9 +42,9 @@ class TestGroupByCategory:
         ) is False
 
     def test_result_has_required_fields(self):
-        papers = [{"id": "1", "category": "anomaly"}]
+        papers = [{"id": "1", "category": "transcription"}]
         result = group_by_category(papers)
-        cat = next(c for c in result if c["id"] == "anomaly")
+        cat = next(c for c in result if c["id"] == "transcription")
         assert "id" in cat
         assert "label" in cat
         assert "color" in cat

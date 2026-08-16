@@ -1,25 +1,24 @@
 #!/usr/bin/env python3
 """
 analyze_papers.py
-Analyze each paper from six angles using GitHub Models (GPT-4o).
+Analyze each paper from six angles using the configured AI provider.
 """
 
 import json
-import os
 import time
 from pathlib import Path
 
 import yaml
 from openai import APIError, OpenAI
 
-from model_utils import build_chat_kwargs
+from model_utils import build_chat_kwargs, create_client, get_ai_config
 
 ROOT = Path(__file__).parent.parent
 SETTINGS = yaml.safe_load((ROOT / "config/settings.yaml").read_text())
 KEYWORDS = yaml.safe_load((ROOT / "config/keywords.yaml").read_text())
 
 class DailyQuotaExceededError(RuntimeError):
-    """Raised when GitHub Models reports a per-day quota hit.
+    """Raised when the AI provider reports a per-day quota hit.
 
     Wait times are ~hours, so retrying inside the same job is pointless —
     callers should stop work and let the next day's run pick up.
@@ -72,11 +71,7 @@ All values must be in English."""
 
 
 def get_client() -> OpenAI:
-    token = os.environ.get("GITHUB_TOKEN")
-    if not token:
-        raise EnvironmentError("GITHUB_TOKEN is not set")
-    cfg = SETTINGS["github_models"]
-    return OpenAI(base_url=cfg["endpoint"], api_key=token)
+    return create_client(SETTINGS)
 
 
 def sanitize_json_text(raw: str) -> str:
@@ -137,6 +132,9 @@ All values must be in English.
 
 def fallback_result(paper: dict) -> dict:
     return {
+        # Marker so callers can tell a real analysis from a placeholder and
+        # fail loudly instead of publishing "Analysis failed." to the site.
+        "analysisFailed": True,
         "org": paper.get("org", ""),
         "task": None,
         "proposedMethod": None,
@@ -153,7 +151,7 @@ def fallback_result(paper: dict) -> dict:
 def analyze_batch(
     client: OpenAI, papers: list[dict], last_request_at: float | None
 ) -> tuple[dict[str, dict], float | None]:
-    cfg = SETTINGS["github_models"]
+    _, cfg = get_ai_config(SETTINGS)
     prompt = build_batch_prompt(papers)
     paper_ids = {paper["id"] for paper in papers}
 
@@ -227,8 +225,9 @@ def main():
     print(f"[analyze] Analyzing {len(papers)} papers ...")
 
     client = get_client()
-    cfg = SETTINGS["github_models"]
+    _, cfg = get_ai_config(SETTINGS)
     analyzed = []
+    failed_ids: list[str] = []
     batches = chunk_papers(papers, cfg["batch_size"])
     last_request_at = None
 
@@ -241,6 +240,8 @@ def main():
 
         for paper in batch:
             result = batch_results.get(paper["id"], fallback_result(paper))
+            if result.get("analysisFailed"):
+                failed_ids.append(paper["id"])
             analyzed.append(
                 {
                     "id": paper["id"],
@@ -269,6 +270,14 @@ def main():
     out_path = ROOT / "data" / "analyzed_papers.json"
     out_path.write_text(json.dumps(analyzed, ensure_ascii=False, indent=2))
     print(f"[analyze] Saved → {out_path}")
+
+    if failed_ids:
+        # Publishing placeholder analyses looks like success on the site, so
+        # stop the pipeline here and leave the previous week's data in place.
+        raise SystemExit(
+            f"[analyze] {len(failed_ids)}/{len(analyzed)} papers have no analysis "
+            f"after {cfg['retry_max']} attempts each: {', '.join(failed_ids)}"
+        )
 
 
 if __name__ == "__main__":

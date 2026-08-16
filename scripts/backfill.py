@@ -82,7 +82,7 @@ def main():
             # Daily quota is hours-long; stop here so the workflow can still
             # deploy the weeks we already finished. Leftover raw_papers.json
             # is dropped so the partial week isn't half-built.
-            print(f"\n[backfill] GitHub Models daily quota exhausted — stopping after week {i - 1}/{len(dates)}.")
+            print(f"\n[backfill] AI provider daily quota exhausted — stopping after week {i - 1}/{len(dates)}.")
             print(f"[backfill] Reason: {e}")
             (ROOT / "data" / "raw_papers.json").unlink(missing_ok=True)
             break

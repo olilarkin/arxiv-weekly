@@ -6,7 +6,6 @@ current analyze_papers prompt.
 """
 import argparse
 import json
-import os
 import sys
 import time
 from pathlib import Path
@@ -16,6 +15,8 @@ from openai import OpenAI
 
 ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
+
+from model_utils import create_client, get_ai_config
 
 from analyze_papers import (
     SYSTEM_PROMPT,
@@ -37,11 +38,7 @@ AI_FIELDS = ("org", "task", "proposedMethod", "datasets",
 
 
 def get_client() -> OpenAI:
-    token = os.environ.get("GITHUB_TOKEN")
-    if not token:
-        raise EnvironmentError("GITHUB_TOKEN is not set")
-    cfg = SETTINGS["github_models"]
-    return OpenAI(base_url=cfg["endpoint"], api_key=token)
+    return create_client(SETTINGS)
 
 
 def reanalyze_file(path: Path, client: OpenAI, ai_results: dict) -> bool:
@@ -88,7 +85,7 @@ def main():
     args = parser.parse_args()
 
     client = get_client()
-    cfg = SETTINGS["github_models"]
+    _, cfg = get_ai_config(SETTINGS)
 
     # Collect papers across all weekly files.
     all_papers = []
@@ -128,7 +125,7 @@ def main():
             batch_results, last_request_at = analyze_batch(client, batch, last_request_at)
         except DailyQuotaExceededError as e:
             # Apply whatever we have so far, then stop.
-            print(f"\n[reanalyze] GitHub Models daily quota exhausted at batch {i}/{len(batches)} — applying partial results.")
+            print(f"\n[reanalyze] AI provider daily quota exhausted at batch {i}/{len(batches)} — applying partial results.")
             print(f"[reanalyze] Reason: {e}")
             quota_hit = True
             break
@@ -136,6 +133,10 @@ def main():
         for paper in batch:
             arxiv_id = paper["id"].split("v")[0]
             result = batch_results.get(paper["id"], fallback_result(paper))
+            if result.get("analysisFailed"):
+                # Leave the existing record alone rather than overwriting it
+                # with another placeholder.
+                continue
             ai_results[arxiv_id] = result
 
     print(f"\n[reanalyze] AI analysis complete: {len(ai_results)} papers")
