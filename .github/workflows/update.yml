@@ -1,9 +1,11 @@
 name: Weekly arXiv Update
 
+# Scheduled trigger is disabled pending the GEMINI_API_KEY secret.
+# Re-enable by uncommenting the schedule block below.
 on:
-  schedule:
-    # Every Friday at 12:00 UTC
-    - cron: '0 12 * * 5'
+  # schedule:
+  #   # Every Friday at 12:00 UTC
+  #   - cron: '0 12 * * 5'
   workflow_dispatch:
     inputs:
       dry_run:
