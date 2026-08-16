@@ -20,7 +20,7 @@ from model_utils import create_client, get_ai_config
 
 from analyze_papers import (
     SYSTEM_PROMPT,
-    DailyQuotaExceededError,
+    TERMINAL_PROVIDER_ERRORS,
     analyze_batch,
     build_next_reads,
     chunk_papers,
@@ -123,9 +123,9 @@ def main():
         print(f"[reanalyze] batch ({i}/{len(batches)}) ids={', '.join(ids)}")
         try:
             batch_results, last_request_at = analyze_batch(client, batch, last_request_at)
-        except DailyQuotaExceededError as e:
+        except TERMINAL_PROVIDER_ERRORS as e:
             # Apply whatever we have so far, then stop.
-            print(f"\n[reanalyze] AI provider daily quota exhausted at batch {i}/{len(batches)} — applying partial results.")
+            print(f"\n[reanalyze] AI provider stopped accepting requests at batch {i}/{len(batches)} — applying partial results.")
             print(f"[reanalyze] Reason: {e}")
             quota_hit = True
             break

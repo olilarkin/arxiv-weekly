@@ -11,7 +11,12 @@ from pathlib import Path
 import yaml
 from openai import APIError, OpenAI
 
-from model_utils import build_chat_kwargs, create_client, get_ai_config
+from model_utils import (
+    RequestLimitExceeded,
+    build_chat_kwargs,
+    create_client,
+    get_ai_config,
+)
 
 ROOT = Path(__file__).parent.parent
 SETTINGS = yaml.safe_load((ROOT / "config/settings.yaml").read_text())
@@ -23,6 +28,12 @@ class DailyQuotaExceededError(RuntimeError):
     Wait times are ~hours, so retrying inside the same job is pointless —
     callers should stop work and let the next day's run pick up.
     """
+
+
+# Errors meaning "stop sending requests for this run" rather than "retry":
+# the daily quota resets in hours, and the run budget cannot be replenished.
+# Callers catch these to apply partial results instead of losing the whole run.
+TERMINAL_PROVIDER_ERRORS = (DailyQuotaExceededError, RequestLimitExceeded)
 
 
 def _is_daily_quota_error(err: APIError) -> bool:
@@ -236,7 +247,14 @@ def main():
         print(
             f"[analyze] batch ({batch_index}/{len(batches)}) size={len(batch)} ids={batch_ids}"
         )
-        batch_results, last_request_at = analyze_batch(client, batch, last_request_at)
+        try:
+            batch_results, last_request_at = analyze_batch(
+                client, batch, last_request_at
+            )
+        except TERMINAL_PROVIDER_ERRORS as e:
+            # Re-raise so backfill.py can stop cleanly and keep finished weeks.
+            print(f"[analyze] stopping at batch {batch_index}/{len(batches)}: {e}")
+            raise
 
         for paper in batch:
             result = batch_results.get(paper["id"], fallback_result(paper))

@@ -3,12 +3,16 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 
 import pytest
+from openai import APIError
 
 from model_utils import (
+    RequestBudget,
+    RequestLimitExceeded,
     build_chat_kwargs,
     build_token_kwargs,
     get_ai_config,
     get_api_key,
+    get_request_budget,
     has_api_key,
     supports_custom_temperature,
 )
@@ -120,6 +124,34 @@ class TestGeminiModels:
     def test_gemini3_reasoning_effort_override(self):
         result = build_chat_kwargs("gemini-3.5-flash", 100, reasoning_effort="low")
         assert result["reasoning_effort"] == "low"
+
+
+class TestRequestBudget:
+    def test_allows_requests_up_to_the_limit(self):
+        budget = RequestBudget("p", 3)
+        for _ in range(3):
+            budget.consume()
+        assert budget.used == 3
+
+    def test_raises_once_the_limit_is_spent(self):
+        budget = RequestBudget("p", 1)
+        budget.consume()
+        with pytest.raises(RequestLimitExceeded):
+            budget.consume()
+
+    def test_is_not_an_api_error(self):
+        # analyze_batch retries APIError; budget exhaustion must not be
+        # retried, since retrying can never replenish the budget.
+        assert not isinstance(RequestLimitExceeded("x"), APIError)
+
+    def test_limit_is_at_least_one(self):
+        assert RequestBudget("p", 0).limit == 1
+
+    def test_same_provider_and_limit_share_one_budget(self):
+        first = get_request_budget("shared", 5)
+        first.consume()
+        assert get_request_budget("shared", 5) is first
+        assert get_request_budget("shared", 5).used == 1
 
 
 class TestGetAiConfig:

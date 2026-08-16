@@ -2,7 +2,47 @@ import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 
-from analyze_papers import chunk_papers, sanitize_json_text, build_next_reads
+from model_utils import RequestLimitExceeded
+
+from analyze_papers import (
+    TERMINAL_PROVIDER_ERRORS,
+    DailyQuotaExceededError,
+    build_next_reads,
+    chunk_papers,
+    fallback_result,
+    sanitize_json_text,
+)
+
+
+class TestTerminalProviderErrors:
+    """Both terminal signals must be catchable by the backfill/reanalyze callers.
+
+    They stop cleanly and keep partial results; anything uncaught aborts the
+    workflow step and discards work already completed.
+    """
+
+    def test_covers_daily_quota(self):
+        assert DailyQuotaExceededError in TERMINAL_PROVIDER_ERRORS
+
+    def test_covers_run_budget(self):
+        assert RequestLimitExceeded in TERMINAL_PROVIDER_ERRORS
+
+    def test_budget_error_is_caught_by_the_tuple(self):
+        try:
+            raise RequestLimitExceeded("budget spent")
+        except TERMINAL_PROVIDER_ERRORS:
+            pass
+        else:
+            raise AssertionError("budget error escaped the terminal handler")
+
+
+class TestFallbackResult:
+    def test_is_marked_so_callers_can_detect_it(self):
+        # Without this marker the pipeline publishes "Analysis failed." silently.
+        assert fallback_result({"id": "1"})["analysisFailed"] is True
+
+    def test_real_results_are_not_marked(self):
+        assert {"what": "A real summary."}.get("analysisFailed") is None
 
 
 class TestChunkPapers:
